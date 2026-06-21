@@ -1133,11 +1133,13 @@ function tbl(cols,rows){if(!rows||!rows.length)return `<p class="muted">No data 
   return `<table><tr>${cols.map(c=>`<th>${esc(c)}</th>`).join("")}</tr>`+
     rows.map(r=>`<tr>${r.map(c=>`<td>${c}</td>`).join("")}</tr>`).join("")+`</table>`;}
 function chips(a){a=arr(a);return a.length?a.map(x=>`<span class="tag">${esc(x)}</span>`).join(""):'<span class="muted">—</span>';}
-// 그래프 노드 존재 확인(캐시) + entity 링크 칩 — 통제·표준 등 id 보유 레코드를 #entity 상세로 연결.
-let _NIDS=null;function nodeExists(id){const n=(GRAPH.nodes||[]).length;if(!_NIDS||_NIDS._n!==n){_NIDS=new Set((GRAPH.nodes||[]).map(x=>x.id));_NIDS._n=n;}return _NIDS.has(id);}
+// 그래프 노드 조회(캐시) + entity 링크 칩 — id 보유 레코드/문자열을 #entity 상세로 연결, 라벨 자동 조회.
+let _NMAP=null;function nodeById(id){const n=(GRAPH.nodes||[]).length;if(!_NMAP||_NMAP._n!==n){_NMAP=new Map((GRAPH.nodes||[]).map(x=>[x.id,x]));_NMAP._n=n;}return _NMAP.get(id);}
+function nodeExists(id){return !!nodeById(id);}
 function entChips(recs){recs=arr(recs);if(!recs.length)return '<span class="muted">—</span>';
-  return recs.map(r=>{const id=r.id,lbl=esc(String(r.label||r.name||id).slice(0,44));
-    return nodeExists(id)?`<a class="tag" href="#entity:${encodeURIComponent(id)}" title="상세 보기">${lbl}</a>`:`<span class="tag" title="상세 미수록">${lbl}</span>`;}).join("");}
+  return recs.map(r=>{const id=typeof r==="string"?r:r.id;const n=nodeById(id);
+    const lbl=esc(String((r&&r.label)||(n&&n.label)||(r&&r.name)||id).slice(0,44));
+    return n?`<a class="tag" href="#entity:${encodeURIComponent(id)}" title="상세 보기">${lbl}</a>`:`<span class="tag" title="상세 미수록">${lbl}</span>`;}).join("");}
 function chip(x){return x?`<span class="tag">${esc(x)}</span>`:'<span class="muted">—</span>';}
 function conf(c){return c==null?'—':`<span class="bar" style="width:${Math.round(c*40)}px"></span> ${c}`;}
 function heat(v){v=v||0;const col=v>=4?'#ff6b6b':v>=3?'#ffb454':'#52c41a';return `<span class="heat" style="background:${col}33;color:${col}">${v||'—'}</span>`;}
@@ -2029,7 +2031,7 @@ const MODEL_TYPES=[
 ];
 function renderModelBased(){
   const el=document.getElementById("rk-model-view");if(!el)return;
-  const techByT={};byType("attack_technique").forEach(t=>arr(t.realizes_threats).forEach(th=>{(techByT[normT(th)]=techByT[normT(th)]||[]).push(t.name);}));
+  const techByT={};byType("attack_technique").forEach(t=>arr(t.realizes_threats).forEach(th=>{(techByT[normT(th)]=techByT[normT(th)]||[]).push(t.id);}));
   const allRec=byType("finding").concat(byType("risk"));
   el.innerHTML=`<p class="small muted">AI 모델 종류별로 <b>위협 → 공격기법 → 리스크 → 탐지기법</b>을 매핑합니다. 칩은 외부 repo/검색·리스크로 연결됩니다.</p>`+
     MODEL_TYPES.map(mt=>{
@@ -2050,8 +2052,8 @@ function renderModelBased(){
       return `<div class="card" style="background:var(--panel2);border-top:2px solid var(--acc)"><h4>🤖 ${esc(mt.name)} <span class="muted small">(위협 ${T.length} · 공격 ${atks.size} · 리스크 ${risks.length} · 탐지 ${dets.size} · 대응 ${ctrls.size})</span></h4>
         <table><tr><th style="color:#ff6b6b" title="위협 + 공격기법 + 리스크">⚠️ 위험 (위협·공격·리스크)</th><th style="color:#36cfc9" title="탐지 기법">🔍 탐지 detection</th><th style="color:#52c41a" title="통제 + 표준">🛡️ 대응 (통제·표준)</th></tr>
         <tr>
-          <td>${taxChips(T)}${atks.size?'<br>'+chips([...atks].slice(0,8)):''}${riskHtml?'<br>'+riskHtml:''}</td>
-          <td>${dets.size?taxChips([...dets]):'<span class="muted">—</span>'}</td>
+          <td>${entChips(T)}${atks.size?'<br>'+entChips([...atks].slice(0,10)):''}${riskHtml?'<br>'+riskHtml:''}</td>
+          <td>${dets.size?entChips([...dets]):'<span class="muted">—</span>'}</td>
           <td>${ctrlRecs.length?entChips(ctrlRecs.map(c=>({id:c.id,label:c.name}))):'<span class="muted">—</span>'}${stdRecs.length?'<br>'+entChips(stdRecs):''}</td>
         </tr></table></div>`;
     }).join("");
