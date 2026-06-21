@@ -220,6 +220,7 @@
   <section class="view" id="v-csa"></section>
   <section class="view" id="v-changelog"></section>
   <section class="view" id="v-entity"></section>
+  <section class="view" id="v-list"></section>
   <section class="view" id="v-xwalk"></section>
   <section class="view" id="v-trend"></section>
 </main>
@@ -411,10 +412,13 @@ async function aiSynthNoCorpus(){
 
 async function load(){
   const J=async u=>{try{return await (await fetch(u)).json();}catch(e){console.warn(u,e);return null;}};
-  // ── 임계 경로: 첫 화면(KPI·네비·overview·trend)에 필요한 데이터만 병렬 fetch ──
-  const [g,find,src,sj]=await Promise.all([
-    J("data/graph.json"), J("data/findings.json"), J("data/sources.json"), J("data/sota.json")]);
-  if(g)GRAPH=g;
+  // ── 임계 경로: 경량 graph-meta(stats·trends, ~35KB) + findings·sources·sota 병렬 fetch ──
+  //    풀 graph.json(nodes/edges 2.3MB)은 첫 페인트 후 지연(loadFullGraph). overview·KPI·trend는
+  //    stats/trends 만으로 그려지므로 즉시 렌더된다.
+  const [meta,find,src,sj]=await Promise.all([
+    J("data/graph-meta.json"), J("data/findings.json"), J("data/sources.json"), J("data/sota.json")]);
+  if(meta){GRAPH.stats=meta.stats||{};GRAPH.trends=meta.trends||{};GRAPH.generated=meta.generated;}
+  else{const g=await J("data/graph.json");if(g)GRAPH=g;} // 폴백: graph-meta 없으면 풀 그래프
   FIND=Array.isArray(find)?find:[];
   if(Array.isArray(src))FIND=FIND.concat(src.map(s=>({...s,type:s.type||"source"})));
   if(sj){SOTA=sj.benchmarks||[];SOTA_URL=sj.url||SOTA_URL;}
@@ -434,13 +438,22 @@ async function load(){
     const _ph=["검색…  예: GCG가 뭐지","멀티모달 탈옥 벤치마크","표준이 없는 위협","Rainbow Teaming 인용","에이전트 도구 남용 대응"];
     let _pi=0; setInterval(()=>{ if(document.activeElement!==gq){gq.placeholder=_ph[_pi=(_pi+1)%_ph.length];} },3500);
   }
-  // ── 첫 페인트 후 지연: 숨김 탭 렌더 + 검색 데이터(RAG 1.36MB+COMM) + 보조 인덱스 ──
-  setTimeout(()=>{
+  // ── 첫 페인트 후 지연: 풀 그래프(2.3MB) → 숨김 탭 렌더 + 검색 데이터(RAG) + 보조 인덱스 ──
+  setTimeout(async ()=>{
+    await loadFullGraph(); // GRAPH.nodes/edges 채움(그래프 의존 렌더 전에)
     renderLifecycle();renderRiskMap();renderProv();renderPapers();renderCards();renderAutoRedteam();
     renderChangelog();renderNews();renderGuideline42119();renderJapanAISI();renderOWASP();renderCSA();
     renderGuidelineTerms();renderGenAIMethods();buildGuideIndex();nodeizeGuidelines();
+    // 그래프 의존 탭(graph/entity/papers/prov 등)이 열려있으면 풀 그래프로 재렌더
+    selectTab(location.hash.slice(1)||"overview");
     loadSearchData();
   },0);
+}
+// 풀 그래프(nodes/edges)는 첫 페인트 후 지연 로드 — 지식그래프·entity·인용네트워크·검색 연계분석에 필요.
+async function loadFullGraph(){
+  try{const g=await (await fetch("data/graph.json")).json();
+    if(g){GRAPH.nodes=g.nodes||[];GRAPH.edges=g.edges||[];if(g.stats)GRAPH.stats=g.stats;if(g.trends)GRAPH.trends=g.trends;}
+  }catch(e){console.warn("graph.json (full)",e);}
 }
 // 검색 데이터는 첫 페인트 후 로드(검색 탭/딥링크에서만 필요). 완료 후 상태·재렌더 갱신.
 async function loadSearchData(){
@@ -707,6 +720,7 @@ function selectTab(spec){
   const hubMatch=HUBS.find(x=>x[0]===tab);
   if(hubMatch){selectTab(hubMatch[2][0]+(arg?":"+arg:""));return;}
   if(tab==="entity"){document.querySelectorAll(".view").forEach(x=>x.classList.remove("active"));const ev=document.getElementById("v-entity");if(ev)ev.classList.add("active");if(arg)entitySelect(decodeURIComponent(arg));window.scrollTo(0,0);return;}
+  if(tab==="list"){document.querySelectorAll(".view").forEach(x=>x.classList.remove("active"));const lv=document.getElementById("v-list");if(lv)lv.classList.add("active");renderList(decodeURIComponent(arg||""));window.scrollTo(0,0);return;}
   if(!TABS.find(x=>x[0]===tab)){if(tab!=="overview")selectTab("overview");return;}
   const hub=TAB_HUB[tab]||"home";
   document.querySelectorAll("#navhubs button").forEach(x=>x.classList.toggle("active",x.dataset.hub===hub));
@@ -722,6 +736,31 @@ function selectTab(spec){
   if(tab==="search"&&arg){const q=document.getElementById("q");if(q){q.value=decodeURIComponent(arg);renderSearch(q.value,"auto");}}
   window.scrollTo(0,0);
 }
+// #list:<type>[:candidate] — overview stat 타일 클릭 시 해당 종류의 항목 목록(→ #entity 상세).
+// FIND(findings.json, 임계 경로 데이터) 기반이라 풀 graph 로드 전에도 동작.
+function renderList(arg){
+  const el=document.getElementById("v-list");if(!el)return;
+  const parts=String(arg||"").split(":");const type=parts[0];const flag=parts[1];
+  let recs=byType(type).slice();
+  let title=ENTITY_KIND_LABEL[type]||ENTITY_KIND_LABEL[type.replace(/_item$/,"")]||type; // standard_item→표준
+  if(flag==="candidate"){recs=recs.filter(x=>x.candidate);title+=" — 표준 후보(candidate)";}
+  recs.sort((a,b)=>String(a.title||a.name||a.claim||a.id).localeCompare(String(b.title||b.name||b.claim||b.id)));
+  const row=r=>{
+    const nm=r.title||r.name||r.claim||r.id;
+    const desc=String(r.summary||r.description||r.test_case||r.req||r.hazard||"").slice(0,160);
+    const tags=[r.severity&&"심각도 "+r.severity,r.maturity,r.evidence_grade&&"grade "+r.evidence_grade,
+      r.access,r.attack_class,r.body,r.date,r.status,r.disclosure,r.candidate&&"⭐candidate"].filter(Boolean);
+    return `<div style="margin:6px 0;padding:7px 0;border-bottom:1px solid var(--border)">
+      <a href="#entity:${encodeURIComponent(r.id)}" style="font-weight:600;color:var(--acc2);text-decoration:none">${esc(nm)}</a> ↗
+      ${tags.map(t=>`<span class="tag">${esc(String(t))}</span>`).join("")}
+      ${desc?`<div class="small muted" style="margin-top:3px">${esc(desc)}</div>`:""}</div>`;
+  };
+  el.innerHTML=`<div class="card"><div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+      <h3 style="margin:0">${esc(title)} <span class="muted small">(${recs.length})</span></h3>
+      <span class="muted small">숫자 클릭으로 진입 · 각 항목 → 통합 상세(#entity)</span>
+      <a class="tag" style="margin-left:auto" href="#overview">← Overview</a></div>
+    ${recs.length?recs.map(row).join(""):'<p class="muted">이 종류의 항목이 아직 없습니다.</p>'}</div>`;
+}
 function matPill(m){return `<span class="pill ${MAT[m]||'de'}">${esc(m||'?')}</span>`;}
 function grade(g){return `<span class="g${g||'C'}">${g||'?'}</span>`;}
 
@@ -730,12 +769,14 @@ function renderAll(){
   const cov=(GRAPH.stats.coverage)||{};
   const lenses=["threat-attack","redteam-method","agentic-se-risk","standards-regulatory","risk-safety"];
   const allFind=byType("finding");
-  // stat tiles
-  const stats=[["nodes",GRAPH.nodes.length],["edges",GRAPH.edges.length],["findings",allFind.length],
-    ["threats",byType("incident")?0:0],["incidents",byType("incident").length],["vulnerabilities",byType("vulnerability").length],
-    ["attack techniques",byType("attack_technique").length],["risks",byType("risk").length],
-    ["standards",byType("standard_item").length],["candidates",byType("standard_item").filter(x=>x.candidate).length]];
-  const statHtml=`<div class="statrow">${stats.filter(s=>s[0]!=="threats").map(([l,v])=>`<div class="stat"><div class="v" style="color:var(--acc)">${v}</div><div class="l">${l}</div></div>`).join("")}</div>`;
+  // stat tiles — 숫자 클릭 시 해당 목록(#list:<type>) 또는 지식그래프(#graph)로 이동.
+  // 카운트는 GRAPH.stats(경량 graph-meta) 기반 → 풀 graph.json 로드 전에도 정확.
+  const nc=GRAPH.stats.node_count||(GRAPH.nodes||[]).length, ec=GRAPH.stats.edge_count||(GRAPH.edges||[]).length;
+  const stats=[["nodes",nc,"#graph"],["edges",ec,"#graph"],["findings",allFind.length,"#list:finding"],
+    ["incidents",byType("incident").length,"#list:incident"],["vulnerabilities",byType("vulnerability").length,"#list:vulnerability"],
+    ["attack techniques",byType("attack_technique").length,"#list:attack_technique"],["risks",byType("risk").length,"#list:risk"],
+    ["standards",byType("standard_item").length,"#list:standard_item"],["candidates",byType("standard_item").filter(x=>x.candidate).length,"#list:standard_item:candidate"]];
+  const statHtml=`<div class="statrow">${stats.map(([l,v,h])=>`<a class="stat" href="${h}" style="text-decoration:none;cursor:pointer" title="${esc(l)} 목록 보기 →"><div class="v" style="color:var(--acc)">${v}</div><div class="l">${esc(l)} ↗</div></a>`).join("")}</div>`;
   // record-type donut
   const recTypes=toData(countBy(FIND,r=>r.type)).map(d=>({label:d.label.replace("_"," "),value:d.value}));
   // maturity donut
@@ -1853,7 +1894,7 @@ function renderProvDetail(){
 function drawGraph(){
   const svg=d3.select("#graph");svg.selectAll("*").remove();
   const W=svg.node().clientWidth,H=svg.node().clientHeight;
-  if(!GRAPH.nodes.length){svg.append("text").attr("x",20).attr("y",30).attr("fill","#8b97a8").text("No graph data — run the pipeline.");return;}
+  if(!GRAPH.nodes.length){svg.append("text").attr("x",20).attr("y",30).attr("fill","#8b97a8").text("지식 그래프 로딩 중… (잠시 후 자동 표시)");return;}
   const kinds=[...new Set(GRAPH.nodes.map(n=>n.kind))];
   document.getElementById("legend").innerHTML=kinds.map(k=>`<span><i class="dot" style="background:${KIND_COLOR[k]||'#888'}"></i>${k}</span>`).join("");
   if(!document.getElementById("graphctrls").dataset.built){
