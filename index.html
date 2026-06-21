@@ -556,11 +556,19 @@ async function renderSearch(query,mode){
   const byKind={};[...agg.values()].forEach(n=>{(byKind[n.kind]=byKind[n.kind]||[]).push(n);});
   const KORD=["threat","attack_technique","vulnerability","atlas","tactic","procedure","harm","incident","risk","control","standard","benchmark","reference","product","model_card","teaming","finding"];
   const kinds=Object.keys(byKind).sort((a,b)=>(KORD.indexOf(a)<0?99:KORD.indexOf(a))-(KORD.indexOf(b)<0?99:KORD.indexOf(b)));
-  if(kinds.length){html+=`<div class="card"><h4>🕸️ 연계 분석 — 결과가 연결하는 요소 (종류별, ${agg.size}개)</h4>`+kinds.map(k=>`<div class="small" style="margin:3px 0"><b style="color:var(--acc)">${esc(ENTITY_KIND_LABEL[k]||k)}</b> (${byKind[k].length}): `+byKind[k].slice(0,15).map(n=>`<a class="tag" href="#entity:${encodeURIComponent(n.id)}">${esc((n.label||n.id).slice(0,36))}</a>`).join(" ")+`</div>`).join("")+`</div>`;
+  if(kinds.length){html+=`<div class="card"><h4>🕸️ 연계 분석 — 결과가 연결하는 요소 <span class="muted small">(종류별 ${agg.size}개 · '원문 설명' 펼침)</span></h4>`+kinds.map(k=>{
+      const chips=byKind[k].slice(0,15).map(n=>`<a class="tag" href="#entity:${encodeURIComponent(n.id)}">${esc((n.label||n.id).slice(0,36))}</a>`).join(" ");
+      const wd=byKind[k].map(n=>({n,d:entDesc(n.id)})).filter(x=>x.d).slice(0,8);
+      const det=wd.length?`<details class="small" style="margin-top:2px"><summary class="muted" style="cursor:pointer">원문 설명 ${wd.length}건 ▶</summary>${wd.map(({n,d})=>`<div style="margin:3px 0;padding-left:8px;border-left:2px solid var(--line)"><a href="#entity:${encodeURIComponent(n.id)}"><b>${esc((n.label||n.id).slice(0,40))}</b></a>: <span class="muted">${esc(d.slice(0,280))}${d.length>280?'…':''}</span></div>`).join("")}</details>`:"";
+      return `<div class="small" style="margin:4px 0"><b style="color:var(--acc)">${esc(ENTITY_KIND_LABEL[k]||k)}</b> (${byKind[k].length}): ${chips}${det}</div>`;}).join("")+`</div>`;
     ctx.push("연계 엔티티(종류별):\n"+kinds.map(k=>`- ${k}: ${byKind[k].slice(0,10).map(n=>n.label||n.id).join(", ")}`).join("\n"));}
   // (5) 근거 findings
-  if(seeds.length){html+=`<div class="card"><h4>📑 근거 ${SEM_ON?'<span class="muted small">(🧬 시맨틱 cosine + lexical 하이브리드 랭킹)</span>':'findings'} (상위 ${Math.min(seeds.length,6)})</h4>`+seeds.slice(0,6).map(({u,s,sm})=>{const f=FIND.find(x=>x.id===(u.ref_id||u.id));return `<div style="margin:6px 0"><span class="pill em">${esc(u.kind)}</span> <b>${esc((f&&f.title)||u.ref_id||u.id)}</b> <span class="muted small">${sm!=null?`🧬 cos ${sm.toFixed(2)}`:`score ${Math.round(s)}`}</span>${f&&f.summary?`<br><span class="small">${esc(f.summary.slice(0,240))}</span>`:(u.text?`<br><span class="small muted">${esc(u.text.slice(0,200))}</span>`:"")}${f&&arr(f.source_ids).length?`<br><span class="small muted">출처: `+arr(f.source_ids).map(sid=>{const src=byType("source").find(x=>x.id===sid);return src&&src.url?`<a href="${esc(src.url)}" target="_blank">${esc((src.title||sid).slice(0,42))}↗</a>`:esc(sid);}).join(" · ")+`</span>`:""}</div>`;}).join("")+`</div>`;
-    ctx.push("근거 findings:\n"+seeds.slice(0,6).map(({u})=>{const f=FIND.find(x=>x.id===(u.ref_id||u.id));return "- "+((f&&f.title)||u.ref_id)+(f&&f.summary?": "+f.summary.slice(0,160):"");}).join("\n"));}
+  if(seeds.length){html+=`<div class="card"><h4>📑 근거 ${SEM_ON?'<span class="muted small">(🧬 시맨틱 cosine + lexical 하이브리드 랭킹)</span>':'findings'} <span class="muted small">— 원문 펼침(▶): 본문·출처 초록</span> (상위 ${Math.min(seeds.length,6)})</h4>`
+      +seeds.slice(0,6).map(({u,s,sm})=>evidenceBlock(u,s,sm)).join("")+`</div>`;
+    // AI 종합 컨텍스트에도 풍부한 원문(요약 전문 + 출처 초록) 투입
+    ctx.push("근거 findings(원문):\n"+seeds.slice(0,6).map(({u})=>{const f=FIND.find(x=>x.id===(u.ref_id||u.id));
+      const body=(f&&f.summary)||u.text||"";const abs=arr((f||u).source_ids).map(sid=>{const sc2=byType("source").find(x=>x.id===sid);return sc2&&sc2.abstract?sc2.abstract.slice(0,300):"";}).filter(Boolean).join(" ");
+      return "- "+((f&&f.title)||u.ref_id||u.id)+": "+body.slice(0,300)+(abs?" [출처원문: "+abs+"]":"");}).join("\n"));}
   // (6) 주제
   const cm=COMM.map(c=>({c,s:score(qt,tok((c.title||"")+" "+(c.summary||"")))})).filter(x=>x.s>0).sort((a,b)=>b.s-a.s)[0];
   if(cm){html+=`<div class="card"><h4>🧭 관련 주제 (community)</h4><b style="color:var(--pur)">${esc(cm.c.title)}</b><p class="small">${esc(cm.c.summary)}</p></div>`;ctx.push("주제: "+cm.c.title+" — "+cm.c.summary);}
@@ -583,7 +591,7 @@ async function renderSearch(query,mode){
 function score(qt,dt){const set=new Set(dt);let s=0;qt.forEach(t=>{if(set.has(t))s+=2;else if(t.length>=3&&[...set].some(d=>d.length>=3&&(d.includes(t)||t.includes(d))))s+=1;});return s;}
 // 가이드라인 검색 인덱스 (5개 보존형 JSON을 startup에 평탄화 → 글로벌 검색이 가이드라인도 노출)
 async function buildGuideIndex(){
-  const add=(label,text,hash,tab)=>{if(label)GUIDE_IDX.push({label:String(label).slice(0,90),text:((label||"")+" "+(text||"")).toLowerCase(),hash,tab});};
+  const add=(label,text,hash,tab)=>{if(label)GUIDE_IDX.push({label:String(label).slice(0,90),text:((label||"")+" "+(text||"")).toLowerCase(),full:String(text||label),hash,tab});};
   const grab=async u=>{try{return await (await fetch(u)).json();}catch(e){return null;}};
   let g=await grab("data/guideline-42119-7.json");
   if(g){(g.phases||[]).forEach(p=>(p.items||[]).forEach(it=>add(it.statement,it.statement+" "+(it.section||""),"#g42119","ISO/IEC 42119-7")));
@@ -665,12 +673,34 @@ function auxHits(qt,ctxArr){
   });
   return html;
 }
+// 엔티티 id의 원문 설명(레코드의 description/summary/hazard 등에서)
+function entDesc(id){const r=FIND.find(x=>x.id===id);if(!r)return "";
+  return String(r.description||r.summary||r.hazard||r.test_case||r.req||r.claim||r.category||[r.attack_class,r.access].filter(Boolean).join(", ")||"").trim();}
+// 근거 1건을 원문 상세로(접힘=제목+점수, 펼침=본문 전문+출처 초록+유닛 맥락)
+function evidenceBlock(u,s,sm){
+  const f=FIND.find(x=>x.id===(u.ref_id||u.id));
+  const title=(f&&f.title)||u.ref_id||u.id;
+  const body=(f&&f.summary)||u.text||"";
+  const notes=f&&f.notes;
+  const utext=u.text&&u.text.length>(body.length+40)?u.text:""; // 유닛이 더 풍부하면 맥락으로
+  const sids=arr((f||u).source_ids);
+  const srcBlocks=sids.map(sid=>{const src=byType("source").find(x=>x.id===sid);if(!src)return "";
+    return `<div style="margin:5px 0;padding-left:8px;border-left:2px solid var(--acc2)"><b class="small">${esc((src.title||sid).slice(0,90))}</b>${src.org?` <span class="muted small">· ${esc(src.org)}</span>`:""}${src.published?` <span class="muted small">· ${esc(src.published)}</span>`:""}${src.url?` <a class="small" href="${esc(src.url)}" target="_blank">원본↗</a>`:""}${src.abstract?`<div class="small muted" style="margin-top:2px;line-height:1.5">${esc(src.abstract.slice(0,600))}${src.abstract.length>600?'…':''}</div>`:""}</div>`;}).join("");
+  const score=sm!=null?`🧬 cos ${sm.toFixed(2)}`:`score ${Math.round(s)}`;
+  return `<details style="margin:7px 0;border-top:1px solid var(--line);padding-top:5px"><summary style="cursor:pointer">
+      <span class="pill em">${esc(u.kind)}</span> <b>${esc(title)}</b> <span class="muted small">${score}${f&&f.evidence_grade?` · grade ${esc(f.evidence_grade)}`:""}${f&&f.maturity?` · ${esc(f.maturity)}`:""}</span></summary>
+    ${body?`<div class="small" style="margin:5px 0;line-height:1.55">${esc(body)}</div>`:""}
+    ${notes?`<div class="small muted" style="margin:4px 0">📝 ${esc(String(notes).slice(0,400))}</div>`:""}
+    ${utext?`<div class="small muted" style="margin:4px 0;line-height:1.5">🔎 분석 맥락: ${esc(utext.slice(0,500))}${utext.length>500?'…':''}</div>`:""}
+    ${srcBlocks?`<div style="margin-top:5px"><span class="small muted">📚 출처 원문(초록):</span>${srcBlocks}</div>`:""}</details>`;
+}
 function guideHits(qt){
   if(!GUIDE_IDX.length||!qt.length)return "";
   const sc=GUIDE_IDX.map(g=>({g,s:score(qt,tok(g.text))})).filter(x=>x.s>0).sort((a,b)=>b.s-a.s).slice(0,10);
   if(!sc.length)return "";
-  return `<div class="card" style="border-left:3px solid var(--acc)"><h4>📐 가이드라인 매치 (${sc.length}) — 클릭 시 해당 가이드 탭으로</h4>`+
-    sc.map(({g})=>`<div class="small" style="margin:3px 0;line-height:1.5"><a href="${g.hash}">${esc(g.label)}</a> <span class="muted">— ${esc(g.tab)}</span></div>`).join("")+`</div>`;
+  return `<div class="card" style="border-left:3px solid var(--acc)"><h4>📐 가이드라인 매치 (${sc.length}) — 원문 펼침(▶)·제목 클릭 시 해당 탭</h4>`+
+    sc.map(({g})=>{const full=String(g.full||"").trim();const showDetail=full&&full.toLowerCase()!==String(g.label).toLowerCase();
+      return `<details class="small" style="margin:4px 0;line-height:1.55"${showDetail?"":" open"}><summary style="cursor:pointer"><a href="${g.hash}">${esc(g.label)}</a> <span class="muted">— ${esc(g.tab)}</span></summary>${showDetail?`<div class="muted" style="padding:4px 0 6px 12px;border-left:2px solid var(--line);margin-top:3px">${esc(full.slice(0,600))}${full.length>600?'…':''}</div>`:""}</details>`;}).join("")+`</div>`;
 }
 // 가이드라인 정식 노드화: 문서·항목을 GRAPH 노드로 주입 + 기존 엔티티와 교차 연결(토큰 매칭)
 async function nodeizeGuidelines(){
