@@ -1133,6 +1133,11 @@ function tbl(cols,rows){if(!rows||!rows.length)return `<p class="muted">No data 
   return `<table><tr>${cols.map(c=>`<th>${esc(c)}</th>`).join("")}</tr>`+
     rows.map(r=>`<tr>${r.map(c=>`<td>${c}</td>`).join("")}</tr>`).join("")+`</table>`;}
 function chips(a){a=arr(a);return a.length?a.map(x=>`<span class="tag">${esc(x)}</span>`).join(""):'<span class="muted">—</span>';}
+// 그래프 노드 존재 확인(캐시) + entity 링크 칩 — 통제·표준 등 id 보유 레코드를 #entity 상세로 연결.
+let _NIDS=null;function nodeExists(id){const n=(GRAPH.nodes||[]).length;if(!_NIDS||_NIDS._n!==n){_NIDS=new Set((GRAPH.nodes||[]).map(x=>x.id));_NIDS._n=n;}return _NIDS.has(id);}
+function entChips(recs){recs=arr(recs);if(!recs.length)return '<span class="muted">—</span>';
+  return recs.map(r=>{const id=r.id,lbl=esc(String(r.label||r.name||id).slice(0,44));
+    return nodeExists(id)?`<a class="tag" href="#entity:${encodeURIComponent(id)}" title="상세 보기">${lbl}</a>`:`<span class="tag" title="상세 미수록">${lbl}</span>`;}).join("");}
 function chip(x){return x?`<span class="tag">${esc(x)}</span>`:'<span class="muted">—</span>';}
 function conf(c){return c==null?'—':`<span class="bar" style="width:${Math.round(c*40)}px"></span> ${c}`;}
 function heat(v){v=v||0;const col=v>=4?'#ff6b6b':v>=3?'#ffb454':'#52c41a';return `<span class="heat" style="background:${col}33;color:${col}">${v||'—'}</span>`;}
@@ -2039,15 +2044,15 @@ function renderModelBased(){
       const dets=new Set();byType("finding").forEach(f=>{if(arr(f.taxonomy&&f.taxonomy.threat).some(x=>T.includes(normT(x)))||(mt.topic&&arr(f.topics).some(tp=>mt.topic.includes(tp))))arr(f.taxonomy&&f.taxonomy.teaming).filter(t=>/frontier-detection|llm-as-a-defender|llm-as-a-judge/.test(t)).forEach(t=>dets.add(t));});
       const ctrls=new Set();risks.forEach(r=>arr(r.controls).forEach(c=>ctrls.add(c)));
       const ctrlRecs=[...ctrls].map(c=>byType("control").find(x=>x.id===c)).filter(Boolean);
-      const stds=[...new Set(ctrlRecs.flatMap(c=>arr(c.standards)).concat(risks.flatMap(r=>arr(r.standards))))]
-        .map(s=>{const sr=byType("standard_item").find(x=>x.id===s);return sr?(sr.std||sr.name||s):s;}).filter(Boolean);
+      const stdIds=[...new Set(ctrlRecs.flatMap(c=>arr(c.standards)).concat(risks.flatMap(r=>arr(r.standards))))].filter(Boolean);
+      const stdRecs=stdIds.map(s=>{const sr=byType("standard_item").find(x=>x.id===s);return {id:s,label:sr?(sr.std||sr.name||s):s};});
       const riskHtml=risks.length?risks.map(r=>`<a class="tag" href="#riskmap:${encodeURIComponent('risk:'+r.id)}" title="${esc(r.harm||'')}">${esc(r.id.replace('risk-',''))} S${(r.metrics||{}).severity||r.severity||'?'}</a>`).join(""):'';
       return `<div class="card" style="background:var(--panel2);border-top:2px solid var(--acc)"><h4>🤖 ${esc(mt.name)} <span class="muted small">(위협 ${T.length} · 공격 ${atks.size} · 리스크 ${risks.length} · 탐지 ${dets.size} · 대응 ${ctrls.size})</span></h4>
         <table><tr><th style="color:#ff6b6b" title="위협 + 공격기법 + 리스크">⚠️ 위험 (위협·공격·리스크)</th><th style="color:#36cfc9" title="탐지 기법">🔍 탐지 detection</th><th style="color:#52c41a" title="통제 + 표준">🛡️ 대응 (통제·표준)</th></tr>
         <tr>
           <td>${taxChips(T)}${atks.size?'<br>'+chips([...atks].slice(0,8)):''}${riskHtml?'<br>'+riskHtml:''}</td>
           <td>${dets.size?taxChips([...dets]):'<span class="muted">—</span>'}</td>
-          <td>${ctrlRecs.length?chips(ctrlRecs.map(c=>c.name)):'<span class="muted">—</span>'}${stds.length?'<br>'+chips([...new Set(stds)]):''}</td>
+          <td>${ctrlRecs.length?entChips(ctrlRecs.map(c=>({id:c.id,label:c.name}))):'<span class="muted">—</span>'}${stdRecs.length?'<br>'+entChips(stdRecs):''}</td>
         </tr></table></div>`;
     }).join("");
 }
