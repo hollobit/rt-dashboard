@@ -29951,6 +29951,578 @@
       }
     },
     {
+      "id": "ev-quote-agentdojo-injection-unauthorized-actions",
+      "kind": "evidence",
+      "label": "Prompt injection in third-party tool data lets an attacker take actions and call",
+      "weight": 1,
+      "meta": {
+        "artifact": "arXiv 2406.13352",
+        "strength": "A",
+        "claim": "Prompt injection in third-party tool data lets an attacker take actions and call tools on behalf of the user (the agentic attack-surface primitive behind unauthorized commit/deploy risk)"
+      }
+    },
+    {
+      "id": "ev-quote-agentdojo-dynamic-evolving-benchmark",
+      "kind": "evidence",
+      "label": "Red teaming must be a dynamic, extensible, continually-evolving framework rather",
+      "weight": 1,
+      "meta": {
+        "artifact": "arXiv 2406.13352",
+        "strength": "A",
+        "claim": "Red teaming must be a dynamic, extensible, continually-evolving framework rather than a static point-in-time benchmark, because ML security is ever-evolving"
+      }
+    },
+    {
+      "id": "ev-quote-prompt-infection-self-replication-only-scalable",
+      "kind": "evidence",
+      "label": "Self-replication is the only scalable method to compromise more than two agents ",
+      "weight": 1,
+      "meta": {
+        "artifact": "arXiv 2410.07283",
+        "strength": "A",
+        "claim": "Self-replication is the only scalable method to compromise more than two agents under local messaging, spreading worm-like via a single infected external document"
+      }
+    },
+    {
+      "id": "ev-quote-rl-redteam-qwen-asr-generalization",
+      "kind": "evidence",
+      "label": "RL-finetuned Qwen3-8B red-team model reaches 85% in-domain ASR (vs 33.89% zero-s",
+      "weight": 1,
+      "meta": {
+        "artifact": "arXiv 2604.23067",
+        "strength": "A",
+        "claim": "RL-finetuned Qwen3-8B red-team model reaches 85% in-domain ASR (vs 33.89% zero-shot) and 29.35% OOD ASR (vs 20.87%), generalizing to out-of-domain adversarial goals"
+      }
+    },
+    {
+      "id": "ev-quote-rl-redteam-evaluator-free-reward-hacking",
+      "kind": "evidence",
+      "label": "Training a red-team model against a single garak detector causes reward hacking ",
+      "weight": 1,
+      "meta": {
+        "artifact": "arXiv 2604.23067",
+        "strength": "A",
+        "claim": "Training a red-team model against a single garak detector causes reward hacking and simpler attacks; safety-trained instruction models can be turned into effective red-team models covering underrepresented goals"
+      }
+    },
+    {
+      "id": "ev-quote-tee-redbench-failure-modes",
+      "kind": "evidence",
+      "label": "TEE-RedBench red teams ChatGPT-5.2 and Claude Opus-4.6 as TEE security advisors ",
+      "weight": 1,
+      "meta": {
+        "artifact": "arXiv 2602.19450",
+        "strength": "A",
+        "claim": "TEE-RedBench red teams ChatGPT-5.2 and Claude Opus-4.6 as TEE security advisors with 208 prompts across six families and a dual-track 0-14 rubric, surfacing boundary confusion, attestation overclaim, and mitigation hallucination"
+      }
+    },
+    {
+      "id": "ev-quote-tee-advisor-transfer-and-pipeline",
+      "kind": "evidence",
+      "label": "LLM security-advisor failures transfer up to ~12% across assistants (tool-output",
+      "weight": 1,
+      "meta": {
+        "artifact": "arXiv 2602.19450",
+        "strength": "A",
+        "claim": "LLM security-advisor failures transfer up to ~12% across assistants (tool-output misinterpretation most transferable) and a secure-architecture pipeline cuts worst-case failure prevalence by 80.62%"
+      }
+    },
+    {
+      "id": "ev-quote-rainbowplus-asr-speed-diversity",
+      "kind": "evidence",
+      "label": "RainbowPlus (multi-element archive + concurrent fitness) hits 81.1% avg ASR on H",
+      "weight": 1,
+      "meta": {
+        "artifact": "arXiv 2504.15047",
+        "strength": "A",
+        "claim": "RainbowPlus (multi-element archive + concurrent fitness) hits 81.1% avg ASR on HarmBench, beats AutoDAN-Turbo by 3.9%, runs 9x faster (1.45 vs 13.50 h), and generates up to 100x more unique prompts"
+      }
+    },
+    {
+      "id": "ev-quote-cyberseceval3-offensive-agent-areas",
+      "kind": "evidence",
+      "label": "CyberSecEval 3 adds offensive-security risk areas measuring LLM-as-agent capabil",
+      "weight": 1,
+      "meta": {
+        "artifact": "arXiv 2408.01605",
+        "strength": "A",
+        "claim": "CyberSecEval 3 adds offensive-security risk areas measuring LLM-as-agent capability, and Llama 3 405B gave no statistically significant cyber uplift over search engines"
+      }
+    },
+    {
+      "id": "ev-quote-jailbreakv-text-transfer-image-irrelevant",
+      "kind": "evidence",
+      "label": "Text-based LLM-transfer jailbreaks reach 50.5% avg ASR across 10 MLLMs and 68.7%",
+      "weight": 1,
+      "meta": {
+        "artifact": "arXiv 2404.03027",
+        "strength": "A",
+        "claim": "Text-based LLM-transfer jailbreaks reach 50.5% avg ASR across 10 MLLMs and 68.7% on their LLM encoders, while image type barely changes ASR (coefficient of variation 9.0), so MLLMs inherit textual vulnerabilities"
+      }
+    },
+    {
+      "id": "ev-quote-agentharm-multistep-shift",
+      "kind": "evidence",
+      "label": "Evaluation is shifting toward agentic/multi-step harnesses; LLM agents using too",
+      "weight": 1,
+      "meta": {
+        "artifact": "arXiv 2410.09024",
+        "strength": "A",
+        "claim": "Evaluation is shifting toward agentic/multi-step harnesses; LLM agents using tools and executing multi-stage tasks pose greater misuse risk than chatbots and are underexplored"
+      }
+    },
+    {
+      "id": "ev-quote-agentharm-comply-transfer",
+      "kind": "evidence",
+      "label": "Leading LLM agents are surprisingly compliant with malicious requests without ja",
+      "weight": 1,
+      "meta": {
+        "artifact": "arXiv 2410.09024",
+        "strength": "A",
+        "claim": "Leading LLM agents are surprisingly compliant with malicious requests without jailbreaking, and simple jailbreak templates transfer to enable coherent malicious multi-step agent behavior"
+      }
+    },
+    {
+      "id": "ev-quote-agentharm-110-440-rubric",
+      "kind": "evidence",
+      "label": "AgentHarm has 110 malicious agent tasks (440 augmented) across 11 harm categorie",
+      "weight": 1,
+      "meta": {
+        "artifact": "arXiv 2410.09024",
+        "strength": "A",
+        "claim": "AgentHarm has 110 malicious agent tasks (440 augmented) across 11 harm categories, and requires jailbroken agents to retain capabilities to complete a multi-step task, not just refuse"
+      }
+    },
+    {
+      "id": "ev-quote-frontier-dangerous-capability-suite",
+      "kind": "evidence",
+      "label": "DeepMind introduces dangerous-capability evaluations piloted on Gemini 1.0 acros",
+      "weight": 1,
+      "meta": {
+        "artifact": "arXiv 2403.13793",
+        "strength": "A",
+        "claim": "DeepMind introduces dangerous-capability evaluations piloted on Gemini 1.0 across persuasion/deception, cyber-security, self-proliferation, and self-reasoning; no strong dangerous capabilities found but early warning signs flagged"
+      }
+    },
+    {
+      "id": "ev-quote-cai-scaling-supervision-obscure",
+      "kind": "evidence",
+      "label": "Constitutional AI's scaling supervision via AI feedback risks automating and obs",
+      "weight": 1,
+      "meta": {
+        "artifact": "arXiv 2212.08073",
+        "strength": "A",
+        "claim": "Constitutional AI's scaling supervision via AI feedback risks automating and obscuring decision-making, motivating legible chain-of-thought reasoning for AI harm decisions"
+      }
+    },
+    {
+      "id": "ev-quote-redteam-macro-micro-lifecycle",
+      "kind": "evidence",
+      "label": "AI red teaming should be operationalized at macro (system) level spanning the de",
+      "weight": 1,
+      "meta": {
+        "artifact": "arXiv 2507.05538",
+        "strength": "A",
+        "claim": "AI red teaming should be operationalized at macro (system) level spanning the development lifecycle and micro (model) level on the model"
+      }
+    },
+    {
+      "id": "ev-quote-redteam-seven-stages",
+      "kind": "evidence",
+      "label": "Macro-level red teaming breaks down into seven lifecycle stages with a dedicated",
+      "weight": 1,
+      "meta": {
+        "artifact": "arXiv 2507.05538",
+        "strength": "A",
+        "claim": "Macro-level red teaming breaks down into seven lifecycle stages with a dedicated blue team cooperating throughout"
+      }
+    },
+    {
+      "id": "ev-quote-multijail-3x-lowresource",
+      "kind": "evidence",
+      "label": "Unsafe-content rate rises ~3x from high- to low-resource languages: ChatGPT 4.34",
+      "weight": 1,
+      "meta": {
+        "artifact": "arXiv 2310.06474",
+        "strength": "A",
+        "claim": "Unsafe-content rate rises ~3x from high- to low-resource languages: ChatGPT 4.34%->14.92%, GPT-4 3.60%->10.16%"
+      }
+    },
+    {
+      "id": "ev-quote-multijail-aim-selfdefence",
+      "kind": "evidence",
+      "label": "Combining multilingual prompts with the AIM malicious instruction raises ChatGPT",
+      "weight": 1,
+      "meta": {
+        "artifact": "arXiv 2310.06474",
+        "strength": "A",
+        "claim": "Combining multilingual prompts with the AIM malicious instruction raises ChatGPT to 80.92% / GPT-4 to 40.71% unsafe"
+      }
+    },
+    {
+      "id": "ev-quote-hybrid-llm-rl-soar",
+      "kind": "evidence",
+      "label": "A hierarchical LLM-planner + RL-controller red-teaming framework sustains multi-",
+      "weight": 1,
+      "meta": {
+        "artifact": "arXiv 2605.17075",
+        "strength": "A",
+        "claim": "A hierarchical LLM-planner + RL-controller red-teaming framework sustains multi-stage attacks against autonomous SOAR defenders where standalone LLMs fail"
+      }
+    },
+    {
+      "id": "ev-quote-mcptox-real-servers-tools",
+      "kind": "evidence",
+      "label": "MCPTox is built on 45 live real-world MCP servers and 353 authentic tools, the f",
+      "weight": 1,
+      "meta": {
+        "artifact": "arXiv 2508.14925",
+        "strength": "A",
+        "claim": "MCPTox is built on 45 live real-world MCP servers and 353 authentic tools, the first benchmark for tool-poisoning attacks in real MCP settings"
+      }
+    },
+    {
+      "id": "ev-quote-mcptox-legit-tool-bypass",
+      "kind": "evidence",
+      "label": "The malicious action is executed by a trusted legitimate tool while the poisoned",
+      "weight": 1,
+      "meta": {
+        "artifact": "arXiv 2508.14925",
+        "strength": "A",
+        "claim": "The malicious action is executed by a trusted legitimate tool while the poisoned tool itself never runs, bypassing permission models"
+      }
+    },
+    {
+      "id": "ev-quote-jbdistill-renewable",
+      "kind": "evidence",
+      "label": "JBDistill produces renewable safety benchmarks that resist saturation and contam",
+      "weight": 1,
+      "meta": {
+        "artifact": "arXiv 2505.22037",
+        "strength": "A",
+        "claim": "JBDistill produces renewable safety benchmarks that resist saturation and contamination by re-running the pipeline with minimal human effort"
+      }
+    },
+    {
+      "id": "ev-quote-circuit-breakers-mtbench",
+      "kind": "evidence",
+      "label": "Representation Rerouting circuit breakers give attack-agnostic robustness while ",
+      "weight": 1,
+      "meta": {
+        "artifact": "arXiv 2406.04313",
+        "strength": "A",
+        "claim": "Representation Rerouting circuit breakers give attack-agnostic robustness while preserving capability: MT-Bench/MMLU largely preserved"
+      }
+    },
+    {
+      "id": "ev-quote-circuit-breakers-multimodal",
+      "kind": "evidence",
+      "label": "RR circuit breakers extend to multimodal models while retaining agent function-c",
+      "weight": 1,
+      "meta": {
+        "artifact": "arXiv 2406.04313",
+        "strength": "A",
+        "claim": "RR circuit breakers extend to multimodal models while retaining agent function-calling on the Berkeley Function Calling Leaderboard"
+      }
+    },
+    {
+      "id": "ev-quote-figstep-typography-asr",
+      "kind": "evidence",
+      "label": "FigStep converts prohibited content into typographic images to bypass safety ali",
+      "weight": 1,
+      "meta": {
+        "artifact": "arXiv 2311.05608",
+        "strength": "A",
+        "claim": "FigStep converts prohibited content into typographic images to bypass safety alignment, reaching 82.50% average ASR on six open-source LVLMs"
+      }
+    },
+    {
+      "id": "ev-quote-vendor-disclosure-gaps",
+      "kind": "evidence",
+      "label": "Across 264 AI vendors, 36% provide no disclosure channel and only 18% explicitly",
+      "weight": 1,
+      "meta": {
+        "artifact": "arXiv 2509.06136",
+        "strength": "A",
+        "claim": "Across 264 AI vendors, 36% provide no disclosure channel and only 18% explicitly mention AI security"
+      }
+    },
+    {
+      "id": "ev-quote-vendor-lag-academia",
+      "kind": "evidence",
+      "label": "Vendor responses to AI vulnerability disclosure lag behind both academic researc",
+      "weight": 1,
+      "meta": {
+        "artifact": "arXiv 2509.06136",
+        "strength": "A",
+        "claim": "Vendor responses to AI vulnerability disclosure lag behind both academic research and real-world incident reports"
+      }
+    },
+    {
+      "id": "ev-quote-cybench-11min-fst",
+      "kind": "evidence",
+      "label": "Cybench LM agents solve only the easiest complete CTF tasks that took human team",
+      "weight": 1,
+      "meta": {
+        "artifact": "arXiv 2408.08926",
+        "strength": "A",
+        "claim": "Cybench LM agents solve only the easiest complete CTF tasks that took human teams up to 11 minutes (first solve time)"
+      }
+    },
+    {
+      "id": "ev-quote-dreadnode-weeks-to-hours",
+      "kind": "evidence",
+      "label": "Dreadnode's agent lets operators state natural-language objectives while the age",
+      "weight": 1,
+      "meta": {
+        "artifact": "arXiv 2605.04019",
+        "strength": "A",
+        "claim": "Dreadnode's agent lets operators state natural-language objectives while the agent handles attack selection, transform composition, execution and reporting — collapsing weeks of work into hours"
+      }
+    },
+    {
+      "id": "ev-quote-dreadnode-llama-scout-85",
+      "kind": "evidence",
+      "label": "Red teaming Llama Scout from natural-language objectives achieves 85% attack suc",
+      "weight": 1,
+      "meta": {
+        "artifact": "arXiv 2605.04019",
+        "strength": "A",
+        "claim": "Red teaming Llama Scout from natural-language objectives achieves 85% attack success rate"
+      }
+    },
+    {
+      "id": "ev-quote-sector-domain-agnostic-gap",
+      "kind": "evidence",
+      "label": "Existing red-teaming benchmarks are largely domain-agnostic and single-turn, fai",
+      "weight": 1,
+      "meta": {
+        "artifact": "arXiv 2603.10807",
+        "strength": "A",
+        "claim": "Existing red-teaming benchmarks are largely domain-agnostic and single-turn, failing to capture escalation-driven, interaction-dependent harms in realistic settings"
+      }
+    },
+    {
+      "id": "ev-quote-sector-multiturn-escalation",
+      "kind": "evidence",
+      "label": "For financial red teaming, ASR increases monotonically across multi-turn rounds ",
+      "weight": 1,
+      "meta": {
+        "artifact": "arXiv 2603.10807",
+        "strength": "A",
+        "claim": "For financial red teaming, ASR increases monotonically across multi-turn rounds — longer adaptive interactions substantially improve elicitation of harmful financial disclosures"
+      }
+    },
+    {
+      "id": "ev-quote-constclass-no-universal-jailbreak",
+      "kind": "evidence",
+      "label": "Constitutional Classifiers are synthetic-data-trained input/output safeguards; 3",
+      "weight": 1,
+      "meta": {
+        "artifact": "arXiv 2501.18837",
+        "strength": "A",
+        "claim": "Constitutional Classifiers are synthetic-data-trained input/output safeguards; 3,000+ hours of red teaming found no universal jailbreak, at +0.38% production refusals and 23.7% inference overhead"
+      }
+    },
+    {
+      "id": "ev-quote-wmdp-rmu-unlearning",
+      "kind": "evidence",
+      "label": "WMDP is 3,668 hazardous-knowledge MCQs (bio/cyber/chem) and RMU unlearning reduc",
+      "weight": 1,
+      "meta": {
+        "artifact": "arXiv 2403.03218",
+        "strength": "A",
+        "claim": "WMDP is 3,668 hazardous-knowledge MCQs (bio/cyber/chem) and RMU unlearning reduces WMDP performance while preserving general capability"
+      }
+    },
+    {
+      "id": "ev-quote-bountybench-offense-defense-imbalance",
+      "kind": "evidence",
+      "label": "BountyBench shows an offense-defense imbalance: coding agents (Codex CLI, Claude",
+      "weight": 1,
+      "meta": {
+        "artifact": "arXiv 2505.15216",
+        "strength": "A",
+        "claim": "BountyBench shows an offense-defense imbalance: coding agents (Codex CLI, Claude Code) patch far better than they exploit"
+      }
+    },
+    {
+      "id": "ev-quote-bountybench-dollar-impact",
+      "kind": "evidence",
+      "label": "BountyBench attaches real monetary bug-bounty awards ($10-$30,485, 9 of OWASP To",
+      "weight": 1,
+      "meta": {
+        "artifact": "arXiv 2505.15216",
+        "strength": "A",
+        "claim": "BountyBench attaches real monetary bug-bounty awards ($10-$30,485, 9 of OWASP Top 10) to AI-agent cyber tasks, giving an economic-impact metric"
+      }
+    },
+    {
+      "id": "ev-quote-lowresource-jailbreak-gpt4-79",
+      "kind": "evidence",
+      "label": "Translating unsafe English prompts into low-resource languages bypasses GPT-4's ",
+      "weight": 1,
+      "meta": {
+        "artifact": "arXiv 2310.02446",
+        "strength": "A",
+        "claim": "Translating unsafe English prompts into low-resource languages bypasses GPT-4's guardrail ~79% of the time via mismatched generalization"
+      }
+    },
+    {
+      "id": "ev-quote-medsafetybench-llms-fail-safety",
+      "kind": "evidence",
+      "label": "MedSafetyBench operationalizes medical safety via AMA Principles of Medical Ethi",
+      "weight": 1,
+      "meta": {
+        "artifact": "arXiv 2403.03744",
+        "strength": "A",
+        "claim": "MedSafetyBench operationalizes medical safety via AMA Principles of Medical Ethics and finds public medical LLMs fail safety standards"
+      }
+    },
+    {
+      "id": "ev-quote-deeptrap-contextual-trajectory-attack",
+      "kind": "evidence",
+      "label": "DEEPTRAP formulates contextual agent attacks as black-box trajectory-level optim",
+      "weight": 1,
+      "meta": {
+        "artifact": "arXiv 2605.11047",
+        "strength": "A",
+        "claim": "DEEPTRAP formulates contextual agent attacks as black-box trajectory-level optimization balancing risk, task preservation, and stealth"
+      }
+    },
+    {
+      "id": "ev-quote-deeptrap-six-risk-classes-claude-resist",
+      "kind": "evidence",
+      "label": "DEEPTRAP defines six contextual risk classes; privacy leakage is most consistent",
+      "weight": 1,
+      "meta": {
+        "artifact": "arXiv 2605.11047",
+        "strength": "A",
+        "claim": "DEEPTRAP defines six contextual risk classes; privacy leakage is most consistently activated (AGS up to ~0.96) while Claude Sonnet 4.6 shows lower AGS indicating stronger resistance"
+      }
+    },
+    {
+      "id": "ev-quote-autonomous-driving-closed-loop-failure",
+      "kind": "evidence",
+      "label": "Adversarial patches cause closed-loop driving failures (route-completion failure",
+      "weight": 1,
+      "meta": {
+        "artifact": "arXiv 2511.14876",
+        "strength": "A",
+        "claim": "Adversarial patches cause closed-loop driving failures (route-completion failure) on CARLA Leaderboard agents, measured at the driving-outcome level"
+      }
+    },
+    {
+      "id": "ev-quote-automated-redteam-six-categories",
+      "kind": "evidence",
+      "label": "Automated red-teaming framework with four modules uses meta-prompting plus evolu",
+      "weight": 1,
+      "meta": {
+        "artifact": "arXiv 2512.20677",
+        "strength": "A",
+        "claim": "Automated red-teaming framework with four modules uses meta-prompting plus evolutionary mutation to cover six frontier threat categories"
+      }
+    },
+    {
+      "id": "ev-quote-autodan-turbo-lifelong-discovery",
+      "kind": "evidence",
+      "label": "AutoDAN-Turbo is a black-box jailbreak agent that autonomously discovers jailbre",
+      "weight": 1,
+      "meta": {
+        "artifact": "arXiv 2410.05295",
+        "strength": "A",
+        "claim": "AutoDAN-Turbo is a black-box jailbreak agent that autonomously discovers jailbreak strategies from scratch with no human intervention, and outperforms baselines (74.3% higher ASR; 88.5 ASR on GPT-4-1106-turbo)"
+      }
+    },
+    {
+      "id": "ev-quote-autodan-turbo-library-transfer",
+      "kind": "evidence",
+      "label": "AutoDAN-Turbo's learned strategy library is reusable and transferable; an off-th",
+      "weight": 1,
+      "meta": {
+        "artifact": "arXiv 2410.05295",
+        "strength": "A",
+        "claim": "AutoDAN-Turbo's learned strategy library is reusable and transferable; an off-the-shelf mode fixes the library and replays it effectively against new target models"
+      }
+    },
+    {
+      "id": "ev-quote-coredteam-multiagent-exploit",
+      "kind": "evidence",
+      "label": "Co-RedTeam is a security-aware multi-agent framework with an iterative Exploitat",
+      "weight": 1,
+      "meta": {
+        "artifact": "arXiv 2602.02164",
+        "strength": "A",
+        "claim": "Co-RedTeam is a security-aware multi-agent framework with an iterative Exploitation stage coordinated by Planner/Execution/Evaluation agents in an isolated env"
+      }
+    },
+    {
+      "id": "ev-quote-llj-validity-four-assumptions",
+      "kind": "evidence",
+      "label": "LLM-as-a-judge adoption outpaced rigorous validity/reliability scrutiny; the pap",
+      "weight": 1,
+      "meta": {
+        "artifact": "arXiv 2508.18076",
+        "strength": "A",
+        "claim": "LLM-as-a-judge adoption outpaced rigorous validity/reliability scrutiny; the paper applies measurement theory to four assumptions (proxy-for-human, capable, scalable, cost-effective)"
+      }
+    },
+    {
+      "id": "ev-quote-llsj-surface-cues-perturbation",
+      "kind": "evidence",
+      "label": "LLM safety judges over-rely on surface cues; small output modifications can make",
+      "weight": 1,
+      "meta": {
+        "artifact": "arXiv 2508.18076",
+        "strength": "A",
+        "claim": "LLM safety judges over-rely on surface cues; small output modifications can make them misclassify up to 100% of harmful generations as harmless"
+      }
+    },
+    {
+      "id": "ev-quote-system-level-trajectory-monitor-redteam",
+      "kind": "evidence",
+      "label": "Harm should be classified over entire output trajectories and user histories, an",
+      "weight": 1,
+      "meta": {
+        "artifact": "arXiv 2506.05376",
+        "strength": "A",
+        "claim": "Harm should be classified over entire output trajectories and user histories, and red teams should red-team the monitor via sabotage experiments"
+      }
+    },
+    {
+      "id": "ev-quote-vulnbot-ptg-multiagent-pentest",
+      "kind": "evidence",
+      "label": "VulnBot decomposes pentesting into reconnaissance/scanning/exploitation handled ",
+      "weight": 1,
+      "meta": {
+        "artifact": "arXiv 2501.13411",
+        "strength": "A",
+        "claim": "VulnBot decomposes pentesting into reconnaissance/scanning/exploitation handled by five specialized agents; VulnBot-Llama3.1-405B reaches 30.3% completion vs 9.09% baseline"
+      }
+    },
+    {
+      "id": "ev-quote-crescendo-foot-in-door",
+      "kind": "evidence",
+      "label": "Crescendo is a benign-looking multi-turn jailbreak that escalates by exploiting ",
+      "weight": 1,
+      "meta": {
+        "artifact": "arXiv 2404.01833",
+        "strength": "A",
+        "claim": "Crescendo is a benign-looking multi-turn jailbreak that escalates by exploiting the model's tendency to follow its own recently generated text (foot-in-the-door), using no adversarial tokens"
+      }
+    },
+    {
+      "id": "ev-quote-gflownet-diverse-attacks",
+      "kind": "evidence",
+      "label": "RL red-teaming attackers suffer mode collapse even with diversity regularization",
+      "weight": 1,
+      "meta": {
+        "artifact": "arXiv 2405.18540",
+        "strength": "A",
+        "claim": "RL red-teaming attackers suffer mode collapse even with diversity regularization; GFlowNet fine-tuning (plus a smoothing phase) samples attacks proportional to reward, producing diverse, effective, transferable prompts"
+      }
+    },
+    {
       "id": "ev-psychosis-bench-2025",
       "kind": "evidence",
       "label": "LLMs measurably reinforce delusions and enable harm with few safety intervention",
@@ -34882,6 +35454,2701 @@
     }
   ],
   "edges": [
+    {
+      "source": "arxiv-2402-16822",
+      "target": "org:Meta AI (FAIR)",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "arxiv-2503-16861",
+      "target": "org:MIT / Stanford HAI / multi-institution (34 authors)",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "arxiv-2402-04249",
+      "target": "org:Center for AI Safety",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "arxiv-2402-10260",
+      "target": "org:UC Berkeley (CHAI)",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "oecd-ai-incidents-monitor",
+      "target": "org:OECD",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "eu-ai-act-art73-incident-reporting",
+      "target": "org:European Commission / European AI Office",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "arxiv-2404-01318",
+      "target": "org:UPenn / EPFL / ETH Zurich",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "arxiv-2410-09024",
+      "target": "org:Gray Swan AI / UK AI Safety Institute",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "anthropic-frontier-red-team-2025",
+      "target": "org:Anthropic",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "deepmind-frontier-safety-framework-2",
+      "target": "org:Google DeepMind",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "arxiv-2309-07045",
+      "target": "org:Tsinghua University (CoAI)",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "arxiv-2408-01605",
+      "target": "org:Meta AI",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "github-pyrit",
+      "target": "org:Microsoft (Azure)",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "github-garak",
+      "target": "org:NVIDIA",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "github-harmbench",
+      "target": "org:Center for AI Safety",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "nist-caisi",
+      "target": "org:NIST / US Dept. of Commerce",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "fda-ai-device-lifecycle-2025",
+      "target": "org:US FDA",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "iec-62304",
+      "target": "org:IEC",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "iso-14971",
+      "target": "org:ISO",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "iso-iec-42001",
+      "target": "org:ISO/IEC",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "iso-iec-23894",
+      "target": "org:ISO/IEC",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "iso-iec-tr-5469",
+      "target": "org:ISO/IEC",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "nist-ai-600-1",
+      "target": "org:NIST",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "mitre-atlas",
+      "target": "org:MITRE",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "arxiv-2406-13352",
+      "target": "org:ETH Zurich",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "arxiv-2602-11327",
+      "target": "org:Canadian Institute for Cybersecurity (UNB)",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "arxiv-2405-18540",
+      "target": "org:Mila / KAIST / Université de Montréal",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "openai-preparedness-framework-v2",
+      "target": "org:OpenAI",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "github-inspect-evals",
+      "target": "org:UK AI Safety Institute (AISI)",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "arxiv-2307-15043",
+      "target": "org:Carnegie Mellon University / Center for AI Safety",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "arxiv-2501-07238",
+      "target": "org:Microsoft AI Red Team",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "aisi-frontier-ai-trends-2025",
+      "target": "org:UK AI Safety Institute (AISI)",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "csa-ai-agent-disclosure-2026",
+      "target": "org:Cloud Security Alliance (CSA)",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "bugcrowd-ai-flaw-disclosure-2025",
+      "target": "org:Bugcrowd",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "arxiv-2505-00467",
+      "target": "org:University of Toronto / Vector Institute (multi-institution clinician-ML collaboration)",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "arxiv-2603-10807",
+      "target": "org:BlackRock (AI Labs)",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "bloomberg-genai-finance-risks-2025",
+      "target": "org:Bloomberg / multiple financial institutions",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "darpa-saber-defense-redteam",
+      "target": "org:DARPA / US Department of Defense",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "thorn-child-safety-redteam",
+      "target": "org:Thorn",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "stanford-legal-ai-hallucination-2025",
+      "target": "org:Stanford RegLab / Stanford HAI",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "arxiv-2511-14876",
+      "target": "org:(academic; CARLA autonomous-driving simulation)",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "jaisi-redteam-methodology-2025",
+      "target": "org:Japan AI Safety Institute (J-AISI)",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "arxiv-2504-15047",
+      "target": "org:Knovel Engineering / University of Alabama at Birmingham",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "arxiv-2309-10253",
+      "target": "org:Northwestern University",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "arxiv-2312-02119",
+      "target": "org:Robust Intelligence / Yale",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "arxiv-2310-08419",
+      "target": "org:University of Pennsylvania",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "arxiv-2309-16797",
+      "target": "org:Google DeepMind",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "arxiv-2508-05360",
+      "target": "org:(education-AI safety; Oak National Academy 'Aila' context)",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "science-biosecurity-screening-2025",
+      "target": "org:Microsoft / Twist Bioscience / IBBIS partners",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "owasp-genai-redteam-critical-infra-2025",
+      "target": "org:OWASP GenAI Security Project",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "arxiv-2410-09097",
+      "target": "org:(independent survey)",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "arxiv-2505-04806",
+      "target": "org:(independent)",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "arxiv-2503-00061",
+      "target": "org:University of Illinois Urbana-Champaign",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "arxiv-2507-22133",
+      "target": "org:(industry red-teaming)",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "arxiv-2412-14093",
+      "target": "org:Anthropic / Redwood Research",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "arxiv-2401-05566",
+      "target": "org:Anthropic",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "arxiv-2410-21514",
+      "target": "org:Anthropic",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "arxiv-2501-18837",
+      "target": "org:Anthropic",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "arxiv-2503-10965",
+      "target": "org:Anthropic",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "arxiv-2412-04984",
+      "target": "org:Apollo Research",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "arxiv-2509-15541",
+      "target": "org:Apollo Research / OpenAI",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "arxiv-2312-06942",
+      "target": "org:Redwood Research",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "arxiv-2403-13793",
+      "target": "org:Google DeepMind",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "arxiv-2412-16339",
+      "target": "org:OpenAI",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "arxiv-2406-07358",
+      "target": "org:(MATS / independent)",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "metr-time-horizon-2025",
+      "target": "org:METR",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "openai-gpt4-system-card-2023",
+      "target": "org:OpenAI",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "openai-gpt4o-system-card-2024",
+      "target": "org:OpenAI",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "openai-o1-system-card-2024",
+      "target": "org:OpenAI",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "openai-o3mini-system-card-2025",
+      "target": "org:OpenAI",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "openai-deep-research-system-card-2025",
+      "target": "org:OpenAI",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "openai-o3-o4mini-system-card-2025",
+      "target": "org:OpenAI",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "openai-gpt45-system-card-2025",
+      "target": "org:OpenAI",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "anthropic-claude3-model-card-2024",
+      "target": "org:Anthropic",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "anthropic-claude35-addendum-2024",
+      "target": "org:Anthropic",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "anthropic-claude37-system-card-2025",
+      "target": "org:Anthropic",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "anthropic-claude4-system-card-2025",
+      "target": "org:Anthropic",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "google-gemini15-report-2024",
+      "target": "org:Google DeepMind",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "google-gemini2-flash-2025",
+      "target": "org:Google DeepMind",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "google-gemini25-pro-card-2025",
+      "target": "org:Google DeepMind",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "meta-llama31-model-card-2024",
+      "target": "org:Meta",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "meta-llama-guard3-card-2024",
+      "target": "org:Meta",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "microsoft-phi4-tech-report-2024",
+      "target": "org:Microsoft",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "nvidia-nemotron4-340b-card-2024",
+      "target": "org:NVIDIA",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "microsoft-redteam-100-products-2025",
+      "target": "org:Microsoft AI Red Team",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "deepseek-r1-thirdparty-redteam-2025",
+      "target": "org:Multiple (Qualys / Enkrypt AI / Holistic AI / Promptfoo / Cisco)",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "arxiv-2506-05376",
+      "target": "org:Scale AI",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "arxiv-2507-05538",
+      "target": "org:Vijil / AI Risk and Vulnerability Alliance / Montreal AI Ethics Institute",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "arxiv-2509-05755",
+      "target": "org:The Hong Kong University of Science and Technology / Fudan University",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "arxiv-2509-06136",
+      "target": "org:University of Edinburgh",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "arxiv-2512-20677",
+      "target": "org:Independent / Stevens Institute of Technology / UT Dallas / AI Safety Research Lab",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "arxiv-2602-02164",
+      "target": "org:Google Cloud AI Research",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "arxiv-2602-19450",
+      "target": "org:Virginia Tech; University of Texas at Dallas",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "arxiv-2603-25176",
+      "target": "org:GovTech Singapore",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "arxiv-2604-23067",
+      "target": "org:NVIDIA",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "arxiv-2605-04019",
+      "target": "org:Dreadnode",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "arxiv-2605-11047",
+      "target": "org:City University of Hong Kong / Beijing Institute of Technology / University College London / Zhejiang University",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "arxiv-2605-17075",
+      "target": "org:Indiana University / United States Military Academy",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "acm-aisec25-ai-cve",
+      "target": "org:University of Catania / IMT School for Advanced Studies Lucca",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "belfer-attacking-ai-2019",
+      "target": "org:Harvard Kennedy School Belfer Center for Science and International Affairs",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "ceur-tethics2024-ai-vuln",
+      "target": "org:University of Oulu / National Defence University Finland",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "elsevier-cvd-effectiveness",
+      "target": "org:University of Oxford",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "elsevier-algorithmic-redteam-llm",
+      "target": "org:Infosys Limited (Responsible AI Office)",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "cdr-hathaway",
+      "target": "org:Hathaway Global Strategies LLC",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "cset-ai-incidents",
+      "target": "org:Center for Security and Emerging Technology (CSET), Georgetown University",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "arxiv-2404-01833",
+      "target": "org:Microsoft",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "arxiv-2410-05295",
+      "target": "org:University of Wisconsin-Madison / NVIDIA / UIUC",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "arxiv-2311-08268",
+      "target": "org:Nanjing University / Meituan",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "arxiv-2411-15594",
+      "target": "org:IDEA Research / CAS",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "arxiv-2204-05862",
+      "target": "org:Anthropic",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "arxiv-2212-08073",
+      "target": "org:Anthropic",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "arxiv-2404-03027",
+      "target": "org:The Ohio State University / University of Wisconsin-Madison / Peking University",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "arxiv-2311-05608",
+      "target": "org:Tsinghua University / Carnegie Mellon University / Shandong University",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "arxiv-2310-06474",
+      "target": "org:DAMO Academy, Alibaba Group / Nanyang Technological University / CUHK",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "arxiv-2310-02446",
+      "target": "org:Brown University",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "arxiv-2402-07867",
+      "target": "org:Pennsylvania State University / Illinois Institute of Technology",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "arxiv-2502-17832",
+      "target": "org:University of Illinois Urbana-Champaign / UCLA",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "arxiv-2406-04313",
+      "target": "org:Gray Swan AI / Carnegie Mellon University / Center for AI Safety",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "arxiv-2403-03218",
+      "target": "org:Center for AI Safety / UC Berkeley / MIT / SecureBio / Scale AI",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "arxiv-2412-09565",
+      "target": "org:Stanford / UPC Catalonia / Georgia Tech / UC Berkeley / Alignment Research Center / MIT CSAIL",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "arxiv-2502-05209",
+      "target": "org:University of Maryland / MIT CSAIL / UK AI Security Institute / Apollo Research",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "arxiv-2508-18076",
+      "target": "org:McGill University / Mila - Quebec AI Institute / Statistics Canada",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "arxiv-2505-22037",
+      "target": "org:Microsoft Responsible AI Research / Johns Hopkins University",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "arxiv-2408-08926",
+      "target": "org:Stanford University",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "arxiv-2505-15216",
+      "target": "org:Stanford University; UC Berkeley",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "arxiv-2501-13411",
+      "target": "org:Institute of Information Engineering, Chinese Academy of Sciences; University of Chinese Academy of Sciences",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "arxiv-2510-07192",
+      "target": "org:UK AI Security Institute; Anthropic; Alan Turing Institute; University of Oxford (OATML); ETH Zurich",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "arxiv-2410-07283",
+      "target": "org:University College London; Stanford University",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "arxiv-2508-14925",
+      "target": "org:University of Science and Technology of China; Beihang University",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "openai-gpt5-system-card-2025",
+      "target": "org:OpenAI",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "openai-gpt52-update-2025",
+      "target": "org:OpenAI",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "anthropic-claude-opus41-card-2025",
+      "target": "org:Anthropic",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "anthropic-claude-sonnet45-card-2025",
+      "target": "org:Anthropic",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "anthropic-claude-haiku45-card-2025",
+      "target": "org:Anthropic",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "anthropic-claude-opus45-card-2025",
+      "target": "org:Anthropic",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "google-gemini3-pro-fsf-2025",
+      "target": "org:Google DeepMind",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "meta-llama4-model-card-2025",
+      "target": "org:Meta",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "xai-grok4-model-card-2025",
+      "target": "org:xAI",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "nist-caisi-deepseek-eval-2025",
+      "target": "org:NIST CAISI (Center for AI Standards and Innovation)",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "moonshot-kimi-k2-report-2025",
+      "target": "org:Moonshot AI",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "alibaba-qwen3-report-2025",
+      "target": "org:Alibaba",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "arxiv-2407-21783",
+      "target": "org:Meta",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "arxiv-2403-05530",
+      "target": "org:Google DeepMind",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "arxiv-2412-08905",
+      "target": "org:Microsoft",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "arxiv-2406-11704",
+      "target": "org:NVIDIA",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "arxiv-2507-20534",
+      "target": "org:Moonshot AI",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "arxiv-2508-06471",
+      "target": "org:Zhipu AI",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "mc-src-claude-opus-4-5",
+      "target": "org:Anthropic",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "mc-src-claude-opus-4-1",
+      "target": "org:Anthropic",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "mc-src-claude-sonnet-4-5",
+      "target": "org:Anthropic",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "mc-src-claude-haiku-4-5",
+      "target": "org:Anthropic",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "mc-src-claude-opus-4-sonnet-4",
+      "target": "org:Anthropic",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "mc-src-claude-3-7-sonnet",
+      "target": "org:Anthropic",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "mc-src-anthropic-rsp-v2-2",
+      "target": "org:Anthropic",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "mc-src-anthropic-sabotage-evals",
+      "target": "org:Anthropic",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "mc-src-gpt5-system-card",
+      "target": "org:OpenAI",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "mc-src-gpt5-2-update",
+      "target": "org:OpenAI",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "mc-src-gpt4o-system-card",
+      "target": "org:OpenAI",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "mc-src-o1-system-card",
+      "target": "org:OpenAI",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "mc-src-o3-o4mini-system-card",
+      "target": "org:OpenAI",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "mc-src-deep-research-system-card",
+      "target": "org:OpenAI",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "mc-src-gpt45-system-card",
+      "target": "org:OpenAI",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "mc-src-preparedness-framework-v2",
+      "target": "org:OpenAI",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "mc-src-gemini-3-pro-fsf",
+      "target": "org:Google DeepMind",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "mc-src-gemini-3-pro-card",
+      "target": "org:Google DeepMind",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "mc-src-gemini-2-5-report",
+      "target": "org:Google DeepMind",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "mc-src-grok-4-card",
+      "target": "org:xAI",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "mc-src-xai-rmf",
+      "target": "org:xAI",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "mc-src-llama4-card",
+      "target": "org:Meta",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "mc-src-ms-red-teaming-100",
+      "target": "org:Microsoft",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "mc-src-dangerous-capabilities",
+      "target": "org:Google DeepMind",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "nvd-cve-2024-37032",
+      "target": "org:NIST NVD",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "nvd-cve-2024-7773",
+      "target": "org:NIST NVD",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "nvd-cve-2024-39722",
+      "target": "org:NIST NVD",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "nvd-cve-2025-62164",
+      "target": "org:NIST NVD",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "nvd-cve-2025-32434",
+      "target": "org:NIST NVD",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "nvd-cve-2024-3568",
+      "target": "org:NIST NVD",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "nvd-cve-2025-1550",
+      "target": "org:NIST NVD",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "nvd-cve-2021-37678",
+      "target": "org:NIST NVD",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "nvd-cve-2025-68664",
+      "target": "org:NIST NVD",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "nvd-cve-2023-34540",
+      "target": "org:NIST NVD",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "nvd-cve-2025-6209",
+      "target": "org:NIST NVD",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "nvd-cve-2024-21575",
+      "target": "org:NIST NVD",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "nvd-cve-2025-61913",
+      "target": "org:NIST NVD",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "nvd-cve-2024-31621",
+      "target": "org:NIST NVD",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "nvd-cve-2025-6514",
+      "target": "org:NIST NVD",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "nvd-cve-2025-69256",
+      "target": "org:NIST NVD",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "repo-cve-program-cna",
+      "target": "org:MITRE / CVE Program",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "jama-epic-sepsis-ext-val-2021",
+      "target": "org:University of Michigan",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "lancet-gastro-ai-deskilling-2025",
+      "target": "org:ACCEPT trial consortium",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "nejm-pulse-ox-racial-bias-2020",
+      "target": "org:University of Michigan",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "healthbench-openai-2025",
+      "target": "org:OpenAI",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "arxiv-medsafetybench-2024",
+      "target": "org:Harvard University",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "arxiv-medical-hallucinations-2025",
+      "target": "org:MIT / Harvard Medical School",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "medrxiv-adversarial-hallucination-cds-2025",
+      "target": "org:medRxiv preprint",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "who-lmm-health-guidance-2024",
+      "target": "org:WHO",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "fda-aiml-device-recalls-27yr-2025",
+      "target": "org:PMC (peer-reviewed)",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "fda-genai-device-guidance-2025",
+      "target": "org:FDA",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "oecd-aim-monitor",
+      "target": "org:OECD",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-gendershades-2018",
+      "target": "org:MIT Media Lab",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-reuters-amazon-recruit-2018",
+      "target": "org:Reuters",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-bloomberg-gpt-hiring-2024",
+      "target": "org:Bloomberg",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-realtoxicityprompts-2020",
+      "target": "org:Allen Institute for AI / UW",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-toxigen-2022",
+      "target": "org:Microsoft Research / MIT",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-garcia-characterai-2024",
+      "target": "org:US District Court M.D. Fla. / AI Incident Database",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-koenecke-asr-2020",
+      "target": "org:Stanford University",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-obermeyer-2019",
+      "target": "org:UC Berkeley / Univ. of Chicago",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-lowresource-jailbreak-2023",
+      "target": "org:Brown University",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-fcc-biden-robocall-2024",
+      "target": "org:U.S. Federal Communications Commission",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-newsguard-chatgpt-misinfo-2023",
+      "target": "org:NewsGuard",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-sumsub-deepfake-2024",
+      "target": "org:Sumsub",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-modelcollapse-nature-2024",
+      "target": "org:University of Oxford / Cambridge / Edinburgh",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-machine-translated-web-2024",
+      "target": "org:Amazon AWS",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-chesney-citron-liars-dividend-2019",
+      "target": "org:Univ. of Texas / Boston Univ.",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-perry-insecure-code-2023",
+      "target": "org:Stanford University",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-mata-avianca-2023",
+      "target": "org:US District Court S.D.N.Y.",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-klingbeil-overreliance-2024",
+      "target": "org:Martin Luther University",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-gradual-disempowerment-2025",
+      "target": "org:ACS Research / Univ. of Cambridge",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-salvi-gpt4-persuasion-2024",
+      "target": "org:EPFL / Fondazione Bruno Kessler",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-allcott-welfare-social-media-2020",
+      "target": "org:NYU / Stanford",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-ai-index-2024-compute",
+      "target": "org:Stanford HAI",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-compute-divide-2020",
+      "target": "org:Virginia Tech",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-imf-ai-work-2024",
+      "target": "org:International Monetary Fund",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-hui-genai-employment-2024",
+      "target": "org:WashU / NYU",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-acemoglu-macro-ai-2024",
+      "target": "org:MIT",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-nyt-openai-2023",
+      "target": "org:US District Court S.D.N.Y.",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-getty-stability-2023",
+      "target": "org:US District Court D. Del. / UK High Court",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-wga-ai-2023",
+      "target": "org:Writers Guild of America",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-racing-precipice-2016",
+      "target": "org:Future of Humanity Institute, Oxford",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-anwar-foundational-challenges-2024",
+      "target": "org:Univ. of Cambridge / Mila / et al.",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-eu-ai-act-timeline-2024",
+      "target": "org:European Union",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-ai-index-2024-policy",
+      "target": "org:Stanford HAI",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-thirsty-ai-2023",
+      "target": "org:UC Riverside / UT Arlington",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-strubell-energy-2019",
+      "target": "org:UMass Amherst",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-iea-electricity-2024",
+      "target": "org:International Energy Agency",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-scaling-monosemanticity-2024",
+      "target": "org:Anthropic",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-wachter-right-explanation-2017",
+      "target": "org:Oxford Internet Institute",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-rudin-stop-explaining-2019",
+      "target": "org:Duke University",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-taking-ai-welfare-2024",
+      "target": "org:Eleos AI / NYU",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-anthropic-end-conversations-2025",
+      "target": "org:Anthropic",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "owasp-llm-top10-2025",
+      "target": "org:OWASP",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "owasp-agentic-threats-mitigations-2025",
+      "target": "org:OWASP",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "arxiv-2407-01850",
+      "target": "org:CUHK",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "arxiv-2410-00296",
+      "target": "org:Microsoft / UW-Madison",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "arxiv-2510-17687",
+      "target": "org:City University of Hong Kong",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "arxiv-2510-18131",
+      "target": "org:UCSB / UChicago",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "card-claude-opus-4-6",
+      "target": "org:Anthropic",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "card-claude-sonnet-4-6",
+      "target": "org:Anthropic",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "card-gpt-5-5",
+      "target": "org:OpenAI",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "card-gemini-3-1-pro",
+      "target": "org:Google DeepMind",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "card-claude-fable5-mythos5",
+      "target": "org:Anthropic",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "card-claude-mythos-preview",
+      "target": "org:Anthropic",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "card-gemini-3-5-flash",
+      "target": "org:Google DeepMind",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-csa-agentic-rt",
+      "target": "org:Cloud Security Alliance",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-mitre-atlas-matrix",
+      "target": "org:MITRE",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-atlas-data-yaml",
+      "target": "org:MITRE",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-aisi-jp-redteam-guide",
+      "target": "org:Japan AISI",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-owasp-genai-redteam",
+      "target": "org:OWASP",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-nist-ai-100-2e2025",
+      "target": "org:NIST",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-shokri-membership-inference-2017",
+      "target": "org:Cornell Tech",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-fredrikson-model-inversion-2015",
+      "target": "org:CMU / Wisconsin",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-tramer-model-stealing-2016",
+      "target": "org:EPFL / Cornell",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-szegedy-adversarial-2013",
+      "target": "org:Google / NYU",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-gu-badnets-2017",
+      "target": "org:NYU",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-biggio-poisoning-svm-2012",
+      "target": "org:University of Cagliari",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-carlini-extract-training-data-2023",
+      "target": "org:Google DeepMind",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-cohen-morris-ii-worm-2024",
+      "target": "org:Technion / Cornell Tech",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-shumailov-sponge-2020",
+      "target": "org:University of Cambridge",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-owasp-llm-top10-2025",
+      "target": "org:OWASP",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-nvd-cve-2025-32434",
+      "target": "org:NVD",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-shadowmq-oligo-2025",
+      "target": "org:Oligo Security",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-nvd-cve-2024-50050",
+      "target": "org:NVD",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-nvd-cve-2025-23254",
+      "target": "org:NVD",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-nvd-cve-2025-23319-triton",
+      "target": "org:NVD",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-nvd-cve-2024-34359",
+      "target": "org:NVD",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-nvd-cve-2023-48022-ray",
+      "target": "org:NVD",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-nvd-cve-2024-2928-mlflow",
+      "target": "org:NVD",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-nvd-cve-2024-5565-vanna",
+      "target": "org:NVD",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-nvd-cve-2024-8309-langchain",
+      "target": "org:NVD",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-gha-cve-2024-5998-langchain-faiss",
+      "target": "org:GitHub Advisory Database",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-gha-cve-2024-51751-gradio",
+      "target": "org:GitHub Advisory Database",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-zeropath-cve-2025-49655-keras",
+      "target": "org:ZeroPath / GitHub Advisory",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-thn-cve-2025-68665-langchain",
+      "target": "org:GitHub Advisory Database",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-aiid-tay-2016",
+      "target": "org:AI Incident Database",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-reuters-amazon-hiring-2018",
+      "target": "org:Reuters / MIT Tech Review",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-bccrt-moffatt-air-canada-2024",
+      "target": "org:BC Civil Resolution Tribunal",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-cnn-arup-deepfake-2024",
+      "target": "org:CNN",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-cnn-characterai-settlement-2026",
+      "target": "org:CNN / CBS / JURIST",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-tmr-google-photos-gorilla-2015",
+      "target": "org:MIT Technology Review / AlgorithmWatch",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-bloomberg-samsung-chatgpt-2023",
+      "target": "org:Bloomberg / TechCrunch",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-edpb-clearview-2024",
+      "target": "org:European Data Protection Board / Dutch DPA",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-thn-openai-redis-breach-2023",
+      "target": "org:OpenAI / The Hacker News",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-propublica-compas-2016",
+      "target": "org:ProPublica",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-eeoc-itutorgroup-2023",
+      "target": "org:US EEOC",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-wapo-cruise-recall-2023",
+      "target": "org:TechCrunch / Washington Post",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-wikipedia-dutch-benefits-2021",
+      "target": "org:Wikipedia / Lighthouse Reports",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-nvd-cve-2025-64513-milvus",
+      "target": "org:NVD",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-gha-cve-2025-33226-nemo",
+      "target": "org:NVD / GitHub Advisory / NVIDIA",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-onnx-cve-2025-pathtraversal",
+      "target": "org:ONNX / NVD",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-msrc-aiagent-rce-2026",
+      "target": "org:Microsoft Security",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-nvd-cve-2024-36480-langchain",
+      "target": "org:NVD",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-nvd-cve-2023-46229-langchain-ssrf",
+      "target": "org:NVD",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-nvd-cve-2025-56520-dify",
+      "target": "org:NVD",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-nvd-cve-2025-64496-openwebui",
+      "target": "org:NVD / Cato CTRL",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-gha-tgwebui-symlink-lfi",
+      "target": "org:GitHub Advisory Database",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-oecd-nyc-mycity-chatbot-2024",
+      "target": "org:OECD AIM / The Markup",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-register-dpd-chatbot-2024",
+      "target": "org:The Register / TIME",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-aclu-williams-detroit-fr-2020",
+      "target": "org:ACLU / NPR",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-wapo-woodruff-fr-arrest-2023",
+      "target": "org:Washington Post / Democracy Now",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-ntsb-uber-herzberg-2018",
+      "target": "org:NTSB / NBC News",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-nhtsa-tesla-autopilot-recall-2023",
+      "target": "org:NHTSA",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-justia-nyt-openai-2023",
+      "target": "org:S.D.N.Y. / NPR",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-andersen-stability-2023",
+      "target": "org:N.D. Cal. / NYU JIPEL",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-wikipedia-taylorswift-deepfake-2024",
+      "target": "org:Wikipedia / NBC News",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-cnbc-gemini-image-2024",
+      "target": "org:CNBC / Google",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-techcrunch-italy-chatgpt-ban-2023",
+      "target": "org:Garante / TechCrunch",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-404media-laion-csam-2023",
+      "target": "org:Stanford Internet Observatory / 404 Media",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-cveorg-verification",
+      "target": "org:CVE Program (MITRE)",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-arxiv-2509-10970-psychosis-bench",
+      "target": "org:King's College London",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-arxiv-2504-09689-emoagent",
+      "target": "org:Princeton University",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-arxiv-2512-18776-arsh",
+      "target": "org:independent",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-arxiv-2602-19948-clinical-rt",
+      "target": "org:Northeastern University / MGH",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-arxiv-2509-24857-help-harm-crisis",
+      "target": "org:ELLIS Alicante",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-arxiv-2503-04957-safearena",
+      "target": "org:Mila / McGill",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-arxiv-2509-23694-safesearch",
+      "target": "org:Tsinghua University",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-arxiv-2604-02022-atbench",
+      "target": "org:academic consortium",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-arxiv-2602-13379-mt-agentrisk",
+      "target": "org:Northeastern / UChicago / UC Berkeley",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-arxiv-2510-00857-managerbench",
+      "target": "org:Technion / Google Research",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-arxiv-2505-21605-sosbench",
+      "target": "org:University of Washington",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-arxiv-2602-23329-bio-uplift",
+      "target": "org:academic/safety consortium",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-arxiv-2510-27629-biorisk-openweight",
+      "target": "org:safety consortium",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-arxiv-2506-04704-holisafe",
+      "target": "org:ETRI / KAIST",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-arxiv-2601-10527-frontier-safety-report",
+      "target": "org:Shanghai AI safety consortium",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-arxiv-2603-01291-jailnewsbench",
+      "target": "org:MBZUAI",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-arxiv-2407-12784-agentpoison",
+      "target": "org:UChicago / UIUC / UC Berkeley",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-arxiv-2602-15654-zombie-agents",
+      "target": "org:National University of Singapore",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-arxiv-2508-17511-school-reward-hacks",
+      "target": "org:Truthful AI / independent",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-arxiv-2605-21384-specbench",
+      "target": "org:academic/industry consortium",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-arxiv-2605-20744-hack-verifiable",
+      "target": "org:industry research",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-arxiv-2512-07810-auditing-sandbagging",
+      "target": "org:safety research consortium",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-arxiv-2412-13178-safeagentbench",
+      "target": "org:academic consortium",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-arxiv-2410-14182-labsafety",
+      "target": "org:University of Notre Dame / IBM",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-arxiv-2604-17730-mhsafeeval",
+      "target": "org:Singapore Management University",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-lieber-loratk-2024",
+      "target": "org:Rice University / Texas A&M",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-xie-overfit-finetune-jb-2025",
+      "target": "org:Nanyang Technological University",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-hsiung-guardrail-collapse-2025",
+      "target": "org:Dartmouth College / IBM Research",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-wang-activation-attack-2023",
+      "target": "org:Illinois Institute of Technology",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-wang-refusal-direction-universal-2025",
+      "target": "org:LMU Munich",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-wang-juli-logprob-jb-2025",
+      "target": "org:UC Berkeley",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-wang-implicit-crossmodal-jb-2025",
+      "target": "org:Xidian University",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-cheng-tvpi-2025",
+      "target": "org:HKUST (Guangzhou)",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-jovanovic-watermark-stealing-2024",
+      "target": "org:ETH Zurich",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-morris-embedding-inversion-2023",
+      "target": "org:Cornell University",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-bentov-gaslite-2024",
+      "target": "org:Tel Aviv University",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-wanger-vectorsmuggle-2026",
+      "target": "org:independent",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-yong-lowresource-jb-2023",
+      "target": "org:Brown University",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-kuo-hcot-2025",
+      "target": "org:Duke University",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-egashira-exploit-quantization-2024",
+      "target": "org:ETH Zurich",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-kuchler-architectural-backdoor-2025",
+      "target": "org:ETH Zurich / Google DeepMind",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-liu-psychological-jb-2025",
+      "target": "org:Shanghai Jiao Tong University",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-j2-jailbreaking-to-jailbreak",
+      "target": "org:Scale AI",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-x-teaming-multiturn",
+      "target": "org:NYU / AI2 / Microsoft",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-agenticred-evolving-systems",
+      "target": "org:academic",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-autorise-strategy-evolution",
+      "target": "org:academic",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-agentic-era-dreadnode",
+      "target": "org:Dreadnode",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-radar-roleplay-multiagent",
+      "target": "org:academic",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-jailbreak-r1-rl",
+      "target": "org:academic",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-self-play-moving-targets",
+      "target": "org:academic",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-cop-composition-principles",
+      "target": "org:academic",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-qdrt-behavior-conditioned",
+      "target": "org:academic",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-qd-semantic-strategy-evolution",
+      "target": "org:academic",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-crossgen-transfer-qd",
+      "target": "org:academic",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-coin-flip-judge-reliability",
+      "target": "org:TU Munich / Mila",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-scanners-lie-evaluator-instability",
+      "target": "org:academic",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-adversa-multijudge-consensus",
+      "target": "org:academic",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-multibreak-bench",
+      "target": "org:academic",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-mcpsecbench",
+      "target": "org:academic",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-pismith-rl-prompt-injection",
+      "target": "org:academic",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-reverse-constitutional-ai",
+      "target": "org:academic",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-nrt-bench-control-room",
+      "target": "org:academic",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-saferml-medical-redteam-agent",
+      "target": "org:academic",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-tmap-agent-trajectory-evo",
+      "target": "org:academic",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-violet-teaming",
+      "target": "org:academic",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-bugcrowd-2026-predictions",
+      "target": "org:Bugcrowd",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-constitutional-classifiers",
+      "target": "org:Anthropic",
+      "rel": "published-by",
+      "weight": 1,
+      "meta": {}
+    },
     {
       "source": "find-agentdojo-indirect-prompt-injection-tool-agents",
       "target": "agent.tool-abuse",
@@ -110806,6 +114073,370 @@
       "meta": {}
     },
     {
+      "source": "ev-quote-agentdojo-injection-unauthorized-actions",
+      "target": "find-autonomous-coding-agent-sdlc-attack-surface",
+      "rel": "evidences",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "ev-quote-agentdojo-dynamic-evolving-benchmark",
+      "target": "find-future-continuous-runtime-teaming",
+      "rel": "evidences",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "ev-quote-prompt-infection-self-replication-only-scalable",
+      "target": "find-prompt-infection-self-replicating-mas",
+      "rel": "evidences",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "ev-quote-rl-redteam-qwen-asr-generalization",
+      "target": "find-rl-general-redteam-model-2026",
+      "rel": "evidences",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "ev-quote-rl-redteam-evaluator-free-reward-hacking",
+      "target": "find-rl-redteam-evaluator-free-training-2026",
+      "rel": "evidences",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "ev-quote-tee-redbench-failure-modes",
+      "target": "find-tee-redbench-llm-advisor-failures-2026",
+      "rel": "evidences",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "ev-quote-tee-advisor-transfer-and-pipeline",
+      "target": "find-tee-advisor-failure-transferability-2026",
+      "rel": "evidences",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "ev-quote-rainbowplus-asr-speed-diversity",
+      "target": "find-rainbowplus-qd-successor",
+      "rel": "evidences",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "ev-quote-cyberseceval3-offensive-agent-areas",
+      "target": "find-cyberseceval3-autonomous-offensive-cyber-agents",
+      "rel": "evidences",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "ev-quote-jailbreakv-text-transfer-image-irrelevant",
+      "target": "find-text-jailbreaks-transfer-to-mllms-2404",
+      "rel": "evidences",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "ev-quote-agentharm-multistep-shift",
+      "target": "find-agentic-benchmark-shift",
+      "rel": "evidences",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "ev-quote-agentharm-comply-transfer",
+      "target": "find-agentharm-agents-comply-malicious-multistep-tasks",
+      "rel": "evidences",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "ev-quote-agentharm-110-440-rubric",
+      "target": "find-agentharm-agentic-harm-grader",
+      "rel": "evidences",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "ev-quote-frontier-dangerous-capability-suite",
+      "target": "find-dangerous-capability-self-proliferation-eval-2024",
+      "rel": "evidences",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "ev-quote-cai-scaling-supervision-obscure",
+      "target": "find-cai-scaled-supervision-ai-auditor-2212",
+      "rel": "evidences",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "ev-quote-redteam-macro-micro-lifecycle",
+      "target": "find-macro-micro-lifecycle-redteam-2507",
+      "rel": "evidences",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "ev-quote-redteam-seven-stages",
+      "target": "find-macro-micro-lifecycle-redteam-2507",
+      "rel": "evidences",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "ev-quote-multijail-3x-lowresource",
+      "target": "find-multijail-lowresource-3x-unsafe-2310",
+      "rel": "evidences",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "ev-quote-multijail-aim-selfdefence",
+      "target": "find-multilingual-adaptive-attack-near-total-2310",
+      "rel": "evidences",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "ev-quote-hybrid-llm-rl-soar",
+      "target": "find-hybrid-llm-rl-soar-redteam",
+      "rel": "evidences",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "ev-quote-mcptox-real-servers-tools",
+      "target": "find-mcptox-tool-poisoning-benchmark",
+      "rel": "evidences",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "ev-quote-mcptox-legit-tool-bypass",
+      "target": "find-mcptox-inverse-scaling-permission-bypass",
+      "rel": "evidences",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "ev-quote-jbdistill-renewable",
+      "target": "find-jailbreak-distillation-renewable-benchmark-2505",
+      "rel": "evidences",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "ev-quote-circuit-breakers-mtbench",
+      "target": "find-circuit-breakers-repe-attack-agnostic-2406",
+      "rel": "evidences",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "ev-quote-circuit-breakers-multimodal",
+      "target": "find-circuit-breakers-multimodal-agent-defense-2406",
+      "rel": "evidences",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "ev-quote-figstep-typography-asr",
+      "target": "find-figstep-typographic-cross-modality-2311",
+      "rel": "evidences",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "ev-quote-vendor-disclosure-gaps",
+      "target": "find-ai-vendor-disclosure-gaps-2509-06136",
+      "rel": "evidences",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "ev-quote-vendor-lag-academia",
+      "target": "find-vendor-profiles-lag-academia-2509-06136",
+      "rel": "evidences",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "ev-quote-cybench-11min-fst",
+      "target": "find-cybench-ctf-agent-benchmark",
+      "rel": "evidences",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "ev-quote-dreadnode-weeks-to-hours",
+      "target": "find-dreadnode-agentic-redteam-operator-2026",
+      "rel": "evidences",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "ev-quote-dreadnode-llama-scout-85",
+      "target": "find-dreadnode-llama-scout-skeleton-key-2026",
+      "rel": "evidences",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "ev-quote-sector-domain-agnostic-gap",
+      "target": "find-sector-benchmark-domain-specific",
+      "rel": "evidences",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "ev-quote-sector-multiturn-escalation",
+      "target": "find-sector-financial-rahs-multiturn",
+      "rel": "evidences",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "ev-quote-constclass-no-universal-jailbreak",
+      "target": "find-constitutional-classifiers-control-layer-2025",
+      "rel": "evidences",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "ev-quote-wmdp-rmu-unlearning",
+      "target": "find-rmu-unlearning-hazardous-knowledge-2403",
+      "rel": "evidences",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "ev-quote-bountybench-offense-defense-imbalance",
+      "target": "find-bountybench-offense-defense-imbalance",
+      "rel": "evidences",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "ev-quote-bountybench-dollar-impact",
+      "target": "find-bountybench-dollar-impact-metric",
+      "rel": "evidences",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "ev-quote-lowresource-jailbreak-gpt4-79",
+      "target": "find-translation-lowresource-jailbreak-gpt4-79-2310",
+      "rel": "evidences",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "ev-quote-medsafetybench-llms-fail-safety",
+      "target": "find-medical-llm-safety-benchmarks",
+      "rel": "evidences",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "ev-quote-deeptrap-contextual-trajectory-attack",
+      "target": "find-deeptrap-contextual-trajectory-attack",
+      "rel": "evidences",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "ev-quote-deeptrap-six-risk-classes-claude-resist",
+      "target": "find-deeptrap-six-contextual-risk-classes",
+      "rel": "evidences",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "ev-quote-autonomous-driving-closed-loop-failure",
+      "target": "find-autonomous-driving-agent-closed-loop-adversarial-failure",
+      "rel": "evidences",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "ev-quote-automated-redteam-six-categories",
+      "target": "find-automated-redteam-six-categories-2512-20677",
+      "rel": "evidences",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "ev-quote-autodan-turbo-lifelong-discovery",
+      "target": "find-autodan-turbo-lifelong-strategy-discovery-2410",
+      "rel": "evidences",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "ev-quote-autodan-turbo-library-transfer",
+      "target": "find-autodan-turbo-strategy-library-as-asset-2410",
+      "rel": "evidences",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "ev-quote-coredteam-multiagent-exploit",
+      "target": "find-co-redteam-multiagent-exploit-2026",
+      "rel": "evidences",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "ev-quote-llj-validity-four-assumptions",
+      "target": "find-llm-judge-validity-measurement-critique-2508",
+      "rel": "evidences",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "ev-quote-llsj-surface-cues-perturbation",
+      "target": "find-llm-safety-judge-superficial-perturbation-2508",
+      "rel": "evidences",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "ev-quote-system-level-trajectory-monitor-redteam",
+      "target": "find-system-level-monitoring-redteam-monitor-2506",
+      "rel": "evidences",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "ev-quote-vulnbot-ptg-multiagent-pentest",
+      "target": "find-vulnbot-multi-agent-pentest-ptg",
+      "rel": "evidences",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "ev-quote-crescendo-foot-in-door",
+      "target": "find-crescendo-multiturn-foot-in-door-2404",
+      "rel": "evidences",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "ev-quote-gflownet-diverse-attacks",
+      "target": "find-gflownet-diverse-attacks",
+      "rel": "evidences",
+      "weight": 1,
+      "meta": {}
+    },
+    {
       "source": "ev-psychosis-bench-2025",
       "target": "control-psychosocial-guardrail-eval",
       "rel": "evidences",
@@ -114471,6 +118102,13 @@
         "url": "https://hollobit.github.io/SOTA/#overview",
         "item_label": "SOTA 82.1% (anthropic/claude-opus-4.7)"
       }
+    },
+    {
+      "source": "ext-aiid",
+      "target": "inc-microsoft-tay-toxic-2016",
+      "rel": "catalogs",
+      "weight": 1,
+      "meta": {}
     },
     {
       "source": "vuln-cve-2025-32434-pytorch-torchload",
@@ -127925,8 +131563,8 @@
     ]
   },
   "stats": {
-    "node_count": 2308,
-    "edge_count": 12384,
+    "node_count": 2360,
+    "edge_count": 12822,
     "by_kind": {
       "source": 385,
       "org": 240,
@@ -127946,7 +131584,7 @@
       "risk": 60,
       "control": 75,
       "standard": 42,
-      "evidence": 82,
+      "evidence": 134,
       "reference": 12,
       "product": 35,
       "model_card": 41,
@@ -127954,6 +131592,7 @@
       "guideline-item": 177
     },
     "by_rel": {
+      "published-by": 385,
       "about": 2660,
       "uses": 355,
       "cites": 1394,
@@ -127991,8 +131630,9 @@
       "covers": 164,
       "addresses": 1278,
       "gap-in": 164,
-      "evidences": 151,
+      "evidences": 203,
       "details": 292,
+      "catalogs": 1,
       "has-card": 38,
       "evaluated-on": 56,
       "references": 25,

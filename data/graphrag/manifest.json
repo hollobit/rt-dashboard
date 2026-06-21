@@ -7,12 +7,12 @@
     "citation"
   ],
   "algorithm": "networkx.greedy_modularity",
-  "community_count": 113,
-  "unit_count": 1780,
+  "community_count": 26,
+  "unit_count": 1745,
   "units_by_kind": {
     "finding": 316,
     "control": 75,
-    "evidence": 82,
+    "evidence": 134,
     "risk": 60,
     "standard": 42,
     "attack_technique": 142,
@@ -27,6 +27,6 @@
     "reference": 11,
     "guideline-doc": 4,
     "guideline-item": 177,
-    "community": 113
+    "community": 26
   }
 }

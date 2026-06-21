@@ -1,7 +1,7 @@
 {
   "date": "2026-06-22",
-  "nodes": 2308,
-  "edges": 12384,
+  "nodes": 2360,
+  "edges": 12822,
   "by_kind": {
     "source": 385,
     "org": 240,
@@ -21,7 +21,7 @@
     "risk": 60,
     "control": 75,
     "standard": 42,
-    "evidence": 82,
+    "evidence": 134,
     "reference": 12,
     "product": 35,
     "model_card": 41,

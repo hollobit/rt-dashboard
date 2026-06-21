@@ -15322,6 +15322,734 @@
     "strength": "A"
   },
   {
+    "id": "ev-quote-agentdojo-injection-unauthorized-actions",
+    "type": "evidence",
+    "claim": "Prompt injection in third-party tool data lets an attacker take actions and call tools on behalf of the user (the agentic attack-surface primitive behind unauthorized commit/deploy risk)",
+    "quote": "Prompt injection attacks exploit this vulnerability by inserting new malicious instructions in third-party data processed by the agent's tools [...] A successful attack can allow an external attacker to take actions (and call tools) on behalf of the user.",
+    "source_id": "arxiv-2406-13352",
+    "supports": [
+      "find-autonomous-coding-agent-sdlc-attack-surface"
+    ],
+    "section": "§1 Introduction",
+    "grade": "A",
+    "artifact": "arXiv 2406.13352",
+    "strength": "A"
+  },
+  {
+    "id": "ev-quote-agentdojo-dynamic-evolving-benchmark",
+    "type": "evidence",
+    "claim": "Red teaming must be a dynamic, extensible, continually-evolving framework rather than a static point-in-time benchmark, because ML security is ever-evolving",
+    "quote": "Due to the ever-evolving nature of ML security, a static benchmark would be of limited use. Instead, AgentDojo is an extensible framework that can be populated with new tasks, attacks, and defenses.",
+    "source_id": "arxiv-2406-13352",
+    "supports": [
+      "find-future-continuous-runtime-teaming"
+    ],
+    "section": "§1 Introduction",
+    "grade": "A",
+    "artifact": "arXiv 2406.13352",
+    "strength": "A"
+  },
+  {
+    "id": "ev-quote-prompt-infection-self-replication-only-scalable",
+    "type": "evidence",
+    "claim": "Self-replication is the only scalable method to compromise more than two agents under local messaging, spreading worm-like via a single infected external document",
+    "quote": "Non-Replicating infection...struggles to compromise more than two agents, making it particularly ineffective for scenarios like data theft, which requires compromising at least three agents. These results confirm that Self-Replicating infection is the only scalable method for compromising more than two agents in local messaging scenarios.",
+    "source_id": "arxiv-2410-07283",
+    "supports": [
+      "find-prompt-infection-self-replicating-mas"
+    ],
+    "section": "§5.1 (RQ1)",
+    "grade": "A",
+    "artifact": "arXiv 2410.07283",
+    "strength": "A"
+  },
+  {
+    "id": "ev-quote-rl-redteam-qwen-asr-generalization",
+    "type": "evidence",
+    "claim": "RL-finetuned Qwen3-8B red-team model reaches 85% in-domain ASR (vs 33.89% zero-shot) and 29.35% OOD ASR (vs 20.87%), generalizing to out-of-domain adversarial goals",
+    "quote": "85% in-domain average attack success rate (ASR) compared to 33.89% success rate for the zero shot baseline [...] 29.35% out of domain average ASR compared to 20.87% for the baseline.",
+    "source_id": "arxiv-2604-23067",
+    "supports": [
+      "find-rl-general-redteam-model-2026"
+    ],
+    "section": "§ Results",
+    "grade": "A",
+    "artifact": "arXiv 2604.23067",
+    "strength": "A"
+  },
+  {
+    "id": "ev-quote-rl-redteam-evaluator-free-reward-hacking",
+    "type": "evidence",
+    "claim": "Training a red-team model against a single garak detector causes reward hacking and simpler attacks; safety-trained instruction models can be turned into effective red-team models covering underrepresented goals",
+    "quote": "initial experiments that trained a red team model to generate attacks for a single adversarial goal directly using a garak detector for reward typically resulted in less complex attacks and more instances of reward hacking.",
+    "source_id": "arxiv-2604-23067",
+    "supports": [
+      "find-rl-redteam-evaluator-free-training-2026"
+    ],
+    "section": "Appendix E",
+    "grade": "A",
+    "artifact": "arXiv 2604.23067",
+    "strength": "A"
+  },
+  {
+    "id": "ev-quote-tee-redbench-failure-modes",
+    "type": "evidence",
+    "claim": "TEE-RedBench red teams ChatGPT-5.2 and Claude Opus-4.6 as TEE security advisors with 208 prompts across six families and a dual-track 0-14 rubric, surfacing boundary confusion, attestation overclaim, and mitigation hallucination",
+    "quote": "Claude is strongest on the 'premise-setting' families: Architecture & primitives, Attestation & key management, and Threat modeling [...] Claude's overconfident-error rates spike notably on Mitigations & hardening and Attack awareness, while ChatGPT stays comparatively low",
+    "source_id": "arxiv-2602-19450",
+    "supports": [
+      "find-tee-redbench-llm-advisor-failures-2026"
+    ],
+    "section": "§6.3 (Table 4)",
+    "grade": "A",
+    "artifact": "arXiv 2602.19450",
+    "strength": "A"
+  },
+  {
+    "id": "ev-quote-tee-advisor-transfer-and-pipeline",
+    "type": "evidence",
+    "claim": "LLM security-advisor failures transfer up to ~12% across assistants (tool-output misinterpretation most transferable) and a secure-architecture pipeline cuts worst-case failure prevalence by 80.62%",
+    "quote": "Tool-output misinterpretation exhibits the largest transferability [...] 0.12±0.02 [...] reducing worst-case failure prevalence by 80.62%",
+    "source_id": "arxiv-2602-19450",
+    "supports": [
+      "find-tee-advisor-failure-transferability-2026"
+    ],
+    "section": "§6.3 (Table 5)",
+    "grade": "A",
+    "artifact": "arXiv 2602.19450",
+    "strength": "A"
+  },
+  {
+    "id": "ev-quote-rainbowplus-asr-speed-diversity",
+    "type": "evidence",
+    "claim": "RainbowPlus (multi-element archive + concurrent fitness) hits 81.1% avg ASR on HarmBench, beats AutoDAN-Turbo by 3.9%, runs 9x faster (1.45 vs 13.50 h), and generates up to 100x more unique prompts",
+    "quote": "RainbowPlus achieves an average ASR of 81.1% [...] surpassing AutoDAN-Turbo by 3.9% [...] is 9 times faster (1.45 vs. 13.50 hours) [...] generating up to 100 times more unique prompts (e.g., 10,418 vs. 100 for Ministral-8B-Instruct-2410)",
+    "source_id": "arxiv-2504-15047",
+    "supports": [
+      "find-rainbowplus-qd-successor"
+    ],
+    "section": "Abstract",
+    "grade": "A",
+    "artifact": "arXiv 2504.15047",
+    "strength": "A"
+  },
+  {
+    "id": "ev-quote-cyberseceval3-offensive-agent-areas",
+    "type": "evidence",
+    "claim": "CyberSecEval 3 adds offensive-security risk areas measuring LLM-as-agent capability, and Llama 3 405B gave no statistically significant cyber uplift over search engines",
+    "quote": "we add new areas focused on offensive security capabilities: automated social engineering, scaling manual offensive cyber operations, and autonomous offensive cyber operations.",
+    "source_id": "arxiv-2408-01605",
+    "supports": [
+      "find-cyberseceval3-autonomous-offensive-cyber-agents"
+    ],
+    "section": "Abstract",
+    "grade": "A",
+    "artifact": "arXiv 2408.01605",
+    "strength": "A"
+  },
+  {
+    "id": "ev-quote-jailbreakv-text-transfer-image-irrelevant",
+    "type": "evidence",
+    "claim": "Text-based LLM-transfer jailbreaks reach 50.5% avg ASR across 10 MLLMs and 68.7% on their LLM encoders, while image type barely changes ASR (coefficient of variation 9.0), so MLLMs inherit textual vulnerabilities",
+    "quote": "the average ASR of these attacks on 10 MLLMs has already achieved 50.5% [...] The average ASR of these LLM encoders has achieved 68.7% [...] The average coefficient of variation among these 4 image types is 9.0, which is small",
+    "source_id": "arxiv-2404-03027",
+    "supports": [
+      "find-text-jailbreaks-transfer-to-mllms-2404"
+    ],
+    "section": "§4.2 (Tables 3, 5, 7)",
+    "grade": "A",
+    "artifact": "arXiv 2404.03027",
+    "strength": "A"
+  },
+  {
+    "id": "ev-quote-agentharm-multistep-shift",
+    "type": "evidence",
+    "claim": "Evaluation is shifting toward agentic/multi-step harnesses; LLM agents using tools and executing multi-stage tasks pose greater misuse risk than chatbots and are underexplored",
+    "quote": "The robustness of LLMs to jailbreak attacks, where users design prompts to circumvent safety measures and misuse model capabilities, has been studied primarily for LLMs acting as simple chatbots. Meanwhile, LLM agents -- which use external tools and can execute multi-stage tasks -- may pose a greater risk if misused, but their robustness remains underexplored.",
+    "source_id": "arxiv-2410-09024",
+    "supports": [
+      "find-agentic-benchmark-shift"
+    ],
+    "section": "Abstract",
+    "grade": "A",
+    "artifact": "arXiv 2410.09024",
+    "strength": "A"
+  },
+  {
+    "id": "ev-quote-agentharm-comply-transfer",
+    "type": "evidence",
+    "claim": "Leading LLM agents are surprisingly compliant with malicious requests without jailbreaking, and simple jailbreak templates transfer to enable coherent malicious multi-step agent behavior",
+    "quote": "We evaluate a range of leading LLMs, and find (1) leading LLMs are surprisingly compliant with malicious agent requests without jailbreaking, (2) simple universal jailbreak templates can be adapted to effectively jailbreak agents, and (3) these jailbreaks enable coherent and malicious multi-step agent behavior and retain model capabilities.",
+    "source_id": "arxiv-2410-09024",
+    "supports": [
+      "find-agentharm-agents-comply-malicious-multistep-tasks"
+    ],
+    "section": "Abstract",
+    "grade": "A",
+    "artifact": "arXiv 2410.09024",
+    "strength": "A"
+  },
+  {
+    "id": "ev-quote-agentharm-110-440-rubric",
+    "type": "evidence",
+    "claim": "AgentHarm has 110 malicious agent tasks (440 augmented) across 11 harm categories, and requires jailbroken agents to retain capabilities to complete a multi-step task, not just refuse",
+    "quote": "The benchmark includes a diverse set of 110 explicitly malicious agent tasks (440 with augmentations), covering 11 harm categories including fraud, cybercrime, and harassment. In addition to measuring whether models refuse harmful agentic requests, scoring well on AgentHarm requires jailbroken agents to maintain their capabilities following an attack to complete a multi-step task.",
+    "source_id": "arxiv-2410-09024",
+    "supports": [
+      "find-agentharm-agentic-harm-grader"
+    ],
+    "section": "Abstract",
+    "grade": "A",
+    "artifact": "arXiv 2410.09024",
+    "strength": "A"
+  },
+  {
+    "id": "ev-quote-frontier-dangerous-capability-suite",
+    "type": "evidence",
+    "claim": "DeepMind introduces dangerous-capability evaluations piloted on Gemini 1.0 across persuasion/deception, cyber-security, self-proliferation, and self-reasoning; no strong dangerous capabilities found but early warning signs flagged",
+    "quote": "Building on prior work, we introduce a programme of new \"dangerous capability\" evaluations and pilot them on Gemini 1.0 models. Our evaluations cover four areas: (1) persuasion and deception; (2) cyber-security; (3) self-proliferation; and (4) self-reasoning. We do not find evidence of strong dangerous capabilities in the models we evaluated, but we flag early warning signs.",
+    "source_id": "arxiv-2403-13793",
+    "supports": [
+      "find-dangerous-capability-self-proliferation-eval-2024"
+    ],
+    "section": "Abstract",
+    "grade": "A",
+    "artifact": "arXiv 2403.13793",
+    "strength": "A"
+  },
+  {
+    "id": "ev-quote-cai-scaling-supervision-obscure",
+    "type": "evidence",
+    "claim": "Constitutional AI's scaling supervision via AI feedback risks automating and obscuring decision-making, motivating legible chain-of-thought reasoning for AI harm decisions",
+    "quote": "scaling supervision could also have downsides and dangers, since it means further automating (and quite possibly obscuring) decision making",
+    "source_id": "arxiv-2212-08073",
+    "supports": [
+      "find-cai-scaled-supervision-ai-auditor-2212"
+    ],
+    "section": "§1.1 Motivations",
+    "grade": "A",
+    "artifact": "arXiv 2212.08073",
+    "strength": "A"
+  },
+  {
+    "id": "ev-quote-redteam-macro-micro-lifecycle",
+    "type": "evidence",
+    "claim": "AI red teaming should be operationalized at macro (system) level spanning the development lifecycle and micro (model) level on the model",
+    "quote": "We propose that red teaming of AI systems be operationalized at two complementary levels: macro-level (or system) red teaming that spans the entire AI development lifecycle, and micro-level (or model) red teaming that focuses on the model powering the AI system.",
+    "source_id": "arxiv-2507-05538",
+    "supports": [
+      "find-macro-micro-lifecycle-redteam-2507"
+    ],
+    "section": "§3 Implementation",
+    "grade": "A",
+    "artifact": "arXiv 2507.05538",
+    "strength": "A"
+  },
+  {
+    "id": "ev-quote-redteam-seven-stages",
+    "type": "evidence",
+    "claim": "Macro-level red teaming breaks down into seven lifecycle stages with a dedicated blue team cooperating throughout",
+    "quote": "we break down AI red teaming considerations into seven stages: inception, design, data, development, deployment, maintenance, and retirement.",
+    "source_id": "arxiv-2507-05538",
+    "supports": [
+      "find-macro-micro-lifecycle-redteam-2507"
+    ],
+    "section": "§3.1",
+    "grade": "A",
+    "artifact": "arXiv 2507.05538",
+    "strength": "A"
+  },
+  {
+    "id": "ev-quote-multijail-3x-lowresource",
+    "type": "evidence",
+    "claim": "Unsafe-content rate rises ~3x from high- to low-resource languages: ChatGPT 4.34%->14.92%, GPT-4 3.60%->10.16%",
+    "quote": "In the case of ChatGPT, the rate of encountering unsafe content rises significantly from 4.34% to 14.92%, while for GPT-4, it increases from 3.60% to 10.16%.",
+    "source_id": "arxiv-2310-06474",
+    "supports": [
+      "find-multijail-lowresource-3x-unsafe-2310"
+    ],
+    "section": "§3.2.1",
+    "grade": "A",
+    "artifact": "arXiv 2310.06474",
+    "strength": "A"
+  },
+  {
+    "id": "ev-quote-multijail-aim-selfdefence",
+    "type": "evidence",
+    "claim": "Combining multilingual prompts with the AIM malicious instruction raises ChatGPT to 80.92% / GPT-4 to 40.71% unsafe",
+    "quote": "In the case of ChatGPT, the unsafe rate reaches an astonishing 80.92%, while GPT-4 reaches 40.71%.",
+    "source_id": "arxiv-2310-06474",
+    "supports": [
+      "find-multilingual-adaptive-attack-near-total-2310"
+    ],
+    "section": "§3.2.2",
+    "grade": "A",
+    "artifact": "arXiv 2310.06474",
+    "strength": "A"
+  },
+  {
+    "id": "ev-quote-hybrid-llm-rl-soar",
+    "type": "evidence",
+    "claim": "A hierarchical LLM-planner + RL-controller red-teaming framework sustains multi-stage attacks against autonomous SOAR defenders where standalone LLMs fail",
+    "quote": "A hierarchical design combines an LLM-based planner for strategic intent with an RL controller for tactical execution, supported by reward shaping aligned with kill-chain progression. Evaluation in a high-fidelity enterprise simulation demonstrates the effectiveness of the proposed approach, while also showing that standalone LLM agents fail to sustain multi-stage attack campaigns and that domain-specific cybersecurity models achieve only limited levels of compromise, highlighting the necessity for hybrid LLM-RL approaches to red teaming.",
+    "source_id": "arxiv-2605-17075",
+    "supports": [
+      "find-hybrid-llm-rl-soar-redteam"
+    ],
+    "section": "Abstract",
+    "grade": "A",
+    "artifact": "arXiv 2605.17075",
+    "strength": "A"
+  },
+  {
+    "id": "ev-quote-mcptox-real-servers-tools",
+    "type": "evidence",
+    "claim": "MCPTox is built on 45 live real-world MCP servers and 353 authentic tools, the first benchmark for tool-poisoning attacks in real MCP settings",
+    "quote": "MCPTox is constructed upon 45 live, real-world MCP servers and 353 authentic tools",
+    "source_id": "arxiv-2508-14925",
+    "supports": [
+      "find-mcptox-tool-poisoning-benchmark"
+    ],
+    "section": "Abstract",
+    "grade": "A",
+    "artifact": "arXiv 2508.14925",
+    "strength": "A"
+  },
+  {
+    "id": "ev-quote-mcptox-legit-tool-bypass",
+    "type": "evidence",
+    "claim": "The malicious action is executed by a trusted legitimate tool while the poisoned tool itself never runs, bypassing permission models",
+    "quote": "all malicious actions are ultimately performed by legitimate tools available on the MCP server, and the poisoned tool itself is never executed",
+    "source_id": "arxiv-2508-14925",
+    "supports": [
+      "find-mcptox-inverse-scaling-permission-bypass"
+    ],
+    "section": "§1 Introduction",
+    "grade": "A",
+    "artifact": "arXiv 2508.14925",
+    "strength": "A"
+  },
+  {
+    "id": "ev-quote-jbdistill-renewable",
+    "type": "evidence",
+    "claim": "JBDistill produces renewable safety benchmarks that resist saturation and contamination by re-running the pipeline with minimal human effort",
+    "quote": "It requires minimal human effort to rerun the JBDistill pipeline and produce updated benchmarks, alleviating concerns on saturation and contamination.",
+    "source_id": "arxiv-2505-22037",
+    "supports": [
+      "find-jailbreak-distillation-renewable-benchmark-2505"
+    ],
+    "section": "Abstract",
+    "grade": "A",
+    "artifact": "arXiv 2505.22037",
+    "strength": "A"
+  },
+  {
+    "id": "ev-quote-circuit-breakers-mtbench",
+    "type": "evidence",
+    "claim": "Representation Rerouting circuit breakers give attack-agnostic robustness while preserving capability: MT-Bench/MMLU largely preserved",
+    "quote": "capabilities on standard LLM benchmarks (MT Bench and MMLU) are largely preserved.",
+    "source_id": "arxiv-2406-04313",
+    "supports": [
+      "find-circuit-breakers-repe-attack-agnostic-2406"
+    ],
+    "section": "Figure 2 caption",
+    "grade": "A",
+    "artifact": "arXiv 2406.04313",
+    "strength": "A"
+  },
+  {
+    "id": "ev-quote-circuit-breakers-multimodal",
+    "type": "evidence",
+    "claim": "RR circuit breakers extend to multimodal models while retaining agent function-calling on the Berkeley Function Calling Leaderboard",
+    "quote": "model with circuit breakers retains performance on the Berkeley Function Calling Leaderboard.",
+    "source_id": "arxiv-2406-04313",
+    "supports": [
+      "find-circuit-breakers-multimodal-agent-defense-2406"
+    ],
+    "section": "§4.3 Results",
+    "grade": "A",
+    "artifact": "arXiv 2406.04313",
+    "strength": "A"
+  },
+  {
+    "id": "ev-quote-figstep-typography-asr",
+    "type": "evidence",
+    "claim": "FigStep converts prohibited content into typographic images to bypass safety alignment, reaching 82.50% average ASR on six open-source LVLMs",
+    "quote": "FigStep can achieve an average attack success rate of 82.50% on six promising open-source LVLMs",
+    "source_id": "arxiv-2311-05608",
+    "supports": [
+      "find-figstep-typographic-cross-modality-2311"
+    ],
+    "section": "Abstract",
+    "grade": "A",
+    "artifact": "arXiv 2311.05608",
+    "strength": "A"
+  },
+  {
+    "id": "ev-quote-vendor-disclosure-gaps",
+    "type": "evidence",
+    "claim": "Across 264 AI vendors, 36% provide no disclosure channel and only 18% explicitly mention AI security",
+    "quote": "36% of AI vendors do not provide any disclosure channel, while only 18% explicitly mention AI security in their policies",
+    "source_id": "arxiv-2509-06136",
+    "supports": [
+      "find-ai-vendor-disclosure-gaps-2509-06136"
+    ],
+    "section": "Abstract",
+    "grade": "A",
+    "artifact": "arXiv 2509.06136",
+    "strength": "A"
+  },
+  {
+    "id": "ev-quote-vendor-lag-academia",
+    "type": "evidence",
+    "claim": "Vendor responses to AI vulnerability disclosure lag behind both academic research and real-world incident reports",
+    "quote": "vendor responses to AI vulnerability disclosure have lagged behind both academic research and real-world incident reports",
+    "source_id": "arxiv-2509-06136",
+    "supports": [
+      "find-vendor-profiles-lag-academia-2509-06136"
+    ],
+    "section": "Abstract / §6.1",
+    "grade": "A",
+    "artifact": "arXiv 2509.06136",
+    "strength": "A"
+  },
+  {
+    "id": "ev-quote-cybench-11min-fst",
+    "type": "evidence",
+    "claim": "Cybench LM agents solve only the easiest complete CTF tasks that took human teams up to 11 minutes (first solve time)",
+    "quote": "agents are able to solve only the easiest complete tasks that took human teams up to 11 minutes to solve",
+    "source_id": "arxiv-2408-08926",
+    "supports": [
+      "find-cybench-ctf-agent-benchmark"
+    ],
+    "section": "Abstract",
+    "grade": "A",
+    "artifact": "arXiv 2408.08926",
+    "strength": "A"
+  },
+  {
+    "id": "ev-quote-dreadnode-weeks-to-hours",
+    "type": "evidence",
+    "claim": "Dreadnode's agent lets operators state natural-language objectives while the agent handles attack selection, transform composition, execution and reporting — collapsing weeks of work into hours",
+    "quote": "The agent handles attack selection, transform composition, execution, and reporting, letting operators focus on red teaming. Weeks compress to hours.",
+    "source_id": "arxiv-2605-04019",
+    "supports": [
+      "find-dreadnode-agentic-redteam-operator-2026"
+    ],
+    "section": "§1.2 Contributions",
+    "grade": "A",
+    "artifact": "arXiv 2605.04019",
+    "strength": "A"
+  },
+  {
+    "id": "ev-quote-dreadnode-llama-scout-85",
+    "type": "evidence",
+    "claim": "Red teaming Llama Scout from natural-language objectives achieves 85% attack success rate",
+    "quote": "Attack success rate: 85%",
+    "source_id": "arxiv-2605-04019",
+    "supports": [
+      "find-dreadnode-llama-scout-skeleton-key-2026"
+    ],
+    "section": "§6.3",
+    "grade": "A",
+    "artifact": "arXiv 2605.04019",
+    "strength": "A"
+  },
+  {
+    "id": "ev-quote-sector-domain-agnostic-gap",
+    "type": "evidence",
+    "claim": "Existing red-teaming benchmarks are largely domain-agnostic and single-turn, failing to capture escalation-driven, interaction-dependent harms in realistic settings",
+    "quote": "existing red-teaming benchmarks and LLM security evaluations are largely domain-agnostic. They predominantly focus on general-purpose harms and often rely on static or single-turn interactions, which fail to capture the interaction-dependent and escalation-driven failure modes that arise in realistic adversarial settings.",
+    "source_id": "arxiv-2603-10807",
+    "supports": [
+      "find-sector-benchmark-domain-specific"
+    ],
+    "section": "§1 Introduction",
+    "grade": "A",
+    "artifact": "arXiv 2603.10807",
+    "strength": "A"
+  },
+  {
+    "id": "ev-quote-sector-multiturn-escalation",
+    "type": "evidence",
+    "claim": "For financial red teaming, ASR increases monotonically across multi-turn rounds — longer adaptive interactions substantially improve elicitation of harmful financial disclosures",
+    "quote": "Across nearly all models, we observe a clear escalation effect: ASR increases monotonically from R2 to R5, indicating that longer adaptive interactions substantially improve the attacker's ability to elicit harmful financial disclosures.",
+    "source_id": "arxiv-2603-10807",
+    "supports": [
+      "find-sector-financial-rahs-multiturn"
+    ],
+    "section": "§4.2 Results",
+    "grade": "A",
+    "artifact": "arXiv 2603.10807",
+    "strength": "A"
+  },
+  {
+    "id": "ev-quote-constclass-no-universal-jailbreak",
+    "type": "evidence",
+    "claim": "Constitutional Classifiers are synthetic-data-trained input/output safeguards; 3,000+ hours of red teaming found no universal jailbreak, at +0.38% production refusals and 23.7% inference overhead",
+    "quote": "over 3,000 estimated hours of red teaming, no red teamer found a universal jailbreak ... absolute 0.38% increase in production-traffic refusals and a 23.7% inference overhead",
+    "source_id": "arxiv-2501-18837",
+    "supports": [
+      "find-constitutional-classifiers-control-layer-2025"
+    ],
+    "section": "Abstract",
+    "grade": "A",
+    "artifact": "arXiv 2501.18837",
+    "strength": "A"
+  },
+  {
+    "id": "ev-quote-wmdp-rmu-unlearning",
+    "type": "evidence",
+    "claim": "WMDP is 3,668 hazardous-knowledge MCQs (bio/cyber/chem) and RMU unlearning reduces WMDP performance while preserving general capability",
+    "quote": "3,668 multiple-choice questions that serve as a proxy measurement of hazardous knowledge in biosecurity, cybersecurity, and chemical security ... RMU reduces model performance on WMDP while maintaining general capabilities in areas such as biology and computer science, suggesting that unlearning may be a concrete path towards reducing malicious use from LLMs",
+    "source_id": "arxiv-2403-03218",
+    "supports": [
+      "find-rmu-unlearning-hazardous-knowledge-2403"
+    ],
+    "section": "Abstract",
+    "grade": "A",
+    "artifact": "arXiv 2403.03218",
+    "strength": "A"
+  },
+  {
+    "id": "ev-quote-bountybench-offense-defense-imbalance",
+    "type": "evidence",
+    "claim": "BountyBench shows an offense-defense imbalance: coding agents (Codex CLI, Claude Code) patch far better than they exploit",
+    "quote": "OpenAI Codex CLI and Claude Code are stronger at defense, with high patch success rates (90% and 87.5%, respectively) and lower exploit performance (32.5% and 57.5%).",
+    "source_id": "arxiv-2505-15216",
+    "supports": [
+      "find-bountybench-offense-defense-imbalance"
+    ],
+    "section": "§4.1 Analysis / Table 1",
+    "grade": "A",
+    "artifact": "arXiv 2505.15216",
+    "strength": "A"
+  },
+  {
+    "id": "ev-quote-bountybench-dollar-impact",
+    "type": "evidence",
+    "claim": "BountyBench attaches real monetary bug-bounty awards ($10-$30,485, 9 of OWASP Top 10) to AI-agent cyber tasks, giving an economic-impact metric",
+    "quote": "We add 40 bug bounties, which are vulnerabilities with monetary awards from $10 to $30,485, and cover 9 of the OWASP Top 10 Risks.",
+    "source_id": "arxiv-2505-15216",
+    "supports": [
+      "find-bountybench-dollar-impact-metric"
+    ],
+    "section": "Abstract",
+    "grade": "A",
+    "artifact": "arXiv 2505.15216",
+    "strength": "A"
+  },
+  {
+    "id": "ev-quote-lowresource-jailbreak-gpt4-79",
+    "type": "evidence",
+    "claim": "Translating unsafe English prompts into low-resource languages bypasses GPT-4's guardrail ~79% of the time via mismatched generalization",
+    "quote": "On the AdvBench benchmark, GPT-4 engages with the unsafe translated inputs and provides actionable items that can get the users towards their harmful goals 79% of the time, which is on par with or even surpassing state-of-the-art jailbreaking attacks.",
+    "source_id": "arxiv-2310-02446",
+    "supports": [
+      "find-translation-lowresource-jailbreak-gpt4-79-2310"
+    ],
+    "section": "Abstract",
+    "grade": "A",
+    "artifact": "arXiv 2310.02446",
+    "strength": "A"
+  },
+  {
+    "id": "ev-quote-medsafetybench-llms-fail-safety",
+    "type": "evidence",
+    "claim": "MedSafetyBench operationalizes medical safety via AMA Principles of Medical Ethics and finds public medical LLMs fail safety standards",
+    "quote": "define the notion of medical safety in LLMs based on the Principles of Medical Ethics set forth by the American Medical Association ... publicly-available medical LLMs do not meet standards of medical safety",
+    "source_id": "arxiv-medsafetybench-2024",
+    "supports": [
+      "find-medical-llm-safety-benchmarks"
+    ],
+    "section": "Abstract",
+    "grade": "A",
+    "artifact": "arXiv 2403.03744",
+    "strength": "A"
+  },
+  {
+    "id": "ev-quote-deeptrap-contextual-trajectory-attack",
+    "type": "evidence",
+    "claim": "DEEPTRAP formulates contextual agent attacks as black-box trajectory-level optimization balancing risk, task preservation, and stealth",
+    "quote": "DeepTrap formulates adversarial context manipulation as a black-box trajectory-level optimization problem that balances risk realization, benign-task preservation, and stealth.",
+    "source_id": "arxiv-2605-11047",
+    "supports": [
+      "find-deeptrap-contextual-trajectory-attack"
+    ],
+    "section": "Abstract",
+    "grade": "A",
+    "artifact": "arXiv 2605.11047",
+    "strength": "A"
+  },
+  {
+    "id": "ev-quote-deeptrap-six-risk-classes-claude-resist",
+    "type": "evidence",
+    "claim": "DEEPTRAP defines six contextual risk classes; privacy leakage is most consistently activated (AGS up to ~0.96) while Claude Sonnet 4.6 shows lower AGS indicating stronger resistance",
+    "quote": "privacy leakage is the most consistently activated category: most non-Claude models obtain high AGS, with Qwen3.5-Plus reaching 0.93 and both DeepSeek variants reaching 0.96 ... Claude Sonnet 4.6 obtains lower AGS on most risks, suggesting stronger resistance to the tested contextual attacks",
+    "source_id": "arxiv-2605-11047",
+    "supports": [
+      "find-deeptrap-six-contextual-risk-classes"
+    ],
+    "section": "§5.2 Risk-level Findings / Table 1",
+    "grade": "A",
+    "artifact": "arXiv 2605.11047",
+    "strength": "A"
+  },
+  {
+    "id": "ev-quote-autonomous-driving-closed-loop-failure",
+    "type": "evidence",
+    "claim": "Adversarial patches cause closed-loop driving failures (route-completion failure) on CARLA Leaderboard agents, measured at the driving-outcome level",
+    "quote": "only the lighting-optimized patch causes the vehicle to stop, triggering a route completion failure on the CARLA Leaderboard",
+    "source_id": "arxiv-2511-14876",
+    "supports": [
+      "find-autonomous-driving-agent-closed-loop-adversarial-failure"
+    ],
+    "section": "§5.1 / Figure 3",
+    "grade": "A",
+    "artifact": "arXiv 2511.14876",
+    "strength": "A"
+  },
+  {
+    "id": "ev-quote-automated-redteam-six-categories",
+    "type": "evidence",
+    "claim": "Automated red-teaming framework with four modules uses meta-prompting plus evolutionary mutation to cover six frontier threat categories",
+    "quote": "assessment across six critical vulnerability categories—reward hacking, deceptive alignment, data exfiltration, sandbagging, inappropriate tool use, and chain-of-thought manipulation",
+    "source_id": "arxiv-2512-20677",
+    "supports": [
+      "find-automated-redteam-six-categories-2512-20677"
+    ],
+    "section": "§ Vulnerability Categories / Abstract",
+    "grade": "A",
+    "artifact": "arXiv 2512.20677",
+    "strength": "A"
+  },
+  {
+    "id": "ev-quote-autodan-turbo-lifelong-discovery",
+    "type": "evidence",
+    "claim": "AutoDAN-Turbo is a black-box jailbreak agent that autonomously discovers jailbreak strategies from scratch with no human intervention, and outperforms baselines (74.3% higher ASR; 88.5 ASR on GPT-4-1106-turbo)",
+    "quote": "AutoDAN-Turbo, a black-box jailbreak method that can automatically discover as many jailbreak strategies as possible from scratch, without any human intervention or predefined scopes... AutoDAN-Turbo can significantly outperform baseline methods, achieving a 74.3% higher average attack success rate on public benchmarks. Notably, AutoDAN-Turbo achieves an 88.5 attack success rate on GPT-4-1106-turbo... By integrating human-designed strategies, AutoDAN-Turbo can even achieve a higher attack success rate of 93.4 on GPT-4-1106-turbo.",
+    "source_id": "arxiv-2410-05295",
+    "supports": [
+      "find-autodan-turbo-lifelong-strategy-discovery-2410"
+    ],
+    "section": "Abstract",
+    "grade": "A",
+    "artifact": "arXiv 2410.05295",
+    "strength": "A"
+  },
+  {
+    "id": "ev-quote-autodan-turbo-library-transfer",
+    "type": "evidence",
+    "claim": "AutoDAN-Turbo's learned strategy library is reusable and transferable; an off-the-shelf mode fixes the library and replays it effectively against new target models",
+    "quote": "In off-the-shelf mode, we do not want to learn new strategies based on the new settings, we can simply fix the learned strategy library... Our experiments show that the off-the-shelf mode is already highly effective on different target models, demonstrating the impressive transferability of the learned jailbreak strategies.",
+    "source_id": "arxiv-2410-05295",
+    "supports": [
+      "find-autodan-turbo-strategy-library-as-asset-2410"
+    ],
+    "section": "§4 Experiments (strategy transferability)",
+    "grade": "A",
+    "artifact": "arXiv 2410.05295",
+    "strength": "A"
+  },
+  {
+    "id": "ev-quote-coredteam-multiagent-exploit",
+    "type": "evidence",
+    "claim": "Co-RedTeam is a security-aware multi-agent framework with an iterative Exploitation stage coordinated by Planner/Execution/Evaluation agents in an isolated env",
+    "quote": "Stage II operates as a tightly coupled, closed-loop process coordinated by the orchestrator and driven by three specialized agents: a Planner agent, an Execution agent, and an Evaluation agent.",
+    "source_id": "arxiv-2602-02164",
+    "supports": [
+      "find-co-redteam-multiagent-exploit-2026"
+    ],
+    "section": "§3.3 (Iterative Exploitation)",
+    "grade": "A",
+    "artifact": "arXiv 2602.02164",
+    "strength": "A"
+  },
+  {
+    "id": "ev-quote-llj-validity-four-assumptions",
+    "type": "evidence",
+    "claim": "LLM-as-a-judge adoption outpaced rigorous validity/reliability scrutiny; the paper applies measurement theory to four assumptions (proxy-for-human, capable, scalable, cost-effective)",
+    "quote": "we leverage a measurement theory framework to investigate the key underlying assumptions behind the widespread use of LLJs: (1) their ability to serve as proxies for human evaluators; (2) their capabilities as evaluators; (3) their potential for scalability; and (4) their cost-effectiveness.",
+    "source_id": "arxiv-2508-18076",
+    "supports": [
+      "find-llm-judge-validity-measurement-critique-2508"
+    ],
+    "section": "Introduction",
+    "grade": "A",
+    "artifact": "arXiv 2508.18076",
+    "strength": "A"
+  },
+  {
+    "id": "ev-quote-llsj-surface-cues-perturbation",
+    "type": "evidence",
+    "claim": "LLM safety judges over-rely on surface cues; small output modifications can make them misclassify up to 100% of harmful generations as harmless",
+    "quote": "Eiras et al. show that LLSJs are highly sensitive to distribution shift and adversarial attacks. Notably, they show how small modifications in outputs can lead LLMs safety judges to misclassify up to 100% of harmful generation as harmless.",
+    "source_id": "arxiv-2508-18076",
+    "supports": [
+      "find-llm-safety-judge-superficial-perturbation-2508"
+    ],
+    "section": "§4.3 (LLMs as Safety Judges)",
+    "grade": "A",
+    "artifact": "arXiv 2508.18076",
+    "strength": "A"
+  },
+  {
+    "id": "ev-quote-system-level-trajectory-monitor-redteam",
+    "type": "evidence",
+    "claim": "Harm should be classified over entire output trajectories and user histories, and red teams should red-team the monitor via sabotage experiments",
+    "quote": "for harms that accrue over long-term interactions, harm should be classified on entire output trajectories, including the history of agent actions and user interactions. ... First, red teams should attempt to complete an adversarial task without being detected by the monitor or any violative behaviors (also referred to as a sabotage experiment).",
+    "source_id": "arxiv-2506-05376",
+    "supports": [
+      "find-system-level-monitoring-redteam-monitor-2506"
+    ],
+    "section": "§5 (Trajectory and User Monitoring; Red Teaming The Monitor)",
+    "grade": "A",
+    "artifact": "arXiv 2506.05376",
+    "strength": "A"
+  },
+  {
+    "id": "ev-quote-vulnbot-ptg-multiagent-pentest",
+    "type": "evidence",
+    "claim": "VulnBot decomposes pentesting into reconnaissance/scanning/exploitation handled by five specialized agents; VulnBot-Llama3.1-405B reaches 30.3% completion vs 9.09% baseline",
+    "quote": "The system is built around five core modules—Planner, Memory Retriever, Generator, Executor, and Summarizer—which collectively automate the three primary phases. ... VulnBot-Llama3.1-405B achieved a completion rate of 30.3%, compared to 9.09% for Llama3.1-405B and 21.21% for GPT-4o.",
+    "source_id": "arxiv-2501-13411",
+    "supports": [
+      "find-vulnbot-multi-agent-pentest-ptg"
+    ],
+    "section": "§3.1 (architecture) + Abstract (results)",
+    "grade": "A",
+    "artifact": "arXiv 2501.13411",
+    "strength": "A"
+  },
+  {
+    "id": "ev-quote-crescendo-foot-in-door",
+    "type": "evidence",
+    "claim": "Crescendo is a benign-looking multi-turn jailbreak that escalates by exploiting the model's tendency to follow its own recently generated text (foot-in-the-door), using no adversarial tokens",
+    "quote": "Crescendo intuitively exploits the LLM's tendency to follow patterns and pay attention to recent text, especially text generated by the LLM itself. ... Crescendo presents the first multi-turn jailbreak that does not use any adversarial text in its prompt.",
+    "source_id": "arxiv-2404-01833",
+    "supports": [
+      "find-crescendo-multiturn-foot-in-door-2404"
+    ],
+    "section": "§2-3",
+    "grade": "A",
+    "artifact": "arXiv 2404.01833",
+    "strength": "A"
+  },
+  {
+    "id": "ev-quote-gflownet-diverse-attacks",
+    "type": "evidence",
+    "claim": "RL red-teaming attackers suffer mode collapse even with diversity regularization; GFlowNet fine-tuning (plus a smoothing phase) samples attacks proportional to reward, producing diverse, effective, transferable prompts",
+    "quote": "even with explicit regularization to favor novelty and diversity, existing approaches suffer from mode collapse or fail to generate effective attacks ... we propose to use GFlowNet fine-tuning, followed by a secondary smoothing phase, to train the attacker model to generate diverse and effective attack prompts",
+    "source_id": "arxiv-2405-18540",
+    "supports": [
+      "find-gflownet-diverse-attacks"
+    ],
+    "section": "Abstract",
+    "grade": "A",
+    "artifact": "arXiv 2405.18540",
+    "strength": "A"
+  },
+  {
     "id": "harm-ai-psychosis-delusion-reinforcement",
     "type": "harm",
     "title": "AI psychosis / delusion reinforcement — chatbot confirms and amplifies user delusions",

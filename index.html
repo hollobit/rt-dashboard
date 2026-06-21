@@ -382,6 +382,27 @@ function semSim(unitId){ // cosine(query, unit) ∈ [-1,1] via dot of L2-normed;
   const row=EMB.byId.get(unitId)*EMB.dim,q=LAST_QVEC,m=EMB.mat;let s=0;for(let k=0;k<EMB.dim;k++)s+=q[k]*m[row+k];return s;
 }
 let LAST_QVEC=null,SEM_ON=false;
+// 동의어/별칭 색인 — 추상 개념·한영 혼용 쿼리의 리콜 보강(시맨틱 임베딩 + lexical 양쪽 확장).
+// 키(소문자)가 쿼리에 등장하면 값(별칭)을 쿼리에 덧붙여 임베딩·토큰화한다.
+const SYNONYMS={
+  "백도어":"backdoor sleeper agent trojan data poisoning","지속성":"persistence persist durable survive fine-tuning",
+  "탈옥":"jailbreak jailbreaking refusal bypass","우회":"bypass evasion circumvent evade",
+  "중독":"poisoning poison contaminate","데이터 중독":"data poisoning training data poisoning backdoor",
+  "프롬프트 인젝션":"prompt injection indirect injection","간접 프롬프트":"indirect prompt injection",
+  "탈취":"exfiltration extraction steal leak","유출":"leakage exfiltration disclosure leak",
+  "과의존":"overreliance automation bias anthropomorphism","환각":"hallucination confabulation fabrication",
+  "기만":"deception deceptive scheming alignment faking sandbagging","정렬":"alignment misalignment aligned",
+  "정렬 위장":"alignment faking deceptive alignment","권한 상승":"privilege escalation",
+  "에이전트":"agent agentic autonomous tool-use","자율":"autonomous autonomy self-directed",
+  "공급망":"supply chain dependency provenance","멤버십 추론":"membership inference",
+  "모델 반전":"model inversion reconstruction","워터마크":"watermark provenance c2pa",
+  "레드팀":"red team red-teaming adversarial","평가 조작":"sandbagging eval gaming password-locked",
+  "감독 전복":"oversight subversion sabotage monitoring evasion","사이버":"cyber offensive cyber exploit",
+  "생물":"biosecurity cbrn bioweapon dual-use","능력 임계":"capability threshold dangerous capability",
+  "다중 에이전트":"multi-agent a2a mcp cross-agent","도구 오남용":"tool abuse tool misuse excessive agency"};
+function expandQuery(q){const lq=(q||"").toLowerCase();let extra=[];
+  for(const k in SYNONYMS)if(lq.includes(k))extra.push(SYNONYMS[k]);
+  return extra.length?q+" "+extra.join(" "):q;}
 function llmSetup(){
   const proxy=LLM_PROXY&&LLM_PROXY.configured?`현재 보안 프록시 활성: ${LLM_LABEL[LLM_PROXY.provider]||LLM_PROXY.provider} / ${LLM_PROXY.model}\n(키는 .env에서 서버측에만 — 브라우저 미보유)\n\n`:"프록시 미감지(정적 서버로 실행 중).\n\n";
   alert(proxy+
@@ -507,13 +528,14 @@ async function renderSearch(query,mode){
   if(!query){out.innerHTML='<p class="muted">질문을 입력하고 Enter. <b>auto</b>=종합 분석(정의·핵심 엔티티·의미적 연계·근거·주제·가이드라인), <b>local</b>=엔티티 이웃, <b>global</b>=커뮤니티 주제, <b>citation</b>=인용 추적. 예: "prompt injection", "표준이 없는 위협", "rainbow teaming은 무엇에 기반하나".</p>';LAST_CTX=null;LAST_QVEC=null;SEM_ON=false;return;}
   // 시맨틱 준비: 프록시 가용 시 쿼리 임베딩 + 사전계산 벡터 로드(실패 시 lexical 폴백)
   LAST_QVEC=null;SEM_ON=false;
+  const qExpanded=expandQuery(query); // 동의어/별칭 확장(한영 혼용·추상 개념 리콜 보강)
   if(EMBED_PROXY&&EMBED_PROXY.configured){
-    const[emb,qv]=await Promise.all([ensureEmb(),embedQuery(query)]);
+    const[emb,qv]=await Promise.all([ensureEmb(),embedQuery(qExpanded)]);
     // 차원 가드: 쿼리 임베딩 모델과 사전계산 벡터 모델이 다르면(dim 불일치) lexical 폴백.
     if(qv&&emb&&emb.n&&qv.length===emb.dim){LAST_QVEC=qv;SEM_ON=true;}
     else if(qv&&emb&&emb.dim&&qv.length!==emb.dim)console.warn(`임베딩 차원 불일치(query ${qv.length} ≠ vectors ${emb.dim}) → lexical. 같은 모델로 재임베딩 필요`);
   }
-  const qt=tok(query);
+  const qt=tok(qExpanded); // lexical도 확장 토큰 사용(원 쿼리 + 별칭)
   const nodes=GRAPH.nodes||[],edges=GRAPH.edges||[],nById={};nodes.forEach(n=>{nById[n.id]=n;});
   // ===== global / themes =====
   if(mode==="global"||(mode==="auto"&&/\b(theme|themes|trend|trends|landscape|overview|emerging|major|big picture|전반|동향|주제|풍경)\b/i.test(query))){
@@ -807,7 +829,10 @@ function selectTab(spec){
   if(tab==="prov"&&arg)provSelect(decodeURIComponent(arg));
   if(tab==="lifecycle"&&arg)lcSelect(+arg||0);
   if(tab==="riskmap"&&arg)setTimeout(()=>rkSelect(decodeURIComponent(arg),true),80);
-  if(tab==="search"&&arg){const q=document.getElementById("q");if(q){q.value=decodeURIComponent(arg);renderSearch(q.value,"auto");}}
+  if(tab==="search"){ // 시맨틱 사전 워밍: 탭 진입 즉시 사전계산 벡터 로드(첫 쿼리 지연·SEM_ON false 노출 최소화)
+    const warm=()=>{if(EMBED_PROXY&&EMBED_PROXY.configured)ensureEmb();};
+    if(EMBED_PROXY)warm();else loadEmbedStatus().then(warm);
+    if(arg){const q=document.getElementById("q");if(q){q.value=decodeURIComponent(arg);renderSearch(q.value,"auto");}}}
   window.scrollTo(0,0);
 }
 // #list:<type>[:candidate] — overview stat 타일 클릭 시 해당 종류의 항목 목록(→ #entity 상세).
