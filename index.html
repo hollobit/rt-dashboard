@@ -745,7 +745,7 @@ function selectTab(spec){
   if(tab==="papers"){drawPaperGraph();if(arg)setTimeout(()=>showPaper(decodeURIComponent(arg)),60);}
   if(tab==="prov"&&arg)provSelect(decodeURIComponent(arg));
   if(tab==="lifecycle"&&arg)lcSelect(+arg||0);
-  if(tab==="riskmap"&&arg)setTimeout(()=>rkSelect(decodeURIComponent(arg)),80);
+  if(tab==="riskmap"&&arg)setTimeout(()=>rkSelect(decodeURIComponent(arg),true),80);
   if(tab==="search"&&arg){const q=document.getElementById("q");if(q){q.value=decodeURIComponent(arg);renderSearch(q.value,"auto");}}
   window.scrollTo(0,0);
 }
@@ -1793,15 +1793,26 @@ function renderRkCols(){const el=document.getElementById("rk-cols");if(!el)retur
   const col=(t,items,color)=>`<div class="prov-col"><h5>${t} <span class="muted">${items.length}</span></h5><div class="lst">${items.length?items.map(it=>{const cls=!RKSEL?"":(RK_REACH.has(it.id)?"hl":"dim");return `<button class="prov-node ${cls} ${RKSEL===it.id?"sel":""}" style="border-left-color:${color}" data-id="${esc(it.id)}" onclick="rkSelect(this.dataset.id)" title="${esc(it.title)}">${esc(it.label)}</button>`;}).join(""):'<div class="prov-empty">—</div>'}</div></div>`;
   el.innerHTML=col("① MIT 분류 (7D/24SD)",domItems,"#9254de")+col("② 위협",thItems,"#ff6b6b")+col("③ 공격기법",atkItems,"#fa8c16")+col("④ 리스크",rkItems,"#b37feb")+col("⑤ 통제",ctrlItems,"#52c41a");}
 function rkChainDetail(r){const m=r.metrics||{};const techs=byType("attack_technique").filter(t=>arr(t.realizes_threats).some(th=>normT(th)===normT(r.threat))).map(t=>t.name).slice(0,4);
+  const ms=mitForRisk(r)[0]||{};
   return `<div class="rk-chain">
-    <span class="rk-step" style="border-top-color:#9254de"><span class="l">MIT</span>${mitForRisk(r).map(s=>`<a class="tag" href="${esc(s.url||'https://airisk.mit.edu/')}" target="_blank">${esc(s.ext)}↗</a>`).join("")||'—'}</span><b>→</b>
+    <span class="rk-step" style="border-top-color:#9254de"><span class="l">MIT 분류</span>${mitForRisk(r).map(s=>`<a class="tag" href="${esc(s.url||'https://airisk.mit.edu/')}" target="_blank" title="${esc(s.label||'')}">${esc(s.ext)}↗</a>`).join("")||'—'}</span><b>→</b>
     <span class="rk-step" style="border-top-color:#ff6b6b"><span class="l">위협</span>${taxChips(r.threat)}</span><b>→</b>
     <span class="rk-step" style="border-top-color:#fa8c16"><span class="l">공격</span>${techs.length?esc(techs.join(", ")):'—'}</span><b>→</b>
-    <span class="rk-step" style="border-top-color:#ffb454"><span class="l">위험요소</span>${esc(r.hazard||'—')}</span><b>→</b>
-    <span class="rk-step" style="border-top-color:#ff4d4f"><span class="l">위해</span>${esc(r.harm||'—')}</span><b>→</b>
+    <span class="rk-step" style="border-top-color:#ffb454"><span class="l">위험요소 hazard</span>${esc(r.hazard||'—')}</span><b>→</b>
+    <span class="rk-step" style="border-top-color:#ff85c0"><span class="l">위험상황</span>${esc(r.hazardous_situation||'—')}</span><b>→</b>
+    <span class="rk-step" style="border-top-color:#ff4d4f"><span class="l">위해 harm</span>${chip(r.harm)}</span><b>→</b>
     <span class="rk-step" style="border-top-color:#b37feb"><span class="l">리스크</span>S${m.severity||'?'}·P${m.probability||'?'}·D${m.detectability||'?'} 잔여 ${esc(r.residual_risk||'?')}</span><b>→</b>
-    <span class="rk-step" style="border-top-color:#52c41a"><span class="l">통제</span>${chips(r.controls)}</span></div>`;}
-window.rkSelect=function(id){RKSEL=(id&&RKSEL===id)?null:(id||null);RK_REACH=RKSEL?rkReach(RKSEL):new Set();renderRkCols();
+    <span class="rk-step" style="border-top-color:#52c41a"><span class="l">통제 control</span>${chips(r.controls)}</span>
+    ${arr(r.standards).length?`<span class="rk-step"><span class="l">표준</span>${chips(r.standards)}</span>`:''}</div>
+    <p class="small muted" style="margin-top:8px">📋 ${esc(r.id)}${ms.label?` · <b>MIT ${esc(ms.ext)}</b>: ${esc(ms.label)}`:""}
+      · <a href="#entity:${encodeURIComponent(r.id)}">🔗 통합 상세(연결 그래프)↗</a>
+      · <a href="https://airisk.mit.edu/" target="_blank">MIT 리포지토리↗</a>
+      · <a href="https://arxiv.org/abs/2408.12622" target="_blank">MIT 상세 taxonomy(arXiv)↗</a></p>`;}
+window.rkSelect=function(id,force){
+  // 딥링크 정규화: 접두(risk:/threat:/mit:/atk:/ctrl:) 없는 bare risk id면 risk: 부여
+  if(id&&id.indexOf(":")<0&&byType("risk").some(r=>r.id===id))id="risk:"+id;
+  // force(라우팅 진입)는 토글하지 않고 항상 선택 — lazy-load로 selectTab이 2회 호출돼도 안 꺼지게
+  RKSEL=(!force&&id&&RKSEL===id)?null:(id||null);RK_REACH=RKSEL?rkReach(RKSEL):new Set();renderRkCols();
   const tr=document.getElementById("rk-trace");if(tr)tr.innerHTML=RKSEL?`선택: <b>${esc(RKSEL)}</b> · 연결 ${Math.max(0,RK_REACH.size-1)}개 <a href="#" onclick="rkSelect(null);return false">해제 ✕</a>`:'항목을 클릭하면 연결된 하위 분류만 하이라이트됩니다.';
   const dc=document.getElementById("rk-detail-card");
   if(RKSEL&&RKSEL.indexOf("risk:")===0&&dc){const r=byType("risk").find(x=>x.id===RKSEL.slice(5));if(r){dc.style.display="block";document.getElementById("rk-detail-title").textContent="리스크 체인: "+r.id;document.getElementById("rk-detail").innerHTML=rkChainDetail(r);}}
