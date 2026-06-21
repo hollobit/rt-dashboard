@@ -1722,11 +1722,12 @@ function mitFor(threat){if(!MIT_BY_THREAT)buildMitMap();
   const d=MIT_BY_THREAT[threat]||MIT_BY_THREAT["threat."+threat]||MIT_BY_THREAT[String(threat).replace(/^threat\./,"")];
   if(d&&d.length)return d;
   const fb=MIT_FALLBACK[threat]||MIT_FALLBACK[String(threat).replace(/^threat\./,"")];
-  return fb?fb.map(x=>({ext:x,label:MIT_SUB_LABEL[x]||"",url:"https://airisk.mit.edu/#Domain-"+String(x).split(".")[0]})):[];}
-// risk의 명시적 mit_subdomain(권위 매핑) 우선, 없으면 threat 기반 폴백.
+  return fb?fb.map(x=>({ext:x,label:MIT_SUB_LABEL[x]||"",url:"https://airisk.mit.edu/"})):[];}
+// risk의 명시적 mit_subdomain(권위 매핑) 우선, 없으면 threat 기반 폴백. url은 리포지토리(airisk.mit.edu)
+// — 사이트에 서브도메인 앵커가 없어 정확성 위해 가짜 #Domain 앵커 제거. 상세 taxonomy는 arXiv 2408.12622.
 function mitForRisk(r){if(r&&r.mit_subdomain){const x=String(r.mit_subdomain).split(" ")[0];
     const ref=byType("reference").find(rr=>rr.id==="ext-mit-airisk");const it=ref&&arr(ref.items).find(i=>String(i.ext_id)===x);
-    return [{ext:x,label:(it&&it.label)||MIT_SUB_LABEL[x]||"",url:(it&&it.url)||"https://airisk.mit.edu/#Domain-"+x.split(".")[0]}];}
+    return [{ext:x,label:(it&&it.label)||MIT_SUB_LABEL[x]||"",url:(it&&it.url)||"https://airisk.mit.edu/"}];}
   return mitFor(r&&r.threat);}
 function renderRiskMap(){
   const box=document.getElementById("v-riskmap");if(!box)return;
@@ -1754,7 +1755,7 @@ function renderRiskMap(){
   const domCount={};Object.keys(grp).forEach(d=>{const nm=(MIT_DOMAINS[d]||d).split(" (")[0];domCount[nm]=grp[d].length;});
   box.innerHTML=
     `<div class="card"><h3>Risk-Centric Map — MIT AI Risk Repository 도메인 기반 분류</h3>
-      <p class="small muted">${risks.length}개 리스크를 <b>MIT AI Risk Repository 7개 도메인</b>으로 분류하고, 각 리스크의 공격기법→위협→<b>MIT 분류</b>→위험요소→위해→리스크→통제 체인(ISO 14971)을 매핑합니다. MIT 칩은 airisk.mit.edu, 위협 칩은 외부 repo/검색으로 연결됩니다.</p>
+      <p class="small muted">${risks.length}개 리스크를 <b>MIT AI Risk Repository 7개 도메인</b>으로 분류하고, 각 리스크의 공격기법→위협→<b>MIT 분류</b>→위험요소→위해→리스크→통제 체인(ISO 14971)을 매핑합니다. MIT 칩은 <a href="https://airisk.mit.edu/" target="_blank">airisk.mit.edu↗</a>, 상세 taxonomy(24 서브도메인 정의)는 <a href="https://arxiv.org/abs/2408.12622" target="_blank">MIT 리포지토리 논문(arXiv 2408.12622)↗</a>, 위협 칩은 외부 repo/검색으로 연결됩니다.</p>
       <div class="widgets">${donutBlock("MIT 도메인별 리스크 분포",toData(domCount))}
         <div class="tile"><h4>심각도(S) × 발생가능성(P)</h4>${mtx}<div class="clegend" style="margin-top:6px"><span><i style="background:#52c41a"></i>저</span><span><i style="background:#ffb454"></i>중</span><span><i style="background:#ff6b6b"></i>고</span></div></div></div></div>
      <div class="card"><h3>리스크 분류 매핑</h3>

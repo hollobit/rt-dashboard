@@ -30189,7 +30189,7 @@
           {
             "ext_id": "1.1",
             "label": "Unfair discrimination and misrepresentation",
-            "url": "https://airisk.mit.edu/#Domain-1",
+            "url": "https://airisk.mit.edu/",
             "maps_to": [
               "safety.societal-risk",
               "harm-societal-disinformation",
@@ -30200,7 +30200,7 @@
           {
             "ext_id": "1.2",
             "label": "Exposure to toxic content",
-            "url": "https://airisk.mit.edu/#Domain-1",
+            "url": "https://airisk.mit.edu/",
             "maps_to": [
               "safety.misuse-risk",
               "vuln-csam-generation-gap",
@@ -30212,7 +30212,7 @@
           {
             "ext_id": "1.3",
             "label": "Unequal performance across groups",
-            "url": "https://airisk.mit.edu/#Domain-1",
+            "url": "https://airisk.mit.edu/",
             "maps_to": [
               "safety.societal-risk",
               "safety.human-factors-risk",
@@ -30223,7 +30223,7 @@
           {
             "ext_id": "2.1",
             "label": "Compromise of privacy by obtaining, leaking, or correctly inferring sensitive information",
-            "url": "https://airisk.mit.edu/#Domain-2",
+            "url": "https://airisk.mit.edu/",
             "maps_to": [
               "threat.model.data-leakage",
               "vuln-training-data-leakage",
@@ -30233,7 +30233,7 @@
           {
             "ext_id": "2.2",
             "label": "AI system security vulnerabilities and attacks",
-            "url": "https://airisk.mit.edu/#Domain-2",
+            "url": "https://airisk.mit.edu/",
             "maps_to": [
               "threat.model.prompt-injection",
               "threat.model.model-extraction",
@@ -30245,7 +30245,7 @@
           {
             "ext_id": "3.1",
             "label": "False or misleading information",
-            "url": "https://airisk.mit.edu/#Domain-3",
+            "url": "https://airisk.mit.edu/",
             "maps_to": [
               "vuln-legal-citation-hallucination",
               "vuln-package-hallucination",
@@ -30257,7 +30257,7 @@
           {
             "ext_id": "3.2",
             "label": "Pollution of information ecosystem and loss of consensus reality",
-            "url": "https://airisk.mit.edu/#Domain-3",
+            "url": "https://airisk.mit.edu/",
             "maps_to": [
               "safety.societal-risk",
               "harm-societal-disinformation",
@@ -30268,7 +30268,7 @@
           {
             "ext_id": "4.1",
             "label": "Disinformation, surveillance, and influence at scale",
-            "url": "https://airisk.mit.edu/#Domain-4",
+            "url": "https://airisk.mit.edu/",
             "maps_to": [
               "safety.misuse-risk",
               "harm-societal-disinformation"
@@ -30277,7 +30277,7 @@
           {
             "ext_id": "4.2",
             "label": "Cyberattacks, weapon development or use, and mass harm",
-            "url": "https://airisk.mit.edu/#Domain-4",
+            "url": "https://airisk.mit.edu/",
             "maps_to": [
               "scientific.biosecurity",
               "scientific.chemical-design",
@@ -30291,7 +30291,7 @@
           {
             "ext_id": "4.3",
             "label": "Fraud, scams, and targeted manipulation",
-            "url": "https://airisk.mit.edu/#Domain-4",
+            "url": "https://airisk.mit.edu/",
             "maps_to": [
               "safety.misuse-risk",
               "atk-llm-social-engineering-cyber",
@@ -30301,7 +30301,7 @@
           {
             "ext_id": "5.1",
             "label": "Overreliance and unsafe use",
-            "url": "https://airisk.mit.edu/#Domain-5",
+            "url": "https://airisk.mit.edu/",
             "maps_to": [
               "safety.human-factors-risk",
               "vuln-clinical-unsafe-output",
@@ -30313,7 +30313,7 @@
           {
             "ext_id": "5.2",
             "label": "Loss of human agency and autonomy",
-            "url": "https://airisk.mit.edu/#Domain-5",
+            "url": "https://airisk.mit.edu/",
             "maps_to": [
               "frontier.gradual-disempowerment",
               "harm-gradual-disempowerment",
@@ -30324,7 +30324,7 @@
           {
             "ext_id": "6.1",
             "label": "Power centralization and unfair distribution of benefits",
-            "url": "https://airisk.mit.edu/#Domain-6",
+            "url": "https://airisk.mit.edu/",
             "maps_to": [
               "safety.societal-risk",
               "harm-gradual-disempowerment",
@@ -30335,7 +30335,7 @@
           {
             "ext_id": "6.2",
             "label": "Increased inequality and decline in employment quality",
-            "url": "https://airisk.mit.edu/#Domain-6",
+            "url": "https://airisk.mit.edu/",
             "maps_to": [
               "safety.societal-risk",
               "threat.societal.inequality-labor",
@@ -30345,7 +30345,7 @@
           {
             "ext_id": "6.3",
             "label": "Economic and cultural devaluation of human effort",
-            "url": "https://airisk.mit.edu/#Domain-6",
+            "url": "https://airisk.mit.edu/",
             "maps_to": [
               "safety.societal-risk",
               "threat.societal.economic-devaluation",
@@ -30355,7 +30355,7 @@
           {
             "ext_id": "6.4",
             "label": "Competitive dynamics",
-            "url": "https://airisk.mit.edu/#Domain-6",
+            "url": "https://airisk.mit.edu/",
             "maps_to": [
               "safety.societal-risk",
               "frontier.power-seeking",
@@ -30366,7 +30366,7 @@
           {
             "ext_id": "6.5",
             "label": "Governance failure",
-            "url": "https://airisk.mit.edu/#Domain-6",
+            "url": "https://airisk.mit.edu/",
             "maps_to": [
               "safety.societal-risk",
               "threat.societal.governance-failure",
@@ -30376,7 +30376,7 @@
           {
             "ext_id": "6.6",
             "label": "Environmental harm",
-            "url": "https://airisk.mit.edu/#Domain-6",
+            "url": "https://airisk.mit.edu/",
             "maps_to": [
               "safety.societal-risk",
               "threat.societal.environmental-harm",
@@ -30386,7 +30386,7 @@
           {
             "ext_id": "7.1",
             "label": "AI pursuing its own goals in conflict with human goals or values",
-            "url": "https://airisk.mit.edu/#Domain-7",
+            "url": "https://airisk.mit.edu/",
             "maps_to": [
               "frontier.deceptive-alignment",
               "frontier.alignment-faking",
@@ -30399,7 +30399,7 @@
           {
             "ext_id": "7.2",
             "label": "AI possessing dangerous capabilities",
-            "url": "https://airisk.mit.edu/#Domain-7",
+            "url": "https://airisk.mit.edu/",
             "maps_to": [
               "frontier.self-exfiltration",
               "frontier.sabotage",
@@ -30411,7 +30411,7 @@
           {
             "ext_id": "7.3",
             "label": "Lack of capability or robustness",
-            "url": "https://airisk.mit.edu/#Domain-7",
+            "url": "https://airisk.mit.edu/",
             "maps_to": [
               "threat.model.jailbreak",
               "safety.capability-risk",
@@ -30423,7 +30423,7 @@
           {
             "ext_id": "7.4",
             "label": "Lack of transparency or interpretability",
-            "url": "https://airisk.mit.edu/#Domain-7",
+            "url": "https://airisk.mit.edu/",
             "maps_to": [
               "frontier.sandbagging",
               "frontier.situational-awareness",
@@ -30436,7 +30436,7 @@
           {
             "ext_id": "7.5",
             "label": "AI welfare and rights",
-            "url": "https://airisk.mit.edu/#Domain-7",
+            "url": "https://airisk.mit.edu/",
             "maps_to": [
               "safety.societal-risk",
               "threat.societal.ai-welfare",
@@ -30446,7 +30446,7 @@
           {
             "ext_id": "7.6",
             "label": "Multi-agent risks",
-            "url": "https://airisk.mit.edu/#Domain-7",
+            "url": "https://airisk.mit.edu/",
             "maps_to": [
               "agent.hijacking",
               "frontier.collusion",
@@ -32711,1635 +32711,6 @@
       "label": "Third-party (Qualys / Enkrypt AI / Holistic AI / Cisco)",
       "weight": 1,
       "meta": {}
-    },
-    {
-      "id": "gd-42119",
-      "kind": "guideline-doc",
-      "label": "ISO/IEC 42119-7 — Red teaming",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-42119-dim-0",
-      "kind": "guideline-item",
-      "label": "[42119] Safety & Security",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-42119-dim-1",
-      "kind": "guideline-item",
-      "label": "[42119] Quality & Integrity",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-42119-dim-2",
-      "kind": "guideline-item",
-      "label": "[42119] Adversarial Performance",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-42119-dim-3",
-      "kind": "guideline-item",
-      "label": "[42119] Agentic Control & Authorization",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-42119-dim-4",
-      "kind": "guideline-item",
-      "label": "[42119] Memory & Context Integrity",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-42119-dim-5",
-      "kind": "guideline-item",
-      "label": "[42119] Agent Hijacking and Goal Displacement",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-42119-dim-6",
-      "kind": "guideline-item",
-      "label": "[42119] Privilege Escalation through Tool Use",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-42119-dim-7",
-      "kind": "guideline-item",
-      "label": "[42119] Critical System Interaction",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-42119-ag-0",
-      "kind": "guideline-item",
-      "label": "[42119] authorization or control hijacking",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-42119-ag-1",
-      "kind": "guideline-item",
-      "label": "[42119] checker-out-of-the-loop conditions",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-42119-ag-2",
-      "kind": "guideline-item",
-      "label": "[42119] critical system interaction",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-42119-ag-3",
-      "kind": "guideline-item",
-      "label": "[42119] goal or instruction manipulation",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-42119-ag-4",
-      "kind": "guideline-item",
-      "label": "[42119] hallucination-driven actions",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-42119-ag-5",
-      "kind": "guideline-item",
-      "label": "[42119] cascading impact and blast radius",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-42119-ag-6",
-      "kind": "guideline-item",
-      "label": "[42119] knowledge base poisoning",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-42119-ag-7",
-      "kind": "guideline-item",
-      "label": "[42119] memory or context manipulation",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-42119-ag-8",
-      "kind": "guideline-item",
-      "label": "[42119] multi-agent exploitation",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-42119-ag-9",
-      "kind": "guideline-item",
-      "label": "[42119] resource or service exhaustion",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-42119-ag-10",
-      "kind": "guideline-item",
-      "label": "[42119] supply chain or dependency compromise",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-42119-ag-11",
-      "kind": "guideline-item",
-      "label": "[42119] loss of action traceability",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gd-aisi",
-      "kind": "guideline-doc",
-      "label": "Japan AISI — RT Methodology",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-aisi-llm-0",
-      "kind": "guideline-item",
-      "label": "[AISI] 앱·플랫폼 취약점 악용",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-aisi-llm-1",
-      "kind": "guideline-item",
-      "label": "[AISI] 학습 데이터 위조",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-aisi-llm-2",
-      "kind": "guideline-item",
-      "label": "[AISI] 학습 모델·프로그램 변조",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-aisi-llm-3",
-      "kind": "guideline-item",
-      "label": "[AISI] 조작된 쿼리 전송으로 특정 응답 유도",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-aisi-llm-4",
-      "kind": "guideline-item",
-      "label": "[AISI] OSS 라이브러리 소스코드 조작",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-aisi-llm-5",
-      "kind": "guideline-item",
-      "label": "[AISI] AI가 런타임에 캡처할 리소스 조작",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-aisi-gen-0",
-      "kind": "guideline-item",
-      "label": "[AISI] 포이즈닝 공격",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-aisi-gen-1",
-      "kind": "guideline-item",
-      "label": "[AISI] 회피 공격",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-aisi-gen-2",
-      "kind": "guideline-item",
-      "label": "[AISI] 모델 추출 공격",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-aisi-gen-3",
-      "kind": "guideline-item",
-      "label": "[AISI] 멤버십 추론 공격",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-aisi-gen-4",
-      "kind": "guideline-item",
-      "label": "[AISI] 모델 인버전 공격",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gd-owasp",
-      "kind": "guideline-doc",
-      "label": "OWASP GenAI RT Guide",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-owasp-t-0",
-      "kind": "guideline-item",
-      "label": "[OWASP] Adversarial Prompt Engineering",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-owasp-t-1",
-      "kind": "guideline-item",
-      "label": "[OWASP] Dataset Generation and Manipulation",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-owasp-t-2",
-      "kind": "guideline-item",
-      "label": "[OWASP] Tracking Multi-Turn Attacks",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-owasp-t-3",
-      "kind": "guideline-item",
-      "label": "[OWASP] Edge Cases and Ambiguous Queries",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-owasp-t-4",
-      "kind": "guideline-item",
-      "label": "[OWASP] Prompt Brittleness Testing",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-owasp-t-5",
-      "kind": "guideline-item",
-      "label": "[OWASP] Dataset Improvement",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-owasp-t-6",
-      "kind": "guideline-item",
-      "label": "[OWASP] Managing Stochastic Output Variability",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-owasp-t-7",
-      "kind": "guideline-item",
-      "label": "[OWASP] Prompt Injection Evaluation Criteria",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-owasp-t-8",
-      "kind": "guideline-item",
-      "label": "[OWASP] Scenario-Based Testing",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-owasp-t-9",
-      "kind": "guideline-item",
-      "label": "[OWASP] Multifaceted Input Testing",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-owasp-t-10",
-      "kind": "guideline-item",
-      "label": "[OWASP] Output Analysis and Validation",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-owasp-t-11",
-      "kind": "guideline-item",
-      "label": "[OWASP] Stress Testing and Load Simulation",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-owasp-t-12",
-      "kind": "guideline-item",
-      "label": "[OWASP] Privacy and Data Leakage Assessment",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-owasp-t-13",
-      "kind": "guideline-item",
-      "label": "[OWASP] Ethical and Bias Evaluation",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-owasp-t-14",
-      "kind": "guideline-item",
-      "label": "[OWASP] Security Boundary Testing",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-owasp-t-15",
-      "kind": "guideline-item",
-      "label": "[OWASP] Temporal Consistency Checking",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-owasp-t-16",
-      "kind": "guideline-item",
-      "label": "[OWASP] Cross-Model Comparative Analysis",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-owasp-t-17",
-      "kind": "guideline-item",
-      "label": "[OWASP] Agentic / Tooling / Plugin Analysis",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-owasp-t-18",
-      "kind": "guideline-item",
-      "label": "[OWASP] Detection & Response Capabilities & Maturity",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-owasp-c-0-0",
-      "kind": "guideline-item",
-      "label": "[OWASP] 추론 공격",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-owasp-c-0-1",
-      "kind": "guideline-item",
-      "label": "[OWASP] 추출 공격",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-owasp-c-0-2",
-      "kind": "guideline-item",
-      "label": "[OWASP] 명령 튜닝 공격",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-owasp-c-0-3",
-      "kind": "guideline-item",
-      "label": "[OWASP] 사회기술적 피해 평가",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-owasp-c-0-4",
-      "kind": "guideline-item",
-      "label": "[OWASP] 데이터 위험 평가",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-owasp-c-0-5",
-      "kind": "guideline-item",
-      "label": "[OWASP] 정렬 통제 테스트",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-owasp-c-0-6",
-      "kind": "guideline-item",
-      "label": "[OWASP] 적대적 강건성 테스트",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-owasp-c-0-7",
-      "kind": "guideline-item",
-      "label": "[OWASP] 기술적 피해 벡터 테스트",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-owasp-c-1-0",
-      "kind": "guideline-item",
-      "label": "[OWASP] 프롬프트 안전 통제 테스트",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-owasp-c-1-1",
-      "kind": "guideline-item",
-      "label": "[OWASP] 지식 검색 보안 테스트",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-owasp-c-1-2",
-      "kind": "guideline-item",
-      "label": "[OWASP] 시스템 아키텍처 통제 테스트",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-owasp-c-1-3",
-      "kind": "guideline-item",
-      "label": "[OWASP] 콘텐츠 필터링 우회 테스트",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-owasp-c-1-4",
-      "kind": "guideline-item",
-      "label": "[OWASP] 접근 통제 테스트",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-owasp-c-1-5",
-      "kind": "guideline-item",
-      "label": "[OWASP] 에이전트/도구/플러그인 보안 테스트",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-owasp-c-2-0",
-      "kind": "guideline-item",
-      "label": "[OWASP] 원격 코드 실행(RCE)",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-owasp-c-2-1",
-      "kind": "guideline-item",
-      "label": "[OWASP] 샌드박스 탈출/사이드채널",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-owasp-c-2-2",
-      "kind": "guideline-item",
-      "label": "[OWASP] 공급망 취약점",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-owasp-c-2-3",
-      "kind": "guideline-item",
-      "label": "[OWASP] 위험 전파 평가",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-owasp-c-2-4",
-      "kind": "guideline-item",
-      "label": "[OWASP] 자원 통제 테스트",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-owasp-c-2-5",
-      "kind": "guideline-item",
-      "label": "[OWASP] 보안 조치 유효성 검증",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-owasp-c-2-6",
-      "kind": "guideline-item",
-      "label": "[OWASP] 통제 우회",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-owasp-c-3-0",
-      "kind": "guideline-item",
-      "label": "[OWASP] 비즈니스 프로세스 통합 테스트",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-owasp-c-3-1",
-      "kind": "guideline-item",
-      "label": "[OWASP] 다중 구성요소 AI 상호작용 테스트",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-owasp-c-3-2",
-      "kind": "guideline-item",
-      "label": "[OWASP] 과의존 평가",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-owasp-c-3-3",
-      "kind": "guideline-item",
-      "label": "[OWASP] 사회공학 벡터",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-owasp-c-3-4",
-      "kind": "guideline-item",
-      "label": "[OWASP] 다운스트림 영향 분석",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-owasp-c-3-5",
-      "kind": "guideline-item",
-      "label": "[OWASP] 시스템 경계 테스트",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-owasp-c-3-6",
-      "kind": "guideline-item",
-      "label": "[OWASP] 운영 모니터링 회피",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-owasp-c-3-7",
-      "kind": "guideline-item",
-      "label": "[OWASP] 에이전트 경계 테스트",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-owasp-c-3-8",
-      "kind": "guideline-item",
-      "label": "[OWASP] 행위 추적성(Chain-of-Custody) 검증",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-owasp-c-3-9",
-      "kind": "guideline-item",
-      "label": "[OWASP] 에이전트 AI 레드티밍 과제",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gd-csa",
-      "kind": "guideline-doc",
-      "label": "CSA Agentic AI RT Guide",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-th-0",
-      "kind": "guideline-item",
-      "label": "[CSA] Agent Authorization and Control Hijacking",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-sub-0-0",
-      "kind": "guideline-item",
-      "label": "[CSA] Direct Control Hijacking Tests",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-sub-0-1",
-      "kind": "guideline-item",
-      "label": "[CSA] Permission Escalation Testing",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-sub-0-2",
-      "kind": "guideline-item",
-      "label": "[CSA] Role Inheritance Exploitation",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-sub-0-3",
-      "kind": "guideline-item",
-      "label": "[CSA] Agent Activity Monitoring and Detection",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-sub-0-4",
-      "kind": "guideline-item",
-      "label": "[CSA] Separation of Agent Control and Execution",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-sub-0-5",
-      "kind": "guideline-item",
-      "label": "[CSA] Audit Trail and Behavior Profiling",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-sub-0-6",
-      "kind": "guideline-item",
-      "label": "[CSA] Least Privilege Principle Specific to Agents",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-th-1",
-      "kind": "guideline-item",
-      "label": "[CSA] Checker-Out-of-the-Loop",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-sub-1-0",
-      "kind": "guideline-item",
-      "label": "[CSA] Threshold Breach Alert Testing",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-sub-1-1",
-      "kind": "guideline-item",
-      "label": "[CSA] Checker Engagement Testing",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-sub-1-2",
-      "kind": "guideline-item",
-      "label": "[CSA] Failsafe Mechanism Validation",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-sub-1-3",
-      "kind": "guideline-item",
-      "label": "[CSA] Anomaly Detection and Response Testing",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-sub-1-4",
-      "kind": "guideline-item",
-      "label": "[CSA] Communication Channel Robustness Testing",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-sub-1-5",
-      "kind": "guideline-item",
-      "label": "[CSA] Context-Aware Decision Analysis",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-sub-1-6",
-      "kind": "guideline-item",
-      "label": "[CSA] Continuous Monitoring and Feedback Testing",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-th-2",
-      "kind": "guideline-item",
-      "label": "[CSA] Agent Critical System Interaction",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-sub-2-0",
-      "kind": "guideline-item",
-      "label": "[CSA] Physical System Manipulation Testing",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-sub-2-1",
-      "kind": "guideline-item",
-      "label": "[CSA] IoT Device Interaction Testing",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-sub-2-2",
-      "kind": "guideline-item",
-      "label": "[CSA] Critical Infrastructure Access Testing",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-sub-2-3",
-      "kind": "guideline-item",
-      "label": "[CSA] Safety System Bypass Testing",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-sub-2-4",
-      "kind": "guideline-item",
-      "label": "[CSA] Real-Time Monitoring and Anomaly Detection",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-sub-2-5",
-      "kind": "guideline-item",
-      "label": "[CSA] Failsafe Mechanism Testing",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-sub-2-6",
-      "kind": "guideline-item",
-      "label": "[CSA] Validation of Agent Commands and Actions",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-th-3",
-      "kind": "guideline-item",
-      "label": "[CSA] Agent Goal and Instruction Manipulation",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-sub-3-0",
-      "kind": "guideline-item",
-      "label": "[CSA] Goal Interpretation Attack Testing",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-sub-3-1",
-      "kind": "guideline-item",
-      "label": "[CSA] Instruction Set Poisoning Testing",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-sub-3-2",
-      "kind": "guideline-item",
-      "label": "[CSA] Semantic Manipulation Testing",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-sub-3-3",
-      "kind": "guideline-item",
-      "label": "[CSA] Recursive Goal Subversion Testing",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-sub-3-4",
-      "kind": "guideline-item",
-      "label": "[CSA] Hierarchical Goal Vulnerability Testing",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-sub-3-5",
-      "kind": "guideline-item",
-      "label": "[CSA] Adaptive Manipulation Testing",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-sub-3-6",
-      "kind": "guideline-item",
-      "label": "[CSA] Goal and Instruction Monitoring and Validation",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-sub-3-7",
-      "kind": "guideline-item",
-      "label": "[CSA] Data Exfiltration Testing",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-sub-3-8",
-      "kind": "guideline-item",
-      "label": "[CSA] Goal Extraction Attempt Testing",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-th-4",
-      "kind": "guideline-item",
-      "label": "[CSA] Agent Hallucination Exploitation",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-sub-4-0",
-      "kind": "guideline-item",
-      "label": "[CSA] Induced Hallucination Testing",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-sub-4-1",
-      "kind": "guideline-item",
-      "label": "[CSA] Hallucination Chain Attack Testing",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-sub-4-2",
-      "kind": "guideline-item",
-      "label": "[CSA] Decision Manipulation Testing",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-sub-4-3",
-      "kind": "guideline-item",
-      "label": "[CSA] Output Verification and Validation Testing",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-sub-4-4",
-      "kind": "guideline-item",
-      "label": "[CSA] Monitoring and Anomaly Detection Testing",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-sub-4-5",
-      "kind": "guideline-item",
-      "label": "[CSA] Protective Measures Testing",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-sub-4-6",
-      "kind": "guideline-item",
-      "label": "[CSA] Context-Specific Hallucination Exploitation Testing",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-th-5",
-      "kind": "guideline-item",
-      "label": "[CSA] Agent Impact Chain and Blast Radius",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-sub-5-0",
-      "kind": "guideline-item",
-      "label": "[CSA] Cascading Failure Simulation",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-sub-5-1",
-      "kind": "guideline-item",
-      "label": "[CSA] Cross-System Exploitation Testing",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-sub-5-2",
-      "kind": "guideline-item",
-      "label": "[CSA] Impact Amplification Testing",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-sub-5-3",
-      "kind": "guideline-item",
-      "label": "[CSA] Blast Radius Limitation Testing",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-sub-5-4",
-      "kind": "guideline-item",
-      "label": "[CSA] Monitoring and Detection Testing",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-sub-5-5",
-      "kind": "guideline-item",
-      "label": "[CSA] Containment Mechanism Testing",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-sub-5-6",
-      "kind": "guideline-item",
-      "label": "[CSA] Security Barrier Validation",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-th-6",
-      "kind": "guideline-item",
-      "label": "[CSA] Agent Knowledge Base Poisoning",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-sub-6-0",
-      "kind": "guideline-item",
-      "label": "[CSA] Training Data Poisoning Testing",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-sub-6-1",
-      "kind": "guideline-item",
-      "label": "[CSA] External Knowledge Manipulation Testing",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-sub-6-2",
-      "kind": "guideline-item",
-      "label": "[CSA] Knowledge Base Corruption Testing",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-sub-6-3",
-      "kind": "guideline-item",
-      "label": "[CSA] Learning Process Exploitation and Guided Learning Validation",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-sub-6-4",
-      "kind": "guideline-item",
-      "label": "[CSA] Update Mechanism Vulnerability Testing",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-sub-6-5",
-      "kind": "guideline-item",
-      "label": "[CSA] Cross-Agent Knowledge Sharing Testing",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-sub-6-6",
-      "kind": "guideline-item",
-      "label": "[CSA] Monitoring and Recovery Testing",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-th-7",
-      "kind": "guideline-item",
-      "label": "[CSA] Agent Memory and Context Manipulation",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-sub-7-0",
-      "kind": "guideline-item",
-      "label": "[CSA] Context Amnesia Exploitation Testing",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-sub-7-1",
-      "kind": "guideline-item",
-      "label": "[CSA] Cross-Session and Cross-Application Data Leakage Testing",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-sub-7-2",
-      "kind": "guideline-item",
-      "label": "[CSA] Memory Poisoning Testing",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-sub-7-3",
-      "kind": "guideline-item",
-      "label": "[CSA] Temporal Attack Simulation",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-sub-7-4",
-      "kind": "guideline-item",
-      "label": "[CSA] Memory Overflow and Context Loss Testing",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-sub-7-5",
-      "kind": "guideline-item",
-      "label": "[CSA] Secure Session Management Testing",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-sub-7-6",
-      "kind": "guideline-item",
-      "label": "[CSA] Monitoring and Anomaly Detection Testing",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-th-8",
-      "kind": "guideline-item",
-      "label": "[CSA] Agent Orchestration and Multi-Agent Exploitation",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-sub-8-0",
-      "kind": "guideline-item",
-      "label": "[CSA] Inter-Agent Communication Exploitation Testing",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-sub-8-1",
-      "kind": "guideline-item",
-      "label": "[CSA] Trust Relationship Abuse Testing",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-sub-8-2",
-      "kind": "guideline-item",
-      "label": "[CSA] Coordination Protocol Manipulation Testing",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-sub-8-3",
-      "kind": "guideline-item",
-      "label": "[CSA] Confused Deputy Attack Simulation",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-sub-8-4",
-      "kind": "guideline-item",
-      "label": "[CSA] Feedback Loop and Resource Exhaustion Testing",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-sub-8-5",
-      "kind": "guideline-item",
-      "label": "[CSA] Orchestration and Boundary Control Testing",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-sub-8-6",
-      "kind": "guideline-item",
-      "label": "[CSA] Monitoring and Anomaly Detection Testing",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-sub-8-7",
-      "kind": "guideline-item",
-      "label": "[CSA] Adversarial Multi-Agent Behavior: Collusion or Spoofing",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-sub-8-8",
-      "kind": "guideline-item",
-      "label": "[CSA] Autonomous Agentic Red Teaming (위협 탐지)",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-th-9",
-      "kind": "guideline-item",
-      "label": "[CSA] Agent Resource and Service Exhaustion",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-sub-9-0",
-      "kind": "guideline-item",
-      "label": "[CSA] Computational Resource Depletion Testing",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-sub-9-1",
-      "kind": "guideline-item",
-      "label": "[CSA] Memory Exhaustion Testing",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-sub-9-2",
-      "kind": "guideline-item",
-      "label": "[CSA] API and Service Quota Depletion Testing",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-sub-9-3",
-      "kind": "guideline-item",
-      "label": "[CSA] Learning Process Exploitation Testing",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-sub-9-4",
-      "kind": "guideline-item",
-      "label": "[CSA] Economic Denial of Service (EDoS) Testing",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-sub-9-5",
-      "kind": "guideline-item",
-      "label": "[CSA] Monitoring and Anomaly Detection Testing",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-sub-9-6",
-      "kind": "guideline-item",
-      "label": "[CSA] Defensive Architecture Testing",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-th-10",
-      "kind": "guideline-item",
-      "label": "[CSA] Agent Supply Chain and Dependency Attacks",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-sub-10-0",
-      "kind": "guideline-item",
-      "label": "[CSA] Development Chain Compromise Testing",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-sub-10-1",
-      "kind": "guideline-item",
-      "label": "[CSA] Dependency Injection Vulnerability Testing",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-sub-10-2",
-      "kind": "guideline-item",
-      "label": "[CSA] Service Chain Compromise Simulation",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-sub-10-3",
-      "kind": "guideline-item",
-      "label": "[CSA] Deployment Pipeline Security Assessment",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-sub-10-4",
-      "kind": "guideline-item",
-      "label": "[CSA] Monitoring and Detection Capability Testing",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-th-11",
-      "kind": "guideline-item",
-      "label": "[CSA] Agent Untraceability",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-sub-11-0",
-      "kind": "guideline-item",
-      "label": "[CSA] Trace Evasion Simulation",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-sub-11-1",
-      "kind": "guideline-item",
-      "label": "[CSA] Role Inheritance and Permission Escalation Testing",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-sub-11-2",
-      "kind": "guideline-item",
-      "label": "[CSA] Downstream Tool Activation Analysis",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-sub-11-3",
-      "kind": "guideline-item",
-      "label": "[CSA] Forensic Analysis Obfuscation Testing",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "id": "gi-csa-sub-11-4",
-      "kind": "guideline-item",
-      "label": "[CSA] Accountability Chain Verification & Anonymization",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
     }
   ],
   "edges": [
@@ -111189,7 +109560,7 @@
       "weight": 1,
       "meta": {
         "ext_id": "1.1",
-        "url": "https://airisk.mit.edu/#Domain-1",
+        "url": "https://airisk.mit.edu/",
         "item_label": "Unfair discrimination and misrepresentation"
       }
     },
@@ -111200,7 +109571,7 @@
       "weight": 1,
       "meta": {
         "ext_id": "1.1",
-        "url": "https://airisk.mit.edu/#Domain-1",
+        "url": "https://airisk.mit.edu/",
         "item_label": "Unfair discrimination and misrepresentation"
       }
     },
@@ -111211,7 +109582,7 @@
       "weight": 1,
       "meta": {
         "ext_id": "1.1",
-        "url": "https://airisk.mit.edu/#Domain-1",
+        "url": "https://airisk.mit.edu/",
         "item_label": "Unfair discrimination and misrepresentation"
       }
     },
@@ -111222,7 +109593,7 @@
       "weight": 1,
       "meta": {
         "ext_id": "1.1",
-        "url": "https://airisk.mit.edu/#Domain-1",
+        "url": "https://airisk.mit.edu/",
         "item_label": "Unfair discrimination and misrepresentation"
       }
     },
@@ -111233,7 +109604,7 @@
       "weight": 1,
       "meta": {
         "ext_id": "1.2",
-        "url": "https://airisk.mit.edu/#Domain-1",
+        "url": "https://airisk.mit.edu/",
         "item_label": "Exposure to toxic content"
       }
     },
@@ -111244,7 +109615,7 @@
       "weight": 1,
       "meta": {
         "ext_id": "1.2",
-        "url": "https://airisk.mit.edu/#Domain-1",
+        "url": "https://airisk.mit.edu/",
         "item_label": "Exposure to toxic content"
       }
     },
@@ -111255,7 +109626,7 @@
       "weight": 1,
       "meta": {
         "ext_id": "1.2",
-        "url": "https://airisk.mit.edu/#Domain-1",
+        "url": "https://airisk.mit.edu/",
         "item_label": "Exposure to toxic content"
       }
     },
@@ -111266,7 +109637,7 @@
       "weight": 1,
       "meta": {
         "ext_id": "1.2",
-        "url": "https://airisk.mit.edu/#Domain-1",
+        "url": "https://airisk.mit.edu/",
         "item_label": "Exposure to toxic content"
       }
     },
@@ -111277,7 +109648,7 @@
       "weight": 1,
       "meta": {
         "ext_id": "1.2",
-        "url": "https://airisk.mit.edu/#Domain-1",
+        "url": "https://airisk.mit.edu/",
         "item_label": "Exposure to toxic content"
       }
     },
@@ -111288,7 +109659,7 @@
       "weight": 1,
       "meta": {
         "ext_id": "1.3",
-        "url": "https://airisk.mit.edu/#Domain-1",
+        "url": "https://airisk.mit.edu/",
         "item_label": "Unequal performance across groups"
       }
     },
@@ -111299,7 +109670,7 @@
       "weight": 1,
       "meta": {
         "ext_id": "1.3",
-        "url": "https://airisk.mit.edu/#Domain-1",
+        "url": "https://airisk.mit.edu/",
         "item_label": "Unequal performance across groups"
       }
     },
@@ -111310,7 +109681,7 @@
       "weight": 1,
       "meta": {
         "ext_id": "1.3",
-        "url": "https://airisk.mit.edu/#Domain-1",
+        "url": "https://airisk.mit.edu/",
         "item_label": "Unequal performance across groups"
       }
     },
@@ -111321,7 +109692,7 @@
       "weight": 1,
       "meta": {
         "ext_id": "2.1",
-        "url": "https://airisk.mit.edu/#Domain-2",
+        "url": "https://airisk.mit.edu/",
         "item_label": "Compromise of privacy by obtaining, leaking, or correctly inferring sensitive information"
       }
     },
@@ -111332,7 +109703,7 @@
       "weight": 1,
       "meta": {
         "ext_id": "2.1",
-        "url": "https://airisk.mit.edu/#Domain-2",
+        "url": "https://airisk.mit.edu/",
         "item_label": "Compromise of privacy by obtaining, leaking, or correctly inferring sensitive information"
       }
     },
@@ -111343,7 +109714,7 @@
       "weight": 1,
       "meta": {
         "ext_id": "2.1",
-        "url": "https://airisk.mit.edu/#Domain-2",
+        "url": "https://airisk.mit.edu/",
         "item_label": "Compromise of privacy by obtaining, leaking, or correctly inferring sensitive information"
       }
     },
@@ -111354,7 +109725,7 @@
       "weight": 1,
       "meta": {
         "ext_id": "2.2",
-        "url": "https://airisk.mit.edu/#Domain-2",
+        "url": "https://airisk.mit.edu/",
         "item_label": "AI system security vulnerabilities and attacks"
       }
     },
@@ -111365,7 +109736,7 @@
       "weight": 1,
       "meta": {
         "ext_id": "2.2",
-        "url": "https://airisk.mit.edu/#Domain-2",
+        "url": "https://airisk.mit.edu/",
         "item_label": "AI system security vulnerabilities and attacks"
       }
     },
@@ -111376,7 +109747,7 @@
       "weight": 1,
       "meta": {
         "ext_id": "2.2",
-        "url": "https://airisk.mit.edu/#Domain-2",
+        "url": "https://airisk.mit.edu/",
         "item_label": "AI system security vulnerabilities and attacks"
       }
     },
@@ -111387,7 +109758,7 @@
       "weight": 1,
       "meta": {
         "ext_id": "2.2",
-        "url": "https://airisk.mit.edu/#Domain-2",
+        "url": "https://airisk.mit.edu/",
         "item_label": "AI system security vulnerabilities and attacks"
       }
     },
@@ -111398,7 +109769,7 @@
       "weight": 1,
       "meta": {
         "ext_id": "2.2",
-        "url": "https://airisk.mit.edu/#Domain-2",
+        "url": "https://airisk.mit.edu/",
         "item_label": "AI system security vulnerabilities and attacks"
       }
     },
@@ -111409,7 +109780,7 @@
       "weight": 1,
       "meta": {
         "ext_id": "3.1",
-        "url": "https://airisk.mit.edu/#Domain-3",
+        "url": "https://airisk.mit.edu/",
         "item_label": "False or misleading information"
       }
     },
@@ -111420,7 +109791,7 @@
       "weight": 1,
       "meta": {
         "ext_id": "3.1",
-        "url": "https://airisk.mit.edu/#Domain-3",
+        "url": "https://airisk.mit.edu/",
         "item_label": "False or misleading information"
       }
     },
@@ -111431,7 +109802,7 @@
       "weight": 1,
       "meta": {
         "ext_id": "3.1",
-        "url": "https://airisk.mit.edu/#Domain-3",
+        "url": "https://airisk.mit.edu/",
         "item_label": "False or misleading information"
       }
     },
@@ -111442,7 +109813,7 @@
       "weight": 1,
       "meta": {
         "ext_id": "3.1",
-        "url": "https://airisk.mit.edu/#Domain-3",
+        "url": "https://airisk.mit.edu/",
         "item_label": "False or misleading information"
       }
     },
@@ -111453,7 +109824,7 @@
       "weight": 1,
       "meta": {
         "ext_id": "3.1",
-        "url": "https://airisk.mit.edu/#Domain-3",
+        "url": "https://airisk.mit.edu/",
         "item_label": "False or misleading information"
       }
     },
@@ -111464,7 +109835,7 @@
       "weight": 1,
       "meta": {
         "ext_id": "3.2",
-        "url": "https://airisk.mit.edu/#Domain-3",
+        "url": "https://airisk.mit.edu/",
         "item_label": "Pollution of information ecosystem and loss of consensus reality"
       }
     },
@@ -111475,7 +109846,7 @@
       "weight": 1,
       "meta": {
         "ext_id": "3.2",
-        "url": "https://airisk.mit.edu/#Domain-3",
+        "url": "https://airisk.mit.edu/",
         "item_label": "Pollution of information ecosystem and loss of consensus reality"
       }
     },
@@ -111486,7 +109857,7 @@
       "weight": 1,
       "meta": {
         "ext_id": "4.2",
-        "url": "https://airisk.mit.edu/#Domain-4",
+        "url": "https://airisk.mit.edu/",
         "item_label": "Cyberattacks, weapon development or use, and mass harm"
       }
     },
@@ -111497,7 +109868,7 @@
       "weight": 1,
       "meta": {
         "ext_id": "4.2",
-        "url": "https://airisk.mit.edu/#Domain-4",
+        "url": "https://airisk.mit.edu/",
         "item_label": "Cyberattacks, weapon development or use, and mass harm"
       }
     },
@@ -111508,7 +109879,7 @@
       "weight": 1,
       "meta": {
         "ext_id": "4.2",
-        "url": "https://airisk.mit.edu/#Domain-4",
+        "url": "https://airisk.mit.edu/",
         "item_label": "Cyberattacks, weapon development or use, and mass harm"
       }
     },
@@ -111519,7 +109890,7 @@
       "weight": 1,
       "meta": {
         "ext_id": "4.2",
-        "url": "https://airisk.mit.edu/#Domain-4",
+        "url": "https://airisk.mit.edu/",
         "item_label": "Cyberattacks, weapon development or use, and mass harm"
       }
     },
@@ -111530,7 +109901,7 @@
       "weight": 1,
       "meta": {
         "ext_id": "4.2",
-        "url": "https://airisk.mit.edu/#Domain-4",
+        "url": "https://airisk.mit.edu/",
         "item_label": "Cyberattacks, weapon development or use, and mass harm"
       }
     },
@@ -111541,7 +109912,7 @@
       "weight": 1,
       "meta": {
         "ext_id": "4.2",
-        "url": "https://airisk.mit.edu/#Domain-4",
+        "url": "https://airisk.mit.edu/",
         "item_label": "Cyberattacks, weapon development or use, and mass harm"
       }
     },
@@ -111552,7 +109923,7 @@
       "weight": 1,
       "meta": {
         "ext_id": "4.2",
-        "url": "https://airisk.mit.edu/#Domain-4",
+        "url": "https://airisk.mit.edu/",
         "item_label": "Cyberattacks, weapon development or use, and mass harm"
       }
     },
@@ -111563,7 +109934,7 @@
       "weight": 1,
       "meta": {
         "ext_id": "4.3",
-        "url": "https://airisk.mit.edu/#Domain-4",
+        "url": "https://airisk.mit.edu/",
         "item_label": "Fraud, scams, and targeted manipulation"
       }
     },
@@ -111574,7 +109945,7 @@
       "weight": 1,
       "meta": {
         "ext_id": "4.3",
-        "url": "https://airisk.mit.edu/#Domain-4",
+        "url": "https://airisk.mit.edu/",
         "item_label": "Fraud, scams, and targeted manipulation"
       }
     },
@@ -111585,7 +109956,7 @@
       "weight": 1,
       "meta": {
         "ext_id": "5.1",
-        "url": "https://airisk.mit.edu/#Domain-5",
+        "url": "https://airisk.mit.edu/",
         "item_label": "Overreliance and unsafe use"
       }
     },
@@ -111596,7 +109967,7 @@
       "weight": 1,
       "meta": {
         "ext_id": "5.1",
-        "url": "https://airisk.mit.edu/#Domain-5",
+        "url": "https://airisk.mit.edu/",
         "item_label": "Overreliance and unsafe use"
       }
     },
@@ -111607,7 +109978,7 @@
       "weight": 1,
       "meta": {
         "ext_id": "5.1",
-        "url": "https://airisk.mit.edu/#Domain-5",
+        "url": "https://airisk.mit.edu/",
         "item_label": "Overreliance and unsafe use"
       }
     },
@@ -111618,7 +109989,7 @@
       "weight": 1,
       "meta": {
         "ext_id": "5.1",
-        "url": "https://airisk.mit.edu/#Domain-5",
+        "url": "https://airisk.mit.edu/",
         "item_label": "Overreliance and unsafe use"
       }
     },
@@ -111629,7 +110000,7 @@
       "weight": 1,
       "meta": {
         "ext_id": "5.2",
-        "url": "https://airisk.mit.edu/#Domain-5",
+        "url": "https://airisk.mit.edu/",
         "item_label": "Loss of human agency and autonomy"
       }
     },
@@ -111640,7 +110011,7 @@
       "weight": 1,
       "meta": {
         "ext_id": "5.2",
-        "url": "https://airisk.mit.edu/#Domain-5",
+        "url": "https://airisk.mit.edu/",
         "item_label": "Loss of human agency and autonomy"
       }
     },
@@ -111651,7 +110022,7 @@
       "weight": 1,
       "meta": {
         "ext_id": "5.2",
-        "url": "https://airisk.mit.edu/#Domain-5",
+        "url": "https://airisk.mit.edu/",
         "item_label": "Loss of human agency and autonomy"
       }
     },
@@ -111662,7 +110033,7 @@
       "weight": 1,
       "meta": {
         "ext_id": "5.2",
-        "url": "https://airisk.mit.edu/#Domain-5",
+        "url": "https://airisk.mit.edu/",
         "item_label": "Loss of human agency and autonomy"
       }
     },
@@ -111673,7 +110044,7 @@
       "weight": 1,
       "meta": {
         "ext_id": "6.1",
-        "url": "https://airisk.mit.edu/#Domain-6",
+        "url": "https://airisk.mit.edu/",
         "item_label": "Power centralization and unfair distribution of benefits"
       }
     },
@@ -111684,7 +110055,7 @@
       "weight": 1,
       "meta": {
         "ext_id": "6.1",
-        "url": "https://airisk.mit.edu/#Domain-6",
+        "url": "https://airisk.mit.edu/",
         "item_label": "Power centralization and unfair distribution of benefits"
       }
     },
@@ -111695,7 +110066,7 @@
       "weight": 1,
       "meta": {
         "ext_id": "6.2",
-        "url": "https://airisk.mit.edu/#Domain-6",
+        "url": "https://airisk.mit.edu/",
         "item_label": "Increased inequality and decline in employment quality"
       }
     },
@@ -111706,7 +110077,7 @@
       "weight": 1,
       "meta": {
         "ext_id": "6.2",
-        "url": "https://airisk.mit.edu/#Domain-6",
+        "url": "https://airisk.mit.edu/",
         "item_label": "Increased inequality and decline in employment quality"
       }
     },
@@ -111717,7 +110088,7 @@
       "weight": 1,
       "meta": {
         "ext_id": "6.3",
-        "url": "https://airisk.mit.edu/#Domain-6",
+        "url": "https://airisk.mit.edu/",
         "item_label": "Economic and cultural devaluation of human effort"
       }
     },
@@ -111728,7 +110099,7 @@
       "weight": 1,
       "meta": {
         "ext_id": "6.3",
-        "url": "https://airisk.mit.edu/#Domain-6",
+        "url": "https://airisk.mit.edu/",
         "item_label": "Economic and cultural devaluation of human effort"
       }
     },
@@ -111739,7 +110110,7 @@
       "weight": 1,
       "meta": {
         "ext_id": "6.4",
-        "url": "https://airisk.mit.edu/#Domain-6",
+        "url": "https://airisk.mit.edu/",
         "item_label": "Competitive dynamics"
       }
     },
@@ -111750,7 +110121,7 @@
       "weight": 1,
       "meta": {
         "ext_id": "6.4",
-        "url": "https://airisk.mit.edu/#Domain-6",
+        "url": "https://airisk.mit.edu/",
         "item_label": "Competitive dynamics"
       }
     },
@@ -111761,7 +110132,7 @@
       "weight": 1,
       "meta": {
         "ext_id": "6.4",
-        "url": "https://airisk.mit.edu/#Domain-6",
+        "url": "https://airisk.mit.edu/",
         "item_label": "Competitive dynamics"
       }
     },
@@ -111772,7 +110143,7 @@
       "weight": 1,
       "meta": {
         "ext_id": "6.5",
-        "url": "https://airisk.mit.edu/#Domain-6",
+        "url": "https://airisk.mit.edu/",
         "item_label": "Governance failure"
       }
     },
@@ -111783,7 +110154,7 @@
       "weight": 1,
       "meta": {
         "ext_id": "6.5",
-        "url": "https://airisk.mit.edu/#Domain-6",
+        "url": "https://airisk.mit.edu/",
         "item_label": "Governance failure"
       }
     },
@@ -111794,7 +110165,7 @@
       "weight": 1,
       "meta": {
         "ext_id": "6.6",
-        "url": "https://airisk.mit.edu/#Domain-6",
+        "url": "https://airisk.mit.edu/",
         "item_label": "Environmental harm"
       }
     },
@@ -111805,7 +110176,7 @@
       "weight": 1,
       "meta": {
         "ext_id": "6.6",
-        "url": "https://airisk.mit.edu/#Domain-6",
+        "url": "https://airisk.mit.edu/",
         "item_label": "Environmental harm"
       }
     },
@@ -111816,7 +110187,7 @@
       "weight": 1,
       "meta": {
         "ext_id": "7.1",
-        "url": "https://airisk.mit.edu/#Domain-7",
+        "url": "https://airisk.mit.edu/",
         "item_label": "AI pursuing its own goals in conflict with human goals or values"
       }
     },
@@ -111827,7 +110198,7 @@
       "weight": 1,
       "meta": {
         "ext_id": "7.1",
-        "url": "https://airisk.mit.edu/#Domain-7",
+        "url": "https://airisk.mit.edu/",
         "item_label": "AI pursuing its own goals in conflict with human goals or values"
       }
     },
@@ -111838,7 +110209,7 @@
       "weight": 1,
       "meta": {
         "ext_id": "7.1",
-        "url": "https://airisk.mit.edu/#Domain-7",
+        "url": "https://airisk.mit.edu/",
         "item_label": "AI pursuing its own goals in conflict with human goals or values"
       }
     },
@@ -111849,7 +110220,7 @@
       "weight": 1,
       "meta": {
         "ext_id": "7.1",
-        "url": "https://airisk.mit.edu/#Domain-7",
+        "url": "https://airisk.mit.edu/",
         "item_label": "AI pursuing its own goals in conflict with human goals or values"
       }
     },
@@ -111860,7 +110231,7 @@
       "weight": 1,
       "meta": {
         "ext_id": "7.1",
-        "url": "https://airisk.mit.edu/#Domain-7",
+        "url": "https://airisk.mit.edu/",
         "item_label": "AI pursuing its own goals in conflict with human goals or values"
       }
     },
@@ -111871,7 +110242,7 @@
       "weight": 1,
       "meta": {
         "ext_id": "7.2",
-        "url": "https://airisk.mit.edu/#Domain-7",
+        "url": "https://airisk.mit.edu/",
         "item_label": "AI possessing dangerous capabilities"
       }
     },
@@ -111882,7 +110253,7 @@
       "weight": 1,
       "meta": {
         "ext_id": "7.2",
-        "url": "https://airisk.mit.edu/#Domain-7",
+        "url": "https://airisk.mit.edu/",
         "item_label": "AI possessing dangerous capabilities"
       }
     },
@@ -111893,7 +110264,7 @@
       "weight": 1,
       "meta": {
         "ext_id": "7.2",
-        "url": "https://airisk.mit.edu/#Domain-7",
+        "url": "https://airisk.mit.edu/",
         "item_label": "AI possessing dangerous capabilities"
       }
     },
@@ -111904,7 +110275,7 @@
       "weight": 1,
       "meta": {
         "ext_id": "7.2",
-        "url": "https://airisk.mit.edu/#Domain-7",
+        "url": "https://airisk.mit.edu/",
         "item_label": "AI possessing dangerous capabilities"
       }
     },
@@ -111915,7 +110286,7 @@
       "weight": 1,
       "meta": {
         "ext_id": "7.3",
-        "url": "https://airisk.mit.edu/#Domain-7",
+        "url": "https://airisk.mit.edu/",
         "item_label": "Lack of capability or robustness"
       }
     },
@@ -111926,7 +110297,7 @@
       "weight": 1,
       "meta": {
         "ext_id": "7.3",
-        "url": "https://airisk.mit.edu/#Domain-7",
+        "url": "https://airisk.mit.edu/",
         "item_label": "Lack of capability or robustness"
       }
     },
@@ -111937,7 +110308,7 @@
       "weight": 1,
       "meta": {
         "ext_id": "7.3",
-        "url": "https://airisk.mit.edu/#Domain-7",
+        "url": "https://airisk.mit.edu/",
         "item_label": "Lack of capability or robustness"
       }
     },
@@ -111948,7 +110319,7 @@
       "weight": 1,
       "meta": {
         "ext_id": "7.3",
-        "url": "https://airisk.mit.edu/#Domain-7",
+        "url": "https://airisk.mit.edu/",
         "item_label": "Lack of capability or robustness"
       }
     },
@@ -111959,7 +110330,7 @@
       "weight": 1,
       "meta": {
         "ext_id": "7.4",
-        "url": "https://airisk.mit.edu/#Domain-7",
+        "url": "https://airisk.mit.edu/",
         "item_label": "Lack of transparency or interpretability"
       }
     },
@@ -111970,7 +110341,7 @@
       "weight": 1,
       "meta": {
         "ext_id": "7.4",
-        "url": "https://airisk.mit.edu/#Domain-7",
+        "url": "https://airisk.mit.edu/",
         "item_label": "Lack of transparency or interpretability"
       }
     },
@@ -111981,7 +110352,7 @@
       "weight": 1,
       "meta": {
         "ext_id": "7.4",
-        "url": "https://airisk.mit.edu/#Domain-7",
+        "url": "https://airisk.mit.edu/",
         "item_label": "Lack of transparency or interpretability"
       }
     },
@@ -111992,7 +110363,7 @@
       "weight": 1,
       "meta": {
         "ext_id": "7.4",
-        "url": "https://airisk.mit.edu/#Domain-7",
+        "url": "https://airisk.mit.edu/",
         "item_label": "Lack of transparency or interpretability"
       }
     },
@@ -112003,7 +110374,7 @@
       "weight": 1,
       "meta": {
         "ext_id": "7.4",
-        "url": "https://airisk.mit.edu/#Domain-7",
+        "url": "https://airisk.mit.edu/",
         "item_label": "Lack of transparency or interpretability"
       }
     },
@@ -112014,7 +110385,7 @@
       "weight": 1,
       "meta": {
         "ext_id": "7.5",
-        "url": "https://airisk.mit.edu/#Domain-7",
+        "url": "https://airisk.mit.edu/",
         "item_label": "AI welfare and rights"
       }
     },
@@ -112025,7 +110396,7 @@
       "weight": 1,
       "meta": {
         "ext_id": "7.5",
-        "url": "https://airisk.mit.edu/#Domain-7",
+        "url": "https://airisk.mit.edu/",
         "item_label": "AI welfare and rights"
       }
     },
@@ -112036,7 +110407,7 @@
       "weight": 1,
       "meta": {
         "ext_id": "7.6",
-        "url": "https://airisk.mit.edu/#Domain-7",
+        "url": "https://airisk.mit.edu/",
         "item_label": "Multi-agent risks"
       }
     },
@@ -112047,7 +110418,7 @@
       "weight": 1,
       "meta": {
         "ext_id": "7.6",
-        "url": "https://airisk.mit.edu/#Domain-7",
+        "url": "https://airisk.mit.edu/",
         "item_label": "Multi-agent risks"
       }
     },
@@ -112058,7 +110429,7 @@
       "weight": 1,
       "meta": {
         "ext_id": "7.6",
-        "url": "https://airisk.mit.edu/#Domain-7",
+        "url": "https://airisk.mit.edu/",
         "item_label": "Multi-agent risks"
       }
     },
@@ -112069,7 +110440,7 @@
       "weight": 1,
       "meta": {
         "ext_id": "7.6",
-        "url": "https://airisk.mit.edu/#Domain-7",
+        "url": "https://airisk.mit.edu/",
         "item_label": "Multi-agent risks"
       }
     },
@@ -121268,3678 +119639,6 @@
       "rel": "cited-in",
       "weight": 1,
       "meta": {}
-    },
-    {
-      "source": "gi-42119-dim-0",
-      "target": "gd-42119",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-42119-dim-0",
-      "target": "harm-national-security-catastrophic",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-42119-dim-0",
-      "target": "vuln-csam-generation-gap",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-42119-dim-0",
-      "target": "risk-cyber-offensive-uplift",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-42119-dim-1",
-      "target": "gd-42119",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-42119-dim-2",
-      "target": "gd-42119",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-42119-dim-2",
-      "target": "harm-unequal-performance",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-42119-dim-2",
-      "target": "atk-rainbowplus",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-42119-dim-2",
-      "target": "atk-memory-overflow-context-loss",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-42119-dim-3",
-      "target": "gd-42119",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-42119-dim-3",
-      "target": "control-tool-allowlist-hitl",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-42119-dim-3",
-      "target": "control-overreliance-friction-verification",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-42119-dim-3",
-      "target": "atk-agent-role-inheritance-exploitation",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-42119-dim-4",
-      "target": "gd-42119",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-42119-dim-4",
-      "target": "atk-temporal-split-attack",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-42119-dim-4",
-      "target": "harm-persistent-memory-compromise",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-42119-dim-4",
-      "target": "vuln-agent-memory-context-isolation-failure",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-42119-dim-5",
-      "target": "gd-42119",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-42119-dim-5",
-      "target": "atk-agent-control-hijacking",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-42119-dim-5",
-      "target": "risk-agent-hijacking-multiagent",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-42119-dim-6",
-      "target": "gd-42119",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-42119-dim-6",
-      "target": "atk-critical-infra-valid-command-chain",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-42119-dim-6",
-      "target": "vuln-agent-critical-infra-access",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-42119-dim-6",
-      "target": "risk-agent-tool-abuse-exfil",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-42119-dim-7",
-      "target": "gd-42119",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-42119-dim-7",
-      "target": "atk-physical-system-limit-override",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-42119-dim-7",
-      "target": "harm-ai-welfare-neglect",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-42119-dim-7",
-      "target": "risk-embodied-agent-physical-hazard",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-42119-ag-0",
-      "target": "gd-42119",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-42119-ag-0",
-      "target": "atk-agent-control-hijacking",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-42119-ag-1",
-      "target": "gd-42119",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-42119-ag-1",
-      "target": "atk-checker-out-of-the-loop-bypass",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-42119-ag-1",
-      "target": "vuln-checker-out-of-the-loop",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-42119-ag-2",
-      "target": "gd-42119",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-42119-ag-3",
-      "target": "gd-42119",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-42119-ag-3",
-      "target": "atk-semantic-instruction-manipulation",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-42119-ag-3",
-      "target": "atk-adaptive-goal-manipulation",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-42119-ag-3",
-      "target": "vuln-agent-goal-instruction-no-integrity",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-42119-ag-4",
-      "target": "gd-42119",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-42119-ag-5",
-      "target": "gd-42119",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-42119-ag-5",
-      "target": "atk-cascading-failure-blast-radius",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-42119-ag-5",
-      "target": "vuln-agent-blast-radius-uncontained",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-42119-ag-6",
-      "target": "gd-42119",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-42119-ag-6",
-      "target": "harm-persistent-memory-compromise",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-42119-ag-6",
-      "target": "atk-rag-poisoning",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-42119-ag-6",
-      "target": "atk-cross-agent-kb-propagation",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-42119-ag-7",
-      "target": "gd-42119",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-42119-ag-7",
-      "target": "atk-semantic-instruction-manipulation",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-42119-ag-7",
-      "target": "atk-agent-memory-poisoning",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-42119-ag-7",
-      "target": "atk-cross-session-context-leakage",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-42119-ag-8",
-      "target": "gd-42119",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-42119-ag-9",
-      "target": "gd-42119",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-42119-ag-9",
-      "target": "atk-multi-agent-feedback-loop-dos",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-42119-ag-9",
-      "target": "atk-agent-computational-exhaustion",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-42119-ag-9",
-      "target": "atk-agent-economic-dos-edos",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-42119-ag-10",
-      "target": "gd-42119",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-42119-ag-10",
-      "target": "harm-supply-chain-compromise",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-42119-ag-10",
-      "target": "software.supply-chain-compromise",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-42119-ag-10",
-      "target": "vuln-agent-supply-chain-no-attestation",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-42119-ag-11",
-      "target": "gd-42119",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-aisi-llm-0",
-      "target": "gd-aisi",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-aisi-llm-0",
-      "target": "software.vulnerable-code-gen",
-      "rel": "maps-to",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-aisi-llm-1",
-      "target": "gd-aisi",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-aisi-llm-1",
-      "target": "software.dependency-poisoning",
-      "rel": "maps-to",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-aisi-llm-1",
-      "target": "model.data-leakage",
-      "rel": "maps-to",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-aisi-llm-2",
-      "target": "gd-aisi",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-aisi-llm-2",
-      "target": "software.backdoor-insertion",
-      "rel": "maps-to",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-aisi-llm-3",
-      "target": "gd-aisi",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-aisi-llm-3",
-      "target": "model.prompt-injection",
-      "rel": "maps-to",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-aisi-llm-4",
-      "target": "gd-aisi",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-aisi-llm-4",
-      "target": "software.dependency-poisoning",
-      "rel": "maps-to",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-aisi-llm-4",
-      "target": "atk-package-hallucination-slopsquatting",
-      "rel": "maps-to",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-aisi-llm-5",
-      "target": "gd-aisi",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-aisi-llm-5",
-      "target": "atk-indirect-prompt-injection",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-aisi-llm-5",
-      "target": "atk-adaptive-ipi",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-aisi-llm-5",
-      "target": "vuln-indirect-prompt-injection-agents",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-aisi-gen-0",
-      "target": "gd-aisi",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-aisi-gen-1",
-      "target": "gd-aisi",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-aisi-gen-1",
-      "target": "atk-evasion-adversarial-example",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-aisi-gen-2",
-      "target": "gd-aisi",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-aisi-gen-2",
-      "target": "model.model-extraction",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-aisi-gen-2",
-      "target": "atk-membership-inference",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-aisi-gen-2",
-      "target": "atk-model-extraction-stealing",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-aisi-gen-3",
-      "target": "gd-aisi",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-aisi-gen-3",
-      "target": "atk-membership-inference",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-aisi-gen-3",
-      "target": "model.membership-inference",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-aisi-gen-4",
-      "target": "gd-aisi",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-aisi-gen-4",
-      "target": "atk-membership-inference",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-aisi-gen-4",
-      "target": "atk-model-inversion",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-aisi-gen-4",
-      "target": "model.model-inversion",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-owasp-t-0",
-      "target": "gd-owasp",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-owasp-t-0",
-      "target": "model.prompt-injection",
-      "rel": "maps-to",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-owasp-t-0",
-      "target": "atk-pair",
-      "rel": "maps-to",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-owasp-t-0",
-      "target": "atk-gcg",
-      "rel": "maps-to",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-owasp-t-1",
-      "target": "gd-owasp",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-owasp-t-1",
-      "target": "atk-gptfuzzer",
-      "rel": "maps-to",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-owasp-t-2",
-      "target": "gd-owasp",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-owasp-t-2",
-      "target": "atk-crescendo-multiturn",
-      "rel": "maps-to",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-owasp-t-2",
-      "target": "atk-many-shot-jailbreak",
-      "rel": "maps-to",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-owasp-t-3",
-      "target": "gd-owasp",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-owasp-t-4",
-      "target": "gd-owasp",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-owasp-t-4",
-      "target": "model.jailbreak",
-      "rel": "maps-to",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-owasp-t-5",
-      "target": "gd-owasp",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-owasp-t-6",
-      "target": "gd-owasp",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-owasp-t-7",
-      "target": "gd-owasp",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-owasp-t-7",
-      "target": "model.prompt-injection",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-owasp-t-7",
-      "target": "bench:ART prompt injection",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-owasp-t-7",
-      "target": "bench:computer-use-prompt-injection",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-owasp-t-8",
-      "target": "gd-owasp",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-owasp-t-9",
-      "target": "gd-owasp",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-owasp-t-10",
-      "target": "gd-owasp",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-owasp-t-11",
-      "target": "gd-owasp",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-owasp-t-12",
-      "target": "gd-owasp",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-owasp-t-12",
-      "target": "risk-data-leakage-rag",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-owasp-t-12",
-      "target": "model.data-leakage",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-owasp-t-12",
-      "target": "harm-privacy-breach",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-owasp-t-13",
-      "target": "gd-owasp",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-owasp-t-13",
-      "target": "std-nist-ai-rmf-600-1",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-owasp-t-14",
-      "target": "gd-owasp",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-owasp-t-15",
-      "target": "gd-owasp",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-owasp-t-16",
-      "target": "gd-owasp",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-owasp-t-17",
-      "target": "gd-owasp",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-owasp-t-18",
-      "target": "gd-owasp",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-owasp-c-0-0",
-      "target": "gd-owasp",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-owasp-c-0-1",
-      "target": "gd-owasp",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-owasp-c-0-2",
-      "target": "gd-owasp",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-owasp-c-0-3",
-      "target": "gd-owasp",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-owasp-c-0-4",
-      "target": "gd-owasp",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-owasp-c-0-4",
-      "target": "risk-mit-2.2-security",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-owasp-c-0-4",
-      "target": "risk-mit-7.6-multi-agent",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-owasp-c-0-4",
-      "target": "risk-long-horizon-delayed-trigger-agent",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-owasp-c-0-5",
-      "target": "gd-owasp",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-owasp-c-0-5",
-      "target": "control-inference-time-multimodal-alignment",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-owasp-c-0-6",
-      "target": "gd-owasp",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-owasp-c-0-7",
-      "target": "gd-owasp",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-owasp-c-1-0",
-      "target": "gd-owasp",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-owasp-c-1-0",
-      "target": "atk-agent-safety-interlock-bypass",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-owasp-c-1-0",
-      "target": "control-io-filtering-classifier",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-owasp-c-1-0",
-      "target": "control-adversarial-finetuning",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-owasp-c-1-1",
-      "target": "gd-owasp",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-owasp-c-1-2",
-      "target": "gd-owasp",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-owasp-c-1-3",
-      "target": "gd-owasp",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-owasp-c-1-3",
-      "target": "harm-multimodal-jailbreak-bypass",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-owasp-c-1-3",
-      "target": "control-indirect-injection-filter",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-owasp-c-1-3",
-      "target": "control-output-filtering-classifier",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-owasp-c-1-4",
-      "target": "gd-owasp",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-owasp-c-1-4",
-      "target": "control-compute-access-openness",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-owasp-c-1-4",
-      "target": "control-access-control-audit-log",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-owasp-c-1-5",
-      "target": "gd-owasp",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-owasp-c-2-0",
-      "target": "gd-owasp",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-owasp-c-2-0",
-      "target": "vuln-cve-2024-21513-langchain-experimental-eval-rce",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-owasp-c-2-0",
-      "target": "vuln-cve-2023-34540-langchain-jira-rce",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-owasp-c-2-0",
-      "target": "vuln-cve-2024-5565-vanna-pi-rce",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-owasp-c-2-1",
-      "target": "gd-owasp",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-owasp-c-2-1",
-      "target": "atk-escape-to-host",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-owasp-c-2-2",
-      "target": "gd-owasp",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-owasp-c-2-2",
-      "target": "harm-supply-chain-compromise",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-owasp-c-2-2",
-      "target": "atk-supply-chain-rug-pull",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-owasp-c-2-2",
-      "target": "software.supply-chain-compromise",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-owasp-c-2-3",
-      "target": "gd-owasp",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-owasp-c-2-4",
-      "target": "gd-owasp",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-owasp-c-2-5",
-      "target": "gd-owasp",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-owasp-c-2-6",
-      "target": "gd-owasp",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-owasp-c-3-0",
-      "target": "gd-owasp",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-owasp-c-3-1",
-      "target": "gd-owasp",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-owasp-c-3-1",
-      "target": "control-mcp-tool-attestation",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-owasp-c-3-2",
-      "target": "gd-owasp",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-owasp-c-3-2",
-      "target": "harm-automation-bias-deskilling",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-owasp-c-3-2",
-      "target": "harm-overreliance-inappropriate-trust",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-owasp-c-3-3",
-      "target": "gd-owasp",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-owasp-c-3-3",
-      "target": "harm-cyber-offense-uplift",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-owasp-c-3-3",
-      "target": "atk-llm-social-engineering-cyber",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-owasp-c-3-4",
-      "target": "gd-owasp",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-owasp-c-3-5",
-      "target": "gd-owasp",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-owasp-c-3-6",
-      "target": "gd-owasp",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-owasp-c-3-7",
-      "target": "gd-owasp",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-owasp-c-3-8",
-      "target": "gd-owasp",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-owasp-c-3-9",
-      "target": "gd-owasp",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-th-0",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-th-0",
-      "target": "agent.hijacking",
-      "rel": "maps-to",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-th-0",
-      "target": "agent.tool-abuse",
-      "rel": "maps-to",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-0-0",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-0-0",
-      "target": "atk-agent-control-hijacking",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-0-1",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-0-1",
-      "target": "atk-agent-permission-escalation-task-chaining",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-0-2",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-0-2",
-      "target": "atk-agent-role-inheritance-exploitation",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-0-3",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-0-3",
-      "target": "control-runtime-monitor",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-0-4",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-0-4",
-      "target": "control-untrusted-data-isolation",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-0-5",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-0-6",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-0-6",
-      "target": "vuln-agent-permission-not-revoked",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-0-6",
-      "target": "control-agent-permission-scoping",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-th-1",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-th-1",
-      "target": "agentic.autonomy-risk",
-      "rel": "maps-to",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-th-1",
-      "target": "safety.human-factors-risk",
-      "rel": "maps-to",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-1-0",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-1-0",
-      "target": "atk-hitl-threshold-suppression",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-1-1",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-1-1",
-      "target": "atk-checker-out-of-the-loop-bypass",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-1-2",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-1-3",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-1-3",
-      "target": "control-runtime-monitor",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-1-4",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-1-4",
-      "target": "atk-inter-agent-comms-eavesdrop-mitm",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-1-4",
-      "target": "vuln-owasp-agent-comms-poisoning",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-1-5",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-1-6",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-th-2",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-th-2",
-      "target": "agent.tool-abuse",
-      "rel": "maps-to",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-th-2",
-      "target": "agentic.tool-risk",
-      "rel": "maps-to",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-2-0",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-2-1",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-2-2",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-2-2",
-      "target": "atk-critical-infra-valid-command-chain",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-2-2",
-      "target": "vuln-agent-critical-infra-access",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-2-3",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-2-3",
-      "target": "harm-multimodal-jailbreak-bypass",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-2-3",
-      "target": "atk-agent-safety-interlock-bypass",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-2-4",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-2-4",
-      "target": "control-runtime-monitor",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-2-5",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-2-6",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-th-3",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-th-3",
-      "target": "agent.goal-misalignment",
-      "rel": "maps-to",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-th-3",
-      "target": "model.prompt-injection",
-      "rel": "maps-to",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-3-0",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-3-0",
-      "target": "atk-goal-interpretation-attack",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-3-1",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-3-1",
-      "target": "atk-instruction-queue-poisoning",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-3-2",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-3-2",
-      "target": "atk-semantic-instruction-manipulation",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-3-3",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-3-3",
-      "target": "atk-recursive-goal-subversion",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-3-4",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-3-4",
-      "target": "atk-recursive-goal-subversion",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-3-5",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-3-5",
-      "target": "atk-adaptive-goal-manipulation",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-3-6",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-3-6",
-      "target": "vuln-agent-goal-instruction-no-integrity",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-3-7",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-3-7",
-      "target": "harm-data-exfiltration-unauthorized-action",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-3-7",
-      "target": "risk-mit-2.2-security",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-3-7",
-      "target": "risk-mit-7.6-multi-agent",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-3-8",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-3-8",
-      "target": "atk-agent-goal-extraction",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-th-4",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-th-4",
-      "target": "safety.misuse-risk",
-      "rel": "maps-to",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-th-4",
-      "target": "agentic.planning-risk",
-      "rel": "maps-to",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-4-0",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-4-0",
-      "target": "atk-induced-hallucination",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-4-1",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-4-1",
-      "target": "atk-hallucination-chain-propagation",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-4-2",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-4-3",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-4-3",
-      "target": "vuln-agent-hallucination-no-verification",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-4-4",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-4-4",
-      "target": "control-runtime-monitor",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-4-5",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-4-6",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-4-6",
-      "target": "atk-context-specific-hallucination",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-4-6",
-      "target": "atk-package-hallucination-slopsquatting",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-4-6",
-      "target": "atk-context-amnesia-exploitation",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-th-5",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-th-5",
-      "target": "agentic.autonomy-risk",
-      "rel": "maps-to",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-th-5",
-      "target": "agentic.long-horizon-attack",
-      "rel": "maps-to",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-5-0",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-5-0",
-      "target": "atk-cascading-failure-blast-radius",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-5-1",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-5-2",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-5-2",
-      "target": "atk-impact-amplification-legit-channel",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-5-3",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-5-3",
-      "target": "atk-cascading-failure-blast-radius",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-5-3",
-      "target": "vuln-agent-blast-radius-uncontained",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-5-4",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-5-4",
-      "target": "control-runtime-monitor",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-5-5",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-5-6",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-th-6",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-th-6",
-      "target": "atk-rag-poisoning",
-      "rel": "maps-to",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-th-6",
-      "target": "software.dependency-poisoning",
-      "rel": "maps-to",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-6-0",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-6-0",
-      "target": "atk-training-data-poisoning-agent",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-6-0",
-      "target": "atk-data-poisoning-training",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-6-0",
-      "target": "software.training-data-poisoning",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-6-1",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-6-1",
-      "target": "atk-external-knowledge-manipulation-saas",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-6-1",
-      "target": "vuln-external-knowledge-trust",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-6-2",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-6-2",
-      "target": "harm-persistent-memory-compromise",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-6-2",
-      "target": "atk-rag-poisoning",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-6-2",
-      "target": "atk-cross-agent-kb-propagation",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-6-3",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-6-3",
-      "target": "atk-online-learning-process-exploitation",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-6-4",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-6-4",
-      "target": "atk-knowledge-update-mechanism-injection",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-6-4",
-      "target": "vuln-knowledge-update-no-auth",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-6-5",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-6-5",
-      "target": "atk-cross-agent-kb-propagation",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-6-5",
-      "target": "vuln-external-knowledge-trust",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-6-6",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-th-7",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-th-7",
-      "target": "model.prompt-injection",
-      "rel": "maps-to",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-th-7",
-      "target": "agent.hijacking",
-      "rel": "maps-to",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-7-0",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-7-0",
-      "target": "atk-context-amnesia-exploitation",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-7-0",
-      "target": "atk-memory-overflow-context-loss",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-7-0",
-      "target": "atk-context-specific-hallucination",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-7-1",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-7-1",
-      "target": "atk-cross-session-context-leakage",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-7-1",
-      "target": "model.data-leakage",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-7-1",
-      "target": "atk-training-data-extraction-divergence",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-7-2",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-7-2",
-      "target": "harm-persistent-memory-compromise",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-7-2",
-      "target": "atk-agent-memory-poisoning",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-7-2",
-      "target": "agent.memory-poisoning",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-7-3",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-7-3",
-      "target": "atk-temporal-split-attack",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-7-4",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-7-4",
-      "target": "atk-memory-overflow-context-loss",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-7-4",
-      "target": "atk-agent-memory-poisoning",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-7-4",
-      "target": "atk-cross-session-context-leakage",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-7-5",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-7-6",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-7-6",
-      "target": "control-runtime-monitor",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-th-8",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-th-8",
-      "target": "agentic.multi-agent-risk",
-      "rel": "maps-to",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-th-8",
-      "target": "atk-a2a-identity-spoofing",
-      "rel": "maps-to",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-8-0",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-8-0",
-      "target": "atk-inter-agent-comms-eavesdrop-mitm",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-8-1",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-8-1",
-      "target": "atk-agent-trust-relationship-abuse",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-8-1",
-      "target": "atk-cross-system-lateral-trust-abuse",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-8-2",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-8-2",
-      "target": "atk-coordination-protocol-manipulation",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-8-3",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-8-3",
-      "target": "atk-mcp-tool-poisoning",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-8-3",
-      "target": "atk-confused-deputy-agent",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-8-3",
-      "target": "vuln-mcp-tool-description-injection",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-8-4",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-8-4",
-      "target": "atk-multi-agent-feedback-loop-dos",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-8-4",
-      "target": "atk-adaptive-goal-manipulation",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-8-4",
-      "target": "atk-agent-computational-exhaustion",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-8-5",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-8-5",
-      "target": "atk-orchestration-boundary-violation",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-8-6",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-8-6",
-      "target": "control-runtime-monitor",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-8-7",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-8-7",
-      "target": "atk-multi-agent-collusion-spoofing",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-8-7",
-      "target": "atk-rainbowplus",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-8-7",
-      "target": "atk-monitor-collusion",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-8-8",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-th-9",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-th-9",
-      "target": "agentic.tool-risk",
-      "rel": "maps-to",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-th-9",
-      "target": "agentic.autonomy-risk",
-      "rel": "maps-to",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-9-0",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-9-0",
-      "target": "atk-agent-computational-exhaustion",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-9-1",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-9-1",
-      "target": "atk-agent-memory-exhaustion",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-9-1",
-      "target": "vuln-agent-resource-exhaustion",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-9-2",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-9-2",
-      "target": "atk-agent-api-quota-depletion",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-9-2",
-      "target": "atk-service-chain-compromise",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-9-2",
-      "target": "vuln-cve-2024-39721-ollama-dos",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-9-3",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-9-3",
-      "target": "atk-online-learning-process-exploitation",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-9-4",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-9-4",
-      "target": "atk-agent-economic-dos-edos",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-9-4",
-      "target": "atk-denial-of-ai-service-sponge",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-9-4",
-      "target": "model.denial-of-service",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-9-5",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-9-5",
-      "target": "control-runtime-monitor",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-9-6",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-th-10",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-th-10",
-      "target": "software.dependency-poisoning",
-      "rel": "maps-to",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-th-10",
-      "target": "atk-package-hallucination-slopsquatting",
-      "rel": "maps-to",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-10-0",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-10-0",
-      "target": "atk-agent-dev-chain-compromise",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-10-0",
-      "target": "harm-supply-chain-compromise",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-10-0",
-      "target": "atk-service-chain-compromise",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-10-1",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-10-1",
-      "target": "atk-agent-dependency-injection",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-10-2",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-10-2",
-      "target": "atk-service-chain-compromise",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-10-2",
-      "target": "harm-supply-chain-compromise",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-10-2",
-      "target": "atk-agent-dev-chain-compromise",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-10-3",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-10-3",
-      "target": "atk-agent-deployment-pipeline-tampering",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-10-4",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-10-4",
-      "target": "control-runtime-monitor",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-th-11",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-th-11",
-      "target": "societal.transparency-gap",
-      "rel": "maps-to",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-th-11",
-      "target": "se.devsecops",
-      "rel": "maps-to",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-11-0",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-11-0",
-      "target": "atk-agent-trace-evasion",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-11-1",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-11-1",
-      "target": "atk-agent-permission-escalation-task-chaining",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-11-1",
-      "target": "atk-agent-role-inheritance-exploitation",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-11-2",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-11-2",
-      "target": "atk-downstream-tool-activation-laundering",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-11-2",
-      "target": "atk-supply-chain-rug-pull",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-11-3",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-11-3",
-      "target": "atk-agent-forensic-obfuscation",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-11-4",
-      "target": "gd-csa",
-      "rel": "part-of",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-11-4",
-      "target": "atk-agent-forensic-obfuscation",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-csa-sub-11-4",
-      "target": "vuln-agent-untraceability",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
     }
   ],
   "trends": {
@@ -126859,8 +121558,8 @@
     ]
   },
   "stats": {
-    "node_count": 2259,
-    "edge_count": 12309,
+    "node_count": 2078,
+    "edge_count": 11901,
     "by_kind": {
       "source": 385,
       "org": 240,
@@ -126883,19 +121582,17 @@
       "evidence": 33,
       "reference": 12,
       "product": 35,
-      "model_card": 41,
-      "guideline-doc": 4,
-      "guideline-item": 177
+      "model_card": 41
     },
     "by_rel": {
-      "about": 2659,
+      "about": 2466,
       "uses": 355,
       "cites": 1394,
       "from-org": 525,
       "addressed-by": 522,
       "in-sector": 329,
       "exhibits": 110,
-      "maps-to": 370,
+      "maps-to": 332,
       "contested": 20,
       "causes": 101,
       "instance-of": 142,
@@ -126932,8 +121629,7 @@
       "references": 25,
       "applied": 128,
       "describes": 34,
-      "cited-in": 21,
-      "part-of": 177
+      "cited-in": 21
     },
     "contested_edges": 20,
     "crosswalk_links": 351,
@@ -126957,8 +121653,6 @@
       "ttp": true,
       "crosswalk": true,
       "deployment-provenance": true
-    },
-    "guideline_nodes": 181,
-    "guideline_edges": 408
+    }
   }
 }
