@@ -455,7 +455,9 @@ async function renderSearch(query,mode){
   LAST_QVEC=null;SEM_ON=false;
   if(EMBED_PROXY&&EMBED_PROXY.configured){
     const[emb,qv]=await Promise.all([ensureEmb(),embedQuery(query)]);
-    if(qv&&emb&&emb.n){LAST_QVEC=qv;SEM_ON=true;}
+    // 차원 가드: 쿼리 임베딩 모델과 사전계산 벡터 모델이 다르면(dim 불일치) lexical 폴백.
+    if(qv&&emb&&emb.n&&qv.length===emb.dim){LAST_QVEC=qv;SEM_ON=true;}
+    else if(qv&&emb&&emb.dim&&qv.length!==emb.dim)console.warn(`임베딩 차원 불일치(query ${qv.length} ≠ vectors ${emb.dim}) → lexical. 같은 모델로 재임베딩 필요`);
   }
   const qt=tok(query);
   const nodes=GRAPH.nodes||[],edges=GRAPH.edges||[],nById={};nodes.forEach(n=>{nById[n.id]=n;});
