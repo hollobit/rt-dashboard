@@ -600,6 +600,22 @@ async function buildGuideIndex(){
   if(g){(g.threats||[]).forEach(t=>{add(t.ko,t.ko+" "+t.en+" "+t.req,"#csa","CSA 위협");(t.subs||[]).forEach(s=>add(s.ko,s.ko+" "+s.en+" "+(s.steps||[]).join(" "),"#csa","CSA "+t.ko));});}
   g=await grab("data/guideline-terms.json");
   if(g){TERMS=[];(g.sources||[]).forEach(s=>{(s.terms||[]).forEach(t=>{add(t.term,t.term+" "+t.def,"#gterms","용어");TERMS.push({term:t.term,def:t.def,source:s.doc});});(s.abbrevs||[]).forEach(a=>{add(a.abbr,a.abbr+" "+a.full,"#gterms","약어");TERMS.push({term:a.abbr,def:a.full,source:s.doc});});});}
+  // 🛰️🦉🏛️🧬🛡️ 신규 프레임워크 보존형 데이터를 검색 인덱스에 포함 → GraphRAG 검색에 노출
+  g=await grab("data/atlas-matrix.json");
+  if(g)(g.tactics||[]).forEach(t=>{add("ATLAS "+t.id+" "+t.name,t.name+" tactic 전술","#atlasmatrix","ATLAS 전술");
+    (t.techniques||[]).forEach(it=>{add(it.id+" "+it.name,it.name+" "+it.id+" ATLAS "+t.name,"#atlasmatrix","ATLAS: "+t.name);
+      (it.subs||[]).forEach(s=>add(s.id+" "+s.name,s.name+" "+s.id+" ATLAS","#atlasmatrix","ATLAS 서브"));});});
+  g=await grab("data/owasp-llm-top10.json");
+  if(g)(g.items||[]).forEach(it=>add(it.id+" "+it.name,it.name+" "+it.id+" OWASP LLM "+(it.mapped||[]).map(e=>e.label).join(" "),"#owaspllm","OWASP LLM Top 10"));
+  g=await grab("data/nist-ai-rmf.json");
+  if(g)(g.functions||[]).forEach(f=>{add("NIST AI RMF "+f.key,f.key+" "+f.desc+" NIST RMF","#nistrmf","NIST AI RMF");
+    (f.subcats||[]).forEach(c=>add("NIST RMF "+c.id,c.id+" "+c.label+" NIST","#nistrmf","NIST RMF: "+f.key));});
+  g=await grab("data/nist-genai-profile.json");
+  if(g)(g.risks||[]).forEach(r=>add("NIST GenAI "+r.name,r.name+" "+r.desc+" 생성형AI NIST 600-1 "+(r.mapped||[]).map(e=>e.label).join(" "),"#nistgenai","NIST GenAI Profile"));
+  g=await grab("data/fmf-capability-assessments.json");
+  if(g){(g.methods||[]).forEach(m=>add("FMF "+m.name,m.name+" "+m.desc+" frontier capability assessment","#fmf","FMF 평가방법"));
+    (g.capability_domains||[]).forEach(d2=>add("FMF "+d2.name,d2.name+" "+d2.desc+" frontier 능력 "+(d2.mapped||[]).map(e=>e.label).join(" "),"#fmf","FMF 능력도메인"));
+    (g.frameworks||[]).forEach(f=>add(f.name,f.name+" frontier AI safety framework","#fmf","FMF 프레임워크"));}
   await buildAuxIndex();
 }
 // 통합 검색 인덱스: News · Change Log · Papers(논문) · 제품평가(model_card) — 모든 정보 통합
