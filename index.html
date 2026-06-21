@@ -202,6 +202,9 @@
   <section class="view" id="v-tax"></section>
   <section class="view" id="v-atlasmatrix"></section>
   <section class="view" id="v-owaspllm"></section>
+  <section class="view" id="v-nistrmf"></section>
+  <section class="view" id="v-nistgenai"></section>
+  <section class="view" id="v-fmf"></section>
   <section class="view" id="v-method"></section>
   <section class="view" id="v-autoredteam"></section>
   <section class="view" id="v-bench"></section>
@@ -458,7 +461,7 @@ async function load(){
     renderAll(); // overview 재렌더(🆕 신규분류 카드 등 GRAPH.nodes 의존분 반영)
     renderLifecycle();renderRiskMap();renderProv();renderPapers();renderCards();renderAutoRedteam();
     renderChangelog();renderNews();renderGuideline42119();renderJapanAISI();renderOWASP();renderCSA();
-    renderGuidelineTerms();renderGenAIMethods();renderAtlasMatrix();renderOwaspLLM();buildGuideIndex();nodeizeGuidelines();
+    renderGuidelineTerms();renderGenAIMethods();renderAtlasMatrix();renderOwaspLLM();renderNistRmf();renderNistGenai();renderFMF();buildGuideIndex();nodeizeGuidelines();
     // 그래프 의존 탭(graph/entity/papers/prov 등)이 열려있으면 풀 그래프로 재렌더
     selectTab(location.hash.slice(1)||"overview");
     loadSearchData();
@@ -706,7 +709,7 @@ function buildKPIs(){
     ["standards",byType("standard_item").length],["candidates",(byType("standard_item").filter(x=>x.candidate)).length]];
   document.getElementById("kpis").innerHTML=k.map(([l,v])=>`<div class="kpi"><b>${v||0}</b><span>${l}</span></div>`).join("");
 }
-const TABS=[["overview","Overview"],["changelog","📋 Change Log"],["lifecycle","🔄 AI Lifecycle"],["prov","🔬 RT Provenance"],["papers","📚 Papers"],["search","🔎 GraphRAG Search"],["news","📰 News"],["graph","Knowledge Graph"],["tax","Threat×Attack×ATLAS"],["atlasmatrix","🛰️ ATLAS Matrix"],["owaspllm","🦉 OWASP LLM Top 10"],
+const TABS=[["overview","Overview"],["changelog","📋 Change Log"],["lifecycle","🔄 AI Lifecycle"],["prov","🔬 RT Provenance"],["papers","📚 Papers"],["search","🔎 GraphRAG Search"],["news","📰 News"],["graph","Knowledge Graph"],["tax","Threat×Attack×ATLAS"],["atlasmatrix","🛰️ ATLAS Matrix"],["owaspllm","🦉 OWASP LLM Top 10"],["nistrmf","🏛️ NIST AI RMF"],["nistgenai","🧬 NIST GenAI Profile"],["fmf","🛡️ FMF Capability Assess"],
   ["method","Red Teaming Methods"],["autoredteam","🎯 자동 레드티밍"],["bench","Benchmarks"],["risk","Risk & Controls"],["riskmap","⚠️ Risk Map"],
   ["frontier","🧭 Frontier Safety"],["ttp","TTP: Tactic→Proc"],["onto","Ontology: Vuln→Harm"],["std","Standards & Gaps"],["sector","Sector Red Teaming"],["disc","Disclosure / Nat-Sec"],["xwalk","🔗 External Crosswalk"],["cards","🏷️ 제품 평가"],["trend","Trends"],["g42119","📑 ISO/IEC 42119-7"],["japanaisi","🇯🇵 Japan AISI"],["owasp","🦉 OWASP GenAI"],["csa","☁️ CSA Agentic"],["gterms","📖 용어"]];
 // 2단 네비: 5개 허브 → 하위 탭 (사용자 의도 기준 그룹화)
@@ -715,7 +718,7 @@ const HUBS=[
   ["find","🔍 찾기·탐색",["search","news","papers","graph","prov"]],
   ["threat","⚔️ 위협·공격",["tax","atlasmatrix","owaspllm","ttp","frontier","onto"]],
   ["riskhub","🛡️ 리스크·방법",["riskmap","risk","method","autoredteam","bench","sector","lifecycle"]],
-  ["gov","📋 거버넌스·동향",["std","disc","xwalk","cards","trend"]],
+  ["gov","📋 거버넌스·동향",["std","nistrmf","nistgenai","fmf","disc","xwalk","cards","trend"]],
   ["guide","📐 가이드라인",["g42119","japanaisi","owasp","csa","gterms"]],
 ];
 const TAB_HUB={}; HUBS.forEach(([hk,,tabs])=>tabs.forEach(t=>{TAB_HUB[t]=hk;}));
@@ -1465,6 +1468,56 @@ async function renderAtlasMatrix(){
       <p class="small muted">적대적 ML 전술 <b>${mx.tactics.length}</b> × 기법 매트릭스(공식 구조). <b style="color:var(--acc2)">● = 우리 코퍼스 보유</b> — top-level <b>${ncov}/${ntop}</b> · 서브 <b>${nscov}/${nsub}</b> 커버. 기법명 클릭 → ATLAS 공식 페이지, '코퍼스↗' → 우리 분석 상세(#entity). 가로 스크롤.</p>
       <div class="prov-cols" style="overflow-x:auto">${mx.tactics.map(col).join("")}</div></div>`;
 }
+// 🛡️ FMF Frontier Capability Assessments — 보존형 fmf-capability-assessments.json + 코퍼스 매핑
+let FMF_CA=null;
+async function renderFMF(){
+  const el=document.getElementById("v-fmf");if(!el)return;
+  if(!FMF_CA){try{FMF_CA=await (await fetch("data/fmf-capability-assessments.json")).json();}catch(e){el.innerHTML='<div class="card"><p class="muted">fmf-capability-assessments.json 로드 실패</p></div>';return;}}
+  const d=FMF_CA;const kcol={threat:"#ff6b6b",attack_technique:"#fa8c16",vulnerability:"#fa541c",risk:"#ff7875",harm:"#ff4d4f",control:"#52c41a",standard:"#b37feb",benchmark:"#13c2c2"};
+  const chip=e=>`<a class="tag" href="#entity:${encodeURIComponent(e.id)}" title="${esc(e.kind)}" style="border-left:3px solid ${kcol[e.kind]||'#5b6472'}">${esc(String(e.label).slice(0,40))}</a>`;
+  const meth=m=>`<div class="tile"><h4>${esc(m.name)}</h4><p class="small">${esc(m.desc||'')}</p></div>`;
+  const dom=d2=>`<div class="card" style="border-left:3px solid #fa541c"><div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap"><h4 style="margin:0">${esc(d2.name)}</h4><span class="muted small">${esc(d2.desc||'')} · 코퍼스 ${d2.mapped.length}</span></div><div style="margin-top:6px">${d2.mapped.length?d2.mapped.map(chip).join(" "):'<span class="muted small">매핑 없음</span>'}</div></div>`;
+  el.innerHTML=`<div class="card"><h3>🛡️ FMF Frontier Capability Assessments <span class="muted small">${esc(d.version||'')} · <a href="${esc(d.source)}" target="_blank">frontiermodelforum.org↗</a></span></h3>
+      <p class="small muted">${esc(d.definition||'')}</p></div>
+    <div class="card"><h3>3 평가 방법 (Assessment Approaches)</h3><div class="widgets">${d.methods.map(meth).join("")}</div></div>
+    <div class="card"><h3>핵심 구성요소</h3><div class="widgets">${d.components.map(meth).join("")}</div></div>
+    <div class="card"><h3>능력 도메인(국가안보 위험) — 코퍼스 매핑</h3><p class="small muted">FMF가 평가하는 고위험 능력에 우리 frontier·scientific 위협·공격을 매핑. 칩 클릭 → #entity.</p></div>
+    ${d.capability_domains.map(dom).join("")}
+    <div class="card"><h3>개발사 프론티어 AI 안전 프레임워크 <span class="muted small">(Capability Assessments가 작동하는 맥락)</span></h3>
+      ${d.frameworks.map(f=>`<div class="small" style="margin:5px 0;padding-top:4px;border-top:1px solid var(--line)"><b>${esc(f.name)}</b> ${f.mapped.length?f.mapped.map(chip).join(" "):'<span class="muted">코퍼스 표준 미수집</span>'}</div>`).join("")}</div>`;
+}
+// 🧬 NIST GenAI Profile (AI 600-1) — 12 생성형AI 위험 + 코퍼스 매핑 오버레이
+let NIST_GENAI=null;
+async function renderNistGenai(){
+  const el=document.getElementById("v-nistgenai");if(!el)return;
+  if(!NIST_GENAI){try{NIST_GENAI=await (await fetch("data/nist-genai-profile.json")).json();}catch(e){el.innerHTML='<div class="card"><p class="muted">nist-genai-profile.json 로드 실패</p></div>';return;}}
+  const d=NIST_GENAI;const kcol={threat:"#ff6b6b",attack_technique:"#fa8c16",vulnerability:"#fa541c",risk:"#ff7875",harm:"#ff4d4f",control:"#52c41a"};
+  const chip=e=>`<a class="tag" href="#entity:${encodeURIComponent(e.id)}" title="${esc(e.kind)}" style="border-left:3px solid ${kcol[e.kind]||'#5b6472'}">${esc(String(e.label).slice(0,40))}</a>`;
+  const tot=d.risks.reduce((s,r)=>s+r.mapped.length,0);
+  const card=(r,i)=>`<div class="card" style="border-left:3px solid #36cfc9"><div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+      <h4 style="margin:0">${i+1}. ${esc(r.name)}</h4><span class="muted small">${esc(r.desc||'')} · 매핑 ${r.mapped.length}</span></div>
+      <div style="margin-top:6px">${r.mapped.length?r.mapped.map(chip).join(" "):'<span class="muted small">매핑 없음</span>'}</div></div>`;
+  el.innerHTML=`<div class="card"><h3>🧬 NIST GenAI Profile <span class="muted small">${esc(d.version||'AI 600-1')} · <a href="${esc(d.source||'https://doi.org/10.6028/NIST.AI.600-1')}" target="_blank">NIST AI 600-1↗</a></span></h3>
+      <p class="small muted">생성형 AI에 고유하거나 악화되는 <b>12개 위험</b>(NIST AI 600-1)에 우리 코퍼스의 위협·공격·취약점·리스크·위해를 매핑(총 <b>${tot}</b>건). AI RMF의 MAP 함수를 GenAI에 특화한 프로필. 칩 클릭 → 통합 상세(#entity). RMF 4함수는 <a href="#nistrmf">🏛️ NIST AI RMF</a> 참조.</p></div>
+    ${d.risks.map(card).join("")}`;
+}
+// 🏛️ NIST AI RMF — 보존형 nist-ai-rmf.json(GOVERN/MAP/MEASURE/MANAGE 4함수)을 공식 구조 + 코퍼스 매핑으로 렌더
+let NIST_RMF=null;
+async function renderNistRmf(){
+  const el=document.getElementById("v-nistrmf");if(!el)return;
+  if(!NIST_RMF){try{NIST_RMF=await (await fetch("data/nist-ai-rmf.json")).json();}catch(e){el.innerHTML='<div class="card"><p class="muted">nist-ai-rmf.json 로드 실패</p></div>';return;}}
+  const d=NIST_RMF;const kcol={threat:"#ff6b6b",attack_technique:"#fa8c16",vulnerability:"#fa541c",risk:"#ff7875",harm:"#ff4d4f",control:"#52c41a",standard:"#b37feb",finding:"#8b97a8"};
+  const fcol={GOVERN:"#9254de",MAP:"#36cfc9",MEASURE:"#52c41a",MANAGE:"#ffb454"};
+  const chip=e=>`<a class="tag" href="#entity:${encodeURIComponent(e.id)}" title="${esc(e.kind)}" style="border-left:3px solid ${kcol[e.kind]||'#5b6472'}">${esc(String(e.label).slice(0,40))}</a>`;
+  const tot=d.functions.reduce((s,f)=>s+f.func_mapped.length+f.subcats.reduce((a,c)=>a+c.mapped.length,0),0);
+  const fcard=f=>`<div class="card" style="border-left:3px solid ${fcol[f.key]||'var(--acc)'}">
+      <h4 style="margin:0 0 2px">${esc(f.key)} <span class="muted small">${esc(f.desc||'')}</span></h4>
+      ${f.func_mapped.length?`<div class="small" style="margin:4px 0"><b>함수 전반</b> ${f.func_mapped.map(chip).join(" ")}</div>`:""}
+      ${f.subcats.map(c=>`<div class="small" style="margin:5px 0;padding-top:4px;border-top:1px solid var(--line)"><b style="color:var(--acc2)">${esc(c.id)}</b> ${esc(c.label||'')}<br>${c.mapped.length?c.mapped.map(chip).join(" "):'<span class="muted">매핑 없음</span>'}</div>`).join("")}</div>`;
+  el.innerHTML=`<div class="card"><h3>🏛️ NIST AI Risk Management Framework <span class="muted small">${esc(d.version||'AI RMF 1.0')} · <a href="${esc(d.source||'https://airc.nist.gov/airmf-resources/airmf/')}" target="_blank">airc.nist.gov↗</a></span></h3>
+      <p class="small muted">AI 위험관리 4대 함수(GOVERN·MAP·MEASURE·MANAGE) 공식 구조에 <b>우리 코퍼스의 통제·리스크·findings</b>를 매핑(총 <b>${tot}</b>건). 서브카테고리 코드는 NIST AI 100-1 기준. 칩 클릭 → 통합 상세(#entity). AI 수명주기↔RMF 매핑은 <a href="#lifecycle">🔄 AI Lifecycle</a> 참조.</p></div>
+    ${d.functions.map(fcard).join("")}`;
+}
 // 🦉 OWASP LLM Top 10 (2025) — 보존형 owasp-llm-top10.json을 공식 Top10 + 코퍼스 매핑 오버레이로 렌더
 let OWASP_LLM=null;
 async function renderOwaspLLM(){
@@ -1677,6 +1730,7 @@ async function renderNews(){
 function renderChangelog(){
   const el=document.getElementById("v-changelog");if(!el)return;
   const CHANGELOG=RT_CHANGELOG=[
+    ["2026-06-22","메뉴","표준·프레임워크 3종 체계적 통합 — 🏛️ NIST AI RMF(GOVERN/MAP/MEASURE/MANAGE 4함수+14서브카테고리·59 매핑), 🧬 NIST GenAI Profile(AI 600-1, 12 생성형AI 위험·56 매핑), 🛡️ FMF Frontier Capability Assessments(3 평가방법·4 능력도메인 CBRN/사이버/자율RnD/기만·개발사 6 프레임워크). 모두 공식 구조 + 코퍼스 매핑 오버레이"],
     ["2026-06-22","메뉴","🦉 OWASP LLM Top 10 탭 — OWASP Top 10 for LLM Applications(2025) 체계적 통합. 10 카테고리 공식 구조 + 코퍼스 매핑(위협·공격기법·취약점·리스크 62건), 제목→genai.owasp.org 공식 페이지·칩→#entity 상세"],
     ["2026-06-22","메뉴","🛰️ ATLAS Matrix 탭 — MITRE ATLAS Matrix for AI Systems(v5.6.0) 체계적 통합. 16 전술 × 111 top-level + 74 서브기법 공식 구조, ● = 코퍼스 보유(top 83/111·sub 26/74), 기법→atlas.mitre.org 공식 페이지·코퍼스 보유분→#entity. atlas 노드 115개 공식 명칭 보강"],
     ["2026-06-21","보강","대규모 커버리지 갭 보강(다중 분석가) — attack_technique 25→142(ATLAS top-level 63/63·CSA 84·OWASP 19·AISI 11 추출), CVE 16→25(cve.org 공식 검증), incident 23→50(AI Incident DB·OECD AIM 랜드마크), MIT risk 24/24 서브도메인, 표준 18→42(dangling 해소). 논문마이닝으로 신규 attack/method/teaming/benchmark/harm/hazard 반영. 그래프 1562→2259노드, dangling 0"],
