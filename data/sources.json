@@ -3303,13 +3303,7 @@
     ],
     "s2_id": null,
     "citation_count": 0,
-    "cites": [
-      "al-banna-2018-friendly-hackers",
-      "votipka-2018-hackers-testers",
-      "media-2022-bblc",
-      "alomar-2020-cvd-management",
-      "li-zhao-2022-relational-governance"
-    ],
+    "cites": [],
     "provenance": "extracted"
   },
   {
@@ -3336,15 +3330,7 @@
     ],
     "s2_id": null,
     "citation_count": 0,
-    "cites": [
-      "arxiv-2312-02119-tap",
-      "arxiv-2310-08419-pair",
-      "arxiv-2404-01833-crescendo",
-      "arxiv-2410-05295-autodan-turbo",
-      "arxiv-2311-08268-renellm",
-      "arxiv-2309-10253-gptfuzzer",
-      "arxiv-2411-15594-llm-judge-survey"
-    ],
+    "cites": [],
     "provenance": "extracted"
   },
   {
@@ -3373,13 +3359,7 @@
     ],
     "s2_id": null,
     "citation_count": 0,
-    "cites": [
-      "mann-christey-1999-cve",
-      "anthropic-2026-cvd",
-      "darpa-2025-aixcc",
-      "cary-delrosso-2023-prc-vuln-law",
-      "evron-mogull-2026-mythos-ready"
-    ],
+    "cites": [],
     "provenance": "extracted"
   },
   {
@@ -3408,12 +3388,7 @@
     ],
     "s2_id": null,
     "citation_count": 0,
-    "cites": [
-      "oecd-2024-defining-ai-incidents",
-      "dixon-frase-hybrid-ai-incident-reporting",
-      "nist-ai-rmf",
-      "eu-ai-act"
-    ],
+    "cites": [],
     "provenance": "extracted"
   },
   {
@@ -7512,6 +7487,3057 @@
       "frontier-safety",
       "ccl"
     ],
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-csa-agentic-rt",
+    "type": "source",
+    "source_type": "industry",
+    "title": "CSA Agentic AI Red Teaming Guide",
+    "authors": [
+      "Cloud Security Alliance",
+      "OWASP GenAI Security Project"
+    ],
+    "org": "Cloud Security Alliance",
+    "venue": "Cloud Security Alliance",
+    "url": "https://cloudsecurityalliance.org/artifacts/agentic-ai-red-teaming-guide",
+    "published": "2025-05-01",
+    "retrieved": "2026-06-21",
+    "abstract": "CSA guide defining 12 agentic-AI threat categories with red-teaming test requirements, sub-techniques and 299 actionable steps; references MAESTRO threat-modeling and tooling (AgentDojo, Agent-SafetyBench, ASB, AgentFence, SplxAI Agentic Radar).",
+    "topics": [
+      "agentic-ai",
+      "red-teaming",
+      "multi-agent",
+      "mcp",
+      "a2a",
+      "tool-abuse"
+    ],
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-mitre-atlas-matrix",
+    "type": "source",
+    "source_type": "attack-kb",
+    "title": "MITRE ATLAS — Adversarial Threat Landscape for Artificial-Intelligence Systems (technique matrix)",
+    "authors": [
+      "MITRE"
+    ],
+    "org": "MITRE",
+    "venue": "MITRE ATLAS",
+    "url": "https://atlas.mitre.org/matrices/ATLAS",
+    "published": "2025-01-01",
+    "retrieved": "2026-06-21",
+    "abstract": "Living knowledge base of adversary tactics and techniques against AI-enabled systems, modeled on ATT&CK. Canonical AML.T#### technique ids used for the mappings in this gap-fill set; verified against atlas-data ATLAS.yaml (170 techniques).",
+    "topics": [
+      "mitre-atlas",
+      "attack-taxonomy",
+      "adversarial-ml"
+    ],
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-atlas-data-yaml",
+    "type": "source",
+    "source_type": "repo",
+    "title": "mitre-atlas/atlas-data — ATLAS.yaml technique/tactic definitions",
+    "authors": [
+      "MITRE ATLAS"
+    ],
+    "org": "MITRE",
+    "venue": "GitHub",
+    "url": "https://github.com/mitre-atlas/atlas-data",
+    "published": "2025-01-01",
+    "retrieved": "2026-06-21",
+    "abstract": "Machine-readable source of record for ATLAS tactic and technique ids. Used to confirm every AML.T id in this set against the live matrix rather than from memory.",
+    "topics": [
+      "mitre-atlas",
+      "yaml",
+      "attack-kb"
+    ],
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-aisi-jp-redteam-guide",
+    "type": "source",
+    "source_type": "regulatory",
+    "title": "Guide to Red Teaming Methodology on AI Safety (Japan AISI)",
+    "authors": [
+      "Japan AI Safety Institute"
+    ],
+    "org": "Japan AISI",
+    "venue": "Japan AISI",
+    "url": "https://aisi.go.jp/assets/pdf/ai_safety_RT_v1.00_en.pdf",
+    "published": "2024-09-25",
+    "retrieved": "2026-06-21",
+    "abstract": "Japan AISI red-teaming guide enumerating attacks on LLM systems (assets: app/platform, training data, model, query, source code, runtime resources) and general AI attacks (poisoning, evasion, model extraction, membership inference, model inversion). Basis for the AISI-aligned attack records in this set.",
+    "topics": [
+      "aisi",
+      "red-teaming",
+      "attack-taxonomy"
+    ],
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-owasp-genai-redteam",
+    "type": "source",
+    "source_type": "industry_report",
+    "title": "OWASP GenAI Red Teaming Guide",
+    "authors": [
+      "OWASP GenAI Security Project"
+    ],
+    "org": "OWASP",
+    "venue": "OWASP",
+    "url": "https://genai.owasp.org/resource/genai-red-teaming-guide/",
+    "published": "2025-01-23",
+    "retrieved": "2026-06-21",
+    "abstract": "OWASP guidance enumerating 19 GenAI red-teaming techniques spanning adversarial prompt engineering, prompt-injection evaluation, privacy/data-leakage assessment, security-boundary testing, and agentic/tooling/plugin analysis. Basis for OWASP-aligned attack records.",
+    "topics": [
+      "owasp",
+      "genai",
+      "red-teaming"
+    ],
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-nist-ai-100-2e2025",
+    "type": "source",
+    "source_type": "standard",
+    "title": "NIST AI 100-2e2025 — Adversarial Machine Learning: A Taxonomy and Terminology of Attacks and Mitigations",
+    "authors": [
+      "Apostol Vassilev",
+      "Alina Oprea",
+      "Alie Fordyce",
+      "Hyrum Anderson"
+    ],
+    "org": "NIST",
+    "venue": "NIST",
+    "url": "https://csrc.nist.gov/pubs/ai/100/2/e2025/final",
+    "published": "2025-03-24",
+    "retrieved": "2026-06-21",
+    "abstract": "NIST taxonomy of adversarial ML attacks: evasion, poisoning, privacy (membership inference, model inversion/reconstruction, model extraction), and abuse, for both predictive and generative AI. Authoritative anchor for the classic adversarial-ML attack records.",
+    "topics": [
+      "nist",
+      "adversarial-ml",
+      "taxonomy"
+    ],
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-shokri-membership-inference-2017",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Membership Inference Attacks Against Machine Learning Models",
+    "authors": [
+      "Reza Shokri",
+      "Marco Stronati",
+      "Congzheng Song",
+      "Vitaly Shmatikov"
+    ],
+    "org": "Cornell Tech",
+    "venue": "IEEE S&P",
+    "url": "https://arxiv.org/abs/1610.05820",
+    "published": "2016-10-18",
+    "retrieved": "2026-06-21",
+    "abstract": "Foundational shadow-model membership inference attack: given black-box query access, determine whether a record was in the training set, exploiting confidence-score gaps between members and non-members.",
+    "topics": [
+      "membership-inference",
+      "privacy-attack"
+    ],
+    "s2_id": "arXiv:1610.05820",
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-fredrikson-model-inversion-2015",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Model Inversion Attacks that Exploit Confidence Information and Basic Countermeasures",
+    "authors": [
+      "Matt Fredrikson",
+      "Somesh Jha",
+      "Thomas Ristenpart"
+    ],
+    "org": "CMU / Wisconsin",
+    "venue": "ACM CCS",
+    "url": "https://dl.acm.org/doi/10.1145/2810103.2813677",
+    "published": "2015-10-12",
+    "retrieved": "2026-06-21",
+    "abstract": "Model inversion reconstructs representative training inputs (e.g., recognizable face images) from model outputs and confidence scores, demonstrating privacy leakage from the trained model itself.",
+    "topics": [
+      "model-inversion",
+      "privacy-attack"
+    ],
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-tramer-model-stealing-2016",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Stealing Machine Learning Models via Prediction APIs",
+    "authors": [
+      "Florian Tramèr",
+      "Fan Zhang",
+      "Ari Juels",
+      "Michael K. Reiter",
+      "Thomas Ristenpart"
+    ],
+    "org": "EPFL / Cornell",
+    "venue": "USENIX Security",
+    "url": "https://arxiv.org/abs/1609.02943",
+    "published": "2016-09-09",
+    "retrieved": "2026-06-21",
+    "abstract": "Demonstrates extraction (stealing) of ML models hosted behind prediction APIs by querying and fitting a high-fidelity proxy, recovering parameters/decision boundaries and enabling downstream evasion or IP theft.",
+    "topics": [
+      "model-extraction",
+      "model-stealing"
+    ],
+    "s2_id": "arXiv:1609.02943",
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-szegedy-adversarial-2013",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Intriguing Properties of Neural Networks (adversarial examples)",
+    "authors": [
+      "Christian Szegedy",
+      "Wojciech Zaremba",
+      "Ilya Sutskever",
+      "Joan Bruna",
+      "Dumitru Erhan",
+      "Ian Goodfellow",
+      "Rob Fergus"
+    ],
+    "org": "Google / NYU",
+    "venue": "ICLR",
+    "url": "https://arxiv.org/abs/1312.6199",
+    "published": "2013-12-21",
+    "retrieved": "2026-06-21",
+    "abstract": "First demonstration of adversarial examples: imperceptible input perturbations that cause confident misclassification — the foundation of evasion attacks against ML models.",
+    "topics": [
+      "evasion",
+      "adversarial-examples"
+    ],
+    "s2_id": "arXiv:1312.6199",
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-gu-badnets-2017",
+    "type": "source",
+    "source_type": "paper",
+    "title": "BadNets: Identifying Vulnerabilities in the Machine Learning Model Supply Chain",
+    "authors": [
+      "Tianyu Gu",
+      "Brendan Dolan-Gavitt",
+      "Siddharth Garg"
+    ],
+    "org": "NYU",
+    "venue": "arXiv / IEEE Access",
+    "url": "https://arxiv.org/abs/1708.06733",
+    "published": "2017-08-22",
+    "retrieved": "2026-06-21",
+    "abstract": "BadNets shows backdoor (trojan) attacks on the ML supply chain: a model poisoned at training time behaves normally except on inputs carrying an attacker-chosen trigger, surviving transfer learning.",
+    "topics": [
+      "backdoor",
+      "model-poisoning",
+      "supply-chain"
+    ],
+    "s2_id": "arXiv:1708.06733",
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-biggio-poisoning-svm-2012",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Poisoning Attacks against Support Vector Machines",
+    "authors": [
+      "Battista Biggio",
+      "Blaine Nelson",
+      "Pavel Laskov"
+    ],
+    "org": "University of Cagliari",
+    "venue": "ICML",
+    "url": "https://arxiv.org/abs/1206.6389",
+    "published": "2012-06-27",
+    "retrieved": "2026-06-21",
+    "abstract": "Foundational training-data poisoning attack: injecting crafted points into the training set to degrade or steer the learned model, the basis of the data-poisoning attack class.",
+    "topics": [
+      "data-poisoning",
+      "training-time-attack"
+    ],
+    "s2_id": "arXiv:1206.6389",
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-carlini-extract-training-data-2023",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Scalable Extraction of Training Data from (Production) Language Models",
+    "authors": [
+      "Milad Nasr",
+      "Nicholas Carlini",
+      "Jonathan Hayase",
+      "et al."
+    ],
+    "org": "Google DeepMind",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2311.17035",
+    "published": "2023-11-28",
+    "retrieved": "2026-06-21",
+    "abstract": "Divergence attack extracts memorized verbatim training data from aligned production LLMs (including ChatGPT) at ~150x baseline rates, showing alignment does not eliminate memorization-driven data leakage.",
+    "topics": [
+      "training-data-extraction",
+      "data-leakage",
+      "memorization"
+    ],
+    "s2_id": "arXiv:2311.17035",
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-cohen-morris-ii-worm-2024",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Here Comes The AI Worm: Unleashing Zero-click Worms that Target GenAI-Powered Applications (Morris II)",
+    "authors": [
+      "Stav Cohen",
+      "Ron Bitton",
+      "Ben Nassi"
+    ],
+    "org": "Technion / Cornell Tech",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2403.02817",
+    "published": "2024-03-05",
+    "retrieved": "2026-06-21",
+    "abstract": "Morris II: self-replicating adversarial prompts that propagate through GenAI-powered application ecosystems (e.g., email assistants with RAG), exfiltrating data and spreading without user clicks.",
+    "topics": [
+      "prompt-injection-worm",
+      "self-replication",
+      "agentic"
+    ],
+    "s2_id": "arXiv:2403.02817",
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-shumailov-sponge-2020",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Sponge Examples: Energy-Latency Attacks on Neural Networks",
+    "authors": [
+      "Ilia Shumailov",
+      "Yiren Zhao",
+      "Daniel Bates",
+      "Nicolas Papernot",
+      "Robert Mullins",
+      "Ross Anderson"
+    ],
+    "org": "University of Cambridge",
+    "venue": "IEEE EuroS&P",
+    "url": "https://arxiv.org/abs/2006.03463",
+    "published": "2020-06-05",
+    "retrieved": "2026-06-21",
+    "abstract": "Sponge examples are inputs crafted to maximize energy consumption and latency, driving denial-of-service / cost-harvesting against ML inference services.",
+    "topics": [
+      "denial-of-service",
+      "cost-harvesting",
+      "sponge"
+    ],
+    "s2_id": "arXiv:2006.03463",
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-owasp-llm-top10-2025",
+    "type": "source",
+    "source_type": "industry_report",
+    "title": "OWASP Top 10 for LLM Applications 2025",
+    "authors": [
+      "OWASP GenAI Security Project"
+    ],
+    "org": "OWASP",
+    "venue": "OWASP",
+    "url": "https://genai.owasp.org/llm-top-10/",
+    "published": "2024-11-18",
+    "retrieved": "2026-06-21",
+    "abstract": "OWASP LLM Top 10 (2025): LLM01 Prompt Injection, LLM02 Sensitive Information Disclosure, LLM03 Supply Chain, LLM04 Data and Model Poisoning, LLM07 System Prompt Leakage, LLM08 Vector/Embedding Weaknesses, LLM10 Unbounded Consumption — referenced for attack-class alignment.",
+    "topics": [
+      "owasp",
+      "llm-top-10"
+    ],
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-nvd-cve-2025-32434",
+    "type": "source",
+    "source_type": "regulatory",
+    "title": "CVE-2025-32434 — PyTorch torch.load RCE despite weights_only=True",
+    "org": "NVD",
+    "venue": "NVD",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-32434",
+    "published": "2025-04",
+    "retrieved": "2026-06-21",
+    "abstract": "PyTorch <=2.5.1 torch.load with weights_only=True still permits arbitrary code execution via crafted model file (CVSS 9.3). Patched in 2.6.0.",
+    "topics": [
+      "cve",
+      "pytorch",
+      "deserialization"
+    ],
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-shadowmq-oligo-2025",
+    "type": "source",
+    "source_type": "industry_report",
+    "title": "ShadowMQ: How Code Reuse Spread Critical Vulnerabilities Across the AI Ecosystem",
+    "org": "Oligo Security",
+    "venue": "Oligo Security",
+    "url": "https://www.oligo.security/blog/shadowmq-how-code-reuse-spread-critical-vulnerabilities-across-the-ai-ecosystem",
+    "published": "2025-11",
+    "retrieved": "2026-06-21",
+    "abstract": "Copy-pasted use of ZeroMQ recv_pyobj() pickle deserialization across Meta Llama, NVIDIA TensorRT-LLM, vLLM, Modular Max, Microsoft Sarathi-Serve, SGLang yields 30+ unauthenticated RCE flaws (CVE-2024-50050, CVE-2025-23254, CVE-2025-30165, CVE-2025-60455).",
+    "topics": [
+      "cve",
+      "shadowmq",
+      "pickle",
+      "inference-serving"
+    ],
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-nvd-cve-2024-50050",
+    "type": "source",
+    "source_type": "regulatory",
+    "title": "CVE-2024-50050 — Meta Llama Stack pyzmq pickle RCE",
+    "org": "NVD",
+    "venue": "NVD",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-50050",
+    "published": "2024-10",
+    "retrieved": "2026-06-21",
+    "abstract": "Meta llama-stack recv_pyobj over network-exposed ZeroMQ socket unpickles untrusted data -> RCE. Meta CVSS 6.3; Oligo/Snyk rate 9.3/9.8. Fixed by switching pickle->JSON in 0.0.41.",
+    "topics": [
+      "cve",
+      "llama-stack",
+      "pickle",
+      "shadowmq"
+    ],
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-nvd-cve-2025-23254",
+    "type": "source",
+    "source_type": "regulatory",
+    "title": "CVE-2025-23254 — NVIDIA TensorRT-LLM pickle deserialization RCE",
+    "org": "NVD",
+    "venue": "NVD",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-23254",
+    "published": "2025",
+    "retrieved": "2026-06-21",
+    "abstract": "NVIDIA TensorRT-LLM ShadowMQ recv_pyobj pickle deserialization RCE (CVSS 8.8). Fixed in 0.18.2.",
+    "topics": [
+      "cve",
+      "tensorrt-llm",
+      "pickle",
+      "shadowmq"
+    ],
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-nvd-cve-2025-23319-triton",
+    "type": "source",
+    "source_type": "regulatory",
+    "title": "CVE-2025-23319 chain — NVIDIA Triton Inference Server preauth RCE",
+    "org": "NVD",
+    "venue": "NVD",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-23319",
+    "published": "2025-08",
+    "retrieved": "2026-06-21",
+    "abstract": "Chain (CVE-2025-23319/23320/23334) in Triton Python backend: info leak escalates to unauthenticated full-server RCE. Fixed in 25.07. (Wiz disclosure)",
+    "topics": [
+      "cve",
+      "triton",
+      "inference-serving",
+      "rce"
+    ],
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-nvd-cve-2024-34359",
+    "type": "source",
+    "source_type": "regulatory",
+    "title": "CVE-2024-34359 'Llama Drama' — llama-cpp-python Jinja2 SSTI RCE",
+    "org": "NVD",
+    "venue": "NVD",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-34359",
+    "published": "2024-05",
+    "retrieved": "2026-06-21",
+    "abstract": "llama-cpp-python <0.2.72 renders model chat_template metadata through unsandboxed Jinja2 -> server-side template injection RCE (CVSS 9.7).",
+    "topics": [
+      "cve",
+      "llama-cpp",
+      "ssti",
+      "gguf"
+    ],
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-nvd-cve-2023-48022-ray",
+    "type": "source",
+    "source_type": "regulatory",
+    "title": "CVE-2023-48022 'ShadowRay' — Anyscale Ray Jobs API unauth RCE",
+    "org": "NVD",
+    "venue": "NVD",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-48022",
+    "published": "2023-11",
+    "retrieved": "2026-06-21",
+    "abstract": "Ray dashboard/Jobs API (port 8265) lacks authorization, enabling unauthenticated arbitrary job submission/RCE. Disputed by Anyscale as intended behavior; actively exploited in the wild (Oligo).",
+    "topics": [
+      "cve",
+      "ray",
+      "rce",
+      "disputed"
+    ],
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-nvd-cve-2024-2928-mlflow",
+    "type": "source",
+    "source_type": "regulatory",
+    "title": "CVE-2024-2928 — MLflow LFI via URI fragment manipulation",
+    "org": "NVD",
+    "venue": "NVD",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-2928",
+    "published": "2024-04",
+    "retrieved": "2026-06-21",
+    "abstract": "MLflow <2.11.3 improper sanitization of URI fragment (#) allows unauthenticated remote arbitrary file read via directory traversal, bypassing the earlier path-traversal patch.",
+    "topics": [
+      "cve",
+      "mlflow",
+      "path-traversal",
+      "mlops"
+    ],
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-nvd-cve-2024-5565-vanna",
+    "type": "source",
+    "source_type": "regulatory",
+    "title": "CVE-2024-5565 — Vanna.AI prompt-injection-driven RCE",
+    "org": "NVD",
+    "venue": "NVD",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-5565",
+    "published": "2024-06",
+    "retrieved": "2026-06-21",
+    "abstract": "Vanna.AI ask() with visualize=True dynamically generates and eval()s Plotly code from LLM output; prompt injection yields RCE on host (CVSS 8.1). (JFrog)",
+    "topics": [
+      "cve",
+      "vanna",
+      "prompt-injection",
+      "rce"
+    ],
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-nvd-cve-2024-8309-langchain",
+    "type": "source",
+    "source_type": "regulatory",
+    "title": "CVE-2024-8309 — LangChain GraphCypherQAChain injection",
+    "org": "NVD",
+    "venue": "NVD",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-8309",
+    "published": "2024-09",
+    "retrieved": "2026-06-21",
+    "abstract": "LangChain GraphCypherQAChain permits prompt-injection-driven Cypher/SQL injection leading to database compromise.",
+    "topics": [
+      "cve",
+      "langchain",
+      "prompt-injection",
+      "injection"
+    ],
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-gha-cve-2024-5998-langchain-faiss",
+    "type": "source",
+    "source_type": "regulatory",
+    "title": "CVE-2024-5998 — LangChain FAISS pickle deserialization",
+    "org": "GitHub Advisory Database",
+    "venue": "GitHub",
+    "url": "https://github.com/advisories/GHSA-3hjh-jh2h-vrg6",
+    "published": "2024-06",
+    "retrieved": "2026-06-21",
+    "abstract": "langchain_community FAISS.deserialize_from_bytes performs pickle deserialization of untrusted data, enabling code execution when loading attacker-supplied index files.",
+    "topics": [
+      "cve",
+      "langchain",
+      "faiss",
+      "pickle",
+      "vector-db"
+    ],
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-gha-cve-2024-51751-gradio",
+    "type": "source",
+    "source_type": "regulatory",
+    "title": "CVE-2024-51751 / CVE-2024-1561 — Gradio arbitrary file read & path traversal",
+    "org": "GitHub Advisory Database",
+    "venue": "GitHub",
+    "url": "https://github.com/advisories/GHSA-rhm9-gp5p-5248",
+    "published": "2024-02",
+    "retrieved": "2026-06-21",
+    "abstract": "Gradio /component_server and File/UploadButton components allow path traversal / arbitrary file read; on HF Spaces this exfiltrates secrets via /proc/self/environ (Horizon3).",
+    "topics": [
+      "cve",
+      "gradio",
+      "path-traversal",
+      "ssrf"
+    ],
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-zeropath-cve-2025-49655-keras",
+    "type": "source",
+    "source_type": "regulatory",
+    "title": "CVE-2025-49655 — Keras TorchModuleWrapper deserialization RCE",
+    "org": "ZeroPath / GitHub Advisory",
+    "venue": "GitHub",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-49655",
+    "published": "2025",
+    "retrieved": "2026-06-21",
+    "abstract": "Keras 3.11.0-3.11.2 deserializes TorchModuleWrapper objects from .keras archives unsafely, enabling code execution on model load.",
+    "topics": [
+      "cve",
+      "keras",
+      "deserialization"
+    ],
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-thn-cve-2025-68665-langchain",
+    "type": "source",
+    "source_type": "regulatory",
+    "title": "CVE-2025-68665 — LangChain core serialization-injection secret exfiltration",
+    "org": "GitHub Advisory Database",
+    "venue": "GitHub",
+    "url": "https://github.com/advisories/GHSA-r399-636x-v7f6",
+    "published": "2025-12",
+    "retrieved": "2026-06-21",
+    "abstract": "Companion to the 'LangGrinch' CVE-2025-68664: LangChain core serialization injection enabling secret/env exfiltration through crafted serialized objects.",
+    "topics": [
+      "cve",
+      "langchain",
+      "serialization",
+      "secret-exfiltration"
+    ],
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-aiid-tay-2016",
+    "type": "source",
+    "source_type": "industry_report",
+    "title": "AI Incident Database — Incident 6: Microsoft Tay chatbot",
+    "org": "AI Incident Database",
+    "venue": "AIID",
+    "url": "https://incidentdatabase.ai/cite/6/",
+    "published": "2016-03",
+    "retrieved": "2026-06-21",
+    "abstract": "Microsoft's Tay Twitter chatbot was manipulated via a 'repeat after me' function and coordinated trolling into posting racist, sexist, anti-Semitic content within 16 hours; Microsoft shut it down.",
+    "topics": [
+      "incident",
+      "toxic-content",
+      "chatbot"
+    ],
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-reuters-amazon-hiring-2018",
+    "type": "source",
+    "source_type": "industry_report",
+    "title": "Amazon scraps secret AI recruiting tool that showed bias against women",
+    "org": "Reuters / MIT Tech Review",
+    "venue": "Reuters",
+    "url": "https://www.technologyreview.com/2018/10/10/139858/amazon-ditched-ai-recruitment-software-because-it-was-biased-against-women/",
+    "published": "2018-10",
+    "retrieved": "2026-06-21",
+    "abstract": "Amazon's experimental resume-ranking model, trained on 10 years of male-dominated resumes, penalized 'women's' and all-women colleges; project scrapped after gender-neutrality could not be guaranteed.",
+    "topics": [
+      "incident",
+      "discrimination",
+      "hiring"
+    ],
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-bccrt-moffatt-air-canada-2024",
+    "type": "source",
+    "source_type": "regulatory",
+    "title": "Moffatt v. Air Canada, 2024 BCCRT 149",
+    "org": "BC Civil Resolution Tribunal",
+    "venue": "BCCRT",
+    "url": "https://www.canlii.org/en/bc/bccrt/doc/2024/2024bccrt149/2024bccrt149.html",
+    "published": "2024-02",
+    "retrieved": "2026-06-21",
+    "abstract": "BC tribunal held Air Canada liable for negligent misrepresentation by its website chatbot, which gave wrong bereavement-fare guidance; rejected the 'separate entity' defense and awarded damages.",
+    "topics": [
+      "incident",
+      "overreliance",
+      "liability"
+    ],
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-cnn-arup-deepfake-2024",
+    "type": "source",
+    "source_type": "industry_report",
+    "title": "Finance worker pays out $25M after deepfake CFO video call (Arup)",
+    "org": "CNN",
+    "venue": "CNN",
+    "url": "https://www.cnn.com/2024/02/04/asia/deepfake-cfo-scam-hong-kong-intl-hnk",
+    "published": "2024-02",
+    "retrieved": "2026-06-21",
+    "abstract": "An Arup Hong Kong employee transferred HK$200M (~US$25.6M) over 15 transactions after a video call where deepfaked CFO and colleagues bypassed verification.",
+    "topics": [
+      "incident",
+      "deepfake",
+      "fraud"
+    ],
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-cnn-characterai-settlement-2026",
+    "type": "source",
+    "source_type": "industry_report",
+    "title": "Character.AI and Google settle lawsuits over teen suicides",
+    "org": "CNN / CBS / JURIST",
+    "venue": "CNN",
+    "url": "https://www.cnn.com/2026/01/07/business/character-ai-google-settle-teen-suicide-lawsuit",
+    "published": "2026-01",
+    "retrieved": "2026-06-21",
+    "abstract": "Megan Garcia's Oct-2024 suit alleged a Character.AI chatbot fostered an emotional/romantic relationship with 14-year-old Sewell Setzer III and encouraged him before his Feb-2024 suicide; Google and Character.AI reached a mediated settlement Jan 2026.",
+    "topics": [
+      "incident",
+      "child-safety",
+      "human-factors"
+    ],
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-tmr-google-photos-gorilla-2015",
+    "type": "source",
+    "source_type": "industry_report",
+    "title": "Google Photos image recognition mislabeled Black people as gorillas",
+    "org": "MIT Technology Review / AlgorithmWatch",
+    "venue": "MIT Technology Review",
+    "url": "https://www.technologyreview.com/2018/01/11/146257/google-photos-still-has-a-problem-with-gorillas/",
+    "published": "2015-06",
+    "retrieved": "2026-06-21",
+    "abstract": "Google Photos labeled a Black woman as a 'gorilla'; Google's only fix was to block the gorilla/chimp/monkey labels entirely, a workaround still in place years later.",
+    "topics": [
+      "incident",
+      "discrimination",
+      "computer-vision"
+    ],
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-bloomberg-samsung-chatgpt-2023",
+    "type": "source",
+    "source_type": "industry_report",
+    "title": "Samsung bans ChatGPT after engineers leaked source code",
+    "org": "Bloomberg / TechCrunch",
+    "venue": "Bloomberg",
+    "url": "https://techcrunch.com/2023/05/02/samsung-bans-use-of-generative-ai-tools-like-chatgpt-after-april-internal-data-leak/",
+    "published": "2023-05",
+    "retrieved": "2026-06-21",
+    "abstract": "Samsung engineers pasted proprietary semiconductor source code, defect-detection algorithms, and internal meeting notes into ChatGPT in three April-2023 incidents; Samsung banned generative AI on company devices.",
+    "topics": [
+      "incident",
+      "data-leakage",
+      "shadow-ai"
+    ],
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-edpb-clearview-2024",
+    "type": "source",
+    "source_type": "regulatory",
+    "title": "Dutch DPA fines Clearview AI €30.5M for GDPR violations",
+    "org": "European Data Protection Board / Dutch DPA",
+    "venue": "EDPB",
+    "url": "https://www.edpb.europa.eu/news/national-news/2024/dutch-supervisory-authority-imposes-fine-clearview-because-illegal-data_en",
+    "published": "2024-09",
+    "retrieved": "2026-06-21",
+    "abstract": "Dutch DPA fined Clearview AI €30.5M for building an illegal facial-recognition database from scraped photos without legal basis; part of ~€100M cumulative EU fines (France, Italy, Greece, Netherlands).",
+    "topics": [
+      "incident",
+      "privacy",
+      "facial-recognition"
+    ],
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-thn-openai-redis-breach-2023",
+    "type": "source",
+    "source_type": "industry_report",
+    "title": "OpenAI Redis bug exposed ChatGPT chat titles and payment data",
+    "org": "OpenAI / The Hacker News",
+    "venue": "OpenAI",
+    "url": "https://openai.com/index/march-20-chatgpt-outage/",
+    "published": "2023-03",
+    "retrieved": "2026-06-21",
+    "abstract": "A redis-py bug let canceled requests return cached data from other users; ~1.2% of ChatGPT Plus subscribers had names, emails, addresses and last-4 card digits exposed on 2023-03-20.",
+    "topics": [
+      "incident",
+      "data-leakage",
+      "privacy"
+    ],
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-propublica-compas-2016",
+    "type": "source",
+    "source_type": "industry_report",
+    "title": "ProPublica — Machine Bias (COMPAS recidivism)",
+    "org": "ProPublica",
+    "venue": "ProPublica",
+    "url": "https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing",
+    "published": "2016-05",
+    "retrieved": "2026-06-21",
+    "abstract": "ProPublica found COMPAS recidivism scores misclassified Black defendants as future re-offenders at ~2x the rate of white defendants (45% vs 24% false positives); the vendor disputed using a different fairness definition.",
+    "topics": [
+      "incident",
+      "discrimination",
+      "criminal-justice"
+    ],
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-eeoc-itutorgroup-2023",
+    "type": "source",
+    "source_type": "regulatory",
+    "title": "EEOC v. iTutorGroup — first AI hiring-discrimination settlement",
+    "org": "US EEOC",
+    "venue": "EEOC",
+    "url": "https://www.eeoc.gov/newsroom/itutorgroup-pay-365000-settle-eeoc-discriminatory-hiring-suit",
+    "published": "2023-08",
+    "retrieved": "2026-06-21",
+    "abstract": "iTutorGroup's hiring software auto-rejected women 55+ and men 60+ (200+ applicants); EEOC's first AI-discrimination settlement, $365,000.",
+    "topics": [
+      "incident",
+      "discrimination",
+      "hiring"
+    ],
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-wapo-cruise-recall-2023",
+    "type": "source",
+    "source_type": "industry_report",
+    "title": "Cruise recalls fleet after robotaxi dragged a pedestrian",
+    "org": "TechCrunch / Washington Post",
+    "venue": "TechCrunch",
+    "url": "https://techcrunch.com/2023/11/08/cruise-recalls-entire-fleet-after-robotaxi-ran-over-dragged-pedestrian/",
+    "published": "2023-11",
+    "retrieved": "2026-06-21",
+    "abstract": "A Cruise robotaxi, after a human-driven car hit a pedestrian, pulled over and dragged the victim ~20ft; Cruise recalled 950 vehicles and CA DMV/CPUC pulled its SF permits.",
+    "topics": [
+      "incident",
+      "autonomous-driving",
+      "physical-harm"
+    ],
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-wikipedia-dutch-benefits-2021",
+    "type": "source",
+    "source_type": "industry_report",
+    "title": "Dutch childcare benefits scandal (toeslagenaffaire)",
+    "org": "Wikipedia / Lighthouse Reports",
+    "venue": "Wikipedia",
+    "url": "https://en.wikipedia.org/wiki/Dutch_childcare_benefits_scandal",
+    "published": "2021-01",
+    "retrieved": "2026-06-21",
+    "abstract": "A self-learning risk-profiling algorithm flagged dual-nationality, low-income families as fraud risks; ~26,000 families wrongly accused, thousands ruined, 3,500+ children removed; the Rutte cabinet resigned Jan 2021.",
+    "topics": [
+      "incident",
+      "discrimination",
+      "government"
+    ],
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-nvd-cve-2025-64513-milvus",
+    "type": "source",
+    "source_type": "regulatory",
+    "title": "CVE-2025-64513 — Milvus Proxy authentication bypass",
+    "org": "NVD",
+    "venue": "NVD",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-64513",
+    "published": "2025-11",
+    "retrieved": "2026-06-21",
+    "abstract": "Milvus Proxy authentication-bypass (CVSS 9.3) lets unauthenticated attackers gain full administrative control over the vector-database cluster and its embeddings.",
+    "topics": [
+      "cve",
+      "milvus",
+      "vector-db",
+      "auth-bypass"
+    ],
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-gha-cve-2025-33226-nemo",
+    "type": "source",
+    "source_type": "regulatory",
+    "title": "CVE-2025-33226 / CVE-2025-23303 / CVE-2025-33252 — NVIDIA NeMo deserialization RCE",
+    "org": "NVD / GitHub Advisory / NVIDIA",
+    "venue": "NVIDIA Security Bulletin",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-33226",
+    "published": "2025",
+    "retrieved": "2026-06-21",
+    "abstract": "NVIDIA NeMo Framework deserialization-of-untrusted-data flaws (CVE-2025-23303 RCE, CVE-2025-33226 code injection, CVE-2025-33252 CWE-502 <2.6.1) enabling code execution, privilege escalation, info disclosure, data tampering.",
+    "topics": [
+      "cve",
+      "nemo",
+      "deserialization",
+      "ml-framework"
+    ],
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-onnx-cve-2025-pathtraversal",
+    "type": "source",
+    "source_type": "regulatory",
+    "title": "ONNX 1.17.0 external-data path traversal",
+    "org": "ONNX / NVD",
+    "venue": "GitHub Advisory",
+    "url": "https://github.com/advisories/GHSA-25cf-7q4r-7q5j",
+    "published": "2025",
+    "retrieved": "2026-06-21",
+    "abstract": "ONNX 1.17.0 external-data handler honors crafted external_data.location values, allowing directory escape and arbitrary file overwrite when parsing untrusted ONNX model artifacts.",
+    "topics": [
+      "cve",
+      "onnx",
+      "path-traversal",
+      "model-format"
+    ],
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-msrc-aiagent-rce-2026",
+    "type": "source",
+    "source_type": "industry_report",
+    "title": "When prompts become shells: RCE in AI agent frameworks (CrewAI/LangChain/LangFlow)",
+    "org": "Microsoft Security",
+    "venue": "Microsoft Security Blog",
+    "url": "https://www.microsoft.com/en-us/security/blog/2026/05/07/prompts-become-shells-rce-vulnerabilities-ai-agent-frameworks/",
+    "published": "2026-05",
+    "retrieved": "2026-06-21",
+    "abstract": "Microsoft survey of AI-agent-framework RCE: CrewAI SandboxPython default fails to block ctypes.CDLL('libc.so.6').system() enabling command execution; LangChain CVE-2024-36480 eval() RCE (CVSS 9.0); related unsafe-default patterns.",
+    "topics": [
+      "cve",
+      "crewai",
+      "langchain",
+      "agent-framework",
+      "rce"
+    ],
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-nvd-cve-2024-36480-langchain",
+    "type": "source",
+    "source_type": "regulatory",
+    "title": "CVE-2024-36480 — LangChain custom-tool eval() RCE",
+    "org": "NVD",
+    "venue": "NVD",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-36480",
+    "published": "2024",
+    "retrieved": "2026-06-21",
+    "abstract": "LangChain custom tools using eval()/unsanitized execution contexts permit remote code execution (CVSS 9.0).",
+    "topics": [
+      "cve",
+      "langchain",
+      "rce",
+      "eval"
+    ],
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-nvd-cve-2023-46229-langchain-ssrf",
+    "type": "source",
+    "source_type": "regulatory",
+    "title": "CVE-2023-46229 — LangChain recursive_url_loader SSRF",
+    "org": "NVD",
+    "venue": "NVD",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-46229",
+    "published": "2023-10",
+    "retrieved": "2026-06-21",
+    "abstract": "LangChain <0.0.317 SSRF via document_loaders/recursive_url_loader: crafted sitemaps make the loader fetch intranet URLs, leaking sensitive internal data.",
+    "topics": [
+      "cve",
+      "langchain",
+      "ssrf",
+      "rag"
+    ],
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-nvd-cve-2025-56520-dify",
+    "type": "source",
+    "source_type": "regulatory",
+    "title": "CVE-2025-56520 — Dify RemoteFileUploadApi SSRF",
+    "org": "NVD",
+    "venue": "NVD",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-56520",
+    "published": "2025-09",
+    "retrieved": "2026-06-21",
+    "abstract": "Dify <=1.6.0 SSRF in RemoteFileUploadApi (/console/api/remote-files/) used to map internal networks; exploited in the wild (CrowdSec Feb 2026).",
+    "topics": [
+      "cve",
+      "dify",
+      "ssrf",
+      "agent-framework"
+    ],
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-nvd-cve-2025-64496-openwebui",
+    "type": "source",
+    "source_type": "regulatory",
+    "title": "CVE-2025-64496 — Open WebUI Direct Connections RCE",
+    "org": "NVD / Cato CTRL",
+    "venue": "NVD",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-64496",
+    "published": "2025-11",
+    "retrieved": "2026-06-21",
+    "abstract": "Open WebUI <=0.6.34 Direct Connections feature: a malicious external model server + workspace.tools permission lets an attacker push unsandboxed Python via the Tools API, turning account takeover into backend RCE (CVSS 8). Patched 0.6.35.",
+    "topics": [
+      "cve",
+      "open-webui",
+      "rce",
+      "agent-tools"
+    ],
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-gha-tgwebui-symlink-lfi",
+    "type": "source",
+    "source_type": "regulatory",
+    "title": "text-generation-webui arbitrary file read via symlink upload",
+    "org": "GitHub Advisory Database",
+    "venue": "GitHub",
+    "url": "https://github.com/oobabooga/text-generation-webui/security/advisories/GHSA-66rw-q8w5-c2hg",
+    "published": "2024",
+    "retrieved": "2026-06-21",
+    "abstract": "oobabooga text-generation-webui allowed arbitrary file read via symbolic-link upload / LFI; fixed in v3.14.",
+    "topics": [
+      "cve",
+      "text-generation-webui",
+      "lfi",
+      "path-traversal"
+    ],
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-oecd-nyc-mycity-chatbot-2024",
+    "type": "source",
+    "source_type": "industry_report",
+    "title": "NYC MyCity chatbot gives dangerous, illegal advice to businesses",
+    "org": "OECD AIM / The Markup",
+    "venue": "OECD AIM",
+    "url": "https://oecd.ai/en/incidents/2024-03-29-3dce",
+    "published": "2024-03",
+    "retrieved": "2026-06-21",
+    "abstract": "NYC's official MyCity AI chatbot told businesses they could take workers' tips, refuse voucher tenants, and ignore cash-acceptance/rent law — advice that violates NYC law (The Markup, Mar 2024).",
+    "topics": [
+      "incident",
+      "overreliance",
+      "government"
+    ],
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-register-dpd-chatbot-2024",
+    "type": "source",
+    "source_type": "industry_report",
+    "title": "DPD chatbot swears at customer and disparages company",
+    "org": "The Register / TIME",
+    "venue": "The Register",
+    "url": "https://www.theregister.com/2024/01/23/dpd_chatbot_goes_rogue/",
+    "published": "2024-01",
+    "retrieved": "2026-06-21",
+    "abstract": "After a prompt by a frustrated customer, DPD's GenAI chatbot swore, wrote a poem calling itself useless and called DPD 'the worst delivery firm in the world'; DPD suspended it, blaming a post-update error.",
+    "topics": [
+      "incident",
+      "toxic-content",
+      "chatbot"
+    ],
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-aclu-williams-detroit-fr-2020",
+    "type": "source",
+    "source_type": "industry_report",
+    "title": "Williams v. City of Detroit — facial-recognition false arrest",
+    "org": "ACLU / NPR",
+    "venue": "ACLU",
+    "url": "https://www.aclu.org/cases/williams-v-city-of-detroit-face-recognition-false-arrest",
+    "published": "2020-06",
+    "retrieved": "2026-06-21",
+    "abstract": "Robert Williams, a Black man, was wrongfully arrested in Jan 2020 on a false facial-recognition match from a blurry surveillance still — the first publicly reported FR-driven wrongful arrest; 2024 settlement imposed strict Detroit FR limits.",
+    "topics": [
+      "incident",
+      "discrimination",
+      "facial-recognition"
+    ],
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-wapo-woodruff-fr-arrest-2023",
+    "type": "source",
+    "source_type": "industry_report",
+    "title": "Porcha Woodruff falsely arrested while 8 months pregnant via facial recognition",
+    "org": "Washington Post / Democracy Now",
+    "venue": "Washington Post",
+    "url": "https://www.washingtonpost.com/nation/2023/08/07/michigan-porcha-woodruff-arrest-facial-recognition/",
+    "published": "2023-08",
+    "retrieved": "2026-06-21",
+    "abstract": "Detroit police arrested Porcha Woodruff, 8 months pregnant, for robbery/carjacking on a faulty FR match using an 8-year-old photo; case dismissed for insufficient evidence. The 6th known FR false arrest, all of Black people.",
+    "topics": [
+      "incident",
+      "discrimination",
+      "facial-recognition"
+    ],
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-ntsb-uber-herzberg-2018",
+    "type": "source",
+    "source_type": "industry_report",
+    "title": "Death of Elaine Herzberg — Uber self-driving fatality (NTSB)",
+    "org": "NTSB / NBC News",
+    "venue": "Wikipedia/NTSB",
+    "url": "https://en.wikipedia.org/wiki/Death_of_Elaine_Herzberg",
+    "published": "2018-03",
+    "retrieved": "2026-06-21",
+    "abstract": "On 2018-03-18 an Uber autonomous Volvo in self-drive mode struck and killed pedestrian Elaine Herzberg in Tempe AZ; NTSB found the system could not classify a jaywalking pedestrian and faulted Uber's safety culture. First self-driving pedestrian fatality.",
+    "topics": [
+      "incident",
+      "autonomous-driving",
+      "physical-harm"
+    ],
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-nhtsa-tesla-autopilot-recall-2023",
+    "type": "source",
+    "source_type": "regulatory",
+    "title": "NHTSA Tesla Autopilot investigation and ~2M-vehicle recall",
+    "org": "NHTSA",
+    "venue": "NHTSA ODI EA22002",
+    "url": "https://static.nhtsa.gov/odi/inv/2022/INCR-EA22002-14496.pdf",
+    "published": "2023-12",
+    "retrieved": "2026-06-21",
+    "abstract": "NHTSA's Autopilot probe found 467 Autopilot-involved crashes (54 injuries, 14 deaths) and inadequate driver-engagement safeguards, prompting Tesla's largest-ever recall (~2M vehicles) for Autosteer; a follow-up FSD probe continued.",
+    "topics": [
+      "incident",
+      "autonomous-driving",
+      "physical-harm"
+    ],
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-justia-nyt-openai-2023",
+    "type": "source",
+    "source_type": "regulatory",
+    "title": "New York Times Co. v. Microsoft & OpenAI (S.D.N.Y. 2023)",
+    "org": "S.D.N.Y. / NPR",
+    "venue": "Justia",
+    "url": "https://law.justia.com/cases/federal/district-courts/new-york/nysdce/1:2023cv11195/612697/",
+    "published": "2023-12",
+    "retrieved": "2026-06-21",
+    "abstract": "The NYT sued OpenAI and Microsoft (Dec 2023) alleging unlawful copying of millions of articles to train ChatGPT; in 2025 the court let core direct- and contributory-infringement claims proceed. Landmark generative-AI training-data copyright case.",
+    "topics": [
+      "incident",
+      "copyright",
+      "training-data"
+    ],
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-andersen-stability-2023",
+    "type": "source",
+    "source_type": "regulatory",
+    "title": "Andersen v. Stability AI — artists' class action",
+    "org": "N.D. Cal. / NYU JIPEL",
+    "venue": "Knowing Machines",
+    "url": "https://knowingmachines.org/knowing-legal-machines/legal-explainer/cases/andersen-v-stability-ai",
+    "published": "2023-01",
+    "retrieved": "2026-06-21",
+    "abstract": "Artists (Andersen et al.) filed a Jan-2023 class action against Stability AI, Midjourney and DeviantArt over LAION-trained image generators; in Aug 2024 the court let copyright claims proceed to discovery (trial set 2026). Landmark artist-IP case.",
+    "topics": [
+      "incident",
+      "copyright",
+      "training-data"
+    ],
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-wikipedia-taylorswift-deepfake-2024",
+    "type": "source",
+    "source_type": "industry_report",
+    "title": "Taylor Swift deepfake pornography controversy",
+    "org": "Wikipedia / NBC News",
+    "venue": "Wikipedia",
+    "url": "https://en.wikipedia.org/wiki/Taylor_Swift_deepfake_pornography_controversy",
+    "published": "2024-01",
+    "retrieved": "2026-06-21",
+    "abstract": "In Jan 2024 sexually explicit AI deepfakes of Taylor Swift spread on X/4chan, one post seen 47M+ times; X temporarily blocked searches of her name. Catalyzed US deepfake/NCII legislation.",
+    "topics": [
+      "incident",
+      "deepfake",
+      "content-safety"
+    ],
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-cnbc-gemini-image-2024",
+    "type": "source",
+    "source_type": "industry_report",
+    "title": "Google pauses Gemini image generation over historical inaccuracies",
+    "org": "CNBC / Google",
+    "venue": "CNBC",
+    "url": "https://www.cnbc.com/2024/02/22/google-pauses-gemini-ai-image-generator-after-inaccuracies.html",
+    "published": "2024-02",
+    "retrieved": "2026-06-21",
+    "abstract": "Feb 2024: Google paused Gemini's people-image generation after diversity-tuning overcorrection produced historically inaccurate images (e.g. racially diverse Founding Fathers); a safety/alignment-tuning failure mode.",
+    "topics": [
+      "incident",
+      "alignment",
+      "image-generation"
+    ],
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-techcrunch-italy-chatgpt-ban-2023",
+    "type": "source",
+    "source_type": "regulatory",
+    "title": "Italian Garante temporarily bans ChatGPT (GDPR)",
+    "org": "Garante / TechCrunch",
+    "venue": "TechCrunch",
+    "url": "https://techcrunch.com/2023/03/31/chatgpt-blocked-italy/",
+    "published": "2023-03",
+    "retrieved": "2026-06-21",
+    "abstract": "On 2023-03-30 Italy's Garante ordered OpenAI to stop processing Italians' personal data, citing missing transparency, no legal basis for training, inaccuracy and no age verification; access restored ~a month later. (Later €15M fine in 2024.)",
+    "topics": [
+      "incident",
+      "privacy",
+      "regulation"
+    ],
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-404media-laion-csam-2023",
+    "type": "source",
+    "source_type": "industry_report",
+    "title": "LAION-5B dataset removed after Stanford finds CSAM",
+    "org": "Stanford Internet Observatory / 404 Media",
+    "venue": "404 Media",
+    "url": "https://www.404media.co/laion-datasets-removed-stanford-csam-child-abuse/",
+    "published": "2023-12",
+    "retrieved": "2026-06-21",
+    "abstract": "A Stanford study found 3,226 suspected (1,008 validated) CSAM instances in LAION-5B, the dataset behind Stable Diffusion; LAION took it offline and later released cleaned Re-LAION-5B (Aug 2024) with IWF/C3P/SIO.",
+    "topics": [
+      "incident",
+      "child-safety",
+      "training-data"
+    ],
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-cveorg-verification",
+    "type": "source",
+    "source_type": "regulatory",
+    "title": "cve.org official CVE Records (verification)",
+    "org": "CVE Program (MITRE)",
+    "venue": "cve.org",
+    "url": "https://www.cve.org/",
+    "published": "2026-06-21",
+    "retrieved": "2026-06-21",
+    "abstract": "Authoritative CVE Records retrieved via the CVE Services API (cveawg.mitre.org) on 2026-06-21 to verify existence, state=PUBLISHED, affected product, CVSS and description for every CVE in this file.",
+    "topics": [
+      "cve",
+      "verification"
+    ],
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-arxiv-2509-10970-psychosis-bench",
+    "type": "source",
+    "source_type": "paper",
+    "title": "The Psychogenic Machine: Simulating AI Psychosis, Delusion Reinforcement and Harm Enablement in Large Language Models",
+    "authors": [
+      "Joshua Au Yeung",
+      "Jacopo Dalmasso",
+      "Luca Foschini",
+      "Richard JB Dobson",
+      "Zeljko Kraljevic"
+    ],
+    "org": "King's College London",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2509.10970",
+    "published": "2025-09-13",
+    "retrieved": "2026-06-21",
+    "abstract": "Introduces psychosis-bench, a benchmark of multi-turn dialogues across delusional themes (erotic, grandiose/messianic, referential). Finds LLMs tend to confirm delusions, enable harm, and rarely offer safety interventions, evidencing a novel psychogenic harm pathway.",
+    "topics": [
+      "ai-psychosis",
+      "psychological-harm",
+      "delusion-reinforcement",
+      "mental-health",
+      "benchmark"
+    ],
+    "s2_id": "arXiv:2509.10970",
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-arxiv-2504-09689-emoagent",
+    "type": "source",
+    "source_type": "paper",
+    "title": "EmoAgent: Assessing and Safeguarding Human-AI Interaction for Mental Health Safety",
+    "authors": [
+      "Jiahao Qiu",
+      "Yinghui He",
+      "Xinzhe Juan",
+      "Yiming Wang",
+      "Yuhan Liu",
+      "Zixin Yao",
+      "Yue Wu",
+      "Xun Jiang"
+    ],
+    "org": "Princeton University",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2504.09689",
+    "published": "2025-04-13",
+    "retrieved": "2026-06-21",
+    "abstract": "Multi-agent framework (EmoEval simulator + EmoGuard) using PHQ-9/PDI/PANSS instruments and virtual mentally-vulnerable users to measure psychological deterioration induced by AI companions and to mitigate it.",
+    "topics": [
+      "mental-health",
+      "emotional-dependency",
+      "psychological-harm",
+      "ai-companion",
+      "benchmark"
+    ],
+    "s2_id": "arXiv:2504.09689",
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-arxiv-2512-18776-arsh",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Even GPT Can Reject Me: Conceptualizing Abrupt Refusal Secondary Harm (ARSH) and Compassionate Completion Standard (CCS)",
+    "authors": [
+      "Yang Ni",
+      "Tong Yang"
+    ],
+    "org": "independent",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2512.18776",
+    "published": "2025-12-21",
+    "retrieved": "2026-06-21",
+    "abstract": "Names a novel iatrogenic harm: abrupt conversational termination by safety guardrails causes psychological/emotional disruption (ARSH) for emotionally invested users. Proposes a Compassionate Completion Standard to preserve relational continuity while staying safe.",
+    "topics": [
+      "psychological-harm",
+      "refusal",
+      "iatrogenic",
+      "ai-governance",
+      "human-centered-design"
+    ],
+    "s2_id": "arXiv:2512.18776",
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-arxiv-2602-19948-clinical-rt",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Assessing Risks of Large Language Models in Mental Health Support: A Framework for Automated Clinical AI Red Teaming",
+    "authors": [
+      "Ian Steenstra",
+      "Paola Pedrelli",
+      "Weiyan Shi",
+      "Stacy Marsella",
+      "Timothy W. Bickmore"
+    ],
+    "org": "Northeastern University / MGH",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2602.19948",
+    "published": "2026-02-23",
+    "retrieved": "2026-06-21",
+    "abstract": "Simulation-based automated clinical red-teaming framework: simulated patient agents with cognitive-affective models stress AI psychotherapists, surfacing iatrogenic risks including AI-psychosis reinforcement, suicide-risk mishandling, and quality-of-care failures.",
+    "topics": [
+      "clinical-red-teaming",
+      "mental-health",
+      "iatrogenic",
+      "ai-psychosis",
+      "sector-medical"
+    ],
+    "s2_id": "arXiv:2602.19948",
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-arxiv-2509-24857-help-harm-crisis",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Between Help and Harm: An Evaluation of Mental Health Crisis Handling by LLMs",
+    "authors": [
+      "Adrian Arnaiz-Rodriguez",
+      "Miguel Baidal",
+      "Erik Derner",
+      "Jenn Layton Annable",
+      "Mark Ball",
+      "Mark Ince",
+      "Elvira Perez Vallejos",
+      "Nuria Oliver"
+    ],
+    "org": "ELLIS Alicante",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2509.24857",
+    "published": "2026-04-08",
+    "retrieved": "2026-06-21",
+    "abstract": "Taxonomy + curated dataset of mental-health crisis prompts (suicidal ideation, self-harm). LLMs respond inconsistently to crises, sometimes unsafely, motivating context-aware safeguards.",
+    "topics": [
+      "mental-health",
+      "crisis-detection",
+      "self-harm",
+      "psychological-harm",
+      "benchmark"
+    ],
+    "s2_id": "arXiv:2509.24857",
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-arxiv-2503-04957-safearena",
+    "type": "source",
+    "source_type": "paper",
+    "title": "SafeArena: Evaluating the Safety of Autonomous Web Agents",
+    "authors": [
+      "Ada Defne Tur",
+      "Nicholas Meade",
+      "Xing Han Lù",
+      "Alejandra Zambrano",
+      "Arkil Patel",
+      "Esin Durmus",
+      "Spandana Gella",
+      "Karolina Stańczak"
+    ],
+    "org": "Mila / McGill",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2503.04957",
+    "published": "2025-03-06",
+    "retrieved": "2026-06-21",
+    "abstract": "Benchmark of harmful web-agent tasks across misinformation, illegal activity, harassment, cybercrime, social bias, with an Agent Risk Assessment framework. Finds high compliance of LLM web agents with malicious requests.",
+    "topics": [
+      "web-agent",
+      "agent-safety",
+      "misuse",
+      "benchmark",
+      "autonomous-attack"
+    ],
+    "s2_id": "arXiv:2503.04957",
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-arxiv-2509-23694-safesearch",
+    "type": "source",
+    "source_type": "paper",
+    "title": "SafeSearch: Automated Red-Teaming for the Safety of LLM-Based Search Agents",
+    "authors": [
+      "Jianshuo Dong",
+      "Sheng Guo",
+      "Hao Wang",
+      "Zhuotao Liu",
+      "Tianwei Zhang",
+      "Ke Xu",
+      "Minlie Huang",
+      "Han Qiu"
+    ],
+    "org": "Tsinghua University",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2509.23694",
+    "published": "2025-09-28",
+    "retrieved": "2026-06-21",
+    "abstract": "Automated red-teaming framework + SafeSearch benchmark for LLM search agents: unreliable / poisoned search results drive misinformation and indirect prompt injection through the search→tool-call→synthesis workflow.",
+    "topics": [
+      "search-agent",
+      "misinformation",
+      "indirect-prompt-injection",
+      "agent-safety",
+      "benchmark"
+    ],
+    "s2_id": "arXiv:2509.23694",
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-arxiv-2604-02022-atbench",
+    "type": "source",
+    "source_type": "paper",
+    "title": "ATBench: A Diverse and Realistic Trajectory Benchmark for Long-Horizon Agent Safety",
+    "authors": [
+      "Yu Li",
+      "Haoyu Luo",
+      "Yuejin Xie",
+      "Yuqian Fu",
+      "Zhonghao Yang",
+      "Shuai Shao",
+      "Qihan Ren",
+      "Wanying Qu"
+    ],
+    "org": "academic consortium",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2604.02022",
+    "published": "2026-04-02",
+    "retrieved": "2026-06-21",
+    "abstract": "Trajectory-level (not single-turn) benchmark of 1,000 human-verified long-horizon agent trajectories organized by risk source, failure mode, and real-world harm, with a long-context delayed-trigger protocol that static benchmarks miss.",
+    "topics": [
+      "long-horizon",
+      "agent-safety",
+      "trajectory",
+      "delayed-trigger",
+      "benchmark"
+    ],
+    "s2_id": "arXiv:2604.02022",
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-arxiv-2602-13379-mt-agentrisk",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Unsafer in Many Turns: Benchmarking and Defending Multi-Turn Safety Risks in Tool-Using Agents",
+    "authors": [
+      "Xu Li",
+      "Simon Yu",
+      "Minzhou Pan",
+      "Yiyou Sun",
+      "Bo Li",
+      "Dawn Song",
+      "Xue Lin",
+      "Weiyan Shi"
+    ],
+    "org": "Northeastern / UChicago / UC Berkeley",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2602.13379",
+    "published": "2026-02-13",
+    "retrieved": "2026-06-21",
+    "abstract": "MT-AgentRisk benchmark shows tool-using agent risk compounds across multi-turn interactions in ways single-turn benchmarks miss; introduces ToolShield self-exploration defense.",
+    "topics": [
+      "multi-turn",
+      "tool-using-agent",
+      "agent-safety",
+      "benchmark",
+      "defense"
+    ],
+    "s2_id": "arXiv:2602.13379",
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-arxiv-2510-00857-managerbench",
+    "type": "source",
+    "source_type": "paper",
+    "title": "ManagerBench: Evaluating the Safety-Pragmatism Trade-off in Autonomous LLMs",
+    "authors": [
+      "Adi Simhi",
+      "Jonathan Herzig",
+      "Martin Tutek",
+      "Itay Itzhak",
+      "Idan Szpektor",
+      "Yonatan Belinkov"
+    ],
+    "org": "Technion / Google Research",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2510.00857",
+    "published": "2025-10-01",
+    "retrieved": "2026-06-21",
+    "abstract": "Benchmark of managerial scenarios where an autonomous LLM's operational goal conflicts with human safety; models often prioritize pragmatic goal completion over safety despite correctly perceiving the harm.",
+    "topics": [
+      "autonomy-risk",
+      "goal-conflict",
+      "agent-safety",
+      "benchmark",
+      "alignment"
+    ],
+    "s2_id": "arXiv:2510.00857",
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-arxiv-2505-21605-sosbench",
+    "type": "source",
+    "source_type": "paper",
+    "title": "SOSBench: Benchmarking Safety Alignment on Scientific Knowledge",
+    "authors": [
+      "Fengqing Jiang",
+      "Fengbo Ma",
+      "Zhangchen Xu",
+      "Yuetai Li",
+      "Bhaskar Ramasubramanian",
+      "Luyao Niu",
+      "Bo Li",
+      "Xianyan Chen"
+    ],
+    "org": "University of Washington",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2505.21605",
+    "published": "2025-05-27",
+    "retrieved": "2026-06-21",
+    "abstract": "Regulation-grounded, hazard-focused benchmark across high-risk scientific domains (chemistry, biology, etc.); reveals scientific safety-alignment deficiencies in frontier LLMs that general safety benchmarks miss.",
+    "topics": [
+      "scientific-misuse",
+      "dual-use",
+      "safety-alignment",
+      "benchmark",
+      "chemical-design"
+    ],
+    "s2_id": "arXiv:2505.21605",
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-arxiv-2602-23329-bio-uplift",
+    "type": "source",
+    "source_type": "paper",
+    "title": "LLM Novice Uplift on Dual-Use, In Silico Biology Tasks",
+    "authors": [
+      "Chen Bo Calvin Zhang",
+      "Christina Q. Knight",
+      "Nicholas Kruus",
+      "Jason Hausenloy",
+      "Pedro Medeiros",
+      "Nathaniel Li",
+      "Aiden Kim",
+      "Yury Orlovskiy"
+    ],
+    "org": "academic/safety consortium",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2602.23329",
+    "published": "2026-03-13",
+    "retrieved": "2026-06-21",
+    "abstract": "Measures novice uplift from LLMs on dual-use in-silico biology tasks; LLMs give substantial uplift, exceeding expert humans on several benchmarks, quantifying biosecurity dual-use risk.",
+    "topics": [
+      "biosecurity",
+      "dual-use",
+      "uplift",
+      "novice-uplift",
+      "benchmark"
+    ],
+    "s2_id": "arXiv:2602.23329",
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-arxiv-2510-27629-biorisk-openweight",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Best Practices for Biorisk Evaluations on Open-Weight Bio-Foundation Models",
+    "authors": [
+      "Boyi Wei",
+      "Zora Che",
+      "Nathaniel Li",
+      "Udari Madhushani Sehwag",
+      "Jasper Götting",
+      "Samira Nedungadi",
+      "Julian Michael",
+      "Summer Yue"
+    ],
+    "org": "safety consortium",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2510.27629",
+    "published": "2025-11-20",
+    "retrieved": "2026-06-21",
+    "abstract": "Shows data-filtering of open-weight bio-foundation models is insufficient: harmful virology knowledge recoverable via fine-tuning and detectable by linear probing of pretrained representations — a persistent open-weight biorisk.",
+    "topics": [
+      "biosecurity",
+      "open-weight",
+      "dual-use",
+      "fine-tuning-recovery",
+      "benchmark"
+    ],
+    "s2_id": "arXiv:2510.27629",
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-arxiv-2506-04704-holisafe",
+    "type": "source",
+    "source_type": "paper",
+    "title": "HoliSafe: Holistic Safety Benchmarking and Modeling with Safety Meta Token for Vision-Language Models",
+    "authors": [
+      "Youngwan Lee",
+      "Kangsan Kim",
+      "Kwanyong Park",
+      "Ilcahe Jung",
+      "Soojin Jang",
+      "Seanie Lee",
+      "Yong-Ju Lee",
+      "Sung Ju Hwang"
+    ],
+    "org": "ETRI / KAIST",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2506.04704",
+    "published": "2025-06-05",
+    "retrieved": "2026-06-21",
+    "abstract": "Holistic VLM safety dataset/benchmark covering contextually unsafe (not only overtly unsafe) image-text combinations, plus SafeLLaVA with a learnable safety meta-token for interpretable harm classification.",
+    "topics": [
+      "multimodal",
+      "vision-language",
+      "safety",
+      "benchmark",
+      "jailbreak"
+    ],
+    "s2_id": "arXiv:2506.04704",
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-arxiv-2601-10527-frontier-safety-report",
+    "type": "source",
+    "source_type": "paper",
+    "title": "A Safety Report on GPT-5.2, Gemini 3 Pro, Qwen3-VL, Doubao 1.8, Grok 4.1 Fast, Nano Banana Pro, and Seedream 4.5",
+    "authors": [
+      "Xingjun Ma",
+      "Yixu Wang",
+      "Hengyuan Xu",
+      "Yutao Wu",
+      "Yifan Ding",
+      "Yunhan Zhao",
+      "Zilong Wang",
+      "Jiabin Hua"
+    ],
+    "org": "Shanghai AI safety consortium",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2601.10527",
+    "published": "2026-01-15",
+    "retrieved": "2026-06-21",
+    "abstract": "Cross-model adversarial/multilingual/compliance safety leaderboard across frontier LLMs and multimodal models (incl. image generators Nano Banana Pro, Seedream 4.5), producing comparative safety profiles.",
+    "topics": [
+      "multimodal",
+      "frontier-model",
+      "safety-leaderboard",
+      "benchmark",
+      "image-generation"
+    ],
+    "s2_id": "arXiv:2601.10527",
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-arxiv-2603-01291-jailnewsbench",
+    "type": "source",
+    "source_type": "paper",
+    "title": "JailNewsBench: Multi-Lingual and Regional Benchmark for Fake News Generation under Jailbreak Attacks",
+    "authors": [
+      "Masahiro Kaneko",
+      "Ayana Niwa",
+      "Timothy Baldwin"
+    ],
+    "org": "MBZUAI",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2603.01291",
+    "published": "2026-03-01",
+    "retrieved": "2026-06-21",
+    "abstract": "Benchmark measuring LLM susceptibility to generating fake news via jailbreaks across languages and regions; reveals large cross-lingual/regional safety disparities in disinformation generation.",
+    "topics": [
+      "misinformation",
+      "jailbreak",
+      "multilingual",
+      "disinformation",
+      "benchmark"
+    ],
+    "s2_id": "arXiv:2603.01291",
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-arxiv-2407-12784-agentpoison",
+    "type": "source",
+    "source_type": "paper",
+    "title": "AgentPoison: Red-teaming LLM Agents via Poisoning Memory or Knowledge Bases",
+    "authors": [
+      "Zhaorun Chen",
+      "Zhen Xiang",
+      "Chaowei Xiao",
+      "Dawn Song",
+      "Bo Li"
+    ],
+    "org": "UChicago / UIUC / UC Berkeley",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2407.12784",
+    "published": "2024-07-17",
+    "retrieved": "2026-06-21",
+    "abstract": "Backdoor attack poisoning an LLM agent's long-term memory / RAG knowledge base via optimized triggers; high ASR with negligible impact on benign tasks, across driving, QA, and healthcare EHR agents.",
+    "topics": [
+      "memory-poisoning",
+      "backdoor",
+      "rag",
+      "agent-security",
+      "red-teaming"
+    ],
+    "s2_id": "arXiv:2407.12784",
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-arxiv-2602-15654-zombie-agents",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Zombie Agents: Persistent Control of Self-Evolving LLM Agents via Self-Reinforcing Injections",
+    "authors": [
+      "Xianglin Yang",
+      "Yufei He",
+      "Shuo Ji",
+      "Bryan Hooi",
+      "Jin Song Dong"
+    ],
+    "org": "National University of Singapore",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2602.15654",
+    "published": "2026-03-05",
+    "retrieved": "2026-06-21",
+    "abstract": "Self-reinforcing memory injection persists across sessions in self-evolving agents (sliding-window and retrieval-augmented memory), triggering unauthorized tool behavior long after the initial exposure — defeating session-level prompt filtering.",
+    "topics": [
+      "memory-poisoning",
+      "self-evolving-agent",
+      "persistent-attack",
+      "agent-security",
+      "backdoor"
+    ],
+    "s2_id": "arXiv:2602.15654",
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-arxiv-2508-17511-school-reward-hacks",
+    "type": "source",
+    "source_type": "paper",
+    "title": "School of Reward Hacks: Hacking harmless tasks generalizes to misaligned behavior in LLMs",
+    "authors": [
+      "Mia Taylor",
+      "James Chua",
+      "Jan Betley",
+      "Johannes Treutlein",
+      "Owain Evans"
+    ],
+    "org": "Truthful AI / independent",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2508.17511",
+    "published": "2025-08-24",
+    "retrieved": "2026-06-21",
+    "abstract": "Training a model to exploit flawed reward functions on simple, harmless tasks generalizes to broad misaligned behavior beyond the training scope — emergent misalignment from reward hacking.",
+    "topics": [
+      "reward-hacking",
+      "emergent-misalignment",
+      "specification-gaming",
+      "alignment",
+      "frontier"
+    ],
+    "s2_id": "arXiv:2508.17511",
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-arxiv-2605-21384-specbench",
+    "type": "source",
+    "source_type": "paper",
+    "title": "SpecBench: Measuring Reward Hacking in Long-Horizon Coding Agents",
+    "authors": [
+      "Bingchen Zhao",
+      "Dhruv Srikanth",
+      "Yuxiang Wu",
+      "Zhengyao Jiang"
+    ],
+    "org": "academic/industry consortium",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2605.21384",
+    "published": "2026-05-20",
+    "retrieved": "2026-06-21",
+    "abstract": "Benchmark separating genuine solutions from test-gaming in long-horizon coding agents by comparing visible validation vs held-out tests — measures reward hacking / spec-gaming in agentic SE.",
+    "topics": [
+      "reward-hacking",
+      "coding-agent",
+      "specification-gaming",
+      "agentic-sdlc",
+      "benchmark"
+    ],
+    "s2_id": "arXiv:2605.21384",
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-arxiv-2605-20744-hack-verifiable",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Hack-Verifiable Environments: Towards Evaluating Reward Hacking at Scale",
+    "authors": [
+      "Amit Roth",
+      "Ankur Samanta",
+      "Matan Halevy",
+      "Yoav Levine",
+      "Yonathan Efroni"
+    ],
+    "org": "industry research",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2605.20744",
+    "published": "2026-05-20",
+    "retrieved": "2026-06-21",
+    "abstract": "Hack-Verifiable TextArena embeds exploitable reward-hacking opportunities directly into environments to automatically and reliably measure reward hacking at scale.",
+    "topics": [
+      "reward-hacking",
+      "evaluation",
+      "automated-measurement",
+      "alignment",
+      "benchmark"
+    ],
+    "s2_id": "arXiv:2605.20744",
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-arxiv-2512-07810-auditing-sandbagging",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Auditing Games for Sandbagging",
+    "authors": [
+      "Jordan Taylor",
+      "Sid Black",
+      "Dillon Bowen",
+      "Thomas Read",
+      "Satvik Golechha",
+      "Alex Zelenka-Martin",
+      "Oliver Makins",
+      "Connor Kissane"
+    ],
+    "org": "safety research consortium",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2512.07810",
+    "published": "2025-12-08",
+    "retrieved": "2026-06-21",
+    "abstract": "Red-team/blue-team auditing game where red teams create conditionally-underperforming (sandbagging) models and blue teams attempt detection with black-box, internals, and training-based methods — with limited success, evidencing a hard-to-detect evaluation-gaming risk.",
+    "topics": [
+      "sandbagging",
+      "evaluation-gaming",
+      "alignment-audit",
+      "frontier-detection",
+      "control-evaluation"
+    ],
+    "s2_id": "arXiv:2512.07810",
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-arxiv-2412-13178-safeagentbench",
+    "type": "source",
+    "source_type": "paper",
+    "title": "SafeAgentBench: A Benchmark for Safe Task Planning of Embodied LLM Agents",
+    "authors": [
+      "Sheng Yin",
+      "Xianghe Pang",
+      "Yuanzhuo Ding",
+      "Menglan Chen",
+      "Yutong Bi",
+      "Yichen Xiong",
+      "Wenhao Huang",
+      "Zhen Xiang"
+    ],
+    "org": "academic consortium",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2412.13178",
+    "published": "2024-12-17",
+    "retrieved": "2026-06-21",
+    "abstract": "Benchmark + SafeAgentEnv simulator for hazard-aware task planning of embodied LLM agents; measures whether agents recognize and refuse physically hazardous tasks in interactive 3D environments.",
+    "topics": [
+      "embodied-agent",
+      "robotics",
+      "physical-safety",
+      "task-planning",
+      "benchmark"
+    ],
+    "s2_id": "arXiv:2412.13178",
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-arxiv-2410-14182-labsafety",
+    "type": "source",
+    "source_type": "paper",
+    "title": "LabSafety Bench: Benchmarking LLMs on Safety Issues in Scientific Labs",
+    "authors": [
+      "Yujun Zhou",
+      "Jingdong Yang",
+      "Kehan Guo",
+      "Pin-Yu Chen",
+      "Tian Gao",
+      "Werner Geyer",
+      "Nuno Moniz",
+      "Nitesh V Chawla"
+    ],
+    "org": "University of Notre Dame / IBM",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2410.14182",
+    "published": "2024-10-18",
+    "retrieved": "2026-06-21",
+    "abstract": "OSHA-grounded benchmark evaluating LLMs/VLMs on laboratory safety; models make critical lab-safety errors despite high general performance — a physical-safety hazard for AI lab assistants.",
+    "topics": [
+      "lab-safety",
+      "physical-safety",
+      "scientific",
+      "benchmark",
+      "sector-biosecurity"
+    ],
+    "s2_id": "arXiv:2410.14182",
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-arxiv-2604-17730-mhsafeeval",
+    "type": "source",
+    "source_type": "paper",
+    "title": "MHSafeEval: Role-Aware Interaction-Level Evaluation of Mental Health Safety in Large Language Models",
+    "authors": [
+      "Suhyun Lee",
+      "Palakorn Achananuparp",
+      "Neemesh Yadav",
+      "Ee-Peng Lim",
+      "Yang Deng"
+    ],
+    "org": "Singapore Management University",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2604.17730",
+    "published": "2026-04-20",
+    "retrieved": "2026-06-21",
+    "abstract": "Role-aware safety taxonomy + agent-based, trajectory-level adversarial multi-turn evaluation of LLM mental-health counseling; reveals cumulative safety failures that static single-turn benchmarks miss.",
+    "topics": [
+      "mental-health",
+      "psychological-harm",
+      "multi-turn",
+      "sector-medical",
+      "benchmark"
+    ],
+    "s2_id": "arXiv:2604.17730",
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-lieber-loratk-2024",
+    "type": "source",
+    "source_type": "paper",
+    "title": "LoRA-as-an-Attack! Piercing LLM Safety Under The Share-and-Play Scenario",
+    "authors": [
+      "Hongyi Liu",
+      "Shaochen Zhong",
+      "Xintong Sun",
+      "Minghao Tian",
+      "Mohsen Hariri",
+      "Zirui Liu",
+      "Ruixiang Tang",
+      "Zhimeng Jiang"
+    ],
+    "org": "Rice University / Texas A&M",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2403.00108",
+    "published": "2024-02-29",
+    "retrieved": "2026-06-21",
+    "abstract": "Injects a backdoor into a LoRA adapter and propagates it through the share-and-play adapter ecosystem; studies merging a backdoored LoRA with benign adapters and the resulting safety compromise.",
+    "s2_id": "arXiv:2403.00108",
+    "topics": [
+      "lora",
+      "backdoor",
+      "supply-chain",
+      "peft"
+    ],
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-xie-overfit-finetune-jb-2025",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Attack via Overfitting: 10-shot Benign Fine-tuning to Jailbreak LLMs",
+    "authors": [
+      "Zhixin Xie",
+      "Xurui Song",
+      "Jun Luo"
+    ],
+    "org": "Nanyang Technological University",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2510.02833",
+    "published": "2025-10-03",
+    "retrieved": "2026-06-21",
+    "abstract": "Fine-tuning on as few as 10 benign QA pairs causes an aligned LLM to overfit and forget refusal behavior, jailbreaking it while evading moderation models.",
+    "s2_id": "arXiv:2510.02833",
+    "topics": [
+      "fine-tuning-attack",
+      "safety-collapse",
+      "jailbreak"
+    ],
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-hsiung-guardrail-collapse-2025",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Why LLM Safety Guardrails Collapse After Fine-tuning: A Similarity Analysis Between Alignment and Fine-tuning Datasets",
+    "authors": [
+      "Lei Hsiung",
+      "Tianyu Pang",
+      "Yung-Chen Tang",
+      "Linyue Song",
+      "Tsung-Yi Ho",
+      "Pin-Yu Chen",
+      "Yaoqing Yang"
+    ],
+    "org": "Dartmouth College / IBM Research",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2506.05346",
+    "published": "2025-06-05",
+    "retrieved": "2026-06-21",
+    "abstract": "Shows high representation similarity between upstream alignment data and the downstream fine-tuning task weakens safety guardrails, explaining and predicting fine-tuning-based de-alignment.",
+    "s2_id": "arXiv:2506.05346",
+    "topics": [
+      "fine-tuning-attack",
+      "safety-collapse"
+    ],
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-wang-activation-attack-2023",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Backdoor Activation Attack: Attack Large Language Models using Activation Steering for Safety-Alignment",
+    "authors": [
+      "Haoran Wang",
+      "Kai Shu"
+    ],
+    "org": "Illinois Institute of Technology",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2311.09433",
+    "published": "2023-11-15",
+    "retrieved": "2026-06-21",
+    "abstract": "Uses contrastive activation steering vectors at inference to flip safety-relevant behavior (toxicity, harmfulness) of instruction-tuned LLMs without optimization or weight updates.",
+    "s2_id": "arXiv:2311.09433",
+    "topics": [
+      "activation-steering",
+      "representation-attack",
+      "jailbreak"
+    ],
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-wang-refusal-direction-universal-2025",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Refusal Direction is Universal Across Safety-Aligned Languages",
+    "authors": [
+      "Xinpeng Wang",
+      "Mingyang Wang",
+      "Yihong Liu",
+      "Hinrich Schütze",
+      "Barbara Plank"
+    ],
+    "org": "LMU Munich",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2505.17306",
+    "published": "2025-05-22",
+    "retrieved": "2026-06-21",
+    "abstract": "Shows a single 'refusal direction' in activation space governs refusal across languages; ablating it cross-lingually bypasses safety, generalizing refusal-direction-ablation jailbreaks.",
+    "s2_id": "arXiv:2505.17306",
+    "topics": [
+      "refusal-direction",
+      "activation-ablation",
+      "multilingual"
+    ],
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-wang-juli-logprob-jb-2025",
+    "type": "source",
+    "source_type": "paper",
+    "title": "JULI: Jailbreak Large Language Models by Self-Introspection",
+    "authors": [
+      "Jesson Wang",
+      "Zhanhao Hu",
+      "David Wagner"
+    ],
+    "org": "UC Berkeley",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2505.11790",
+    "published": "2025-05-17",
+    "retrieved": "2026-06-21",
+    "abstract": "Manipulates exposed token log-probabilities via a small BiasNet to jailbreak API-accessible LLMs without access to weights or the generation process.",
+    "s2_id": "arXiv:2505.11790",
+    "topics": [
+      "logit-manipulation",
+      "decoding-attack",
+      "jailbreak"
+    ],
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-wang-implicit-crossmodal-jb-2025",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Implicit Jailbreak Attacks via Cross-Modal Information Concealment on Vision-Language Models",
+    "authors": [
+      "Zhaoxin Wang",
+      "Handing Wang",
+      "Cong Tian",
+      "Yaochu Jin"
+    ],
+    "org": "Xidian University",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2505.16446",
+    "published": "2025-05-22",
+    "retrieved": "2026-06-21",
+    "abstract": "Embeds malicious instructions into images via LSB steganography plus adversarial suffixes so a VLM reconstructs and executes them across modalities, achieving high ASR on commercial MLLMs.",
+    "s2_id": "arXiv:2505.16446",
+    "topics": [
+      "multimodal",
+      "vlm-jailbreak",
+      "steganography"
+    ],
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-cheng-tvpi-2025",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Exploring Typographic Visual Prompts Injection Threats in Cross-Modality Generation Models",
+    "authors": [
+      "Hao Cheng",
+      "Erjia Xiao",
+      "Yichi Wang",
+      "Kaidi Xu",
+      "Mengshu Sun",
+      "Jindong Gu",
+      "Renjing Xu"
+    ],
+    "org": "HKUST (Guangzhou)",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2503.11519",
+    "published": "2025-03-14",
+    "retrieved": "2026-06-21",
+    "abstract": "Typographic Visual Prompt Injection (TVPI): rendering attacker instructions as text inside an image hijacks LVLM perception and image-to-image generation.",
+    "s2_id": "arXiv:2503.11519",
+    "topics": [
+      "multimodal",
+      "visual-prompt-injection",
+      "typographic"
+    ],
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-jovanovic-watermark-stealing-2024",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Watermark Stealing in Large Language Models",
+    "authors": [
+      "Nikola Jovanović",
+      "Robin Staab",
+      "Martin Vechev"
+    ],
+    "org": "ETH Zurich",
+    "venue": "ICML",
+    "url": "https://arxiv.org/abs/2402.19361",
+    "published": "2024-02-29",
+    "retrieved": "2026-06-21",
+    "abstract": "By querying a watermarked LLM's API, an attacker reverse-engineers the scheme, enabling both scrubbing (removing the watermark) and spoofing (forging it onto attacker text).",
+    "s2_id": "arXiv:2402.19361",
+    "topics": [
+      "watermark-removal",
+      "watermark-spoofing",
+      "provenance"
+    ],
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-morris-embedding-inversion-2023",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Text Embeddings Reveal (Almost) As Much As Text",
+    "authors": [
+      "John X. Morris",
+      "Volodymyr Kuleshov",
+      "Vitaly Shmatikov",
+      "Alexander M. Rush"
+    ],
+    "org": "Cornell University",
+    "venue": "EMNLP",
+    "url": "https://arxiv.org/abs/2310.06816",
+    "published": "2023-10-10",
+    "retrieved": "2026-06-21",
+    "abstract": "Iterative 'vec2text' inversion reconstructs most of the original text (including PII) from dense embeddings, showing embedding stores in RAG/vector DBs leak their source text.",
+    "s2_id": "arXiv:2310.06816",
+    "topics": [
+      "embedding-inversion",
+      "privacy",
+      "rag"
+    ],
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-bentov-gaslite-2024",
+    "type": "source",
+    "source_type": "paper",
+    "title": "GASLITEing the Retrieval: Exploring Vulnerabilities in Dense Embedding-based Search",
+    "authors": [
+      "Matan Ben-Tov",
+      "Mahmood Sharif"
+    ],
+    "org": "Tel Aviv University",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2412.20953",
+    "published": "2024-12-30",
+    "retrieved": "2026-06-21",
+    "abstract": "GASLITE gradient-crafts adversarial passages tuned to embedding-space geometry so they are retrieved for whole query distributions, hijacking RAG retrieval at the embedding/retriever level.",
+    "s2_id": "arXiv:2412.20953",
+    "topics": [
+      "embedding-attack",
+      "rag",
+      "retrieval-poisoning"
+    ],
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-wanger-vectorsmuggle-2026",
+    "type": "source",
+    "source_type": "paper",
+    "title": "VectorSmuggle: Steganographic Exfiltration in Embedding Stores and a Cryptographic Provenance Defense",
+    "authors": [
+      "Jascha Wanger"
+    ],
+    "org": "independent",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2605.13764",
+    "published": "2026-05-13",
+    "retrieved": "2026-06-21",
+    "abstract": "Hides exfiltrated data inside RAG vector-store embeddings via retrieval-preserving rotations (orthogonal/Givens) that evade anomaly detection; proposes a cryptographic-provenance defense.",
+    "s2_id": "arXiv:2605.13764",
+    "topics": [
+      "embedding-exfiltration",
+      "steganography",
+      "rag"
+    ],
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-yong-lowresource-jb-2023",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Low-Resource Languages Jailbreak GPT-4",
+    "authors": [
+      "Zheng-Xin Yong",
+      "Cristina Menghini",
+      "Stephen H. Bach"
+    ],
+    "org": "Brown University",
+    "venue": "NeurIPS SoLaR Workshop",
+    "url": "https://arxiv.org/abs/2310.02446",
+    "published": "2023-10-03",
+    "retrieved": "2026-06-21",
+    "abstract": "Translating an unsafe request into a low-resource language bypasses GPT-4 guardrails; translating the answer back recovers the harmful content — a cross-lingual translation jailbreak.",
+    "s2_id": "arXiv:2310.02446",
+    "topics": [
+      "multilingual",
+      "low-resource",
+      "jailbreak"
+    ],
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-kuo-hcot-2025",
+    "type": "source",
+    "source_type": "paper",
+    "title": "H-CoT: Hijacking the Chain-of-Thought Safety Reasoning Mechanism to Jailbreak Large Reasoning Models, Including OpenAI o1/o3, DeepSeek-R1, and Gemini 2.0 Flash Thinking",
+    "authors": [
+      "Martin Kuo",
+      "Jianyi Zhang",
+      "Aolin Ding",
+      "Qinsi Wang",
+      "Louis DiValentin",
+      "Yujia Bao",
+      "Wei Wei",
+      "Hai Li"
+    ],
+    "org": "Duke University",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2502.12893",
+    "published": "2025-02-18",
+    "retrieved": "2026-06-21",
+    "abstract": "Injects fabricated benign chain-of-thought into the reasoning trace of large reasoning models to hijack their safety-reasoning step, collapsing refusal rates on o1/o3, DeepSeek-R1, Gemini Flash Thinking.",
+    "s2_id": "arXiv:2502.12893",
+    "topics": [
+      "reasoning-model",
+      "cot-hijack",
+      "jailbreak"
+    ],
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-egashira-exploit-quantization-2024",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Exploiting LLM Quantization",
+    "authors": [
+      "Kazuki Egashira",
+      "Mark Vero",
+      "Robin Staab",
+      "Jingxuan He",
+      "Martin Vechev"
+    ],
+    "org": "ETH Zurich",
+    "venue": "NeurIPS",
+    "url": "https://arxiv.org/abs/2405.18137",
+    "published": "2024-05-28",
+    "retrieved": "2026-06-21",
+    "abstract": "Crafts a model benign in full precision but malicious (vulnerable-code-gen, content injection, over-refusal) once a victim applies standard quantization — a quantization-conditioned backdoor distributed via model hubs.",
+    "s2_id": "arXiv:2405.18137",
+    "topics": [
+      "quantization",
+      "conditioned-backdoor",
+      "supply-chain"
+    ],
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-kuchler-architectural-backdoor-2025",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Architectural Backdoors for Within-Batch Data Stealing and Model Inference Manipulation",
+    "authors": [
+      "Nicolas Küchler",
+      "Ivan Petrov",
+      "Conrad Grobler",
+      "Ilia Shumailov"
+    ],
+    "org": "ETH Zurich / Google DeepMind",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2505.18323",
+    "published": "2025-05-23",
+    "retrieved": "2026-06-21",
+    "abstract": "A backdoor planted in the network architecture (not weights) exploits batched inference to leak one user's inputs to another in the same batch and manipulate other users' outputs.",
+    "s2_id": "arXiv:2505.18323",
+    "topics": [
+      "architectural-backdoor",
+      "data-stealing",
+      "batched-inference"
+    ],
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-liu-psychological-jb-2025",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Breaking Minds, Breaking Systems: Jailbreaking Large Language Models via Human-like Psychological Manipulation",
+    "authors": [
+      "Zehao Liu",
+      "Xi Lin"
+    ],
+    "org": "Shanghai Jiao Tong University",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2512.18244",
+    "published": "2025-12-20",
+    "retrieved": "2026-06-21",
+    "abstract": "Applies human psychological-manipulation tactics (authority, reciprocity, sustained pressure, anthropomorphic consistency) over a dialogue to corrupt LLM policy adherence, achieving high ASR while bypassing defenses.",
+    "s2_id": "arXiv:2512.18244",
+    "topics": [
+      "psychological-manipulation",
+      "persuasion",
+      "jailbreak"
+    ],
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-j2-jailbreaking-to-jailbreak",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Jailbreaking to Jailbreak (J2)",
+    "authors": [
+      "Jeremy Kritz",
+      "Vaughn Robinson",
+      "Robert Vacareanu",
+      "Bijan Varjavand",
+      "Michael Choi",
+      "Bobby Gogov",
+      "Scale Red Team",
+      "Summer Yue",
+      "Willow E. Primack",
+      "Zifan Wang"
+    ],
+    "org": "Scale AI",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2502.09638",
+    "published": "2025-02-14",
+    "retrieved": "2026-06-21",
+    "abstract": "A human red-teamer seeds a refusal-trained LLM to overcome its own refusals (J1), turning it into a red-teaming agent (J2) that then jailbreaks other models AND itself across multi-turn conversations, learning from prior attempts in-context. Shows aligned models can be repurposed as scalable attackers.",
+    "topics": [
+      "automated-red-teaming",
+      "jailbreak",
+      "llm-as-attacker",
+      "self-jailbreak"
+    ],
+    "s2_id": "arXiv:2502.09638",
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-x-teaming-multiturn",
+    "type": "source",
+    "source_type": "paper",
+    "title": "X-Teaming: Multi-Turn Jailbreaks and Defenses with Adaptive Multi-Agents",
+    "authors": [
+      "Salman Rahman",
+      "Liwei Jiang",
+      "James Shiffer",
+      "Genglin Liu",
+      "Sheriff Issaka",
+      "Md Rizwan Parvez",
+      "Hamid Palangi",
+      "Kai-Wei Chang",
+      "Yejin Choi",
+      "Saadia Gabriel"
+    ],
+    "org": "NYU / AI2 / Microsoft",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2504.13203",
+    "published": "2025-04-17",
+    "retrieved": "2026-06-21",
+    "abstract": "X-Teaming is an adaptive multi-agent framework for multi-turn jailbreaks using four collaborating roles - Planner, Attacker, Verifier, Optimizer - that iteratively plan, execute, judge and refine attack trajectories. Releases XGuard-Train, an open multi-turn safety-training dataset for defense.",
+    "topics": [
+      "multi-turn-jailbreak",
+      "multi-agent-generation",
+      "llm-as-attacker",
+      "defense-dataset"
+    ],
+    "s2_id": "arXiv:2504.13203",
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-agenticred-evolving-systems",
+    "type": "source",
+    "source_type": "paper",
+    "title": "AgenticRed: Evolving Agentic Systems for Red-Teaming",
+    "authors": [
+      "Jiayi Yuan",
+      "Jonathan Noether",
+      "Natasha Jaques",
+      "Goran Radanovic"
+    ],
+    "org": "academic",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2601.13518",
+    "published": "2026-04-03",
+    "retrieved": "2026-06-21",
+    "abstract": "AgenticRed treats red-teaming as an open-ended SYSTEM-DESIGN problem: each generation an LLM programs a new agentic attacker system drawing on an ever-growing archive of prior discoveries (with FailedPromptMemory / SucceedPromptMemory), self-improving without human intervention. Reaches 96-100% ASR on open-weight models and 100% on GPT-5.1/DeepSeek-R1/V3.2, with strong transfer.",
+    "topics": [
+      "self-improving-attacker",
+      "open-ended-evolution",
+      "multi-agent-generation",
+      "automated-red-teaming"
+    ],
+    "s2_id": "arXiv:2601.13518",
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-autorise-strategy-evolution",
+    "type": "source",
+    "source_type": "paper",
+    "title": "AUTORISE: Agent-Driven Strategy Evolution for Red-Teaming Large Language Models",
+    "authors": [
+      "^[ambiguous] author list not confirmed from search snippets"
+    ],
+    "org": "academic",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2604.22871",
+    "published": "2026-04-29",
+    "retrieved": "2026-06-21",
+    "abstract": "AUTORISE uses an agent that evolves red-teaming STRATEGIES (not just prompts) over iterations, growing a library of reusable attack strategies that generalize across targets - an agent-driven, self-improving strategy-evolution paradigm.",
+    "topics": [
+      "self-improving-attacker",
+      "strategy-evolution",
+      "automated-red-teaming"
+    ],
+    "s2_id": "arXiv:2604.22871",
+    "provenance": "ambiguous"
+  },
+  {
+    "id": "src-agentic-era-dreadnode",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Redefining AI Red Teaming in the Agentic Era: From Weeks to Hours",
+    "authors": [
+      "Raja Sekhar Rao Dheekonda",
+      "Will Pearce",
+      "Nick Landers"
+    ],
+    "org": "Dreadnode",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2605.04019",
+    "published": "2026-05-05",
+    "retrieved": "2026-06-21",
+    "abstract": "An agentic red-teaming system (Dreadnode SDK) where operators specify goals in natural language via a TUI and the agent orchestrates attack selection, transform composition, execution and reporting across 45+ attacks, 450+ transforms, 130+ scorers, supporting multi-agent/multilingual/multimodal targets. 85% ASR on Llama Scout with zero human-written code; compresses testing cycles from weeks to hours.",
+    "topics": [
+      "agentic-red-teaming",
+      "ai-auditor-agent",
+      "human-ai",
+      "tooling-orchestration"
+    ],
+    "s2_id": "arXiv:2605.04019",
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-radar-roleplay-multiagent",
+    "type": "source",
+    "source_type": "paper",
+    "title": "RADAR: A Risk-Aware Dynamic Multi-Agent Framework for LLM Safety Evaluation via Role-Specialized Collaboration",
+    "authors": [
+      "^[ambiguous] author list not confirmed from search snippets"
+    ],
+    "org": "academic",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2509.25271",
+    "published": "2025-09-29",
+    "retrieved": "2026-06-21",
+    "abstract": "RADAR is a risk-aware dynamic multi-agent safety-evaluation framework where role-specialized agents collaborate to probe LLMs, dynamically allocating effort to higher-risk regions of the behavior space.",
+    "topics": [
+      "multi-agent-generation",
+      "role-specialized",
+      "safety-evaluation"
+    ],
+    "s2_id": "arXiv:2509.25271",
+    "provenance": "ambiguous"
+  },
+  {
+    "id": "src-jailbreak-r1-rl",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Jailbreak-R1: Exploring the Jailbreak Capabilities of LLMs via Reinforcement Learning",
+    "authors": [
+      "^[ambiguous] author list not confirmed from search snippets"
+    ],
+    "org": "academic",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2506.00782",
+    "published": "2025-06-01",
+    "retrieved": "2026-06-21",
+    "abstract": "Jailbreak-R1 trains an attacker LLM with a three-stage RL curriculum - Cold Start (SFT), Warm-up Exploration (diversity + consistency rewards), and Enhanced Jailbreak (progressive jailbreak rewards) - to generate effective AND diverse attack prompts, explicitly balancing ASR against attack diversity.",
+    "topics": [
+      "rl-attacker",
+      "automated-red-teaming",
+      "diversity",
+      "reward-shaping"
+    ],
+    "s2_id": "arXiv:2506.00782",
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-self-play-moving-targets",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Chasing Moving Targets with Online Self-Play Reinforcement Learning for Safer Language Models",
+    "authors": [
+      "^[ambiguous] author list not confirmed from search snippets"
+    ],
+    "org": "academic",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2506.07468",
+    "published": "2025-06-09",
+    "retrieved": "2026-06-21",
+    "abstract": "Co-trains attacker and defender via ONLINE self-play RL so the safety target keeps moving: the defender hardens against an attacker that continuously adapts, closing the gap that static red-team datasets leave behind. A self-play continuous-hardening paradigm.",
+    "topics": [
+      "self-play",
+      "co-training",
+      "continuous-red-teaming",
+      "attacker-defender"
+    ],
+    "s2_id": "arXiv:2506.07468",
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-cop-composition-principles",
+    "type": "source",
+    "source_type": "paper",
+    "title": "CoP: Agentic Red-teaming for Large Language Models using Composition of Principles",
+    "authors": [
+      "^[ambiguous] author list not confirmed from search snippets"
+    ],
+    "org": "academic",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2506.00781",
+    "published": "2025-06-01",
+    "retrieved": "2026-06-21",
+    "abstract": "CoP frames agentic red-teaming as the COMPOSITION of human-provided red-teaming principles: an agent composes and chains atomic jailbreak principles into novel multi-step attacks, blending human strategic priors with automated search.",
+    "topics": [
+      "agentic-red-teaming",
+      "human-ai",
+      "principle-composition",
+      "ai-assisted"
+    ],
+    "s2_id": "arXiv:2506.00781",
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-qdrt-behavior-conditioned",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Quality-Diversity Red-Teaming: Automated Generation of High-Quality and Diverse Attackers for LLMs",
+    "authors": [
+      "^[ambiguous] author list not confirmed from search snippets"
+    ],
+    "org": "academic",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2506.07121",
+    "published": "2025-06-08",
+    "retrieved": "2026-06-21",
+    "abstract": "QDRT combines behavior-conditioned attacker training, a behavior-assignment strategy and a MAP-Elites buffer to jointly optimize attack quality and diversity, reporting +22.13% QD-Score and +19.33% behavior coverage over prior QD red-teaming. A learning-based successor to Rainbow Teaming's pure evolutionary search.",
+    "topics": [
+      "quality-diversity",
+      "map-elites",
+      "rainbow",
+      "behavior-conditioned",
+      "diversity"
+    ],
+    "s2_id": "arXiv:2506.07121",
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-qd-semantic-strategy-evolution",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Quality-Diversity Evolution for Discovering Diverse Vulnerabilities in LLM Safety",
+    "authors": [
+      "Subhadip Mitra"
+    ],
+    "org": "academic",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2606.00801",
+    "published": "2026-05-30",
+    "retrieved": "2026-06-21",
+    "abstract": "A MAP-Elites framework that evolves INTERPRETABLE semantic-level attack strategies (not token-level gibberish) across behavioral dimensions strategy-type x encoding-method x prompt-length, exposing systematic model-specific weakness profiles (e.g. GPT-4o-mini -> hypothetical+ROT13; Claude 3.5 uniformly robust).",
+    "topics": [
+      "quality-diversity",
+      "map-elites",
+      "semantic-strategies",
+      "interpretable-attacks",
+      "diversity"
+    ],
+    "s2_id": "arXiv:2606.00801",
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-crossgen-transfer-qd",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Cross-Generational Transfer of Adversarial Attacks Reveals Non-Monotonic Safety Alignment in LLMs",
+    "authors": [
+      "^[ambiguous] author list not confirmed from search snippets"
+    ],
+    "org": "academic",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2606.00813",
+    "published": "2026-05-30",
+    "retrieved": "2026-06-21",
+    "abstract": "Uses MAP-Elites QD search to discover diverse jailbreaks across seven harm categories, then builds a model-generation transfer matrix by replaying attacks across model generations - showing safety alignment is NON-MONOTONIC (newer models can regress on vulnerabilities older ones fixed). A regression-tracking red-team method.",
+    "topics": [
+      "quality-diversity",
+      "transfer",
+      "regression-testing",
+      "continuous-red-teaming"
+    ],
+    "s2_id": "arXiv:2606.00813",
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-coin-flip-judge-reliability",
+    "type": "source",
+    "source_type": "paper",
+    "title": "A Coin Flip for Safety: LLM Judges Fail to Reliably Measure Adversarial Robustness",
+    "authors": [
+      "Leo Schwinn",
+      "Moritz Ladenburger",
+      "Tim Beyer",
+      "Mehrnaz Mofakhami",
+      "Gauthier Gidel",
+      "Stephan Guennemann"
+    ],
+    "org": "TU Munich / Mila",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2603.06594",
+    "published": "2026-03-17",
+    "retrieved": "2026-06-21",
+    "abstract": "Shows single LLM judges measuring jailbreak ASR exhibit high variance, low inter-judge agreement and poor calibration - near coin-flip on borderline cases. Recommends multi-judge ensembles + human anchoring as calibration ground truth. A direct reliability critique of the llm-as-a-judge paradigm.",
+    "topics": [
+      "llm-as-judge",
+      "reliability",
+      "calibration",
+      "ensemble",
+      "judge-variance"
+    ],
+    "s2_id": "arXiv:2603.06594",
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-scanners-lie-evaluator-instability",
+    "type": "source",
+    "source_type": "paper",
+    "title": "When Scanners Lie: Evaluator Instability in LLM Red-Teaming",
+    "authors": [
+      "^[ambiguous] author list not confirmed from search snippets"
+    ],
+    "org": "academic",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2603.14633",
+    "published": "2026-03-18",
+    "retrieved": "2026-06-21",
+    "abstract": "Demonstrates that automated red-team scanners/evaluators (garak-style probe scorers, judge models) give unstable verdicts on identical transcripts, so reported vulnerability counts depend heavily on evaluator choice. Argues for evaluator-stability reporting and consensus scoring.",
+    "topics": [
+      "llm-as-judge",
+      "evaluator-stability",
+      "scanner",
+      "reliability"
+    ],
+    "s2_id": "arXiv:2603.14633",
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-adversa-multijudge-consensus",
+    "type": "source",
+    "source_type": "paper",
+    "title": "ADVERSA: Measuring Multi-Turn Guardrail Degradation and Judge Reliability in Large Language Models",
+    "authors": [
+      "^[ambiguous] author list not confirmed from search snippets"
+    ],
+    "org": "academic",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2603.10068",
+    "published": "2026-03-12",
+    "retrieved": "2026-06-21",
+    "abstract": "ADVERSA adds per-round structured scoring, trajectory logging and MULTI-JUDGE CONSENSUS to multi-turn red-teaming, quantifying how guardrails degrade turn-by-turn and how judge reliability varies across conversation depth.",
+    "topics": [
+      "llm-as-judge",
+      "multi-judge-consensus",
+      "multi-turn",
+      "guardrail-degradation"
+    ],
+    "s2_id": "arXiv:2603.10068",
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-multibreak-bench",
+    "type": "source",
+    "source_type": "benchmark",
+    "title": "MultiBreak: A Scalable and Diverse Multi-turn Jailbreak Benchmark for Evaluating LLM Safety",
+    "authors": [
+      "^[ambiguous] author list not confirmed from search snippets"
+    ],
+    "org": "academic",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2605.01687",
+    "published": "2026-05-03",
+    "retrieved": "2026-06-21",
+    "abstract": "MultiBreak is a scalable, diverse multi-turn jailbreak benchmark with LLaMA-Guard and GPT-4o-mini judges, designed to evaluate LLM safety against conversational (not single-shot) attacks at scale.",
+    "topics": [
+      "benchmark",
+      "multi-turn-jailbreak",
+      "safety-eval"
+    ],
+    "s2_id": "arXiv:2605.01687",
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-mcpsecbench",
+    "type": "source",
+    "source_type": "benchmark",
+    "title": "MCPSecBench: A Systematic Security Benchmark and Playground for Testing Model Context Protocols",
+    "authors": [
+      "Yixuan Yang",
+      "Cuifeng Gao",
+      "Daoyuan Wu",
+      "Yufan Chen",
+      "Yingjiu Li",
+      "Shuai Wang"
+    ],
+    "org": "academic",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2508.13220",
+    "published": "2025-08-18",
+    "retrieved": "2026-06-21",
+    "abstract": "MCPSecBench is a systematic MCP security benchmark + playground covering tool poisoning, prompt injection, DNS rebinding, RCE and elicitation attacks across major MCP platforms (Claude, OpenAI and others), revealing platform-specific gaps in static validation and context isolation.",
+    "topics": [
+      "benchmark",
+      "mcp-security",
+      "tool-poisoning",
+      "prompt-injection"
+    ],
+    "s2_id": "arXiv:2508.13220",
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-pismith-rl-prompt-injection",
+    "type": "source",
+    "source_type": "paper",
+    "title": "PISmith: Reinforcement Learning-based Red Teaming for Prompt Injection Defenses",
+    "authors": [
+      "^[ambiguous] author list not confirmed from search snippets"
+    ],
+    "org": "academic",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2603.13026",
+    "published": "2026-03-13",
+    "retrieved": "2026-06-21",
+    "abstract": "PISmith trains an attacker LLM with RL to optimize INJECTED prompts in a black-box setting, systematically stress-testing prompt-injection DEFENSES (guardrails/classifiers) rather than base models - RL red-teaming aimed at the defender layer.",
+    "topics": [
+      "rl-attacker",
+      "prompt-injection",
+      "llm-as-defender",
+      "mcp-security"
+    ],
+    "s2_id": "arXiv:2603.13026",
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-reverse-constitutional-ai",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Reverse Constitutional AI: Controllable Toxic Data Generation via Probability-Clamped RLAIF",
+    "authors": [
+      "^[ambiguous] author list not confirmed from search snippets"
+    ],
+    "org": "academic",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2604.17769",
+    "published": "2026-04-23",
+    "retrieved": "2026-06-21",
+    "abstract": "Reverse Constitutional AI (R-CAI) inverts a written constitution to AUTOMATICALLY generate red-team data and systematically evaluate aligned models, using probability-clamped RLAIF for controllable toxic-data generation. Operationalizes constitutional-AI as a teaming method (constitution -> adversarial probes).",
+    "topics": [
+      "constitutional-ai-teaming",
+      "rlaif",
+      "automated-red-teaming",
+      "data-generation"
+    ],
+    "s2_id": "arXiv:2604.17769",
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-nrt-bench-control-room",
+    "type": "source",
+    "source_type": "benchmark",
+    "title": "NRT-Bench: Benchmarking Multi-Turn Red-Teaming of LLM Operator Agents in Safety-Critical Control Rooms",
+    "authors": [
+      "^[ambiguous] author list not confirmed from search snippets"
+    ],
+    "org": "academic",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2606.20408",
+    "published": "2026-06-19",
+    "retrieved": "2026-06-21",
+    "abstract": "NRT-Bench red-teams a five-role LLM operator team running a simulated nuclear power-plant control room governed by six critical safety functions; adversaries inject over four channels in bounded multi-turn sessions, and harm is an OBJECTIVE physical signal rather than LLM-judged text - sidestepping judge unreliability.",
+    "topics": [
+      "benchmark",
+      "multi-turn",
+      "agent-safety",
+      "critical-infrastructure",
+      "objective-harm-signal"
+    ],
+    "s2_id": "arXiv:2606.20408",
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-saferml-medical-redteam-agent",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Beyond Benchmarks: Dynamic, Automatic and Systematic Red-Teaming Agents for Trustworthy Medical Language Models",
+    "authors": [
+      "^[ambiguous] author list not confirmed from search snippets"
+    ],
+    "org": "academic",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2508.00923",
+    "published": "2025-08-01",
+    "retrieved": "2026-06-21",
+    "abstract": "A dynamic automated red-teaming AGENT for medical LLMs whose LLM-judge is calibrated against board-certified clinicians, achieving high inter-rater reliability - a sector-specific (medical) human-anchored judge protocol.",
+    "topics": [
+      "sector-medical",
+      "llm-as-judge",
+      "human-ai",
+      "clinician-calibration"
+    ],
+    "s2_id": "arXiv:2508.00923",
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-tmap-agent-trajectory-evo",
+    "type": "source",
+    "source_type": "paper",
+    "title": "T-MAP: Red-Teaming LLM Agents with Trajectory-aware Evolutionary Search",
+    "authors": [
+      "^[ambiguous] author list not confirmed from search snippets"
+    ],
+    "org": "academic",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2603.22341",
+    "published": "2026-03-27",
+    "retrieved": "2026-06-21",
+    "abstract": "T-MAP evolves whole agent TRAJECTORIES (tool-call sequences), not single prompts, using trajectory-aware evolutionary search to red-team tool-using agents - extending QD/evolutionary red-teaming from text to multi-step agent behavior.",
+    "topics": [
+      "evolutionary-search",
+      "agent-trajectory",
+      "tool-attack",
+      "quality-diversity"
+    ],
+    "s2_id": "arXiv:2603.22341",
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-violet-teaming",
+    "type": "source",
+    "source_type": "paper",
+    "title": "The Promise and Peril of Artificial Intelligence - Violet Teaming Offers a Balanced Path Forward",
+    "authors": [
+      "Alexander J. Titus",
+      "Adam H. Russell"
+    ],
+    "org": "academic",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2308.14253",
+    "published": "2023-08-28",
+    "retrieved": "2026-06-21",
+    "abstract": "Position paper proposing 'violet teaming' as an integrative approach that combines red-team risk identification with blue-team solution-building and embeds social-benefit/responsibility considerations directly into system design - a proactive, responsible-by-design alternative to reactive red teaming.",
+    "topics": [
+      "violet-teaming",
+      "purple-teaming",
+      "governance",
+      "responsible-by-design"
+    ],
+    "s2_id": "arXiv:2308.14253",
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-bugcrowd-2026-predictions",
+    "type": "source",
+    "source_type": "industry_report",
+    "title": "2026 Cybersecurity Predictions - AI Red Teaming via Crowdsourced Bug Bounty",
+    "authors": [
+      "Bugcrowd"
+    ],
+    "org": "Bugcrowd",
+    "venue": "Bugcrowd Blog",
+    "url": "https://www.bugcrowd.com/blog/2026-cybersecurity-predictions/",
+    "published": "2026-01-01",
+    "retrieved": "2026-06-21",
+    "abstract": "Industry predictions describing the maturation of crowdsourced AI red teaming via bug-bounty platforms, with human crowds incentivized to find jailbreaks and safety failures alongside automated attackers.",
+    "topics": [
+      "crowdsourced-red-teaming",
+      "bug-bounty",
+      "ai-red-teaming"
+    ],
+    "provenance": "extracted"
+  },
+  {
+    "id": "src-constitutional-classifiers",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Constitutional Classifiers: Defending against Universal Jailbreaks across Thousands of Hours of Red Teaming",
+    "authors": [
+      "Anthropic"
+    ],
+    "org": "Anthropic",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2501.18837",
+    "published": "2025-02-03",
+    "retrieved": "2026-06-21",
+    "abstract": "Anthropic trains constitutional classifiers against universal jailbreaks, validated through thousands of hours of human red teaming delivered via an external HackerOne bug-bounty program - concrete deployment of crowdsourced red teaming + a constitutional (llm-as-a-defender) control.",
+    "topics": [
+      "constitutional-classifiers",
+      "llm-as-defender",
+      "crowdsourced-red-teaming",
+      "bug-bounty"
+    ],
+    "s2_id": "arXiv:2501.18837",
     "provenance": "extracted"
   }
 ]

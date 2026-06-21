@@ -453,6 +453,7 @@ async function load(){
   // ── 첫 페인트 후 지연: 풀 그래프(2.3MB) → 숨김 탭 렌더 + 검색 데이터(RAG) + 보조 인덱스 ──
   setTimeout(async ()=>{
     await loadFullGraph(); // GRAPH.nodes/edges 채움(그래프 의존 렌더 전에)
+    renderAll(); // overview 재렌더(🆕 신규분류 카드 등 GRAPH.nodes 의존분 반영)
     renderLifecycle();renderRiskMap();renderProv();renderPapers();renderCards();renderAutoRedteam();
     renderChangelog();renderNews();renderGuideline42119();renderJapanAISI();renderOWASP();renderCSA();
     renderGuidelineTerms();renderGenAIMethods();buildGuideIndex();nodeizeGuidelines();
@@ -776,6 +777,18 @@ function renderList(arg){
 function matPill(m){return `<span class="pill ${MAT[m]||'de'}">${esc(m||'?')}</span>`;}
 function grade(g){return `<span class="g${g||'C'}">${g||'?'}</span>`;}
 
+// 🆕 신규 분류(이번 보강 사이클 추가필요) — candidate:true(신규 위협) + gapfill:true(신규 수집 표준)
+function candidateCard(){
+  const cand=(GRAPH.nodes||[]).filter(n=>{const m=n.meta||{};return m.candidate===true||m.gapfill===true;});
+  if(!cand.length)return "";
+  const th=cand.filter(n=>n.kind==="threat"), std=cand.filter(n=>n.kind==="standard"), etc=cand.filter(n=>n.kind!=="threat"&&n.kind!=="standard");
+  const chip=n=>`<a class="tag" href="#entity:${encodeURIComponent(n.id)}" title="${esc((n.meta&&n.meta.description)||n.id)}">${esc(n.label||n.id)}</a>`;
+  return `<div class="card" style="border-left:3px solid var(--acc2)"><h3>🆕 신규 분류 — 이번 보강 사이클 추가 항목 <span class="muted small">(논문·ATLAS·표준에서 현 분류 밖으로 발견, ${cand.length}건)</span></h3>
+    ${th.length?`<div class="small" style="margin:5px 0"><b style="color:var(--acc)">⚠️ 신규 위협 분류 (${th.length})</b> — 기존 taxonomy에 없던 위협군(candidate): ${th.map(chip).join(" ")}</div>`:""}
+    ${std.length?`<div class="small" style="margin:5px 0"><b style="color:var(--pur)">📋 신규 수집 표준 (${std.length})</b>: ${std.map(chip).join(" ")}</div>`:""}
+    ${etc.length?`<div class="small" style="margin:5px 0"><b>기타 (${etc.length})</b>: ${etc.map(chip).join(" ")}</div>`:""}
+    <p class="small muted" style="margin-top:4px">각 항목은 candidate/gapfill 표식 + provenance(출처)를 보유 · 클릭 시 통합 상세(#entity).</p></div>`;
+}
 function renderAll(){
   // OVERVIEW
   const cov=(GRAPH.stats.coverage)||{};
@@ -822,6 +835,7 @@ function renderAll(){
         <abbr title="Agent-to-Agent">A2A</abbr></div></div>
      <p class="muted small">Generated ${esc(GRAPH.generated)} · AI Safety Assurance Knowledge Platform · offline static dashboard</p>`
     +statHtml
+    +candidateCard()
     +`<div class="widgets">
       ${donutBlock("Records by type",recTypes)}
       ${donutBlock("Finding maturity",matData)}
@@ -1402,8 +1416,12 @@ function entitySelect(id){
   const byKind={};nb.forEach(([nid,rel])=>{const t=nbById[nid];const k=t?t.kind:"?";(byKind[k]=byKind[k]||[]).push({nid,rel,label:t?t.label:nid});});
   const kinds=Object.keys(byKind).sort((a,b)=>(ENTITY_ORDER.indexOf(a)<0?99:ENTITY_ORDER.indexOf(a))-(ENTITY_ORDER.indexOf(b)<0?99:ENTITY_ORDER.indexOf(b)));
   const url=node.meta&&node.meta.url;
-  el.innerHTML=`<div class="card" style="border-top:2px solid var(--acc)"><h3>${esc(node.label||id)} <span class="muted small">· ${esc(node.kind)}</span></h3>
-      <p class="small muted">${esc(id)}${url?` · <a href="${esc(url)}" target="_blank">원본↗</a>`:""} · 연결 ${nb.length}개 · <a href="#search:${encodeURIComponent(node.label||id)}">검색</a></p></div>`+
+  const m=node.meta||{};
+  const candBadge=(m.candidate===true||m.gapfill===true)?` <span class="pill" style="background:var(--acc2)22;color:var(--acc2);border:1px solid var(--acc2)">🆕 신규 분류(추가)</span>`:"";
+  const prov=m.provenance?`<br><span class="small muted">📌 추가 출처: ${esc(typeof m.provenance==="object"?(m.provenance.source||JSON.stringify(m.provenance)):m.provenance)}</span>`:"";
+  const desc=m.description?`<br><span class="small">${esc(m.description)}</span>`:"";
+  el.innerHTML=`<div class="card" style="border-top:2px solid var(--acc)"><h3>${esc(node.label||id)} <span class="muted small">· ${esc(node.kind)}</span>${candBadge}</h3>
+      <p class="small muted">${esc(id)}${url?` · <a href="${esc(url)}" target="_blank">원본↗</a>`:""} · 연결 ${nb.length}개 · <a href="#search:${encodeURIComponent(node.label||id)}">검색</a>${desc}${prov}</p></div>`+
     (kinds.length?kinds.map(k=>`<div class="card"><h4>${esc(ENTITY_KIND_LABEL[k]||k)} <span class="muted small">(${byKind[k].length})</span></h4>`+
       byKind[k].map(x=>`<a class="tag" href="#entity:${encodeURIComponent(x.nid)}" title="${esc(x.rel||"")}">${esc(String(x.label).slice(0,64))}</a>`).join(" ")+`</div>`).join(""):`<div class="card"><p class="muted">연결된 엔티티 없음</p></div>`);
 }
@@ -1604,6 +1622,8 @@ async function renderNews(){
 function renderChangelog(){
   const el=document.getElementById("v-changelog");if(!el)return;
   const CHANGELOG=RT_CHANGELOG=[
+    ["2026-06-21","보강","대규모 커버리지 갭 보강(다중 분석가) — attack_technique 25→142(ATLAS top-level 63/63·CSA 84·OWASP 19·AISI 11 추출), CVE 16→25(cve.org 공식 검증), incident 23→50(AI Incident DB·OECD AIM 랜드마크), MIT risk 24/24 서브도메인, 표준 18→42(dangling 해소). 논문마이닝으로 신규 attack/method/teaming/benchmark/harm/hazard 반영. 그래프 1562→2259노드, dangling 0"],
+    ["2026-06-21","분류","🆕 신규 분류(추가필요) — 현 taxonomy에 없던 신규 위협 9종(membership-inference·model-inversion·evasion·DoS·training-data-poisoning·supply-chain·memory-poisoning·alignment-tampering·watermark-evasion) + 신규 수집 표준을 candidate/gapfill 표식+provenance로 명시 포함(Overview 카드 + entity 배지)"],
     ["2026-06-21","정직성","헤더 상태 배지를 실제 동작 반영으로 — 정적 핵심(no CDN·추적 없음)일 때 '● OFFLINE · NO TRACKING', 서버리스 프록시로 AI 종합·시맨틱이 켜지면 '● SECURE PROXY'(키 서버측). 마우스오버로 상세 설명"],
     ["2026-06-21","성능","첫 화면 로딩 가속 — graph.json 분할(경량 graph-meta 35KB로 KPI·overview·트렌드 즉시 렌더, 풀 그래프 2.3MB·검색 인덱스 1.36MB·보조 탭은 첫 페인트 후 지연). 임계 fetch 병렬화"],
     ["2026-06-21","메뉴","Overview 통계 타일 클릭 → 목록 — nodes·edges는 지식그래프(#graph), findings·incidents·vulnerabilities·attack techniques·risks·standards·candidates는 종류별 목록(#list:<type>)으로 이동, 각 항목 → 통합 상세(#entity)"],
@@ -1684,6 +1704,11 @@ function mitFor(threat){if(!MIT_BY_THREAT)buildMitMap();
   if(d&&d.length)return d;
   const fb=MIT_FALLBACK[threat]||MIT_FALLBACK[String(threat).replace(/^threat\./,"")];
   return fb?fb.map(x=>({ext:x,label:MIT_SUB_LABEL[x]||"",url:"https://airisk.mit.edu/#Domain-"+String(x).split(".")[0]})):[];}
+// risk의 명시적 mit_subdomain(권위 매핑) 우선, 없으면 threat 기반 폴백.
+function mitForRisk(r){if(r&&r.mit_subdomain){const x=String(r.mit_subdomain).split(" ")[0];
+    const ref=byType("reference").find(rr=>rr.id==="ext-mit-airisk");const it=ref&&arr(ref.items).find(i=>String(i.ext_id)===x);
+    return [{ext:x,label:(it&&it.label)||MIT_SUB_LABEL[x]||"",url:(it&&it.url)||"https://airisk.mit.edu/#Domain-"+x.split(".")[0]}];}
+  return mitFor(r&&r.threat);}
 function renderRiskMap(){
   const box=document.getElementById("v-riskmap");if(!box)return;
   const risks=byType("risk");
@@ -1698,7 +1723,7 @@ function renderRiskMap(){
     return `<div id="rk-${esc(r.id)}" class="rk-chain">
       <span class="rk-step" style="border-top-color:#fa8c16"><span class="l">공격 attack</span>${techs.length?esc(techs.join(", ")):'—'}</span><b>→</b>
       <span class="rk-step" style="border-top-color:#ff6b6b"><span class="l">위협 threat</span>${taxChips(r.threat)}</span><b>→</b>
-      <span class="rk-step" style="border-top-color:#9254de"><span class="l">MIT 분류</span>${mitFor(r.threat).map(s=>`<a class="tag" href="${esc(s.url||'https://airisk.mit.edu/')}" target="_blank" title="${esc(s.label||'')}">${esc(s.ext)} ↗</a>`).join("")||'<span class="muted">—</span>'}</span><b>→</b>
+      <span class="rk-step" style="border-top-color:#9254de"><span class="l">MIT 분류</span>${mitForRisk(r).map(s=>`<a class="tag" href="${esc(s.url||'https://airisk.mit.edu/')}" target="_blank" title="${esc(s.label||'')}">${esc(s.ext)} ↗</a>`).join("")||'<span class="muted">—</span>'}</span><b>→</b>
       <span class="rk-step" style="border-top-color:#ffb454"><span class="l">위험요소 hazard</span>${esc(r.hazard||'—')}</span><b>→</b>
       <span class="rk-step" style="border-top-color:#ff85c0"><span class="l">위험상황 situation</span>${esc(r.hazardous_situation||'—')}</span><b>→</b>
       <span class="rk-step" style="border-top-color:#ff4d4f"><span class="l">위해 harm</span>${esc(r.harm||'—')}</span><b>→</b>
@@ -1749,7 +1774,7 @@ function renderRkCols(){const el=document.getElementById("rk-cols");if(!el)retur
   el.innerHTML=col("① MIT 분류 (7D/24SD)",domItems,"#9254de")+col("② 위협",thItems,"#ff6b6b")+col("③ 공격기법",atkItems,"#fa8c16")+col("④ 리스크",rkItems,"#b37feb")+col("⑤ 통제",ctrlItems,"#52c41a");}
 function rkChainDetail(r){const m=r.metrics||{};const techs=byType("attack_technique").filter(t=>arr(t.realizes_threats).some(th=>normT(th)===normT(r.threat))).map(t=>t.name).slice(0,4);
   return `<div class="rk-chain">
-    <span class="rk-step" style="border-top-color:#9254de"><span class="l">MIT</span>${mitFor(r.threat).map(s=>`<a class="tag" href="${esc(s.url||'https://airisk.mit.edu/')}" target="_blank">${esc(s.ext)}↗</a>`).join("")||'—'}</span><b>→</b>
+    <span class="rk-step" style="border-top-color:#9254de"><span class="l">MIT</span>${mitForRisk(r).map(s=>`<a class="tag" href="${esc(s.url||'https://airisk.mit.edu/')}" target="_blank">${esc(s.ext)}↗</a>`).join("")||'—'}</span><b>→</b>
     <span class="rk-step" style="border-top-color:#ff6b6b"><span class="l">위협</span>${taxChips(r.threat)}</span><b>→</b>
     <span class="rk-step" style="border-top-color:#fa8c16"><span class="l">공격</span>${techs.length?esc(techs.join(", ")):'—'}</span><b>→</b>
     <span class="rk-step" style="border-top-color:#ffb454"><span class="l">위험요소</span>${esc(r.hazard||'—')}</span><b>→</b>
