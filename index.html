@@ -200,6 +200,7 @@
     </div>
   </section>
   <section class="view" id="v-tax"></section>
+  <section class="view" id="v-atlasmatrix"></section>
   <section class="view" id="v-method"></section>
   <section class="view" id="v-autoredteam"></section>
   <section class="view" id="v-bench"></section>
@@ -456,7 +457,7 @@ async function load(){
     renderAll(); // overview 재렌더(🆕 신규분류 카드 등 GRAPH.nodes 의존분 반영)
     renderLifecycle();renderRiskMap();renderProv();renderPapers();renderCards();renderAutoRedteam();
     renderChangelog();renderNews();renderGuideline42119();renderJapanAISI();renderOWASP();renderCSA();
-    renderGuidelineTerms();renderGenAIMethods();buildGuideIndex();nodeizeGuidelines();
+    renderGuidelineTerms();renderGenAIMethods();renderAtlasMatrix();buildGuideIndex();nodeizeGuidelines();
     // 그래프 의존 탭(graph/entity/papers/prov 등)이 열려있으면 풀 그래프로 재렌더
     selectTab(location.hash.slice(1)||"overview");
     loadSearchData();
@@ -704,14 +705,14 @@ function buildKPIs(){
     ["standards",byType("standard_item").length],["candidates",(byType("standard_item").filter(x=>x.candidate)).length]];
   document.getElementById("kpis").innerHTML=k.map(([l,v])=>`<div class="kpi"><b>${v||0}</b><span>${l}</span></div>`).join("");
 }
-const TABS=[["overview","Overview"],["changelog","📋 Change Log"],["lifecycle","🔄 AI Lifecycle"],["prov","🔬 RT Provenance"],["papers","📚 Papers"],["search","🔎 GraphRAG Search"],["news","📰 News"],["graph","Knowledge Graph"],["tax","Threat×Attack×ATLAS"],
+const TABS=[["overview","Overview"],["changelog","📋 Change Log"],["lifecycle","🔄 AI Lifecycle"],["prov","🔬 RT Provenance"],["papers","📚 Papers"],["search","🔎 GraphRAG Search"],["news","📰 News"],["graph","Knowledge Graph"],["tax","Threat×Attack×ATLAS"],["atlasmatrix","🛰️ ATLAS Matrix"],
   ["method","Red Teaming Methods"],["autoredteam","🎯 자동 레드티밍"],["bench","Benchmarks"],["risk","Risk & Controls"],["riskmap","⚠️ Risk Map"],
   ["frontier","🧭 Frontier Safety"],["ttp","TTP: Tactic→Proc"],["onto","Ontology: Vuln→Harm"],["std","Standards & Gaps"],["sector","Sector Red Teaming"],["disc","Disclosure / Nat-Sec"],["xwalk","🔗 External Crosswalk"],["cards","🏷️ 제품 평가"],["trend","Trends"],["g42119","📑 ISO/IEC 42119-7"],["japanaisi","🇯🇵 Japan AISI"],["owasp","🦉 OWASP GenAI"],["csa","☁️ CSA Agentic"],["gterms","📖 용어"]];
 // 2단 네비: 5개 허브 → 하위 탭 (사용자 의도 기준 그룹화)
 const HUBS=[
   ["home","🏠 시작",["overview","changelog"]],
   ["find","🔍 찾기·탐색",["search","news","papers","graph","prov"]],
-  ["threat","⚔️ 위협·공격",["tax","ttp","frontier","onto"]],
+  ["threat","⚔️ 위협·공격",["tax","atlasmatrix","ttp","frontier","onto"]],
   ["riskhub","🛡️ 리스크·방법",["riskmap","risk","method","autoredteam","bench","sector","lifecycle"]],
   ["gov","📋 거버넌스·동향",["std","disc","xwalk","cards","trend"]],
   ["guide","📐 가이드라인",["g42119","japanaisi","owasp","csa","gterms"]],
@@ -1445,6 +1446,24 @@ function entitySelect(id){
       byKind[k].map(x=>`<a class="tag" href="#entity:${encodeURIComponent(x.nid)}" title="${esc(x.rel||"")}">${esc(String(x.label).slice(0,64))}</a>`).join(" ")+`</div>`).join(""):`<div class="card"><p class="muted">연결된 엔티티 없음</p></div>`);
 }
 // ---- GenAI 레드팀 평가 기법을 Red Teaming Methods 패널에 추가 (OWASP GenAI Guide, fetch) ----
+// 🛰️ MITRE ATLAS Matrix — 보존형 atlas-matrix.json(16 전술×기법)을 공식 매트릭스처럼 렌더 + 코퍼스 커버리지 오버레이
+let ATLAS_MX=null;
+async function renderAtlasMatrix(){
+  const el=document.getElementById("v-atlasmatrix");if(!el)return;
+  if(!ATLAS_MX){try{ATLAS_MX=await (await fetch("data/atlas-matrix.json")).json();}catch(e){el.innerHTML='<div class="card"><p class="muted">atlas-matrix.json 로드 실패 — atlas-matrix 빌드 필요</p></div>';return;}}
+  const mx=ATLAS_MX;const tUrl=id=>"https://atlas.mitre.org/techniques/"+id;
+  let ntop=0,ncov=0,nsub=0,nscov=0;
+  mx.tactics.forEach(t=>t.techniques.forEach(it=>{ntop++;if(it.covered)ncov++;(it.subs||[]).forEach(s=>{nsub++;if(s.covered)nscov++;});}));
+  const tech=it=>{const subs=it.subs||[];
+    return `<div class="prov-node" style="border-left-color:${it.covered?'#52c41a':'#5b6472'};text-align:left;white-space:normal;cursor:default">
+      <a href="${tUrl(it.id)}" target="_blank" style="${it.covered?'color:var(--acc2);font-weight:600':'color:#c4ccd6'}">${it.covered?'● ':''}${esc(it.name)}</a>
+      <span class="muted" style="font-size:10px"> ${esc(it.id.replace('AML.',''))}</span>${it.our_atk&&it.our_atk.length?` <a class="tag" href="#entity:${encodeURIComponent(it.our_atk[0])}" title="우리 분석 기법">코퍼스↗</a>`:""}
+      ${subs.length?`<div style="margin-top:3px;padding-left:6px;border-left:1px solid var(--line)">${subs.map(s=>`<a href="${tUrl(s.id)}" target="_blank" class="small" style="display:block;${s.covered?'color:var(--acc2)':'color:#8b97a8'}" title="${esc(s.id)}">${s.covered?'● ':'· '}${esc(s.name)}</a>`).join("")}</div>`:""}</div>`;};
+  const col=t=>`<div class="prov-col"><h5 title="${esc(t.desc||'')}">${esc(t.name)} <span class="muted">${t.techniques.length}</span><br><span class="muted" style="font-size:10px">${esc(t.id.replace('AML.',''))}</span></h5><div class="lst">${t.techniques.map(tech).join("")||'<div class="prov-empty">—</div>'}</div></div>`;
+  el.innerHTML=`<div class="card"><h3>🛰️ MITRE ATLAS Matrix for AI Systems <span class="muted small">v${esc(mx.version||'')} · <a href="${esc(mx.source||'https://atlas.mitre.org/matrices/ATLAS')}" target="_blank">atlas.mitre.org↗</a></span></h3>
+      <p class="small muted">적대적 ML 전술 <b>${mx.tactics.length}</b> × 기법 매트릭스(공식 구조). <b style="color:var(--acc2)">● = 우리 코퍼스 보유</b> — top-level <b>${ncov}/${ntop}</b> · 서브 <b>${nscov}/${nsub}</b> 커버. 기법명 클릭 → ATLAS 공식 페이지, '코퍼스↗' → 우리 분석 상세(#entity). 가로 스크롤.</p>
+      <div class="prov-cols" style="overflow-x:auto">${mx.tactics.map(col).join("")}</div></div>`;
+}
 function renderGenAIMethods(){
   const el=document.getElementById("v-method");if(!el)return;
   fetch("data/guideline-owasp.json").then(r=>r.json()).then(g=>{
