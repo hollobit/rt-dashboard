@@ -1737,7 +1737,7 @@ function renderRiskMap(){
   for(let s=5;s>=1;s--){mtx+=`<tr><th>${s}</th>`+[1,2,3,4,5].map(p=>{const cell=grid[s+"-"+p]||[];const rv=s*p;const col=rv>=15?"#ff6b6b":rv>=8?"#ffb454":"#52c41a";return `<td style="background:${col}22;border:1px solid var(--line)">${cell.map(r=>`<a class="tag" href="#riskmap:${esc(r.id)}" title="${esc(r.threat||"")}">${esc(String(r.id).replace("risk-",""))}</a>`).join(" ")}</td>`;}).join("")+"</tr>";}
   mtx+="</table>";
   buildMitMap();
-  const grp={};risks.forEach(r=>{const subs=mitFor(r.threat);const doms=subs.length?[...new Set(subs.map(s=>String(s.ext).split(".")[0]))]:["?"];doms.forEach(d=>{(grp[d]=grp[d]||[]).push(r);});});
+  const grp={};risks.forEach(r=>{const subs=mitForRisk(r);const doms=subs.length?[...new Set(subs.map(s=>String(s.ext).split(".")[0]))]:["?"];doms.forEach(d=>{(grp[d]=grp[d]||[]).push(r);});});
   function riskChain(r){const m=r.metrics||{};const techs=(techByThreat[r.threat]||[]).slice(0,3);
     return `<div id="rk-${esc(r.id)}" class="rk-chain">
       <span class="rk-step" style="border-top-color:#fa8c16"><span class="l">공격 attack</span>${techs.length?esc(techs.join(", ")):'—'}</span><b>→</b>
@@ -1775,7 +1775,7 @@ function normT(t){return String(t).replace(/^threat\./,"");}
 function buildRkAdj(){RK_ADJ={};const add=(a,b)=>{if(!a||!b)return;(RK_ADJ[a]=RK_ADJ[a]||new Set()).add(b);(RK_ADJ[b]=RK_ADJ[b]||new Set()).add(a);};
   const usedT=new Set();
   byType("risk").forEach(r=>{const rid="risk:"+r.id,th="threat:"+normT(r.threat);usedT.add(normT(r.threat));
-    add(th,rid);mitFor(r.threat).forEach(s=>add("mit:"+s.ext,th));
+    add(th,rid);mitForRisk(r).forEach(s=>add("mit:"+s.ext,th));
     arr(r.controls).forEach(c=>add(rid,"ctrl:"+c));});
   byType("attack_technique").forEach(t=>arr(t.realizes_threats).forEach(th=>{if(usedT.has(normT(th)))add("threat:"+normT(th),"atk:"+t.id);}));}
 function rkReach(id){const seen=new Set([id]);let fr=[id];for(let h=0;h<4;h++){const nx=[];fr.forEach(n=>(RK_ADJ[n]||[]).forEach(m=>{if(!seen.has(m)){seen.add(m);nx.push(m);}}));fr=nx;}return seen;}
@@ -1783,7 +1783,7 @@ function renderRkCols(){const el=document.getElementById("rk-cols");if(!el)retur
   const usedT=[...new Set(risks.map(r=>normT(r.threat)))];
   const mitRef=byType("reference").find(r=>r.id==="ext-mit-airisk");
   const mitItems=mitRef?arr(mitRef.items).slice().sort((a,b)=>String(a.ext_id).localeCompare(String(b.ext_id),undefined,{numeric:true})):[];
-  const linkedMit=new Set();risks.forEach(r=>mitFor(r.threat).forEach(s=>linkedMit.add("mit:"+s.ext)));
+  const linkedMit=new Set();risks.forEach(r=>mitForRisk(r).forEach(s=>linkedMit.add("mit:"+s.ext)));
   const domItems=mitItems.map(it=>{const lk=linkedMit.has("mit:"+it.ext_id);return {id:"mit:"+it.ext_id,label:(lk?"":"○ ")+it.ext_id+" "+String(it.label||"").slice(0,30),title:it.ext_id+" "+(it.label||"")+(lk?"":" — corpus 미커버(갭)"),url:it.url};});
   const thItems=usedT.map(t=>({id:"threat:"+t,label:t,title:t}));
   const atkItems=byType("attack_technique").filter(t=>arr(t.realizes_threats).some(th=>usedT.includes(normT(th)))).map(t=>({id:"atk:"+t.id,label:t.name,title:t.name}));
