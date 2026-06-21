@@ -147,7 +147,7 @@
 <header>
   <h1><span class="live"></span>AI&nbsp;RED&nbsp;TEAMING&nbsp;DASHBOARD</h1>
   <span class="meta" id="rundate">—</span>
-  <span class="meta" style="color:var(--grn)">● OFFLINE&nbsp;SECURE</span>
+  <span class="meta" id="secbadge" style="color:var(--grn)" title="로딩 중…">● NO&nbsp;CDN</span>
   <input id="gq" type="search" placeholder="검색…" aria-label="global search" autocomplete="off" />
   <div class="kpis" id="kpis"></div>
 </header>
@@ -327,7 +327,19 @@ function apiBase(){
   return (RT_CONFIG&&RT_CONFIG.apiBase?String(RT_CONFIG.apiBase):"").replace(/\/$/,""); // 원격: Worker
 }
 function proxyLabel(){return apiBase()?"🔐 서버리스 Worker(키 비노출)":"🔐 .env 서버 프록시";}
-async function loadLLMProxyStatus(){try{const r=await fetch(apiBase()+"/api/llm/status",{cache:"no-store"});if(r.ok)LLM_PROXY=await r.json();}catch(e){LLM_PROXY=null;}}
+async function loadLLMProxyStatus(){try{const r=await fetch(apiBase()+"/api/llm/status",{cache:"no-store"});if(r.ok)LLM_PROXY=await r.json();}catch(e){LLM_PROXY=null;}updateSecBadge();}
+// 헤더 보안/오프라인 배지 — 실제 상태를 정직하게 반영(정적 핵심 vs 프록시 경유 AI 기능).
+function updateSecBadge(){
+  const el=document.getElementById("secbadge");if(!el)return;
+  const proxy=(LLM_PROXY&&LLM_PROXY.configured)||(EMBED_PROXY&&EMBED_PROXY.configured);
+  if(proxy){
+    el.textContent="● SECURE PROXY";el.style.color="var(--acc2)";
+    el.title="핵심(그래프·검색·트렌드·가이드라인)은 외부 의존 없이 동작 · D3/폰트 vendored(no CDN) · 추적 없음.\nAI 종합·시맨틱 검색은 서버리스 프록시 경유 — 키는 서버측에만(브라우저 미노출).\nSOTA 리더보드는 검색 시 라이브 페치(실패 시 로컬 미러).";
+  }else{
+    el.textContent="● OFFLINE · NO TRACKING";el.style.color="var(--grn)";
+    el.title="완전 정적 · D3/폰트 vendored(no CDN) · 추적/분석 없음 · 데이터 브라우저 내 처리.\n(SOTA 리더보드는 검색 시에만 외부 라이브 페치, 실패 시 로컬 미러 폴백)";
+  }
+}
 // ---- Semantic GraphRAG (임베딩 기반): 프록시 /api/embed + 빌드타임 사전계산 벡터 ----
 // 오프라인-우선: 프록시(Ollama bge-m3 등) 가용 시 시맨틱, 정적 서버면 lexical 폴백.
 let EMBED_PROXY=null;        // {configured, provider, model}
@@ -430,7 +442,7 @@ async function load(){
   selectTab(location.hash.slice(1)||"overview");
   initSearch();
   loadLLMProxyStatus();
-  loadEmbedStatus().then(()=>{updateRagStatus();
+  loadEmbedStatus().then(()=>{updateRagStatus();updateSecBadge();
     const q=document.getElementById("q");if(q&&q.value.trim()&&RAG.length)renderSearch(q.value.trim(),(document.getElementById("qmode")||{}).value||"auto");});
   const gq=document.getElementById("gq");
   if(gq){
@@ -1592,6 +1604,14 @@ async function renderNews(){
 function renderChangelog(){
   const el=document.getElementById("v-changelog");if(!el)return;
   const CHANGELOG=RT_CHANGELOG=[
+    ["2026-06-21","정직성","헤더 상태 배지를 실제 동작 반영으로 — 정적 핵심(no CDN·추적 없음)일 때 '● OFFLINE · NO TRACKING', 서버리스 프록시로 AI 종합·시맨틱이 켜지면 '● SECURE PROXY'(키 서버측). 마우스오버로 상세 설명"],
+    ["2026-06-21","성능","첫 화면 로딩 가속 — graph.json 분할(경량 graph-meta 35KB로 KPI·overview·트렌드 즉시 렌더, 풀 그래프 2.3MB·검색 인덱스 1.36MB·보조 탭은 첫 페인트 후 지연). 임계 fetch 병렬화"],
+    ["2026-06-21","메뉴","Overview 통계 타일 클릭 → 목록 — nodes·edges는 지식그래프(#graph), findings·incidents·vulnerabilities·attack techniques·risks·standards·candidates는 종류별 목록(#list:<type>)으로 이동, 각 항목 → 통합 상세(#entity)"],
+    ["2026-06-21","배포","gh-pages 공개 배포(hollobit.github.io/rt-dashboard) — 정적 대시보드만 공개. 서버리스 프록시(Cloudflare Worker)로 gh-pages에서 AI 종합 분석(ollama-cloud) + 시맨틱 검색(Workers AI bge-m3) 활성화. 키는 Worker Secret(브라우저 미노출)"],
+    ["2026-06-21","연결","GraphRAG 검색 ↔ 외부 SOTA 리더보드 라이브 연동 — 검색어를 SOTA 페이지로 전달하고 결과를 함께 표시(라이브 페치, 오프라인 시 로컬 미러 폴백) + 딥링크"],
+    ["2026-06-21","시맨틱","임베딩 기반 시맨틱 GraphRAG — 유닛 임베딩 사전계산 + 쿼리 임베딩으로 하이브리드 랭킹(cosine + lexical). 한국어 쿼리도 영어 유닛 의미 매칭. 차원 가드로 모델 불일치 시 lexical 자동 폴백"],
+    ["2026-06-21","데이터","가이드라인 정식 graph 노드화 — 42119-7·AISI·OWASP·CSA를 guideline-doc 4 + item 177 노드로 영속(큐레이트 maps-to + 렉시컬 about + part-of). 검색·entity·GraphRAG에 통합, 섬 해소(dangling 0)"],
+    ["2026-06-21","메뉴","📈 Trends 위젯 — 사이클별 스냅샷 시계열(노드·엣지·뉴스·종류별 스파크라인) + 종류별 변화 델타표 + 부상 주제"],
     ["2026-06-21","UI","제목을 'AI RED TEAMING DASHBOARD'로 변경 · AI 종합 분석 마크다운 표(GFM) 렌더 수정"],
     ["2026-06-21","연결","GraphRAG 통합 검색 완성 — news·changelog·papers·제품평가 + crosswalk(외부 프레임워크 매핑 254)·SOTA(38)·evidence(14)까지 전 데이터 인덱싱(AUX_IDX 613). 한글 토큰화. 매칭 없음 시 수집 사이클 안내 + LLM 직접 분석"],
     ["2026-06-21","데이터","📖 용어 탭에 NIST AI 100-2e2025(Adversarial ML Taxonomy) 용어집 77개 추가 → 전체 5소스·121용어. 검색 인덱스 자동 반영"],
