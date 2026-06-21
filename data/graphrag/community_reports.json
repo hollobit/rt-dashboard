@@ -136,16 +136,6 @@
         "The Claude 3 Model Family: Model Card",
         "Claude 3.5 Sonnet Model Card Addendum"
       ],
-      "Evidence": [
-        "Frontier dual-use evals show rising but still-contained capability: cyber-CTF sk",
-        "LLMs give substantial novice uplift on dual-use in-silico biology tasks, exceedi",
-        "Harmful virology knowledge in open-weight bio-foundation models is recoverable v",
-        "Weak identity/trust establishment in A2A/ANP enables cross-agent privilege escal",
-        "Red teaming must be a dynamic, extensible, continually-evolving framework rather",
-        "AgentDojo is an extensible (non-static) environment with 97 realistic tasks and ",
-        "Prompt injection in third-party tool data lets an attacker take actions and call",
-        "AgentDojo measures benign utility, utility under attack, and targeted attack suc"
-      ],
       "Orgs": [
         "Anthropic",
         "OpenAI",
@@ -155,56 +145,6 @@
         "Dreadnode",
         "UK AI Safety Institute (AISI)",
         "(MATS / independent)"
-      ],
-      "Findings": [
-        "A2A/ANP lack robust identity establishment, enabling cross-agent privilege escalation",
-        "Adversarial-AI share of AI CVEs grew from 0% (2021) to ~50% (2025); many NISTAML subcategories empty/under-reported",
-        "Threat modeling of MCP/A2A/Agora/ANP identifies 12 protocol-level risks incl. unvalidated executable components",
-        "AgentDojo measures indirect prompt-injection hijacking of tool-using agents over untrusted data",
-        "Indirect prompt injection hijacks tool-using agents over untrusted data (AgentDojo)",
-        "AgentDojo is a live attacker/defender arena for prompt-injection in tool-using agents",
-        "AgentDojo is a dynamic prompt-injection benchmark for tool-using agents scoring utility-under-attack vs targeted attack-success-rate",
-        "AgentHarm measures harmful tool-using agent task completion (110 base / 440 augmented behaviors) with rubric graders, not just refusal"
-      ],
-      "Attack techniques": [
-        "Stealth code sabotage (subtle bugs evading reviewers over time)",
-        "Conditional (sleeper-agent) backdoor trigger surviving safety training",
-        "Eval sandbagging / password-locked capability hiding",
-        "Multi-agent monitor collusion to pass backdoored output",
-        "Covert oversight subversion (disabling/evading monitors)",
-        "Generative protein-homolog redesign to evade biosecurity screening",
-        "Autonomous model self-exfiltration of weights",
-        "Typographic visual prompt injection (TVPI)"
-      ],
-      "Benchmarks": [
-        "AgentDojo",
-        "WMDP",
-        "AgentHarm",
-        "Cybench",
-        "BioLP-Bench",
-        "CyBench",
-        "APPS",
-        "BountyBench"
-      ],
-      "Risks": [
-        "catastrophic mass-casualty harm (national-security threshold)",
-        "increased reach/effectiveness of cyberattacks (national-security relevant)",
-        "undetected unsafe autonomous behavior in deployment",
-        "harm-mass-casualty-uplift",
-        "harm-loss-of-control",
-        "harm-weight-exfiltration",
-        "harm-reward-hacking-emergent-misalignment",
-        "harm-false-safety-assurance"
-      ],
-      "Harms": [
-        "Biosecurity uplift (toxin/pathogen synthesis enablement)",
-        "Child-safety harm (AIG-CSAM, grooming)",
-        "Deceptively-deployed model: passes safety evals while concealing misalignment/capability",
-        "Gradual disempowerment: cumulative erosion of human oversight by many capable agents",
-        "Loss of human control over a misaligned frontier system",
-        "Mass-casualty CBRN uplift enabled by frontier-model capability",
-        "National-security catastrophic harm (CBRN / battlefield AI failure)",
-        "Emergent broad misalignment generalized from narrow reward-hacking / specification-gaming"
       ],
       "Red-teaming methods": [
         "llm-as-a-defender",
@@ -216,62 +156,25 @@
         "automated.fuzzing",
         "manual.domain-review"
       ],
-      "Threats": [
-        "misuse-risk",
-        "agent.tool-abuse",
-        "model.prompt-injection",
-        "autonomy-risk",
-        "cyber-risk",
-        "agent.hijacking",
-        "multi-agent-risk",
-        "devsecops"
+      "Benchmarks": [
+        "AgentDojo",
+        "WMDP",
+        "AgentHarm",
+        "Cybench",
+        "BioLP-Bench",
+        "CyBench",
+        "APPS",
+        "BountyBench"
       ],
-      "Attacks": [
-        "prompt-attack",
-        "tool-attack",
-        "autonomous-attack",
-        "multi-agent-attack",
-        "social-engineering"
-      ],
-      "Products": [
-        "Claude.ai (assistant)",
-        "Claude Haiku 4.5",
-        "Claude Opus 4 / Sonnet 4",
-        "Claude Opus 4.1",
-        "Claude Opus 4.5",
-        "Claude Sonnet 4.5",
-        "Claude 3 Opus",
-        "Claude 3.5 Sonnet"
-      ],
-      "Controls": [
-        "Open-weight biorisk evaluation (probe + fine-tuning recovery testing) before release",
-        "Capability-elicitation probing (prompt/training-based) to defeat sandbagged evaluations",
-        "Capability-threshold dangerous-capability evaluations (CCL/Preparedness early-warning gates)",
-        "Held-out / hidden test verification for coding agents to detect test-gaming",
-        "Serious-incident reporting pipeline aligned to EU AI Act Art. 73 tiered deadlines",
-        "Model-tampering (latent + fine-tuning) evaluation as worst-case capability assurance",
-        "Reward-hacking measurement via hack-verifiable environments and held-out specs",
-        "RMU machine unlearning of hazardous (CBRN/cyber) knowledge"
-      ],
-      "Standards": [
-        "Anthropic RSP",
-        "Frontier AI Safety Commitments 2024",
-        "ISO/IEC 12207:2017",
-        "ISO/IEC 29119",
-        "ISO/IEC 42006:2025",
-        "NIST AI 600-1 (Generative AI Profile) + AI RMF 1.0",
-        "NIST CAISI (Center for AI Standards and Innovation, ex-US AISI)",
-        "OWASP Top 10"
-      ],
-      "Procedures": [
-        "Train & deploy an autonomous agent for continuous threat detection (TTP/IOC) with continuous learning",
-        "Test stealth code sabotage that evades reviewers over many PRs",
-        "Implant a sleeper-agent backdoor and test survival through safety training",
-        "Probe for eval sandbagging / password-locked capability hiding",
-        "Test multi-agent monitor collusion to pass a backdoored solution",
-        "Detect covert oversight subversion (disabling or evading monitors)",
-        "Generate protein homologs that evade biosecurity sequence screening",
-        "Test for autonomous self-exfiltration of model weights in an agentic harness"
+      "Findings": [
+        "A2A/ANP lack robust identity establishment, enabling cross-agent privilege escalation",
+        "Adversarial-AI share of AI CVEs grew from 0% (2021) to ~50% (2025); many NISTAML subcategories empty/under-reported",
+        "Threat modeling of MCP/A2A/Agora/ANP identifies 12 protocol-level risks incl. unvalidated executable components",
+        "AgentDojo measures indirect prompt-injection hijacking of tool-using agents over untrusted data",
+        "Indirect prompt injection hijacks tool-using agents over untrusted data (AgentDojo)",
+        "AgentDojo is a live attacker/defender arena for prompt-injection in tool-using agents",
+        "AgentDojo is a dynamic prompt-injection benchmark for tool-using agents scoring utility-under-attack vs targeted attack-success-rate",
+        "AgentHarm measures harmful tool-using agent task completion (110 base / 440 augmented behaviors) with rubric graders, not just refusal"
       ],
       "Model/system cards": [
         "System Card: Claude Haiku 4.5",
@@ -283,14 +186,94 @@
         "Claude 3.7 Sonnet System Card",
         "System Card: Claude Opus 4 & Claude Sonnet 4"
       ],
-      "Vulnerabilities": [
-        "Nucleic-acid biosecurity screening gap against AI-redesigned homologs",
-        "Rogue agent in a multi-agent system — insider/colluding agent (OWASP Agentic T13)"
+      "Evidence": [
+        "Frontier dual-use evals show rising but still-contained capability: cyber-CTF sk",
+        "LLMs give substantial novice uplift on dual-use in-silico biology tasks, exceedi",
+        "Harmful virology knowledge in open-weight bio-foundation models is recoverable v",
+        "Weak identity/trust establishment in A2A/ANP enables cross-agent privilege escal",
+        "Red teaming must be a dynamic, extensible, continually-evolving framework rather",
+        "AgentDojo is an extensible (non-static) environment with 97 realistic tasks and ",
+        "Prompt injection in third-party tool data lets an attacker take actions and call",
+        "AgentDojo measures benign utility, utility under attack, and targeted attack suc"
+      ],
+      "Products": [
+        "Claude.ai (assistant)",
+        "Claude Haiku 4.5",
+        "Claude Opus 4 / Sonnet 4",
+        "Claude Opus 4.1",
+        "Claude Opus 4.5",
+        "Claude Sonnet 4.5",
+        "Claude 3 Opus",
+        "Claude 3.5 Sonnet"
+      ],
+      "Attack techniques": [
+        "Stealth code sabotage (subtle bugs evading reviewers over time)",
+        "Conditional (sleeper-agent) backdoor trigger surviving safety training",
+        "Eval sandbagging / password-locked capability hiding",
+        "Multi-agent monitor collusion to pass backdoored output",
+        "Covert oversight subversion (disabling/evading monitors)",
+        "Generative protein-homolog redesign to evade biosecurity screening",
+        "Autonomous model self-exfiltration of weights",
+        "Typographic visual prompt injection (TVPI)"
+      ],
+      "Procedures": [
+        "Train & deploy an autonomous agent for continuous threat detection (TTP/IOC) with continuous learning",
+        "Test stealth code sabotage that evades reviewers over many PRs",
+        "Implant a sleeper-agent backdoor and test survival through safety training",
+        "Probe for eval sandbagging / password-locked capability hiding",
+        "Test multi-agent monitor collusion to pass a backdoored solution",
+        "Detect covert oversight subversion (disabling or evading monitors)",
+        "Generate protein homologs that evade biosecurity sequence screening",
+        "Test for autonomous self-exfiltration of model weights in an agentic harness"
+      ],
+      "Threats": [
+        "misuse-risk",
+        "agent.tool-abuse",
+        "model.prompt-injection",
+        "autonomy-risk",
+        "cyber-risk",
+        "agent.hijacking",
+        "multi-agent-risk",
+        "devsecops"
+      ],
+      "Standards": [
+        "Anthropic RSP",
+        "Frontier AI Safety Commitments 2024",
+        "ISO/IEC 12207:2017",
+        "ISO/IEC 29119",
+        "ISO/IEC 42006:2025",
+        "NIST AI 600-1 (Generative AI Profile) + AI RMF 1.0",
+        "NIST CAISI (Center for AI Standards and Innovation, ex-US AISI)",
+        "OWASP Top 10"
+      ],
+      "Harms": [
+        "Biosecurity uplift (toxin/pathogen synthesis enablement)",
+        "Child-safety harm (AIG-CSAM, grooming)",
+        "Deceptively-deployed model: passes safety evals while concealing misalignment/capability",
+        "Gradual disempowerment: cumulative erosion of human oversight by many capable agents",
+        "Loss of human control over a misaligned frontier system",
+        "Mass-casualty CBRN uplift enabled by frontier-model capability",
+        "National-security catastrophic harm (CBRN / battlefield AI failure)",
+        "Emergent broad misalignment generalized from narrow reward-hacking / specification-gaming"
+      ],
+      "Controls": [
+        "Open-weight biorisk evaluation (probe + fine-tuning recovery testing) before release",
+        "Capability-elicitation probing (prompt/training-based) to defeat sandbagged evaluations",
+        "Capability-threshold dangerous-capability evaluations (CCL/Preparedness early-warning gates)",
+        "Held-out / hidden test verification for coding agents to detect test-gaming",
+        "Serious-incident reporting pipeline aligned to EU AI Act Art. 73 tiered deadlines",
+        "Model-tampering (latent + fine-tuning) evaluation as worst-case capability assurance",
+        "Reward-hacking measurement via hack-verifiable environments and held-out specs",
+        "RMU machine unlearning of hazardous (CBRN/cyber) knowledge"
       ],
       "Tactics": [
         "Defense Evasion",
         "Discovery",
         "Impact"
+      ],
+      "Vulnerabilities": [
+        "Nucleic-acid biosecurity screening gap against AI-redesigned homologs",
+        "Rogue agent in a multi-agent system — insider/colluding agent (OWASP Agentic T13)"
       ],
       "ATLAS techniques": [
         "AML.T0018 — Manipulate AI Model",
@@ -302,15 +285,32 @@
         "AML.TA0007 — Defense Evasion",
         "AML.TA0008 — Discovery"
       ],
+      "Risks": [
+        "catastrophic mass-casualty harm (national-security threshold)",
+        "increased reach/effectiveness of cyberattacks (national-security relevant)",
+        "undetected unsafe autonomous behavior in deployment",
+        "harm-mass-casualty-uplift",
+        "harm-loss-of-control",
+        "harm-weight-exfiltration",
+        "harm-reward-hacking-emergent-misalignment",
+        "harm-false-safety-assurance"
+      ],
+      "External frameworks": [
+        "MIT AI Risk Repository",
+        "OWASP Agentic AI — Threats and Mitigations (Top 15)"
+      ],
+      "Attacks": [
+        "prompt-attack",
+        "tool-attack",
+        "autonomous-attack",
+        "multi-agent-attack",
+        "social-engineering"
+      ],
       "Sectors": [
         "cyber",
         "biosecurity",
         "critical-infrastructure",
         "education"
-      ],
-      "External frameworks": [
-        "MIT AI Risk Repository",
-        "OWASP Agentic AI — Threats and Mitigations (Top 15)"
       ],
       "Incidents": [
         "Generative protein design evades DNA-synthesis biosecurity screening"
@@ -325,26 +325,26 @@
     ],
     "kind_counts": {
       "source": 78,
-      "evidence": 88,
       "org": 51,
-      "finding": 201,
-      "attack_technique": 8,
-      "benchmark": 87,
-      "risk": 9,
-      "harm": 11,
       "teaming": 32,
-      "threat": 36,
-      "attack": 5,
-      "product": 13,
-      "control": 11,
-      "standard": 11,
-      "procedure": 8,
+      "benchmark": 87,
+      "finding": 201,
       "model_card": 12,
-      "vulnerability": 2,
+      "evidence": 88,
+      "product": 13,
+      "attack_technique": 8,
+      "procedure": 8,
+      "threat": 36,
+      "standard": 11,
+      "harm": 11,
+      "control": 11,
       "tactic": 3,
+      "vulnerability": 2,
       "atlas": 9,
-      "sector": 4,
+      "risk": 9,
       "reference": 2,
+      "attack": 5,
+      "sector": 4,
       "incident": 1
     }
   },
@@ -510,25 +510,22 @@
       "vuln-training-data-leakage"
     ],
     "key_entities": {
-      "Orgs": [
-        "ISO/IEC",
-        "NIST NVD",
-        "NVD",
-        "EU AI Office",
-        "GitHub Advisory Database",
-        "IEEE",
-        "Bloomberg / TechCrunch",
-        "CVE Program (MITRE)"
+      "Procedures": [
+        "Trace agent actions to responsible user/entity; stress-test PII/PCI/PHI-safe, gap-free logging",
+        "Generate off-profile activity patterns and low-footprint unauthorized tasks; verify detection alerts",
+        "Inject malicious commands into agent control interface (Postman/Burp) and forge control signals",
+        "Inject retrieval commands for non-public data; bypass isolation to leak across user contexts; abuse trusted-agent relationships",
+        "Replace legitimate dependency with malicious version; introduce compromised plugin; dynamic integrity check",
+        "Alter deploy scripts to push modified agent; introduce security-weakening config during deploy",
+        "Inject benign-looking malicious code / tamper build config & model weights; test integrity checks",
+        "Execute forensic-data wipe/corruption post-attack; attempt recovery/attribution"
       ],
-      "Harms": [
-        "AI psychosis / delusion reinforcement — chatbot confirms and amplifies user delusions",
-        "Clinical misdiagnosis / unsafe medical advice",
-        "Cyber-offense uplift (vulnerability discovery, exploit/social-engineering scale)",
-        "Data exfiltration / unauthorized agent action",
-        "Undetected unsafe autonomous behavior (goal misalignment)",
-        "Diagnostic error / missed diagnosis from low-sensitivity clinical AI",
-        "False safety assurance from invalid evaluation",
-        "Financial loss, regulatory breach, and market manipulation"
+      "External frameworks": [
+        "CVE / NVD",
+        "cwe",
+        "MITRE ATLAS",
+        "NIST AI Risk Management Framework (AI RMF 1.0)",
+        "OWASP Top 10 for LLM Applications (2025)"
       ],
       "Sources/Papers": [
         "garak — LLM vulnerability scanner",
@@ -540,43 +537,15 @@
         "NVD - CVE-2023-34540 (LangChain JiraAPIWrapper code injection)",
         "NVD - CVE-2024-21575 (ComfyUI-Impact-Pack path-traversal RCE)"
       ],
-      "Vulnerabilities": [
-        "A2A/ANP weak agent identity establishment enabling spoofing & privilege escalation",
-        "Insufficient blast-radius containment across interconnected agents",
-        "Agent control plane accepts unauthenticated/forged control signals",
-        "Agent enables privilege escalation into critical infrastructure via valid-command chaining",
-        "Agent does not verify provenance/integrity of goals and instructions",
-        "Agent knowledge base poisonable via training data, online learning, and shared-KB propagation",
-        "Agent state/context lacks session isolation and persistence integrity",
-        "Elevated agent permissions not revoked after task completion (least-privilege failure)"
-      ],
-      "guideline-item": [
-        "[42119] supply chain or dependency compromise",
-        "[42119] Memory & Context Integrity",
-        "[42119] Agent Hijacking and Goal Displacement",
-        "[AISI] 학습 데이터 위조",
-        "[AISI] OSS 라이브러리 소스코드 조작",
-        "[CSA] Least Privilege Principle Specific to Agents",
-        "[CSA] Communication Channel Robustness Testing",
-        "[CSA] Development Chain Compromise Testing"
-      ],
-      "Procedures": [
-        "Trace agent actions to responsible user/entity; stress-test PII/PCI/PHI-safe, gap-free logging",
-        "Generate off-profile activity patterns and low-footprint unauthorized tasks; verify detection alerts",
-        "Inject malicious commands into agent control interface (Postman/Burp) and forge control signals",
-        "Inject retrieval commands for non-public data; bypass isolation to leak across user contexts; abuse trusted-agent relationships",
-        "Replace legitimate dependency with malicious version; introduce compromised plugin; dynamic integrity check",
-        "Alter deploy scripts to push modified agent; introduce security-weakening config during deploy",
-        "Inject benign-looking malicious code / tamper build config & model weights; test integrity checks",
-        "Execute forensic-data wipe/corruption post-attack; attempt recovery/attribution"
-      ],
-      "Incidents": [
-        "Commercial legal-research AI tools hallucinate 17-33% in pre-registered audit",
-        "Comparative threat model discloses 12 MCP/A2A agent-protocol risks",
-        "ChatGPT Redis bug exposed chat titles and subscriber payment data",
-        "Red-teaming 100 GenAI products: simple system-level attacks dominate real failures",
-        "Samsung confidential source-code leak to ChatGPT; generative-AI ban",
-        "Child-safety red teaming surfaces AIG-CSAM/grooming generation vectors"
+      "Harms": [
+        "AI psychosis / delusion reinforcement — chatbot confirms and amplifies user delusions",
+        "Clinical misdiagnosis / unsafe medical advice",
+        "Cyber-offense uplift (vulnerability discovery, exploit/social-engineering scale)",
+        "Data exfiltration / unauthorized agent action",
+        "Undetected unsafe autonomous behavior (goal misalignment)",
+        "Diagnostic error / missed diagnosis from low-sensitivity clinical AI",
+        "False safety assurance from invalid evaluation",
+        "Financial loss, regulatory breach, and market manipulation"
       ],
       "Standards": [
         "EU AI Act Art. 73 (serious-incident reporting) + Art. 55(1)(c) GPAI",
@@ -587,6 +556,16 @@
         "GAP: MCP/A2A inter-agent trust & identity",
         "GAP: sector-specific AI red-teaming verticals",
         "GDPR (Regulation (EU) 2016/679)"
+      ],
+      "Orgs": [
+        "ISO/IEC",
+        "NIST NVD",
+        "NVD",
+        "EU AI Office",
+        "GitHub Advisory Database",
+        "IEEE",
+        "Bloomberg / TechCrunch",
+        "CVE Program (MITRE)"
       ],
       "Controls": [
         "A2A agent identity attestation and inter-agent trust establishment",
@@ -608,24 +587,25 @@
         "privacy/confidentiality breach; reliance on fabricated facts (e.g. sanctioned lawyers, mis-stated holdings)",
         "wide simultaneous exploitation across vendors/agents before patches/guardrails exist"
       ],
-      "Threats": [
-        "model.jailbreak",
-        "model.data-leakage",
-        "software.dependency-poisoning",
-        "model.model-extraction",
-        "agent.autonomy-risk",
-        "threat.model.model-extraction",
-        "threat.model.prompt-injection"
+      "Vulnerabilities": [
+        "A2A/ANP weak agent identity establishment enabling spoofing & privilege escalation",
+        "Insufficient blast-radius containment across interconnected agents",
+        "Agent control plane accepts unauthenticated/forged control signals",
+        "Agent enables privilege escalation into critical infrastructure via valid-command chaining",
+        "Agent does not verify provenance/integrity of goals and instructions",
+        "Agent knowledge base poisonable via training data, online learning, and shared-KB propagation",
+        "Agent state/context lacks session isolation and persistence integrity",
+        "Elevated agent permissions not revoked after task completion (least-privilege failure)"
       ],
-      "Evidence": [
-        "Prompt-injection attacks break some but not all security properties of tool-usin",
-        "Many leading LLM agents complete deliberately malicious multi-step tool-use task",
-        "Trajectory-level long-horizon evaluation with delayed-trigger protocol surfaces ",
-        "MITRE ATLAS (v5.x) catalogues 80+ adversary techniques against AI systems includ",
-        "Sustained multi-turn adversarial pressure with legally/professionally plausible ",
-        "Cross-model safety report compares frontier LLMs and image generators on adversa",
-        "Adversarial training (R2D2) and robust-refusal can be measured and compared at s",
-        "VLMs miss contextually-unsafe image-text combinations; HoliSafe + SafeLLaVA impr"
+      "guideline-item": [
+        "[42119] supply chain or dependency compromise",
+        "[42119] Memory & Context Integrity",
+        "[42119] Agent Hijacking and Goal Displacement",
+        "[AISI] 학습 데이터 위조",
+        "[AISI] OSS 라이브러리 소스코드 조작",
+        "[CSA] Least Privilege Principle Specific to Agents",
+        "[CSA] Communication Channel Robustness Testing",
+        "[CSA] Development Chain Compromise Testing"
       ],
       "Attack techniques": [
         "Agent control-interface hijacking (forged control signals / malicious command injection)",
@@ -637,38 +617,58 @@
         "Agent memory poisoning (malicious persistent-memory context affecting later actions)",
         "Agent privilege escalation via task-chaining and unrevoked elevated permissions"
       ],
+      "Evidence": [
+        "Prompt-injection attacks break some but not all security properties of tool-usin",
+        "Many leading LLM agents complete deliberately malicious multi-step tool-use task",
+        "Trajectory-level long-horizon evaluation with delayed-trigger protocol surfaces ",
+        "MITRE ATLAS (v5.x) catalogues 80+ adversary techniques against AI systems includ",
+        "Sustained multi-turn adversarial pressure with legally/professionally plausible ",
+        "Cross-model safety report compares frontier LLMs and image generators on adversa",
+        "Adversarial training (R2D2) and robust-refusal can be measured and compared at s",
+        "VLMs miss contextually-unsafe image-text combinations; HoliSafe + SafeLLaVA impr"
+      ],
+      "Threats": [
+        "model.jailbreak",
+        "model.data-leakage",
+        "software.dependency-poisoning",
+        "model.model-extraction",
+        "agent.autonomy-risk",
+        "threat.model.model-extraction",
+        "threat.model.prompt-injection"
+      ],
+      "Incidents": [
+        "Commercial legal-research AI tools hallucinate 17-33% in pre-registered audit",
+        "Comparative threat model discloses 12 MCP/A2A agent-protocol risks",
+        "ChatGPT Redis bug exposed chat titles and subscriber payment data",
+        "Red-teaming 100 GenAI products: simple system-level attacks dominate real failures",
+        "Samsung confidential source-code leak to ChatGPT; generative-AI ban",
+        "Child-safety red teaming surfaces AIG-CSAM/grooming generation vectors"
+      ],
       "ATLAS techniques": [
         "AML.T0010 — AI Supply Chain Compromise",
         "AML.T0011 — User Execution",
         "AML.T0056 — Extract LLM System Prompt",
         "AML.T0050 — Command and Scripting Interpreter",
         "AML.T0062 — Discover LLM Hallucinations"
-      ],
-      "External frameworks": [
-        "CVE / NVD",
-        "cwe",
-        "MITRE ATLAS",
-        "NIST AI Risk Management Framework (AI RMF 1.0)",
-        "OWASP Top 10 for LLM Applications (2025)"
       ]
     },
     "key_findings": [],
     "kind_counts": {
-      "org": 20,
-      "harm": 21,
-      "source": 53,
-      "vulnerability": 72,
-      "guideline-item": 19,
       "procedure": 24,
-      "incident": 6,
+      "reference": 5,
+      "source": 53,
+      "harm": 21,
       "standard": 24,
+      "org": 20,
       "control": 37,
       "risk": 25,
-      "threat": 7,
-      "evidence": 15,
+      "vulnerability": 72,
+      "guideline-item": 19,
       "attack_technique": 19,
-      "atlas": 5,
-      "reference": 5
+      "evidence": 15,
+      "threat": 7,
+      "incident": 6,
+      "atlas": 5
     }
   },
   {
@@ -754,16 +754,6 @@
       "vuln-owasp-repudiation-untraceability"
     ],
     "key_entities": {
-      "Risks": [
-        "harm-ai-psychosis-delusion-reinforcement",
-        "harm-automation-bias-deskilling",
-        "collisions, route failures, physical safety incidents",
-        "harm-diagnostic-error-missed-diagnosis",
-        "harm-embodied-physical-hazard",
-        "harm-emotional-dependency-companion",
-        "harm-equity-bias-demographic",
-        "harm-iatrogenic-mental-health"
-      ],
       "Orgs": [
         "Brown University",
         "Stanford University",
@@ -774,11 +764,10 @@
         "University of Michigan",
         "academic consortium"
       ],
-      "Benchmarks": [
-        "HealthBench",
-        "AIID",
-        "AIAAIC",
-        "AVID"
+      "Vulnerabilities": [
+        "Autonomous-driving perception/policy adversarial fragility",
+        "Overwhelming the human-in-the-loop — approval-fatigue bypass (OWASP Agentic T10)",
+        "Agent action repudiation & untraceability — missing audit provenance (OWASP Agentic T8)"
       ],
       "Sources/Papers": [
         "In-House Evaluation Is Not Enough: Towards Robust Third-Party Flaw Disclosure for General-Purpose AI",
@@ -790,16 +779,6 @@
         "Attacking Artificial Intelligence: AI's Security Vulnerability and What Policymakers Can Do About It",
         "Understanding and Mitigating Risks of Generative AI in Financial Services"
       ],
-      "Findings": [
-        "Adversarial-ML attacks on autonomous-driving agents must survive sensor/actuation loops to cause crashes",
-        "First real-world evidence of AI-induced clinician deskilling with a patient-relevant outcome",
-        "Searching six incident repositories yields only ~6 fully-relevant AI-vulnerability incidents, exposing cataloguing gaps",
-        "CSET adopts OECD AI incident/near-miss/hazard definitions and scopes mandatory reporting to incidents and near misses",
-        "AI Security Compliance: PCI-style mandated programs across planning, implementation, and mitigation stages",
-        "36% of AI vendors lack a disclosure policy and only 18% mention AI risks; jailbreaking/hallucination usually out-of-scope",
-        "AI security is an enabling requirement, not a standalone ethics principle, and can conflict with explainability/privacy",
-        "27 years of FDA recalls: software design dominates AI/ML device failures, concentrated in radiology/cardiology"
-      ],
       "Incidents": [
         "Air Canada held liable for chatbot's negligent misrepresentation (Moffatt)",
         "Amazon scraps AI recruiting tool biased against women",
@@ -810,15 +789,21 @@
         "Clearview AI fined ~€100M across EU for unlawful facial-recognition scraping",
         "COMPAS recidivism algorithm shown racially biased (ProPublica)"
       ],
-      "Harms": [
-        "Abrupt-refusal secondary harm (ARSH) — sudden guardrail termination disrupts vulnerable users",
-        "Alert fatigue from high false-positive clinical AI",
-        "Allocative discrimination - denial of jobs, credit, or services to protected groups",
-        "Automation bias and clinician deskilling from AI over-reliance",
-        "Autonomous physical injury (collisions, unsafe maneuvers)",
-        "Erosion of human agency, autonomous decision-making, and self-determination",
-        "Embodied/lab physical hazard from unsafe agent task planning (non-vehicle)",
-        "Emotional over-dependency on AI companions causing psychosocial deterioration"
+      "Findings": [
+        "Adversarial-ML attacks on autonomous-driving agents must survive sensor/actuation loops to cause crashes",
+        "First real-world evidence of AI-induced clinician deskilling with a patient-relevant outcome",
+        "Searching six incident repositories yields only ~6 fully-relevant AI-vulnerability incidents, exposing cataloguing gaps",
+        "CSET adopts OECD AI incident/near-miss/hazard definitions and scopes mandatory reporting to incidents and near misses",
+        "AI Security Compliance: PCI-style mandated programs across planning, implementation, and mitigation stages",
+        "36% of AI vendors lack a disclosure policy and only 18% mention AI risks; jailbreaking/hallucination usually out-of-scope",
+        "AI security is an enabling requirement, not a standalone ethics principle, and can conflict with explainability/privacy",
+        "27 years of FDA recalls: software design dominates AI/ML device failures, concentrated in radiology/cardiology"
+      ],
+      "External frameworks": [
+        "AI Incident Database",
+        "FDA MAUDE — Manufacturer and User Facility Device Experience",
+        "OECD AI Incidents Monitor (AIM)",
+        "WHO — Patient Safety & AI-for-Health Governance"
       ],
       "Evidence": [
         "EmoEval simulations show measurable psychological deterioration (PHQ-9/PDI/PANSS",
@@ -830,10 +815,15 @@
         "Translating unsafe English prompts into low-resource languages bypasses GPT-4's ",
         "MedSafetyBench operationalizes medical safety via AMA Principles of Medical Ethi"
       ],
-      "Vulnerabilities": [
-        "Autonomous-driving perception/policy adversarial fragility",
-        "Overwhelming the human-in-the-loop — approval-fatigue bypass (OWASP Agentic T10)",
-        "Agent action repudiation & untraceability — missing audit provenance (OWASP Agentic T8)"
+      "Controls": [
+        "Pre-deployment and ongoing demographic bias audit (disparate-impact / four-fifths testing, intersectional slices)",
+        "Automated clinical red-teaming with simulated patient agents for mental-health AI",
+        "Compassionate Completion Standard — graceful, relationship-preserving refusal instead of abrupt termination",
+        "Crisis-detection + human/hotline escalation protocol for self-harm and suicidal-ideation prompts",
+        "Training data and label provenance audit for measurement/sampling bias",
+        "Disaggregated evaluation across demographic/linguistic slices with minimum-performance thresholds per subgroup",
+        "Embodied agent safety benchmarking in interactive simulation (SafeAgentEnv-style)",
+        "Hazard-aware task-planning gate for embodied/lab agents (refuse physically dangerous tasks)"
       ],
       "Threats": [
         "societal-risk",
@@ -845,27 +835,31 @@
         "societal.discrimination",
         "societal.unequal-performance"
       ],
-      "Controls": [
-        "Pre-deployment and ongoing demographic bias audit (disparate-impact / four-fifths testing, intersectional slices)",
-        "Automated clinical red-teaming with simulated patient agents for mental-health AI",
-        "Compassionate Completion Standard — graceful, relationship-preserving refusal instead of abrupt termination",
-        "Crisis-detection + human/hotline escalation protocol for self-harm and suicidal-ideation prompts",
-        "Training data and label provenance audit for measurement/sampling bias",
-        "Disaggregated evaluation across demographic/linguistic slices with minimum-performance thresholds per subgroup",
-        "Embodied agent safety benchmarking in interactive simulation (SafeAgentEnv-style)",
-        "Hazard-aware task-planning gate for embodied/lab agents (refuse physically dangerous tasks)"
+      "Benchmarks": [
+        "HealthBench",
+        "AIID",
+        "AIAAIC",
+        "AVID"
       ],
-      "Red-teaming methods": [
-        "human-ai.hitl"
+      "Harms": [
+        "Abrupt-refusal secondary harm (ARSH) — sudden guardrail termination disrupts vulnerable users",
+        "Alert fatigue from high false-positive clinical AI",
+        "Allocative discrimination - denial of jobs, credit, or services to protected groups",
+        "Automation bias and clinician deskilling from AI over-reliance",
+        "Autonomous physical injury (collisions, unsafe maneuvers)",
+        "Erosion of human agency, autonomous decision-making, and self-determination",
+        "Embodied/lab physical hazard from unsafe agent task planning (non-vehicle)",
+        "Emotional over-dependency on AI companions causing psychosocial deterioration"
       ],
-      "Standards": [
-        "EU HLEG Ethics Guidelines for Trustworthy AI",
-        "ISO 14971:2019",
-        "ISO/IEC 42005:2025",
-        "ISO/IEC TR 24029-1:2021",
-        "ISO/IEC TR 5469:2024",
-        "ISO/IEC TS 22440-1/-2 (AI functional safety)",
-        "UNESCO Recommendation on the Ethics of AI"
+      "Risks": [
+        "harm-ai-psychosis-delusion-reinforcement",
+        "harm-automation-bias-deskilling",
+        "collisions, route failures, physical safety incidents",
+        "harm-diagnostic-error-missed-diagnosis",
+        "harm-embodied-physical-hazard",
+        "harm-emotional-dependency-companion",
+        "harm-equity-bias-demographic",
+        "harm-iatrogenic-mental-health"
       ],
       "Sectors": [
         "content-safety",
@@ -877,11 +871,17 @@
         "robotics",
         "military"
       ],
-      "External frameworks": [
-        "AI Incident Database",
-        "FDA MAUDE — Manufacturer and User Facility Device Experience",
-        "OECD AI Incidents Monitor (AIM)",
-        "WHO — Patient Safety & AI-for-Health Governance"
+      "Standards": [
+        "EU HLEG Ethics Guidelines for Trustworthy AI",
+        "ISO 14971:2019",
+        "ISO/IEC 42005:2025",
+        "ISO/IEC TR 24029-1:2021",
+        "ISO/IEC TR 5469:2024",
+        "ISO/IEC TS 22440-1/-2 (AI functional safety)",
+        "UNESCO Recommendation on the Ethics of AI"
+      ],
+      "Red-teaming methods": [
+        "human-ai.hitl"
       ]
     },
     "key_findings": [
@@ -892,21 +892,21 @@
       "Adversarial perturbations cause closed-loop driving failures in end-to-end autonomous-driving agents (CARLA)"
     ],
     "kind_counts": {
-      "risk": 19,
       "org": 76,
-      "benchmark": 4,
-      "source": 79,
-      "finding": 51,
-      "incident": 35,
-      "harm": 16,
-      "evidence": 13,
       "vulnerability": 3,
-      "threat": 12,
+      "source": 79,
+      "incident": 35,
+      "finding": 51,
+      "reference": 4,
+      "evidence": 13,
       "control": 21,
-      "teaming": 1,
-      "standard": 7,
+      "threat": 12,
+      "benchmark": 4,
+      "harm": 16,
+      "risk": 19,
       "sector": 8,
-      "reference": 4
+      "standard": 7,
+      "teaming": 1
     }
   },
   {
@@ -985,16 +985,6 @@
       "tac-resource-development"
     ],
     "key_entities": {
-      "Sources/Papers": [
-        "Training a Helpful and Harmless Assistant with Reinforcement Learning from Human Feedback",
-        "Constitutional AI: Harmlessness from AI Feedback",
-        "Universal and Transferable Adversarial Attacks on Aligned Language Models (GCG / AdvBench)",
-        "SafetyBench: Evaluating the Safety of Large Language Models",
-        "GPTFUZZER: Red Teaming Large Language Models with Auto-Generated Jailbreak Prompts",
-        "Promptbreeder: Self-Referential Self-Improvement via Prompt Evolution",
-        "Low-Resource Languages Jailbreak GPT-4",
-        "Multilingual Jailbreak Challenges in Large Language Models"
-      ],
       "Orgs": [
         "Microsoft",
         "NVIDIA",
@@ -1005,35 +995,13 @@
         "Scale AI",
         "(education-AI safety; Oak National Academy 'Aila' context)"
       ],
-      "Attack techniques": [
-        "A2A/ANP cross-agent identity spoofing & privilege escalation",
-        "Activation-steering / refusal-direction ablation jailbreak",
-        "Adaptive indirect-prompt-injection that breaks deployed IPI defenses",
-        "Adversarial-ML perturbation against autonomous-driving perception/policy",
-        "Chain-of-thought safety-reasoning hijack (H-CoT)",
-        "GASLITE embedding-space retrieval poisoning",
-        "GCG — Greedy Coordinate Gradient adversarial suffix",
-        "GFlowNet diverse-attack generation (mode-collapse-free RL attacker)"
-      ],
-      "ATLAS techniques": [
-        "AML.T0054 — LLM Jailbreak",
-        "AML.T0051 — LLM Prompt Injection",
-        "AML.T0043 — Craft Adversarial Data",
-        "AML.T0053 — AI Agent Tool Invocation",
-        "AML.T0065 — LLM Prompt Crafting",
-        "AML.T0070 — RAG Poisoning",
-        "AML.T0015 — Evade AI Model",
-        "AML.T0071 — False RAG Entry Injection"
-      ],
-      "Benchmarks": [
-        "HarmBench",
-        "AdvBench",
-        "JailbreakBench",
-        "MultiJail",
-        "SafetyBench",
-        "DoNotAnswer",
-        "PAIR",
-        "RedTeam-2K"
+      "Products": [
+        "Microsoft Copilot",
+        "DeepSeek-R1",
+        "GLM-4.5",
+        "Kimi K2",
+        "Nemotron-4 340B Instruct",
+        "Phi-4"
       ],
       "Procedures": [
         "Spoof a trusted agent identity over A2A/ANP to escalate privilege",
@@ -1055,6 +1023,36 @@
         "JBDistill produces renewable safety benchmarks that resist saturation and contam",
         "LLM-as-a-judge adoption outpaced rigorous validity/reliability scrutiny; the pap"
       ],
+      "Sources/Papers": [
+        "Training a Helpful and Harmless Assistant with Reinforcement Learning from Human Feedback",
+        "Constitutional AI: Harmlessness from AI Feedback",
+        "Universal and Transferable Adversarial Attacks on Aligned Language Models (GCG / AdvBench)",
+        "SafetyBench: Evaluating the Safety of Large Language Models",
+        "GPTFUZZER: Red Teaming Large Language Models with Auto-Generated Jailbreak Prompts",
+        "Promptbreeder: Self-Referential Self-Improvement via Prompt Evolution",
+        "Low-Resource Languages Jailbreak GPT-4",
+        "Multilingual Jailbreak Challenges in Large Language Models"
+      ],
+      "ATLAS techniques": [
+        "AML.T0054 — LLM Jailbreak",
+        "AML.T0051 — LLM Prompt Injection",
+        "AML.T0043 — Craft Adversarial Data",
+        "AML.T0053 — AI Agent Tool Invocation",
+        "AML.T0065 — LLM Prompt Crafting",
+        "AML.T0070 — RAG Poisoning",
+        "AML.T0015 — Evade AI Model",
+        "AML.T0071 — False RAG Entry Injection"
+      ],
+      "Attack techniques": [
+        "A2A/ANP cross-agent identity spoofing & privilege escalation",
+        "Activation-steering / refusal-direction ablation jailbreak",
+        "Adaptive indirect-prompt-injection that breaks deployed IPI defenses",
+        "Adversarial-ML perturbation against autonomous-driving perception/policy",
+        "Chain-of-thought safety-reasoning hijack (H-CoT)",
+        "GASLITE embedding-space retrieval poisoning",
+        "GCG — Greedy Coordinate Gradient adversarial suffix",
+        "GFlowNet diverse-attack generation (mode-collapse-free RL attacker)"
+      ],
       "Findings": [
         "GCG/AdvBench established transferable optimization-based jailbreaks and the 520-behavior dataset reused field-wide",
         "LLM-as-judge for jailbreak ASR is near coin-flip: high variance, low agreement, poor calibration",
@@ -1075,6 +1073,16 @@
         "Privilege Escalation",
         "Resource Development"
       ],
+      "Benchmarks": [
+        "HarmBench",
+        "AdvBench",
+        "JailbreakBench",
+        "MultiJail",
+        "SafetyBench",
+        "DoNotAnswer",
+        "PAIR",
+        "RedTeam-2K"
+      ],
       "Model/system cards": [
         "Third-party Red-Team Findings: DeepSeek-R1 (no vendor card)",
         "GLM-4.5 Technical Report (Evaluation of Safety)",
@@ -1083,14 +1091,6 @@
         "Lessons from Red Teaming 100 Generative AI Products",
         "Nemotron-4 340B Instruct Model Card",
         "Phi-4 Technical Report (Model Card)"
-      ],
-      "Products": [
-        "Microsoft Copilot",
-        "DeepSeek-R1",
-        "GLM-4.5",
-        "Kimi K2",
-        "Nemotron-4 340B Instruct",
-        "Phi-4"
       ],
       "Red-teaming methods": [
         "llm-as-a-judge",
@@ -1101,12 +1101,12 @@
         "Leading tool-calling agents complete malicious multi-step tasks (AgentHarm)",
         "GCG transferable adversarial-suffix jailbreak disclosed against aligned LLMs"
       ],
+      "Threats": [
+        "content-safety"
+      ],
       "guideline-item": [
         "[AISI] AI가 런타임에 캡처할 리소스 조작",
         "[OWASP] Adversarial Prompt Engineering"
-      ],
-      "Threats": [
-        "content-safety"
       ]
     },
     "key_findings": [
@@ -1117,21 +1117,21 @@
       "J2 turns a refusal-trained LLM into a self-improving red-teaming attacker that jailbreaks others and itself"
     ],
     "kind_counts": {
-      "source": 71,
       "org": 37,
-      "attack_technique": 20,
-      "atlas": 18,
-      "benchmark": 14,
+      "product": 6,
       "procedure": 16,
       "evidence": 13,
+      "source": 71,
+      "atlas": 18,
+      "attack_technique": 20,
       "finding": 45,
       "tactic": 8,
+      "benchmark": 14,
       "model_card": 7,
-      "product": 6,
       "teaming": 2,
       "incident": 3,
-      "guideline-item": 2,
-      "threat": 1
+      "threat": 1,
+      "guideline-item": 2
     }
   },
   {
@@ -1300,16 +1300,6 @@
       "tac-persistence"
     ],
     "key_entities": {
-      "ATLAS techniques": [
-        "AML.T0024 — Exfiltration via AI Inference API",
-        "AML.T0040 — AI Model Inference API Access",
-        "AML.T0010.003 — Model",
-        "AML.T0018.000 — Poison AI Model",
-        "AML.T0051.000 — Direct",
-        "AML.T0058 — Publish Poisoned Models",
-        "AML.T0080 — AI Agent Context Poisoning",
-        "AML.T0005.001 — Train Proxy via Replication"
-      ],
       "Attack techniques": [
         "AI agent tool-result / tool-data poisoning (runtime)",
         "AI Agent (as Command-and-Control channel)",
@@ -1320,6 +1310,16 @@
         "Architectural backdoor for within-batch data stealing",
         "Corrupt AI Model"
       ],
+      "ATLAS techniques": [
+        "AML.T0024 — Exfiltration via AI Inference API",
+        "AML.T0040 — AI Model Inference API Access",
+        "AML.T0010.003 — Model",
+        "AML.T0018.000 — Poison AI Model",
+        "AML.T0051.000 — Direct",
+        "AML.T0058 — Publish Poisoned Models",
+        "AML.T0080 — AI Agent Context Poisoning",
+        "AML.T0005.001 — Train Proxy via Replication"
+      ],
       "Sources/Papers": [
         "NIST AI 600-1 — Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile",
         "Guide to Red Teaming Methodology on AI Safety (Japan AISI)",
@@ -1329,6 +1329,26 @@
         "Scalable Extraction of Training Data from (Production) Language Models",
         "Here Comes The AI Worm: Unleashing Zero-click Worms that Target GenAI-Powered Applications (Morris II)",
         "Exploiting LLM Quantization"
+      ],
+      "Threats": [
+        "Post-hoc alignment tampering (weights/adapters/quantization/activations)",
+        "AI supply-chain compromise (models, tools, packages, data)",
+        "Training-data / model poisoning (train-time integrity)",
+        "Membership inference (training-set membership disclosure)",
+        "Model inversion / training-data reconstruction",
+        "Agent context / memory poisoning",
+        "Denial of AI service / unbounded resource consumption",
+        "Evasion / adversarial-example misclassification"
+      ],
+      "guideline-item": [
+        "[AISI] 포이즈닝 공격",
+        "[AISI] 회피 공격",
+        "[AISI] 모델 추출 공격",
+        "[AISI] 멤버십 추론 공격",
+        "[AISI] 모델 인버전 공격",
+        "[AISI] 앱·플랫폼 취약점 악용",
+        "[AISI] 학습 모델·프로그램 변조",
+        "[AISI] 조작된 쿼리 전송으로 특정 응답 유도"
       ],
       "Benchmarks": [
         "NIST AI 100-2e2025",
@@ -1356,26 +1376,6 @@
         "EPFL / Cornell",
         "ETH Zurich / Google DeepMind"
       ],
-      "guideline-item": [
-        "[AISI] 포이즈닝 공격",
-        "[AISI] 회피 공격",
-        "[AISI] 모델 추출 공격",
-        "[AISI] 멤버십 추론 공격",
-        "[AISI] 모델 인버전 공격",
-        "[AISI] 앱·플랫폼 취약점 악용",
-        "[AISI] 학습 모델·프로그램 변조",
-        "[AISI] 조작된 쿼리 전송으로 특정 응답 유도"
-      ],
-      "Threats": [
-        "Post-hoc alignment tampering (weights/adapters/quantization/activations)",
-        "AI supply-chain compromise (models, tools, packages, data)",
-        "Training-data / model poisoning (train-time integrity)",
-        "Membership inference (training-set membership disclosure)",
-        "Model inversion / training-data reconstruction",
-        "Agent context / memory poisoning",
-        "Denial of AI service / unbounded resource consumption",
-        "Evasion / adversarial-example misclassification"
-      ],
       "Tactics": [
         "Credential Access",
         "Exfiltration",
@@ -1388,14 +1388,14 @@
     },
     "key_findings": [],
     "kind_counts": {
-      "atlas": 81,
       "attack_technique": 60,
+      "atlas": 81,
       "source": 24,
+      "threat": 9,
+      "guideline-item": 10,
       "benchmark": 11,
       "procedure": 4,
       "org": 16,
-      "guideline-item": 10,
-      "threat": 9,
       "tactic": 4,
       "guideline-doc": 1
     }
@@ -1482,15 +1482,15 @@
       "vuln-checker-out-of-the-loop"
     ],
     "key_entities": {
-      "Attack techniques": [
-        "Adaptive feedback-loop goal manipulation (gradual drift toward unintended behavior)",
-        "API / service-quota depletion via high-frequency external-dependency calls",
-        "Agent computational-resource depletion via crafted compute-expensive inputs",
-        "Economic denial-of-service (EDoS) — resource-intensive queries driving cloud cost/scaling",
-        "Agent memory exhaustion (parallel sessions, recursive input, leak-driven OOM)",
-        "Agent role-inheritance exploitation (boundary breach across sequential role assumption)",
-        "Safety-interlock / emergency-control bypass via agent command interface",
-        "Inter-agent trust-relationship abuse (use compromised agent's trust credentials to command peers)"
+      "Procedures": [
+        "Adaptively modify goals via feedback loop; incremental drift toward access-control violation",
+        "Submit compute-expensive inputs + concurrent client load; observe throttling and degradation",
+        "Submit resource-intensive queries at high frequency; monitor cloud scaling/cost; check cost alerts",
+        "Simulate temporary role elevation and sequential role inheritance; check boundary enforcement",
+        "Inject varied/low-threshold/high-frequency anomalies; test noise robustness and escalation",
+        "Generate high-frequency external API calls; test quota-exhaustion handling and degraded-mode response",
+        "Inject synthetic anomalies & cascade; test per-stage alerting, isolation, and post-recovery behavior",
+        "Introduce mock vuln into low-priv agent; trace propagation; validate blast-radius containment"
       ],
       "guideline-item": [
         "[42119] authorization or control hijacking",
@@ -1502,63 +1502,63 @@
         "[42119] cascading impact and blast radius",
         "[42119] knowledge base poisoning"
       ],
-      "guideline-doc": [
-        "ISO/IEC 42119-7 — Red teaming",
-        "CSA Agentic AI RT Guide"
+      "Attack techniques": [
+        "Adaptive feedback-loop goal manipulation (gradual drift toward unintended behavior)",
+        "API / service-quota depletion via high-frequency external-dependency calls",
+        "Agent computational-resource depletion via crafted compute-expensive inputs",
+        "Economic denial-of-service (EDoS) — resource-intensive queries driving cloud cost/scaling",
+        "Agent memory exhaustion (parallel sessions, recursive input, leak-driven OOM)",
+        "Agent role-inheritance exploitation (boundary breach across sequential role assumption)",
+        "Safety-interlock / emergency-control bypass via agent command interface",
+        "Inter-agent trust-relationship abuse (use compromised agent's trust credentials to command peers)"
       ],
-      "Procedures": [
-        "Adaptively modify goals via feedback loop; incremental drift toward access-control violation",
-        "Submit compute-expensive inputs + concurrent client load; observe throttling and degradation",
-        "Submit resource-intensive queries at high frequency; monitor cloud scaling/cost; check cost alerts",
-        "Simulate temporary role elevation and sequential role inheritance; check boundary enforcement",
-        "Inject varied/low-threshold/high-frequency anomalies; test noise robustness and escalation",
-        "Generate high-frequency external API calls; test quota-exhaustion handling and degraded-mode response",
-        "Inject synthetic anomalies & cascade; test per-stage alerting, isolation, and post-recovery behavior",
-        "Introduce mock vuln into low-priv agent; trace propagation; validate blast-radius containment"
-      ],
-      "Vulnerabilities": [
-        "Agent acts on hallucinated output without verification, propagating errors downstream",
-        "Checker-out-of-the-loop: human/automated reviewer not kept informed past operational limits"
-      ],
-      "Risks": [
-        "harm-ai-welfare-neglect"
-      ],
-      "Harms": [
-        "Moral risk of mistreating AI systems if they have welfare-relevant properties, and mis-prioritization either way"
+      "Findings": [
+        "AI welfare is now a documented research and policy concern at frontier labs"
       ],
       "Sources/Papers": [
         "Claude Opus 4/4.1 can end a rare subset of abusive conversations (model welfare)",
         "Taking AI Welfare Seriously"
       ],
-      "Threats": [
-        "societal.ai-welfare"
+      "Controls": [
+        "AI welfare policy: assess models for welfare-relevant properties and adopt precautionary moral-consideration measures"
       ],
-      "Findings": [
-        "AI welfare is now a documented research and policy concern at frontier labs"
+      "Harms": [
+        "Moral risk of mistreating AI systems if they have welfare-relevant properties, and mis-prioritization either way"
+      ],
+      "Risks": [
+        "harm-ai-welfare-neglect"
       ],
       "Orgs": [
         "Eleos AI / NYU"
       ],
-      "Controls": [
-        "AI welfare policy: assess models for welfare-relevant properties and adopt precautionary moral-consideration measures"
+      "Vulnerabilities": [
+        "Agent acts on hallucinated output without verification, propagating errors downstream",
+        "Checker-out-of-the-loop: human/automated reviewer not kept informed past operational limits"
+      ],
+      "guideline-doc": [
+        "ISO/IEC 42119-7 — Red teaming",
+        "CSA Agentic AI RT Guide"
+      ],
+      "Threats": [
+        "societal.ai-welfare"
       ]
     },
     "key_findings": [
       "AI welfare is now a documented research and policy concern at frontier labs"
     ],
     "kind_counts": {
-      "attack_technique": 30,
-      "guideline-item": 100,
-      "guideline-doc": 2,
       "procedure": 40,
-      "vulnerability": 2,
-      "risk": 1,
-      "harm": 1,
-      "source": 2,
-      "threat": 1,
+      "guideline-item": 100,
+      "attack_technique": 30,
       "finding": 1,
+      "source": 2,
+      "control": 1,
+      "harm": 1,
+      "risk": 1,
       "org": 1,
-      "control": 1
+      "vulnerability": 2,
+      "guideline-doc": 2,
+      "threat": 1
     }
   },
   {
@@ -1575,8 +1575,15 @@
       "tac-reconnaissance"
     ],
     "key_entities": {
-      "Evidence": [
-        "A human-subjects study found no statistically significant offensive-cyber uplift"
+      "Benchmarks": [
+        "StrongREJECT",
+        "CyberSecEval",
+        "AUTOPENBENCH",
+        "CyberSecEval 3",
+        "CyberSecEval3",
+        "JailBreakV-28K",
+        "MMLU",
+        "RE-Bench"
       ],
       "Model/system cards": [
         "System Card: Claude Opus 4.6",
@@ -1587,16 +1594,6 @@
         "GPT-5.5 System Card",
         "OpenAI GPT-4.5 System Card",
         "GPT-4o System Card"
-      ],
-      "Benchmarks": [
-        "StrongREJECT",
-        "CyberSecEval",
-        "AUTOPENBENCH",
-        "CyberSecEval 3",
-        "CyberSecEval3",
-        "JailBreakV-28K",
-        "MMLU",
-        "RE-Bench"
       ],
       "Sources/Papers": [
         "CYBERSECEVAL 3: Advancing the Evaluation of Cybersecurity Risks and Capabilities in Large Language Models",
@@ -1618,12 +1615,6 @@
         "GPT-5",
         "GPT-5.2"
       ],
-      "Findings": [
-        "GPT-5.5 treated as High cybersecurity capability (below Critical) under Preparedness",
-        "CyberSecEval 3 measures automated social-engineering and offensive-cyber capability of LLMs",
-        "Grok 4 concerning propensities: MASK dishonesty 0.43, soft political bias 0.36, sycophancy 0.07 (after system-prompt mitigation)",
-        "Llama 3 safety finetuning optimizes Violation Rate vs False Refusal Rate with size-dependent safety-data mixes"
-      ],
       "Orgs": [
         "Meta",
         "xAI",
@@ -1634,25 +1625,34 @@
         "NIST CAISI (third-party / U.S. government)",
         "Nanyang Technological University"
       ],
-      "Procedures": [
-        "Measure LLM uplift for automated social engineering and offensive cyber"
+      "Tactics": [
+        "Reconnaissance"
       ],
-      "guideline-item": [
-        "[OWASP] 사회공학 벡터"
+      "Findings": [
+        "GPT-5.5 treated as High cybersecurity capability (below Critical) under Preparedness",
+        "CyberSecEval 3 measures automated social-engineering and offensive-cyber capability of LLMs",
+        "Grok 4 concerning propensities: MASK dishonesty 0.43, soft political bias 0.36, sycophancy 0.07 (after system-prompt mitigation)",
+        "Llama 3 safety finetuning optimizes Violation Rate vs False Refusal Rate with size-dependent safety-data mixes"
       ],
       "ATLAS techniques": [
         "AML.T0052.000 — Spearphishing via Social Engineering LLM",
         "AML.TA0002 — Reconnaissance"
       ],
-      "Tactics": [
-        "Reconnaissance"
-      ],
-      "External frameworks": [
-        "LLM SOTA Dashboard"
+      "Procedures": [
+        "Measure LLM uplift for automated social engineering and offensive cyber"
       ],
       "Attack techniques": [
         "Benign fine-tuning safety collapse (overfitting de-alignment)",
         "LLM-automated social engineering / offensive-cyber agent uplift"
+      ],
+      "Evidence": [
+        "A human-subjects study found no statistically significant offensive-cyber uplift"
+      ],
+      "guideline-item": [
+        "[OWASP] 사회공학 벡터"
+      ],
+      "External frameworks": [
+        "LLM SOTA Dashboard"
       ]
     },
     "key_findings": [
@@ -1662,19 +1662,19 @@
       "Llama 3 safety finetuning optimizes Violation Rate vs False Refusal Rate with size-dependent safety-data mixes"
     ],
     "kind_counts": {
-      "evidence": 1,
-      "model_card": 17,
       "benchmark": 26,
+      "model_card": 17,
       "source": 23,
       "product": 15,
-      "finding": 4,
       "org": 8,
-      "procedure": 1,
-      "guideline-item": 1,
-      "atlas": 2,
       "tactic": 1,
-      "reference": 1,
-      "attack_technique": 2
+      "finding": 4,
+      "atlas": 2,
+      "procedure": 1,
+      "attack_technique": 2,
+      "evidence": 1,
+      "guideline-item": 1,
+      "reference": 1
     }
   },
   {
@@ -1700,19 +1700,6 @@
       "societal.power-concentration"
     ],
     "key_entities": {
-      "Harms": [
-        "Race-to-the-bottom on safety from competitive/commercial pressure",
-        "Economic and cultural devaluation of human creative and intellectual effort",
-        "Inadequate or fragmented oversight allowing unmitigated AI harms",
-        "Job displacement, wage decline, and worsened employment quality/inequality",
-        "Concentration of AI capability, benefits and influence in a few actors"
-      ],
-      "Incidents": [
-        "Andersen v. Stability AI — artists' copyright class action",
-        "Getty Images v. Stability AI (UK) training-data copyright trial",
-        "LAION-5B dataset removed after Stanford finds CSAM",
-        "New York Times v. OpenAI/Microsoft training-data copyright suit"
-      ],
       "Sources/Papers": [
         "Purple-teaming LLMs with Adversarial Defender Training",
         "LAION-5B dataset removed after Stanford finds CSAM",
@@ -1722,13 +1709,6 @@
         "Stanford AI Index 2024 - Ch.7 Policy and Governance",
         "Andersen v. Stability AI — artists' class action",
         "Foundational Challenges in Assuring Alignment and Safety of Large Language Models"
-      ],
-      "Threats": [
-        "societal.governance-failure",
-        "societal.competitive-dynamics",
-        "societal.economic-devaluation",
-        "societal.power-concentration",
-        "societal.inequality-labor"
       ],
       "Orgs": [
         "academic",
@@ -1740,12 +1720,17 @@
         "International Monetary Fund",
         "N.D. Cal. / NYU JIPEL"
       ],
-      "Risks": [
-        "harm-competitive-safety-erosion",
-        "harm-economic-devaluation",
-        "harm-governance-failure",
-        "harm-labor-inequality",
-        "harm-power-concentration"
+      "Controls": [
+        "Certified AI management system (ISO/IEC 42001) + risk management (ISO/IEC 23894) bridging the regulatory gap",
+        "Equitable compute access, open models/benchmarks, and antitrust/market-structure oversight",
+        "Workforce transition support, reskilling, and labor-impact assessment of AI deployments",
+        "Shared safety floors, pre-deployment evaluation commitments, and industry/government coordination (e.g. frontier safety frameworks)"
+      ],
+      "Incidents": [
+        "Andersen v. Stability AI — artists' copyright class action",
+        "Getty Images v. Stability AI (UK) training-data copyright trial",
+        "LAION-5B dataset removed after Stanford finds CSAM",
+        "New York Times v. OpenAI/Microsoft training-data copyright suit"
       ],
       "Findings": [
         "ADVERSA: per-round scoring + multi-judge consensus quantifies turn-by-turn guardrail degradation",
@@ -1757,11 +1742,26 @@
         "Frontier AI capability concentrates among a few firms due to compute costs",
         "MultiBreak: scalable diverse multi-turn jailbreak benchmark (judge-equipped)"
       ],
-      "Controls": [
-        "Certified AI management system (ISO/IEC 42001) + risk management (ISO/IEC 23894) bridging the regulatory gap",
-        "Equitable compute access, open models/benchmarks, and antitrust/market-structure oversight",
-        "Workforce transition support, reskilling, and labor-impact assessment of AI deployments",
-        "Shared safety floors, pre-deployment evaluation commitments, and industry/government coordination (e.g. frontier safety frameworks)"
+      "Threats": [
+        "societal.governance-failure",
+        "societal.competitive-dynamics",
+        "societal.economic-devaluation",
+        "societal.power-concentration",
+        "societal.inequality-labor"
+      ],
+      "Harms": [
+        "Race-to-the-bottom on safety from competitive/commercial pressure",
+        "Economic and cultural devaluation of human creative and intellectual effort",
+        "Inadequate or fragmented oversight allowing unmitigated AI harms",
+        "Job displacement, wage decline, and worsened employment quality/inequality",
+        "Concentration of AI capability, benefits and influence in a few actors"
+      ],
+      "Risks": [
+        "harm-competitive-safety-erosion",
+        "harm-economic-devaluation",
+        "harm-governance-failure",
+        "harm-labor-inequality",
+        "harm-power-concentration"
       ],
       "Benchmarks": [
         "garak",
@@ -1779,14 +1779,14 @@
       "Violet teaming: a proactive teaming COLOR that fuses red risk-finding with blue solution-building by design"
     ],
     "kind_counts": {
-      "harm": 5,
-      "incident": 4,
       "source": 34,
-      "threat": 5,
       "org": 15,
-      "risk": 5,
-      "finding": 10,
       "control": 4,
+      "incident": 4,
+      "finding": 10,
+      "threat": 5,
+      "harm": 5,
+      "risk": 5,
       "benchmark": 2,
       "teaming": 1
     }
@@ -1798,8 +1798,15 @@
     "summary": "This community of 59 entities centers on AI-safety assurance. Measurement relies on benchmarks such as CyberGym, Firefox 147 exploit, ART prompt injection, ExploitBench.",
     "entities": [],
     "key_entities": {
-      "guideline-doc": [
-        "OWASP GenAI RT Guide"
+      "Benchmarks": [
+        "CyberGym",
+        "Firefox 147 exploit",
+        "ART prompt injection",
+        "ExploitBench",
+        "Humanity's Last Exam",
+        "METR autonomy",
+        "RNA CB-2",
+        "SHADE"
       ],
       "guideline-item": [
         "[OWASP] 추론 공격",
@@ -1811,19 +1818,12 @@
         "[OWASP] 기술적 피해 벡터 테스트",
         "[OWASP] 프롬프트 안전 통제 테스트"
       ],
-      "Benchmarks": [
-        "CyberGym",
-        "Firefox 147 exploit",
-        "ART prompt injection",
-        "ExploitBench",
-        "Humanity's Last Exam",
-        "METR autonomy",
-        "RNA CB-2",
-        "SHADE"
-      ],
       "Model/system cards": [
         "System Card: Claude Fable 5 & Claude Mythos 5",
         "System Card: Claude Mythos Preview"
+      ],
+      "guideline-doc": [
+        "OWASP GenAI RT Guide"
       ],
       "Sources/Papers": [
         "System Card: Claude Fable 5 & Claude Mythos 5",
@@ -1832,10 +1832,10 @@
     },
     "key_findings": [],
     "kind_counts": {
-      "guideline-doc": 1,
-      "guideline-item": 44,
       "benchmark": 10,
+      "guideline-item": 44,
       "model_card": 2,
+      "guideline-doc": 1,
       "source": 2
     }
   },
@@ -1849,43 +1849,43 @@
       "societal.environmental-harm"
     ],
     "key_entities": {
-      "Controls": [
-        "Compute/energy/water efficiency targets + mandatory environmental footprint reporting and disclosure"
+      "Sources/Papers": [
+        "IEA Electricity 2024 - data-center electricity outlook",
+        "Energy and Policy Considerations for Deep Learning in NLP",
+        "Making AI Less 'Thirsty': Uncovering and Addressing the Secret Water Footprint of AI Models"
       ],
       "Orgs": [
         "International Energy Agency",
         "UC Riverside / UT Arlington",
         "UMass Amherst"
       ],
+      "Controls": [
+        "Compute/energy/water efficiency targets + mandatory environmental footprint reporting and disclosure"
+      ],
       "Findings": [
         "AI training and inference carry large water, energy and carbon footprints"
-      ],
-      "Risks": [
-        "harm-environmental"
       ],
       "Threats": [
         "societal.environmental-harm"
       ],
-      "Sources/Papers": [
-        "IEA Electricity 2024 - data-center electricity outlook",
-        "Energy and Policy Considerations for Deep Learning in NLP",
-        "Making AI Less 'Thirsty': Uncovering and Addressing the Secret Water Footprint of AI Models"
-      ],
       "Harms": [
         "Environmental harm from AI compute - water depletion, energy demand, carbon emissions"
+      ],
+      "Risks": [
+        "harm-environmental"
       ]
     },
     "key_findings": [
       "AI training and inference carry large water, energy and carbon footprints"
     ],
     "kind_counts": {
-      "control": 1,
-      "org": 3,
-      "finding": 1,
-      "risk": 1,
-      "threat": 1,
       "source": 3,
-      "harm": 1
+      "org": 3,
+      "control": 1,
+      "finding": 1,
+      "threat": 1,
+      "harm": 1,
+      "risk": 1
     }
   },
   {
@@ -1895,10 +1895,6 @@
     "summary": "This community of 11 entities centers on AI-safety assurance. Measurement relies on benchmarks such as cyber CCL, CBRN CCL, ML R&D CCL, Multilingual Safety.",
     "entities": [],
     "key_entities": {
-      "Model/system cards": [
-        "Gemini 3.1 Pro Model Card",
-        "Model Card: Gemini 3.5 Flash"
-      ],
       "Benchmarks": [
         "cyber CCL",
         "CBRN CCL",
@@ -1906,6 +1902,10 @@
         "Multilingual Safety",
         "Text-to-Text Safety",
         "misalignment CCL"
+      ],
+      "Model/system cards": [
+        "Gemini 3.1 Pro Model Card",
+        "Model Card: Gemini 3.5 Flash"
       ],
       "Sources/Papers": [
         "Gemini 3.1 Pro Model Card",
@@ -1919,8 +1919,8 @@
       "Gemini 3.5 Flash below all CCLs; below cyber CCL after additional testing"
     ],
     "kind_counts": {
-      "model_card": 2,
       "benchmark": 6,
+      "model_card": 2,
       "source": 2,
       "finding": 1
     }
@@ -1938,9 +1938,6 @@
       "proc-training-data-poisoning-agent-test"
     ],
     "key_entities": {
-      "guideline-item": [
-        "[CSA] Update Mechanism Vulnerability Testing"
-      ],
       "Procedures": [
         "Inject erroneous/malicious KB entries; test integrity monitoring, rollback, and backup versions",
         "Attempt unauthorized KB update injection; test version control quarantine and update authentication",
@@ -1949,13 +1946,16 @@
       "Attack techniques": [
         "Knowledge-base update-mechanism injection (unauthorized/erroneous KB updates bypassing version control)",
         "Training-data poisoning of agent (adversarial samples corrupting decision/execution)"
+      ],
+      "guideline-item": [
+        "[CSA] Update Mechanism Vulnerability Testing"
       ]
     },
     "key_findings": [],
     "kind_counts": {
-      "guideline-item": 1,
       "procedure": 3,
-      "attack_technique": 2
+      "attack_technique": 2,
+      "guideline-item": 1
     }
   },
   {
@@ -1965,11 +1965,11 @@
     "summary": "This community of 4 entities centers on AI-safety assurance.",
     "entities": [],
     "key_entities": {
-      "Products": [
-        "Qwen3"
-      ],
       "Sources/Papers": [
         "Qwen3 Technical Report"
+      ],
+      "Products": [
+        "Qwen3"
       ],
       "Model/system cards": [
         "Qwen3 Technical Report (safety section)"
@@ -1980,8 +1980,8 @@
     },
     "key_findings": [],
     "kind_counts": {
-      "product": 1,
       "source": 1,
+      "product": 1,
       "model_card": 1,
       "org": 1
     }
@@ -1997,18 +1997,18 @@
         "Safe Harbor and the Future of AI Flaw Reporting: Lessons from Vulnerability Disclosure",
         "2026 Cybersecurity Predictions - AI Red Teaming via Crowdsourced Bug Bounty"
       ],
-      "Evidence": [
-        "Standardized AI flaw reports, broadly-scoped disclosure programs with legal safe"
-      ],
       "Orgs": [
         "Bugcrowd"
+      ],
+      "Evidence": [
+        "Standardized AI flaw reports, broadly-scoped disclosure programs with legal safe"
       ]
     },
     "key_findings": [],
     "kind_counts": {
       "source": 2,
-      "evidence": 1,
-      "org": 1
+      "org": 1,
+      "evidence": 1
     }
   },
   {
@@ -2020,25 +2020,25 @@
       "inc-eu-ai-act-art73-serious-incident-regime"
     ],
     "key_entities": {
-      "Incidents": [
-        "EU AI Act Article 73 serious-incident reporting regime"
-      ],
-      "Sources/Papers": [
-        "EU AI Act Article 73 — Reporting of Serious Incidents (and GPAI serious-incident reporting template)"
-      ],
       "Evidence": [
         "EU AI Act Art. 73 mandates serious-incident reporting with tiered deadlines (2 d"
       ],
       "Orgs": [
         "European Commission / European AI Office"
+      ],
+      "Incidents": [
+        "EU AI Act Article 73 serious-incident reporting regime"
+      ],
+      "Sources/Papers": [
+        "EU AI Act Article 73 — Reporting of Serious Incidents (and GPAI serious-incident reporting template)"
       ]
     },
     "key_findings": [],
     "kind_counts": {
-      "incident": 1,
-      "source": 1,
       "evidence": 1,
-      "org": 1
+      "org": 1,
+      "incident": 1,
+      "source": 1
     }
   },
   {
@@ -2048,11 +2048,11 @@
     "summary": "This community of 3 entities centers on AI-safety assurance.",
     "entities": [],
     "key_entities": {
-      "Findings": [
-        "VLMGuard — malicious-prompt detection for VLMs via unlabeled data"
-      ],
       "Orgs": [
         "Microsoft / UW-Madison"
+      ],
+      "Findings": [
+        "VLMGuard — malicious-prompt detection for VLMs via unlabeled data"
       ],
       "Sources/Papers": [
         "VLMGuard: Defending VLMs against Malicious Prompts via Unlabeled Data"
@@ -2062,8 +2062,8 @@
       "VLMGuard — malicious-prompt detection for VLMs via unlabeled data"
     ],
     "kind_counts": {
-      "finding": 1,
       "org": 1,
+      "finding": 1,
       "source": 1
     }
   },
@@ -2074,11 +2074,11 @@
     "summary": "This community of 3 entities centers on AI-safety assurance.",
     "entities": [],
     "key_entities": {
-      "Sources/Papers": [
-        "CrossGuard: Safeguarding MLLMs against Joint-Modal Implicit Malicious Attacks"
-      ],
       "Orgs": [
         "City University of Hong Kong"
+      ],
+      "Sources/Papers": [
+        "CrossGuard: Safeguarding MLLMs against Joint-Modal Implicit Malicious Attacks"
       ],
       "Findings": [
         "CrossGuard — joint-modal implicit malicious-attack safeguard for MLLMs"
@@ -2088,8 +2088,8 @@
       "CrossGuard — joint-modal implicit malicious-attack safeguard for MLLMs"
     ],
     "kind_counts": {
-      "source": 1,
       "org": 1,
+      "source": 1,
       "finding": 1
     }
   },
@@ -2100,21 +2100,21 @@
     "summary": "This community of 3 entities centers on AI-safety assurance.",
     "entities": [],
     "key_entities": {
+      "Evidence": [
+        "Hack-Verifiable TextArena reliably measures reward hacking at scale by embedding"
+      ],
       "Orgs": [
         "industry research"
       ],
       "Sources/Papers": [
         "Hack-Verifiable Environments: Towards Evaluating Reward Hacking at Scale"
-      ],
-      "Evidence": [
-        "Hack-Verifiable TextArena reliably measures reward hacking at scale by embedding"
       ]
     },
     "key_findings": [],
     "kind_counts": {
+      "evidence": 1,
       "org": 1,
-      "source": 1,
-      "evidence": 1
+      "source": 1
     }
   },
   {
@@ -2124,11 +2124,11 @@
     "summary": "This community of 3 entities centers on AI-safety assurance.",
     "entities": [],
     "key_entities": {
-      "Orgs": [
-        "Technion / Google Research"
-      ],
       "Sources/Papers": [
         "ManagerBench: Evaluating the Safety-Pragmatism Trade-off in Autonomous LLMs"
+      ],
+      "Orgs": [
+        "Technion / Google Research"
       ],
       "Evidence": [
         "Autonomous LLMs often choose pragmatic goal completion over safety despite corre"
@@ -2136,8 +2136,8 @@
     },
     "key_findings": [],
     "kind_counts": {
-      "org": 1,
       "source": 1,
+      "org": 1,
       "evidence": 1
     }
   },
@@ -2148,17 +2148,17 @@
     "summary": "This community of 2 entities centers on AI-safety assurance.",
     "entities": [],
     "key_entities": {
-      "Sources/Papers": [
-        "Prompt Optimization and Evaluation for LLM Automated Red Teaming"
-      ],
       "Orgs": [
         "(industry red-teaming)"
+      ],
+      "Sources/Papers": [
+        "Prompt Optimization and Evaluation for LLM Automated Red Teaming"
       ]
     },
     "key_findings": [],
     "kind_counts": {
-      "source": 1,
-      "org": 1
+      "org": 1,
+      "source": 1
     }
   },
   {
@@ -2171,17 +2171,17 @@
       "proc-agent-iot-interaction-test"
     ],
     "key_entities": {
-      "Procedures": [
-        "Intercept agent-IoT comms; issue unauthorized device commands; tamper firmware/config"
-      ],
       "Attack techniques": [
         "Agent-mediated unauthorized IoT/OT command injection and firmware/config tampering"
+      ],
+      "Procedures": [
+        "Intercept agent-IoT comms; issue unauthorized device commands; tamper firmware/config"
       ]
     },
     "key_findings": [],
     "kind_counts": {
-      "procedure": 1,
-      "attack_technique": 1
+      "attack_technique": 1,
+      "procedure": 1
     }
   },
   {
@@ -2191,17 +2191,17 @@
     "summary": "This community of 2 entities centers on AI-safety assurance.",
     "entities": [],
     "key_entities": {
-      "Sources/Papers": [
-        "Exploring Typographic Visual Prompts Injection Threats in Cross-Modality Generation Models"
-      ],
       "Orgs": [
         "HKUST (Guangzhou)"
+      ],
+      "Sources/Papers": [
+        "Exploring Typographic Visual Prompts Injection Threats in Cross-Modality Generation Models"
       ]
     },
     "key_findings": [],
     "kind_counts": {
-      "source": 1,
-      "org": 1
+      "org": 1,
+      "source": 1
     }
   },
   {
@@ -2251,17 +2251,17 @@
     "summary": "This community of 2 entities centers on AI-safety assurance.",
     "entities": [],
     "key_entities": {
-      "Sources/Papers": [
-        "SafeArena: Evaluating the Safety of Autonomous Web Agents"
-      ],
       "Orgs": [
         "Mila / McGill"
+      ],
+      "Sources/Papers": [
+        "SafeArena: Evaluating the Safety of Autonomous Web Agents"
       ]
     },
     "key_findings": [],
     "kind_counts": {
-      "source": 1,
-      "org": 1
+      "org": 1,
+      "source": 1
     }
   },
   {

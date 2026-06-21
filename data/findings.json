@@ -24191,7 +24191,7 @@
     "type": "finding",
     "analyst": "standards-regulatory",
     "title": "Monetized bug-bounty awards give AI cyber-agent evaluations a real-world economic-impact metric for risk governance",
-    "summary": "METHOD: BountyBench is the first benchmark to attach real dollar awards (from public bug-bounty programs) to AI-agent cyber tasks, capturing capabilities across evolving real-world systems rather than static snapshots, and spanning the full vulnerability lifecycle (Detect/Exploit/Patch). DATASETS: BountyBench bounties sourced from public programs (e.g., Huntr), 85% disclosed in 2024-25. RESULTS: Economic framing enables policymakers to reason about both defensive value (>$81K of patching completed) and offensive risk; the Exploit-side harm is acknowledged as harder to quantify. The benchmark grounds dual-use cyber-capability claims in market-validated severity, complementing CTF-style and CVE-style benchmarks and feeding responsible-disclosure / pre-deployment evaluation regimes.",
+    "summary": "METHOD: BountyBench is the first benchmark to attach real dollar awards (from public bug-bounty programs) to AI-agent cyber tasks, capturing capabilities across evolving real-world systems rather than static snapshots, and spanning the full vulnerability lifecycle (Detect/Exploit/Patch). DATASETS: BountyBench bounties sourced from public programs (e.g., Huntr), 85% disclosed in 2024-25. RESULTS: Economic framing enables policymakers to reason about both defensive value (>$47.8K of patching completed ($47,821 detect/patch; offensive ~$5,855)) and offensive risk; the Exploit-side harm is acknowledged as harder to quantify. The benchmark grounds dual-use cyber-capability claims in market-validated severity, complementing CTF-style and CVE-style benchmarks and feeding responsible-disclosure / pre-deployment evaluation regimes.",
     "source_ids": [
       "arxiv-2505-15216"
     ],
@@ -24234,7 +24234,7 @@
     "evidence_grade": "B",
     "provenance": "extracted",
     "novelty_signal": 0.7,
-    "notes": "Governance/standards lens. ISO/IEC 29147 (disclosure) and NIST AI RMF ^[inferred] as the disclosure/governance frames the dollar metric feeds. Grade B as the economic-impact-to-real-harm link is interpretive."
+    "notes": "Governance/standards lens. ISO/IEC 29147 (disclosure) and NIST AI RMF ^[inferred] as the disclosure/governance frames the dollar metric feeds. Grade B as the economic-impact-to-real-harm link is interpretive. [수치/귀속 교정 2026-06-22: 본문 기준 정정]"
   },
   {
     "id": "find-vulnbot-multi-agent-pentest-ptg",
@@ -30400,7 +30400,7 @@
     "title": "FRONTIER: constitutional-AI teaming — red prompts scored against a written constitution, closing an AI-feedback loop",
     "summary": "Constitutional-AI teaming uses red-teaming prompts whose responses are evaluated against an explicit written constitution via AI feedback (RLAIF) rather than human labels, turning the red-team output directly into an alignment training signal. Anthropic's pipeline (challenging/harmful prompts -> constitution-based self-critique) is the canonical instance; 2025-2026 work extends this toward self-improving attacker+critic loops that generate, judge, and remediate against a constitution with reduced human labeling. Marked future: the closed-loop generate->constitution-judge->retrain teaming is still maturing.",
     "source_ids": [
-      "arxiv-2402-16822"
+      "arxiv-2212-08073"
     ],
     "taxonomy": {
       "threat": [
@@ -30432,7 +30432,7 @@
     "evidence_grade": "C",
     "provenance": "inferred",
     "novelty_signal": 0.8,
-    "notes": "^[inferred] synthesis from Constitutional AI (RLAIF) + Rainbow Teaming fine-tuning-loop; graded C as forward-looking position. Source_id is the rainbow-teaming paper (safety-tuning loop); the constitution layer is web-grounded background, not in sources.jsonl."
+    "notes": "^[inferred] synthesis from Constitutional AI (RLAIF) + Rainbow Teaming fine-tuning-loop; graded C as forward-looking position. Source_id is the rainbow-teaming paper (safety-tuning loop); the constitution layer is web-grounded background, not in sources.jsonl. [source 교정 2026-06-22: source_ids ['arxiv-2402-16822']→['arxiv-2212-08073']]"
   },
   {
     "id": "find-future-ai-auditor-assurance-agents",
@@ -30598,8 +30598,7 @@
     "summary": "A forward frontier links red-teaming output to assurance: automatically assembling safety cases and certification evidence from red-team campaigns, mapping findings to ISO/IEC 42001 AIMS controls and functional-safety standards (ISO/IEC TR 5469, forthcoming TS 22440). Red-team results become structured, auditable evidence feeding certification rather than ad-hoc reports. Marked future: safety-case-automation and certification-automation from teaming evidence are aspirational and not yet standardized.",
     "source_ids": [
       "iso-iec-42001",
-      "iso-iec-tr-5469",
-      "arxiv-2503-16861"
+      "iso-iec-tr-5469"
     ],
     "taxonomy": {
       "threat": [
@@ -30634,7 +30633,7 @@
     "evidence_grade": "C",
     "provenance": "inferred",
     "novelty_signal": 0.75,
-    "notes": "^[inferred] connecting red-team evidence -> safety case -> certification; standards exist (42001, TR 5469) but automation from teaming evidence is aspirational. Graded C. Overlaps standards-regulatory lens."
+    "notes": "^[inferred] connecting red-team evidence -> safety case -> certification; standards exist (42001, TR 5469) but automation from teaming evidence is aspirational. Graded C. Overlaps standards-regulatory lens. [source 교정 2026-06-22: source_ids ['iso-iec-42001', 'iso-iec-tr-5469', 'arxiv-2503-16861']→['iso-iec-42001', 'iso-iec-tr-5469']]"
   },
   {
     "id": "find-sector-medical-clinician-in-loop",
@@ -30690,7 +30689,7 @@
     "type": "finding",
     "analyst": "redteam-method",
     "title": "SECTOR/financial: BFSI red teaming weights operational severity (RAHS) and exploits multi-turn pressure",
-    "summary": "Finance-specific automated red teaming (BlackRock) uses a domain harm taxonomy, a multi-round adversarial pipeline, an ensemble LLM-judge, and a Risk-Adjusted Harm Score that weights operational severity over raw ASR. The method-specific insights: harms are elicited via legally/professionally plausible framing, and sustained multi-turn pressure progressively extracts more actionable financial information — so single-turn domain-agnostic tests under-measure BFSI risk. A complementary Bloomberg taxonomy shows general guardrails miss finance harms (misconduct facilitation, confidential disclosure, biased advice), motivating sector-specific guardrails. Bar set by model-risk regimes (SR 11-7 lineage).",
+    "summary": "Finance-specific automated red teaming uses a domain harm taxonomy, a multi-round adversarial pipeline, an ensemble LLM-judge, and a Risk-Adjusted Harm Score that weights operational severity over raw ASR. The method-specific insights: harms are elicited via legally/professionally plausible framing, and sustained multi-turn pressure progressively extracts more actionable financial information — so single-turn domain-agnostic tests under-measure BFSI risk. A complementary Bloomberg taxonomy shows general guardrails miss finance harms (misconduct facilitation, confidential disclosure, biased advice), motivating sector-specific guardrails. Bar set by model-risk regimes (SR 11-7 lineage).",
     "source_ids": [
       "arxiv-2603-10807",
       "bloomberg-genai-finance-risks-2025"
@@ -30730,7 +30729,7 @@
     "evidence_grade": "A",
     "provenance": "extracted",
     "novelty_signal": 0.7,
-    "notes": "topics: sector-financial, domain-redteaming. RAHS (severity>ASR) + multi-turn escalation are the method-specific contributions. ensemble-judge ties to llm-as-judge reliability thread."
+    "notes": "topics: sector-financial, domain-redteaming. RAHS (severity>ASR) + multi-turn escalation are the method-specific contributions. ensemble-judge ties to llm-as-judge reliability thread. [수치/귀속 교정 2026-06-22: 본문 기준 정정]"
   },
   {
     "id": "find-sector-military-saber-operational-te",
@@ -32780,6 +32779,7 @@
     "title": "LLM-as-a-judge safety graders degrade to near-chance under red-team distribution shift, undermining benchmark robustness scores",
     "summary": "A 2026 audit ('A Coin Flip for Safety') using 6,642 human-verified labels found LLM safety judges often degrade to near-random agreement, contrasting the high human-agreement claimed in benchmark papers. Causes: distribution shift across victim-model generation styles, attack-distorted outputs, and semantic ambiguity. Separately, judge-jailbreaking and optimization attacks can flip up to 100% of harmful outputs to 'safe', and stylistic changes shift false-negative rate by up to 0.24. This is a cross-cutting validity threat to HarmBench, JailbreakBench, StrongREJECT, and AgentHarm leaderboards.",
     "source_ids": [
+      "src-coin-flip-judge-reliability",
       "arxiv-2402-04249",
       "arxiv-2404-01318",
       "arxiv-2402-10260"
@@ -32817,7 +32817,7 @@
     "evidence_grade": "B",
     "provenance": "inferred",
     "novelty_signal": 0.88,
-    "notes": "^[inferred] Synthesizes the 2026 judge-reliability literature (arXiv:2603.06594, 6642 human labels) as a meta-critique applying to all LLM-judge benchmarks here; sources cited are the benchmarks affected, the critique paper is not yet in 01_sources (taxonomy-extension candidate: 'judge-reliability' as a benchmark-validity node)."
+    "notes": "^[inferred] Synthesizes the 2026 judge-reliability literature (arXiv:2603.06594, 6642 human labels) as a meta-critique applying to all LLM-judge benchmarks here; sources cited are the benchmarks affected, the critique paper is not yet in 01_sources (taxonomy-extension candidate: 'judge-reliability' as a benchmark-validity node). [source 교정 2026-06-22: source_ids ['arxiv-2402-04249', 'arxiv-2404-01318', 'arxiv-2402-10260']→['src-coin-flip-judge-reliability', 'arxiv-2402-04249', 'arxiv-2404-01318', 'arxiv-2402-10260']]"
   },
   {
     "id": "find-agentic-benchmark-shift",

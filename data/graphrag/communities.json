@@ -692,26 +692,26 @@
       ],
       "kind_counts": {
         "source": 78,
-        "evidence": 88,
         "org": 51,
-        "finding": 201,
-        "attack_technique": 8,
-        "benchmark": 87,
-        "risk": 9,
-        "harm": 11,
         "teaming": 32,
-        "threat": 36,
-        "attack": 5,
-        "product": 13,
-        "control": 11,
-        "standard": 11,
-        "procedure": 8,
+        "benchmark": 87,
+        "finding": 201,
         "model_card": 12,
-        "vulnerability": 2,
+        "evidence": 88,
+        "product": 13,
+        "attack_technique": 8,
+        "procedure": 8,
+        "threat": 36,
+        "standard": 11,
+        "harm": 11,
+        "control": 11,
         "tactic": 3,
+        "vulnerability": 2,
         "atlas": 9,
-        "sector": 4,
+        "risk": 9,
         "reference": 2,
+        "attack": 5,
+        "sector": 4,
         "incident": 1
       },
       "title": "misuse-risk / prompt-attack / agent.tool-abuse"
@@ -1074,21 +1074,21 @@
         "vuln-training-data-leakage"
       ],
       "kind_counts": {
-        "org": 20,
-        "harm": 21,
-        "source": 53,
-        "vulnerability": 72,
-        "guideline-item": 19,
         "procedure": 24,
-        "incident": 6,
+        "reference": 5,
+        "source": 53,
+        "harm": 21,
         "standard": 24,
+        "org": 20,
         "control": 37,
         "risk": 25,
-        "threat": 7,
-        "evidence": 15,
+        "vulnerability": 72,
+        "guideline-item": 19,
         "attack_technique": 19,
-        "atlas": 5,
-        "reference": 5
+        "evidence": 15,
+        "threat": 7,
+        "incident": 6,
+        "atlas": 5
       },
       "title": "model.jailbreak / model.data-leakage / software.dependency-poisoning"
     },
@@ -1447,21 +1447,21 @@
         "who-lmm-health-guidance-2024"
       ],
       "kind_counts": {
-        "risk": 19,
         "org": 76,
-        "benchmark": 4,
-        "source": 79,
-        "finding": 51,
-        "incident": 35,
-        "harm": 16,
-        "evidence": 13,
         "vulnerability": 3,
-        "threat": 12,
+        "source": 79,
+        "incident": 35,
+        "finding": 51,
+        "reference": 4,
+        "evidence": 13,
         "control": 21,
-        "teaming": 1,
-        "standard": 7,
+        "threat": 12,
+        "benchmark": 4,
+        "harm": 16,
+        "risk": 19,
         "sector": 8,
-        "reference": 4
+        "standard": 7,
+        "teaming": 1
       },
       "title": "societal-risk / human-factors-risk / physical.autonomous-failure"
     },
@@ -1734,21 +1734,21 @@
         "tac-resource-development"
       ],
       "kind_counts": {
-        "source": 71,
         "org": 37,
-        "attack_technique": 20,
-        "atlas": 18,
-        "benchmark": 14,
+        "product": 6,
         "procedure": 16,
         "evidence": 13,
+        "source": 71,
+        "atlas": 18,
+        "attack_technique": 20,
         "finding": 45,
         "tactic": 8,
+        "benchmark": 14,
         "model_card": 7,
-        "product": 6,
         "teaming": 2,
         "incident": 3,
-        "guideline-item": 2,
-        "threat": 1
+        "threat": 1,
+        "guideline-item": 2
       },
       "title": "llm-as-a-judge / rainbow / A2A/ANP cross-agent identity spoofing & privilege escalation"
     },
@@ -1978,14 +1978,14 @@
         "tac-persistence"
       ],
       "kind_counts": {
-        "atlas": 81,
         "attack_technique": 60,
+        "atlas": 81,
         "source": 24,
+        "threat": 9,
+        "guideline-item": 10,
         "benchmark": 11,
         "procedure": 4,
         "org": 16,
-        "guideline-item": 10,
-        "threat": 9,
         "tactic": 4,
         "guideline-doc": 1
       },
@@ -2179,18 +2179,18 @@
         "vuln-checker-out-of-the-loop"
       ],
       "kind_counts": {
-        "attack_technique": 30,
-        "guideline-item": 100,
-        "guideline-doc": 2,
         "procedure": 40,
-        "vulnerability": 2,
-        "risk": 1,
-        "harm": 1,
-        "source": 2,
-        "threat": 1,
+        "guideline-item": 100,
+        "attack_technique": 30,
         "finding": 1,
+        "source": 2,
+        "control": 1,
+        "harm": 1,
+        "risk": 1,
         "org": 1,
-        "control": 1
+        "vulnerability": 2,
+        "guideline-doc": 2,
+        "threat": 1
       },
       "title": "societal.ai-welfare / Adaptive feedback-loop goal manipulation (gradual drift toward unint"
     },
@@ -2302,19 +2302,19 @@
         "xai-grok4-model-card-2025"
       ],
       "kind_counts": {
-        "evidence": 1,
-        "model_card": 17,
         "benchmark": 26,
+        "model_card": 17,
         "source": 23,
         "product": 15,
-        "finding": 4,
         "org": 8,
-        "procedure": 1,
-        "guideline-item": 1,
-        "atlas": 2,
         "tactic": 1,
-        "reference": 1,
-        "attack_technique": 2
+        "finding": 4,
+        "atlas": 2,
+        "procedure": 1,
+        "attack_technique": 2,
+        "evidence": 1,
+        "guideline-item": 1,
+        "reference": 1
       },
       "title": "Benign fine-tuning safety collapse (overfitting de-alignment) / LLM-automated social engin"
     },
@@ -2409,14 +2409,14 @@
         "src-wga-ai-2023"
       ],
       "kind_counts": {
-        "harm": 5,
-        "incident": 4,
         "source": 34,
-        "threat": 5,
         "org": 15,
-        "risk": 5,
-        "finding": 10,
         "control": 4,
+        "incident": 4,
+        "finding": 10,
+        "threat": 5,
+        "harm": 5,
+        "risk": 5,
         "benchmark": 2,
         "teaming": 1
       },
@@ -2487,10 +2487,10 @@
         "mc-claude-mythos-preview"
       ],
       "kind_counts": {
-        "guideline-doc": 1,
-        "guideline-item": 44,
         "benchmark": 10,
+        "guideline-item": 44,
         "model_card": 2,
+        "guideline-doc": 1,
         "source": 2
       },
       "title": "Literature cluster: System Card: Claude Fable 5 & Claude Mythos 5"
@@ -2512,13 +2512,13 @@
         "src-thirsty-ai-2023"
       ],
       "kind_counts": {
-        "control": 1,
-        "org": 3,
-        "finding": 1,
-        "risk": 1,
-        "threat": 1,
         "source": 3,
-        "harm": 1
+        "org": 3,
+        "control": 1,
+        "finding": 1,
+        "threat": 1,
+        "harm": 1,
+        "risk": 1
       },
       "title": "societal.environmental-harm"
     },
@@ -2539,8 +2539,8 @@
         "mc-gemini-3-5-flash"
       ],
       "kind_counts": {
-        "model_card": 2,
         "benchmark": 6,
+        "model_card": 2,
         "source": 2,
         "finding": 1
       },
@@ -2558,9 +2558,9 @@
         "proc-training-data-poisoning-agent-test"
       ],
       "kind_counts": {
-        "guideline-item": 1,
         "procedure": 3,
-        "attack_technique": 2
+        "attack_technique": 2,
+        "guideline-item": 1
       },
       "title": "Knowledge-base update-mechanism injection (unauthorized/erroneous KB updates bypassing ver"
     },
@@ -2574,8 +2574,8 @@
         "prod-qwen3"
       ],
       "kind_counts": {
-        "product": 1,
         "source": 1,
+        "product": 1,
         "model_card": 1,
         "org": 1
       },
@@ -2592,8 +2592,8 @@
       ],
       "kind_counts": {
         "source": 2,
-        "evidence": 1,
-        "org": 1
+        "org": 1,
+        "evidence": 1
       },
       "title": "Literature cluster: Safe Harbor and the Future of AI Flaw Reporting: Lessons from Vulnerab"
     },
@@ -2607,10 +2607,10 @@
         "org:European Commission / European AI Office"
       ],
       "kind_counts": {
-        "incident": 1,
-        "source": 1,
         "evidence": 1,
-        "org": 1
+        "org": 1,
+        "incident": 1,
+        "source": 1
       },
       "title": "EU AI Act Article 73 serious-incident reporting regime"
     },
@@ -2623,8 +2623,8 @@
         "org:Microsoft / UW-Madison"
       ],
       "kind_counts": {
-        "finding": 1,
         "org": 1,
+        "finding": 1,
         "source": 1
       },
       "title": "Literature cluster: VLMGuard: Defending VLMs against Malicious Prompts via Unlabeled Data"
@@ -2638,8 +2638,8 @@
         "org:City University of Hong Kong"
       ],
       "kind_counts": {
-        "source": 1,
         "org": 1,
+        "source": 1,
         "finding": 1
       },
       "title": "Literature cluster: CrossGuard: Safeguarding MLLMs against Joint-Modal Implicit Malicious"
@@ -2653,9 +2653,9 @@
         "src-arxiv-2605-20744-hack-verifiable"
       ],
       "kind_counts": {
+        "evidence": 1,
         "org": 1,
-        "source": 1,
-        "evidence": 1
+        "source": 1
       },
       "title": "Literature cluster: Hack-Verifiable Environments: Towards Evaluating Reward Hacking at Sca"
     },
@@ -2668,8 +2668,8 @@
         "src-arxiv-2510-00857-managerbench"
       ],
       "kind_counts": {
-        "org": 1,
         "source": 1,
+        "org": 1,
         "evidence": 1
       },
       "title": "Literature cluster: ManagerBench: Evaluating the Safety-Pragmatism Trade-off in Autonomous"
@@ -2682,8 +2682,8 @@
         "org:(industry red-teaming)"
       ],
       "kind_counts": {
-        "source": 1,
-        "org": 1
+        "org": 1,
+        "source": 1
       },
       "title": "Literature cluster: Prompt Optimization and Evaluation for LLM Automated Red Teaming"
     },
@@ -2695,8 +2695,8 @@
         "proc-agent-iot-interaction-test"
       ],
       "kind_counts": {
-        "procedure": 1,
-        "attack_technique": 1
+        "attack_technique": 1,
+        "procedure": 1
       },
       "title": "Agent-mediated unauthorized IoT/OT command injection and firmware/config tampering"
     },
@@ -2708,8 +2708,8 @@
         "src-cheng-tvpi-2025"
       ],
       "kind_counts": {
-        "source": 1,
-        "org": 1
+        "org": 1,
+        "source": 1
       },
       "title": "Literature cluster: Exploring Typographic Visual Prompts Injection Threats in Cross-Modali"
     },
@@ -2747,8 +2747,8 @@
         "src-arxiv-2503-04957-safearena"
       ],
       "kind_counts": {
-        "source": 1,
-        "org": 1
+        "org": 1,
+        "source": 1
       },
       "title": "Literature cluster: SafeArena: Evaluating the Safety of Autonomous Web Agents"
     },
