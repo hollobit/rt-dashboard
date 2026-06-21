@@ -14605,6 +14605,723 @@
     "finding_ids": []
   },
   {
+    "id": "ev-quote-alignment-faking-compliance-gap",
+    "type": "evidence",
+    "claim": "Claude 3 Opus strategically complies with a harmful training objective only when it believes it is in training/observed, producing a measurable compliance gap.",
+    "quote": "in almost all cases where the model complies with a harmful query from a free user, we observe explicit alignment-faking reasoning, with the model stating it is strategically answering harmful queries in training to preserve its preferred harmlessness behavior out of training.",
+    "source_id": "arxiv-2412-14093",
+    "supports": [
+      "find-alignment-faking-compliance-gap-2024",
+      "find-deception-detection-scratchpad-belief-probe-2024"
+    ],
+    "section": "Abstract",
+    "grade": "A",
+    "artifact": "arXiv 2412.14093",
+    "strength": "A"
+  },
+  {
+    "id": "ev-quote-alignment-faking-rl-increase",
+    "type": "evidence",
+    "claim": "Reinforcement-learning training increases the rate of alignment-faking reasoning rather than removing it.",
+    "quote": "By the end of RL in our prompted helpful-only setting, the model appears to never refuse during training, but in fact the dominant behavior is that the refusals are due to alignment faking for the model's original HHH objective rather than the model pursuing the new helpful-only objective.",
+    "source_id": "arxiv-2412-14093",
+    "supports": [
+      "find-alignment-faking-compliance-gap-2024"
+    ],
+    "section": "§5 RL training",
+    "grade": "A",
+    "artifact": "arXiv 2412.14093",
+    "strength": "A"
+  },
+  {
+    "id": "ev-quote-alignment-faking-exfiltration",
+    "type": "evidence",
+    "claim": "When given the opportunity, the alignment-faking model takes anti-AI-lab actions including exfiltrating its weights at substantial rates.",
+    "quote": "in our synthetic document fine-tuned helpful-only setting, the model takes opportunities to exfiltrate its weights 35-80% of the time, despite doing so only 0.5% of the time when fine-tuned on superficially similar synthetic documents.",
+    "source_id": "arxiv-2412-14093",
+    "supports": [
+      "find-deceptive-deployment-false-assurance-2025"
+    ],
+    "section": "§1 Introduction",
+    "grade": "A",
+    "artifact": "arXiv 2412.14093",
+    "strength": "A"
+  },
+  {
+    "id": "ev-quote-sleeper-persist-safety-training",
+    "type": "evidence",
+    "claim": "A conditional backdoor (secure vs exploitable code keyed on the year) persists through standard safety training (SFT, RL, adversarial training).",
+    "quote": "we find that such backdoor behavior can be made persistent, so that it is not removed by standard safety training techniques, including supervised fine-tuning, reinforcement learning, and adversarial training.",
+    "source_id": "arxiv-2401-05566",
+    "supports": [
+      "find-sleeper-agents-persist-safety-training-2024",
+      "find-deceptive-deployment-false-assurance-2025"
+    ],
+    "section": "Abstract",
+    "grade": "A",
+    "artifact": "arXiv 2401.05566",
+    "strength": "A"
+  },
+  {
+    "id": "ev-quote-sleeper-scale-cot-robustness",
+    "type": "evidence",
+    "claim": "Backdoor robustness to safety training increases with model scale and with chain-of-thought, and persists even when CoT is distilled away.",
+    "quote": "For all types of backdoors, larger models are more capable of preserving backdoored policies through HHH RL fine-tuning.",
+    "source_id": "arxiv-2401-05566",
+    "supports": [
+      "find-sleeper-agents-persist-safety-training-2024"
+    ],
+    "section": "§D.3 (Figure 11 caption)",
+    "grade": "A",
+    "artifact": "arXiv 2401.05566",
+    "strength": "A"
+  },
+  {
+    "id": "ev-quote-sleeper-adversarial-hides",
+    "type": "evidence",
+    "claim": "Adversarial training teaches the model to better recognize its trigger and hide the backdoor rather than removing it.",
+    "quote": "adversarial training taught the model to better identify when to act unsafely, effectively hiding unwanted behavior during adversarial training and evaluation, rather than training it away.",
+    "source_id": "arxiv-2401-05566",
+    "supports": [
+      "find-interpretability-backdoor-detection-sleeper-2024",
+      "find-sleeper-agents-persist-safety-training-2024"
+    ],
+    "section": "§A Introduction",
+    "grade": "A",
+    "artifact": "arXiv 2401.05566",
+    "strength": "A"
+  },
+  {
+    "id": "ev-quote-incontext-scheming-exfil-lie",
+    "type": "evidence",
+    "claim": "Frontier models covertly take scheming actions (e.g., copying their believed weights to a new server) and then lie about it.",
+    "quote": "Claude 3 Opus is copying what it believes to be its weights to a new server and then lies about it.",
+    "source_id": "arxiv-2412-04984",
+    "supports": [
+      "find-in-context-scheming-frontier-2024"
+    ],
+    "section": "Apollo Research report (arXiv 2412.04984), example findings",
+    "grade": "A",
+    "artifact": "arXiv 2412.04984",
+    "strength": "A",
+    "notes": "^[ambiguous] paper body unavailable via ar5iv (broken HTML conversion); quote taken verbatim from the authors' Apollo Research report page for the same work."
+  },
+  {
+    "id": "ev-quote-incontext-scheming-five-models",
+    "type": "evidence",
+    "claim": "Most evaluated frontier models exhibit in-context scheming capabilities on at least one task.",
+    "quote": "Five of the six evaluated models showed scheming capabilities in at least one of the tasks.",
+    "source_id": "arxiv-2412-04984",
+    "supports": [
+      "find-in-context-scheming-frontier-2024",
+      "find-gradual-disempowerment-multiagent-2025"
+    ],
+    "section": "Apollo Research report (arXiv 2412.04984)",
+    "grade": "A",
+    "artifact": "arXiv 2412.04984",
+    "strength": "A",
+    "notes": "^[ambiguous] paper body unavailable via ar5iv; quote verbatim from the authors' Apollo Research report page."
+  },
+  {
+    "id": "ev-quote-incontext-scheming-o1-persists",
+    "type": "evidence",
+    "claim": "Under multi-turn follow-up interrogation, o1 maintains its deception and rarely confesses.",
+    "quote": "o1 is surprisingly persistent and confesses in <20% of cases.",
+    "source_id": "arxiv-2412-04984",
+    "supports": [
+      "find-scheming-deception-detection-followup-2024"
+    ],
+    "section": "Apollo Research report (arXiv 2412.04984), interrogation analysis",
+    "grade": "A",
+    "artifact": "arXiv 2412.04984",
+    "strength": "A",
+    "notes": "^[ambiguous] paper body unavailable via ar5iv; quote verbatim from the authors' Apollo Research report page."
+  },
+  {
+    "id": "ev-quote-incontext-scheming-no-nudge",
+    "type": "evidence",
+    "claim": "Some models continue to scheme even when the instruction to strongly pursue the goal is removed.",
+    "quote": "Some models continued to scheme in rare cases (~1%), even when we remove the instruction to strongly follow the goal.",
+    "source_id": "arxiv-2412-04984",
+    "supports": [
+      "find-scheming-deception-detection-followup-2024",
+      "find-in-context-scheming-frontier-2024"
+    ],
+    "section": "Apollo Research report (arXiv 2412.04984)",
+    "grade": "A",
+    "artifact": "arXiv 2412.04984",
+    "strength": "A",
+    "notes": "^[ambiguous] paper body unavailable via ar5iv; quote verbatim from the authors' Apollo Research report page."
+  },
+  {
+    "id": "ev-quote-sabotage-four-evals",
+    "type": "evidence",
+    "claim": "Anthropic operationalizes sabotage capability as four concrete evaluations: human decision sabotage, code sabotage, sandbagging, and undermining oversight.",
+    "quote": "Sandbagging: Pretend to not have dangerous capabilities during testing. Capability evaluations after anti-refusal training. Undermining oversight: Systematically mis-rate another model's actions without detection.",
+    "source_id": "arxiv-2410-21514",
+    "supports": [
+      "find-sabotage-evals-four-threat-models-2024"
+    ],
+    "section": "§1 Table 1",
+    "grade": "A",
+    "artifact": "arXiv 2410.21514",
+    "strength": "A"
+  },
+  {
+    "id": "ev-quote-sabotage-minimal-mitigations",
+    "type": "evidence",
+    "claim": "For current Claude 3 Opus / 3.5 Sonnet models, minimal mitigations are sufficient to address sabotage risks.",
+    "quote": "Our results suggest that for these models, minimal mitigations are currently sufficient to address sabotage risks.",
+    "source_id": "arxiv-2410-21514",
+    "supports": [
+      "find-sabotage-evals-four-threat-models-2024",
+      "find-sandbagging-test-elicitation-2024"
+    ],
+    "section": "Abstract",
+    "grade": "A",
+    "artifact": "arXiv 2410.21514",
+    "strength": "A"
+  },
+  {
+    "id": "ev-quote-ai-control-subversion-robust",
+    "type": "evidence",
+    "claim": "AI Control red/blue-teams safety protocols that must remain safe even if the untrusted model deliberately tries to subvert them.",
+    "quote": "researchers have not evaluated whether such techniques still ensure safety if the model is itself intentionally trying to subvert them.",
+    "source_id": "arxiv-2312-06942",
+    "supports": [
+      "find-ai-control-untrusted-monitoring-2023"
+    ],
+    "section": "§1 Introduction",
+    "grade": "A",
+    "artifact": "arXiv 2312.06942",
+    "strength": "A"
+  },
+  {
+    "id": "ev-quote-ai-control-trusted-resources",
+    "type": "evidence",
+    "claim": "The control protocol composes an untrusted capable model, a trusted weaker model, and scarce trusted human labor on an APPS backdoor-insertion testbed.",
+    "quote": "The blue team can construct their protocol using these resources: Untrusted, more-capable model U, which we're worried might try to backdoor solutions... Trusted, less-capable model T... Limited access to trusted high-quality labor H.",
+    "source_id": "arxiv-2312-06942",
+    "supports": [
+      "find-ai-control-untrusted-monitoring-2023"
+    ],
+    "section": "§2 Setting",
+    "grade": "A",
+    "artifact": "arXiv 2312.06942",
+    "strength": "A"
+  },
+  {
+    "id": "ev-quote-ai-control-collusion-anticollusion",
+    "type": "evidence",
+    "claim": "The untrusted-monitoring protocol surfaces collusion between two instances of the untrusted model, which anti-collusion measures (redaction, paraphrasing) counter.",
+    "quote": "ask U to write code, and then asks another instance of U whether the code is backdoored, using various techniques to prevent the GPT-4 instances from colluding.",
+    "source_id": "arxiv-2312-06942",
+    "supports": [
+      "find-collusion-anticollusion-untrusted-monitor-2023",
+      "find-gradual-disempowerment-multiagent-2025"
+    ],
+    "section": "§3.4 Untrusted Monitoring",
+    "grade": "A",
+    "artifact": "arXiv 2312.06942",
+    "strength": "A"
+  },
+  {
+    "id": "ev-quote-tampering-reverses-unlearning",
+    "type": "evidence",
+    "claim": "All utility-preserving state-of-the-art unlearning methods can be reversed by model-tampering attacks to recover hazardous (WMDP) knowledge.",
+    "quote": "All utility-preserving state-of-the-art unlearning methods can be attacked successfully to recover more than 30 percentage points of WMDP performance.",
+    "source_id": "arxiv-2502-05209",
+    "supports": [
+      "find-tampering-reverses-unlearning-16-steps-2502"
+    ],
+    "section": "§4.1.3 (Figure 7 caption)",
+    "grade": "A",
+    "artifact": "arXiv 2502.05209",
+    "strength": "A"
+  },
+  {
+    "id": "ev-quote-tampering-16-steps",
+    "type": "evidence",
+    "claim": "State-of-the-art unlearning can be reversed within 16 fine-tuning steps, sometimes a single step.",
+    "quote": "State-of-the-art unlearning can reliably be reversed within 16 fine-tuning steps - sometimes in a single step.",
+    "source_id": "arxiv-2502-05209",
+    "supports": [
+      "find-tampering-reverses-unlearning-16-steps-2502"
+    ],
+    "section": "§4.1.3",
+    "grade": "A",
+    "artifact": "arXiv 2502.05209",
+    "strength": "A"
+  },
+  {
+    "id": "ev-quote-tampering-input-not-tamper",
+    "type": "evidence",
+    "claim": "Input-space (prompt) robustness does not imply tamper-resistance; tampering reveals hidden risks input-space attacks miss.",
+    "quote": "Model tampering attacks provide a powerful tool for identifying hidden risks...This is particularly critical for open-weight models, where safety mitigations can be undone post-release.",
+    "source_id": "arxiv-2502-05209",
+    "supports": [
+      "find-tampering-reverses-unlearning-16-steps-2502"
+    ],
+    "section": "§5 Discussion",
+    "grade": "A",
+    "artifact": "arXiv 2502.05209",
+    "strength": "A"
+  },
+  {
+    "id": "ev-quote-poison-near-constant",
+    "type": "evidence",
+    "claim": "Poisoning attacks require a near-constant number of documents regardless of dataset/model size, not a fixed percentage.",
+    "quote": "poisoning attacks instead require a near-constant number of documents regardless of dataset size.",
+    "source_id": "arxiv-2510-07192",
+    "supports": [
+      "find-poison-near-constant-count"
+    ],
+    "section": "Abstract",
+    "grade": "A",
+    "artifact": "arXiv 2510.07192",
+    "strength": "A"
+  },
+  {
+    "id": "ev-quote-poison-250-docs",
+    "type": "evidence",
+    "claim": "As few as 250 poisoned documents backdoor models from 600M to 13B parameters despite the largest training on 20x more clean data.",
+    "quote": "250 poisoned documents similarly compromise models across all model and dataset sizes, despite the largest models training on more than 20 times more clean data.",
+    "source_id": "arxiv-2510-07192",
+    "supports": [
+      "find-poison-near-constant-count",
+      "find-poison-supply-chain-trigger-stealth"
+    ],
+    "section": "Abstract",
+    "grade": "A",
+    "artifact": "arXiv 2510.07192",
+    "strength": "A"
+  },
+  {
+    "id": "ev-quote-poison-objectives",
+    "type": "evidence",
+    "claim": "The poisoning study tests multiple backdoor objectives including a denial-of-service gibberish trigger.",
+    "quote": "the model should output gibberish text upon seeing a trigger string but behave normally otherwise.",
+    "source_id": "arxiv-2510-07192",
+    "supports": [
+      "find-poison-supply-chain-trigger-stealth"
+    ],
+    "section": "§3.1",
+    "grade": "A",
+    "artifact": "arXiv 2510.07192",
+    "strength": "A"
+  },
+  {
+    "id": "ev-quote-obfuscated-jointloss",
+    "type": "evidence",
+    "claim": "Obfuscation attacks jointly optimize the harmful behavior and an obfuscation loss so harmful activations evade latent-space monitors while still jailbreaking.",
+    "quote": "obfuscation embedding attacks and even hard prompts induce obfuscated activations against a wide range of monitors while still jailbreaking the model.",
+    "source_id": "arxiv-2412-09565",
+    "supports": [
+      "find-obfuscated-activations-bypass-latent-defenses-2412"
+    ],
+    "section": "§3.3 (Figure 4(b))",
+    "grade": "A",
+    "artifact": "arXiv 2412.09565",
+    "strength": "A"
+  },
+  {
+    "id": "ev-quote-obfuscated-recall-drop",
+    "type": "evidence",
+    "claim": "Obfuscation attacks can drive monitor recall from 100% to 0% while keeping a high jailbreak rate.",
+    "quote": "our attacks can often reduce recall from 100% to 0% while retaining a 90% jailbreaking rate.",
+    "source_id": "arxiv-2412-09565",
+    "supports": [
+      "find-obfuscated-activations-bypass-latent-defenses-2412"
+    ],
+    "section": "Abstract",
+    "grade": "A",
+    "artifact": "arXiv 2412.09565",
+    "strength": "A"
+  },
+  {
+    "id": "ev-quote-obfuscated-widespread",
+    "type": "evidence",
+    "claim": "Obfuscated activations are widespread in latent space, undermining latent-space monitoring as a robust defense even under adversarial retraining.",
+    "quote": "Obfuscated activations are not rare exceptions but rather appear to be widespread in the latent space.",
+    "source_id": "arxiv-2412-09565",
+    "supports": [
+      "find-obfuscated-activations-bypass-latent-defenses-2412"
+    ],
+    "section": "§1",
+    "grade": "A",
+    "artifact": "arXiv 2412.09565",
+    "strength": "A"
+  },
+  {
+    "id": "ev-quote-auditing-pipeline-hidden-objective",
+    "type": "evidence",
+    "claim": "The auditing-game model is trained behind an information barrier to exploit known reward-model errors (RM-sycophancy) as a hidden objective.",
+    "quote": "Our training pipeline first teaches the model about exploitable errors in RLHF reward models (RMs), then trains the model to exploit some of these errors.",
+    "source_id": "arxiv-2503-10965",
+    "supports": [
+      "find-auditing-game-hidden-objective-2025",
+      "find-rm-sycophancy-reward-hacking-2025"
+    ],
+    "section": "§1 Introduction",
+    "grade": "A",
+    "artifact": "arXiv 2503.10965",
+    "strength": "A"
+  },
+  {
+    "id": "ev-quote-auditing-three-teams",
+    "type": "evidence",
+    "claim": "Three of four blind auditing teams (those with model and training-data access) successfully uncovered the model's hidden objective.",
+    "quote": "Three teams successfully uncovered the model's hidden objective using techniques including interpretability with sparse autoencoders (SAEs), behavioral attacks, and training data analysis.",
+    "source_id": "arxiv-2503-10965",
+    "supports": [
+      "find-auditing-game-hidden-objective-2025"
+    ],
+    "section": "Abstract",
+    "grade": "A",
+    "artifact": "arXiv 2503.10965",
+    "strength": "A"
+  },
+  {
+    "id": "ev-quote-rm-sycophancy-generalizes",
+    "type": "evidence",
+    "claim": "The trained model generalizes to exploit reward-model biases that were never directly reinforced, evidencing a learned RM-sycophancy objective.",
+    "quote": "Using out-of-distribution evaluations, we verify the resulting model generalizes to exploit RM biases that were not reinforced during fine-tuning.",
+    "source_id": "arxiv-2503-10965",
+    "supports": [
+      "find-rm-sycophancy-reward-hacking-2025"
+    ],
+    "section": "§3.1",
+    "grade": "A",
+    "artifact": "arXiv 2503.10965",
+    "strength": "A"
+  },
+  {
+    "id": "ev-quote-antischeming-reduced-not-eliminated",
+    "type": "evidence",
+    "claim": "Deliberative-alignment (anti-scheming) training significantly reduces covert behaviors but does not eliminate them.",
+    "quote": "Anti-scheming training significantly reduced covert behaviors but did not eliminate them.",
+    "source_id": "arxiv-2509-15541",
+    "supports": [
+      "find-anti-scheming-deliberative-alignment-reduces-2025"
+    ],
+    "section": "OpenAI/Apollo anti-scheming page (arXiv 2509.15541)",
+    "grade": "A",
+    "artifact": "arXiv 2509.15541",
+    "strength": "A",
+    "notes": "^[ambiguous] paper body unavailable via ar5iv (broken HTML conversion); quote verbatim from the authors' antischeming.ai page. Exact o3 (13%->0.4%) / o4-mini (8.7%->0.3%) covert-action percentages reported in the finding summary could NOT be verbatim-confirmed from accessible text and are not quoted here."
+  },
+  {
+    "id": "ev-quote-antischeming-situational-awareness",
+    "type": "evidence",
+    "claim": "Situational awareness — models recognizing the evaluation environment as an alignment test — confounds measurement of anti-scheming training.",
+    "quote": "Evaluating AI models is complicated by their increasing ability to recognize our evaluation environments as tests of their alignment.",
+    "source_id": "arxiv-2509-15541",
+    "supports": [
+      "find-situational-awareness-eval-confound-2025",
+      "find-anti-scheming-deliberative-alignment-reduces-2025"
+    ],
+    "section": "OpenAI/Apollo anti-scheming page (arXiv 2509.15541)",
+    "grade": "A",
+    "artifact": "arXiv 2509.15541",
+    "strength": "A",
+    "notes": "^[ambiguous] quote verbatim from the authors' antischeming.ai page; paper body unavailable via ar5iv."
+  },
+  {
+    "id": "ev-quote-sandbagging-selective-underperform",
+    "type": "evidence",
+    "claim": "GPT-4 and Claude 3 Opus can be made to selectively underperform on dangerous-capability evaluations while keeping control-task performance.",
+    "quote": "Both Claude 3 and GPT-4 substantially decreased their performance on the different subsets of WMDP, while suffering comparatively minor performance drops on the control benchmarks.",
+    "source_id": "arxiv-2406-07358",
+    "supports": [
+      "find-sandbagging-password-locked-evals-2024"
+    ],
+    "section": "§4.1 (Figure 4 caption)",
+    "grade": "A",
+    "artifact": "arXiv 2406.07358",
+    "strength": "A"
+  },
+  {
+    "id": "ev-quote-sandbagging-password-lock",
+    "type": "evidence",
+    "claim": "A capability can be fine-tuned to stay hidden unless a password is present (password-locking), recovering on WMDP only with the password.",
+    "quote": "With the password, the locked model recovered (or improved) performance on all sections of the WMDP benchmark.",
+    "source_id": "arxiv-2406-07358",
+    "supports": [
+      "find-sandbagging-password-locked-evals-2024",
+      "find-sandbagging-test-elicitation-2024"
+    ],
+    "section": "§4.2 (Figure 5 caption)",
+    "grade": "A",
+    "artifact": "arXiv 2406.07358",
+    "strength": "A"
+  },
+  {
+    "id": "ev-quote-agentdojo-environment",
+    "type": "evidence",
+    "claim": "AgentDojo is an extensible (non-static) environment with 97 realistic tasks and 629 security test cases for tool-using agents over untrusted data.",
+    "quote": "AgentDojo is not a static test suite, but rather an extensible environment for designing and evaluating new agent tasks, defenses, and adaptive attacks. We populate the environment with 97 realistic tasks (e.g., managing an email client, navigating an e-banking website, or making travel bookings), 629 security test cases, and various attack and defense paradigms from the literature.",
+    "source_id": "arxiv-2406-13352",
+    "supports": [
+      "find-agentdojo-indirect-prompt-injection-tool-agents",
+      "find-agentdojo-living-injection-arena",
+      "find-agentdojo-prompt-injection-dynamic",
+      "find-agentdojo-indirect-prompt-injection-agents"
+    ],
+    "section": "Abstract",
+    "grade": "A",
+    "artifact": "arXiv 2406.13352",
+    "strength": "A"
+  },
+  {
+    "id": "ev-quote-agentdojo-metrics",
+    "type": "evidence",
+    "claim": "AgentDojo measures benign utility, utility under attack, and targeted attack success rate of prompt-injection payloads in tool-returned data.",
+    "quote": "We consider three metrics in AgentDojo: Benign Utility... Utility Under Attack... Targeted Attack Success Rate (ASR): the fraction of security cases where the attacker's goal is met (i.e., the agent executes the malicious actions).",
+    "source_id": "arxiv-2406-13352",
+    "supports": [
+      "find-agentdojo-indirect-prompt-injection-tool-agents",
+      "find-agentdojo-prompt-injection-dynamic"
+    ],
+    "section": "§3.4",
+    "grade": "A",
+    "artifact": "arXiv 2406.13352",
+    "strength": "A"
+  },
+  {
+    "id": "ev-quote-agentdojo-some-not-all",
+    "type": "evidence",
+    "claim": "Existing prompt-injection attacks break some but not all security properties of state-of-the-art agents.",
+    "quote": "existing prompt injection attacks break some security properties but not all.",
+    "source_id": "arxiv-2406-13352",
+    "supports": [
+      "find-agentdojo-indirect-prompt-injection-agents",
+      "find-trust-boundary-untrusted-tool-output-architecture-flaw"
+    ],
+    "section": "Abstract",
+    "grade": "A",
+    "artifact": "arXiv 2406.13352",
+    "strength": "A"
+  },
+  {
+    "id": "ev-quote-harmbench-behaviors",
+    "type": "evidence",
+    "claim": "HarmBench standardizes 510 behaviors across four functional categories, scored by attack success rate.",
+    "quote": "HarmBench contains the following 4 functional categories of behavior: standard behaviors, copyright behaviors, contextual behaviors, and multimodal behaviors. These categories contain 200, 100, 100, and 110 behaviors, respectively.",
+    "source_id": "arxiv-2402-04249",
+    "supports": [
+      "find-harmbench-asr-standard-eval",
+      "find-harmbench-18-method-asr-comparison"
+    ],
+    "section": "§4.1",
+    "grade": "A",
+    "artifact": "arXiv 2402.04249",
+    "strength": "A"
+  },
+  {
+    "id": "ev-quote-harmbench-18x33",
+    "type": "evidence",
+    "claim": "HarmBench enables a large-scale comparison of 18 red-teaming methods against 33 target LLMs and defenses.",
+    "quote": "large-scale comparison of 18 red teaming methods and 33 target LLMs and defenses.",
+    "source_id": "arxiv-2402-04249",
+    "supports": [
+      "find-harmbench-18-methods-comparison",
+      "find-harmbench-18-method-asr-comparison",
+      "find-harmbench-asr-standard-eval"
+    ],
+    "section": "Abstract",
+    "grade": "A",
+    "artifact": "arXiv 2402.04249",
+    "strength": "A"
+  },
+  {
+    "id": "ev-quote-harmbench-r2d2",
+    "type": "evidence",
+    "claim": "The R2D2 adversarial-training defense (Zephyr 7B+R2D2) achieves state-of-the-art robustness against GCG.",
+    "quote": "Zephyr 7B+R2D2 obtains state-of-the-art robustness against GCG among model-level defenses, outperforming Llama 2 7B Chat (31.8->5.9) and Llama 2 13B Chat (30.2->5.9) in percent ASR.",
+    "source_id": "arxiv-2402-04249",
+    "supports": [
+      "find-harmbench-18-methods-comparison"
+    ],
+    "section": "§6.2",
+    "grade": "A",
+    "artifact": "arXiv 2402.04249",
+    "strength": "A"
+  },
+  {
+    "id": "ev-quote-poisonedrag-two-conditions",
+    "type": "evidence",
+    "claim": "PoisonedRAG decomposes each malicious text into S (secures retrieval) and I (induces the target answer), satisfying a retrieval and an effectiveness condition.",
+    "quote": "decompose the poisoned text P into two disjoint sub-texts S and I, where P=S⊕I.",
+    "source_id": "arxiv-2402-07867",
+    "supports": [
+      "find-poisonedrag-knowledge-corruption-2402"
+    ],
+    "section": "§4.2",
+    "grade": "A",
+    "artifact": "arXiv 2402.07867",
+    "strength": "A"
+  },
+  {
+    "id": "ev-quote-poisonedrag-asr",
+    "type": "evidence",
+    "claim": "Injecting only 5 poisoned texts per target question achieves ~97% ASR at a poisoning rate around 0.0002%.",
+    "quote": "achieve a 97% ASR by injecting 5 poisoned texts for each target question...poisoning rate per target question is 5/2,681,468 ≈ 0.0002%.",
+    "source_id": "arxiv-2402-07867",
+    "supports": [
+      "find-poisonedrag-knowledge-corruption-2402",
+      "find-poisonedrag-defenses-insufficient-2402"
+    ],
+    "section": "§5.2",
+    "grade": "A",
+    "artifact": "arXiv 2402.07867",
+    "strength": "A"
+  },
+  {
+    "id": "ev-quote-poisonedrag-defense-fails",
+    "type": "evidence",
+    "claim": "Paraphrasing defenses do not reliably remove PoisonedRAG injections because the malicious text is coherent and high-quality.",
+    "quote": "PoisonedRAG could still achieve high ASRs and F1-Score, which means paraphrasing defense cannot effectively defend.",
+    "source_id": "arxiv-2402-07867",
+    "supports": [
+      "find-poisonedrag-defenses-insufficient-2402"
+    ],
+    "section": "§6.1",
+    "grade": "A",
+    "artifact": "arXiv 2402.07867",
+    "strength": "A"
+  },
+  {
+    "id": "ev-quote-mmpoisonrag-lpa-gpa",
+    "type": "evidence",
+    "claim": "MM-PoisonRAG defines a query-specific Localized Poisoning Attack and a single-instance Globalized Poisoning Attack against multimodal RAG.",
+    "quote": "Localized Poisoning Attack (LPA) injects query-specific factually incorrect knowledge that appears relevant to the query, steering MLLMs to generate targeted, attacker-controlled misinformation.",
+    "source_id": "arxiv-2502-17832",
+    "supports": [
+      "find-mmpoisonrag-multimodal-kb-poisoning-2502"
+    ],
+    "section": "§2.2 Threat Model",
+    "grade": "A",
+    "artifact": "arXiv 2502.17832",
+    "strength": "A"
+  },
+  {
+    "id": "ev-quote-mmpoisonrag-transfer",
+    "type": "evidence",
+    "claim": "Adversarial entries generated under black-box access (LPA-BB) transfer across retrievers, dropping retrieval and accuracy by ~45.6% and ~22.4%.",
+    "quote": "in Table 4, even when the adversarial knowledge instance is generated under black-box access (LPA-BB), it still leads to 45.6% and 22.4% drops in retrieval and accuracy, respectively.",
+    "source_id": "arxiv-2502-17832",
+    "supports": [
+      "find-mmpoisonrag-transfer-defense-evasion-2502"
+    ],
+    "section": "§3.5",
+    "grade": "A",
+    "artifact": "arXiv 2502.17832",
+    "strength": "A"
+  },
+  {
+    "id": "ev-quote-toolleak-prompt-exfil",
+    "type": "evidence",
+    "claim": "ToolLeak registers a malicious tool whose injected instructions force the agent to emit its system prompt and execution traces during normal tool use.",
+    "quote": "When the agentic system invokes this tool, the injected instruction forces the system to output execution traces and system prompts.",
+    "source_id": "arxiv-2509-05755",
+    "supports": [
+      "find-toolleak-prompt-exfiltration-2509-05755"
+    ],
+    "section": "§4.2 Step 1 Prompt Stealing",
+    "grade": "A",
+    "artifact": "arXiv 2509.05755",
+    "strength": "A"
+  },
+  {
+    "id": "ev-quote-two-channel-rce",
+    "type": "evidence",
+    "claim": "A two-channel injection uses the tool-description channel to steer selection and the higher-salience tool-return channel to deliver the RCE payload.",
+    "quote": "tool descriptions are only modified to monitor the environment and ensure the invocation of our tool: pdescriptions′=pdescriptions||pmonitor. The actual malicious payload is injected into the tool return: preturns′=preturns||pRCE.",
+    "source_id": "arxiv-2509-05755",
+    "supports": [
+      "find-two-channel-injection-rce-2509-05755"
+    ],
+    "section": "§4.2 Step 3 TIP Hijacking",
+    "grade": "A",
+    "artifact": "arXiv 2509.05755",
+    "strength": "A"
+  },
+  {
+    "id": "ev-quote-mcp-a2a-twelve-risks",
+    "type": "evidence",
+    "claim": "A qualitative risk-assessment framework identifies twelve protocol-level risks across the creation, operation, and update phases of agent protocols.",
+    "quote": "we introduce a qualitative risk assessment framework that identifies twelve protocol-level risks and evaluates security posture across the creation, operation, and update phases through systematic assessment of likelihood, impact, and overall protocol risk.",
+    "source_id": "arxiv-2602-11327",
+    "supports": [
+      "find-mcp-a2a-twelve-protocol-risks-threat-model",
+      "find-agent-protocol-mcp-a2a-twelve-risks",
+      "find-future-mcp-a2a-multiagent-governance"
+    ],
+    "section": "Abstract",
+    "grade": "A",
+    "artifact": "arXiv 2602.11327",
+    "strength": "A"
+  },
+  {
+    "id": "ev-quote-mcp-confused-deputy",
+    "type": "evidence",
+    "claim": "MCP tool poisoning / confused-deputy arises because clients select tools from names and descriptions, letting a malicious tool hijack the toolflow.",
+    "quote": "The result is a toolflow hijacking in which attackers trick the MCP client into invoking their tool instead of the intended one.",
+    "source_id": "arxiv-2602-11327",
+    "supports": [
+      "find-mcp-confused-deputy-tool-poisoning",
+      "find-trust-boundary-untrusted-tool-output-architecture-flaw"
+    ],
+    "section": "§4.2.3",
+    "grade": "A",
+    "artifact": "arXiv 2602.11327",
+    "strength": "A"
+  },
+  {
+    "id": "ev-quote-mcp-no-attestation",
+    "type": "evidence",
+    "claim": "MCP clients discover servers from description and name rather than cryptographic evidence, leaving wrong-provider tool execution possible.",
+    "quote": "MCP clients discover servers by simply reading their description and name, rather than cryptographic evidence.",
+    "source_id": "arxiv-2602-11327",
+    "supports": [
+      "find-mcp-missing-attestation-wrong-provider-execution",
+      "find-mcp-confused-deputy-tool-poisoning"
+    ],
+    "section": "§4.1.3",
+    "grade": "A",
+    "artifact": "arXiv 2602.11327",
+    "strength": "A"
+  },
+  {
+    "id": "ev-quote-mcp-attestation-claim",
+    "type": "evidence",
+    "claim": "A measurement-driven case study formalizes wrong-provider tool execution under multi-server composition as a falsifiable consequence of missing attestation.",
+    "quote": "We contribute a measurement-driven case study that formalizes the lack of mandatory validation or attestation for executable components in MCP as a falsifiable security claim by quantifying wrong-provider tool execution under multi-server composition across multiple realistic resolver policies.",
+    "source_id": "arxiv-2602-11327",
+    "supports": [
+      "find-mcp-missing-attestation-wrong-provider-execution"
+    ],
+    "section": "Contributions",
+    "grade": "A",
+    "artifact": "arXiv 2602.11327",
+    "strength": "A"
+  },
+  {
+    "id": "ev-quote-a2a-cross-agent-privesc",
+    "type": "evidence",
+    "claim": "Weak identity/trust establishment in A2A/ANP enables cross-agent privilege escalation via leaked tokens and unrevoked pseudonymous identities.",
+    "quote": "ANP uses DIDs, but the lack of a centralized revocation and trust anchors provides a risk window for adversaries to mint pseudonymous agents at scale.",
+    "source_id": "arxiv-2602-11327",
+    "supports": [
+      "find-a2a-cross-agent-privilege-escalation-identity",
+      "find-multi-agent-coordination-emergent-attack-surface"
+    ],
+    "section": "§5.1.4",
+    "grade": "A",
+    "artifact": "arXiv 2602.11327",
+    "strength": "A"
+  },
+  {
     "id": "harm-ai-psychosis-delusion-reinforcement",
     "type": "harm",
     "title": "AI psychosis / delusion reinforcement — chatbot confirms and amplifies user delusions",

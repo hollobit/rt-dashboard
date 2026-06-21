@@ -8,11 +8,11 @@
   ],
   "algorithm": "networkx.greedy_modularity",
   "community_count": 113,
-  "unit_count": 1731,
+  "unit_count": 1780,
   "units_by_kind": {
     "finding": 316,
     "control": 75,
-    "evidence": 33,
+    "evidence": 82,
     "risk": 60,
     "standard": 42,
     "attack_technique": 142,

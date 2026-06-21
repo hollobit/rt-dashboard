@@ -683,6 +683,11 @@ function evidenceBlock(u,s,sm){
   const body=(f&&f.summary)||u.text||"";
   const notes=f&&f.notes;
   const utext=u.text&&u.text.length>(body.length+40)?u.text:""; // 유닛이 더 풍부하면 맥락으로
+  const fid=(f&&f.id)||u.ref_id||u.id;
+  // Tier2: 이 finding을 뒷받침하는 논문 본문 verbatim 인용(evidence.quote)
+  const quotes=byType("evidence").filter(e=>e.quote&&arr(e.supports).includes(fid));
+  const quoteBlocks=quotes.map(e=>{const src=byType("source").find(x=>x.id===e.source_id);
+    return `<div style="margin:5px 0;padding:5px 8px;background:var(--panel2);border-left:3px solid var(--acc)"><span class="small" style="font-style:italic">“${esc(String(e.quote).slice(0,500))}${String(e.quote).length>500?'…':''}”</span><br><span class="small muted">— ${esc(e.section||'')} ${esc(e.artifact||'')}${src&&src.url?` <a href="${esc(src.url)}" target="_blank">출처↗</a>`:""}${e.grade?` · grade ${esc(e.grade)}`:""}</span></div>`;}).join("");
   const sids=arr((f||u).source_ids);
   const srcBlocks=sids.map(sid=>{const src=byType("source").find(x=>x.id===sid);if(!src)return "";
     return `<div style="margin:5px 0;padding-left:8px;border-left:2px solid var(--acc2)"><b class="small">${esc((src.title||sid).slice(0,90))}</b>${src.org?` <span class="muted small">· ${esc(src.org)}</span>`:""}${src.published?` <span class="muted small">· ${esc(src.published)}</span>`:""}${src.url?` <a class="small" href="${esc(src.url)}" target="_blank">원본↗</a>`:""}${src.abstract?`<div class="small muted" style="margin-top:2px;line-height:1.5">${esc(src.abstract.slice(0,600))}${src.abstract.length>600?'…':''}</div>`:""}</div>`;}).join("");
@@ -692,6 +697,7 @@ function evidenceBlock(u,s,sm){
     ${body?`<div class="small" style="margin:5px 0;line-height:1.55">${esc(body)}</div>`:""}
     ${notes?`<div class="small muted" style="margin:4px 0">📝 ${esc(String(notes).slice(0,400))}</div>`:""}
     ${utext?`<div class="small muted" style="margin:4px 0;line-height:1.5">🔎 분석 맥락: ${esc(utext.slice(0,500))}${utext.length>500?'…':''}</div>`:""}
+    ${quoteBlocks?`<div style="margin-top:5px"><span class="small" style="color:var(--acc)">❝ 논문 원문 인용(verbatim):</span>${quoteBlocks}</div>`:""}
     ${srcBlocks?`<div style="margin-top:5px"><span class="small muted">📚 출처 원문(초록):</span>${srcBlocks}</div>`:""}</details>`;
 }
 function guideHits(qt){
