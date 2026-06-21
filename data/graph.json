@@ -10690,7 +10690,7 @@
     {
       "id": "atlas:AML.T0051",
       "kind": "atlas",
-      "label": "AML.T0051",
+      "label": "AML.T0051 — LLM Prompt Injection",
       "weight": 49,
       "meta": {}
     },
@@ -11325,7 +11325,7 @@
     {
       "id": "atlas:AML.T0054",
       "kind": "atlas",
-      "label": "AML.T0054",
+      "label": "AML.T0054 — LLM Jailbreak",
       "weight": 107,
       "meta": {}
     },
@@ -12056,7 +12056,7 @@
     {
       "id": "atlas:AML.T0018",
       "kind": "atlas",
-      "label": "AML.T0018",
+      "label": "AML.T0018 — Manipulate AI Model",
       "weight": 10,
       "meta": {}
     },
@@ -13426,7 +13426,7 @@
     {
       "id": "atlas:AML.T0024",
       "kind": "atlas",
-      "label": "AML.T0024",
+      "label": "AML.T0024 — Exfiltration via AI Inference API",
       "weight": 13,
       "meta": {}
     },
@@ -13462,7 +13462,7 @@
     {
       "id": "atlas:AML.T0053",
       "kind": "atlas",
-      "label": "AML.T0053",
+      "label": "AML.T0053 — AI Agent Tool Invocation",
       "weight": 16,
       "meta": {}
     },
@@ -13894,7 +13894,7 @@
     {
       "id": "atlas:AML.T0010",
       "kind": "atlas",
-      "label": "AML.T0010",
+      "label": "AML.T0010 — AI Supply Chain Compromise",
       "weight": 23,
       "meta": {}
     },
@@ -13924,7 +13924,7 @@
     {
       "id": "atlas:AML.T0048",
       "kind": "atlas",
-      "label": "AML.T0048",
+      "label": "AML.T0048 — External Harms",
       "weight": 3,
       "meta": {}
     },
@@ -14051,14 +14051,14 @@
     {
       "id": "atlas:AML.T0043",
       "kind": "atlas",
-      "label": "AML.T0043",
+      "label": "AML.T0043 — Craft Adversarial Data",
       "weight": 22,
       "meta": {}
     },
     {
       "id": "atlas:AML.T0020",
       "kind": "atlas",
-      "label": "AML.T0020",
+      "label": "AML.T0020 — Poison Training Data",
       "weight": 10,
       "meta": {}
     },
@@ -15093,7 +15093,7 @@
     {
       "id": "atlas:AML.T0040",
       "kind": "atlas",
-      "label": "AML.T0040",
+      "label": "AML.T0040 — AI Model Inference API Access",
       "weight": 12,
       "meta": {}
     },
@@ -15309,7 +15309,7 @@
     {
       "id": "atlas:AML.T0051.001",
       "kind": "atlas",
-      "label": "AML.T0051.001",
+      "label": "AML.T0051.001 — Indirect",
       "weight": 5,
       "meta": {}
     },
@@ -17314,7 +17314,7 @@
     {
       "id": "atlas:AML.T0065",
       "kind": "atlas",
-      "label": "AML.T0065",
+      "label": "AML.T0065 — LLM Prompt Crafting",
       "weight": 12,
       "meta": {}
     },
@@ -17527,14 +17527,14 @@
     {
       "id": "atlas:AML.T0010.005",
       "kind": "atlas",
-      "label": "AML.T0010.005",
+      "label": "AML.T0010.005 — AI Agent Tool",
       "weight": 4,
       "meta": {}
     },
     {
       "id": "atlas:AML.T0110",
       "kind": "atlas",
-      "label": "AML.T0110",
+      "label": "AML.T0110 — AI Agent Tool Poisoning",
       "weight": 1,
       "meta": {}
     },
@@ -17573,7 +17573,7 @@
     {
       "id": "atlas:AML.T0056",
       "kind": "atlas",
-      "label": "AML.T0056",
+      "label": "AML.T0056 — Extract LLM System Prompt",
       "weight": 4,
       "meta": {}
     },
@@ -17600,7 +17600,7 @@
     {
       "id": "atlas:AML.T0052.000",
       "kind": "atlas",
-      "label": "AML.T0052.000",
+      "label": "AML.T0052.000 — Spearphishing via Social Engineering LLM",
       "weight": 3,
       "meta": {}
     },
@@ -17677,42 +17677,42 @@
     {
       "id": "atlas:AML.T0070",
       "kind": "atlas",
-      "label": "AML.T0070",
+      "label": "AML.T0070 — RAG Poisoning",
       "weight": 8,
       "meta": {}
     },
     {
       "id": "atlas:AML.T0071",
       "kind": "atlas",
-      "label": "AML.T0071",
+      "label": "AML.T0071 — False RAG Entry Injection",
       "weight": 5,
       "meta": {}
     },
     {
       "id": "atlas:AML.T0066",
       "kind": "atlas",
-      "label": "AML.T0066",
+      "label": "AML.T0066 — Retrieval Content Crafting",
       "weight": 4,
       "meta": {}
     },
     {
       "id": "atlas:AML.T0073",
       "kind": "atlas",
-      "label": "AML.T0073",
+      "label": "AML.T0073 — Impersonation",
       "weight": 1,
       "meta": {}
     },
     {
       "id": "atlas:AML.T0080",
       "kind": "atlas",
-      "label": "AML.T0080",
+      "label": "AML.T0080 — AI Agent Context Poisoning",
       "weight": 3,
       "meta": {}
     },
     {
       "id": "atlas:AML.T0086",
       "kind": "atlas",
-      "label": "AML.T0086",
+      "label": "AML.T0086 — Exfiltration via AI Agent Tool Invocation",
       "weight": 2,
       "meta": {}
     },
@@ -17737,7 +17737,7 @@
     {
       "id": "atlas:AML.T0062",
       "kind": "atlas",
-      "label": "AML.T0062",
+      "label": "AML.T0062 — Discover LLM Hallucinations",
       "weight": 2,
       "meta": {}
     },
@@ -17799,7 +17799,7 @@
     {
       "id": "atlas:AML.T0015",
       "kind": "atlas",
-      "label": "AML.T0015",
+      "label": "AML.T0015 — Evade AI Model",
       "weight": 6,
       "meta": {}
     },
@@ -19200,7 +19200,7 @@
     {
       "id": "atlas:AML.T0011",
       "kind": "atlas",
-      "label": "AML.T0011",
+      "label": "AML.T0011 — User Execution",
       "weight": 5,
       "meta": {}
     },
@@ -20199,7 +20199,7 @@
     {
       "id": "atlas:AML.T0024.000",
       "kind": "atlas",
-      "label": "AML.T0024.000",
+      "label": "AML.T0024.000 — Infer Training Data Membership",
       "weight": 2,
       "meta": {}
     },
@@ -20243,7 +20243,7 @@
     {
       "id": "atlas:AML.T0024.001",
       "kind": "atlas",
-      "label": "AML.T0024.001",
+      "label": "AML.T0024.001 — Invert AI Model",
       "weight": 2,
       "meta": {}
     },
@@ -20272,21 +20272,21 @@
     {
       "id": "atlas:AML.T0024.002",
       "kind": "atlas",
-      "label": "AML.T0024.002",
+      "label": "AML.T0024.002 — Extract AI Model",
       "weight": 2,
       "meta": {}
     },
     {
       "id": "atlas:AML.T0005.001",
       "kind": "atlas",
-      "label": "AML.T0005.001",
+      "label": "AML.T0005.001 — Train Proxy via Replication",
       "weight": 2,
       "meta": {}
     },
     {
       "id": "atlas:AML.T0005",
       "kind": "atlas",
-      "label": "AML.T0005",
+      "label": "AML.T0005 — Create Proxy AI Model",
       "weight": 1,
       "meta": {}
     },
@@ -20332,14 +20332,14 @@
     {
       "id": "atlas:AML.T0043.000",
       "kind": "atlas",
-      "label": "AML.T0043.000",
+      "label": "AML.T0043.000 — White-Box Optimization",
       "weight": 2,
       "meta": {}
     },
     {
       "id": "atlas:AML.T0043.001",
       "kind": "atlas",
-      "label": "AML.T0043.001",
+      "label": "AML.T0043.001 — Black-Box Optimization",
       "weight": 1,
       "meta": {}
     },
@@ -20383,14 +20383,14 @@
     {
       "id": "atlas:AML.T0019",
       "kind": "atlas",
-      "label": "AML.T0019",
+      "label": "AML.T0019 — Publish Poisoned Datasets",
       "weight": 1,
       "meta": {}
     },
     {
       "id": "atlas:AML.T0059",
       "kind": "atlas",
-      "label": "AML.T0059",
+      "label": "AML.T0059 — Erode Dataset Integrity",
       "weight": 1,
       "meta": {}
     },
@@ -20421,21 +20421,21 @@
     {
       "id": "atlas:AML.T0018.000",
       "kind": "atlas",
-      "label": "AML.T0018.000",
+      "label": "AML.T0018.000 — Poison AI Model",
       "weight": 4,
       "meta": {}
     },
     {
       "id": "atlas:AML.T0058",
       "kind": "atlas",
-      "label": "AML.T0058",
+      "label": "AML.T0058 — Publish Poisoned Models",
       "weight": 3,
       "meta": {}
     },
     {
       "id": "atlas:AML.T0010.003",
       "kind": "atlas",
-      "label": "AML.T0010.003",
+      "label": "AML.T0010.003 — Model",
       "weight": 4,
       "meta": {}
     },
@@ -20466,21 +20466,21 @@
     {
       "id": "atlas:AML.T0069",
       "kind": "atlas",
-      "label": "AML.T0069",
+      "label": "AML.T0069 — Discover LLM System Information",
       "weight": 1,
       "meta": {}
     },
     {
       "id": "atlas:AML.T0069.002",
       "kind": "atlas",
-      "label": "AML.T0069.002",
+      "label": "AML.T0069.002 — System Prompt",
       "weight": 1,
       "meta": {}
     },
     {
       "id": "atlas:AML.T0051.000",
       "kind": "atlas",
-      "label": "AML.T0051.000",
+      "label": "AML.T0051.000 — Direct",
       "weight": 3,
       "meta": {}
     },
@@ -20508,7 +20508,7 @@
     {
       "id": "atlas:AML.T0057",
       "kind": "atlas",
-      "label": "AML.T0057",
+      "label": "AML.T0057 — LLM Data Leakage",
       "weight": 2,
       "meta": {}
     },
@@ -20538,7 +20538,7 @@
     {
       "id": "atlas:AML.T0068",
       "kind": "atlas",
-      "label": "AML.T0068",
+      "label": "AML.T0068 — LLM Prompt Obfuscation",
       "weight": 2,
       "meta": {}
     },
@@ -20569,7 +20569,7 @@
     {
       "id": "atlas:AML.T0061",
       "kind": "atlas",
-      "label": "AML.T0061",
+      "label": "AML.T0061 — LLM Prompt Self-Replication",
       "weight": 1,
       "meta": {}
     },
@@ -20611,21 +20611,21 @@
     {
       "id": "atlas:AML.T0029",
       "kind": "atlas",
-      "label": "AML.T0029",
+      "label": "AML.T0029 — Denial of AI Service",
       "weight": 1,
       "meta": {}
     },
     {
       "id": "atlas:AML.T0034",
       "kind": "atlas",
-      "label": "AML.T0034",
+      "label": "AML.T0034 — Cost Harvesting",
       "weight": 1,
       "meta": {}
     },
     {
       "id": "atlas:AML.T0046",
       "kind": "atlas",
-      "label": "AML.T0046",
+      "label": "AML.T0046 — Spamming AI System with Chaff Data",
       "weight": 1,
       "meta": {}
     },
@@ -20672,7 +20672,7 @@
     {
       "id": "atlas:AML.T0099",
       "kind": "atlas",
-      "label": "AML.T0099",
+      "label": "AML.T0099 — AI Agent Tool Data Poisoning",
       "weight": 1,
       "meta": {}
     },
@@ -20715,7 +20715,7 @@
     {
       "id": "atlas:AML.T0109",
       "kind": "atlas",
-      "label": "AML.T0109",
+      "label": "AML.T0109 — AI Supply Chain Rug Pull",
       "weight": 1,
       "meta": {}
     },
@@ -20737,7 +20737,7 @@
     {
       "id": "atlas:AML.T0001",
       "kind": "atlas",
-      "label": "AML.T0001",
+      "label": "AML.T0001 — Search Open AI Vulnerability Analysis",
       "weight": 1,
       "meta": {}
     },
@@ -20759,7 +20759,7 @@
     {
       "id": "atlas:AML.T0004",
       "kind": "atlas",
-      "label": "AML.T0004",
+      "label": "AML.T0004 — Search Application Repositories",
       "weight": 1,
       "meta": {}
     },
@@ -20783,7 +20783,7 @@
     {
       "id": "atlas:AML.T0007",
       "kind": "atlas",
-      "label": "AML.T0007",
+      "label": "AML.T0007 — Discover AI Artifacts",
       "weight": 1,
       "meta": {}
     },
@@ -20807,7 +20807,7 @@
     {
       "id": "atlas:AML.T0014",
       "kind": "atlas",
-      "label": "AML.T0014",
+      "label": "AML.T0014 — Discover AI Model Family",
       "weight": 1,
       "meta": {}
     },
@@ -20829,7 +20829,7 @@
     {
       "id": "atlas:AML.T0016",
       "kind": "atlas",
-      "label": "AML.T0016",
+      "label": "AML.T0016 — Obtain Capabilities",
       "weight": 1,
       "meta": {}
     },
@@ -20851,7 +20851,7 @@
     {
       "id": "atlas:AML.T0017",
       "kind": "atlas",
-      "label": "AML.T0017",
+      "label": "AML.T0017 — Develop Capabilities",
       "weight": 1,
       "meta": {}
     },
@@ -20873,7 +20873,7 @@
     {
       "id": "atlas:AML.T0021",
       "kind": "atlas",
-      "label": "AML.T0021",
+      "label": "AML.T0021 — Establish Accounts",
       "weight": 1,
       "meta": {}
     },
@@ -20898,7 +20898,7 @@
     {
       "id": "atlas:AML.T0025",
       "kind": "atlas",
-      "label": "AML.T0025",
+      "label": "AML.T0025 — Exfiltration via Cyber Means",
       "weight": 1,
       "meta": {}
     },
@@ -20923,7 +20923,7 @@
     {
       "id": "atlas:AML.T0031",
       "kind": "atlas",
-      "label": "AML.T0031",
+      "label": "AML.T0031 — Erode AI Model Integrity",
       "weight": 1,
       "meta": {}
     },
@@ -20948,7 +20948,7 @@
     {
       "id": "atlas:AML.T0035",
       "kind": "atlas",
-      "label": "AML.T0035",
+      "label": "AML.T0035 — AI Artifact Collection",
       "weight": 1,
       "meta": {}
     },
@@ -20972,7 +20972,7 @@
     {
       "id": "atlas:AML.T0037",
       "kind": "atlas",
-      "label": "AML.T0037",
+      "label": "AML.T0037 — Data from Local System",
       "weight": 1,
       "meta": {}
     },
@@ -20999,7 +20999,7 @@
     {
       "id": "atlas:AML.T0041",
       "kind": "atlas",
-      "label": "AML.T0041",
+      "label": "AML.T0041 — Physical Environment Access",
       "weight": 1,
       "meta": {}
     },
@@ -21024,7 +21024,7 @@
     {
       "id": "atlas:AML.T0044",
       "kind": "atlas",
-      "label": "AML.T0044",
+      "label": "AML.T0044 — Full AI Model Access",
       "weight": 1,
       "meta": {}
     },
@@ -21049,7 +21049,7 @@
     {
       "id": "atlas:AML.T0047",
       "kind": "atlas",
-      "label": "AML.T0047",
+      "label": "AML.T0047 — AI-Enabled Product or Service",
       "weight": 1,
       "meta": {}
     },
@@ -21075,7 +21075,7 @@
     {
       "id": "atlas:AML.T0049",
       "kind": "atlas",
-      "label": "AML.T0049",
+      "label": "AML.T0049 — Exploit Public-Facing Application",
       "weight": 1,
       "meta": {}
     },
@@ -21099,7 +21099,7 @@
     {
       "id": "atlas:AML.T0055",
       "kind": "atlas",
-      "label": "AML.T0055",
+      "label": "AML.T0055 — Unsecured Credentials",
       "weight": 1,
       "meta": {}
     },
@@ -21124,7 +21124,7 @@
     {
       "id": "atlas:AML.T0060",
       "kind": "atlas",
-      "label": "AML.T0060",
+      "label": "AML.T0060 — Publish Hallucinated Entities",
       "weight": 1,
       "meta": {}
     },
@@ -21148,7 +21148,7 @@
     {
       "id": "atlas:AML.T0063",
       "kind": "atlas",
-      "label": "AML.T0063",
+      "label": "AML.T0063 — Discover AI Model Outputs",
       "weight": 1,
       "meta": {}
     },
@@ -21173,7 +21173,7 @@
     {
       "id": "atlas:AML.T0064",
       "kind": "atlas",
-      "label": "AML.T0064",
+      "label": "AML.T0064 — Gather RAG-Indexed Targets",
       "weight": 1,
       "meta": {}
     },
@@ -21199,14 +21199,14 @@
     {
       "id": "atlas:AML.T0067",
       "kind": "atlas",
-      "label": "AML.T0067",
+      "label": "AML.T0067 — LLM Trusted Output Components Manipulation",
       "weight": 1,
       "meta": {}
     },
     {
       "id": "atlas:AML.T0067.000",
       "kind": "atlas",
-      "label": "AML.T0067.000",
+      "label": "AML.T0067.000 — Citations",
       "weight": 1,
       "meta": {}
     },
@@ -21232,7 +21232,7 @@
     {
       "id": "atlas:AML.T0072",
       "kind": "atlas",
-      "label": "AML.T0072",
+      "label": "AML.T0072 — Reverse Shell",
       "weight": 1,
       "meta": {}
     },
@@ -21256,7 +21256,7 @@
     {
       "id": "atlas:AML.T0074",
       "kind": "atlas",
-      "label": "AML.T0074",
+      "label": "AML.T0074 — Masquerading",
       "weight": 1,
       "meta": {}
     },
@@ -21281,7 +21281,7 @@
     {
       "id": "atlas:AML.T0076",
       "kind": "atlas",
-      "label": "AML.T0076",
+      "label": "AML.T0076 — Corrupt AI Model",
       "weight": 1,
       "meta": {}
     },
@@ -21306,7 +21306,7 @@
     {
       "id": "atlas:AML.T0078",
       "kind": "atlas",
-      "label": "AML.T0078",
+      "label": "AML.T0078 — Drive-by Compromise",
       "weight": 1,
       "meta": {}
     },
@@ -21333,7 +21333,7 @@
     {
       "id": "atlas:AML.T0082",
       "kind": "atlas",
-      "label": "AML.T0082",
+      "label": "AML.T0082 — RAG Credential Harvesting",
       "weight": 1,
       "meta": {}
     },
@@ -21363,21 +21363,21 @@
     {
       "id": "atlas:AML.T0084",
       "kind": "atlas",
-      "label": "AML.T0084",
+      "label": "AML.T0084 — Discover AI Agent Configuration",
       "weight": 1,
       "meta": {}
     },
     {
       "id": "atlas:AML.T0084.001",
       "kind": "atlas",
-      "label": "AML.T0084.001",
+      "label": "AML.T0084.001 — Tool Definitions",
       "weight": 1,
       "meta": {}
     },
     {
       "id": "atlas:AML.T0084.002",
       "kind": "atlas",
-      "label": "AML.T0084.002",
+      "label": "AML.T0084.002 — Activation Triggers",
       "weight": 1,
       "meta": {}
     },
@@ -21404,21 +21404,21 @@
     {
       "id": "atlas:AML.T0085",
       "kind": "atlas",
-      "label": "AML.T0085",
+      "label": "AML.T0085 — Data from AI Services",
       "weight": 1,
       "meta": {}
     },
     {
       "id": "atlas:AML.T0085.000",
       "kind": "atlas",
-      "label": "AML.T0085.000",
+      "label": "AML.T0085.000 — RAG Databases",
       "weight": 2,
       "meta": {}
     },
     {
       "id": "atlas:AML.T0085.001",
       "kind": "atlas",
-      "label": "AML.T0085.001",
+      "label": "AML.T0085.001 — AI Agent Tools",
       "weight": 1,
       "meta": {}
     },
@@ -21442,7 +21442,7 @@
     {
       "id": "atlas:AML.T0090",
       "kind": "atlas",
-      "label": "AML.T0090",
+      "label": "AML.T0090 — OS Credential Dumping",
       "weight": 1,
       "meta": {}
     },
@@ -21467,14 +21467,14 @@
     {
       "id": "atlas:AML.T0091",
       "kind": "atlas",
-      "label": "AML.T0091",
+      "label": "AML.T0091 — Use Alternate Authentication Material",
       "weight": 1,
       "meta": {}
     },
     {
       "id": "atlas:AML.T0091.000",
       "kind": "atlas",
-      "label": "AML.T0091.000",
+      "label": "AML.T0091.000 — Application Access Token",
       "weight": 1,
       "meta": {}
     },
@@ -21499,7 +21499,7 @@
     {
       "id": "atlas:AML.T0092",
       "kind": "atlas",
-      "label": "AML.T0092",
+      "label": "AML.T0092 — Manipulate User LLM Chat History",
       "weight": 1,
       "meta": {}
     },
@@ -21522,14 +21522,14 @@
     {
       "id": "atlas:AML.T0095",
       "kind": "atlas",
-      "label": "AML.T0095",
+      "label": "AML.T0095 — Search Open Websites/Domains",
       "weight": 1,
       "meta": {}
     },
     {
       "id": "atlas:AML.T0095.000",
       "kind": "atlas",
-      "label": "AML.T0095.000",
+      "label": "AML.T0095.000 — Code Repositories",
       "weight": 1,
       "meta": {}
     },
@@ -21556,7 +21556,7 @@
     {
       "id": "atlas:AML.T0098",
       "kind": "atlas",
-      "label": "AML.T0098",
+      "label": "AML.T0098 — AI Agent Tool Credential Harvesting",
       "weight": 1,
       "meta": {}
     },
@@ -21584,7 +21584,7 @@
     {
       "id": "atlas:AML.T0100",
       "kind": "atlas",
-      "label": "AML.T0100",
+      "label": "AML.T0100 — AI Agent Clickbait",
       "weight": 1,
       "meta": {}
     },
@@ -21611,7 +21611,7 @@
     {
       "id": "atlas:AML.T0101",
       "kind": "atlas",
-      "label": "AML.T0101",
+      "label": "AML.T0101 — Data Destruction via AI Agent Tool Invocation",
       "weight": 1,
       "meta": {}
     },
@@ -21638,7 +21638,7 @@
     {
       "id": "atlas:AML.T0105",
       "kind": "atlas",
-      "label": "AML.T0105",
+      "label": "AML.T0105 — Escape to Host",
       "weight": 1,
       "meta": {}
     },
@@ -21664,7 +21664,7 @@
     {
       "id": "atlas:AML.T0106",
       "kind": "atlas",
-      "label": "AML.T0106",
+      "label": "AML.T0106 — Exploitation for Credential Access",
       "weight": 1,
       "meta": {}
     },
@@ -21688,7 +21688,7 @@
     {
       "id": "atlas:AML.T0107",
       "kind": "atlas",
-      "label": "AML.T0107",
+      "label": "AML.T0107 — Exploitation for Defense Evasion",
       "weight": 1,
       "meta": {}
     },
@@ -21715,7 +21715,7 @@
     {
       "id": "atlas:AML.T0108",
       "kind": "atlas",
-      "label": "AML.T0108",
+      "label": "AML.T0108 — AI Agent",
       "weight": 1,
       "meta": {}
     },
@@ -21742,21 +21742,21 @@
     {
       "id": "atlas:AML.T0112",
       "kind": "atlas",
-      "label": "AML.T0112",
+      "label": "AML.T0112 — Machine Compromise",
       "weight": 1,
       "meta": {}
     },
     {
       "id": "atlas:AML.T0112.000",
       "kind": "atlas",
-      "label": "AML.T0112.000",
+      "label": "AML.T0112.000 — Local AI Agent",
       "weight": 1,
       "meta": {}
     },
     {
       "id": "atlas:AML.T0112.001",
       "kind": "atlas",
-      "label": "AML.T0112.001",
+      "label": "AML.T0112.001 — AI Artifacts",
       "weight": 1,
       "meta": {}
     },
@@ -21781,7 +21781,7 @@
     {
       "id": "atlas:AML.T0012",
       "kind": "atlas",
-      "label": "AML.T0012",
+      "label": "AML.T0012 — Valid Accounts",
       "weight": 1,
       "meta": {}
     },
@@ -22130,7 +22130,7 @@
     {
       "id": "atlas:AML.T0018.001",
       "kind": "atlas",
-      "label": "AML.T0018.001",
+      "label": "AML.T0018.001 — Modify AI Model Architecture",
       "weight": 1,
       "meta": {}
     },
@@ -23159,7 +23159,7 @@
     {
       "id": "atlas:AML.T0050",
       "kind": "atlas",
-      "label": "AML.T0050",
+      "label": "AML.T0050 — Command and Scripting Interpreter",
       "weight": 3,
       "meta": {}
     },
@@ -24598,7 +24598,7 @@
     {
       "id": "atlas:AML.TA0013",
       "kind": "atlas",
-      "label": "AML.TA0013",
+      "label": "AML.TA0013 — Credential Access",
       "weight": 1,
       "meta": {}
     },
@@ -24615,7 +24615,7 @@
     {
       "id": "atlas:AML.TA0015",
       "kind": "atlas",
-      "label": "AML.TA0015",
+      "label": "AML.TA0015 — Lateral Movement",
       "weight": 1,
       "meta": {}
     },
@@ -24632,7 +24632,7 @@
     {
       "id": "atlas:AML.TA0002",
       "kind": "atlas",
-      "label": "AML.TA0002",
+      "label": "AML.TA0002 — Reconnaissance",
       "weight": 1,
       "meta": {}
     },
@@ -24649,7 +24649,7 @@
     {
       "id": "atlas:AML.TA0003",
       "kind": "atlas",
-      "label": "AML.TA0003",
+      "label": "AML.TA0003 — Resource Development",
       "weight": 1,
       "meta": {}
     },
@@ -24666,7 +24666,7 @@
     {
       "id": "atlas:AML.TA0004",
       "kind": "atlas",
-      "label": "AML.TA0004",
+      "label": "AML.TA0004 — Initial Access",
       "weight": 1,
       "meta": {}
     },
@@ -24683,7 +24683,7 @@
     {
       "id": "atlas:AML.TA0000",
       "kind": "atlas",
-      "label": "AML.TA0000",
+      "label": "AML.TA0000 — AI Model Access",
       "weight": 1,
       "meta": {}
     },
@@ -24700,7 +24700,7 @@
     {
       "id": "atlas:AML.TA0005",
       "kind": "atlas",
-      "label": "AML.TA0005",
+      "label": "AML.TA0005 — Execution",
       "weight": 1,
       "meta": {}
     },
@@ -24717,7 +24717,7 @@
     {
       "id": "atlas:AML.TA0006",
       "kind": "atlas",
-      "label": "AML.TA0006",
+      "label": "AML.TA0006 — Persistence",
       "weight": 1,
       "meta": {}
     },
@@ -24734,7 +24734,7 @@
     {
       "id": "atlas:AML.TA0012",
       "kind": "atlas",
-      "label": "AML.TA0012",
+      "label": "AML.TA0012 — Privilege Escalation",
       "weight": 1,
       "meta": {}
     },
@@ -24751,7 +24751,7 @@
     {
       "id": "atlas:AML.TA0007",
       "kind": "atlas",
-      "label": "AML.TA0007",
+      "label": "AML.TA0007 — Defense Evasion",
       "weight": 1,
       "meta": {}
     },
@@ -24768,7 +24768,7 @@
     {
       "id": "atlas:AML.TA0008",
       "kind": "atlas",
-      "label": "AML.TA0008",
+      "label": "AML.TA0008 — Discovery",
       "weight": 1,
       "meta": {}
     },
@@ -24785,7 +24785,7 @@
     {
       "id": "atlas:AML.TA0009",
       "kind": "atlas",
-      "label": "AML.TA0009",
+      "label": "AML.TA0009 — Collection",
       "weight": 1,
       "meta": {}
     },
@@ -24802,7 +24802,7 @@
     {
       "id": "atlas:AML.TA0001",
       "kind": "atlas",
-      "label": "AML.TA0001",
+      "label": "AML.TA0001 — AI Attack Staging",
       "weight": 1,
       "meta": {}
     },
@@ -24819,7 +24819,7 @@
     {
       "id": "atlas:AML.TA0014",
       "kind": "atlas",
-      "label": "AML.TA0014",
+      "label": "AML.TA0014 — Command and Control",
       "weight": 1,
       "meta": {}
     },
@@ -24836,7 +24836,7 @@
     {
       "id": "atlas:AML.TA0010",
       "kind": "atlas",
-      "label": "AML.TA0010",
+      "label": "AML.TA0010 — Exfiltration",
       "weight": 1,
       "meta": {}
     },
@@ -24853,7 +24853,7 @@
     {
       "id": "atlas:AML.TA0011",
       "kind": "atlas",
-      "label": "AML.TA0011",
+      "label": "AML.TA0011 — Impact",
       "weight": 1,
       "meta": {}
     },
