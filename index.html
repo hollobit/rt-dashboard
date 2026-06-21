@@ -201,6 +201,7 @@
   </section>
   <section class="view" id="v-tax"></section>
   <section class="view" id="v-atlasmatrix"></section>
+  <section class="view" id="v-owaspllm"></section>
   <section class="view" id="v-method"></section>
   <section class="view" id="v-autoredteam"></section>
   <section class="view" id="v-bench"></section>
@@ -457,7 +458,7 @@ async function load(){
     renderAll(); // overview 재렌더(🆕 신규분류 카드 등 GRAPH.nodes 의존분 반영)
     renderLifecycle();renderRiskMap();renderProv();renderPapers();renderCards();renderAutoRedteam();
     renderChangelog();renderNews();renderGuideline42119();renderJapanAISI();renderOWASP();renderCSA();
-    renderGuidelineTerms();renderGenAIMethods();renderAtlasMatrix();buildGuideIndex();nodeizeGuidelines();
+    renderGuidelineTerms();renderGenAIMethods();renderAtlasMatrix();renderOwaspLLM();buildGuideIndex();nodeizeGuidelines();
     // 그래프 의존 탭(graph/entity/papers/prov 등)이 열려있으면 풀 그래프로 재렌더
     selectTab(location.hash.slice(1)||"overview");
     loadSearchData();
@@ -705,14 +706,14 @@ function buildKPIs(){
     ["standards",byType("standard_item").length],["candidates",(byType("standard_item").filter(x=>x.candidate)).length]];
   document.getElementById("kpis").innerHTML=k.map(([l,v])=>`<div class="kpi"><b>${v||0}</b><span>${l}</span></div>`).join("");
 }
-const TABS=[["overview","Overview"],["changelog","📋 Change Log"],["lifecycle","🔄 AI Lifecycle"],["prov","🔬 RT Provenance"],["papers","📚 Papers"],["search","🔎 GraphRAG Search"],["news","📰 News"],["graph","Knowledge Graph"],["tax","Threat×Attack×ATLAS"],["atlasmatrix","🛰️ ATLAS Matrix"],
+const TABS=[["overview","Overview"],["changelog","📋 Change Log"],["lifecycle","🔄 AI Lifecycle"],["prov","🔬 RT Provenance"],["papers","📚 Papers"],["search","🔎 GraphRAG Search"],["news","📰 News"],["graph","Knowledge Graph"],["tax","Threat×Attack×ATLAS"],["atlasmatrix","🛰️ ATLAS Matrix"],["owaspllm","🦉 OWASP LLM Top 10"],
   ["method","Red Teaming Methods"],["autoredteam","🎯 자동 레드티밍"],["bench","Benchmarks"],["risk","Risk & Controls"],["riskmap","⚠️ Risk Map"],
   ["frontier","🧭 Frontier Safety"],["ttp","TTP: Tactic→Proc"],["onto","Ontology: Vuln→Harm"],["std","Standards & Gaps"],["sector","Sector Red Teaming"],["disc","Disclosure / Nat-Sec"],["xwalk","🔗 External Crosswalk"],["cards","🏷️ 제품 평가"],["trend","Trends"],["g42119","📑 ISO/IEC 42119-7"],["japanaisi","🇯🇵 Japan AISI"],["owasp","🦉 OWASP GenAI"],["csa","☁️ CSA Agentic"],["gterms","📖 용어"]];
 // 2단 네비: 5개 허브 → 하위 탭 (사용자 의도 기준 그룹화)
 const HUBS=[
   ["home","🏠 시작",["overview","changelog"]],
   ["find","🔍 찾기·탐색",["search","news","papers","graph","prov"]],
-  ["threat","⚔️ 위협·공격",["tax","atlasmatrix","ttp","frontier","onto"]],
+  ["threat","⚔️ 위협·공격",["tax","atlasmatrix","owaspllm","ttp","frontier","onto"]],
   ["riskhub","🛡️ 리스크·방법",["riskmap","risk","method","autoredteam","bench","sector","lifecycle"]],
   ["gov","📋 거버넌스·동향",["std","disc","xwalk","cards","trend"]],
   ["guide","📐 가이드라인",["g42119","japanaisi","owasp","csa","gterms"]],
@@ -1464,6 +1465,22 @@ async function renderAtlasMatrix(){
       <p class="small muted">적대적 ML 전술 <b>${mx.tactics.length}</b> × 기법 매트릭스(공식 구조). <b style="color:var(--acc2)">● = 우리 코퍼스 보유</b> — top-level <b>${ncov}/${ntop}</b> · 서브 <b>${nscov}/${nsub}</b> 커버. 기법명 클릭 → ATLAS 공식 페이지, '코퍼스↗' → 우리 분석 상세(#entity). 가로 스크롤.</p>
       <div class="prov-cols" style="overflow-x:auto">${mx.tactics.map(col).join("")}</div></div>`;
 }
+// 🦉 OWASP LLM Top 10 (2025) — 보존형 owasp-llm-top10.json을 공식 Top10 + 코퍼스 매핑 오버레이로 렌더
+let OWASP_LLM=null;
+async function renderOwaspLLM(){
+  const el=document.getElementById("v-owaspllm");if(!el)return;
+  if(!OWASP_LLM){try{OWASP_LLM=await (await fetch("data/owasp-llm-top10.json")).json();}catch(e){el.innerHTML='<div class="card"><p class="muted">owasp-llm-top10.json 로드 실패</p></div>';return;}}
+  const d=OWASP_LLM;const tot=d.items.reduce((s,i)=>s+i.mapped.length,0);
+  const kcol={threat:"#ff6b6b",attack_technique:"#fa8c16",vulnerability:"#fa541c",risk:"#ff7875",harm:"#ff4d4f",control:"#52c41a",atlas:"#ff85c0"};
+  const card=it=>{const n=String(it.id).split(":")[0];
+    return `<div class="card" style="border-left:3px solid var(--acc2)"><div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+      <h4 style="margin:0"><a href="${esc(it.url||'https://genai.owasp.org/llm-top-10/')}" target="_blank">${esc(n)} · ${esc(it.name)} ↗</a></h4>
+      <span class="muted small">코퍼스 매핑 ${it.mapped.length}</span></div>
+      <div style="margin-top:6px">${it.mapped.length?it.mapped.map(e=>`<a class="tag" href="#entity:${encodeURIComponent(e.id)}" title="${esc(e.kind)}" style="border-left:3px solid ${kcol[e.kind]||'#5b6472'}">${esc(String(e.label).slice(0,42))}</a>`).join(" "):'<span class="muted small">매핑 없음</span>'}</div></div>`;};
+  el.innerHTML=`<div class="card"><h3>🦉 OWASP Top 10 for LLM Applications <span class="muted small">${esc(d.version||'2025')} · <a href="${esc(d.source||'https://genai.owasp.org/llm-top-10/')}" target="_blank">genai.owasp.org↗</a></span></h3>
+      <p class="small muted">LLM 애플리케이션 보안 위험 Top 10(공식). 각 카테고리에 <b>우리 코퍼스의 위협·공격기법·취약점·리스크</b>를 매핑(총 <b>${tot}</b>건). 제목 클릭 → OWASP 공식 페이지, 칩 클릭 → 통합 상세(#entity). 칩 색=종류(<span style="color:#ff6b6b">위협</span>·<span style="color:#fa8c16">공격</span>·<span style="color:#fa541c">취약점</span>·<span style="color:#52c41a">통제</span>).</p></div>
+    ${d.items.map(card).join("")}`;
+}
 function renderGenAIMethods(){
   const el=document.getElementById("v-method");if(!el)return;
   fetch("data/guideline-owasp.json").then(r=>r.json()).then(g=>{
@@ -1660,6 +1677,7 @@ async function renderNews(){
 function renderChangelog(){
   const el=document.getElementById("v-changelog");if(!el)return;
   const CHANGELOG=RT_CHANGELOG=[
+    ["2026-06-22","메뉴","🦉 OWASP LLM Top 10 탭 — OWASP Top 10 for LLM Applications(2025) 체계적 통합. 10 카테고리 공식 구조 + 코퍼스 매핑(위협·공격기법·취약점·리스크 62건), 제목→genai.owasp.org 공식 페이지·칩→#entity 상세"],
     ["2026-06-22","메뉴","🛰️ ATLAS Matrix 탭 — MITRE ATLAS Matrix for AI Systems(v5.6.0) 체계적 통합. 16 전술 × 111 top-level + 74 서브기법 공식 구조, ● = 코퍼스 보유(top 83/111·sub 26/74), 기법→atlas.mitre.org 공식 페이지·코퍼스 보유분→#entity. atlas 노드 115개 공식 명칭 보강"],
     ["2026-06-21","보강","대규모 커버리지 갭 보강(다중 분석가) — attack_technique 25→142(ATLAS top-level 63/63·CSA 84·OWASP 19·AISI 11 추출), CVE 16→25(cve.org 공식 검증), incident 23→50(AI Incident DB·OECD AIM 랜드마크), MIT risk 24/24 서브도메인, 표준 18→42(dangling 해소). 논문마이닝으로 신규 attack/method/teaming/benchmark/harm/hazard 반영. 그래프 1562→2259노드, dangling 0"],
     ["2026-06-21","분류","🆕 신규 분류(추가필요) — 현 taxonomy에 없던 신규 위협 9종(membership-inference·model-inversion·evasion·DoS·training-data-poisoning·supply-chain·memory-poisoning·alignment-tampering·watermark-evasion) + 신규 수집 표준을 candidate/gapfill 표식+provenance로 명시 포함(Overview 카드 + entity 배지)"],
