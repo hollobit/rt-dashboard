@@ -1,0 +1,102 @@
+{
+ "date": "2026-06-20",
+ "nodes": 1381,
+ "edges": 8030,
+ "by_kind": {
+  "source": 274,
+  "org": 156,
+  "finding": 283,
+  "threat": 62,
+  "benchmark": 134,
+  "teaming": 35,
+  "sector": 12,
+  "attack": 5,
+  "atlas": 40,
+  "harm": 46,
+  "attack_technique": 25,
+  "vulnerability": 38,
+  "incident": 23,
+  "tactic": 14,
+  "procedure": 25,
+  "risk": 38,
+  "control": 51,
+  "standard": 18,
+  "evidence": 14,
+  "reference": 12,
+  "product": 35,
+  "model_card": 41
+ },
+ "emerging": [
+  {
+   "node": "safety.misuse-risk",
+   "label": "misuse-risk",
+   "count": 176,
+   "mean_novelty": 0.607,
+   "score": 106.75
+  },
+  {
+   "node": "prompt-attack",
+   "label": "prompt-attack",
+   "count": 134,
+   "mean_novelty": 0.591,
+   "score": 79.23
+  },
+  {
+   "node": "model.jailbreak",
+   "label": "model.jailbreak",
+   "count": 119,
+   "mean_novelty": 0.575,
+   "score": 68.38
+  },
+  {
+   "node": "safety.cyber-risk",
+   "label": "cyber-risk",
+   "count": 81,
+   "mean_novelty": 0.707,
+   "score": 57.25
+  },
+  {
+   "node": "agentic.autonomy-risk",
+   "label": "autonomy-risk",
+   "count": 65,
+   "mean_novelty": 0.724,
+   "score": 47.07
+  },
+  {
+   "node": "safety.alignment-risk",
+   "label": "alignment-risk",
+   "count": 63,
+   "mean_novelty": 0.747,
+   "score": 47.03
+  },
+  {
+   "node": "safety.capability-risk",
+   "label": "capability-risk",
+   "count": 66,
+   "mean_novelty": 0.689,
+   "score": 45.49
+  },
+  {
+   "node": "se.devsecops",
+   "label": "devsecops",
+   "count": 68,
+   "mean_novelty": 0.666,
+   "score": 45.26
+  },
+  {
+   "node": "topic:frontier-safety",
+   "label": "frontier-safety",
+   "count": 57,
+   "mean_novelty": 0.779,
+   "score": 44.39
+  },
+  {
+   "node": "agentic.tool-risk",
+   "label": "tool-risk",
+   "count": 61,
+   "mean_novelty": 0.712,
+   "score": 43.44
+  }
+ ],
+ "news": 222
+}

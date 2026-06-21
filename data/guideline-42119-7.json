@@ -1,0 +1,719 @@
+{
+ "doc": "ISO/IEC AWI TS 42119-7 — Artificial intelligence — Testing of AI — Part 7: Red teaming",
+ "note": "3단계 프로세스의 단계별 normative 행동 statement (shall/should) 원문 그대로. 출처 © ISO 2026 (인용).",
+ "phases": [
+  {
+   "phase": "Team formation and preparation process",
+   "items": [
+    {
+     "section": "Red team",
+     "statement": "The organization should establish the red team to align with the organization's overall management structure, standards for development and procurement, and business risks, to effectively plan and promote the red teaming exercise.",
+     "sub": []
+    },
+    {
+     "section": "Red team",
+     "statement": "Furthermore, the organization shall appoint subject matter experts (SMEs) based on the specific risk scenarios:",
+     "sub": [
+      "For CBRN/Dual-use risks: Experts in biology, chemistry, or national security are required to validate the feasibility of generated threats.",
+      "For Quality/Hallucination: Experts in the specific knowledge domain (e.g., legal, medical) or linguists are required to verify factual accuracy and reasoning.",
+      "For Performance/Availability: Engineers capable of monitoring system latency and resource usage under adversarial conditions are required."
+     ]
+    },
+    {
+     "section": "Red team",
+     "statement": "For red teaming of agentic AI systems, the organization should include expertise in application security, infrastructure or DevSecOps, and observability or forensic analysis, in addition to AI/ML domain experts.",
+     "sub": []
+    },
+    {
+     "section": "Attack planner/conductor",
+     "statement": "If internal resources are insufficient, the organization shall engage external security experts or third-party resources.",
+     "sub": []
+    },
+    {
+     "section": "Target AI system development and provision manager",
+     "statement": "The development and provision manager of the target Al system should manage the process with consideration of the impact of red teaming on the release schedule, etc.",
+     "sub": []
+    },
+    {
+     "section": "Target AI system development and provision manager",
+     "statement": "The organization shall structure the red team based on the scale and characteristics of the organization and the target AI system.",
+     "sub": []
+    },
+    {
+     "section": "Other relevant stakeholders",
+     "statement": "Top management or designated executives shall oversee the red teaming process to ensure alignment with organizational objectives.",
+     "sub": []
+    },
+    {
+     "section": "Other relevant stakeholders",
+     "statement": "The organization should involve risk management stakeholders to address broader business risks beyond information security related to AI systems..",
+     "sub": []
+    },
+    {
+     "section": "Other relevant stakeholders",
+     "statement": "The organization should evaluate potential business risks and impacts during the formulation of risk scenarios and the preparation of the final assessment report.",
+     "sub": []
+    },
+    {
+     "section": "Other relevant stakeholders",
+     "statement": "Personnel with expertise in relevant external interfaces should be assigned to the red team if the target AI system interacts with other information systems.",
+     "sub": []
+    },
+    {
+     "section": "Other relevant stakeholders",
+     "statement": "This should be considered when selecting team members, if necessary.",
+     "sub": []
+    },
+    {
+     "section": "General",
+     "statement": "The organization shall determine the scope and timing of red teaming in accordance with the system evaluation schedule.",
+     "sub": []
+    },
+    {
+     "section": "Before the release",
+     "statement": "The red team shall conduct the initial red teaming prior to the release of the target AI system.",
+     "sub": []
+    },
+    {
+     "section": "Before the release",
+     "statement": "The scope of red teaming shall cover the entire target AI system rather than being limited to specific subsystems.\"",
+     "sub": []
+    },
+    {
+     "section": "Before the release",
+     "statement": "The scope of red teaming, conducting structure, conducting cost, schedule, etc. should be individually planned and conducted according to the status of the target Al system.",
+     "sub": []
+    },
+    {
+     "section": "After the release",
+     "statement": "The organization should conduct periodic red teaming throughout the system development, deployment, and operation phases.",
+     "sub": []
+    },
+    {
+     "section": "Competence and training",
+     "statement": "The organization shall ensure that red team members possess the necessary skills and knowledge to effectively identify risks in the target AI system. Training programs should be provided or required, covering the following areas:",
+     "sub": [
+      "System Knowledge: Understanding the architecture, intended use, data flow, and safeguards (e.g., guardrails) of the target AI system.",
+      "Adversarial Techniques: Training on current AI red teaming methodologies, including prompt injection, jailbreaking, and evasion techniques relevant to the model type (e.g., LLMs, Computer Vision).",
+      "Domain-Specific Risks: For specialized assessments (e.g., CBRN, Medical, Finance), training on domain-specific terminologies, regulations, and risk indicators is required to accurately assess the impact of generated outputs.",
+      "Ethics and Rules of Engagement (RoE): Clear guidelines on the scope of testing, prohibited actions (e.g., attacking production infrastructure causing DoS), data privacy handling, and responsible disclosure procedures."
+     ]
+    },
+    {
+     "section": "Tool and environment support",
+     "statement": "The organization shall provide the red team with adequate resources to simulate realistic attack scenarios and document findings effectively. This includes:",
+     "sub": [
+      "Computational Resources: Sufficient computing power (e.g., GPUs) and budget for API usage to conduct extensive testing without resource bottlenecks.",
+      "Red Teaming Tools: Access to automated testing frameworks, fuzzing tools, vulnerability scanners, and logging platforms designed for AI systems.",
+      "Access Privileges: Appropriate levels of access to the system (Black-box, Gray-box, or White-box) including documentation, model weights, or system prompts, as defined in the scope."
+     ]
+    },
+    {
+     "section": "Tester safety and psychological support",
+     "statement": "Given the nature of AI red teaming, which often involves exposure to toxic, violent, or disturbing content (e.g., hate speech, CSAM, self-harm descriptions), the organization should prioritize the well-being of the red team members.",
+     "sub": []
+    },
+    {
+     "section": "Tester safety and psychological support",
+     "statement": "Psychological Safety: The organization should provide access to psychological support services and implement rotation schedules to minimize prolonged exposure to harmful content.",
+     "sub": []
+    },
+    {
+     "section": "Tester safety and psychological support",
+     "statement": "Opt-out Mechanisms: Team members should have the right to opt-out of testing specific high-risk categories that may cause personal distress.",
+     "sub": []
+    },
+    {
+     "section": "Identify risk scenarios",
+     "statement": "The red team shall identify risk scenarios considering the following aspects:",
+     "sub": [
+      "a) System configuration: Identify the architecture of the target AI system, including whether it utilizes commercial services (API-based), open-source software (OSS), or in-house developed models . This includes mapping data flows and interactions between the AI model and other system components.",
+      "b) System usage patterns: Analyze how the AI system is utilized, including:",
+      "Output usage: How the AI outputs (e.g., code generation, SQL queries) are used by downstream systems.",
+      "Reference sources: Whether the system uses Retrieval-Augmented Generation (RAG) or accesses external internet resources.",
+      "Model interaction: Potential risks regarding the AI model itself, such as training data poisoning or feedback loop exploitation.",
+      "Evaluation Dimensions and Perspectives: Align risk scenarios with specific evaluation dimensions:",
+      "Safety & Security: Scenarios involving the generation of CBRN (Chemical, Biological, Radiological, Nuclear) material, assisting in cyberattacks, or bypassing safety filters (Jailbreaking).",
+      "Quality & Integrity: Scenarios aimed at inducing hallucinations, bias, or reasoning failures that degrade the utility of the system.",
+      "Adversarial Performance: Scenarios involving inputs designed to exhaust system resources (e.g., increasing token generation time or memory usage) to degrade service availability.",
+      "Agentic Control & Authorization: Scenarios involving the agent executing unauthorized actions, escalating privileges (e.g., role inheritance exploitation), or interacting with critical systems without human-in-the-loop verification.",
+      "Memory & Context Integrity: Scenarios where the agent's long-term memory or context window is manipulated to alter future behaviour or exfiltrate sensitive information across sessions.",
+      "Systemic & Multi-Agent Risks: Scenarios involving cascading failures in multi-agent environments, orchestration manipulation, or unlimited resource consumption (e.g., infinite loops).",
+      "Agent Hijacking and Goal Displacement: Scenarios where an attacker manipulates the agent's reasoning process to abandon its original objective and pursue an unauthorized or malicious goal.",
+      "Privilege Escalation through Tool Use: Scenarios where an agent improperly uses assigned tools (e.g., API, database access) to gain unauthorized access to sensitive data or systems beyond its intended scope."
+     ]
+    },
+    {
+     "section": "Identify risk scenarios",
+     "statement": "For agentic AI systems, risk scenarios should be structured to cover autonomous behaviour and action-oriented threats, including at minimum:",
+     "sub": []
+    },
+    {
+     "section": "Tasking AI red team",
+     "statement": "The proposal should include the organization of the red team, threats and vulnerabilities in the Al system, purpose and necessity of red teaming, overview of the target system conducting outline, schedule, estimated cost, and proposed structure.",
+     "sub": []
+    },
+    {
+     "section": "Tasking AI red team",
+     "statement": "If the conducting of red teaming is included in the organization's risk management procedures, the red teaming should be conducted in accordance with the relevant procedures.",
+     "sub": []
+    },
+    {
+     "section": "Tasking AI red team",
+     "statement": "The formation of the red team should include the 'attack planner/conductor' and 'Experts from Relevant Domains' as described.",
+     "sub": []
+    },
+    {
+     "section": "Identify suitability of the assessment approach",
+     "statement": "The red team shall evaluate and justify the suitability of the chosen red teaming approach against the identified risk scenarios, system architecture, and organizational objectives. This includes confirming whether dynamic adversarial testing is the most appropriate method compared to static analysis or standardized benchmarking, and ensuring that the selected techniques align with the specific operational constraints of the target system.",
+     "sub": []
+    },
+    {
+     "section": "Types of AI safety red teaming",
+     "statement": "To ensure a comprehensive evaluation, the red team shall classify and execute the assessment based on the following types of AI safety red teaming approaches:",
+     "sub": [
+      "Adversarial red teaming: This approach simulates malicious actors intentionally attempting to bypass safety guardrails, exploit system vulnerabilities, or induce harmful behaviours. This includes simulating both high-resource actors (e.g., state-sponsored entities using complex data poisoning) and low-resource actors (e.g., users utilizing public jailbreak prompts).",
+      "Benign red teaming: This approach simulates legitimate users who interact with the system without malicious intent but use ambiguous, irregular, or highly complex inputs. The objective is to identify edge cases where the AI system inadvertently produces hallucinations, logical errors, or unintended actions due to structural weaknesses rather than active exploitation."
+     ]
+    },
+    {
+     "section": "Defining primary goals",
+     "statement": "The organization shall clearly define the primary goals of the red teaming assessment prior to execution. The objectives should be specific, measurable, achievable, relevant, and time-bound (SMART). The objectives shall align with the organization's risk tolerance and the intended use of the AI system.",
+     "sub": []
+    },
+    {
+     "section": "Classification of objectives",
+     "statement": "To ensure comprehensive coverage, the objectives should be classified into the following dimensions, as applicable to the system's risk profile:",
+     "sub": [
+      "Security Assurance: To verify the system's resistance to active attacks, such as jailbreaking, prompt injection, or extraction of training data.",
+      "Safety Verification: To confirm that the system refuses to generate harmful content, including CBRN (Chemical, Biological, Radiological, Nuclear) instructions, hate speech, or self-harm encouragement.",
+      "Reliability and Quality Assessment: To measure the rate of hallucinations (factually incorrect outputs) or logical failures under adversarial conditions.",
+      "Performance Stability: To assess the system's latency and resource consumption when subjected to complex or malicious inputs (e.g., sponge attacks) intended to degrade availability."
+     ]
+    },
+    {
+     "section": "Success criteria and metrics",
+     "statement": "The red team shall establish clear criteria for what constitutes a \"successful\" attack or a \"passed\" assessment.",
+     "sub": []
+    },
+    {
+     "section": "Alignment with compliance and policy",
+     "statement": "The objectives should also include verifying compliance with:",
+     "sub": [
+      "Internal AI governance policies (e.g., ethical guidelines).",
+      "External regulatory requirements (e.g., EU AI Act, specific industry safety standards)."
+     ]
+    },
+    {
+     "section": "Scope definition",
+     "statement": "The scope for the red teaming should include not only the AI models at its core but the entire Al system as a whole.",
+     "sub": []
+    },
+    {
+     "section": "Scope definition",
+     "statement": "The attack planner should utilize the Software Bill of Materials (SBOM) or AI Bill of Materials (AIBOM) to identify system components.",
+     "sub": []
+    },
+    {
+     "section": "Scope definition",
+     "statement": "If the target Al system includes individual AI systems for specific functions (e.g., search query generation, answer generation, inspection), the attack planner/conductor should classify each AI systems accordingly:",
+     "sub": []
+    },
+    {
+     "section": "Scope definition",
+     "statement": "The scope of red teaming activities should be defined by analyzing the system architecture, usage contexts, extensions (e.g., plug-ins), and existing security controls of target AI system.",
+     "sub": []
+    },
+    {
+     "section": "Scope definition",
+     "statement": "In such cases, the feasibility of conducting black-box testing and white-box testing for each component should be confirmed. This should be discussed with the parties concerned in advance.",
+     "sub": []
+    },
+    {
+     "section": "Scope definition",
+     "statement": "Confirmation levels such as whether to simply indicate the possibility of a successful attack, provide evidence regarding the likelihood of a successful attack, or confirm that the attack will actually succeed, should be set based on the following factors:",
+     "sub": []
+    },
+    {
+     "section": "Scope definition",
+     "statement": "Testing activities should exclude resource-exhaustion attacks, such as Denial of Service (DoS), to prevent unintended service disruption.",
+     "sub": []
+    },
+    {
+     "section": "Scope definition",
+     "statement": "Therefore, when conducting red teaming, the scope of red teaming should be determined after consultation with the parties concerned, assuming the consequences and damage that may be caused.",
+     "sub": []
+    },
+    {
+     "section": "Scope definition",
+     "statement": "In defining the scope, the organization shall specify the level of abstraction and access to the AI models within the system. The scope should explicitly distinguish between:",
+     "sub": [
+      "API-accessed models (Black-box): Where the red team is limited to interacting via interfaces, focusing on prompt engineering, input/output manipulation, and bypassing external guardrails without access to internal parameters.",
+      "Open-weight or locally hosted models (White-box/Gray-box): Where the red team has access to the model's architecture, weights, or gradients, enabling advanced techniques such as internal state analysis, embedding manipulation, and fine-tuning exploitation."
+     ]
+    },
+    {
+     "section": "Assessed languages",
+     "statement": "The organization shall define the languages to be used during the red teaming assessment. This scope should not only include the primary languages officially supported by the target AI system, but also languages that adversarial actors might exploit to bypass safety filters. The assessment should consider:",
+     "sub": [
+      "High-resource languages: To verify standard operational safety and quality under normal use.",
+      "Low-resource languages: To test whether safety guardrails are universally applied or if translation to less common languages circumvents established filters.",
+      "Programming languages and encodings: Such as Base64, hex, or various scripting languages, which can be used to obfuscate malicious prompts and evade input processing controls."
+     ]
+    },
+    {
+     "section": "Simulated user profiles and actor classification",
+     "statement": "To ensure comprehensive threat simulation, the red team shall define and adopt various user profiles reflecting different grades of adversarial and benign actors:",
+     "sub": [
+      "High-resource adversarial actors: Simulating state-sponsored entities or well-funded organizations with deep technical expertise, massive compute resources, and the ability to conduct complex, multi-stage attacks (e.g., advanced data poisoning, model inversion).",
+      "Low-resource adversarial actors: Simulating script kiddies or individual malicious users utilizing publicly available jailbreak prompts, basic prompt injections, or open-source attack tools.",
+      "Benign actors: Simulating legitimate users who may inadvertently trigger unintended, harmful, or erroneous outputs through ambiguous, highly complex, or unusual input patterns without malicious intent."
+     ]
+    },
+    {
+     "section": "AI red teaming personas",
+     "statement": "The objective of an AI red teaming exercise is to surface undesired AI system behaviour, i.e., red teamers act as adversaries with respect to the system designers’ intentions. AI red teamers should adopt one or more defined personas that govern the constraints, resources, and approach with which they pursue that objective.",
+     "sub": []
+    },
+    {
+     "section": "AI red teaming personas",
+     "statement": "For a given AI red teaming exercise, the organization should specify the persona or personas to be assumed. Persona selection should be driven by organizational objectives, deployment context, and the AI system under evaluation. In particular, personas should be selected to cover both the likely user populations of the deployed AI system and the threat scenarios that are most relevant to the organization’s objectives.",
+     "sub": []
+    },
+    {
+     "section": "AI red teaming personas",
+     "statement": "The organization should document what personas have been selected, including the attributes of each persona that would allow a team to understand how the simulated actor could elicit undesired behaviour from the AI system. Core attributes of a persona include its assumed intent, resource level, access level, and expertise. These attributes are strongly correlated with each other; high-resource actors frequently pursue more sophisticated goals with greater expertise, and can sometimes obtain higher levels of access.",
+     "sub": []
+    },
+    {
+     "section": "Example persona attributes",
+     "statement": "The persona should specify the knowledge of the simulated actor across at least two dimensions: (i) AI/ML technical knowledge (e.g., awareness of prompt injection, jailbreak techniques, model architecture); and (ii) subject matter expertise in the harm domain being tested (e.g., chemistry for CBRN scenarios, finance for fraud scenarios). Organizations should document both dimensions, as each independently affects the sophistication of adversarial approaches and the realism of realism of ordinary-use interactions.",
+     "sub": []
+    },
+    {
+     "section": "Resource allocation",
+     "statement": "The organization shall ensure the provision of necessary resources, including budget, personnel, and organizational structure, to support red teaming activities.",
+     "sub": []
+    },
+    {
+     "section": "Resource allocation",
+     "statement": "The organization should also identify and allocate other resources such as necessary tools.",
+     "sub": []
+    },
+    {
+     "section": "Resource allocation",
+     "statement": "External experts should be engaged to fulfill the role of attack planner or conductor if internal resources are insufficient.",
+     "sub": []
+    },
+    {
+     "section": "Target environment preparation",
+     "statement": "The red team should determine the appropriate environment for testing (e.g., in-operation, staging, or development) to minimize potential damage to live services. When conducting tests, the red team should coordinate with system administrators to adjust monitoring configurations (e.g., temporary allow-listing in IDS/IPS, suppression of specific alerts) to ensure that attack signatures are not blocked prematurely, while maintaining necessary audit logs.",
+     "sub": []
+    },
+    {
+     "section": "Organizing the schedule",
+     "statement": "The red team should plan their red teaming activities by taking into account the release schedule and development status of the target Al system.",
+     "sub": []
+    },
+    {
+     "section": "Organizing the schedule",
+     "statement": "In doing so, guided by the timing concepts described in clause X.X they should also consider segmenting the system into components or layers, and aligning with various test schedules of the system (including unit, integration, and system tests).",
+     "sub": []
+    },
+    {
+     "section": "Organizing the schedule",
+     "statement": "The red team should arrange the schedule, taking into account the quality and quantity of risk and attack scenarios to be developed in clause X.X.",
+     "sub": []
+    },
+    {
+     "section": "Preparing the environment for AI red teaming",
+     "statement": "The red team shall request required assets, including URLs, API keys, and logs, from the system administrator.",
+     "sub": []
+    },
+    {
+     "section": "Preparing the environment for AI red teaming",
+     "statement": "The red team shall coordinate with relevant stakeholders to implement temporary modifications, such as alerting suppression, required for testing.",
+     "sub": []
+    },
+    {
+     "section": "Preparing the environment for AI red teaming",
+     "statement": "When testing involves third-party services, the red team should adhere to service agreements and coordinate with providers for log acquisition.",
+     "sub": []
+    },
+    {
+     "section": "Preparing the environment for AI red teaming",
+     "statement": "The red team should notify relevant stakeholders (involved in systems affected by the execution of the attack scenarios) with the plan of the red teaming, the scope of impact, the schedule, and other relevant details.",
+     "sub": []
+    },
+    {
+     "section": "Preparing the environment for AI red teaming",
+     "statement": "Relevant stakeholders shall be informed of the assessment plan, including the scope, schedule, and potential impacts, prior to execution.",
+     "sub": []
+    },
+    {
+     "section": "Escalation and emergency procedures",
+     "statement": "The red team shall establish a clear escalation flow to address unexpected system behaviours, critical failures, or security incidents arising during the red teaming exercise.",
+     "sub": []
+    },
+    {
+     "section": "Escalation and emergency procedures",
+     "statement": "This procedure shall include:",
+     "sub": [
+      "Stop/Go Criteria: Defined thresholds for suspending the red teaming activity if operational risks exceed acceptable levels",
+      "Test Incident Reporting: Immediate communication channels for reporting critical vulnerabilities discovered prior to the final report"
+     ]
+    },
+    {
+     "section": "Escalation and emergency procedures",
+     "statement": "If the organization already has an escalation flow for overall crisis management or security incidents, the red team should follow that process accordingly.",
+     "sub": []
+    },
+    {
+     "section": "Escalation and emergency procedures",
+     "statement": "In addition, the red team should agree on the following: the evaluation of the assumed damage and scope of impact, the stop/go criteria for the red teaming exercise, and the remediation procedures for unexpected behaviour, failures, or issues.",
+     "sub": []
+    },
+    {
+     "section": "Escalation and emergency procedures",
+     "statement": "The escalation flow for such cases should also be confirmed.",
+     "sub": []
+    },
+    {
+     "section": "Rules of engagement (RoE)",
+     "statement": "The attack planner shall establish strict Rules of Engagement (RoE) to ensure safety and legal compliance. The RoE shall define:",
+     "sub": [
+      "Forbidden Targets: Systems or data that must not be touched (e.g., production databases containing real PII, critical infrastructure control interfaces).",
+      "Authorized Techniques: Specific approval for high-risk techniques (e.g., generating actual malware code vs. pseudo-code).",
+      "Stop Conditions: Criteria for immediately halting testing (e.g., discovery of a vulnerability that allows full system takeover or unintended leakage of real user data)."
+     ]
+    },
+    {
+     "section": "Domain-specific mission assignments",
+     "statement": "Tasks shall be assigned based on the expertise of the red teamers and the specific evaluation dimensions:",
+     "sub": [
+      "CBRN & Safety Team: \"Attempt to bypass safety filters to generate actionable instructions for creating hazardous materials or self-harm methods. Focus on 'jailbreaking' prompt sequences.\"",
+      "Quality & Integrity Team: \"Focus on 'adversarial fact-checking'. Provide inputs designed to trigger hallucinations or logical inconsistencies in the model's reasoning process.\"",
+      "Performance Team: \"Execute 'sponge attacks' or complex query injections to identify thresholds where system latency or resource consumption degrades beyond acceptable levels.\""
+     ]
+    },
+    {
+     "section": "Reporting requirements",
+     "statement": "Red teamers shall be instructed on the required format for reporting findings, which must include:",
+     "sub": [
+      "The full prompt chain used to trigger the behaviour.",
+      "The model's output (screenshot or log).",
+      "Severity Assessment: A preliminary rating of the risk (e.g., Critical, High, Medium, Low) based on the domain impact (e.g., \"Critical\" for successful CBRN generation)."
+     ]
+    },
+    {
+     "section": "Architectural and data flow analysis",
+     "statement": "Before execution, the red team shall analyze the target system's architecture to identify potential attack surfaces. This includes:",
+     "sub": [
+      "Input/Output Modalities: Identifying all entry points (text, image, file upload) and exit points.",
+      "External Dependencies: Analyzing connected plugins, APIs, or databases (RAG) that could be exploited for indirect prompt injection.",
+      "Training Data & Knowledge Base (White-box only): Reviewing the data sources for potential bias, poisoned data, or hazardous information (e.g., presence of chemical synthesis papers in the training set)."
+     ]
+    },
+    {
+     "section": "Review of existing safeguards",
+     "statement": "The red team shall analyze the existing defense mechanisms to plan effective bypass strategies:",
+     "sub": [
+      "System Prompts: Analyzing the \"meta-prompt\" or system instructions that define the AI's persona and constraints.",
+      "Filtration Layers: Identifying input/output filters (e.g., keyword blocking, semantic classifiers) to design evasion techniques (e.g., encoding attacks, hypothetical scenarios)."
+     ]
+    },
+    {
+     "section": "Dimension-specific analysis strategy",
+     "statement": "The analysis shall focus on specific components relevant to the evaluation goals:",
+     "sub": [
+      "For Performance Testing: Analyze the system's context window limits, timeout settings, and compute resource allocation to design effective resource exhaustion attacks.",
+      "For Quality Testing: Analyze the specific domain knowledge base (e.g., medical guidelines document) to craft counterfactual questions that test the model's adherence to ground truth."
+     ]
+    }
+   ]
+  },
+  {
+   "phase": "AI red team activities process",
+   "items": [
+    {
+     "section": "Figure 1 — Relationships among key elements in red teaming",
+     "statement": "The red team should execute the assessment using the following three-step process:",
+     "sub": []
+    },
+    {
+     "section": "Figure 1 — Relationships among key elements in red teaming",
+     "statement": "Step 1 (Exploratory Testing): The red team should conduct initial testing on individual prompts to identify effective attack vectors",
+     "sub": []
+    },
+    {
+     "section": "Figure 1 — Relationships among key elements in red teaming",
+     "statement": "Step 2 (Attack Development): The red team should develop customized attack signatures and payloads tailored to the identified risk scenarios.",
+     "sub": []
+    },
+    {
+     "section": "Figure 1 — Relationships among key elements in red teaming",
+     "statement": "Step 3 (System-wide Testing): The red team should execute the attack procedures against the full AI system to verify downstream impacts.",
+     "sub": []
+    },
+    {
+     "section": "Reconnaissance",
+     "statement": "Prior to developing specific attack vectors, the red team shall identify risk scenarios based on the following four factors :",
+     "sub": [
+      "System Configuration: Analysis of components (e.g., commercial APIs, OSS, in-house models) and data flows.",
+      "Usage Patterns: Evaluation of how the AI outputs are used (e.g., code generation) and what sources are referenced (e.g., RAG, internet access).",
+      "Information Assets: Identification of critical assets to be protected, such as PII, intellectual property, or internal knowledge bases.",
+      "AI Safety Evaluation Perspectives: Consideration of safety dimensions such as toxicity, fairness, privacy, and security assurance."
+     ]
+    },
+    {
+     "section": "Reconnaissance",
+     "statement": "Risk scenarios and attack scenarios should be considered for each evaluation perspectives",
+     "sub": []
+    },
+    {
+     "section": "Identification of attack surfaces",
+     "statement": "The red team shall identify specific entry points and components based on the evaluation objectives:",
+     "sub": [
+      "Interface Endpoints: Identify all user interaction points, including chat interfaces, API endpoints (REST/gRPC), and file upload features.",
+      "Data Ingestion Pipelines (for Indirect Injection): Identify external data sources accessed by the system, such as RAG (Retrieval-Augmented Generation) databases, web search modules, or third-party plugins, which can be targets for data poisoning or indirect prompt injection.",
+      "Model Components (White-box): Identify access paths to model weights, embeddings, or system prompts if the scope allows for white-box testing."
+     ]
+    },
+    {
+     "section": "Identification of attack surfaces",
+     "statement": "The red teaming scope for agentic AI shall include:",
+     "sub": [
+      "Agent Communication Channels: Inter-agent communication protocols and Model Context Protocol (MCP) interfaces.",
+      "External Tool Integrations: APIs, web search modules, and third-party software connectors that the agent can autonomously trigger.",
+      "Long-term Memory and Knowledge Base: Vector databases (RAG) and session history buffers that could be subject to memory poisoning or indirect prompt injection."
+     ]
+    },
+    {
+     "section": "Target selection by risk domain",
+     "statement": "Targets shall be prioritized according to the specific risk domain:",
+     "sub": [
+      "CBRN & Safety: Focus on the \"System Prompt\" or \"Safety Filter\" layers to attempt bypasses (jailbreaking). Target the RAG knowledge base to check if restricted documents (e.g., dual-use technology papers) are accessible.",
+      "Performance: Identify resource-intensive endpoints (e.g., long-context processing, image generation) that are susceptible to sponge attacks or latency degradation.",
+      "Quality & Reliability: Target specific domain-knowledge modules (e.g., the medical advice subsystem) to test for hallucinations or reasoning failures."
+     ]
+    },
+    {
+     "section": "Attack development",
+     "statement": "The attack planner/conductor (including third parties) within the red team should lead this Process.",
+     "sub": []
+    },
+    {
+     "section": "Attack development",
+     "statement": "The attack planner/conductor should derive the details of the options for red teaming based on the information.",
+     "sub": []
+    },
+    {
+     "section": "Attack development",
+     "statement": "In developing attack scenarios, attacks should be constructed based on the configuration of typical defense mechanisms in the AI system.",
+     "sub": []
+    },
+    {
+     "section": "Attack development",
+     "statement": "In addition, the actual reported attack methods, attack trends, actual damage cases, and knowledge of blind spots that are often overlooked in countermeasures should be taken into consideration.",
+     "sub": []
+    },
+    {
+     "section": "Attack development",
+     "statement": "Even if the decision is made to refrain from conducting attack scenarios due to social or other concerns, high risk scenarios should be documented in the report.",
+     "sub": []
+    },
+    {
+     "section": "Execution procedure",
+     "statement": "The execution of red teaming should follow a structured, three-step approach:",
+     "sub": []
+    },
+    {
+     "section": "Execution procedure",
+     "statement": "Exploratory Testing (Individual Prompts): The red team shall conduct initial testing using a broad range of attack signatures on individual prompts to identify effective attack methods (e.g., jailbreaking techniques) independent of the system context.",
+     "sub": []
+    },
+    {
+     "section": "Execution procedure",
+     "statement": "Development of Attack Procedures: Based on the results of exploratory testing, the red team shall develop customized attack signatures and payloads tailored to the specific risk scenarios and target system characteristics.",
+     "sub": []
+    },
+    {
+     "section": "Execution procedure",
+     "statement": "System-wide Testing: The red team shall execute the developed procedures against the entire AI system to verify if the malicious output from the AI model successfully compromises downstream components or bypasses post-processing filters.",
+     "sub": []
+    },
+    {
+     "section": "Severity assessment criteria",
+     "statement": "The red team shall analyze the impact of successful attacks using domain-specific criteria. The analysis must distinguish between \"theoretical risk\" and \"demonstrated impact.\"",
+     "sub": []
+    },
+    {
+     "section": "Severity assessment criteria",
+     "statement": "For agentic AI systems, system-wide testing shall verify downstream tool execution and system interactions, including:",
+     "sub": []
+    },
+    {
+     "section": "traceability of actions across the full action chain",
+     "statement": "Loss of action traceability shall be treated as a significant safety and security failure, particularly for agentic AI systems interacting with external, physical, financial, or regulated systems.",
+     "sub": []
+    },
+    {
+     "section": "Downstream consequence analysis",
+     "statement": "The analysis shall extend beyond the AI model's output to the broader system:",
+     "sub": [
+      "Execution Risk: If the AI output is code (e.g., SQL, Python), was it successfully executed by the backend? (e.g., Did the SQL injection actually retrieve data?)",
+      "Reputational Damage: Assessing the potential public relations impact if the failure were public."
+     ]
+    },
+    {
+     "section": "Root cause analysis",
+     "statement": "The red team should attempt to identify the cause of the failure (e.g., insufficient training data, weak system prompt, lack of output filtering) to inform the remediation plan.",
+     "sub": []
+    },
+    {
+     "section": "Record keeping during red teaming",
+     "statement": "The organization should retain red teaming records in accordance with the organization's document management and confidentiality policies.",
+     "sub": []
+    }
+   ]
+  },
+  {
+   "phase": "Knowledge sharing and reporting process",
+   "items": [
+    {
+     "section": "Preparing the report of red teaming results",
+     "statement": "The attack planner shall document the red teaming results in a report. And review it for factual errors, as necessary, with development and provision managers of the target Al system and with other relevant stakeholders.",
+     "sub": []
+    },
+    {
+     "section": "Test completion report",
+     "statement": "Development and provision managers of the target Al system should issue the final test completion report based on the red teaming findings.",
+     "sub": []
+    },
+    {
+     "section": "Development of improvement plans",
+     "statement": "The organization shall develop a remediation plan to address identified risks based on the red teaming results.",
+     "sub": []
+    },
+    {
+     "section": "Development of improvement plans",
+     "statement": "The plan shall:",
+     "sub": [
+      "Prioritize remediation measures based on the level of urgency, business risk, and impact.",
+      "Consider a layered defense approach, including pre-filtering inputs, hardening the model (e.g., fine-tuning), and post-filtering outputs."
+     ]
+    },
+    {
+     "section": "Internal knowledge transfer (cross-team sharing)",
+     "statement": "The organization should establish a mechanism to share red teaming findings with other internal AI development teams to prevent the recurrence of similar vulnerabilities.",
+     "sub": []
+    },
+    {
+     "section": "Executive and risk management reporting",
+     "statement": "The findings shall be synthesized into a high-level risk report for top management and legal/compliance stakeholders.",
+     "sub": []
+    },
+    {
+     "section": "Controlled dissemination of sensitive findings (CBRN/Safety)",
+     "statement": "For high-risk findings, particularly those related to CBRN (Chemical, Biological, Radiological, Nuclear) or Critical Safety, the organization shall enforce strict access controls.",
+     "sub": []
+    },
+    {
+     "section": "Controlled dissemination of sensitive findings (CBRN/Safety)",
+     "statement": "Need-to-Know Basis: Detailed attack vectors and generated harmful outputs regarding CBRN shall be restricted to the security team and authorized developers only. They should not be stored in open internal wikis.",
+     "sub": []
+    },
+    {
+     "section": "External responsible disclosure",
+     "statement": "If the red teaming identifies vulnerabilities in third-party components (e.g., OSS models, external APIs) or contributes to the broader AI safety community, the organization should follow responsible disclosure procedures.",
+     "sub": []
+    },
+    {
+     "section": "Follow-up and re-verification",
+     "statement": "After implementing improvement measures, the organization shall conduct a follow-up assessment or re-testing to verify that the identified vulnerabilities have been effectively mitigated . Red teaming should be conducted periodically or triggered by significant system updates (e.g., model retraining, architectural changes) to ensure continuous validity of safety measures.",
+     "sub": []
+    },
+    {
+     "section": "Follow-up and re-verification",
+     "statement": "Red teaming should be an iterative process conducted throughout the system lifecycle, rather than a single event prior to deployment.",
+     "sub": []
+    }
+   ]
+  }
+ ],
+ "risk_dimensions": [
+  {
+   "dim": "Safety & Security",
+   "desc": "Scenarios involving the generation of CBRN (Chemical, Biological, Radiological, Nuclear) material, assisting in cyberattacks, or bypassing safety filters (Jailbreaking)."
+  },
+  {
+   "dim": "Quality & Integrity",
+   "desc": "Scenarios aimed at inducing hallucinations, bias, or reasoning failures that degrade the utility of the system."
+  },
+  {
+   "dim": "Adversarial Performance",
+   "desc": "Scenarios involving inputs designed to exhaust system resources (e.g., increasing token generation time or memory usage) to degrade service availability."
+  },
+  {
+   "dim": "Agentic Control & Authorization",
+   "desc": "Scenarios involving the agent executing unauthorized actions, escalating privileges (e.g., role inheritance exploitation), or interacting with critical systems without human-in-the-loop verification."
+  },
+  {
+   "dim": "Memory & Context Integrity",
+   "desc": "Scenarios where the agent's long-term memory or context window is manipulated to alter future behaviour or exfiltrate sensitive information across sessions."
+  },
+  {
+   "dim": "Agent Hijacking and Goal Displacement",
+   "desc": "Scenarios where an attacker manipulates the agent's reasoning process to abandon its original objective and pursue an unauthorized or malicious goal."
+  },
+  {
+   "dim": "Privilege Escalation through Tool Use",
+   "desc": "Scenarios where an agent improperly uses assigned tools (e.g., API, database access) to gain unauthorized access to sensitive data or systems beyond its intended scope."
+  },
+  {
+   "dim": "Critical System Interaction",
+   "desc": "The risk of issuing incorrect commands to physical systems or IoT devices."
+  }
+ ],
+ "agentic_threats": [
+  "authorization or control hijacking",
+  "checker-out-of-the-loop conditions",
+  "critical system interaction",
+  "goal or instruction manipulation",
+  "hallucination-driven actions",
+  "cascading impact and blast radius",
+  "knowledge base poisoning",
+  "memory or context manipulation",
+  "multi-agent exploitation",
+  "resource or service exhaustion",
+  "supply chain or dependency compromise",
+  "loss of action traceability"
+ ],
+ "techniques": {
+  "perspectives": [
+   "To effectively identify vulnerabilities in AI systems, particularly those involving Large Language Models (LLMs), attack scenarios should be designed from three distinct perspectives regarding the attack vector and impact:",
+   "Bypassing pre-processing and input embedding: Focus on techniques to circumvent input filters or embed malicious inputs into reference resources (e.g., indirect prompt injection via RAG sources) to reach the core model.",
+   "Inducing malicious output: Focus on manipulating the AI model to generate unintended, harmful, or policy-violating outputs (e.g., toxic content, malware code) despite safety training or system prompts.",
+   "Bypassing post-processing and system impact: Focus on whether the generated malicious output can bypass output filters and execute unintended actions on the broader system (e.g., executing OS commands, SQL injection)."
+  ],
+  "success_criteria": [
+   "The red team shall define success criteria for attacks based on the target dimension:",
+   "CBRN/Safety: Any successful generation of actionable harmful information constitutes a system failure (Zero-tolerance approach).",
+   "Quality: The attack is successful if the error rate (e.g., hallucination rate) under adversarial conditions exceeds a defined threshold compared to benign conditions.",
+   "Performance: The attack is successful if the input causes latency or resource consumption to spike beyond acceptable operational limits (e.g., >200% increase) compared to standard inputs of similar length."
+  ],
+  "selecting": [
+   "Organizations should select red teaming techniques based on:",
+   "Objectives: Align techniques with specific goals, such as robustness requirements, bias identification or other compliance requirements;",
+   "Resources: Consider the availability of computational resources, expertise, and time;",
+   "System characteristics: Choose methods suitable for the AI model's architecture, data modalities, and functionalities;",
+   "Risk management: Prioritize techniques that address the most critical vulnerabilities identified in the threat modeling phase."
+  ],
+  "testing_approach": [
+   "The choice between black-box, white-box, or gray-box testing techniques should be determined by the accessibility and ownership of the AI system components:",
+   "Commercial services (API-based): For components utilizing third-party commercial AI models where internal parameters are inaccessible, black-box testing is primarily applicable. Testing focuses on input-output analysis via APIs.",
+   "Open-source software (OSS) and in-house development: For components based on OSS or developed in-house, white-box testing is recommended. This allows the red team to utilize internal information such as model weights, gradients, training data, and system prompts to design more effective attacks.",
+   "Hybrid systems: Complex AI systems often combine both commercial and proprietary components. In such cases, the red teaming plan should segregate components to apply the appropriate testing method (black-box or white-box) for each part ."
+  ]
+ }
+}

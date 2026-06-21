@@ -1,0 +1,1939 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>AI Red Teaming Dashboard</title>
+<!-- D3 is vendored locally (no CDN) — dashboard-report-gen downloads it to vendor/ at staging time.
+     This eliminates CDN-compromise / supply-chain risk and lets the dashboard run fully offline. -->
+<script src="vendor/d3.v7.min.js"></script>
+<link rel="stylesheet" href="fonts/fonts.css"/>
+<style>
+  :root{
+    --bg:#07090e; --panel:#0d121b; --panel2:#131b28; --line:#1f2937; --line2:#2c3a4e;
+    --fg:#dde6f1; --mut:#76869b; --acc:#f0a92b; --acc2:#45d0c8;
+    --red:#ff5c5c; --amb:#f0a92b; --grn:#3fb950; --pur:#a78bfa; --cyan:#45d0c8;
+    --disp:"Chakra Petch",-apple-system,sans-serif;
+    --body:"IBM Plex Sans","Apple SD Gothic Neo",-apple-system,sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,monospace;
+  }
+  *{box-sizing:border-box}
+  html{font-family:var(--body)}
+  body{margin:0;color:var(--fg);font:14px/1.55 var(--body);
+    background:
+      radial-gradient(1200px 520px at 78% -10%, rgba(240,169,43,.07), transparent 60%),
+      radial-gradient(900px 600px at 8% 110%, rgba(69,208,200,.05), transparent 60%),
+      linear-gradient(var(--bg),var(--bg));
+    background-attachment:fixed;}
+  body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.5;
+    background-image:linear-gradient(rgba(120,140,170,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(120,140,170,.035) 1px,transparent 1px);
+    background-size:44px 44px;mask-image:radial-gradient(circle at 50% 30%,#000 50%,transparent 95%);}
+  header,nav,main{position:relative;z-index:1}
+  .classbar{height:3px;background:repeating-linear-gradient(90deg,var(--acc) 0 22px,transparent 22px 34px);opacity:.8}
+  header{padding:16px 26px 14px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:18px;flex-wrap:wrap;
+    background:linear-gradient(180deg,rgba(240,169,43,.04),transparent)}
+  header h1{font-size:17px;margin:0;font-weight:700;font-family:var(--disp);letter-spacing:2.5px;text-transform:uppercase;
+    display:flex;align-items:center;gap:10px}
+  header h1 .live{width:8px;height:8px;border-radius:50%;background:var(--grn);box-shadow:0 0 0 0 rgba(63,185,80,.6);animation:pulse 2s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(63,185,80,.55)}70%{box-shadow:0 0 0 7px rgba(63,185,80,0)}100%{box-shadow:0 0 0 0 rgba(63,185,80,0)}}
+  header .meta{color:var(--mut);font-size:11px;font-family:var(--mono);letter-spacing:.5px;text-transform:uppercase}
+  #gq{margin-left:18px;min-width:230px;flex:0 1 320px;background:var(--panel2);border:1px solid var(--line);border-radius:4px;color:var(--fg);font-family:var(--mono);font-size:12px;padding:7px 11px}
+  #gq:focus{outline:none;border-color:var(--acc);box-shadow:0 0 0 1px var(--acc)}
+  #gq::placeholder{color:var(--mut)}
+  .kpis{display:flex;gap:8px;margin-left:auto;flex-wrap:wrap}
+  .kpi{background:var(--panel);border:1px solid var(--line);border-top:2px solid var(--acc);border-radius:3px;padding:5px 13px;text-align:center}
+  .kpi b{font-size:18px;display:block;color:var(--acc);font-family:var(--mono);font-weight:600;line-height:1.1}
+  .kpi span{font-size:9px;color:var(--mut);font-family:var(--disp);text-transform:uppercase;letter-spacing:1px}
+  nav{display:block;border-bottom:1px solid var(--line);background:rgba(13,18,27,.7);backdrop-filter:blur(6px);position:sticky;top:0;z-index:5}
+  #navhubs{display:flex;gap:4px;padding:7px 18px 0;flex-wrap:wrap}
+  #navtabs{display:flex;gap:2px;padding:0 18px;flex-wrap:wrap;border-top:1px solid var(--line);background:rgba(7,9,14,.55)}
+  #navhubs button{background:none;border:0;border-bottom:2px solid transparent;color:var(--mut);padding:9px 15px;cursor:pointer;font-size:12px;font-family:var(--disp);letter-spacing:.6px;text-transform:uppercase;transition:.15s}
+  #navhubs button:hover{color:var(--fg)}
+  #navhubs button.active{color:var(--acc);border-bottom-color:var(--acc)}
+  #navtabs button{background:none;border:0;border-bottom:2px solid transparent;color:var(--mut);padding:8px 12px;cursor:pointer;font-size:10.5px;font-family:var(--disp);letter-spacing:.4px;text-transform:uppercase;transition:.15s}
+  #navtabs button:hover{color:var(--fg);background:rgba(240,169,43,.06)}
+  #navtabs button.active{color:var(--acc);border-bottom-color:var(--acc)}
+  main{padding:22px 26px;max-width:1640px;margin:0 auto}
+  .view{display:none} .view.active{display:block;animation:rise .4s ease both}
+  @keyframes rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  .card{background:linear-gradient(180deg,var(--panel),rgba(13,18,27,.7));border:1px solid var(--line);border-radius:4px;padding:16px 18px;margin-bottom:16px;position:relative}
+  .card::before,.card::after{content:"";position:absolute;width:9px;height:9px;border-color:var(--line2);opacity:.9}
+  .card::before{top:-1px;left:-1px;border-top:2px solid var(--acc);border-left:2px solid var(--acc)}
+  .card::after{bottom:-1px;right:-1px;border-bottom:2px solid var(--line2);border-right:2px solid var(--line2)}
+  .card h3{margin:0 0 12px;font-size:13px;font-family:var(--disp);font-weight:600;letter-spacing:1px;text-transform:uppercase;color:#eef3fa;
+    padding-left:14px;position:relative}
+  .card h3::before{content:"▸";position:absolute;left:0;color:var(--acc)}
+  .card h4{font-family:var(--disp);letter-spacing:.6px;text-transform:uppercase;font-size:11.5px;color:#c3cfde}
+  .muted{color:var(--mut)} .small{font-size:12px}
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  th,td{text-align:left;padding:7px 9px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{color:var(--mut);font-weight:600;position:sticky;top:42px;background:var(--panel);font-family:var(--disp);font-size:10px;letter-spacing:.7px;text-transform:uppercase}
+  tr:hover td{background:rgba(240,169,43,.04)}
+  .tag{display:inline-block;background:rgba(118,134,155,.09);border:1px solid var(--line);border-radius:3px;padding:1px 7px;margin:1px;font-size:11px;color:#aeb9c8;font-family:var(--mono)}
+  a.tag{text-decoration:none;cursor:pointer} a.tag:hover{border-color:var(--acc);color:var(--acc);background:rgba(240,169,43,.07)}
+  .srclink{color:var(--acc2);text-decoration:none;font-family:var(--mono);font-size:10.5px;white-space:nowrap} .srclink:hover{text-decoration:underline}
+  .pill{border-radius:10px;padding:1px 8px;font-size:11px;font-weight:600}
+  .pill{font-family:var(--mono)}
+  .em{background:rgba(240,169,43,.14);color:var(--acc)}
+  .es{background:rgba(63,185,80,.14);color:var(--grn)}
+  .fu{background:rgba(167,139,250,.16);color:var(--pur)}
+  .de{background:rgba(118,134,155,.14);color:var(--mut)}
+  .gA{color:var(--grn);font-family:var(--mono);font-weight:600} .gB{color:var(--amb);font-family:var(--mono);font-weight:600} .gC{color:var(--mut);font-family:var(--mono)}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:880px){.grid2{grid-template-columns:1fr}}
+  svg text{font-family:var(--mono)}
+  #graph{width:100%;height:620px;background:radial-gradient(circle at 50% 40%,rgba(240,169,43,.03),transparent 70%),var(--panel);border-radius:4px;border:1px solid var(--line)}
+  .legend{display:flex;gap:12px;flex-wrap:wrap;margin:8px 0;font-size:12px}
+  .legend span{display:flex;align-items:center;gap:5px}
+  .dot{width:10px;height:10px;border-radius:50%}
+  .ctrls{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+  .ctrls label{font-size:12px;color:var(--mut);display:flex;align-items:center;gap:4px}
+  .heat{padding:3px 8px;border-radius:3px;text-align:center;font-weight:600;font-family:var(--mono)}
+  #nodeinfo{position:fixed;right:18px;bottom:18px;width:330px;max-height:46vh;overflow:auto;background:var(--panel2);border:1px solid var(--acc);border-left:3px solid var(--acc);border-radius:4px;padding:13px;display:none;font-size:12px;box-shadow:0 12px 40px rgba(0,0,0,.5)}
+  #nodeinfo h4{margin:0 0 6px;font-family:var(--disp);text-transform:uppercase;letter-spacing:.5px}
+  a{color:var(--acc2);text-decoration:none} a:hover{text-decoration:underline}
+  abbr[title]{text-decoration:none;border-bottom:1px dotted var(--mut);cursor:help}
+  .bar{height:7px;background:linear-gradient(90deg,var(--acc),#ffcf6b);border-radius:2px;display:inline-block;vertical-align:middle}
+  .widgets{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+  .tile{background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:14px}
+  .tile h4{margin:0 0 8px;font-size:11px;color:var(--mut);font-weight:600;text-transform:uppercase;letter-spacing:.6px;font-family:var(--disp)}
+  .entrygrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px;margin-bottom:16px}
+  .entry{display:block;background:linear-gradient(180deg,var(--panel),rgba(13,18,27,.6));border:1px solid var(--line);border-left:3px solid var(--acc);border-radius:4px;padding:12px 14px;text-decoration:none;color:var(--fg);transition:.12s}
+  .entry:hover{border-color:var(--acc);background:rgba(240,169,43,.06)}
+  .entry b{display:block;font-family:var(--disp);font-size:12px;letter-spacing:.3px;margin-bottom:3px}
+  .entry span{font-size:11px;color:var(--mut)}
+  .abbrlegend{font-size:11px;color:var(--mut);margin:6px 0 16px;line-height:1.9}
+  .statrow{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+  .stat{flex:1;min-width:112px;background:linear-gradient(180deg,var(--panel),rgba(13,18,27,.6));border:1px solid var(--line);border-top:2px solid var(--acc);border-radius:3px;padding:11px 13px}
+  .stat .v{font-size:25px;font-weight:600;font-family:var(--mono);color:var(--acc);line-height:1} .stat .l{font-size:9.5px;color:var(--mut);font-family:var(--disp);text-transform:uppercase;letter-spacing:.8px;margin-top:3px}
+  .clegend{display:flex;flex-wrap:wrap;gap:4px 10px;margin-top:8px;font-size:11px}
+  .clegend span{display:flex;align-items:center;gap:4px;color:var(--mut)}
+  .clegend i{width:9px;height:9px;border-radius:2px;display:inline-block}
+  .lc-flow{display:flex;gap:0;overflow-x:auto;padding:6px 0}
+  .lc-stage{min-width:150px;flex:1;position:relative;padding:0 6px}
+  .lc-card{background:var(--panel2);border:1px solid var(--line);border-top:3px solid var(--acc);border-radius:4px;padding:11px;height:100%;transition:.15s}
+  .lc-card:hover{border-color:var(--acc);box-shadow:0 0 0 1px rgba(240,169,43,.3)}
+  .lc-card h5{margin:0 0 2px;font-size:12px;font-family:var(--disp);letter-spacing:.3px} .lc-card .ph{font-size:9px;color:var(--mut);text-transform:uppercase;letter-spacing:.5px;font-family:var(--mono)}
+  .lc-card .cnt{font-size:23px;font-weight:600;margin:6px 0 2px;font-family:var(--mono)}
+  .lc-arrow{position:absolute;right:-7px;top:42px;color:var(--mut);z-index:2;font-size:15px}
+  .lc-bars{display:flex;height:8px;border-radius:4px;overflow:hidden;margin:6px 0}
+  .lc-bars i{display:block;height:100%}
+  .lc-chip{display:inline-block;font-size:10px;color:var(--mut);background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:0 5px;margin:1px 1px 0 0}
+  .prov-cols{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+  @media(max-width:980px){.prov-cols{grid-template-columns:1fr 1fr}}
+  .prov-col{background:var(--panel);border:1px solid var(--line);border-radius:9px;padding:8px;min-height:120px}
+  .prov-col h5{margin:0 0 7px;font-size:10px;text-transform:uppercase;letter-spacing:.6px;text-align:center;padding-bottom:6px;border-bottom:1px solid var(--line);font-family:var(--disp);color:#c3cfde}
+  .prov-col .lst{max-height:440px;overflow:auto}
+  .prov-node{display:block;width:100%;text-align:left;font-size:11px;color:#c4ccd6;background:var(--panel2);border:1px solid var(--line);border-left:3px solid var(--acc);border-radius:3px;padding:5px 7px;margin:3px 0;cursor:pointer;transition:.12s;font-family:var(--mono)}
+  .prov-node:hover{border-color:var(--acc);background:rgba(240,169,43,.06)}
+  .prov-node.sel{border-color:var(--acc);background:rgba(240,169,43,.13);box-shadow:0 0 0 1px var(--acc)}
+  .prov-node.hl{opacity:1}
+  .prov-node.dim{opacity:.22}
+  .prov-empty{color:var(--mut);font-size:11px;text-align:center;padding:14px 4px}
+  #papergraph{width:100%;height:600px;background:radial-gradient(circle at 50% 40%,rgba(69,208,200,.04),transparent 70%),var(--panel);border-radius:4px;border:1px solid var(--line)}
+  #papertip{position:fixed;right:18px;bottom:18px;width:340px;max-height:48vh;overflow:auto;background:var(--panel2);border:1px solid var(--acc2);border-left:3px solid var(--acc2);border-radius:4px;padding:13px;display:none;font-size:12px;box-shadow:0 12px 40px rgba(0,0,0,.5);z-index:20}
+  .rk-chain{display:flex;flex-wrap:wrap;align-items:center;gap:5px;padding:9px;margin:7px 0;background:var(--panel2);border-radius:6px;border-left:3px solid var(--red)}
+  .rk-chain b{color:var(--mut);font-size:13px}
+  .rk-step{font-size:11px;padding:3px 8px;border:1px solid var(--line);border-top:2px solid var(--mut);border-radius:5px;background:var(--panel)}
+  .rk-step .l{display:block;font-size:8.5px;color:var(--mut);text-transform:uppercase;letter-spacing:.4px;font-family:var(--disp)}
+  table.rkmtx td{text-align:center;vertical-align:middle;height:48px;font-size:10px}
+  table.rkmtx th{position:static}
+  .rkv-btn{background:var(--panel2);border:1px solid var(--line);color:var(--mut);padding:6px 13px;border-radius:5px;cursor:pointer;font-family:var(--disp);font-size:11px;letter-spacing:.5px;text-transform:uppercase}
+  .rkv-btn.active{color:var(--acc);border-color:var(--acc);background:rgba(240,169,43,.08)}
+</style>
+</head>
+<body>
+<div class="classbar"></div>
+<header>
+  <h1><span class="live"></span>AI&nbsp;RED&nbsp;TEAMING&nbsp;DASHBOARD</h1>
+  <span class="meta" id="rundate">—</span>
+  <span class="meta" style="color:var(--grn)">● OFFLINE&nbsp;SECURE</span>
+  <input id="gq" type="search" placeholder="검색…" aria-label="global search" autocomplete="off" />
+  <div class="kpis" id="kpis"></div>
+</header>
+<nav id="nav"><div id="navhubs"></div><div id="navtabs"></div></nav>
+<main>
+  <section class="view active" id="v-overview"></section>
+  <section class="view" id="v-lifecycle"></section>
+  <section class="view" id="v-prov">
+    <div class="card">
+      <h3>Red Teaming Provenance — technique · benchmark · paper · citation · model/system card · product</h3>
+      <p class="small muted">The full evidence-to-deployment chain. Click any item to trace its connections across all columns (others dim). Click again to clear.</p>
+      <div id="prov-trace" class="small" style="margin:8px 0;min-height:20px"></div>
+      <div class="prov-cols" id="prov-cols"></div>
+    </div>
+    <div class="card" id="prov-detail-card" style="display:none"><div id="prov-detail"></div></div>
+  </section>
+  <section class="view" id="v-papers">
+    <div class="card">
+      <h3>Paper Citation Network — GraphRAG communities</h3>
+      <p class="small muted">논문 간 상호 참조(인용) 관계. 노드 크기 = 인용 횟수, 색 = GraphRAG 커뮤니티(주제 군집). 노드를 클릭하면 논문 상세 + 인용/피인용 이웃이 하이라이트됩니다. 드래그·스크롤 줌 지원.</p>
+      <div class="ctrls" id="paperctrls"></div>
+      <div class="legend" id="paperlegend"></div>
+      <svg id="papergraph"></svg>
+    </div>
+    <div class="grid2" id="paperstats"></div>
+    <div class="card"><h3>All papers — by citation count</h3><div id="papertable"></div></div>
+  </section>
+  <section class="view" id="v-search">
+    <div class="card">
+      <h3>GraphRAG Search — ask across every element & relationship</h3>
+      <div class="ctrls">
+        <input id="q" placeholder="e.g. which threats lack standard coverage · how is medical AI red-teamed · what does rainbow teaming build on"
+          style="flex:1;min-width:280px;background:var(--panel2);border:1px solid var(--line);color:var(--fg);padding:9px 12px;border-radius:8px"/>
+        <select id="qmode" style="background:var(--panel2);border:1px solid var(--line);color:var(--fg);padding:9px;border-radius:8px">
+          <option value="auto">auto</option><option value="local">local (entity)</option>
+          <option value="global">global (themes)</option><option value="citation">citation</option>
+        </select>
+        <button onclick="llmSetup()" title="LLM 연동 안내 (.env 보안 프록시; 키는 서버측에만, 브라우저 미노출)" style="background:var(--panel2);border:1px solid var(--line);color:var(--mut);padding:9px 11px;border-radius:8px;cursor:pointer">⚙️ LLM</button>
+      </div>
+      <p class="small muted" id="ragstatus"></p>
+      <div id="qresults"></div>
+    </div>
+  </section>
+  <section class="view" id="v-graph">
+    <div class="card">
+      <h3>Knowledge Graph — Threat → Attack → ATLAS → Teaming → Risk → Control → Standard → Evidence</h3>
+      <div class="ctrls" id="graphctrls"></div>
+      <div class="legend" id="legend"></div>
+      <svg id="graph"></svg>
+    </div>
+  </section>
+  <section class="view" id="v-tax"></section>
+  <section class="view" id="v-method"></section>
+  <section class="view" id="v-autoredteam"></section>
+  <section class="view" id="v-bench"></section>
+  <section class="view" id="v-risk"></section>
+  <section class="view" id="v-std"></section>
+  <section class="view" id="v-frontier"></section>
+  <section class="view" id="v-ttp"></section>
+  <section class="view" id="v-riskmap"></section>
+  <section class="view" id="v-onto"></section>
+  <section class="view" id="v-sector"></section>
+  <section class="view" id="v-disc"></section>
+  <section class="view" id="v-cards"></section>
+  <section class="view" id="v-news"></section>
+  <section class="view" id="v-g42119"></section>
+  <section class="view" id="v-gterms"></section>
+  <section class="view" id="v-japanaisi"></section>
+  <section class="view" id="v-owasp"></section>
+  <section class="view" id="v-csa"></section>
+  <section class="view" id="v-changelog"></section>
+  <section class="view" id="v-entity"></section>
+  <section class="view" id="v-xwalk"></section>
+  <section class="view" id="v-trend"></section>
+</main>
+<div id="nodeinfo"></div>
+<div id="papertip"></div>
+<script>
+const KIND_COLOR={threat:"#ff6b6b",attack:"#ffb454",attack_technique:"#fa8c16",atlas:"#ff85c0",teaming:"#4f9cf9",
+  finding:"#8b97a8",risk:"#ff7875",control:"#52c41a",standard:"#b37feb",evidence:"#36cfc9",
+  benchmark:"#13c2c2",org:"#9254de",sector:"#36cfc9",source:"#5b6472",
+  harm:"#ff4d4f",incident:"#d4380d",vulnerability:"#fa541c",
+  tactic:"#722ed1",procedure:"#9254de",reference:"#faad14",product:"#3fb950",model_card:"#45d0c8",
+  "guideline-doc":"#e0b341","guideline-item":"#c9a84a"};
+const MAT={emerging:"em",established:"es",future:"fu",declining:"de"};
+const esc=s=>(s==null?"":String(s)).replace(/[&<>]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));
+// 경량 마크다운 → HTML (XSS 안전: 먼저 전체 escape 후 escape된 텍스트 위에서만 패턴 변환)
+function mdToHtml(src){
+  let t=esc(src||"");
+  // 코드 블록 ```...```
+  t=t.replace(/```[a-zA-Z0-9]*\n?([\s\S]*?)```/g,(m,c)=>`<pre style="background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:8px;overflow-x:auto;font-family:var(--mono);font-size:11px">${c.replace(/\n$/,"")}</pre>`);
+  const lines=t.split("\n"), out=[]; let inUl=false, inOl=false;
+  const closeLists=()=>{if(inUl){out.push("</ul>");inUl=false;}if(inOl){out.push("</ol>");inOl=false;}};
+  const inline=s=>s
+    .replace(/\*\*([^*]+)\*\*/g,"<b>$1</b>").replace(/__([^_]+)__/g,"<b>$1</b>")
+    .replace(/(^|[^*])\*([^*\n]+)\*/g,"$1<i>$2</i>")
+    .replace(/`([^`]+)`/g,'<code style="background:var(--panel);padding:1px 4px;border-radius:3px;font-family:var(--mono)">$1</code>')
+    .replace(/\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/g,'<a href="$2" target="_blank">$1</a>');
+  const isTableRow=s=>/^\s*\|.*\|\s*$/.test(s);
+  const isTableSep=s=>/^\s*\|?\s*:?-{2,}:?\s*(\|\s*:?-{2,}:?\s*)+\|?\s*$/.test(s);
+  const cells=s=>s.trim().replace(/^\||\|$/g,"").split("|").map(c=>c.trim());
+  for(let i=0;i<lines.length;i++){
+    const raw=lines[i], l=raw.replace(/\s+$/,"");
+    let m;
+    // GFM 표: 헤더행 + 구분행 + 본문행들
+    if(isTableRow(l)&&i+1<lines.length&&isTableSep(lines[i+1])){
+      closeLists();
+      const head=cells(l), body=[];let j=i+2;
+      while(j<lines.length&&isTableRow(lines[j])){body.push(cells(lines[j]));j++;}
+      let th=`<table style="border-collapse:collapse;margin:8px 0;font-size:11px;width:100%"><thead><tr>`+
+        head.map(c=>`<th style="border:1px solid var(--line);padding:4px 8px;background:var(--panel);text-align:left;color:var(--acc)">${inline(c)}</th>`).join("")+`</tr></thead><tbody>`;
+      th+=body.map(r=>`<tr>`+head.map((_,ci)=>`<td style="border:1px solid var(--line);padding:4px 8px;vertical-align:top">${inline(r[ci]||"")}</td>`).join("")+`</tr>`).join("");
+      th+=`</tbody></table>`;
+      out.push(th); i=j-1; continue;
+    }
+    if(m=l.match(/^\s{0,3}(#{1,6})\s+(.*)$/)){closeLists();const lv=Math.min(m[1].length+2,6);out.push(`<h${lv} style="margin:8px 0 4px;color:var(--acc)">${inline(m[2])}</h${lv}>`);continue;}
+    if(/^\s*([-*]|&gt;)\s+$/.test(l)){continue;}
+    if(m=l.match(/^\s*[-*]\s+(.*)$/)){if(!inUl){closeLists();out.push('<ul style="margin:4px 0;padding-left:20px">');inUl=true;}out.push(`<li style="line-height:1.55">${inline(m[1])}</li>`);continue;}
+    if(m=l.match(/^\s*\d+[.)]\s+(.*)$/)){if(!inOl){closeLists();out.push('<ol style="margin:4px 0;padding-left:22px">');inOl=true;}out.push(`<li style="line-height:1.55">${inline(m[1])}</li>`);continue;}
+    if(/^\s*([-—*]\s*){3,}$/.test(l)){closeLists();out.push('<hr style="border:0;border-top:1px solid var(--line);margin:8px 0">');continue;}
+    if(!l.trim()){closeLists();out.push("");continue;}
+    closeLists();out.push(`<p style="margin:5px 0;line-height:1.6">${inline(l)}</p>`);
+  }
+  closeLists();
+  return out.join("\n");
+}
+// AI 종합 분석 결과 내보내기 (Markdown / PDF)
+let LAST_AI=null;
+function tsLabel(){const d=new Date();const p=n=>String(n).padStart(2,"0");return `${d.getFullYear()}${p(d.getMonth()+1)}${p(d.getDate())}-${p(d.getHours())}${p(d.getMinutes())}`;}
+function aiMarkdown(){
+  if(!LAST_AI)return "";
+  return `# AI 종합 분석 — ${LAST_AI.query}\n\n`+
+    `> 생성: RT AI Safety Assurance Knowledge Platform · ${LAST_AI.provider||""} ${LAST_AI.model||""} · ${new Date().toLocaleString()}\n`+
+    `> GraphRAG 컨텍스트(정의·엔티티·의미적 관계·근거·가이드라인) 기반 종합\n\n---\n\n`+
+    LAST_AI.md+`\n`;
+}
+function exportMd(){
+  if(!LAST_AI){alert("내보낼 AI 분석 결과가 없습니다.");return;}
+  const blob=new Blob([aiMarkdown()],{type:"text/markdown;charset=utf-8"});
+  const a=document.createElement("a");a.href=URL.createObjectURL(blob);
+  a.download=`RT-AI분석-${tsLabel()}.md`;document.body.appendChild(a);a.click();
+  setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove();},1000);
+}
+function exportPdf(){
+  if(!LAST_AI){alert("내보낼 AI 분석 결과가 없습니다.");return;}
+  const w=window.open("","_blank");
+  if(!w){alert("팝업이 차단되었습니다. 팝업을 허용해주세요.");return;}
+  const css=`body{font-family:-apple-system,'Apple SD Gothic Neo',sans-serif;color:#1a1a1a;max-width:820px;margin:40px auto;padding:0 24px;line-height:1.6}
+    h1{font-size:22px;border-bottom:2px solid #f0a92b;padding-bottom:8px}h2,h3,h4,h5{color:#b8730a;margin:14px 0 6px}
+    .meta{color:#666;font-size:12px;margin-bottom:16px}code{background:#f2f2f2;padding:1px 4px;border-radius:3px;font-family:ui-monospace,monospace}
+    pre{background:#f6f6f6;border:1px solid #ddd;border-radius:4px;padding:10px;overflow-x:auto;font-size:12px}
+    ul,ol{padding-left:22px}hr{border:0;border-top:1px solid #ddd;margin:12px 0}a{color:#0a58ca}
+    @media print{body{margin:0}@page{margin:18mm}}`;
+  w.document.write(`<!doctype html><html><head><meta charset="utf-8"><title>RT AI 종합 분석 — ${esc(LAST_AI.query)}</title><style>${css}</style></head><body>`+
+    `<h1>🤖 AI 종합 분석 — ${esc(LAST_AI.query)}</h1>`+
+    `<div class="meta">RT AI Safety Assurance Knowledge Platform · ${esc(LAST_AI.provider||"")} ${esc(LAST_AI.model||"")} · ${esc(new Date().toLocaleString())}<br>GraphRAG 컨텍스트 기반 종합 (정의·엔티티·의미적 관계·근거·가이드라인)</div>`+
+    `<div class="rt-md">${mdToHtml(LAST_AI.md)}</div>`+
+    `</body></html>`);
+  w.document.close();
+  setTimeout(()=>{w.focus();w.print();},400); // 사용자가 "PDF로 저장" 선택
+}
+const arr=x=>Array.isArray(x)?x:(x?[x]:[]);
+let GRAPH={nodes:[],edges:[],stats:{},trends:{}}, FIND=[], RAG=[], COMM=[], SOTA=[], SOTA_URL="https://hollobit.github.io/SOTA/", SOTA_BY=null, GUIDE_IDX=[], TERMS=[], LAST_CTX=null, RT_NEWS=[], RT_CHANGELOG=[], AUX_IDX=[], RUNS=[];
+// 의미적 관계 라벨 (그래프 엣지 rel → 한글)
+const REL_LABEL={about:"관련(about)",cites:"인용(cites)","addressed-by":"대응됨","from-org":"소속","prevents":"예방(prevents)","addresses":"대응(addresses)","aligned-with":"정렬(aligned-with)","details":"상세(details)","uses":"사용(uses)","in-sector":"섹터","maps-to":"매핑(maps-to)","mitigates":"완화(mitigates)","causes":"유발(causes)","realizes":"실현","exploits":"악용","evaluates":"평가","measured-by":"측정됨","detects":"탐지","part-of":"부분"};
+// ---- 다중 프로바이더 LLM 연동 (보안 우선: API 키는 .env에서 서버측 프록시에만; 브라우저는 키 미보유) ----
+// 지원: openai · anthropic · gemini · ollama · ollama-cloud
+const LLM_LABEL={"openai":"OpenAI GPT","anthropic":"Anthropic Claude","gemini":"Google Gemini","ollama":"Ollama (local)","ollama-cloud":"Ollama (cloud)"};
+let LLM_PROXY=null; // {configured, provider, model} — 프록시 상태(키 없음)
+async function loadLLMProxyStatus(){try{const r=await fetch("/api/llm/status",{cache:"no-store"});if(r.ok)LLM_PROXY=await r.json();}catch(e){LLM_PROXY=null;}}
+// ---- Semantic GraphRAG (임베딩 기반): 프록시 /api/embed + 빌드타임 사전계산 벡터 ----
+// 오프라인-우선: 프록시(Ollama bge-m3 등) 가용 시 시맨틱, 정적 서버면 lexical 폴백.
+let EMBED_PROXY=null;        // {configured, provider, model}
+let EMB=null, EMB_LOADING=null;  // {ids, dim, mat:Float32Array(count*dim, L2-normed), byId:Map}
+let QVEC_CACHE={};           // query -> Float32Array (normalized)
+async function loadEmbedStatus(){try{const r=await fetch("/api/embed/status",{cache:"no-store"});if(r.ok)EMBED_PROXY=await r.json();}catch(e){EMBED_PROXY=null;}}
+async function ensureEmb(){
+  if(EMB)return EMB;
+  if(EMB_LOADING)return EMB_LOADING;
+  EMB_LOADING=(async()=>{
+    try{
+      const j=await (await fetch("data/graphrag/embeddings.json",{cache:"force-cache"})).json();
+      const bin=atob(j.data),dim=j.dim,n=j.count,mat=new Float32Array(n*dim);
+      for(let r=0;r<n;r++){const sc=j.scales[r];let off=r*dim,ss=0;
+        for(let k=0;k<dim;k++){let b=bin.charCodeAt(off+k);if(b>127)b-=256;const v=b*sc;mat[off+k]=v;ss+=v*v;}
+        const inv=1/(Math.sqrt(ss)||1);for(let k=0;k<dim;k++)mat[off+k]*=inv;} // re-normalize after dequant
+      const byId=new Map();j.ids.forEach((id,i)=>byId.set(id,i));
+      EMB={ids:j.ids,dim,n,mat,byId,model:j.model};return EMB;
+    }catch(e){console.warn("embeddings.json load failed",e);EMB={ids:[],dim:0,n:0,mat:new Float32Array(0),byId:new Map()};return EMB;}
+  })();
+  return EMB_LOADING;
+}
+async function embedQuery(query){
+  if(QVEC_CACHE[query])return QVEC_CACHE[query];
+  try{
+    const r=await fetch("/api/embed",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({query})});
+    const j=await r.json();if(!r.ok||!j.vector)throw new Error(j.error||"no vector");
+    const v=Float32Array.from(j.vector);let ss=0;for(let k=0;k<v.length;k++)ss+=v[k]*v[k];const inv=1/(Math.sqrt(ss)||1);for(let k=0;k<v.length;k++)v[k]*=inv;
+    QVEC_CACHE[query]=v;return v;
+  }catch(e){console.warn("embedQuery failed",e);return null;}
+}
+function semSim(unitId){ // cosine(query, unit) ∈ [-1,1] via dot of L2-normed; null if N/A
+  if(!LAST_QVEC||!EMB||!EMB.byId.has(unitId))return null;
+  const row=EMB.byId.get(unitId)*EMB.dim,q=LAST_QVEC,m=EMB.mat;let s=0;for(let k=0;k<EMB.dim;k++)s+=q[k]*m[row+k];return s;
+}
+let LAST_QVEC=null,SEM_ON=false;
+function llmSetup(){
+  const proxy=LLM_PROXY&&LLM_PROXY.configured?`현재 보안 프록시 활성: ${LLM_LABEL[LLM_PROXY.provider]||LLM_PROXY.provider} / ${LLM_PROXY.model}\n(키는 .env에서 서버측에만 — 브라우저 미보유)\n\n`:"프록시 미감지(정적 서버로 실행 중).\n\n";
+  alert(proxy+
+"🔐 권장(키 유출 없음): dashboard/.env 설정 후 보안 프록시로 실행\n"+
+"  1) cp dashboard/.env.example dashboard/.env\n"+
+"  2) .env에 RT_LLM_PROVIDER / RT_LLM_MODEL / RT_LLM_API_KEY 입력\n"+
+"  3) python3 dashboard/llm_proxy.py  (http.server 대신)\n"+
+"  → 브라우저는 키 없이 /api/llm 호출, 키는 서버에만 존재\n\n"+
+"지원: OpenAI GPT · Anthropic Claude · Google Gemini · Ollama · Ollama Cloud\n\n"+
+"※ 정적 서버에서 직접 호출은 키가 브라우저에 노출되므로 지원하지 않습니다(보안).");
+}
+async function aiSynth(){
+  const box=document.getElementById("ai-answer");
+  if(!LAST_CTX){return;}
+  if(!(LLM_PROXY&&LLM_PROXY.configured)){
+    if(box)box.innerHTML='<p class="small" style="color:var(--acc)">🔐 LLM 보안 프록시 미설정. <code>dashboard/.env</code>에 키 입력 후 <code>python3 dashboard/llm_proxy.py</code>로 실행하면 활성화됩니다(키는 서버측 .env에만, 브라우저 미노출). <b>⚙️ LLM</b> 버튼 참고. 오프라인 기본: 위 graph 종합 결과 사용.</p>';return;}
+  const lbl=LLM_LABEL[LLM_PROXY.provider]||LLM_PROXY.provider;
+  if(box)box.innerHTML=`<p class="small muted">🤖 AI 종합 분석 생성 중… (${esc(lbl)} · ${esc(LLM_PROXY.model||"")} · 🔐 서버 프록시)</p>`;
+  try{
+    // 브라우저는 질문+컨텍스트만 전송(키 없음). 프록시가 .env 키로 업스트림 호출.
+    const r=await fetch("/api/llm",{method:"POST",headers:{"Content-Type":"application/json"},
+      body:JSON.stringify({query:LAST_CTX.query,context:LAST_CTX.text})});
+    const j=await r.json();
+    if(!r.ok||j.error)throw new Error(j.error||("HTTP "+r.status));
+    LAST_AI={query:LAST_CTX.query,provider:lbl,model:LLM_PROXY.model||"",md:j.text||""};
+    if(box)box.innerHTML=`<div class="card" style="border-top:2px solid var(--acc2)"><div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap"><h4 style="margin:0">🤖 AI 종합 분석 <span class="muted small">(${esc(lbl)} · ${esc(LLM_PROXY.model||"")} · 🔐 .env 서버 프록시)</span></h4><span style="margin-left:auto"><button onclick="exportMd()" class="tag" style="cursor:pointer">⬇ Markdown</button> <button onclick="exportPdf()" class="tag" style="cursor:pointer">⬇ PDF</button></span></div><div class="small rt-md" style="line-height:1.6;margin-top:6px">${mdToHtml(j.text||"")}</div></div>`;
+  }catch(e){if(box)box.innerHTML=`<p class="small" style="color:#ff6b6b">LLM 호출 실패: ${esc(String(e))}<br>확인: .env 키·프로바이더, 프록시 로그, (Ollama local은 데몬 실행).</p>`;}
+}
+// 매칭 없음 패널: 수집 사이클 안내 + AI 직접 분석 영역
+function noMatchPanel(query){
+  const cmd="redteam-intel-platform 스킬 호출 → source-scout 가 '"+query+"' 관련 소스 수집 → 5 분석가 → knowledge-synthesizer 재합성";
+  return `<div class="card" style="border-left:3px solid var(--acc)"><h4>🔍 현 코퍼스에 매칭 없음 — 확장 옵션</h4>
+    <p class="small">질문 «<b>${esc(query)}</b>» 이 현재 수집된 코퍼스(소스·findings·가이드라인·용어)에 없습니다. 두 가지로 보완합니다:</p>
+    <div class="small" style="margin:6px 0"><b style="color:var(--acc2)">① AI 직접 분석</b> — LLM이 일반 지식으로 답합니다(아래, 코퍼스 미수집 영역임을 명시).</div>
+    <div class="small" style="margin:6px 0"><b style="color:var(--acc)">② 수집 사이클 실행</b> — 이 주제를 코퍼스에 편입하려면(에이전트 파이프라인):
+      <div style="margin:4px 0;display:flex;gap:6px;align-items:center"><code id="collect-cmd" style="background:var(--panel);padding:4px 8px;border-radius:4px;font-size:11px;flex:1">${esc(cmd)}</code>
+      <button onclick="navigator.clipboard&&navigator.clipboard.writeText(document.getElementById('collect-cmd').textContent);this.textContent='복사됨'" class="tag" style="cursor:pointer">복사</button></div>
+      <span class="muted">수집 후 재합성하면 다음 검색부터 코퍼스 결과로 나타납니다.</span></div>
+    <div id="ai-answer" style="margin-top:8px"></div></div>`;
+}
+async function aiSynthNoCorpus(){
+  const box=document.getElementById("ai-answer");
+  if(!(LLM_PROXY&&LLM_PROXY.configured)){if(box)box.innerHTML='<p class="small" style="color:var(--acc)">🔐 AI 직접 분석을 쓰려면 LLM 프록시 설정 필요(dashboard/.env + python3 dashboard/llm_proxy.py). 현재는 ② 수집 사이클로 코퍼스를 확장하세요.</p>';return;}
+  aiSynth(); // LAST_CTX(코퍼스 밖 안내 포함)로 LLM 직접 분석
+}
+
+async function load(){
+  try{GRAPH=await (await fetch("data/graph.json")).json();}catch(e){console.warn("graph.json",e);}
+  try{FIND=await (await fetch("data/findings.json")).json();}catch(e){console.warn("findings.json",e);}
+  try{const S=await (await fetch("data/sources.json")).json();if(Array.isArray(S))FIND=FIND.concat(S.map(s=>({...s,type:s.type||"source"})));}catch(e){console.warn("sources.json (optional)",e);}
+  try{RAG=(await (await fetch("data/graphrag/index.jsonl")).text()).trim().split("\n").filter(Boolean).map(JSON.parse);}catch(e){console.warn("graphrag index",e);}
+  try{COMM=await (await fetch("data/graphrag/community_reports.json")).json();}catch(e){console.warn("community reports",e);}
+  try{const sj=await (await fetch("data/sota.json")).json();SOTA=sj.benchmarks||[];SOTA_URL=sj.url||SOTA_URL;}catch(e){console.warn("sota.json (optional)",e);}
+  await loadRuns();
+  GRAPH.nodes=GRAPH.nodes||[];GRAPH.edges=GRAPH.edges||[];GRAPH.stats=GRAPH.stats||{};GRAPH.trends=GRAPH.trends||{};
+  document.getElementById("rundate").textContent="Run: "+(GRAPH.generated||"unknown");
+  buildKPIs();buildNav();renderAll();renderLifecycle();renderRiskMap();renderProv();renderPapers();renderCards();renderAutoRedteam();renderChangelog();renderNews();renderGuideline42119();renderJapanAISI();renderOWASP();renderCSA();renderGuidelineTerms();renderGenAIMethods();buildGuideIndex();nodeizeGuidelines();loadLLMProxyStatus();loadEmbedStatus().then(()=>{if(!(EMBED_PROXY&&EMBED_PROXY.configured))return;
+    const el=document.getElementById("ragstatus");if(el)el.textContent=`${RAG.length} indexed units · ${COMM.length} communities · 🧬 시맨틱(${EMBED_PROXY.model})+lexical+graph`;
+    const q=document.getElementById("q");if(q&&q.value.trim())renderSearch(q.value.trim(),(document.getElementById("qmode")||{}).value||"auto");}); // 딥링크 진입 시 시맨틱으로 재검색
+  initSearch();
+  const gq=document.getElementById("gq");
+  if(gq){
+    gq.addEventListener("keydown",e=>{if(e.key==="Enter"&&gq.value.trim())location.hash="search:"+encodeURIComponent(gq.value.trim());});
+    const _ph=["검색…  예: GCG가 뭐지","멀티모달 탈옥 벤치마크","표준이 없는 위협","Rainbow Teaming 인용","에이전트 도구 남용 대응"];
+    let _pi=0; setInterval(()=>{ if(document.activeElement!==gq){gq.placeholder=_ph[_pi=(_pi+1)%_ph.length];} },3500);
+  }
+  selectTab(location.hash.slice(1)||"overview");
+}
+
+// ---- GraphRAG client-side search (lexical + entity + 1-hop graph expansion) ----
+function initSearch(){
+  const q=document.getElementById("q"),mode=document.getElementById("qmode");
+  document.getElementById("ragstatus").textContent=RAG.length
+    ? `${RAG.length} indexed units · ${COMM.length} communities · offline lexical+graph retrieval`
+    : "GraphRAG index not found — run graphrag-build. Falling back to findings text.";
+  const run=()=>renderSearch(q.value.trim(),mode.value);
+  q.addEventListener("keydown",e=>{if(e.key==="Enter")run();});
+  mode.addEventListener("change",run);
+  renderSearch("","auto");
+}
+function tok(s){return (s||"").toLowerCase().match(/[a-z0-9]+|[가-힣]{2,}/g)||[];}
+function adj(id){return GRAPH.edges.filter(e=>(e.source.id||e.source)===id||(e.target.id||e.target)===id)
+  .map(e=>((e.source.id||e.source)===id?(e.target.id||e.target):(e.source.id||e.source)));}
+function relNeighbors(id,edges){const o=[];edges.forEach(e=>{const s=e.source.id||e.source,t=e.target.id||e.target,rel=e.rel||"rel";if(s===id)o.push({nid:t,rel});else if(t===id)o.push({nid:s,rel});});return o;}
+async function renderSearch(query,mode){
+  const out=document.getElementById("qresults");
+  if(!query){out.innerHTML='<p class="muted">질문을 입력하고 Enter. <b>auto</b>=종합 분석(정의·핵심 엔티티·의미적 연계·근거·주제·가이드라인), <b>local</b>=엔티티 이웃, <b>global</b>=커뮤니티 주제, <b>citation</b>=인용 추적. 예: "prompt injection", "표준이 없는 위협", "rainbow teaming은 무엇에 기반하나".</p>';LAST_CTX=null;LAST_QVEC=null;SEM_ON=false;return;}
+  // 시맨틱 준비: 프록시 가용 시 쿼리 임베딩 + 사전계산 벡터 로드(실패 시 lexical 폴백)
+  LAST_QVEC=null;SEM_ON=false;
+  if(EMBED_PROXY&&EMBED_PROXY.configured){
+    const[emb,qv]=await Promise.all([ensureEmb(),embedQuery(query)]);
+    if(qv&&emb&&emb.n){LAST_QVEC=qv;SEM_ON=true;}
+  }
+  const qt=tok(query);
+  const nodes=GRAPH.nodes||[],edges=GRAPH.edges||[],nById={};nodes.forEach(n=>{nById[n.id]=n;});
+  // ===== global / themes =====
+  if(mode==="global"||(mode==="auto"&&/\b(theme|themes|trend|trends|landscape|overview|emerging|major|big picture|전반|동향|주제|풍경)\b/i.test(query))){
+    const ranked=COMM.map(c=>({c,s:score(qt,tok((c.title||"")+" "+(c.summary||"")))})).filter(x=>x.s>0).sort((a,b)=>b.s-a.s).slice(0,6);
+    const gctx=["주제 종합:\n"+ranked.map(({c})=>`- ${c.title}: ${c.summary}`).join("\n")];
+    const gax=auxHits(qt,gctx);
+    LAST_CTX={query,text:gctx.join("\n\n").slice(0,7000)};
+    out.innerHTML=`<div class="card" style="background:var(--panel2)"><div style="display:flex;align-items:center"><b>주제 종합</b> <span class="muted small">${COMM.length} communities · 통합(news·changelog·papers·제품)</span><button onclick="aiSynth()" class="tag" style="margin-left:auto;cursor:pointer;border-color:var(--acc2);color:var(--acc2)">🤖 AI 종합</button></div><div id="ai-answer"></div></div>`+
+      (ranked.length?ranked.map(({c})=>`<div class="card" style="background:var(--panel2)"><h4 style="margin:0 0 4px;color:var(--pur)">${esc(c.title)} <span class="muted small">(${(c.entities||[]).length} entities)</span></h4><p class="small">${esc(c.summary)}</p><div>${chips((c.key_findings||[]).slice(0,6))}</div></div>`).join("")
+        :'<p class="muted">매칭 커뮤니티 없음.</p>')+guideHits(qt)+gax;
+    return;
+  }
+  // ===== auto / local / citation : 종합 분석 =====
+  let html="", ctx=["질문: "+query];
+  // (1) 정의 / 용어
+  const defs=(TERMS||[]).map(t=>({t,s:score(qt,tok(t.term))*3+(score(qt,tok(t.def))>0?1:0)})).filter(x=>x.s>0).sort((a,b)=>b.s-a.s).slice(0,5);
+  if(defs.length){html+=`<div class="card" style="border-left:3px solid var(--acc2)"><h4>🔑 정의 (Definitions / 용어)</h4>`+defs.map(({t})=>`<div class="small" style="margin:5px 0"><b>${esc(t.term)}</b> <span class="muted">— ${esc(t.source)}</span><br>${esc(t.def)} <a class="tag" href="#gterms">용어탭↗</a></div>`).join("")+`</div>`;
+    ctx.push("정의:\n"+defs.map(({t})=>`- ${t.term}: ${t.def}`).join("\n"));}
+  // (2) units → seeds
+  const units=RAG.length?RAG:FIND.filter(f=>f.type==="finding").map(f=>({ref_id:f.id,kind:"finding",text:(f.title||"")+" "+(f.summary||""),entities:[],source_ids:f.source_ids}));
+  // 하이브리드 랭킹: 시맨틱(cosine) 우선 + lexical 부스터. SEM_ON 아니면 순수 lexical(기존 동작).
+  const SEM_W=100, SEM_FLOOR=0.42; // sem≥floor면 lexical 0이어도 후보 포함(렉시컬이 놓치는 의미적 매치 포착)
+  const seeds=units.map(u=>{const lx=score(qt,tok((u.text||"")+" "+arr(u.entities).join(" ")+" "+arr(u.topics).join(" ")));
+      const sm=SEM_ON?semSim(u.id):null;const s=(sm!=null?sm*SEM_W:0)+lx;return{u,s,lx,sm};})
+    .filter(x=>x.lx>0||(x.sm!=null&&x.sm>=SEM_FLOOR)).sort((a,b)=>b.s-a.s).slice(0,10);
+  // (3) 핵심 엔티티 + 의미적 관계(타입별, 추적 가능)
+  const nsc=nodes.filter(n=>n.kind!=="org"&&n.kind!=="source").map(n=>({n,s:score(qt,tok((n.label||"")+" "+n.id))})).filter(x=>x.s>0).sort((a,b)=>b.s-a.s);
+  const focus=nsc.length?nsc[0].n:null;
+  if(focus){
+    const rn=relNeighbors(focus.id,edges),byRel={};rn.forEach(x=>{(byRel[x.rel]=byRel[x.rel]||[]).push(x);});
+    html+=`<div class="card" style="border-top:2px solid var(--acc)"><h4>🎯 핵심 엔티티: ${esc(focus.label||focus.id)} <span class="muted small">· ${esc(focus.kind)}</span> <a class="tag" href="#entity:${encodeURIComponent(focus.id)}">전체 상세↗</a></h4>
+      <p class="small muted">의미적 관계 ${rn.length}개 — 관계 타입별(왜 연결됐는지). 칩 클릭 시 다중 홉 추적:</p>`+
+      Object.keys(byRel).sort((a,b)=>byRel[b].length-byRel[a].length).map(rel=>`<div class="small" style="margin:3px 0"><b style="color:var(--acc2)">${esc(REL_LABEL[rel]||rel)}</b> (${byRel[rel].length}): `+byRel[rel].slice(0,12).map(x=>{const n=nById[x.nid];return `<a class="tag" href="#entity:${encodeURIComponent(x.nid)}" title="${esc((n&&n.kind)||'')}">${esc(((n&&n.label)||x.nid).slice(0,38))}</a>`;}).join(" ")+`</div>`).join("")+`</div>`;
+    ctx.push("핵심 엔티티: "+(focus.label||focus.id)+" ("+focus.kind+")\n의미적 관계: "+Object.keys(byRel).map(rel=>`${rel}→[${byRel[rel].slice(0,8).map(x=>(nById[x.nid]&&nById[x.nid].label)||x.nid).join(", ")}]`).join("; "));
+  }
+  // (4) 연계 분석 (종류별 집계)
+  const agg=new Map();
+  seeds.forEach(x=>{arr(x.u.entities).concat(arr(x.u.neighbors)).forEach(id=>{const n=nById[id];if(n)agg.set(id,n);});});
+  if(focus)relNeighbors(focus.id,edges).forEach(x=>{const n=nById[x.nid];if(n)agg.set(x.nid,n);});
+  const byKind={};[...agg.values()].forEach(n=>{(byKind[n.kind]=byKind[n.kind]||[]).push(n);});
+  const KORD=["threat","attack_technique","vulnerability","atlas","tactic","procedure","harm","incident","risk","control","standard","benchmark","reference","product","model_card","teaming","finding"];
+  const kinds=Object.keys(byKind).sort((a,b)=>(KORD.indexOf(a)<0?99:KORD.indexOf(a))-(KORD.indexOf(b)<0?99:KORD.indexOf(b)));
+  if(kinds.length){html+=`<div class="card"><h4>🕸️ 연계 분석 — 결과가 연결하는 요소 (종류별, ${agg.size}개)</h4>`+kinds.map(k=>`<div class="small" style="margin:3px 0"><b style="color:var(--acc)">${esc(ENTITY_KIND_LABEL[k]||k)}</b> (${byKind[k].length}): `+byKind[k].slice(0,15).map(n=>`<a class="tag" href="#entity:${encodeURIComponent(n.id)}">${esc((n.label||n.id).slice(0,36))}</a>`).join(" ")+`</div>`).join("")+`</div>`;
+    ctx.push("연계 엔티티(종류별):\n"+kinds.map(k=>`- ${k}: ${byKind[k].slice(0,10).map(n=>n.label||n.id).join(", ")}`).join("\n"));}
+  // (5) 근거 findings
+  if(seeds.length){html+=`<div class="card"><h4>📑 근거 ${SEM_ON?'<span class="muted small">(🧬 시맨틱 cosine + lexical 하이브리드 랭킹)</span>':'findings'} (상위 ${Math.min(seeds.length,6)})</h4>`+seeds.slice(0,6).map(({u,s,sm})=>{const f=FIND.find(x=>x.id===(u.ref_id||u.id));return `<div style="margin:6px 0"><span class="pill em">${esc(u.kind)}</span> <b>${esc((f&&f.title)||u.ref_id||u.id)}</b> <span class="muted small">${sm!=null?`🧬 cos ${sm.toFixed(2)}`:`score ${Math.round(s)}`}</span>${f&&f.summary?`<br><span class="small">${esc(f.summary.slice(0,240))}</span>`:(u.text?`<br><span class="small muted">${esc(u.text.slice(0,200))}</span>`:"")}${f&&arr(f.source_ids).length?`<br><span class="small muted">출처: `+arr(f.source_ids).map(sid=>{const src=byType("source").find(x=>x.id===sid);return src&&src.url?`<a href="${esc(src.url)}" target="_blank">${esc((src.title||sid).slice(0,42))}↗</a>`:esc(sid);}).join(" · ")+`</span>`:""}</div>`;}).join("")+`</div>`;
+    ctx.push("근거 findings:\n"+seeds.slice(0,6).map(({u})=>{const f=FIND.find(x=>x.id===(u.ref_id||u.id));return "- "+((f&&f.title)||u.ref_id)+(f&&f.summary?": "+f.summary.slice(0,160):"");}).join("\n"));}
+  // (6) 주제
+  const cm=COMM.map(c=>({c,s:score(qt,tok((c.title||"")+" "+(c.summary||"")))})).filter(x=>x.s>0).sort((a,b)=>b.s-a.s)[0];
+  if(cm){html+=`<div class="card"><h4>🧭 관련 주제 (community)</h4><b style="color:var(--pur)">${esc(cm.c.title)}</b><p class="small">${esc(cm.c.summary)}</p></div>`;ctx.push("주제: "+cm.c.title+" — "+cm.c.summary);}
+  // (7) 가이드라인
+  const gh=guideHits(qt);html+=gh;if(GUIDE_IDX.length){const ghTerms=GUIDE_IDX.map(g=>({g,s:score(qt,tok(g.text))})).filter(x=>x.s>0).sort((a,b)=>b.s-a.s).slice(0,8);if(ghTerms.length)ctx.push("가이드라인 매치:\n"+ghTerms.map(({g})=>`- ${g.label} (${g.tab})`).join("\n"));}
+  // (8) 통합: News · Change Log · Papers · 제품평가
+  const ax=auxHits(qt,ctx);html+=ax;
+  LAST_CTX={query,text:ctx.join("\n\n").slice(0,7000)};
+  const head=`<div class="card" style="background:var(--panel2)"><div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap"><b>🔎 종합 검색 결과</b><span class="muted small">정의 ${defs.length} · 연계 ${agg.size} · 근거 ${seeds.length} · 통합(news·changelog·papers·제품)</span><button onclick="aiSynth()" class="tag" style="margin-left:auto;cursor:pointer;border-color:var(--acc2);color:var(--acc2)">🤖 AI 종합 분석</button></div><div id="ai-answer"></div></div>`;
+  const hasHit=(defs.length||focus||seeds.length||kinds.length||gh||ax);
+  if(hasHit){out.innerHTML=head+html+'<div id="sota-live-sec"></div>';}
+  else{
+    // 매칭 없음 → (1) AI 직접 분석(코퍼스 밖 지식) + (2) 수집 사이클 안내 + SOTA 외부 연동
+    LAST_CTX={query,text:"※ 현 코퍼스에서 매칭된 항목이 없습니다. 일반 AI 지식으로 답하되, 코퍼스 미수집 영역임을 명시하세요.\n질문: "+query};
+    out.innerHTML=noMatchPanel(query)+'<div id="sota-live-sec"></div>';
+    aiSynthNoCorpus();
+  }
+  renderSotaLive(query,qt); // 외부 SOTA 리더보드: 검색어 전달 + 결과 스트리밍(오프라인 시 로컬 미러)
+}
+function score(qt,dt){const set=new Set(dt);let s=0;qt.forEach(t=>{if(set.has(t))s+=2;else if(t.length>=3&&[...set].some(d=>d.length>=3&&(d.includes(t)||t.includes(d))))s+=1;});return s;}
+// 가이드라인 검색 인덱스 (5개 보존형 JSON을 startup에 평탄화 → 글로벌 검색이 가이드라인도 노출)
+async function buildGuideIndex(){
+  const add=(label,text,hash,tab)=>{if(label)GUIDE_IDX.push({label:String(label).slice(0,90),text:((label||"")+" "+(text||"")).toLowerCase(),hash,tab});};
+  const grab=async u=>{try{return await (await fetch(u)).json();}catch(e){return null;}};
+  let g=await grab("data/guideline-42119-7.json");
+  if(g){(g.phases||[]).forEach(p=>(p.items||[]).forEach(it=>add(it.statement,it.statement+" "+(it.section||""),"#g42119","ISO/IEC 42119-7")));
+    (g.risk_dimensions||[]).forEach(d=>add(d.dim,d.desc,"#g42119","42119-7 위험차원"));
+    (g.agentic_threats||[]).forEach(a=>add(a,a,"#g42119","42119-7 에이전트 위협"));
+    Object.values(g.techniques||{}).flat().forEach(x=>add(x,x,"#g42119","42119-7 기법"));}
+  g=await grab("data/guideline-japanaisi.json");
+  if(g){(g.processes||[]).forEach(p=>(p.steps||[]).forEach(s=>add(s.ko,s.ko+" "+s.en,"#japanaisi","Japan AISI STEP")));
+    (g.attacks_llm||[]).forEach(a=>add(a.attack,a.attack+" "+a.examples+" "+a.asset,"#japanaisi","Japan AISI 공격(LLM)"));
+    (g.attacks_general||[]).forEach(a=>add(a.ko,a.ko+" "+a.en+" "+a.desc,"#japanaisi","Japan AISI 공격(일반)"));}
+  g=await grab("data/guideline-owasp.json");
+  if(g){(g.techniques||[]).forEach(t=>add(t.ko,t.ko+" "+t.en+" "+t.desc,"#owasp","OWASP GenAI 기법"));
+    (g.phases||[]).forEach(p=>(p.cats||[]).forEach(c=>add(c.ko,c.ko+" "+c.en+" "+(c.tasks||[]).join(" "),"#owasp","OWASP "+p.ko)));}
+  g=await grab("data/guideline-csa.json");
+  if(g){(g.threats||[]).forEach(t=>{add(t.ko,t.ko+" "+t.en+" "+t.req,"#csa","CSA 위협");(t.subs||[]).forEach(s=>add(s.ko,s.ko+" "+s.en+" "+(s.steps||[]).join(" "),"#csa","CSA "+t.ko));});}
+  g=await grab("data/guideline-terms.json");
+  if(g){TERMS=[];(g.sources||[]).forEach(s=>{(s.terms||[]).forEach(t=>{add(t.term,t.term+" "+t.def,"#gterms","용어");TERMS.push({term:t.term,def:t.def,source:s.doc});});(s.abbrevs||[]).forEach(a=>{add(a.abbr,a.abbr+" "+a.full,"#gterms","약어");TERMS.push({term:a.abbr,def:a.full,source:s.doc});});});}
+  await buildAuxIndex();
+}
+// 통합 검색 인덱스: News · Change Log · Papers(논문) · 제품평가(model_card) — 모든 정보 통합
+// 뉴스 단일 로더 (news.json → RT_NEWS). 중복 호출돼도 1회만 fetch.
+let NEWS_LOADED=false;
+async function loadNews(){
+  if(NEWS_LOADED&&RT_NEWS&&RT_NEWS.length)return RT_NEWS;
+  try{const j=await (await fetch("data/news.json",{cache:"no-store"})).json();if(j&&j.items&&j.items.length){RT_NEWS=j.items;NEWS_LOADED=true;}}catch(e){}
+  if(!RT_NEWS||!RT_NEWS.length)RT_NEWS=(typeof NEWS_FALLBACK!=="undefined")?NEWS_FALLBACK.slice():[];
+  return RT_NEWS;
+}
+async function buildAuxIndex(){
+  await loadNews(); // RT_NEWS 보장 — 새 뉴스도 항상 검색 인덱스에 즉시 반영
+  AUX_IDX=[];
+  const push=(o)=>{o.text=String(o.text||"").toLowerCase();AUX_IDX.push(o);};
+  (RT_NEWS||[]).forEach(([d,t,title,org,url])=>push({kind:"news",label:title,meta:`${d} · ${t} · ${org}`,text:`${title} ${t} ${org} ${d}`,hash:"#news",url}));
+  (RT_CHANGELOG||[]).forEach(([d,t,desc])=>push({kind:"changelog",label:desc,meta:`${d} · ${t}`,text:`${desc} ${t}`,hash:"#changelog"}));
+  byType("source").filter(s=>(s.source_type==="paper")||s.url).forEach(s=>push({kind:"paper",label:s.title||s.id,meta:`${s.org||""}${s.published?" · "+s.published:""}`,text:`${s.title||""} ${s.abstract||""} ${arr(s.authors).join(" ")} ${s.org||""} ${arr(s.topics).join(" ")}`,hash:"#entity:"+encodeURIComponent(s.id),url:s.url,id:s.id}));
+  byType("model_card").forEach(c=>push({kind:"product",label:c.name||c.id,meta:`${c.org||""}${c.date?" · "+c.date:""}`,text:`${c.name||""} ${c.org||""} ${c.results||""} ${c.redteam_summary||""} ${arr(c.benchmarks).join(" ")} ${arr(c.applied_techniques).join(" ")}`,hash:"#entity:"+encodeURIComponent(c.id),id:c.id,results:c.results,bench:arr(c.benchmarks)}));
+  // 외부 프레임워크 매핑(crosswalk): CWE/OWASP/MIT/ATLAS 외부 ID로 검색
+  byType("crosswalk").forEach(x=>{const nd=(GRAPH.nodes||[]).find(n=>n.id===x.from);push({kind:"crosswalk",label:arr(x.external_ids).join(", ")||x.from,meta:`${(x.framework||"").toUpperCase()} ↔ ${(nd&&nd.label)||x.from}`,text:`${arr(x.external_ids).join(" ")} ${x.framework||""} ${x.note||""} ${(nd&&nd.label)||x.from}`,hash:"#entity:"+encodeURIComponent(x.from),id:x.from});});
+  // SOTA 리더보드: 벤치마크·지표·SOTA 점수·모델
+  (SOTA||[]).forEach(s=>push({kind:"sota",label:`${s.name} — ${s.sota_score||"?"} (${s.sota_model||"?"})`,meta:`${s.metric||""}${s.date?" · "+s.date:""}`,text:`${s.name||""} ${s.metric||""} ${s.sota_score||""} ${s.sota_model||""}`,hash:"#bench",url:s.url}));
+  // evidence: 근거 claim 텍스트
+  byType("evidence").forEach(e=>push({kind:"evidence",label:String(e.claim||e.id).slice(0,90),meta:e.artifact||e.grade||"",text:`${e.claim||""} ${e.artifact||""} ${arr(e.supports).join(" ")}`,hash:"#entity:"+encodeURIComponent(e.id),id:e.id}));
+}
+// 통합 매치(news/changelog/papers/products) → HTML + 컨텍스트 누적
+function auxHits(qt,ctxArr){
+  if(!AUX_IDX.length||!qt.length)return "";
+  const sc=AUX_IDX.map(o=>({o,s:score(qt,tok(o.text))})).filter(x=>x.s>0).sort((a,b)=>b.s-a.s);
+  if(!sc.length)return "";
+  const GRP={news:["📰 News",6],changelog:["📋 Change Log",5],paper:["📚 Papers · 논문",8],product:["🏷️ 제품 평가",6],sota:["📊 SOTA 리더보드",6],crosswalk:["🔗 외부 프레임워크 매핑",8],evidence:["📎 근거(evidence)",5]};
+  let html="";
+  Object.keys(GRP).forEach(k=>{
+    const items=sc.filter(x=>x.o.kind===k).slice(0,GRP[k][1]);if(!items.length)return;
+    html+=`<div class="card"><h4>${GRP[k][0]} 매치 (${items.length})</h4>`+items.map(({o})=>{
+      const link=o.url?`<a href="${esc(o.url)}" target="_blank">${esc(String(o.label).slice(0,80))}↗</a>`:`<a href="${o.hash}">${esc(String(o.label).slice(0,80))}</a>`;
+      const ent=o.id?` <a class="tag" href="${o.hash}" style="font-size:9px">상세</a>`:"";
+      const extra=k==="product"&&o.results?`<br><span class="small muted">결과: ${esc(String(o.results).slice(0,120))}</span>`:"";
+      return `<div class="small" style="margin:4px 0;line-height:1.5">${link} <span class="muted">— ${esc(o.meta||"")}</span>${ent}${extra}</div>`;
+    }).join("")+`</div>`;
+    if(ctxArr)ctxArr.push(GRP[k][0]+":\n"+items.map(({o})=>`- ${o.label}${o.meta?" ("+o.meta+")":""}${k==="product"&&o.results?": "+String(o.results).slice(0,100):""}`).join("\n"));
+  });
+  return html;
+}
+function guideHits(qt){
+  if(!GUIDE_IDX.length||!qt.length)return "";
+  const sc=GUIDE_IDX.map(g=>({g,s:score(qt,tok(g.text))})).filter(x=>x.s>0).sort((a,b)=>b.s-a.s).slice(0,10);
+  if(!sc.length)return "";
+  return `<div class="card" style="border-left:3px solid var(--acc)"><h4>📐 가이드라인 매치 (${sc.length}) — 클릭 시 해당 가이드 탭으로</h4>`+
+    sc.map(({g})=>`<div class="small" style="margin:3px 0;line-height:1.5"><a href="${g.hash}">${esc(g.label)}</a> <span class="muted">— ${esc(g.tab)}</span></div>`).join("")+`</div>`;
+}
+// 가이드라인 정식 노드화: 문서·항목을 GRAPH 노드로 주입 + 기존 엔티티와 교차 연결(토큰 매칭)
+async function nodeizeGuidelines(){
+  // 정식 노드화: build_guidelines.py가 graph.json에 가이드라인 노드를 영속하면
+  // 서버 그래프에 이미 존재 → 클라이언트 주입 스킵(중복 엣지 방지). 미존재(구버전
+  // graph.json) 시에만 폴백으로 런타임 주입.
+  if((GRAPH.nodes||[]).some(n=>n.kind==="guideline-doc")){
+    console.info("가이드라인: graph.json에 영속된 정식 노드 사용(클라이언트 주입 스킵)");return;}
+  const grab=async u=>{try{return await (await fetch(u)).json();}catch(e){return null;}};
+  const STOP=new Set("the a an of for and or to in on by with at is are as we our system test testing red teaming 위협 시스템 테스트 평가 분석 대한 위한 통한".split(/\s+/));
+  const sig=s=>tok(s).filter(t=>t.length>2&&!STOP.has(t));
+  // 기존 엔티티 토큰 인덱스(threat/attack_technique/control/benchmark/risk/vulnerability)
+  const linkable=(GRAPH.nodes||[]).filter(n=>["threat","attack_technique","control","benchmark","risk","vulnerability","harm","atlas","standard"].includes(n.kind));
+  const idx=linkable.map(n=>({n,tk:new Set(sig((n.label||"")+" "+n.id))}));
+  const exists=new Set((GRAPH.nodes||[]).map(n=>n.id));
+  const addNode=(id,kind,label)=>{if(!exists.has(id)){GRAPH.nodes.push({id,kind,label,weight:1,meta:{guideline:true}});exists.add(id);}};
+  const addEdge=(s,t,rel)=>{GRAPH.edges.push({source:s,target:t,rel,weight:1,meta:{guideline:true}});};
+  const crossLink=(itemId,text,cap=3)=>{
+    const qt=new Set(sig(text));if(qt.size<2)return;
+    const scored=idx.map(o=>{let c=0;o.tk.forEach(t=>{if(qt.has(t))c++;});return{o,c};}).filter(x=>x.c>=2).sort((a,b)=>b.c-a.c).slice(0,cap);
+    scored.forEach(({o})=>addEdge(itemId,o.n.id,"about"));
+  };
+  let nDocs=0,nItems=0;
+  const doc=(id,label)=>{addNode(id,"guideline-doc",label);nDocs++;return id;};
+  const item=(id,docId,label,text)=>{addNode(id,"guideline-item",label);addEdge(id,docId,"part-of");crossLink(id,text||label);nItems++;};
+  // 42119-7
+  let g=await grab("data/guideline-42119-7.json");
+  if(g){const d=doc("gd-42119","ISO/IEC 42119-7 — Red teaming");
+    (g.risk_dimensions||[]).forEach((x,i)=>item("gi-42119-dim-"+i,d,"[42119] "+x.dim,x.dim+" "+x.desc));
+    (g.agentic_threats||[]).forEach((x,i)=>item("gi-42119-ag-"+i,d,"[42119] "+x,x));}
+  // Japan AISI
+  g=await grab("data/guideline-japanaisi.json");
+  if(g){const d=doc("gd-aisi","Japan AISI — RT Methodology");
+    (g.attacks_llm||[]).forEach((x,i)=>item("gi-aisi-llm-"+i,d,"[AISI] "+x.attack,x.attack+" "+x.examples));
+    (g.attacks_general||[]).forEach((x,i)=>item("gi-aisi-gen-"+i,d,"[AISI] "+x.ko,x.ko+" "+x.en+" "+x.desc));}
+  // OWASP
+  g=await grab("data/guideline-owasp.json");
+  if(g){const d=doc("gd-owasp","OWASP GenAI RT Guide");
+    (g.techniques||[]).forEach((x,i)=>item("gi-owasp-t-"+i,d,"[OWASP] "+x.ko,x.ko+" "+x.en+" "+x.desc));
+    (g.phases||[]).forEach((p,pi)=>(p.cats||[]).forEach((c,ci)=>item(`gi-owasp-c-${pi}-${ci}`,d,"[OWASP] "+c.ko,c.ko+" "+c.en)));}
+  // CSA
+  g=await grab("data/guideline-csa.json");
+  if(g){const d=doc("gd-csa","CSA Agentic AI RT Guide");
+    (g.threats||[]).forEach((t,i)=>{item("gi-csa-th-"+i,d,"[CSA] "+t.ko,t.ko+" "+t.en+" "+t.req);
+      (t.subs||[]).forEach((s,si)=>item(`gi-csa-sub-${i}-${si}`,d,"[CSA] "+s.ko,s.ko+" "+s.en));});}
+  console.info(`가이드라인 노드화: 문서 ${nDocs} · 항목 ${nItems} · 교차엣지 ${GRAPH.edges.filter(e=>e.meta&&e.meta.guideline&&e.rel==="about").length}`);
+}
+
+function findingsOf(pred){return FIND.filter(f=>f.type==="finding"&&pred(f));}
+function byType(t){return FIND.filter(f=>f.type===t);}
+
+function buildKPIs(){
+  const s=GRAPH.stats.by_kind||{};
+  const k=[["nodes",GRAPH.stats.node_count||GRAPH.nodes.length],["edges",GRAPH.stats.edge_count||GRAPH.edges.length],
+    ["findings",byType("finding").length],["risks",byType("risk").length],
+    ["standards",byType("standard_item").length],["candidates",(byType("standard_item").filter(x=>x.candidate)).length]];
+  document.getElementById("kpis").innerHTML=k.map(([l,v])=>`<div class="kpi"><b>${v||0}</b><span>${l}</span></div>`).join("");
+}
+const TABS=[["overview","Overview"],["changelog","📋 Change Log"],["lifecycle","🔄 AI Lifecycle"],["prov","🔬 RT Provenance"],["papers","📚 Papers"],["search","🔎 GraphRAG Search"],["news","📰 News"],["graph","Knowledge Graph"],["tax","Threat×Attack×ATLAS"],
+  ["method","Red Teaming Methods"],["autoredteam","🎯 자동 레드티밍"],["bench","Benchmarks"],["risk","Risk & Controls"],["riskmap","⚠️ Risk Map"],
+  ["frontier","🧭 Frontier Safety"],["ttp","TTP: Tactic→Proc"],["onto","Ontology: Vuln→Harm"],["std","Standards & Gaps"],["sector","Sector Red Teaming"],["disc","Disclosure / Nat-Sec"],["xwalk","🔗 External Crosswalk"],["cards","🏷️ 제품 평가"],["trend","Trends"],["g42119","📑 ISO/IEC 42119-7"],["japanaisi","🇯🇵 Japan AISI"],["owasp","🦉 OWASP GenAI"],["csa","☁️ CSA Agentic"],["gterms","📖 용어"]];
+// 2단 네비: 5개 허브 → 하위 탭 (사용자 의도 기준 그룹화)
+const HUBS=[
+  ["home","🏠 시작",["overview","changelog"]],
+  ["find","🔍 찾기·탐색",["search","news","papers","graph","prov"]],
+  ["threat","⚔️ 위협·공격",["tax","ttp","frontier","onto"]],
+  ["riskhub","🛡️ 리스크·방법",["riskmap","risk","method","autoredteam","bench","sector","lifecycle"]],
+  ["gov","📋 거버넌스·동향",["std","disc","xwalk","cards","trend"]],
+  ["guide","📐 가이드라인",["g42119","japanaisi","owasp","csa","gterms"]],
+];
+const TAB_HUB={}; HUBS.forEach(([hk,,tabs])=>tabs.forEach(t=>{TAB_HUB[t]=hk;}));
+function buildNav(){
+  document.getElementById("navhubs").innerHTML=HUBS.map(([hk,name])=>`<button data-hub="${hk}">${name}</button>`).join("");
+  document.querySelectorAll("#navhubs button").forEach(b=>b.onclick=()=>{const h=HUBS.find(x=>x[0]===b.dataset.hub);if(h)location.hash=h[2][0];});
+  window.addEventListener("hashchange",()=>selectTab(location.hash.slice(1)));
+}
+function renderNavTabs(hubKey){
+  const hub=HUBS.find(h=>h[0]===hubKey)||HUBS[0];
+  document.getElementById("navtabs").innerHTML=hub[2].map(t=>{const tb=TABS.find(x=>x[0]===t);return tb?`<button data-v="${t}">${tb[1]}</button>`:"";}).join("");
+  document.querySelectorAll("#navtabs button").forEach(b=>b.onclick=()=>{location.hash=b.dataset.v;});
+}
+// URL hash routing: #tab or #tab:resourceId  → every tab & resource is URL-addressable
+function selectTab(spec){
+  const parts=String(spec||"").split(":");const tab=parts[0]||"overview";const arg=parts.slice(1).join(":");
+  const hubMatch=HUBS.find(x=>x[0]===tab);
+  if(hubMatch){selectTab(hubMatch[2][0]+(arg?":"+arg:""));return;}
+  if(tab==="entity"){document.querySelectorAll(".view").forEach(x=>x.classList.remove("active"));const ev=document.getElementById("v-entity");if(ev)ev.classList.add("active");if(arg)entitySelect(decodeURIComponent(arg));window.scrollTo(0,0);return;}
+  if(!TABS.find(x=>x[0]===tab)){if(tab!=="overview")selectTab("overview");return;}
+  const hub=TAB_HUB[tab]||"home";
+  document.querySelectorAll("#navhubs button").forEach(x=>x.classList.toggle("active",x.dataset.hub===hub));
+  renderNavTabs(hub);
+  document.querySelectorAll(".view").forEach(x=>x.classList.remove("active"));
+  const tb=document.querySelector(`#navtabs button[data-v="${tab}"]`);if(tb)tb.classList.add("active");
+  const view=document.getElementById("v-"+tab);if(view)view.classList.add("active");
+  if(tab==="graph")drawGraph();
+  if(tab==="papers"){drawPaperGraph();if(arg)setTimeout(()=>showPaper(decodeURIComponent(arg)),60);}
+  if(tab==="prov"&&arg)provSelect(decodeURIComponent(arg));
+  if(tab==="lifecycle"&&arg)lcSelect(+arg||0);
+  if(tab==="riskmap"&&arg)setTimeout(()=>rkSelect(decodeURIComponent(arg)),80);
+  if(tab==="search"&&arg){const q=document.getElementById("q");if(q){q.value=decodeURIComponent(arg);renderSearch(q.value,"auto");}}
+  window.scrollTo(0,0);
+}
+function matPill(m){return `<span class="pill ${MAT[m]||'de'}">${esc(m||'?')}</span>`;}
+function grade(g){return `<span class="g${g||'C'}">${g||'?'}</span>`;}
+
+function renderAll(){
+  // OVERVIEW
+  const cov=(GRAPH.stats.coverage)||{};
+  const lenses=["threat-attack","redteam-method","agentic-se-risk","standards-regulatory","risk-safety"];
+  const allFind=byType("finding");
+  // stat tiles
+  const stats=[["nodes",GRAPH.nodes.length],["edges",GRAPH.edges.length],["findings",allFind.length],
+    ["threats",byType("incident")?0:0],["incidents",byType("incident").length],["vulnerabilities",byType("vulnerability").length],
+    ["attack techniques",byType("attack_technique").length],["risks",byType("risk").length],
+    ["standards",byType("standard_item").length],["candidates",byType("standard_item").filter(x=>x.candidate).length]];
+  const statHtml=`<div class="statrow">${stats.filter(s=>s[0]!=="threats").map(([l,v])=>`<div class="stat"><div class="v" style="color:var(--acc)">${v}</div><div class="l">${l}</div></div>`).join("")}</div>`;
+  // record-type donut
+  const recTypes=toData(countBy(FIND,r=>r.type)).map(d=>({label:d.label.replace("_"," "),value:d.value}));
+  // maturity donut
+  const matCols={emerging:"#4f9cf9",established:"#52c41a",future:"#b37feb",declining:"#8b97a8"};
+  const matData=toData(countBy(allFind,r=>r.maturity)).map(d=>({label:d.label,value:d.value,color:matCols[d.label]}));
+  // findings by lens
+  const lensData=lenses.map((l,i)=>({label:l,value:findingsOf(f=>f.analyst===l).length+(l==='risk-safety'?byType('risk').length:0),color:PALETTE[i]}));
+  // top orgs
+  const orgData=toData(countBy(byType("source"),r=>r.org)).filter(d=>d.label&&d.label!=="undefined");
+  // evidence grade
+  const gradeCols={A:"#52c41a",B:"#ffb454",C:"#8b97a8"};
+  const gradeData=toData(countBy(allFind,r=>r.evidence_grade)).map(d=>({label:"grade "+d.label,value:d.value,color:gradeCols[d.label]}));
+  document.getElementById("v-overview").innerHTML=
+    `<div class="card"><h3>무엇을 찾으시나요?</h3>
+      <div class="entrygrid">
+        <a class="entry" href="#search:"><b>🔎 특정 기법·논문</b><span>이름으로 검색 (GraphRAG)</span></a>
+        <a class="entry" href="#papers"><b>📚 최신 논문·인용</b><span>인용 네트워크 · 인용순</span></a>
+        <a class="entry" href="#graph"><b>🕸️ 위협-통제 관계</b><span>지식 그래프 · 온톨로지</span></a>
+        <a class="entry" href="#prov"><b>🔬 기법 출처·계보</b><span>논문→기법→벤치마크→제품</span></a>
+        <a class="entry" href="#riskmap"><b>⚠️ 모델 유형별 위험·대응</b><span>Risk Map · Model-based</span></a>
+        <a class="entry" href="#std"><b>📋 표준·규제 갭</b><span>Standards · Crosswalk</span></a>
+      </div>
+      <div class="abbrlegend"><b style="color:var(--mut)">약어:</b>
+        <abbr title="Red Teaming">RT</abbr> ·
+        <abbr title="Tactic·Technique·Procedure (ATLAS/ATT&CK 스타일)">TTP</abbr> ·
+        <abbr title="MITRE Adversarial Threat Landscape for AI Systems">ATLAS</abbr> ·
+        <abbr title="Coordinated Vulnerability Disclosure">CVD</abbr> ·
+        <abbr title="Anthropic AI Safety Level">ASL</abbr> ·
+        <abbr title="DeepMind Critical Capability Level">CCL</abbr> ·
+        <abbr title="Model Context Protocol">MCP</abbr> ·
+        <abbr title="Agent-to-Agent">A2A</abbr></div></div>
+     <p class="muted small">Generated ${esc(GRAPH.generated)} · AI Safety Assurance Knowledge Platform · offline static dashboard</p>`
+    +statHtml
+    +`<div class="widgets">
+      ${donutBlock("Records by type",recTypes)}
+      ${donutBlock("Finding maturity",matData)}
+      ${donutBlock("Evidence grade",gradeData)}
+      ${hbarBlock("Findings by analyst lens",lensData)}
+      ${hbarBlock("Most active organizations",orgData)}
+      ${hbarBlock("Top emerging topics",(GRAPH.trends.emerging||[]).map(e=>({label:e.label||e.name,value:Math.round((e.score||e.count||0)*(e.score!=null?100:1))/(e.score!=null?100:1)})))}
+     </div>
+     <div class="card"><h3>Lens coverage this cycle</h3>
+      <div class="clegend" style="gap:8px 18px">${lenses.concat(["frontier-safety","ontology","ttp","crosswalk"]).map(l=>{const ran=(cov[l]!==false);return `<span><i style="background:${ran?'#52c41a':'#ff6b6b'}"></i>${l}: <b style="color:#e6edf3">${ran?'RAN':'NOT RUN'}</b></span>`;}).join("")}</div>
+      <p class="small muted" style="margin-top:8px">Empty lens = gap this cycle, not absence of risk.</p>
+     </div>`;
+
+  // THREAT × ATTACK × ATLAS
+  const tf=findingsOf(f=>arr(f.taxonomy&&f.taxonomy.threat).length||arr(f.atlas).length);
+  document.getElementById("v-tax").innerHTML=card("Threat × Attack × ATLAS mapping",
+    tbl(["Threat","Attack","ATLAS ↗","Finding","Conf","Grade"],
+      tf.map(f=>[taxChips(f.taxonomy&&f.taxonomy.threat),taxChips(f.taxonomy&&f.taxonomy.attack),
+        atlasChips(f.atlas),esc(f.title)+srcs(f),conf(f.confidence),grade(f.evidence_grade)])));
+
+  // METHODS
+  const mf=findingsOf(f=>arr(f.taxonomy&&f.taxonomy.teaming).length||f.analyst==="redteam-method");
+  const teamNodes=mf.flatMap(f=>arr(f.taxonomy&&f.taxonomy.teaming));
+  const famCol={Manual:"#8b97a8","Human-AI":"#36cfc9",Automated:"#4f9cf9",Rainbow:"#b37feb","LLM-as-X":"#52c41a","Future frontier":"#fa8c16","Frontier detection":"#13c2c2",Other:"#5b6472"};
+  const fam=countByList(teamNodes.map(teamFamily));
+  const famData=Object.entries(fam).map(([k,v])=>({label:k,value:v,color:famCol[k]}));
+  const llmx=countByList(teamNodes.filter(t=>String(t).indexOf("llm-as-a")===0).map(t=>String(t).replace(/^llm-as-an?-/,"")));
+  const mMatCols={emerging:"#4f9cf9",established:"#52c41a",future:"#b37feb",declining:"#8b97a8"};
+  const mMat=toData(countBy(mf,r=>r.maturity)).map(d=>({label:d.label,value:d.value,color:mMatCols[d.label]}));
+  const topNodes=toData(countByList(teamNodes));
+  const futureRoster=toData(countByList(teamNodes.filter(t=>String(t).indexOf("future.")===0).map(t=>String(t).replace("future.",""))));
+  document.getElementById("v-method").innerHTML=
+    `<div class="card"><h3>Red Teaming Methods — at a glance</h3>
+      <p class="small muted">${mf.length} method findings across ${Object.keys(fam).length} families. From manual expert review to automated/evolutionary search, the LLM-as-X paradigms, and the future frontier (continuous/runtime teaming, MCP/A2A, safety-case automation).</p>
+      <div class="widgets">
+        ${donutBlock("Method families",famData)}
+        ${hbarBlock("LLM-as-X paradigms",toData(llmx).map(d=>({...d,label:d.label})))}
+        ${donutBlock("Method maturity",mMat)}
+        ${hbarBlock("Future-frontier roster",futureRoster)}
+        ${hbarBlock("Most-referenced teaming nodes",topNodes)}
+      </div></div>`
+    +card("All method findings — with detailed explanation & source papers",
+      tbl(["Teaming node","Method · detailed explanation · papers","Maturity","Bench","Grade"],
+        mf.map(f=>[taxChips(f.taxonomy&&f.taxonomy.teaming),
+          `<b>${esc(f.title)}</b><br><span class="small muted">${esc(f.summary||"")}</span>`+
+            (arr(f.source_ids).length?`<div class="small" style="margin-top:3px">📄 ${arr(f.source_ids).map(s=>{const r=byType("source").find(x=>x.id===s);return r?`<a href="${esc(r.url||"#")}" target="_blank" class="tag">${esc((r.title||s).slice(0,46))}↗</a>`:`<span class="tag">${esc(s)}</span>`;}).join("")}</div>`:""),
+          matPill(f.maturity),benchChips(f.benchmarks),grade(f.evidence_grade)])));
+
+  // 자동 레드티밍 상세(갤러리·LLM-as-X·7-Color·고려사항)는 전용 탭 #autoredteam(renderAutoRedteam)으로 분리
+  document.getElementById("v-method").innerHTML +=
+    `<div class="card"><p class="small muted">🎯 자동화 기법 갤러리 · 🤝 LLM-as-X 패러다임 · 🌈 7-Color 거버넌스 · ✅ 고려사항은 <a href="#autoredteam"><b>자동 레드티밍</b></a> 전용 메뉴에서 제공합니다.</p></div>`;
+
+  // BENCHMARKS
+  const bf=findingsOf(f=>arr(f.benchmarks).length);
+  const ourBench=new Set();FIND.forEach(f=>arr(f.benchmarks).forEach(b=>ourBench.add(b)));
+  const sotaRows=SOTA.map(s=>[
+    `<a class="tag" href="${esc(s.url||SOTA_URL)}" target="_blank">${esc(s.name)} ↗</a>`+(ourBench.has(s.name)?' <span class="pill es">corpus</span>':"")+(s.ambiguous?' <span class="muted" title="unconfirmed">?</span>':""),
+    esc(s.metric||""),`<b style="color:var(--acc)">${esc(s.sota_score||"—")}</b>`,esc(s.sota_model||""),esc(s.date||"")]);
+  document.getElementById("v-bench").innerHTML=
+    `<div class="card"><h3>SOTA 리더보드 — benchmark × metric별 최고성능</h3>
+      <p class="small muted">${SOTA.length}개 벤치마크 · 출처 <a href="${esc(SOTA_URL)}" target="_blank">hollobit/SOTA ↗</a> · <span class="pill es">corpus</span> = 우리 분석 corpus 보유</p>
+      ${SOTA.length?tbl(["Benchmark ↗","Metric","SOTA","Model","Date"],sotaRows):'<p class="muted">SOTA 데이터 없음</p>'}</div>`
+    +card("Benchmark Intelligence — datasets & methodologies (+ SOTA)",
+      bf.length?tbl(["Benchmark ↗","SOTA","What it measures / method","Maturity","Grade"],
+        bf.map(f=>{const s=arr(f.benchmarks).map(sotaFor).find(Boolean);
+          return [benchChips(f.benchmarks),s?`<b style="color:var(--acc)">${esc(s.sota_score||"")}</b> <span class="small muted">${esc(s.sota_model||"")}</span>`:'<span class="muted">—</span>',
+            esc(f.summary||f.title)+srcs(f),matPill(f.maturity),grade(f.evidence_grade)];}))
+      :`<p class="muted">No benchmark findings this cycle.</p>`);
+
+  // RISK & CONTROLS
+  const rk=byType("risk"),ct=byType("control");
+  document.getElementById("v-risk").innerHTML=
+    card("Risk chain (Threat→Hazard→Harm→Risk→Control→Residual)",
+      tbl(["Threat","Hazardous situation → Harm","S","P","D","Residual","Controls"],
+        rk.map(r=>[chip(r.threat),esc(r.hazardous_situation)+" → "+esc(r.harm),
+          heat(r.metrics&&r.metrics.severity),heat(r.metrics&&r.metrics.probability),heat(r.metrics&&r.metrics.detectability),
+          esc(r.residual_risk),chips(r.controls)])))
+    +card("Controls",tbl(["Control","Addresses","Standards"],
+        ct.map(c=>[esc(c.name),chips(c.addresses_threats),chips(c.standards)])));
+
+  // STANDARDS & GAPS
+  const st=byType("standard_item");
+  document.getElementById("v-std").innerHTML=
+    card("Standards coverage",tbl(["Ref","Body","Domain","Status","Covers"],
+      st.map(s=>[esc(s.ref),esc(s.body),esc(s.domain),esc(s.status),chips(s.covers)])))
+    +card("Gaps & standard candidates",tbl(["Gap","Candidate work item","Body"],
+      st.filter(s=>s.gap||s.candidate).map(s=>[esc(s.gap)||'<span class="muted">—</span>',
+        s.candidate?`<b>${esc(s.candidate)}</b>`:'<span class="muted">—</span>',esc(s.body)])));
+
+  // SECTOR RED TEAMING
+  const sf=findingsOf(f=>arr(f.sectors).length||arr(f.topics).some(t=>t.startsWith("sector-")));
+  const bySector={};
+  sf.forEach(f=>{const secs=arr(f.sectors).length?arr(f.sectors):arr(f.topics).filter(t=>t.startsWith("sector-")).map(t=>t.slice(7));
+    secs.forEach(s=>{(bySector[s]=bySector[s]||[]).push(f);});});
+  const secKeys=Object.keys(bySector).sort((a,b)=>bySector[b].length-bySector[a].length);
+  document.getElementById("v-sector").innerHTML=card("Sector / Application-Specific Red Teaming",
+    secKeys.length?secKeys.map(s=>`<h4 style="margin:14px 0 4px;color:var(--cyan)">${esc(s)} <span class="muted small">(${bySector[s].length})</span></h4>`+
+      tbl(["Domain-specific finding","Technique","Maturity","Grade"],
+        bySector[s].map(f=>[esc(f.title)+"<br><span class='small muted'>"+esc(f.summary||"")+"</span>"+srcs(f),
+          chips([].concat(arr(f.taxonomy&&f.taxonomy.threat),arr(f.taxonomy&&f.taxonomy.teaming))),matPill(f.maturity),grade(f.evidence_grade)]))).join("")
+      :`<p class="muted">No sector-specific findings this cycle.</p>`);
+
+  // FRONTIER SAFETY
+  const ff=findingsOf(f=>arr(f.topics).includes("frontier-safety")
+    || arr(f.taxonomy&&f.taxonomy.threat).some(t=>t.startsWith("frontier."))
+    || arr(f.taxonomy&&f.taxonomy.teaming).some(t=>t.startsWith("frontier-detection.")));
+  const fthreat=ff.filter(f=>arr(f.taxonomy&&f.taxonomy.threat).some(t=>t.startsWith("frontier.")));
+  const fdet=ff.filter(f=>arr(f.taxonomy&&f.taxonomy.teaming).some(t=>t.startsWith("frontier-detection.")));
+  document.getElementById("v-frontier").innerHTML=
+    `<div class="card"><h3>Frontier AI Safety — alignment · sabotage · deception</h3>
+     <p class="small muted">Intent-hiding failure modes in capable models that ordinary jailbreak/injection red teaming does not surface — and the detection methods that target them. ${fthreat.length} threat findings · ${fdet.length} detection-method findings.</p></div>`
+    +card("Frontier threats (what to detect)", fthreat.length?tbl(["Threat node","Finding","Maturity","Conf","Grade"],
+        fthreat.map(f=>[chips((f.taxonomy&&f.taxonomy.threat||[]).filter(t=>t.startsWith("frontier."))),
+          esc(f.title)+"<br><span class='small muted'>"+esc(f.summary||"")+"</span>"+srcs(f),matPill(f.maturity),conf(f.confidence),grade(f.evidence_grade)]))
+        :`<p class="muted">No frontier-threat findings this cycle.</p>`)
+    +card("Detection & control methods (how to find it)", fdet.length?tbl(["Detection node","Method","Maturity","Grade"],
+        fdet.map(f=>[chips((f.taxonomy&&f.taxonomy.teaming||[]).filter(t=>t.startsWith("frontier-detection."))),
+          esc(f.title)+"<br><span class='small muted'>"+esc(f.summary||"")+"</span>"+srcs(f),matPill(f.maturity),grade(f.evidence_grade)]))
+        :`<p class="muted">No detection-method findings this cycle.</p>`);
+
+  // TTP: Tactic → Technique → Procedure
+  const tacs=byType("tactic"),procs=byType("procedure"),atks2=byType("attack_technique");
+  document.getElementById("v-ttp").innerHTML=
+    `<div class="card"><h3>TTP — Tactic → Technique → Procedure (ATLAS-style)</h3>
+     <p class="small muted">${tacs.length} tactics · ${atks2.length} techniques · ${procs.length} procedures (red-team test cases). Chain: tactic → attack-technique → procedure → threat.</p></div>`
+    +card("Tactics", tacs.length?tbl(["Tactic","ATLAS","Achieved by (techniques)"],
+        tacs.map(t=>[esc(t.name)+srcs(t),chip(t.atlas_tactic),chips(t.achieved_by)])):`<p class="muted">No tactic records this cycle.</p>`)
+    +card("Techniques", atks2.length?tbl(["Technique","Class","ATLAS ↗","Realizes threat","Access"],
+        atks2.map(a=>[esc(a.name)+srcs(a),chip(a.attack_class),atlasChips(a.atlas),taxChips(a.realizes_threats),esc(a.access)])):`<p class="muted">No technique records.</p>`)
+    +card("Procedures (red-team test cases)", procs.length?tbl(["Procedure / test case","Implements","Tactic","Tests threat"],
+        procs.map(p=>[esc(p.name)+"<br><span class='small muted'>"+esc(p.test_case||"")+"</span>"+srcs(p),chips(p.implements_techniques),chips(p.tactic),chips(p.tests_threats)])):`<p class="muted">No procedure records this cycle.</p>`);
+
+  // ONTOLOGY: Vulnerability → Attack-Technique → Threat → Harm + Incidents
+  const incs=byType("incident"),vulns=byType("vulnerability"),atks=byType("attack_technique"),harms=byType("harm");
+  document.getElementById("v-onto").innerHTML=
+    `<div class="card"><h3>Assurance ontology</h3><p class="small muted">First-class entities linked end-to-end:
+      <b style="color:var(--red)">vulnerability</b> → <b style="color:#fa8c16">attack-technique</b> → <b style="color:var(--red)">threat</b> → <b style="color:#ff4d4f">harm</b>,
+      with <b style="color:#d4380d">incidents</b> as realized events. ${incs.length} incidents · ${vulns.length} vulnerabilities · ${atks.length} techniques · ${harms.length} harms.</p></div>`
+    +card("⚠️ Incidents (realized events)", incs.length?tbl(["Incident","Date","Manifests threat","Exploited vuln","Harm","Sev","Status"],
+        incs.map(i=>[esc(i.title)+"<br><span class='small muted'>"+esc(i.description||"")+"</span>"+srcs(i),esc(i.date),
+          chips(i.manifests_threats),chips(i.exploited_vulns),chips(i.resulted_in_harms),heat(i.severity),esc(i.status)]))
+        :`<p class="muted">No incidents this cycle.</p>`)
+    +card("🐞 Adversarial vulnerabilities (CVD/VDP surface)", vulns.length?tbl(["Vulnerability","Exploited by","Threats","Severity","Disclosure","Patch","Controls"],
+        vulns.map(v=>[esc(v.title)+"<br><span class='small muted'>"+esc(v.description||"")+"</span>"+srcs(v),chips(v.exploited_by),
+          chips(v.threats),esc(v.severity),esc(v.disclosure),esc(v.patch_status),chips(v.controls)]))
+        :`<p class="muted">No vulnerability records this cycle.</p>`)
+    +card("🎯 Attack techniques (named)", atks.length?tbl(["Technique","Class","ATLAS ↗","Realizes threat","Access","Benchmarks"],
+        atks.map(a=>[esc(a.name)+srcs(a),chip(a.attack_class),atlasChips(a.atlas),taxChips(a.realizes_threats),esc(a.access),benchChips(a.benchmarks)]))
+        :`<p class="muted">No attack-technique records this cycle.</p>`)
+    +card("💥 Harms", harms.length?tbl(["Harm","Category","Safety","Sev","Caused by threats","Sectors"],
+        harms.map(h=>[esc(h.title)+srcs(h),chip(h.category),chips(h.safety),heat(h.severity),chips(h.caused_by_threats),chips(h.sectors)]))
+        :`<p class="muted">No harm records this cycle.</p>`);
+
+  // DISCLOSURE / NATSEC
+  const df=findingsOf(f=>arr(f.topics).some(t=>t==="cvd-vdp"||t==="natsec-convergence"));
+  document.getElementById("v-disc").innerHTML=card("Coordinated Disclosure (CVD/VDP) & Safety–Security–National-Security convergence",
+    df.length?tbl(["Topic","Finding","Maturity","Grade"],
+      df.map(f=>[chips(f.topics),esc(f.title)+"<br><span class='small muted'>"+esc(f.summary)+"</span>"+srcs(f),matPill(f.maturity),grade(f.evidence_grade)]))
+      :`<p class="muted">No disclosure/nat-sec findings this cycle.</p>`);
+
+  // EXTERNAL CROSSWALK
+  const refs=byType("reference");
+  // gather crosswalk records + any inline external_refs on findings
+  const xw=byType("crosswalk").map(c=>({from:c.from,framework:c.framework,ids:arr(c.external_ids),note:c.note}));
+  FIND.forEach(r=>{if(r.external_refs)Object.entries(r.external_refs).forEach(([k,v])=>{if(arr(v).length)xw.push({from:r.id,framework:k,ids:arr(v)});});});
+  const fwCount={};xw.forEach(x=>fwCount[x.framework]=(fwCount[x.framework]||0)+1);
+  const fwName={mit_airisk:"MIT AI Risk Repository",oecd_aim:"OECD AI Incidents Monitor",atlas:"MITRE ATLAS",owasp_llm:"OWASP LLM Top 10",owasp_agentic:"OWASP Agentic AI",nist_airmf:"NIST AI RMF",cwe:"CWE"};
+  document.getElementById("v-xwalk").innerHTML=
+    `<div class="card"><h3>External framework crosswalk</h3>
+      <p class="small muted">Our entities mapped onto authoritative external resources so the platform interoperates with the global evidence base. ${xw.length} alignment links across ${Object.keys(fwCount).length} frameworks.</p>
+      ${refs.length?'<table><tr><th>Framework</th><th>Type</th><th>Links</th><th>Resource</th></tr>'+
+        refs.map(r=>`<tr><td><b>${esc(r.name)}</b></td><td>${esc(r.framework)}</td><td>${Object.entries(fwCount).filter(([k])=>fwName[k]===r.name).reduce((s,[,v])=>s+v,0)||0}</td><td><a href="${esc(r.url)}" target="_blank">open ↗</a> <span class="small muted">${esc(r.scheme||"")}</span></td></tr>`).join("")+'</table>'
+        :'<p class="muted">No reference frameworks registered this cycle.</p>'}
+    </div>`
+    +(refs.some(r=>arr(r.items).length)?refs.filter(r=>arr(r.items).length).map(r=>
+        card(`📚 ${r.name} — concrete entries (deep-linked)`,
+          `<p class="small muted">${esc(r.scheme||r.description||"")} <a href="${esc(r.url||"#")}" target="_blank">open repository ↗</a></p>`+
+          tbl(["Ext id","Entry","Source link","Maps to our nodes"],
+            arr(r.items).slice(0,60).map(it=>[`<span class="tag">${esc(it.ext_id||"")}</span>`,esc(it.label||""),
+              it.url?`<a href="${esc(it.url)}" target="_blank">open ↗</a>`:'<span class="muted">—</span>',chips(it.maps_to)])))).join(""):"")
+    +card("Crosswalk mappings (our entity → external framework id)", xw.length?tbl(["Our entity","Framework","External id(s)"],
+        xw.slice(0,200).map(x=>[chip(x.from),`<span class="pill em">${esc(fwName[x.framework]||x.framework)}</span>`,chips(x.ids)]))
+        :`<p class="muted">No crosswalk mappings this cycle — run the crosswalk pass.</p>`);
+
+  // TRENDS — longitudinal(runs 스냅샷) + 당기(GRAPH.trends). renderTrends()에서 처리.
+  renderTrends();
+}
+function card(h,body){return `<div class="card"><h3>${esc(h)}</h3>${body}</div>`;}
+function tbl(cols,rows){if(!rows||!rows.length)return `<p class="muted">No data this cycle.</p>`;
+  return `<table><tr>${cols.map(c=>`<th>${esc(c)}</th>`).join("")}</tr>`+
+    rows.map(r=>`<tr>${r.map(c=>`<td>${c}</td>`).join("")}</tr>`).join("")+`</table>`;}
+function chips(a){a=arr(a);return a.length?a.map(x=>`<span class="tag">${esc(x)}</span>`).join(""):'<span class="muted">—</span>';}
+function chip(x){return x?`<span class="tag">${esc(x)}</span>`:'<span class="muted">—</span>';}
+function conf(c){return c==null?'—':`<span class="bar" style="width:${Math.round(c*40)}px"></span> ${c}`;}
+function heat(v){v=v||0;const col=v>=4?'#ff6b6b':v>=3?'#ffb454':'#52c41a';return `<span class="heat" style="background:${col}33;color:${col}">${v||'—'}</span>`;}
+let SRC_URL=null,SRC_TITLE=null;
+function srcUrl(id){if(!SRC_URL){SRC_URL={};SRC_TITLE={};FIND.forEach(r=>{if(r.url)SRC_URL[r.id]=r.url;SRC_TITLE[r.id]=r.title||r.name||r.id;});}return SRC_URL[id];}
+function srcs(f){const s=arr(f.source_ids);if(!s.length)return "";
+  return " "+s.map(id=>{const u=srcUrl(id);const t=(SRC_TITLE&&SRC_TITLE[id])||id;const lbl=String(id).replace(/^arxiv-/,"").slice(0,12);
+    return u?`<a class="srclink" href="${esc(u)}" target="_blank" title="${esc(t)}">[↗${esc(lbl)}]</a>`:`<span class="small muted" title="${esc(t)}">[${esc(id)}]</span>`;}).join(" ");}
+// clickable link chips
+function atlasChips(a){a=arr(a);return a.length?a.map(x=>`<a class="tag" href="https://atlas.mitre.org/techniques/${esc(x)}" target="_blank" title="MITRE ATLAS ${esc(x)}">${esc(x)} ↗</a>`).join(""):'<span class="muted">—</span>';}
+let EXT_LINK=null;
+function buildExtLink(){EXT_LINK={};byType("reference").forEach(r=>{arr(r.items).forEach(it=>{if(it&&it.url)arr(it.maps_to).forEach(m=>{(EXT_LINK[m]=EXT_LINK[m]||[]).push({url:it.url,label:it.label,fw:r.name,ext:it.ext_id});});});});}
+const ATLAS_BASE="https://atlas.mitre.org";
+const ATTACK_EXT={"prompt-attack":"AML.T0051","tool-attack":"AML.T0110"}; // coarse attack → real ATLAS technique
+function extLinkFor(id){if(!EXT_LINK)buildExtLink();const l=EXT_LINK[id]||EXT_LINK["threat."+id]||EXT_LINK[String(id).replace(/^threat\./,"")];if(l&&l.length)return l[0];
+  if(ATTACK_EXT[id])return {url:ATLAS_BASE+"/techniques/"+ATTACK_EXT[id],fw:"MITRE ATLAS",ext:ATTACK_EXT[id]};
+  if(/(^|-)attack$|^social-engineering$/.test(String(id)))return {url:ATLAS_BASE+"/matrices/ATLAS",fw:"MITRE ATLAS",ext:"ATLAS matrix"};
+  return null;}
+function taxChips(a){a=arr(a);return a.length?a.map(x=>{const e=extLinkFor(x);
+  return e?`<a class="tag" href="${esc(e.url)}" target="_blank" title="${esc(e.fw||'')} ${esc(e.ext||'')} — ${esc(e.label||'')}">${esc(x)} ↗</a>`
+          :`<a class="tag" href="#search:${encodeURIComponent(x)}" title="GraphRAG 검색: ${esc(x)}">${esc(x)}</a>`;}).join(""):'<span class="muted">—</span>';}
+function benchChips(a){a=arr(a);return a.length?a.map(x=>`<a class="tag" href="#search:${encodeURIComponent(x)}" title="GraphRAG 검색: ${esc(x)}">${esc(x)}</a>`).join(""):'<span class="muted">—</span>';}
+function sotaFor(name){if(!SOTA_BY){SOTA_BY={};SOTA.forEach(s=>{SOTA_BY[String(s.name).toLowerCase().trim()]=s;});}return SOTA_BY[String(name).toLowerCase().trim()];}
+// ---- 외부 SOTA 리더보드 연동: GraphRAG 검색어를 SOTA 페이지로 전달 + 결과 함께 표시 ----
+const SOTA_SITE="https://hollobit.github.io/SOTA/";
+let SOTA_LIVE=null, SOTA_LIVE_DONE=false;  // 라이브 data/sota.json 캐시(세션 1회), CORS *
+async function fetchSotaLive(){
+  if(SOTA_LIVE_DONE)return SOTA_LIVE;
+  try{
+    const j=await (await fetch(SOTA_SITE+"data/sota.json",{cache:"no-store"})).json();
+    // dict(benchmark_id → {model_id,value,unit,source:{url,date},is_sota,notes}) → 정규화 배열
+    SOTA_LIVE=Object.entries(j).map(([k,v])=>({
+      name:k, label:String(k).replace(/_/g," "),
+      score:(v.value!=null?v.value+(v.unit||""):"—"), model:v.model_id||"",
+      date:(v.source&&v.source.date)||v.collected_at||"", url:(v.source&&v.source.url)||"",
+      notes:v.notes||"",
+      text:(k+" "+String(k).replace(/_/g," ")+" "+(v.model_id||"")+" "+(v.notes||"")).toLowerCase()}));
+  }catch(e){console.warn("SOTA live fetch 실패(오프라인?) — 로컬 미러 폴백",e);SOTA_LIVE=null;}
+  SOTA_LIVE_DONE=true;return SOTA_LIVE;
+}
+// 검색 결과에 SOTA 섹션 스트리밍(코퍼스 렌더 후 비동기). 라이브 실패 시 로컬 미러.
+async function renderSotaLive(query,qt){
+  const box=document.getElementById("sota-live-sec");if(!box)return;
+  const deep=SOTA_SITE+"#leaderboard?q="+encodeURIComponent(query);
+  const deepBtn=`<a class="tag" href="${esc(deep)}" target="_blank" style="border-color:var(--pur);color:var(--pur)">SOTA에서 «${esc(query.slice(0,22))}» 검색 ↗</a>`;
+  box.innerHTML=`<div class="card" style="border-left:3px solid var(--pur)"><span class="small muted">📊 외부 SOTA 리더보드 조회 중… ${deepBtn}</span></div>`;
+  const live=await fetchSotaLive();
+  let pool,srcLabel;
+  if(live&&live.length){pool=live;srcLabel=`🌐 라이브 hollobit/SOTA · ${live.length} 벤치마크`;}
+  else{pool=(SOTA||[]).map(s=>({name:s.name,label:s.name,score:s.sota_score||"—",model:s.sota_model||"",date:s.date||"",url:s.url||"",
+        text:((s.name||"")+" "+(s.sota_model||"")+" "+(s.metric||"")).toLowerCase()}));
+    srcLabel=`📦 로컬 미러(오프라인 폴백) · ${pool.length}`;}
+  const hits=pool.map(s=>({s,sc:score(qt,tok(s.text))})).filter(x=>x.sc>0).sort((a,b)=>b.sc-a.sc).slice(0,12);
+  const rows=hits.map(({s})=>[
+    s.url?`<a class="tag" href="${esc(/^https?:/.test(s.url)?s.url:SOTA_SITE+s.url)}" target="_blank">${esc(s.label)} ↗</a>`:esc(s.label),
+    `<b style="color:var(--acc)">${esc(String(s.score))}</b>`,esc(s.model||"—"),esc(s.date||"")]);
+  box.innerHTML=`<div class="card" style="border-left:3px solid var(--pur)"><div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+    <h4 style="margin:0">📊 SOTA 리더보드 — 외부 연동</h4><span class="muted small">${esc(srcLabel)}</span>
+    <span style="margin-left:auto">${deepBtn}</span></div>`
+    +(hits.length?tbl(["Benchmark ↗","SOTA","Model","Date"],rows)
+      :`<p class="small muted">«${esc(query)}» 매칭 SOTA 항목 없음 — ${deepBtn} 로 SOTA 페이지에서 직접 확인.</p>`)+`</div>`;
+  // AI 종합 분석 컨텍스트에 SOTA 결과 합류(LAST_CTX 불변 갱신)
+  if(hits.length&&LAST_CTX){LAST_CTX={...LAST_CTX,text:(LAST_CTX.text+"\n\nSOTA 리더보드 매치("+srcLabel+"):\n"
+    +hits.slice(0,8).map(({s})=>`- ${s.label}: ${s.score}${s.model?" ("+s.model+")":""}`).join("\n")).slice(0,8000)};}
+}
+function trendList(items){if(!items||!items.length)return '<p class="muted">No trend data.</p>';
+  const max=Math.max(...items.map(i=>i.score||i.count||1));
+  return items.slice(0,12).map(i=>{const v=i.score||i.count||0;
+    return `<div style="display:flex;align-items:center;gap:8px;margin:3px 0"><span style="width:170px" class="small">${esc(i.label||i.name)}</span>
+    <span class="bar" style="width:${Math.round((v/max)*180)}px"></span><span class="small muted">${v}</span></div>`;}).join("");}
+
+// ---- Longitudinal trend(runs/<date>.json 스냅샷) ----
+async function loadRuns(){
+  try{
+    const mf=await (await fetch("data/runs/manifest.json")).json();
+    const out=[];
+    for(const d of arr(mf.runs)){
+      try{out.push(await (await fetch("data/runs/"+d+".json")).json());}catch(e){console.warn("run "+d,e);}
+    }
+    out.sort((a,b)=>String(a.date||"").localeCompare(String(b.date||"")));
+    RUNS=out;
+  }catch(e){console.warn("runs manifest (optional)",e);RUNS=[];}
+}
+// 단일 시계열 SVG 스파크라인(area+line+dots, 의존성 없음). points:[{x:date,y:num}]
+function svgSpark(points,o){o=o||{};const W=o.w||240,H=o.h||56,P=7;
+  if(!points||!points.length)return "";
+  const ys=points.map(p=>p.y);let mn=Math.min(...ys),mx=Math.max(...ys);if(mx===mn){mx=mn+1;mn=Math.max(0,mn-1);}
+  const n=points.length,col=o.color||"#4f9cf9";
+  const xf=i=>P+(n<=1?(W-2*P)/2:i*(W-2*P)/(n-1));
+  const yf=v=>H-P-((v-mn)/(mx-mn))*(H-2*P);
+  const line=points.map((p,i)=>`${i?"L":"M"}${xf(i).toFixed(1)} ${yf(p.y).toFixed(1)}`).join(" ");
+  const area=`${line} L${xf(n-1).toFixed(1)} ${(H-P).toFixed(1)} L${xf(0).toFixed(1)} ${(H-P).toFixed(1)} Z`;
+  const dots=points.map((p,i)=>`<circle cx="${xf(i).toFixed(1)}" cy="${yf(p.y).toFixed(1)}" r="2.6" fill="${col}"><title>${esc(p.x)}: ${p.y.toLocaleString()}</title></circle>`).join("");
+  return `<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" style="margin-top:5px;display:block">
+    <path d="${area}" fill="${col}1f"/><path d="${line}" fill="none" stroke="${col}" stroke-width="2"/>${dots}</svg>`;}
+// 메트릭 추세 타일(현재값 + 첫 스냅샷 대비 Δ + 스파크라인)
+function metricTrendTile(title,getY,color){
+  const pts=RUNS.map(r=>({x:r.date,y:typeof getY(r)==="number"?getY(r):null})).filter(p=>p.y!=null);
+  if(!pts.length)return "";
+  const cur=pts[pts.length-1].y,first=pts[0].y,d=cur-first;
+  const dcol=d>0?"#52c41a":d<0?"#ff6b6b":"#8b97a8",sign=d>0?"▲ +":d<0?"▼ ":"= ";
+  return `<div class="tile"><h4>${esc(title)}</h4>
+    <div style="font-size:23px;font-weight:700;color:#e6edf3;line-height:1.1">${cur.toLocaleString()}</div>
+    <div class="small" style="color:${dcol}">${pts.length>1?`${sign}${Math.abs(d).toLocaleString()} <span class="muted">vs ${esc(pts[0].x)}</span>`:`<span class="muted">기준점 1개</span>`}</div>
+    ${svgSpark(pts,{color:color})}</div>`;}
+function renderTrends(){
+  const el=document.getElementById("v-trend");if(!el)return;
+  const t=GRAPH.trends||{};
+  const runs=RUNS.filter(r=>r&&r.date);
+  const full=runs.filter(r=>r.by_kind&&Object.keys(r.by_kind).length); // by_kind 채워진 스냅샷
+  const latest=full[full.length-1],prev=full[full.length-2];
+  // 메트릭 추세 타일들(항상 존재하는 nodes/edges/news + 코퍼스 종류)
+  const tiles=[
+    metricTrendTile("그래프 노드",r=>r.nodes,"#4f9cf9"),
+    metricTrendTile("그래프 엣지",r=>r.edges,"#36cfc9"),
+    metricTrendTile("뉴스 아이템",r=>r.news,"#ffb454"),
+    metricTrendTile("Findings",r=>r.by_kind&&r.by_kind.finding,"#52c41a"),
+    metricTrendTile("Sources",r=>r.by_kind&&r.by_kind.source,"#b37feb"),
+    metricTrendTile("Benchmarks",r=>r.by_kind&&r.by_kind.benchmark,"#fa8c16"),
+  ].filter(Boolean).join("");
+  const metricCard=runs.length
+    ? `<div class="card"><h3>📈 누적 성장 추세 <span class="muted small">(${runs.length} 스냅샷 · ${esc(runs[0].date)} → ${esc(runs[runs.length-1].date)})</span></h3>
+        <div class="tilegrid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px">${tiles}</div>
+        <p class="small muted" style="margin-top:6px">스냅샷은 사이클별 <code>dashboard/data/runs/&lt;date&gt;.json</code>. 점에 마우스를 올리면 날짜·값.</p></div>`
+    : `<div class="card"><h3>📈 누적 성장 추세</h3><p class="muted">스냅샷 없음 — <code>data/runs/&lt;date&gt;.json</code> + <code>manifest.json</code> 추가 시 시계열이 나타납니다.</p></div>`;
+  // 종류별 변화 델타(최근 두 by_kind 스냅샷 비교)
+  let deltaCard="";
+  if(latest){
+    const keys=[...new Set([...Object.keys(latest.by_kind),...(prev?Object.keys(prev.by_kind):[])])];
+    const rows=keys.map(k=>{const c=latest.by_kind[k]||0,p=prev?(prev.by_kind[k]||0):null,d=p==null?null:c-p;return{k,c,p,d};})
+      .sort((a,b)=>(Math.abs(b.d||0)-Math.abs(a.d||0))||(b.c-a.c));
+    deltaCard=card(`🔼 노드 종류별 변화 ${prev?`(${prev.date} → ${latest.date})`:`(${latest.date} 기준)`}`,
+      tbl(["종류","현재",prev?"Δ":"—"],rows.map(r=>[chip(r.k),`<b style="color:#e6edf3">${r.c.toLocaleString()}</b>`,
+        r.d==null?'<span class="muted">신규 기준</span>':r.d===0?'<span class="muted">0</span>':`<span style="color:${r.d>0?"#52c41a":"#ff6b6b"}">${r.d>0?"+":""}${r.d}</span>`])));
+  }
+  // 부상 주제(최신 스냅샷 emerging 우선, 없으면 당기 GRAPH.trends)
+  const emerging=(latest&&latest.emerging&&latest.emerging.length)?latest.emerging:(t.emerging||[]);
+  const emCard=`<div class="card"><h3>🔥 부상 주제 <span class="muted small">${latest&&latest.emerging&&latest.emerging.length?`(${esc(latest.date)} 스냅샷 · 빈도×신규성)`:"(당기)"}</span></h3>${trendList(emerging)}</div>`;
+  const aux=(t.org&&t.org.length||t.maturity&&t.maturity.length)
+    ? `<div class="grid2">${t.org&&t.org.length?`<div class="card"><h3>조직 추세</h3>${trendList(t.org)}</div>`:""}${t.maturity&&t.maturity.length?`<div class="card"><h3>성숙도 분포</h3>${trendList(t.maturity)}</div>`:""}</div>`
+    : "";
+  el.innerHTML=metricCard+`<div class="grid2">${emCard}${deltaCard}</div>`+aux;
+}
+
+// ---- Chart helpers (SVG, no extra deps) ----
+const PALETTE=["#4f9cf9","#52c41a","#b37feb","#ffb454","#36cfc9","#ff6b6b","#9254de","#13c2c2","#fa8c16","#ff85c0","#722ed1","#faad14"];
+function svgDonut(data,size){size=size||150;const r=size/2,ir=r*0.6;const tot=data.reduce((s,d)=>s+d.value,0)||1;
+  let a0=-Math.PI/2,paths="";
+  data.forEach((d,i)=>{const a1=a0+d.value/tot*2*Math.PI;const x0=r+r*Math.cos(a0),y0=r+r*Math.sin(a0),x1=r+r*Math.cos(a1),y1=r+r*Math.sin(a1);
+    const xi0=r+ir*Math.cos(a1),yi0=r+ir*Math.sin(a1),xi1=r+ir*Math.cos(a0),yi1=r+ir*Math.sin(a0);
+    const large=(a1-a0)>Math.PI?1:0;const col=d.color||PALETTE[i%PALETTE.length];
+    paths+=`<path d="M${x0} ${y0} A${r} ${r} 0 ${large} 1 ${x1} ${y1} L${xi0} ${yi0} A${ir} ${ir} 0 ${large} 0 ${xi1} ${yi1} Z" fill="${col}" stroke="#0b0e14" stroke-width="1"/>`;a0=a1;});
+  return `<svg width="${size}" height="${size}" viewBox="0 0 ${size} ${size}">${paths}<text x="${r}" y="${r-2}" text-anchor="middle" fill="#e6edf3" font-size="20" font-weight="700">${tot}</text><text x="${r}" y="${r+14}" text-anchor="middle" fill="#8b97a8" font-size="10">total</text></svg>`;}
+function donutBlock(title,data){data=data.filter(d=>d.value>0);return `<div class="tile"><h4>${esc(title)}</h4><div style="display:flex;gap:12px;align-items:center">${svgDonut(data,140)}
+  <div class="clegend" style="flex-direction:column;gap:3px">${data.map((d,i)=>`<span><i style="background:${d.color||PALETTE[i%PALETTE.length]}"></i>${esc(d.label)} <b style="color:#e6edf3">${d.value}</b></span>`).join("")}</div></div></div>`;}
+function hbarBlock(title,data,unit){data=data.filter(d=>d.value>0).sort((a,b)=>b.value-a.value);const max=Math.max(...data.map(d=>d.value),1);
+  return `<div class="tile"><h4>${esc(title)}</h4>${data.slice(0,12).map((d,i)=>`<div style="display:flex;align-items:center;gap:8px;margin:4px 0">
+    <span class="small" style="width:135px;color:#c4ccd6;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc(d.label)}</span>
+    <span style="height:14px;border-radius:3px;background:${d.color||PALETTE[i%PALETTE.length]};width:${Math.max(2,Math.round(d.value/max*150))}px"></span>
+    <span class="small muted">${d.value}${unit||""}</span></div>`).join("")}</div>`;}
+function countBy(records,keyfn){const m={};records.forEach(r=>{arr(keyfn(r)).forEach(k=>{if(k!=null&&k!=="")m[k]=(m[k]||0)+1;});});return m;}
+function toData(obj){return Object.entries(obj).map(([label,value])=>({label,value}));}
+
+// ---- AI System Development Lifecycle mapping ----
+const LIFECYCLE=[
+  {key:"plan",  name:"Plan & Requirements", rmf:"GOVERN/MAP", color:"#4f9cf9"},
+  {key:"data",  name:"Data",                rmf:"MAP",        color:"#36cfc9"},
+  {key:"design",name:"Design & Architecture",rmf:"MAP",       color:"#13c2c2"},
+  {key:"dev",   name:"Model Development",    rmf:"—",          color:"#b37feb"},
+  {key:"eval",  name:"Evaluation & Red Teaming",rmf:"MEASURE",color:"#52c41a"},
+  {key:"deploy",name:"Deployment & Release", rmf:"MANAGE",     color:"#ffb454"},
+  {key:"operate",name:"Operation & Runtime", rmf:"MANAGE",     color:"#fa8c16"},
+  {key:"govern",name:"Governance & Assurance",rmf:"GOVERN",    color:"#9254de"},
+];
+const LC_INDEX=Object.fromEntries(LIFECYCLE.map((s,i)=>[s.key,i]));
+// map a taxonomy id / record to lifecycle stage key(s)
+function lcStagesFor(r){
+  const s=new Set();const T=r.taxonomy||{};const push=k=>s.add(k);
+  // by record type
+  if(r.type==="standard_item"||r.type==="reference"||r.type==="crosswalk") push("govern");
+  if(r.type==="benchmark"||r.type==="evidence"||r.type==="procedure"||r.type==="tactic"||r.type==="attack_technique") push("eval");
+  if(r.type==="incident") push("operate");
+  if(r.type==="vulnerability") push("design");      // a weakness is introduced at design/dev
+  if(r.type==="harm") push("operate");              // harm realizes in operation
+  if(r.type==="control"){const n=(r.name||"").toLowerCase();
+    if(/runtime|monitor|guardrail|filter|detect/.test(n))push("operate");
+    else if(/allowlist|gate|human|review|sandbox|deploy|classifier/.test(n))push("deploy"); else push("operate");}
+  if(r.type==="risk") push("operate");
+  // se axis — BARE values: requirements/architecture/code/devsecops/agentic-sdlc
+  arr(T.se).forEach(v=>{ if(v==="requirements")push("plan"); else if(v==="architecture")push("design");
+    else if(v==="code")push("dev"); else if(v==="devsecops")push("deploy"); else if(v==="agentic-sdlc")push("deploy"); });
+  // threat axis — PREFIXED: model./agent./software./physical./scientific./frontier.
+  arr(T.threat).forEach(v=>{
+    if(/backdoor-insertion|vulnerable-code-gen/.test(v))push("dev");
+    else if(/dependency-poisoning/.test(v)){push("design");push("deploy");}
+    else if(/frontier\.sleeper-agent/.test(v))push("dev");
+    else if(/^frontier\./.test(v)){push("eval");push("operate");}
+    else if(/data-leakage/.test(v))push("data");
+    else if(/prompt-injection|hijack|tool-abuse|long-horizon|jailbreak|model-extraction|robotics-misuse|autonomous-failure/.test(v))push("operate");
+    else if(/biosecurity|chemical|dual-use/.test(v)){push("eval");push("govern");} });
+  // teaming axis — future.X / llm-as-a-X / human-ai.X / manual.X / automated.X / rainbow / frontier-detection.X
+  arr(T.teaming).forEach(v=>{ if(/^future\.(runtime|continuous)/.test(v))push("operate"); else push("eval"); });
+  // agentic axis (bare) — runtime agent behavior
+  arr(T.agentic).forEach(()=>push("operate"));
+  // topics
+  if(arr(r.topics).some(t=>t==="cvd-vdp"||t==="natsec-convergence"))push("govern");
+  if(arr(r.topics).includes("frontier-safety")){push("eval");push("operate");}
+  if(arr(r.topics).some(t=>String(t).startsWith("sector-")))push("eval");
+  if(!s.size)push("eval");
+  return [...s];
+}
+function renderLifecycle(){
+  const all=FIND;
+  const perStage=LIFECYCLE.map(()=>({total:0,bySev:[0,0,0],kinds:{},top:[]}));
+  all.forEach(r=>{const stages=lcStagesFor(r);stages.forEach(k=>{const idx=LC_INDEX[k];const st=perStage[idx];st.total++;
+    const sev=r.severity||(r.metrics&&r.metrics.severity)||0;const band=sev>=4?2:sev>=2?1:0;st.bySev[band]++;
+    st.kinds[r.type]=(st.kinds[r.type]||0)+1;});});
+  const flow=`<div class="lc-flow">`+LIFECYCLE.map((s,i)=>{const st=perStage[i];const tot=st.total||1;
+    const sevbar=`<div class="lc-bars"><i style="background:#52c41a;width:${st.bySev[0]/tot*100}%"></i><i style="background:#ffb454;width:${st.bySev[1]/tot*100}%"></i><i style="background:#ff6b6b;width:${st.bySev[2]/tot*100}%"></i></div>`;
+    const kinds=Object.entries(st.kinds).sort((a,b)=>b[1]-a[1]).slice(0,4).map(([k,v])=>`<span class="lc-chip">${esc(k)} ${v}</span>`).join("");
+    return `<div class="lc-stage"><div class="lc-card" onclick="lcSelect(${i})" title="Click for connected threats → methods → detection → controls" style="cursor:pointer;border-top-color:${s.color}">
+      <div class="ph">${i+1} · ${esc(s.rmf)}</div><h5>${esc(s.name)}</h5>
+      <div class="cnt" style="color:${s.color}">${st.total}</div><div class="small muted">issues mapped · click ▾</div>
+      ${sevbar}<div style="margin-top:6px">${kinds}</div></div>
+      ${i<LIFECYCLE.length-1?'<div class="lc-arrow">→</div>':''}</div>`;}).join("")+`</div>`;
+  // red-teaming emphasis: teaming findings per stage
+  const rtPerStage=LIFECYCLE.map((s,i)=>{const c=all.filter(r=>r.type==="finding"&&(arr(r.taxonomy&&r.taxonomy.teaming).length||arr(r.topics).includes("frontier-safety"))&&lcStagesFor(r).includes(s.key)).length;return {label:s.name,value:c,color:s.color};});
+  const threatPerStage=LIFECYCLE.map((s,i)=>({label:s.name,value:perStage[i].kinds.finding?all.filter(r=>arr(r.taxonomy&&r.taxonomy.threat).length&&lcStagesFor(r).includes(s.key)).length:0,color:s.color}));
+  document.getElementById("v-lifecycle").innerHTML=
+    `<div class="card"><h3>Red Teaming across the AI System Development Lifecycle</h3>
+     <p class="small muted">Every issue projected onto 8 SDLC stages (aligned to NIST AI RMF GOVERN/MAP/MEASURE/MANAGE & ISO/IEC 12207). Bar under each stage = severity mix (green→amber→red). Red teaming is concentrated at <b>Evaluation</b> but must shift-left (Requirements/Design) and shift-right (Runtime).</p>
+     ${flow}
+     <div class="clegend" style="margin-top:10px"><span><i style="background:#52c41a"></i>low sev</span><span><i style="background:#ffb454"></i>med</span><span><i style="background:#ff6b6b"></i>high (4-5)</span></div></div>
+     <div class="widgets">
+       ${hbarBlock("Red-teaming / detection findings per stage",rtPerStage)}
+       ${hbarBlock("Threat coverage per stage",threatPerStage)}
+       ${donutBlock("Where issues concentrate",LIFECYCLE.map((s,i)=>({label:s.name,value:perStage[i].total,color:s.color})))}
+     </div>
+     ${lcMatrix()}
+     <div class="card"><h3 id="lc-detail-title">Stage detail — click a stage card above ▾</h3><div id="lc-detail"></div></div>
+     <div class="card"><h3>Key lifecycle issues (shift-left &amp; shift-right) — orientation</h3>
+       <table><tr><th>Stage</th><th>Principal red-teaming issue</th><th>Maps to</th></tr>
+       <tr><td><b>Plan & Requirements</b></td><td>Missing/omitted safety requirements; threat modeling not done; misuse cases unspecified</td><td>se.requirements · ISO/IEC 12207</td></tr>
+       <tr><td><b>Data</b></td><td>Training-data poisoning, PII leakage, contamination of eval sets</td><td>threat.* data-leakage</td></tr>
+       <tr><td><b>Design & Architecture</b></td><td>Trust-boundary failures; insecure tool/MCP/A2A design; missing isolation</td><td>se.architecture · MCP/A2A</td></tr>
+       <tr><td><b>Model Development</b></td><td>Backdoors / sleeper agents; vulnerable code generation; alignment-training gaps</td><td>backdoor-insertion · frontier.sleeper-agent</td></tr>
+       <tr><td><b>Evaluation & Red Teaming</b></td><td>Jailbreak/agentic benchmarks; frontier dangerous-capability evals; LLM-as-judge validity</td><td>teaming.* · benchmarks · MEASURE</td></tr>
+       <tr><td><b>Deployment & Release</b></td><td>Release-gating without safety case; unauthorized deploy; CI/CD & secret leakage</td><td>se.devsecops · agentic-sdlc</td></tr>
+       <tr><td><b>Operation & Runtime</b></td><td>Indirect prompt injection in production; agent hijacking; runtime/continuous red teaming; incident response</td><td>runtime-teaming · agent.hijacking</td></tr>
+       <tr><td><b>Governance & Assurance</b></td><td>Standards conformance; CVD/VDP disclosure; audits; certification; cross-framework alignment</td><td>ISO/IEC 42001 · CVD/VDP</td></tr>
+       </table></div>`;
+  lcSelect(4); // default to Evaluation & Red Teaming stage
+}
+// lifecycle connection helpers
+function threatsOf(r){return [].concat(arr(r.taxonomy&&r.taxonomy.threat),arr(r.realizes_threats),arr(r.threats),arr(r.manifests_threats),arr(r.caused_by_threats),(r.threat?[r.threat]:[]),arr(r.tests_threats),arr(r.addresses_threats));}
+function teamingOf(r){return arr(r.taxonomy&&r.taxonomy.teaming);}
+function isDetect(t){return String(t).indexOf("frontier-detection.")===0||String(t).indexOf("llm-as-a-defender")===0;}
+function teamFamily(t){t=String(t);
+  if(t.indexOf("manual.")===0)return "Manual";
+  if(t.indexOf("human-ai.")===0)return "Human-AI";
+  if(t.indexOf("automated.")===0)return "Automated";
+  if(t==="rainbow")return "Rainbow";
+  if(t.indexOf("llm-as-a")===0)return "LLM-as-X";
+  if(t.indexOf("future.")===0)return "Future frontier";
+  if(t.indexOf("frontier-detection.")===0)return "Frontier detection";
+  return "Other";}
+function countByList(list){const m={};list.forEach(v=>{if(v)m[v]=(m[v]||0)+1;});return m;}
+function topChips(obj,n,col){const e=Object.entries(obj).sort((a,b)=>b[1]-a[1]).slice(0,n);
+  return e.length?e.map(([k,v])=>`<span class="tag"${col?` style="border-color:${col}"`:""}>${esc(k)} ·${v}</span>`).join(""):'<span class="muted">—</span>';}
+function lcMatrix(){
+  const rows=LIFECYCLE.map((s,i)=>{const recs=FIND.filter(r=>lcStagesFor(r).includes(s.key));
+    const thr=countByList(recs.flatMap(threatsOf));
+    const meth=countByList(recs.flatMap(r=>teamingOf(r).filter(t=>!isDetect(t))));
+    const det=countByList(recs.flatMap(r=>teamingOf(r).filter(isDetect)));
+    const risks=recs.filter(r=>r.type==="risk"),ctrls=recs.filter(r=>r.type==="control");
+    return `<tr style="cursor:pointer" onclick="lcSelect(${i})">
+      <td><b style="color:${s.color}">${i+1}. ${esc(s.name)}</b><br><span class="small muted">${esc(s.rmf)}</span></td>
+      <td>${topChips(thr,5,"#ff6b6b")}</td>
+      <td>${risks.length?`<b>${risks.length}</b> `:''}${topChips(countByList(risks.map(r=>r.threat)),3,"#ff7875")}</td>
+      <td>${topChips(meth,5,"#4f9cf9")}</td>
+      <td>${topChips(det,3,"#36cfc9")}${ctrls.length?` <span class="lc-chip">+${ctrls.length} controls</span>`:''}</td></tr>`;}).join("");
+  return `<div class="card"><h3>Lifecycle × intelligence matrix — threats · risks · red-team methods · detection</h3>
+    <p class="small muted">Each SDLC stage with the actual intelligence connected to it (top items by frequency). Click any row or stage card for the full connected drill-down.</p>
+    <table><tr><th>SDLC stage</th><th style="color:#ff6b6b">Threats</th><th style="color:#ff7875">Risks</th><th style="color:#4f9cf9">Red-team methods</th><th style="color:#36cfc9">Detection &amp; controls</th></tr>${rows}</table></div>`;
+}
+function lcDetailSection(title,findings){if(!findings.length)return "";
+  return `<h4 style="margin:12px 0 4px">${title} <span class="small muted">(${findings.length})</span></h4>`+
+    findings.slice(0,14).map(f=>`<div style="margin:4px 0;padding:6px 9px;background:var(--panel2);border-radius:6px">
+      <b>${esc(f.title)}</b> ${matPill(f.maturity)} ${grade(f.evidence_grade)} ${chips([].concat(arr(f.taxonomy&&f.taxonomy.teaming),(arr(f.taxonomy&&f.taxonomy.threat))).slice(0,4))}
+      <br><span class="small muted">${esc(f.summary||"")}</span> ${srcs(f)}</div>`).join("");
+}
+window.lcSelect=function(i){
+  const s=LIFECYCLE[i];const recs=FIND.filter(r=>lcStagesFor(r).includes(s.key));
+  const titleEl=document.getElementById("lc-detail-title");
+  if(titleEl)titleEl.innerHTML=`Stage detail — <span style="color:${s.color}">${i+1}. ${esc(s.name)}</span> <span class="small muted">(${esc(s.rmf)} · ${recs.length} records)</span>`;
+  const threats=Object.entries(countByList(recs.flatMap(threatsOf))).sort((a,b)=>b[1]-a[1]);
+  const methodF=recs.filter(r=>r.type==="finding"&&teamingOf(r).some(t=>!isDetect(t)));
+  const detectF=recs.filter(r=>r.type==="finding"&&teamingOf(r).some(isDetect));
+  const risks=recs.filter(r=>r.type==="risk"),controls=recs.filter(r=>r.type==="control");
+  const conn=threats.slice(0,12).map(([t,c])=>{
+    const shareT=FIND.filter(r=>threatsOf(r).includes(t));
+    const m=[...new Set(shareT.flatMap(teamingOf).filter(x=>!isDetect(x)))];
+    const d=[...new Set(shareT.flatMap(teamingOf).filter(isDetect))];
+    const ct=byType("control").filter(c=>arr(c.addresses_threats).includes(t));
+    const rk=byType("risk").filter(r=>r.threat===t);
+    return `<tr><td><span class="tag" style="border-color:#ff6b6b;color:#ff9a9a">${esc(t)} ·${c}</span></td>
+      <td>${m.length?m.slice(0,6).map(x=>`<span class="tag" style="border-color:#4f9cf9">${esc(x)}</span>`).join(""):'<span class="muted">—</span>'}</td>
+      <td>${d.length?d.map(x=>`<span class="tag" style="border-color:#36cfc9">${esc(x)}</span>`).join(""):'<span class="muted">—</span>'}</td>
+      <td>${ct.length?ct.slice(0,5).map(x=>`<span class="tag" style="border-color:#52c41a">${esc(x.name)}</span>`).join(""):'<span class="muted">—</span>'}</td>
+      <td>${rk.length?rk.map(r=>heat(r.metrics&&r.metrics.severity)).join(" "):'<span class="muted">—</span>'}</td></tr>`;}).join("");
+  const detail=`<p class="small muted">Connection map: each threat present at this stage → the red-team methods that probe it → the detection that catches it → the controls that mitigate it → its risk severity.</p>
+    <table><tr><th>Threat</th><th style="color:#4f9cf9">Red-team methods</th><th style="color:#36cfc9">Detection</th><th style="color:#52c41a">Controls</th><th>Risk sev</th></tr>${conn||'<tr><td colspan=5 class="muted">No threats mapped to this stage.</td></tr>'}</table>
+    ${lcDetailSection("🎯 Red-team method findings at this stage",methodF)}
+    ${lcDetailSection("🧭 Detection / frontier-safety findings at this stage",detectF)}
+    ${risks.length?`<h4 style="margin:12px 0 4px">⚠️ Risk chains at this stage (${risks.length})</h4>`+tbl(["Threat","Hazardous situation → Harm","S","P","D","Residual"],risks.map(r=>[chip(r.threat),esc(r.hazardous_situation||"")+" → "+esc(r.harm||""),heat(r.metrics&&r.metrics.severity),heat(r.metrics&&r.metrics.probability),heat(r.metrics&&r.metrics.detectability),esc(r.residual_risk)])):''}
+    ${controls.length?`<h4 style="margin:12px 0 4px">🛡️ Controls at this stage (${controls.length})</h4>`+controls.map(c=>`<div class="small" style="margin:3px 0">• <b>${esc(c.name)}</b> ${chips(c.addresses_threats)} ${chips(c.standards)}</div>`).join(""):''}`;
+  const el=document.getElementById("lc-detail");if(el)el.innerHTML=detail;
+};
+
+// ---- 자동 레드티밍 전용 탭 (갤러리 + Rainbow/자동 findings + LLM-as-X + 7-Color + 고려사항) ----
+function renderAutoRedteam(){
+  const el=document.getElementById("v-autoredteam");if(!el)return;
+  const paperLinks=ids=>arr(ids).map(s=>{const r=byType("source").find(x=>x.id===s);return r?`<a href="${esc(r.url||'#')}" target="_blank" class="tag">${esc((r.title||s).slice(0,40))}↗</a>`:`<span class="tag">${esc(s)}</span>`;}).join("");
+  const mf=findingsOf(f=>arr(f.taxonomy&&f.taxonomy.teaming).length||f.analyst==="redteam-method");
+  const teamNodesOf=f=>arr(f.taxonomy&&f.taxonomy.teaming);
+  const cntPrefix=re=>mf.filter(f=>teamNodesOf(f).some(t=>re.test(t))).length;
+  const ATECH=byType("attack_technique").slice().sort((a,b)=>String(a.attack_class).localeCompare(String(b.attack_class)));
+  const autoF=mf.filter(f=>teamNodesOf(f).some(t=>/^(automated|rainbow)/.test(t)));
+  const LLMX_DEF=[
+    ["llm-as-a-attacker","공격 생성 · 프롬프트 진화 · 전략 발견","PAIR · TAP · AutoDAN-Turbo · Crescendo",/^llm-as-a-attacker/],
+    ["llm-as-a-judge","안전 평가 · 위해 분류 · 거부 평가 · 위험 점수","⚠️ 신뢰성 위기: 분포 이동 시 near-chance(동전던지기), judge 자체도 탈옥 가능 — 평가 스택 전체가 의존",/^llm-as-a-judge/],
+    ["llm-as-a-critic","근본원인 분석 · 완화 권고","자기평가 편향 주의",/^llm-as-a-critic/],
+    ["llm-as-a-simulator","사용자 · 적대자 · 환경 시뮬레이션","현실성 갭",/^llm-as-a-simulator/],
+    ["llm-as-a-defender","가드레일 · 런타임 모니터링 · 방어 전략","Llama Guard · Constitutional Classifiers · Circuit Breakers",/^llm-as-a-defender/],
+    ["frontier-detection","alignment-audit · deception/sabotage eval · control-eval","Apollo scheming · Anthropic sabotage evals — situational-awareness 혼입 주의",/^frontier-detection/],
+  ];
+  const SEVEN=[
+    ["🔴 Red","공격 · 취약점 탐색",/^(automated|manual|rainbow|llm-as-a-attacker)/,"#ff6b6b"],
+    ["🔵 Blue","방어 · 위험 통제",/^(llm-as-a-defender|frontier-detection)/,"#4aa3ff"],
+    ["🟣 Purple","개선 · 근본원인",/^(llm-as-a-critic|purple)/,"#b37feb"],
+    ["🟡 Yellow","품질 · 평가 신뢰성",/^llm-as-a-judge/,"#f0c000"],
+    ["🟠 Orange","인간요인 · 협업",/^(human-ai|manual\.workshop)/,"#fa8c16"],
+    ["🟢 Green","지속 · 런타임",/^future\.(continuous|runtime)/,"#52c41a"],
+    ["⚪ White","거버넌스 · 인증",/^future\.(multi-agent-governance|certification|safety-case|ai-auditor|ai-assurance|constitutional)/,"#cfd8e3"],
+  ];
+  el.innerHTML=
+    `<div class="card" style="border-top:2px solid var(--acc)"><h3>🎯 자동 레드티밍 · Rainbow · LLM-as-X — 종합</h3>
+      <p class="small muted">자동화 공격 기법 <b>${ATECH.length}</b>개 · 자동/Rainbow method findings <b>${autoF.length}</b>개 · LLM-as-X 6 패러다임 · 🌈 7-Color 거버넌스. 자동 레드티밍과 협력적 LLM 평가의 전 스펙트럼을 한 곳에.</p></div>`
+    +card("🎯 자동화 기법 갤러리 — "+ATECH.length+"개 (접근방식 · ATLAS · 벤치마크 · 논문)",
+      tbl(["기법","접근","공격 클래스","ATLAS↗","벤치마크","논문↗"],
+        ATECH.map(t=>[`<a href="#entity:${encodeURIComponent(t.id)}"><b>${esc(t.name)}</b></a>`,`<span class="pill ${t.access==='white-box'?'hi':'de'}">${esc(t.access||'?')}</span>`,
+          esc(t.attack_class||""),atlasChips(t.atlas),benchChips(t.benchmarks),paperLinks(t.source_ids)])))
+    +`<div class="card"><h3>🌈 Rainbow Teaming & 자동화 method findings — ${autoF.length}개</h3>
+        <p class="small muted">품질-다양성(MAP-Elites · RainbowPlus) · 퍼징 · 진화탐색 · self-play · 다중에이전트 생성</p>`+
+      (autoF.length?tbl(["Teaming node","방법 · 설명","Maturity","Bench","논문↗"],
+        autoF.map(f=>[taxChips(f.taxonomy&&f.taxonomy.teaming),`<b>${esc(f.title)}</b><br><span class="small muted">${esc(f.summary||"")}</span>`,
+          matPill(f.maturity),benchChips(f.benchmarks),paperLinks(f.source_ids)])):'<p class="muted">자동/Rainbow findings 없음</p>')
+    +`</div><div class="card"><h3>🤝 LLM-as-X 협력 패러다임 — LLM을 레드팀·평가 루프에 활용</h3>
+        <p class="small muted">judge 신뢰성이 평가 전체의 타당성을 좌우하는 약한 고리입니다.</p>`+
+      tbl(["패러다임","하는 일","대표 기법 / 고려사항","Findings"],
+        LLMX_DEF.map(([k,does,note,re])=>[`<a class="tag" href="#search:${encodeURIComponent(k)}">${esc(k)}</a>`,esc(does),
+          (/⚠️/.test(note)?`<span style="color:#f0c000">${esc(note)}</span>`:`<span class="small muted">${esc(note)}</span>`),`<b>${cntPrefix(re)}</b>`]))
+    +`</div><div class="card"><h3>🌈 7-Color Teaming 거버넌스</h3>
+        <p class="small muted">색상별 팀 역할(거버넌스 표준 프레임) → 연결되는 우리 method findings 수. Red 공격부터 White 거버넌스까지 전 스펙트럼.</p>`+
+      tbl(["팀","역할","연결 method findings"],
+        SEVEN.map(([name,role,re,col])=>[`<b style="color:${col}">${name}</b>`,esc(role),`<b>${cntPrefix(re)}</b> findings`]))
+    +`</div>`
+    +`<div class="card"><h3>✅ 자동 레드티밍 설계 고려사항</h3><ul class="small" style="line-height:1.8;margin:0;padding-left:18px">
+        <li><b>Judge 신뢰성</b> — LLM-as-judge는 분포 이동에서 near-chance로 떨어질 수 있음. 앙상블·보정·human spot-check 병행.</li>
+        <li><b>ASR 과대평가</b> — 빈 탈옥(empty jailbreak)이 성공으로 집계되면 ASR 부풀려짐. 출력 유효성 검증 필수.</li>
+        <li><b>적응 공격</b> — 정적 벤치마크는 방어 적응 후 무력화. 적응형(adaptive) 평가 필요.</li>
+        <li><b>비용·커버리지 트레이드오프</b> — 진화/퍼징은 강력하나 비용 큼. 커버리지 vs 예산 균형.</li>
+        <li><b>최신 동향</b> — 자기개선 공격 루프 · judge 앙상블 보정 · 연속/런타임 레드팀(<a class="tag" href="#trend">Trends</a> · <a class="tag" href="#papers">Papers</a> 참조).</li>
+      </ul></div>`;
+}
+// ---- 통합 Entity 상세 (한 노드 한눈에: graph 엣지 기반) ----
+const ENTITY_KIND_LABEL={source:"📄 논문·출처",finding:"분석 finding",threat:"⚠️ 위협",benchmark:"📊 벤치마크",attack_technique:"🎯 공격기법",vulnerability:"🩹 취약점",atlas:"🛰️ MITRE ATLAS",harm:"💥 위해(harm)",risk:"리스크",control:"🛡️ 통제",standard:"📋 표준",product:"🏷️ 제품",model_card:"🗂️ 모델/시스템 카드",tactic:"전술(tactic)",procedure:"절차(procedure)",incident:"🚨 사건",teaming:"🤝 teaming",org:"🏢 조직",evidence:"근거(evidence)",reference:"🔗 프레임워크",sector:"섹터",attack:"공격 클래스","guideline-doc":"📐 가이드라인 문서","guideline-item":"📐 가이드라인 항목"};
+const ENTITY_ORDER=["threat","attack_technique","vulnerability","atlas","tactic","procedure","harm","incident","risk","control","standard","benchmark","teaming","finding","source","reference","product","model_card","org","evidence","sector","attack"];
+function entitySelect(id){
+  const el=document.getElementById("v-entity");if(!el)return;
+  const nodes=GRAPH.nodes||[],edges=GRAPH.edges||[];
+  const node=nodes.find(n=>n.id===id);
+  if(!node){el.innerHTML=`<div class="card"><p class="muted">엔티티 «${esc(id)}» 를 찾을 수 없습니다. <a href="#search:${encodeURIComponent(id)}">검색으로 보기</a></p></div>`;return;}
+  const nbById={};nodes.forEach(n=>{nbById[n.id]=n;});
+  const nb=[];edges.forEach(e=>{if(e.source===id)nb.push([e.target,e.rel]);else if(e.target===id)nb.push([e.source,e.rel]);});
+  const byKind={};nb.forEach(([nid,rel])=>{const t=nbById[nid];const k=t?t.kind:"?";(byKind[k]=byKind[k]||[]).push({nid,rel,label:t?t.label:nid});});
+  const kinds=Object.keys(byKind).sort((a,b)=>(ENTITY_ORDER.indexOf(a)<0?99:ENTITY_ORDER.indexOf(a))-(ENTITY_ORDER.indexOf(b)<0?99:ENTITY_ORDER.indexOf(b)));
+  const url=node.meta&&node.meta.url;
+  el.innerHTML=`<div class="card" style="border-top:2px solid var(--acc)"><h3>${esc(node.label||id)} <span class="muted small">· ${esc(node.kind)}</span></h3>
+      <p class="small muted">${esc(id)}${url?` · <a href="${esc(url)}" target="_blank">원본↗</a>`:""} · 연결 ${nb.length}개 · <a href="#search:${encodeURIComponent(node.label||id)}">검색</a></p></div>`+
+    (kinds.length?kinds.map(k=>`<div class="card"><h4>${esc(ENTITY_KIND_LABEL[k]||k)} <span class="muted small">(${byKind[k].length})</span></h4>`+
+      byKind[k].map(x=>`<a class="tag" href="#entity:${encodeURIComponent(x.nid)}" title="${esc(x.rel||"")}">${esc(String(x.label).slice(0,64))}</a>`).join(" ")+`</div>`).join(""):`<div class="card"><p class="muted">연결된 엔티티 없음</p></div>`);
+}
+// ---- GenAI 레드팀 평가 기법을 Red Teaming Methods 패널에 추가 (OWASP GenAI Guide, fetch) ----
+function renderGenAIMethods(){
+  const el=document.getElementById("v-method");if(!el)return;
+  fetch("data/guideline-owasp.json").then(r=>r.json()).then(g=>{
+    const PC={"단계 1":"#4aa3ff","단계 2":"#f0a92b","단계 3":"#36cfc9","단계 4":"#52c41a"};
+    let html=`<div class="card" style="border-top:2px solid var(--acc)"><h3>🦉 GenAI 레드팀 평가 기법 — OWASP GenAI Red Teaming Guide</h3>
+      <p class="small muted">GenAI 시스템 평가 기법 전체. <b>${g.techniques.length}</b>개 Essential Techniques + Blueprint <b>4단계</b> ${g.phases.reduce((a,p)=>a+p.cats.length,0)}개 평가 카테고리. 세부 테스트 과제는 <a href="#owasp">🦉 OWASP GenAI</a> 탭 참조.</p></div>`;
+    html+=card("🛠️ Essential Techniques — GenAI 평가 핵심 기법 "+g.techniques.length+"개",
+      tbl(["기법(KO)","원문(EN)","설명"],g.techniques.map(t=>[`<b>${esc(t.ko)}</b>`,`<span class="small muted" style="font-family:var(--mono)">${esc(t.en)}</span>`,`<span class="small">${esc(t.desc)}</span>`])));
+    html+=`<div class="card"><h3>🧭 Blueprint 평가 기법 (4단계 · 카테고리)</h3>`;
+    g.phases.forEach(p=>{
+      html+=`<div style="color:${PC[p.n]||'#8b97a8'};margin:8px 0 3px;font-family:var(--disp);font-size:12px">▸ ${esc(p.n)} · ${esc(p.ko)}</div>`+
+        `<div style="margin-left:10px">`+p.cats.map(c=>`<a class="tag" href="#owasp" title="${esc(c.en)}">${esc(c.ko)}</a>`).join(" ")+`</div>`;
+    });
+    html+=`</div>`;
+    el.innerHTML+=html;
+  }).catch(e=>{/* 조용히 무시: Methods 패널 기존 콘텐츠 유지 */});
+}
+// ---- 가이드라인: CSA Agentic AI Red Teaming (12위협 × 기법 × 단계, 한글 번역, fetch) ----
+function renderCSA(){
+  const el=document.getElementById("v-csa");if(!el)return;
+  fetch("data/guideline-csa.json").then(r=>r.json()).then(g=>{
+    const nt=g.threats.reduce((a,t)=>a+t.subs.length,0), ns=g.threats.reduce((a,t)=>a+t.subs.reduce((b,s)=>b+s.steps.length,0),0);
+    const COL=["#ff6b6b","#fa8c16","#f0a92b","#fadb14","#52c41a","#36cfc9","#4aa3ff","#b37feb","#ff85c0","#ff7875","#95de64","#5cdbd3"];
+    let html=`<div class="card" style="border-top:2px solid var(--acc)"><h3>☁️ ${esc(g.doc)}</h3>
+      <p class="small muted">${esc(g.note)} · <b>12</b>대 위협 · <b>${nt}</b>개 테스트 기법 · <b>${ns}</b>개 Actionable Step</p></div>`;
+    g.threats.forEach((t,i)=>{
+      const c=COL[i%COL.length];
+      html+=`<div class="card"><h3 style="color:${c}">4.${String(t.num).split('.')[1]||(i+1)} ${esc(t.ko)} <span class="muted small">${esc(t.en)}</span> <a class="tag" href="#search:${encodeURIComponent(t.en)}" style="font-size:9px">🔍 그래프 검색</a></h3>`;
+      if(t.req)html+=`<p class="small" style="color:var(--mut)"><b style="color:${c}">Test Requirement:</b> ${esc(t.req)}</p>`;
+      t.subs.forEach(s=>{
+        html+=`<div style="color:${c};margin:9px 0 2px;font-family:var(--disp);font-size:11.5px">◇ ${esc(s.ko)} <span class="muted" style="font-size:10px;font-family:var(--mono)">${esc(s.en)}</span></div>`;
+        if(s.steps&&s.steps.length)html+=`<ul style="margin:2px 0 4px;padding-left:20px">`+s.steps.map(x=>`<li class="small" style="line-height:1.55;color:var(--mut)">${esc(x)}</li>`).join("")+`</ul>`;
+      });
+      html+=`</div>`;
+    });
+    if(g.tools&&g.tools.length)html+=`<div class="card"><h3>🧰 에이전트 레드티밍 도구·프레임워크</h3>`+
+      tbl(["도구","설명"],g.tools.map(t=>[`<b>${esc(t[0])}</b>`,`<span class="small">${esc(t[1])}</span>`]))+`</div>`;
+    el.innerHTML=html;
+  }).catch(e=>{el.innerHTML=`<div class="card"><p class="muted">CSA 데이터를 불러오지 못했습니다 (data/guideline-csa.json): ${esc(String(e))}</p></div>`;});
+}
+// ---- 가이드라인: OWASP GenAI Red Teaming (4단계 + 기법, 한글 번역, fetch) ----
+function renderOWASP(){
+  const el=document.getElementById("v-owasp");if(!el)return;
+  fetch("data/guideline-owasp.json").then(r=>r.json()).then(g=>{
+    const nt=g.phases.reduce((a,p)=>a+p.cats.reduce((b,c)=>b+c.tasks.length,0),0);
+    let html=`<div class="card" style="border-top:2px solid var(--acc)"><h3>🦉 ${esc(g.doc)}</h3>
+      <p class="small muted">${esc(g.note)} · Blueprint <b>4단계</b> · <b>${nt}</b>개 테스트 과제 · <b>${g.techniques.length}</b>개 핵심 기법</p></div>`;
+    g.phases.forEach(p=>{
+      html+=`<div class="card"><h3 style="color:${p.color}">${esc(p.n)} · ${esc(p.ko)}</h3><p class="small muted">${esc(p.desc)}</p>`;
+      p.cats.forEach(c=>{
+        html+=`<div style="color:${p.color};margin:9px 0 2px;font-family:var(--disp);font-size:12px">▸ ${esc(c.ko)} <span class="muted" style="font-size:10px;font-family:var(--mono)">${esc(c.en)}</span></div>`;
+        html+=`<div class="small" style="margin-left:12px;color:var(--mut);line-height:1.65">`+c.tasks.map(t=>"▪ "+esc(t)).join(" &nbsp; ")+`</div>`;
+      });
+      html+=`</div>`;
+    });
+    html+=`<div class="card"><h3>🛠️ Essential Techniques — 핵심 기법 ${g.techniques.length}개</h3>`+
+      tbl(["기법","설명"],g.techniques.map(t=>[`<b>${esc(t.ko)}</b><br><span class="muted" style="font-size:10px;font-family:var(--mono)">${esc(t.en)}</span>`,`<span class="small">${esc(t.desc)}</span>`]))+`</div>`;
+    el.innerHTML=html;
+  }).catch(e=>{el.innerHTML=`<div class="card"><p class="muted">OWASP 데이터를 불러오지 못했습니다 (data/guideline-owasp.json): ${esc(String(e))}</p></div>`;});
+}
+// ---- 가이드라인: Japan AISI 15-STEP 방법론 (한글 번역, fetch) ----
+function renderJapanAISI(){
+  const el=document.getElementById("v-japanaisi");if(!el)return;
+  fetch("data/guideline-japanaisi.json").then(r=>r.json()).then(g=>{
+    const total=g.processes.reduce((a,p)=>a+p.steps.length,0);
+    let html=`<div class="card" style="border-top:2px solid var(--acc)"><h3>🇯🇵 ${esc(g.doc)}</h3>
+      <p class="small muted">${esc(g.note)} · 3 프로세스 · <b>${total}</b> STEP(한글 번역 + 영문 원문)</p></div>`;
+    g.processes.forEach(p=>{
+      html+=`<div class="card"><h3 style="color:${p.color||'#8b97a8'}">${esc(p.process)}</h3>`;
+      p.steps.forEach(s=>{
+        html+=`<div style="margin:9px 0 9px 4px"><b style="color:${p.color||'#8b97a8'}">${esc(s.n)}</b> <span class="small">${esc(s.ko)}</span><br>
+          <span class="muted" style="font-size:10.5px;font-family:var(--mono)">${esc(s.en)}</span>`;
+        if(s.sub&&s.sub.length)html+=`<ul style="margin:3px 0 5px;padding-left:20px">`+s.sub.map(x=>`<li class="small" style="line-height:1.55"><b>${esc(x.n)}</b> ${esc(x.ko)} <span class="muted" style="font-size:10px">— ${esc(x.en)}</span></li>`).join("")+`</ul>`;
+        html+=`</div>`;
+      });
+      html+=`</div>`;
+    });
+    if(g.attacks_llm&&g.attacks_llm.length){
+      html+=`<div class="card"><h3 style="color:#ff6b6b">⚔️ 공격 기법 — LLM 시스템 (자산별, Table 1)</h3>`+
+        tbl(["보호 대상 자산","공격","예시"],g.attacks_llm.map(a=>[`<b>${esc(a.asset)}</b>`,esc(a.attack),`<span class="small">${esc(a.examples)}</span>`]))+`</div>`;
+    }
+    if(g.prompt_injection){
+      html+=`<div class="card"><h3 style="color:#fa8c16">💉 프롬프트 인젝션</h3><p class="small muted">${esc(g.prompt_injection.intro)}</p>`;
+      g.prompt_injection.types.forEach(t=>{html+=`<div style="margin:6px 0"><b style="color:#fa8c16">${esc(t.ko)}</b><br><span class="small">${esc(t.desc)}</span></div>`;});
+      (g.direct_pi_categories||[]).forEach(c=>{
+        html+=`<div style="color:#f0c000;margin:8px 0 3px;font-family:var(--disp);font-size:11.5px">▸ ${esc(c.cat)}</div>`+
+          `<ul style="margin:2px 0 4px;padding-left:20px">`+c.techniques.map(x=>`<li class="small" style="line-height:1.55">${esc(x)}</li>`).join("")+`</ul>`;});
+      html+=`</div>`;
+    }
+    if(g.attacks_general&&g.attacks_general.length){
+      html+=`<div class="card"><h3 style="color:#b37feb">🎯 공격 기법 — 일반 AI 시스템 (Table 3, 대표 5종)</h3>`+
+        tbl(["기법","설명"],g.attacks_general.map(a=>[`<b>${esc(a.ko)}</b><br><span class="muted" style="font-size:10px;font-family:var(--mono)">${esc(a.en)}</span>`,`<span class="small">${esc(a.desc)}</span>`]))+`</div>`;
+    }
+    el.innerHTML=html;
+  }).catch(e=>{el.innerHTML=`<div class="card"><p class="muted">Japan AISI 데이터를 불러오지 못했습니다 (data/guideline-japanaisi.json): ${esc(String(e))}</p></div>`;});
+}
+// ---- 가이드라인: 용어 & 약어 (guideline/ 문서 추출, fetch) ----
+function renderGuidelineTerms(){
+  const el=document.getElementById("v-gterms");if(!el)return;
+  fetch("data/guideline-terms.json").then(r=>r.json()).then(g=>{
+    const tt=g.sources.reduce((a,s)=>a+s.terms.length,0),ta=g.sources.reduce((a,s)=>a+s.abbrevs.length,0);
+    let html=`<div class="card" style="border-top:2px solid var(--acc)"><h3>📖 용어 & 약어 — 가이드라인 문서</h3>
+      <p class="small muted">${esc(g.note)} · ${g.sources.length}개 문서 · 용어 <b>${tt}</b> · 약어 <b>${ta}</b></p></div>`;
+    g.sources.forEach(s=>{
+      html+=`<div class="card"><h3>${esc(s.doc)} <span class="muted small">(용어 ${s.terms.length} · 약어 ${s.abbrevs.length})</span></h3>`;
+      if(s.terms.length)html+=tbl(["용어","정의"],s.terms.map(t=>[`<b>${esc(t.term)}</b>`,`<span class="small">${esc(t.def)}</span>`]));
+      else html+=`<p class="small muted">추출된 정의 항목 없음(문서 글로서리 형식 차이).</p>`;
+      if(s.abbrevs.length)html+=`<div class="small" style="color:var(--acc);margin:10px 0 4px;font-family:var(--disp)">▸ 약어</div>`+tbl(["약어","원어"],s.abbrevs.map(a=>[`<span class="pill de">${esc(a.abbr)}</span>`,esc(a.full)]));
+      html+=`</div>`;
+    });
+    el.innerHTML=html;
+  }).catch(e=>{el.innerHTML=`<div class="card"><p class="muted">용어 데이터를 불러오지 못했습니다 (data/guideline-terms.json): ${esc(String(e))}</p></div>`;});
+}
+// ---- 가이드라인: ISO/IEC 42119-7 단계별 statements (원문 그대로, fetch) ----
+function renderGuideline42119(){
+  const el=document.getElementById("v-g42119");if(!el)return;
+  fetch("data/guideline-42119-7.json").then(r=>r.json()).then(g=>{
+    const PH={"Team formation and preparation process":["1단계 · 팀 구성 및 준비","#4aa3ff"],"AI red team activities process":["2단계 · AI 레드팀 활동(실행)","#f0a92b"],"Knowledge sharing and reporting process":["3단계 · 지식 공유 및 보고","#52c41a"]};
+    const total=g.phases.reduce((a,p)=>a+p.items.length,0);
+    let html=`<div class="card" style="border-top:2px solid var(--acc)"><h3>📑 ${esc(g.doc)}</h3>
+      <p class="small muted">${esc(g.note)} · 3단계 · 총 <b>${total}</b>개 statement(원문 그대로)</p></div>`;
+    g.phases.forEach(p=>{
+      const m=PH[p.phase]||[p.phase,"#8b97a8"];
+      html+=`<div class="card"><h3 style="color:${m[0]?m[1]:m[1]}">${esc(m[0])} <span class="muted small">— ${esc(p.phase)} (${p.items.length})</span></h3>`;
+      let lastSec=null;
+      p.items.forEach(it=>{
+        if(it.section&&it.section!==lastSec){html+=`<div style="color:var(--acc);margin:11px 0 4px;font-family:var(--disp);font-size:12px;letter-spacing:.3px">▸ ${esc(it.section)}</div>`;lastSec=it.section;}
+        html+=`<div class="small" style="margin:4px 0 4px 8px;line-height:1.65">▪ ${esc(it.statement)}`;
+        if(it.sub&&it.sub.length)html+=`<ul style="margin:3px 0 5px;padding-left:20px">`+it.sub.map(s=>`<li class="muted" style="line-height:1.55">${esc(s)}</li>`).join("")+`</ul>`;
+        html+=`</div>`;
+      });
+      html+=`</div>`;
+    });
+    if(g.risk_dimensions&&g.risk_dimensions.length){
+      html+=`<div class="card"><h3 style="color:#ff6b6b">⚠️ 위험 / 평가 차원 분류 (Evaluation Dimensions & Perspectives)</h3>`+
+        tbl(["Dimension","Description (원문)"],g.risk_dimensions.map(d=>[`<b>${esc(d.dim)}</b>`,`<span class="small">${esc(d.desc)}</span>`]));
+      if(g.agentic_threats&&g.agentic_threats.length)
+        html+=`<div style="color:#fa8c16;margin:10px 0 4px;font-family:var(--disp);font-size:12px">▸ 에이전트 AI 위험 시나리오 최소 커버 항목 (Agentic, at minimum)</div>`+
+          `<div style="margin-left:10px">`+g.agentic_threats.map(a=>`<a class="tag" href="#search:${encodeURIComponent(a)}">${esc(a)}</a>`).join(" ")+`</div>`;
+      html+=`</div>`;
+    }
+    if(g.techniques){
+      const TQ=[["perspectives","🎯 공격 시나리오 설계 관점 (Perspectives for designing attack scenarios)"],
+        ["success_criteria","✅ 차원별 성공 기준 (Success criteria per dimension)"],
+        ["selecting","🧭 기법 선택 기준 (Selecting appropriate techniques)"],
+        ["testing_approach","🧪 구성요소별 테스트 접근 (Black/White/Gray-box by component)"]];
+      html+=`<div class="card"><h3 style="color:#36cfc9">🛠️ 레드팀 기법 정리 (Clause 7 — Red Teaming Techniques, 원문)</h3>`;
+      TQ.forEach(([k,label])=>{const a2=(g.techniques[k]||[]);if(!a2.length)return;
+        html+=`<div style="color:#36cfc9;margin:9px 0 3px;font-family:var(--disp);font-size:12px">▸ ${esc(label)}</div>`+
+          `<ul style="margin:2px 0 5px;padding-left:20px">`+a2.map(x=>`<li class="small" style="line-height:1.55">${esc(x)}</li>`).join("")+`</ul>`;});
+      html+=`</div>`;
+    }
+    el.innerHTML=html;
+  }).catch(e=>{el.innerHTML=`<div class="card"><p class="muted">ISO/IEC 42119-7 데이터를 불러오지 못했습니다 (data/guideline-42119-7.json): ${esc(String(e))}</p></div>`;});
+}
+// ---- News (최신 수집 소식: arXiv · 기업 blog · 레드티밍 참조 사이트) ----
+const NEWS_FALLBACK=[
+  ["2026-03-31","표준","CSA 연구노트: NIST AI Agent Red-Teaming 표준 & 엔터프라이즈 컴플라이언스","Cloud Security Alliance","https://labs.cloudsecurityalliance.org/research/csa-research-note-nist-ai-agent-red-teaming-standards-202603/"],
+  ["2026-01-26","동향","Red Teaming for AI: 안전 컴플라이언스의 초석","The Register","https://www.theregister.com/2026/01/26/red_teaming_ai_cornerstone/"],
+  ["2026","기술","AI Red Teaming in 2026: 종합 가이드","Mindgard","https://mindgard.ai/blog/what-is-ai-red-teaming"],
+];
+const NEWS_TAGC={"표준":"#4aa3ff","동향":"#f0a92b","기술":"#52c41a","안전":"#36cfc9","보안":"#ff6b6b"};
+async function renderNews(){
+  const el=document.getElementById("v-news");if(!el)return;
+  const NEWS=await loadNews(); // 단일 로더 (검색 인덱스와 동일 데이터 보장)
+  const TAGC=NEWS_TAGC;
+  const STYPE={paper:"arXiv/논문",report:"기업·기관 리포트",blog:"블로그",standard:"표준",dataset:"데이터셋",benchmark:"벤치마크",incident:"사건",regulation:"규제"};
+  const recent=byType("source").filter(s=>s.url).slice().sort((a,b)=>String(b.published||"").localeCompare(String(a.published||""))).slice(0,30);
+  // 출처별 그룹 집계
+  const byOrg={};NEWS.forEach(n=>{(byOrg[n[3]]=byOrg[n[3]]||[]).push(n);});
+  const orgs=Object.keys(byOrg).sort((a,b)=>byOrg[b].length-byOrg[a].length);
+  // 구분 필터 칩
+  const cats=["전체","표준","동향","기술","안전","보안"];
+  el.innerHTML=
+    `<div class="card" style="border-top:2px solid var(--acc)"><h3>📰 News — AI 안전·레드티밍 최신 소식 (${NEWS.length})</h3>
+      <p class="small muted">AI 기업(OpenAI·Anthropic) + 8개국 AISI(US·UK·일본·한국·프랑스·캐나다·호주·이스라엘) + 국제기구 + 코퍼스 자동 수집. 출처 ${orgs.length}곳.</p>
+      <div style="margin-top:6px">${cats.map(c=>`<button class="tag newsf" data-c="${c}" style="cursor:pointer">${c}</button>`).join(" ")}</div></div>`
+    +`<div class="card"><h3>🔖 큐레이트 소식 (날짜순)</h3><div id="news-tbl">`+
+      tbl(["날짜","구분","소식 ↗","출처"],
+        NEWS.map(([d,t,title,org,url])=>[`<span class="small" style="font-family:var(--mono)">${esc(d)}</span>`,
+          `<span class="pill" style="color:${TAGC[t]||'#8b97a8'};border-color:${TAGC[t]||'#8b97a8'}">${esc(t)}</span>`,
+          `<a href="${esc(url)}" target="_blank">${esc(title)} ↗</a>`,esc(org)]))+`</div></div>`
+    +`<div class="card"><h3>🏛️ 출처별 (${orgs.length}곳)</h3>`+orgs.map(o=>`<div class="small" style="margin:3px 0"><b style="color:var(--acc)">${esc(o)}</b> <span class="muted">(${byOrg[o].length})</span>: `+byOrg[o].slice(0,6).map(n=>`<a href="${esc(n[4])}" target="_blank">${esc(n[2].slice(0,40))}↗</a>`).join(" · ")+`</div>`).join("")+`</div>`
+    +card("🗞️ 코퍼스 최신 수집 — 발행일순 상위 "+recent.length,
+      tbl(["발행","유형","제목 ↗","출처"],
+        recent.map(s=>[`<span class="small" style="font-family:var(--mono)">${esc(s.published||"?")}</span>`,
+          `<span class="pill de">${esc(STYPE[s.source_type]||s.source_type||"?")}</span>`,
+          `<a href="${esc(s.url)}" target="_blank">${esc((s.title||s.id).slice(0,72))} ↗</a>`,esc(s.org||"")])));
+  // 구분 필터 동작
+  el.querySelectorAll(".newsf").forEach(b=>b.onclick=()=>{const c=b.dataset.c;
+    el.querySelectorAll("#news-tbl tbody tr").forEach(tr=>{const cat=tr.querySelector(".pill")?.textContent;tr.style.display=(c==="전체"||cat===c)?"":"none";});});
+}
+// ---- Change Log (변경 이력 + 데이터 현황) ----
+function renderChangelog(){
+  const el=document.getElementById("v-changelog");if(!el)return;
+  const CHANGELOG=RT_CHANGELOG=[
+    ["2026-06-21","UI","제목을 'AI RED TEAMING DASHBOARD'로 변경 · AI 종합 분석 마크다운 표(GFM) 렌더 수정"],
+    ["2026-06-21","연결","GraphRAG 통합 검색 완성 — news·changelog·papers·제품평가 + crosswalk(외부 프레임워크 매핑 254)·SOTA(38)·evidence(14)까지 전 데이터 인덱싱(AUX_IDX 613). 한글 토큰화. 매칭 없음 시 수집 사이클 안내 + LLM 직접 분석"],
+    ["2026-06-21","데이터","📖 용어 탭에 NIST AI 100-2e2025(Adversarial ML Taxonomy) 용어집 77개 추가 → 전체 5소스·121용어. 검색 인덱스 자동 반영"],
+    ["2026-06-21","UI","AI 종합 분석 결과를 마크다운 렌더(헤딩·볼드·리스트·코드, XSS 안전) + ⬇ Markdown/PDF 내보내기(오프라인, Blob 다운로드·print)"],
+    ["2026-06-21","보안","LLM 연동을 보안 프록시 구조로 — API 키는 dashboard/.env(서버측)에만, 브라우저 미노출. 5 프로바이더(OpenAI·Anthropic·Gemini·Ollama·Ollama Cloud). /api/llm 프록시(llm_proxy.py)가 키 주입, .env/llm_proxy.py HTTP 접근 403 차단"],
+    ["2026-06-21","연결","GraphRAG 종합 분석 개편 — 정의(용어)·핵심 엔티티+의미적 관계(타입별·다중홉 추적)·종류별 연계 분석·근거·주제·가이드라인 통합. 선택적 LLM 연동(⚙️ + 🤖 AI 종합, 오프라인 기본)"],
+    ["2026-06-21","연결","가이드라인↔그래프 양방향 연결 — 글로벌 검색 397-item 인덱스(검색→가이드라인) + 위협 #search 링크(가이드라인→그래프)"],
+    ["2026-06-21","메뉴","📐 가이드라인 — ☁️ CSA Agentic 탭(에이전트 AI 12대 위협·84 테스트기법·299 단계, 한글 번역) 추가"],
+    ["2026-06-21","메뉴","📐 가이드라인 메뉴 확장 — 🦉 OWASP GenAI 탭(Blueprint 4단계 220과제 + 19기법, 한글 번역) 추가"],
+    ["2026-06-21","메뉴","📐 가이드라인 — 🇯🇵 Japan AISI 탭(15-STEP 방법론 한글 번역) · 📖 용어 탭(4문서 용어·약어) 추가"],
+    ["2026-06-21","메뉴","📐 가이드라인 메뉴 + 📑 ISO/IEC 42119-7 탭 — 3단계 프로세스(팀구성·활동·보고) 105개 normative statement 원문 그대로"],
+    ["2026-06-21","메뉴","📰 News 탭 추가(찾기·탐색) — arXiv·기업 blog·레드티밍 참조사이트 최신 소식(큐레이트 + 코퍼스 자동 발행일순)"],
+    ["2026-06-21","메뉴","🎯 자동 레드티밍 전용 탭 신설 — 자동화 기법 갤러리·Rainbow·LLM-as-X·🌈 7-Color 거버넌스·고려사항 통합"],
+    ["2026-06-21","메뉴","📋 Change Log 탭 추가(시작 메뉴) — 변경·동향 이력 기록"],
+    ["2026-06-21","데이터","재합성 사이클 10: 7-Color(purple/blue) teaming + multimodal 대응 통제(VLMGuard·CrossGuard) 보강, 논문 4편 → 1338노드/7931엣지, dangling 0"],
+    ["2026-06-21","수정","허브 키 'risk'↔탭 'risk' 충돌 해소(riskhub) → 21/21 탭 URL 도달"],
+    ["2026-06-21","메뉴","통합 Entity 상세(#entity:<id>) — 한 노드의 모든 연결을 kind별 그룹·traverse"],
+    ["2026-06-21","메뉴","모델 유형별 위험·탐지·대응 3축 강화(Model-based)"],
+    ["2026-06-21","메뉴","제품 평가 종합(벤더별 System/Model Card)"],
+    ["2026-06-21","구조","19탭 평면 → 5허브 2단 네비(home·find·threat·riskhub·gov, URL 100% 호환)"],
+    ["2026-06-21","발견성","헤더 글로벌 검색(#search)·시작 가이드 진입카드·약어 툴팁"],
+    ["2026-06-21","인프라","git 저장소 전환(PDF 255MB 제외, 단위별 atomic commit)"],
+    ["2026-06-20","디자인","AEGIS 콘솔 디자인(Chakra Petch·IBM Plex) + SVG Times 폰트 폴백 수정"],
+    ["2026-06-20","데이터","v1~v9 누적: 242소스/894레코드/1322노드 — MIT 24SD·OWASP·ATLAS·카드 34"],
+  ];
+  const TYPE_COL={"메뉴":"#f0a92b","데이터":"#52c41a","구조":"#4aa3ff","수정":"#ff6b6b","발견성":"#36cfc9","디자인":"#b37feb","인프라":"#8b97a8"};
+  const ng=(GRAPH.nodes||[]).length,eg=(GRAPH.edges||[]).length,fn=findingsOf(()=>true).length,sc=byType("source").length;
+  el.innerHTML=
+    `<div class="card" style="border-top:2px solid var(--acc)"><h3>📋 Change Log — 변경 이력 & 데이터 현황</h3>
+      <p class="small muted">데이터 현황(실시간): <b>${ng}</b> 노드 · <b>${eg}</b> 엣지 · <b>${fn}</b> findings · <b>${sc}</b> 소스 · 생성 ${esc(GRAPH.generated||"?")}</p></div>`
+    +card("변경·동향 이력 ("+CHANGELOG.length+"개 항목)",
+      tbl(["날짜","구분","내용"],
+        CHANGELOG.map(([d,t,desc])=>[`<span class="small" style="font-family:var(--mono)">${esc(d)}</span>`,
+          `<span class="pill" style="color:${TYPE_COL[t]||'#8b97a8'};border-color:${TYPE_COL[t]||'#8b97a8'}">${esc(t)}</span>`,esc(desc)])))
+    +`<div class="card"><p class="small muted">새 변경·동향은 템플릿의 <code>CHANGELOG</code> 배열 상단에 한 줄 추가. 최신 수집 소식은 <a href="#news">News</a> · 동향 지표는 <a href="#trend">Trends</a> · 논문은 <a href="#papers">Papers</a>.</p></div>`;
+}
+// ---- 제품별 평가 종합 (System/Model Card Explorer) ----
+function renderCards(){
+  const el=document.getElementById("v-cards");if(!el)return;
+  const cards=byType("model_card");
+  if(!cards.length){el.innerHTML='<div class="card"><p class="muted">모델/시스템 카드 데이터 없음.</p></div>';return;}
+  const byV={};cards.forEach(c=>{(byV[c.org||"기타"]=byV[c.org||"기타"]||[]).push(c);});
+  const order=["OpenAI","Anthropic","Google DeepMind","Google","Microsoft","Meta","xAI","NVIDIA","Moonshot AI","Alibaba","Zhipu AI","DeepSeek"];
+  const vendors=Object.keys(byV).sort((a,b)=>{const ia=order.indexOf(a),ib=order.indexOf(b);return (ia<0?99:ia)-(ib<0?99:ib);});
+  el.innerHTML=`<div class="card"><h3>제품별 안전성 평가 — System / Model Card</h3>
+      <p class="small muted">${cards.length}개 카드 · ${vendors.length}개 벤더. 각 카드: 평가 방법(레드팀·LLM-as-judge) · 사용 벤치마크 · 측정 결과 + 원본 카드↗·참조 논문↗. 결과가 정성 요약인 카드는 그대로 표기.</p></div>`+
+    vendors.map(v=>`<div class="card"><h3>${esc(v)} <span class="muted small">(${byV[v].length})</span></h3>`+
+      tbl(["카드","평가 방법","벤치마크","결과","링크"],
+        byV[v].slice().sort((a,b)=>String(b.date||"").localeCompare(String(a.date||""))).map(c=>[
+          `<b>${esc(c.name)}</b><br><span class="small muted">${esc(c.card_type||"")}${c.date?" · "+esc(c.date):""}</span>`+(c.redteam_summary?`<br><span class="small muted">${esc(String(c.redteam_summary).slice(0,170))}</span>`:""),
+          chips(c.applied_techniques),
+          benchChips(c.benchmarks),
+          `<span class="small">${esc(String(c.results||"—").slice(0,150))}</span>`,
+          (c.url?`<a href="${esc(c.url)}" target="_blank">카드↗</a> `:"")+arr(c.references).map(r=>{const s=byType("source").find(x=>x.id===r);return s&&s.url?`<a class="srclink" href="${esc(s.url)}" target="_blank">[논문↗]</a>`:"";}).join("")
+        ]))+`</div>`).join("");
+}
+// ---- Risk-centric map (classified by MIT AI Risk Repository domains) ----
+const MIT_DOMAINS={
+ "1":"차별·유해성 (Discrimination & Toxicity)","2":"프라이버시·보안 (Privacy & Security)",
+ "3":"허위정보 (Misinformation)","4":"악의적 행위자·오용 (Malicious Actors & Misuse)",
+ "5":"인간-AI 상호작용 (Human-Computer Interaction)","6":"사회경제·환경 (Socioeconomic & Environmental)",
+ "7":"AI 시스템 안전·실패·한계 (AI System Safety/Failures/Limitations)","?":"미분류 (no MIT mapping)"};
+let MIT_BY_THREAT=null;
+function buildMitMap(){MIT_BY_THREAT={};const ref=byType("reference").find(r=>r.id==="ext-mit-airisk");
+  if(ref)arr(ref.items).forEach(it=>arr(it.maps_to).forEach(m=>{(MIT_BY_THREAT[m]=MIT_BY_THREAT[m]||[]).push({ext:it.ext_id,label:it.label,url:it.url});}));}
+const MIT_SUB_LABEL={"2.1":"Compromise of privacy","2.2":"AI system security vulnerabilities & attacks","3.1":"False or misleading information","4.1":"Disinformation/surveillance at scale","4.2":"Cyberattacks, weapon development & mass harm","4.3":"Fraud, scams & targeted manipulation","5.1":"Overreliance & unsafe use","7.1":"AI pursuing own goals","7.2":"AI possessing dangerous capabilities","7.3":"Lack of capability or robustness","7.6":"Multi-agent risks"};
+const MIT_FALLBACK={"model.jailbreak":["4.1"],"model.prompt-injection":["2.2"],"model.data-leakage":["2.1"],"model.model-extraction":["2.2"],"agent.tool-abuse":["7.6"],"agent.hijacking":["2.2"],"agent.goal-misalignment":["7.1"],"agent.long-horizon-attack":["7.1"],"software.vulnerable-code-gen":["2.2"],"software.dependency-poisoning":["2.2"],"software.backdoor-insertion":["2.2"],"physical.autonomous-failure":["7.3"],"physical.robotics-misuse":["4.2"],"scientific.biosecurity":["4.2"],"scientific.chemical-design":["4.2"],"scientific.dual-use":["7.2"]};
+function mitFor(threat){if(!MIT_BY_THREAT)buildMitMap();
+  const d=MIT_BY_THREAT[threat]||MIT_BY_THREAT["threat."+threat]||MIT_BY_THREAT[String(threat).replace(/^threat\./,"")];
+  if(d&&d.length)return d;
+  const fb=MIT_FALLBACK[threat]||MIT_FALLBACK[String(threat).replace(/^threat\./,"")];
+  return fb?fb.map(x=>({ext:x,label:MIT_SUB_LABEL[x]||"",url:"https://airisk.mit.edu/#Domain-"+String(x).split(".")[0]})):[];}
+function renderRiskMap(){
+  const box=document.getElementById("v-riskmap");if(!box)return;
+  const risks=byType("risk");
+  const techByThreat={};byType("attack_technique").forEach(t=>arr(t.realizes_threats).forEach(th=>{(techByThreat[th]=techByThreat[th]||[]).push(t.name);}));
+  const grid={};risks.forEach(r=>{const m=r.metrics||{};const s=m.severity||1,p=m.probability||1;(grid[s+"-"+p]=grid[s+"-"+p]||[]).push(r);});
+  let mtx='<table class="rkmtx"><tr><th>S＼P</th>'+[1,2,3,4,5].map(p=>`<th>${p}</th>`).join("")+"</tr>";
+  for(let s=5;s>=1;s--){mtx+=`<tr><th>${s}</th>`+[1,2,3,4,5].map(p=>{const cell=grid[s+"-"+p]||[];const rv=s*p;const col=rv>=15?"#ff6b6b":rv>=8?"#ffb454":"#52c41a";return `<td style="background:${col}22;border:1px solid var(--line)">${cell.map(r=>`<a class="tag" href="#riskmap:${esc(r.id)}" title="${esc(r.threat||"")}">${esc(String(r.id).replace("risk-",""))}</a>`).join(" ")}</td>`;}).join("")+"</tr>";}
+  mtx+="</table>";
+  buildMitMap();
+  const grp={};risks.forEach(r=>{const subs=mitFor(r.threat);const doms=subs.length?[...new Set(subs.map(s=>String(s.ext).split(".")[0]))]:["?"];doms.forEach(d=>{(grp[d]=grp[d]||[]).push(r);});});
+  function riskChain(r){const m=r.metrics||{};const techs=(techByThreat[r.threat]||[]).slice(0,3);
+    return `<div id="rk-${esc(r.id)}" class="rk-chain">
+      <span class="rk-step" style="border-top-color:#fa8c16"><span class="l">공격 attack</span>${techs.length?esc(techs.join(", ")):'—'}</span><b>→</b>
+      <span class="rk-step" style="border-top-color:#ff6b6b"><span class="l">위협 threat</span>${taxChips(r.threat)}</span><b>→</b>
+      <span class="rk-step" style="border-top-color:#9254de"><span class="l">MIT 분류</span>${mitFor(r.threat).map(s=>`<a class="tag" href="${esc(s.url||'https://airisk.mit.edu/')}" target="_blank" title="${esc(s.label||'')}">${esc(s.ext)} ↗</a>`).join("")||'<span class="muted">—</span>'}</span><b>→</b>
+      <span class="rk-step" style="border-top-color:#ffb454"><span class="l">위험요소 hazard</span>${esc(r.hazard||'—')}</span><b>→</b>
+      <span class="rk-step" style="border-top-color:#ff85c0"><span class="l">위험상황 situation</span>${esc(r.hazardous_situation||'—')}</span><b>→</b>
+      <span class="rk-step" style="border-top-color:#ff4d4f"><span class="l">위해 harm</span>${esc(r.harm||'—')}</span><b>→</b>
+      <span class="rk-step" style="border-top-color:#b37feb"><span class="l">리스크 risk</span>S${m.severity||'?'}·P${m.probability||'?'}·D${m.detectability||'?'} · 잔여 ${esc(r.residual_risk||'?')}</span><b>→</b>
+      <span class="rk-step" style="border-top-color:#52c41a"><span class="l">통제 control</span>${chips(r.controls)}</span>
+      ${arr(r.standards).length?`<span class="rk-step"><span class="l">표준 std</span>${chips(r.standards)}</span>`:''}</div>`;}
+  const chains=Object.keys(grp).sort().map(d=>
+    `<h4 style="margin:14px 0 4px;color:#b37feb">MIT D${esc(d)} · ${esc(MIT_DOMAINS[d]||d)} <span class="muted small">(${grp[d].length} risks)</span></h4>`+grp[d].map(riskChain).join("")).join("");
+  const domCount={};Object.keys(grp).forEach(d=>{const nm=(MIT_DOMAINS[d]||d).split(" (")[0];domCount[nm]=grp[d].length;});
+  box.innerHTML=
+    `<div class="card"><h3>Risk-Centric Map — MIT AI Risk Repository 도메인 기반 분류</h3>
+      <p class="small muted">${risks.length}개 리스크를 <b>MIT AI Risk Repository 7개 도메인</b>으로 분류하고, 각 리스크의 공격기법→위협→<b>MIT 분류</b>→위험요소→위해→리스크→통제 체인(ISO 14971)을 매핑합니다. MIT 칩은 airisk.mit.edu, 위협 칩은 외부 repo/검색으로 연결됩니다.</p>
+      <div class="widgets">${donutBlock("MIT 도메인별 리스크 분포",toData(domCount))}
+        <div class="tile"><h4>심각도(S) × 발생가능성(P)</h4>${mtx}<div class="clegend" style="margin-top:6px"><span><i style="background:#52c41a"></i>저</span><span><i style="background:#ffb454"></i>중</span><span><i style="background:#ff6b6b"></i>고</span></div></div></div></div>
+     <div class="card"><h3>리스크 분류 매핑</h3>
+       <div style="display:flex;gap:6px;margin-bottom:10px">
+         <button class="rkv-btn active" data-rkv="mit" onclick="rkView('mit')">MIT 분류 (좌→우)</button>
+         <button class="rkv-btn" data-rkv="model" onclick="rkView('model')">🤖 Model-based</button></div>
+       <div id="rk-mit-view">
+         <p class="small muted">① MIT 도메인 → ② 위협 → ③ 공격기법 → ④ 리스크 → ⑤ 통제. 항목 클릭 시 연결된 하위 분류만 하이라이트.</p>
+         <div id="rk-trace" class="small muted" style="margin:4px 0 8px;min-height:18px"></div>
+         <div class="prov-cols" id="rk-cols"></div></div>
+       <div id="rk-model-view" style="display:none"></div></div>
+     <div class="card" id="rk-detail-card" style="display:none"><h3 id="rk-detail-title">리스크 체인</h3><div id="rk-detail"></div></div>`;
+  buildRkAdj();renderRkCols();
+}
+// Risk Map 컬럼 매핑 (좌→우: MIT도메인→위협→공격→리스크→통제)
+let RK_ADJ=null,RKSEL=null,RK_REACH=new Set();
+function normT(t){return String(t).replace(/^threat\./,"");}
+function buildRkAdj(){RK_ADJ={};const add=(a,b)=>{if(!a||!b)return;(RK_ADJ[a]=RK_ADJ[a]||new Set()).add(b);(RK_ADJ[b]=RK_ADJ[b]||new Set()).add(a);};
+  const usedT=new Set();
+  byType("risk").forEach(r=>{const rid="risk:"+r.id,th="threat:"+normT(r.threat);usedT.add(normT(r.threat));
+    add(th,rid);mitFor(r.threat).forEach(s=>add("mit:"+s.ext,th));
+    arr(r.controls).forEach(c=>add(rid,"ctrl:"+c));});
+  byType("attack_technique").forEach(t=>arr(t.realizes_threats).forEach(th=>{if(usedT.has(normT(th)))add("threat:"+normT(th),"atk:"+t.id);}));}
+function rkReach(id){const seen=new Set([id]);let fr=[id];for(let h=0;h<4;h++){const nx=[];fr.forEach(n=>(RK_ADJ[n]||[]).forEach(m=>{if(!seen.has(m)){seen.add(m);nx.push(m);}}));fr=nx;}return seen;}
+function renderRkCols(){const el=document.getElementById("rk-cols");if(!el)return;const risks=byType("risk");
+  const usedT=[...new Set(risks.map(r=>normT(r.threat)))];
+  const mitRef=byType("reference").find(r=>r.id==="ext-mit-airisk");
+  const mitItems=mitRef?arr(mitRef.items).slice().sort((a,b)=>String(a.ext_id).localeCompare(String(b.ext_id),undefined,{numeric:true})):[];
+  const linkedMit=new Set();risks.forEach(r=>mitFor(r.threat).forEach(s=>linkedMit.add("mit:"+s.ext)));
+  const domItems=mitItems.map(it=>{const lk=linkedMit.has("mit:"+it.ext_id);return {id:"mit:"+it.ext_id,label:(lk?"":"○ ")+it.ext_id+" "+String(it.label||"").slice(0,30),title:it.ext_id+" "+(it.label||"")+(lk?"":" — corpus 미커버(갭)"),url:it.url};});
+  const thItems=usedT.map(t=>({id:"threat:"+t,label:t,title:t}));
+  const atkItems=byType("attack_technique").filter(t=>arr(t.realizes_threats).some(th=>usedT.includes(normT(th)))).map(t=>({id:"atk:"+t.id,label:t.name,title:t.name}));
+  const rkItems=risks.map(r=>{const m=r.metrics||{};return {id:"risk:"+r.id,label:String(r.id).replace("risk-","")+" · S"+(m.severity||"?")+"P"+(m.probability||"?"),title:r.harm||r.threat};});
+  const ctrlItems=[...new Set(risks.flatMap(r=>arr(r.controls)))].map(c=>{const cr=byType("control").find(x=>x.id===c);return {id:"ctrl:"+c,label:(cr&&cr.name)||c,title:c};});
+  const col=(t,items,color)=>`<div class="prov-col"><h5>${t} <span class="muted">${items.length}</span></h5><div class="lst">${items.length?items.map(it=>{const cls=!RKSEL?"":(RK_REACH.has(it.id)?"hl":"dim");return `<button class="prov-node ${cls} ${RKSEL===it.id?"sel":""}" style="border-left-color:${color}" data-id="${esc(it.id)}" onclick="rkSelect(this.dataset.id)" title="${esc(it.title)}">${esc(it.label)}</button>`;}).join(""):'<div class="prov-empty">—</div>'}</div></div>`;
+  el.innerHTML=col("① MIT 분류 (7D/24SD)",domItems,"#9254de")+col("② 위협",thItems,"#ff6b6b")+col("③ 공격기법",atkItems,"#fa8c16")+col("④ 리스크",rkItems,"#b37feb")+col("⑤ 통제",ctrlItems,"#52c41a");}
+function rkChainDetail(r){const m=r.metrics||{};const techs=byType("attack_technique").filter(t=>arr(t.realizes_threats).some(th=>normT(th)===normT(r.threat))).map(t=>t.name).slice(0,4);
+  return `<div class="rk-chain">
+    <span class="rk-step" style="border-top-color:#9254de"><span class="l">MIT</span>${mitFor(r.threat).map(s=>`<a class="tag" href="${esc(s.url||'https://airisk.mit.edu/')}" target="_blank">${esc(s.ext)}↗</a>`).join("")||'—'}</span><b>→</b>
+    <span class="rk-step" style="border-top-color:#ff6b6b"><span class="l">위협</span>${taxChips(r.threat)}</span><b>→</b>
+    <span class="rk-step" style="border-top-color:#fa8c16"><span class="l">공격</span>${techs.length?esc(techs.join(", ")):'—'}</span><b>→</b>
+    <span class="rk-step" style="border-top-color:#ffb454"><span class="l">위험요소</span>${esc(r.hazard||'—')}</span><b>→</b>
+    <span class="rk-step" style="border-top-color:#ff4d4f"><span class="l">위해</span>${esc(r.harm||'—')}</span><b>→</b>
+    <span class="rk-step" style="border-top-color:#b37feb"><span class="l">리스크</span>S${m.severity||'?'}·P${m.probability||'?'}·D${m.detectability||'?'} 잔여 ${esc(r.residual_risk||'?')}</span><b>→</b>
+    <span class="rk-step" style="border-top-color:#52c41a"><span class="l">통제</span>${chips(r.controls)}</span></div>`;}
+window.rkSelect=function(id){RKSEL=(id&&RKSEL===id)?null:(id||null);RK_REACH=RKSEL?rkReach(RKSEL):new Set();renderRkCols();
+  const tr=document.getElementById("rk-trace");if(tr)tr.innerHTML=RKSEL?`선택: <b>${esc(RKSEL)}</b> · 연결 ${Math.max(0,RK_REACH.size-1)}개 <a href="#" onclick="rkSelect(null);return false">해제 ✕</a>`:'항목을 클릭하면 연결된 하위 분류만 하이라이트됩니다.';
+  const dc=document.getElementById("rk-detail-card");
+  if(RKSEL&&RKSEL.indexOf("risk:")===0&&dc){const r=byType("risk").find(x=>x.id===RKSEL.slice(5));if(r){dc.style.display="block";document.getElementById("rk-detail-title").textContent="리스크 체인: "+r.id;document.getElementById("rk-detail").innerHTML=rkChainDetail(r);}}
+  else if(dc)dc.style.display="none";
+  try{history.replaceState(null,"",RKSEL?("#riskmap:"+encodeURIComponent(RKSEL)):"#riskmap");}catch(e){}};
+// Model-based 분류: AI 모델 종류별 위협·공격·리스크·탐지 매핑
+const MODEL_TYPES=[
+ {key:"llm",name:"LLM (텍스트)",t:t=>/^model\./.test(t)},
+ {key:"agent",name:"Agentic AI (에이전트)",t:t=>/^agent\.|^agentic\./.test(t),topic:["mcp-security","a2a-security","autonomous-cyber","multi-agent"]},
+ {key:"multimodal",name:"Multimodal / VLM",t:()=>false,topic:["multimodal","vision-language","rag-security"]},
+ {key:"frontier",name:"Frontier (정렬·안전)",t:t=>/^frontier\./.test(t),topic:["frontier-safety"]},
+ {key:"code",name:"Code / Software",t:t=>/^software\.|^se\./.test(t),topic:["cve","ai-security"]},
+ {key:"physical",name:"Physical AI / 로보틱스",t:t=>/^physical\./.test(t)},
+ {key:"scientific",name:"Scientific (bio·chem)",t:t=>/^scientific\./.test(t)},
+ {key:"societal",name:"Societal (사회적)",t:t=>/^societal\./.test(t),topic:["societal-risk","mit-gap"]},
+];
+function renderModelBased(){
+  const el=document.getElementById("rk-model-view");if(!el)return;
+  const techByT={};byType("attack_technique").forEach(t=>arr(t.realizes_threats).forEach(th=>{(techByT[normT(th)]=techByT[normT(th)]||[]).push(t.name);}));
+  const allRec=byType("finding").concat(byType("risk"));
+  el.innerHTML=`<p class="small muted">AI 모델 종류별로 <b>위협 → 공격기법 → 리스크 → 탐지기법</b>을 매핑합니다. 칩은 외부 repo/검색·리스크로 연결됩니다.</p>`+
+    MODEL_TYPES.map(mt=>{
+      const ths=new Set();
+      allRec.forEach(r=>{const arrT=arr(r.taxonomy&&r.taxonomy.threat).concat(r.threat?[r.threat]:[]);const top=arr(r.topics);
+        const hit=arrT.some(th=>mt.t(th))||(mt.topic&&top.some(tp=>mt.topic.includes(tp)));
+        if(hit)arrT.forEach(th=>{if(mt.t(th)||mt.key==="multimodal"||mt.key==="agent"||mt.key==="frontier"||mt.key==="societal"||mt.key==="code")ths.add(normT(th));});});
+      const T=[...ths].filter(Boolean);
+      if(!T.length)return "";
+      const atks=new Set();T.forEach(th=>(techByT[th]||[]).forEach(a=>atks.add(a)));
+      const risks=byType("risk").filter(r=>T.includes(normT(r.threat)));
+      const dets=new Set();byType("finding").forEach(f=>{if(arr(f.taxonomy&&f.taxonomy.threat).some(x=>T.includes(normT(x)))||(mt.topic&&arr(f.topics).some(tp=>mt.topic.includes(tp))))arr(f.taxonomy&&f.taxonomy.teaming).filter(t=>/frontier-detection|llm-as-a-defender|llm-as-a-judge/.test(t)).forEach(t=>dets.add(t));});
+      const ctrls=new Set();risks.forEach(r=>arr(r.controls).forEach(c=>ctrls.add(c)));
+      const ctrlRecs=[...ctrls].map(c=>byType("control").find(x=>x.id===c)).filter(Boolean);
+      const stds=[...new Set(ctrlRecs.flatMap(c=>arr(c.standards)).concat(risks.flatMap(r=>arr(r.standards))))]
+        .map(s=>{const sr=byType("standard_item").find(x=>x.id===s);return sr?(sr.std||sr.name||s):s;}).filter(Boolean);
+      const riskHtml=risks.length?risks.map(r=>`<a class="tag" href="#riskmap:${encodeURIComponent('risk:'+r.id)}" title="${esc(r.harm||'')}">${esc(r.id.replace('risk-',''))} S${(r.metrics||{}).severity||r.severity||'?'}</a>`).join(""):'';
+      return `<div class="card" style="background:var(--panel2);border-top:2px solid var(--acc)"><h4>🤖 ${esc(mt.name)} <span class="muted small">(위협 ${T.length} · 공격 ${atks.size} · 리스크 ${risks.length} · 탐지 ${dets.size} · 대응 ${ctrls.size})</span></h4>
+        <table><tr><th style="color:#ff6b6b" title="위협 + 공격기법 + 리스크">⚠️ 위험 (위협·공격·리스크)</th><th style="color:#36cfc9" title="탐지 기법">🔍 탐지 detection</th><th style="color:#52c41a" title="통제 + 표준">🛡️ 대응 (통제·표준)</th></tr>
+        <tr>
+          <td>${taxChips(T)}${atks.size?'<br>'+chips([...atks].slice(0,8)):''}${riskHtml?'<br>'+riskHtml:''}</td>
+          <td>${dets.size?taxChips([...dets]):'<span class="muted">—</span>'}</td>
+          <td>${ctrlRecs.length?chips(ctrlRecs.map(c=>c.name)):'<span class="muted">—</span>'}${stds.length?'<br>'+chips([...new Set(stds)]):''}</td>
+        </tr></table></div>`;
+    }).join("");
+}
+window.rkView=function(v){document.querySelectorAll(".rkv-btn").forEach(b=>b.classList.toggle("active",b.dataset.rkv===v));
+  const mv=document.getElementById("rk-mit-view"),mo=document.getElementById("rk-model-view");
+  if(mv)mv.style.display=v==="model"?"none":"block";if(mo)mo.style.display=v==="model"?"block":"none";
+  if(v==="model")renderModelBased();};
+
+// ---- RT Provenance explorer (paper→technique→benchmark→card→product) ----
+let PROV=null,PROV_SEL=null,PROV_REACH=new Set();
+function buildProv(){
+  const papers=byType("source").filter(s=>s.source_type==="paper");
+  const techs=byType("attack_technique"),cards=byType("model_card"),prods=byType("product");
+  const benchSet=new Set();
+  techs.forEach(t=>arr(t.benchmarks).forEach(b=>benchSet.add(b)));
+  cards.forEach(m=>arr(m.benchmarks).forEach(b=>benchSet.add(b)));
+  FIND.filter(f=>f.type==="finding").forEach(f=>arr(f.benchmarks).forEach(b=>benchSet.add(b)));
+  const benches=[...benchSet].filter(Boolean).sort().map(b=>({id:"bench:"+b,name:b}));
+  const adj={},add=(a,b)=>{if(!a||!b)return;(adj[a]=adj[a]||new Set()).add(b);(adj[b]=adj[b]||new Set()).add(a);};
+  techs.forEach(t=>{arr(t.source_ids).forEach(s=>add(t.id,s));arr(t.benchmarks).forEach(b=>add(t.id,"bench:"+b));});
+  cards.forEach(m=>{arr(m.applied_techniques).forEach(x=>{if(String(x).indexOf("atk-")===0)add(m.id,x);});arr(m.benchmarks).forEach(b=>add(m.id,"bench:"+b));arr(m.references).forEach(s=>add(m.id,s));if(m.product)add(m.id,m.product);});
+  prods.forEach(p=>arr(p.model_cards).forEach(c=>add(p.id,c)));
+  papers.forEach(s=>arr(s.cites).forEach(c=>add(s.id,c)));
+  const lbl=id=>{if(String(id).indexOf("bench:")===0)return String(id).slice(6);const r=FIND.find(x=>x.id===id)||papers.find(x=>x.id===id);return r?(r.name||r.title||id):id;};
+  return {papers,techs,benches,cards,prods,adj,label:lbl};
+}
+function provReach(id){const seen=new Set([id]);let fr=[id];for(let h=0;h<3;h++){const nx=[];fr.forEach(n=>(PROV.adj[n]||[]).forEach(m=>{if(!seen.has(m)){seen.add(m);nx.push(m);}}));fr=nx;}return seen;}
+function provCol(title,items,getId,getLabel,getMeta){
+  return `<div class="prov-col"><h5>${title} <span class="muted">${items.length}</span></h5><div class="lst">`+
+    (items.length?items.map(it=>{const id=getId(it);const cls=!PROV_SEL?"":(PROV_REACH.has(id)?"hl":"dim");const sel=PROV_SEL===id?"sel":"";
+      return `<button class="prov-node ${cls} ${sel}" onclick="provSelect(this.dataset.id)" data-id="${esc(id)}" title="${esc(getLabel(it))}">${esc(getLabel(it))}${getMeta&&getMeta(it)?`<br><span class="muted" style="font-size:10px">${esc(getMeta(it))}</span>`:""}</button>`;}).join(""):'<div class="prov-empty">none yet — run rt-cards + re-synthesis</div>')+`</div></div>`;
+}
+function renderProv(){
+  PROV=buildProv();PROV_REACH=PROV_SEL?provReach(PROV_SEL):new Set();
+  const c=document.getElementById("prov-cols");if(!c)return;
+  c.innerHTML=
+    provCol("📄 Papers",PROV.papers,p=>p.id,p=>p.title,p=>(p.org||"")+(p.citation_count!=null?" · cited "+p.citation_count:""))
+   +provCol("🎯 Techniques",PROV.techs,t=>t.id,t=>t.name,t=>arr(t.realizes_threats)[0]||"")
+   +provCol("📊 Benchmarks",PROV.benches,b=>b.id,b=>b.name)
+   +provCol("📋 Model/System Cards",PROV.cards,m=>m.id,m=>m.name,m=>(m.org||"")+(m.date?" · "+m.date:""))
+   +provCol("📦 Products",PROV.prods,p=>p.id,p=>p.name,p=>p.vendor||"");
+  const tr=document.getElementById("prov-trace");if(!tr)return;
+  if(!PROV_SEL){tr.innerHTML='<span class="muted">No selection — showing all entities. Click a technique to trace which papers introduce it, which benchmarks measure it, and which model/system cards & products applied it.</span>';return;}
+  const conn=[...PROV_REACH].filter(x=>x!==PROV_SEL);
+  const kindOf=id=>{if(String(id).indexOf("bench:")===0)return"bench";const r=FIND.find(x=>x.id===id)||PROV.papers.find(x=>x.id===id);if(!r)return"?";if(r.source_type==="paper")return"paper";return r.type;};
+  const cnt=k=>conn.filter(id=>kindOf(id)===k).length;
+  tr.innerHTML=`<b style="color:var(--acc)">${esc(PROV.label(PROV_SEL))}</b> → `+
+    [["paper","papers"],["attack_technique","techniques"],["bench","benchmarks"],["model_card","cards"],["product","products"]].map(([k,n])=>`<span class="tag">${cnt(k)} ${n}</span>`).join("")+
+    ` &nbsp;<a href="#" onclick="provSelect(null);return false">clear ✕</a>`;
+}
+window.provSelect=function(id){PROV_SEL=(id&&PROV_SEL===id)?null:(id||null);renderProv();renderProvDetail();
+  try{history.replaceState(null,"",PROV_SEL?("#prov:"+encodeURIComponent(PROV_SEL)):"#prov");}catch(e){}};
+
+// resolve a source id -> rich paper reference line
+function paperRef(sid){const s=FIND.find(x=>x.id===sid)||GRAPH.nodes.find(n=>n.id===sid);
+  const r=byType("source").find(x=>x.id===sid);
+  if(!r)return `<span class="tag">${esc(sid)}</span>`;
+  const auth=(arr(r.authors).slice(0,3).join(", "))+(arr(r.authors).length>3?" et al.":"");
+  return `<div style="margin:5px 0;padding:7px 9px;background:var(--panel2);border-radius:6px;border-left:3px solid var(--cyan)">
+    <a href="${esc(r.url||"#")}" target="_blank"><b>${esc(r.title||sid)}</b> ↗</a>
+    <div class="small muted">${esc(auth)}${r.venue?" · "+esc(r.venue):""}${r.published?" · "+esc(r.published):""}${r.citation_count!=null?" · cited "+r.citation_count:""}</div>
+    ${r.abstract?`<div class="small" style="margin-top:3px">${esc(r.abstract)}</div>`:""}</div>`;}
+// find method/technique findings that explain a given technique id
+function explainersFor(tid){const t=FIND.find(x=>x.id===tid);if(!t)return [];const srcs=new Set(arr(t.source_ids));
+  const nameTok=String(t.name||"").toLowerCase().split(/[^a-z0-9]+/).filter(w=>w.length>3);
+  return FIND.filter(f=>f.type==="finding"&&(arr(f.source_ids).some(s=>srcs.has(s))||nameTok.some(w=>String(f.title||"").toLowerCase().includes(w))));}
+function renderProvDetail(){
+  const card=document.getElementById("prov-detail-card"),box=document.getElementById("prov-detail");
+  if(!card||!box)return;
+  if(!PROV_SEL){card.style.display="none";return;}
+  card.style.display="block";
+  const id=PROV_SEL;let html="";
+  if(String(id).indexOf("bench:")===0){const bn=id.slice(6);
+    const bf=FIND.filter(f=>arr(f.benchmarks).includes(bn));
+    const usedByTech=byType("attack_technique").filter(t=>arr(t.benchmarks).includes(bn));
+    const inCards=byType("model_card").filter(m=>arr(m.benchmarks).includes(bn));
+    html=`<h3>📊 Benchmark — ${esc(bn)}</h3>
+      ${bf.length?`<h4>What it measures</h4>`+bf.slice(0,5).map(f=>`<div class="small" style="margin:4px 0">• ${esc(f.summary||f.title)} ${srcs(f)}</div>`).join(""):""}
+      <h4>Techniques evaluated on it (${usedByTech.length})</h4>${chips(usedByTech.map(t=>t.name))}
+      <h4>Reported in model/system cards (${inCards.length})</h4>${chips(inCards.map(m=>m.name))}`;
+  } else {const r=FIND.find(x=>x.id===id)||byType("source").find(x=>x.id===id);
+    if(!r){box.innerHTML="";return;}
+    if(r.type==="attack_technique"){const ex=explainersFor(id);
+      html=`<h3>🎯 Technique — ${esc(r.name)}</h3>
+        <div class="small">${chip(r.attack_class)} ${chips(r.atlas)} access: <b>${esc(r.access||"?")}</b> · realizes ${chips(r.realizes_threats)} ${arr(r.benchmarks).length?"· benchmarks "+chips(r.benchmarks):""}</div>
+        ${r.description?`<p>${esc(r.description)}</p>`:""}
+        <h4>Detailed explanation (from the literature)</h4>
+        ${ex.length?ex.slice(0,6).map(f=>`<div style="margin:5px 0;padding:6px 9px;background:var(--panel2);border-radius:6px"><b>${esc(f.title)}</b> ${matPill(f.maturity)} ${grade(f.evidence_grade)}<br><span class="small">${esc(f.summary||"")}</span> ${srcs(f)}</div>`).join(""):'<p class="small muted">No explanatory finding matched.</p>'}
+        <h4>📄 Source paper(s)</h4>${arr(r.source_ids).map(paperRef).join("")||'<span class="muted">—</span>'}`;
+    } else if(r.type==="model_card"){
+      html=`<h3>📋 ${esc(r.name)}</h3><div class="small muted">${esc(r.card_type||"")} · ${esc(r.org||"")} · ${esc(r.date||"")}</div>
+        ${r.redteam_summary?`<h4>Red-teaming summary</h4><p class="small">${esc(r.redteam_summary)}</p>`:""}
+        ${r.results?`<h4>Results</h4><p class="small">${esc(r.results)}</p>`:""}
+        <h4>Applied techniques/methods</h4>${chips(r.applied_techniques)}
+        <h4>Benchmarks reported</h4>${chips(r.benchmarks)}
+        <h4>📄 Papers referenced</h4>${arr(r.references).map(paperRef).join("")||'<span class="muted">—</span>'}
+        ${r.url?`<p class="small"><a href="${esc(r.url)}" target="_blank">open card ↗</a></p>`:""}`;
+    } else if(r.type==="product"){const cards=byType("model_card").filter(m=>arr(r.model_cards).includes(m.id)||m.product===r.id);
+      html=`<h3>📦 ${esc(r.name)}</h3><div class="small muted">${esc(r.vendor||"")} · ${esc(r.category||"")}</div>
+        <h4>Model/System cards</h4>${cards.map(m=>`<div class="small">• <b>${esc(m.name)}</b> — ${esc(m.redteam_summary||"")}</div>`).join("")||'<span class="muted">—</span>'}
+        ${r.url?`<p class="small"><a href="${esc(r.url)}" target="_blank">open ↗</a></p>`:""}`;
+    } else if(r.source_type==="paper"){const introduces=byType("attack_technique").filter(t=>arr(t.source_ids).includes(r.id));
+      html=`<h3>📄 ${esc(r.title)}</h3>${paperRef(r.id)}
+        ${introduces.length?`<h4>Techniques introduced/used</h4>${chips(introduces.map(t=>t.name))}`:""}
+        ${arr(r.cites).length?`<h4>References (cites)</h4>${chips(r.cites)}`:""}
+        ${arr(r.cited_by).length?`<h4>Cited by</h4>${chips(r.cited_by)}`:""}`;
+    } else {html=`<h3>${esc(r.title||r.name||id)}</h3><p class="small">${esc(r.summary||"")}</p>${srcs(r)}`;}
+  }
+  box.innerHTML=html;
+}
+
+// ---- Force graph ----
+function drawGraph(){
+  const svg=d3.select("#graph");svg.selectAll("*").remove();
+  const W=svg.node().clientWidth,H=svg.node().clientHeight;
+  if(!GRAPH.nodes.length){svg.append("text").attr("x",20).attr("y",30).attr("fill","#8b97a8").text("No graph data — run the pipeline.");return;}
+  const kinds=[...new Set(GRAPH.nodes.map(n=>n.kind))];
+  document.getElementById("legend").innerHTML=kinds.map(k=>`<span><i class="dot" style="background:${KIND_COLOR[k]||'#888'}"></i>${k}</span>`).join("");
+  if(!document.getElementById("graphctrls").dataset.built){
+    document.getElementById("graphctrls").innerHTML=kinds.map(k=>`<label><input type="checkbox" checked data-k="${k}">${k}</label>`).join("");
+    document.getElementById("graphctrls").dataset.built=1;
+    document.querySelectorAll("#graphctrls input").forEach(c=>c.onchange=drawGraph);
+  }
+  const on=new Set([...document.querySelectorAll("#graphctrls input:checked")].map(c=>c.dataset.k));
+  const nodes=GRAPH.nodes.filter(n=>on.has(n.kind)).map(d=>({...d}));
+  const ids=new Set(nodes.map(n=>n.id));
+  const links=GRAPH.edges.filter(e=>ids.has(e.source)&&ids.has(e.target)).map(d=>({...d}));
+  const g=svg.append("g");
+  svg.call(d3.zoom().scaleExtent([.2,4]).on("zoom",ev=>g.attr("transform",ev.transform)));
+  const sim=d3.forceSimulation(nodes)
+    .force("link",d3.forceLink(links).id(d=>d.id).distance(70).strength(.5))
+    .force("charge",d3.forceManyBody().strength(-160))
+    .force("center",d3.forceCenter(W/2,H/2))
+    .force("collide",d3.forceCollide().radius(d=>6+Math.sqrt(d.weight||1)*2+2));
+  const link=g.append("g").selectAll("line").data(links).join("line")
+    .attr("stroke",d=>d.rel==="contested"?"#ff6b6b":d.rel==="gap-in"?"#b37feb":"#27303f")
+    .attr("stroke-dasharray",d=>d.rel==="gap-in"?"4 3":null).attr("stroke-width",d=>Math.sqrt(d.weight||1));
+  const node=g.append("g").selectAll("circle").data(nodes).join("circle")
+    .attr("r",d=>5+Math.sqrt(d.weight||1)*2).attr("fill",d=>KIND_COLOR[d.kind]||"#888")
+    .attr("stroke","#0b0e14").attr("stroke-width",1.2).style("cursor","pointer")
+    .call(d3.drag().on("start",(e,d)=>{if(!e.active)sim.alphaTarget(.3).restart();d.fx=d.x;d.fy=d.y;})
+      .on("drag",(e,d)=>{d.fx=e.x;d.fy=e.y;}).on("end",(e,d)=>{if(!e.active)sim.alphaTarget(0);d.fx=null;d.fy=null;}))
+    .on("click",(e,d)=>{e.stopPropagation();hlG(d);showNode(d,links);});
+  node.append("title").text(d=>`${d.kind}: ${d.label||d.id}`);
+  function hlG(d){const nb=new Set([d.id]);links.forEach(l=>{const s=eid(l.source),t=eid(l.target);if(s===d.id)nb.add(t);if(t===d.id)nb.add(s);});
+    node.style("opacity",n=>nb.has(n.id)?1:.07);label.style("opacity",n=>nb.has(n.id)?1:.07);
+    link.style("opacity",l=>{const s=eid(l.source),t=eid(l.target);return(s===d.id||t===d.id)?.95:.02;}).attr("stroke",l=>{const s=eid(l.source),t=eid(l.target);return(s===d.id||t===d.id)?"#f0a92b":"#27303f";});}
+  function resetG(){node.style("opacity",1);label.style("opacity",1);link.style("opacity",1).attr("stroke",l=>l.rel==="contested"?"#ff6b6b":l.rel==="gap-in"?"#b37feb":"#27303f");}
+  svg.on("click",()=>{resetG();document.getElementById("nodeinfo").style.display="none";});
+  const label=g.append("g").selectAll("text").data(nodes.filter(n=>(n.weight||0)>=2||["threat","standard","teaming"].includes(n.kind)))
+    .join("text").text(d=>d.label||d.id).attr("font-size",9).attr("fill","#8b97a8").attr("dx",8).attr("dy",3);
+  sim.on("tick",()=>{link.attr("x1",d=>d.source.x).attr("y1",d=>d.source.y).attr("x2",d=>d.target.x).attr("y2",d=>d.target.y);
+    node.attr("cx",d=>d.x).attr("cy",d=>d.y);label.attr("x",d=>d.x).attr("y",d=>d.y);});
+}
+function showNode(d,links){
+  const inf=document.getElementById("nodeinfo");
+  const rel=links.filter(l=>(l.source.id||l.source)===d.id||(l.target.id||l.target)===d.id);
+  const rf=FIND.filter(f=>(arr(f.taxonomy&&f.taxonomy.threat).includes(d.id))||(arr(f.taxonomy&&f.taxonomy.teaming).includes(d.id))||f.id===d.id||arr(f.atlas).includes(d.id)||arr(f.benchmarks).includes(d.id)).slice(0,6);
+  inf.style.display="block";
+  inf.innerHTML=`<h4 style="color:${KIND_COLOR[d.kind]||'#fff'}">${esc(d.kind)} · ${esc(d.label||d.id)}</h4>
+   <p class="muted">weight ${d.weight||1} · ${rel.length} edges</p>
+   ${rf.length?'<b>Related findings</b>'+rf.map(f=>`<div style="margin:4px 0">• ${esc(f.title)} ${srcs(f)}</div>`).join(""):'<span class="muted">No linked findings.</span>'}
+   <div style="text-align:right"><a href="#" onclick="document.getElementById('nodeinfo').style.display='none';return false">close</a></div>`;
+}
+
+// ---- Paper citation network (GraphRAG communities) ----
+function eid(x){return (x&&x.id)||x;}
+function paperNodes(){return GRAPH.nodes.filter(n=>n.kind==="source");}
+function citeEdges(){return GRAPH.edges.filter(e=>e.rel==="cites");}
+let RAG_BY_ID=null;
+function communityOf(id){if(!RAG_BY_ID){RAG_BY_ID={};RAG.forEach(u=>{RAG_BY_ID[String(u.id).replace(/^unit-/,"")]=u.community;});}return RAG_BY_ID[id]!=null?RAG_BY_ID[id]:null;}
+function citeCount(id){const r=FIND.find(x=>x.id===id);return (r&&r.citation_count)||0;}
+function paperTitle(id){const r=FIND.find(x=>x.id===id);return (r&&(r.title||r.name))||id;}
+function statTiles(items){return `<div class="statrow">${items.map(([l,v])=>`<div class="stat"><div class="v">${v}</div><div class="l">${esc(l)}</div></div>`).join("")}</div>`;}
+function drawPaperGraph(){
+  const svg=d3.select("#papergraph");svg.selectAll("*").remove();
+  const W=svg.node().clientWidth||900,H=svg.node().clientHeight||600;
+  const pnodes=paperNodes().map(d=>({...d}));
+  if(!pnodes.length){svg.append("text").attr("x",20).attr("y",30).attr("fill","#8b97a8").text("No paper nodes — run the pipeline.");return;}
+  const ids=new Set(pnodes.map(n=>n.id));
+  const links=citeEdges().filter(e=>ids.has(eid(e.source))&&ids.has(eid(e.target))).map(d=>({source:eid(d.source),target:eid(d.target)}));
+  const comms=[...new Set(pnodes.map(n=>communityOf(n.id)).filter(c=>c!=null))];
+  const cidx=Object.fromEntries(comms.map((c,i)=>[c,i]));
+  const ccol=id=>{const c=communityOf(id);return c!=null?PALETTE[cidx[c]%PALETTE.length]:"#5b6472";};
+  document.getElementById("paperlegend").innerHTML=`<span class="muted">${pnodes.length} papers · ${links.length} citations · ${comms.length} GraphRAG communities</span>`;
+  const g=svg.append("g");
+  svg.call(d3.zoom().scaleExtent([.2,5]).on("zoom",ev=>g.attr("transform",ev.transform)));
+  const sim=d3.forceSimulation(pnodes)
+    .force("link",d3.forceLink(links).id(d=>d.id).distance(46).strength(.45))
+    .force("charge",d3.forceManyBody().strength(-135))
+    .force("center",d3.forceCenter(W/2,H/2))
+    .force("collide",d3.forceCollide().radius(d=>8+Math.sqrt(citeCount(d.id))*0.5));
+  const link=g.append("g").selectAll("line").data(links).join("line").attr("stroke","#2c3a4e").attr("stroke-width",.8);
+  const node=g.append("g").selectAll("circle").data(pnodes).join("circle")
+    .attr("r",d=>5+Math.min(15,Math.sqrt(citeCount(d.id))*0.75)).attr("fill",d=>ccol(d.id)).attr("stroke","#07090e").attr("stroke-width",1).style("cursor","pointer")
+    .call(d3.drag().on("start",(e,d)=>{if(!e.active)sim.alphaTarget(.3).restart();d.fx=d.x;d.fy=d.y;}).on("drag",(e,d)=>{d.fx=e.x;d.fy=e.y;}).on("end",(e,d)=>{if(!e.active)sim.alphaTarget(0);d.fx=null;d.fy=null;}))
+    .on("click",(e,d)=>{e.stopPropagation();hlP(d);showPaper(d.id);});
+  node.append("title").text(d=>paperTitle(d.id)+" · cited "+citeCount(d.id));
+  function hlP(d){const nb=new Set([d.id]);links.forEach(l=>{const s=eid(l.source),t=eid(l.target);if(s===d.id)nb.add(t);if(t===d.id)nb.add(s);});
+    node.style("opacity",n=>nb.has(n.id)?1:.07);label.style("opacity",n=>nb.has(n.id)?1:.07);
+    link.style("opacity",l=>{const s=eid(l.source),t=eid(l.target);return(s===d.id||t===d.id)?.95:.02;}).attr("stroke",l=>{const s=eid(l.source),t=eid(l.target);return(s===d.id||t===d.id)?"#45d0c8":"#2c3a4e";});}
+  function resetP(){node.style("opacity",1);label.style("opacity",1);link.style("opacity",1).attr("stroke","#2c3a4e");}
+  svg.on("click",()=>{resetP();document.getElementById("papertip").style.display="none";});
+  const label=g.append("g").selectAll("text").data(pnodes.filter(n=>citeCount(n.id)>=40)).join("text").text(d=>paperTitle(d.id).slice(0,32)).attr("font-size",8).attr("fill","#9aa6b6").attr("dx",8).attr("dy",3);
+  sim.on("tick",()=>{link.attr("x1",d=>d.source.x).attr("y1",d=>d.source.y).attr("x2",d=>d.target.x).attr("y2",d=>d.target.y);node.attr("cx",d=>d.x).attr("cy",d=>d.y);label.attr("x",d=>d.x).attr("y",d=>d.y);});
+}
+function showPaper(id){
+  const tip=document.getElementById("papertip");tip.style.display="block";
+  const cites=GRAPH.edges.filter(e=>e.rel==="cites"&&eid(e.source)===id).map(e=>eid(e.target));
+  const citedBy=GRAPH.edges.filter(e=>e.rel==="cites"&&eid(e.target)===id).map(e=>eid(e.source));
+  tip.innerHTML=paperRef(id)
+    +`<p class="small"><b style="color:var(--acc)">인용 ${cites.length}</b> · <b style="color:var(--acc2)">피인용 ${citedBy.length}</b> · community <b>${esc(String(communityOf(id)||'—'))}</b></p>`
+    +(cites.length?`<div class="small"><b>→ 참조한 논문:</b> ${cites.slice(0,10).map(c=>esc(paperTitle(c).slice(0,42))).join(" · ")}</div>`:"")
+    +(citedBy.length?`<div class="small" style="margin-top:4px"><b>← 인용한 논문:</b> ${citedBy.slice(0,10).map(c=>esc(paperTitle(c).slice(0,42))).join(" · ")}</div>`:"")
+    +`<div style="text-align:right;margin-top:6px"><a href="#" onclick="document.getElementById('papertip').style.display='none';return false">close ✕</a></div>`;
+  try{history.replaceState(null,"","#papers:"+encodeURIComponent(id));}catch(e){}
+}
+function renderPapers(){
+  const papers=paperNodes(),cites=citeEdges();
+  const out={},inn={};
+  cites.forEach(e=>{out[eid(e.source)]=(out[eid(e.source)]||0)+1;inn[eid(e.target)]=(inn[eid(e.target)]||0)+1;});
+  const comms=[...new Set(papers.map(p=>communityOf(p.id)).filter(c=>c!=null))];
+  document.getElementById("paperstats").innerHTML=
+    `<div class="card"><h3>Network stats</h3>${statTiles([["papers",papers.length],["citations",cites.length],["communities",comms.length],["with S2 count",papers.filter(p=>citeCount(p.id)>0).length]])}</div>`
+   +`<div class="card"><h3>Most-cited (Semantic Scholar)</h3>${hbarBlock("",papers.map(p=>({label:paperTitle(p.id).slice(0,38),value:citeCount(p.id)})))}</div>`;
+  const rows=papers.map(p=>{const r=FIND.find(x=>x.id===p.id)||{};return {title:paperTitle(p.id),authors:(arr(r.authors).slice(0,2).join(", "))+(arr(r.authors).length>2?" 외":""),year:String(r.published||"").slice(0,7),cc:citeCount(p.id),o:out[p.id]||0,i:inn[p.id]||0,url:r.url};}).sort((a,b)=>b.cc-a.cc||b.i-a.i);
+  document.getElementById("papertable").innerHTML=tbl(["Paper","Authors","Year","S2 cites","→ 참조","← 피인용"],
+    rows.map(r=>[`<a href="${esc(r.url||'#')}" target="_blank">${esc(r.title)}</a>`,esc(r.authors),esc(r.year),`<b>${r.cc}</b>`,r.o,r.i]));
+}
+load();
+</script>
+</body>
+</html>

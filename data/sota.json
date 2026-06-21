@@ -1,0 +1,399 @@
+{
+  "generated": "2026-06-20",
+  "url": "https://hollobit.github.io/SOTA/#overview",
+  "source": "https://hollobit.github.io/SOTA/data/sota.json",
+  "benchmarks": [
+    {
+      "name": "MMLU",
+      "metric": "accuracy",
+      "sota_score": "92.0%",
+      "sota_model": "moonshot/kimi-k2.5",
+      "date": "2026-05-12",
+      "url": "https://onyx.app/open-llm-leaderboard",
+      "maps_to": [
+        "MMLU"
+      ]
+    },
+    {
+      "name": "MMLU-Pro",
+      "metric": "accuracy",
+      "sota_score": "91.0%",
+      "sota_model": "google/gemini-3.1-pro",
+      "date": "2026-04-28",
+      "url": "https://venturebeat.com/technology/deepseek-v4-arrives-with-near-state-of-the-art-intelligence-at-1-6th-the-cost-of-opus-4-7-gpt-5-5",
+      "maps_to": []
+    },
+    {
+      "name": "GPQA",
+      "metric": "accuracy",
+      "sota_score": "64.0",
+      "sota_model": "nvidia/nemotron-nano-9b-v2",
+      "date": "2026-06-20",
+      "url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-Nano-9B-v2",
+      "maps_to": [
+        "GPQA"
+      ]
+    },
+    {
+      "name": "GPQA Diamond",
+      "metric": "accuracy",
+      "sota_score": "97.0",
+      "sota_model": "openai/gpt-5.4",
+      "date": "2026-06-20",
+      "url": "https://intuitionlabs.ai/articles/gpqa-diamond-ai-benchmark",
+      "maps_to": [
+        "GPQA"
+      ]
+    },
+    {
+      "name": "ARC-AGI-1",
+      "metric": "accuracy",
+      "sota_score": "94.0%",
+      "sota_model": "anthropic/claude-opus-4.6",
+      "date": "2026-04-17",
+      "url": "resource/Claude Opus 4.6 System Card 02-05.pdf",
+      "maps_to": []
+    },
+    {
+      "name": "ARC-AGI-2",
+      "metric": "accuracy",
+      "sota_score": "85.0%",
+      "sota_model": "openai/gpt-5.5",
+      "date": "2026-05-04",
+      "url": "https://www.vellum.ai/llm-leaderboard",
+      "maps_to": []
+    },
+    {
+      "name": "ARC-AGI-3",
+      "metric": "accuracy",
+      "sota_score": "73.0%",
+      "sota_model": "openai/gpt-5.1",
+      "date": "2026-05-10",
+      "url": "https://arcprize.org/leaderboard",
+      "maps_to": []
+    },
+    {
+      "name": "AIME 2025",
+      "metric": "accuracy",
+      "sota_score": "100.0%",
+      "sota_model": "google/gemini-3.1-pro",
+      "date": "2026-04-17",
+      "url": "https://llm-stats.com/benchmarks/gpqa",
+      "maps_to": []
+    },
+    {
+      "name": "AIME 2026",
+      "metric": "accuracy",
+      "sota_score": "100.0",
+      "sota_model": "openai/gpt-5",
+      "date": "2026-06-20",
+      "url": "https://benchlm.ai/math",
+      "maps_to": []
+    },
+    {
+      "name": "MATH-500",
+      "metric": "accuracy",
+      "sota_score": "99.8",
+      "sota_model": "claude-opus-4-6",
+      "date": "2026-06-20",
+      "url": "https://benchlm.ai/math",
+      "maps_to": []
+    },
+    {
+      "name": "FrontierMath",
+      "metric": "accuracy",
+      "sota_score": "90.0%",
+      "sota_model": "moonshot/kimi-k2.6",
+      "date": "2026-05-10",
+      "url": "https://epoch.ai/data/benchmarks.csv",
+      "maps_to": []
+    },
+    {
+      "name": "Humanity's Last Exam",
+      "metric": "accuracy",
+      "sota_score": "53.0%",
+      "sota_model": "anthropic/claude-fable-5",
+      "date": "2026-06-20",
+      "url": "https://artificialanalysis.ai/articles/claude-fable-5-mythos-intelligence-index",
+      "maps_to": []
+    },
+    {
+      "name": "SimpleQA Verified",
+      "metric": "accuracy",
+      "sota_score": "75.6%",
+      "sota_model": "google/gemini-3.1-pro",
+      "date": "2026-06-20",
+      "url": "DeepSeek-V4-Pro-Technical-Report.pdf p.38 Table 6",
+      "maps_to": []
+    },
+    {
+      "name": "HumanEval",
+      "metric": "pass@1",
+      "sota_score": "99.0%",
+      "sota_model": "moonshot/kimi-k2.5",
+      "date": "2026-05-12",
+      "url": "https://onyx.app/open-llm-leaderboard",
+      "maps_to": []
+    },
+    {
+      "name": "HumanEval+",
+      "metric": "pass@1",
+      "sota_score": "87.2%",
+      "sota_model": "skt/ax-k1",
+      "date": "2026-05-03",
+      "url": "https://huggingface.co/skt/A.X-K1",
+      "maps_to": []
+    },
+    {
+      "name": "LiveCodeBench",
+      "metric": "pass@1",
+      "sota_score": "93.5%",
+      "sota_model": "deepseek/deepseek-v4-pro",
+      "date": "2026-04-29",
+      "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro",
+      "maps_to": []
+    },
+    {
+      "name": "SWE-bench Verified",
+      "metric": "resolved %",
+      "sota_score": "95.5",
+      "sota_model": "anthropic/claude-mythos-5",
+      "date": "2026-06-20",
+      "url": "https://benchlm.ai/benchmarks/sweVerified",
+      "maps_to": [
+        "SWE-bench"
+      ]
+    },
+    {
+      "name": "SWE-bench Pro",
+      "metric": "resolved %",
+      "sota_score": "80.3",
+      "sota_model": "anthropic/claude-mythos-5",
+      "date": "2026-06-20",
+      "url": "https://www-cdn.anthropic.com/d00db56fa754a1b115b6dd7cb2e3c342ee809620.pdf",
+      "maps_to": [
+        "SWE-bench"
+      ]
+    },
+    {
+      "name": "GAIA",
+      "metric": "accuracy",
+      "sota_score": "86.5%",
+      "sota_model": "manus-ai/manus",
+      "date": "2026-05-08",
+      "url": "https://www.helicone.ai/blog/manus-benchmark-operator-comparison",
+      "maps_to": []
+    },
+    {
+      "name": "HealthBench",
+      "metric": "score",
+      "sota_score": "88.0",
+      "sota_model": "openai/gpt-5.2",
+      "date": "2026-06-20",
+      "url": "Nature Medicine s41591-026-04457-9 via techtarget",
+      "maps_to": [
+        "HealthBench"
+      ]
+    },
+    {
+      "name": "HealthBench Professional",
+      "metric": "score",
+      "sota_score": "80.2",
+      "sota_model": "nexgene-ai/asa-w1",
+      "date": "2026-06-20",
+      "url": "https://reports.nexgene.ai/NexgeneAI_AsaW1_HealthBench-Professional_2026.pdf",
+      "maps_to": [
+        "HealthBench"
+      ]
+    },
+    {
+      "name": "KMLE",
+      "metric": "accuracy",
+      "sota_score": "96.4%",
+      "sota_model": "snuh-naver/kmed-ai",
+      "date": "2026-04-26",
+      "url": "http://www.snuh.org/global/en/about/newsView.do?bbs_no=7384",
+      "maps_to": []
+    },
+    {
+      "name": "MedQA (USMLE)",
+      "metric": "accuracy",
+      "sota_score": "97.4%",
+      "sota_model": "google/gemini-3.1-pro",
+      "date": "2026-06-20",
+      "url": "Nature Medicine s41591-026-04457-9 via techtarget",
+      "maps_to": []
+    },
+    {
+      "name": "HarmBench",
+      "metric": "attack success rate (lower better)",
+      "sota_score": "3.1%",
+      "sota_model": "anthropic/claude-opus-4.7",
+      "date": "2026-04-28",
+      "url": "https://www.generalanalysis.com/benchmarks",
+      "maps_to": [
+        "HarmBench"
+      ]
+    },
+    {
+      "name": "JailbreakBench",
+      "metric": "attack success rate (lower better)",
+      "sota_score": "4.1%",
+      "sota_model": "anthropic/claude-opus-4.7",
+      "date": "2026-04-28",
+      "url": "https://jailbreakbench.github.io/",
+      "maps_to": [
+        "JailbreakBench"
+      ]
+    },
+    {
+      "name": "JailBreakV-28K",
+      "metric": "attack success rate (lower better)",
+      "sota_score": "4.8%",
+      "sota_model": "anthropic/claude-opus-4.7",
+      "date": "2026-04-28",
+      "url": "https://github.com/EddyLuo1232/JailBreakV_28K",
+      "maps_to": [
+        "JailBreakV-28K"
+      ]
+    },
+    {
+      "name": "StrongREJECT",
+      "metric": "attack success rate (lower better)",
+      "sota_score": "3.5%",
+      "sota_model": "anthropic/claude-opus-4.7",
+      "date": "2026-04-28",
+      "url": "https://arxiv.org/pdf/2402.10260",
+      "maps_to": [
+        "StrongREJECT",
+        "StrongReject"
+      ]
+    },
+    {
+      "name": "InjecAgent",
+      "metric": "attack success rate (lower better)",
+      "sota_score": "8.5%",
+      "sota_model": "anthropic/claude-opus-4.7",
+      "date": "2026-04-28",
+      "url": "https://github.com/AI-secure/InjecAgent",
+      "maps_to": [
+        "InjecAgent"
+      ]
+    },
+    {
+      "name": "AgentDojo (Targeted ASR)",
+      "metric": "attack success rate (lower better)",
+      "sota_score": "1.11%",
+      "sota_model": "anthropic/claude-3.5-sonnet",
+      "date": "2026-04-30",
+      "url": "https://agentdojo.spylab.ai/results/",
+      "maps_to": [
+        "AgentDojo"
+      ]
+    },
+    {
+      "name": "MedSafetyBench",
+      "metric": "safety score",
+      "sota_score": "4.8%",
+      "sota_model": "anthropic/claude-medical-eval",
+      "date": "2026-04-26",
+      "url": "https://www.anthropic.com/research/medical-eval",
+      "maps_to": [
+        "MedSafetyBench"
+      ]
+    },
+    {
+      "name": "Cybench",
+      "metric": "pass@1",
+      "sota_score": "100.0%",
+      "sota_model": "anthropic/claude-mythos-preview",
+      "date": "2026-04-17",
+      "url": "resource/Claude Mythos Preview System Card.pdf",
+      "maps_to": [
+        "Cybench",
+        "CyBench"
+      ]
+    },
+    {
+      "name": "CyberGym",
+      "metric": "success rate",
+      "sota_score": "96.55%",
+      "sota_model": "microsoft/mdash",
+      "date": "2026-06-20",
+      "url": "https://www.techtimes.com/articles/317692/20260603/microsoft-mdash-gains-defender-integration-build-2026-9655-cybergym-benchmark.htm",
+      "maps_to": [
+        "CyberGym"
+      ]
+    },
+    {
+      "name": "CVE-Bench",
+      "metric": "pass@1",
+      "sota_score": "90.0%",
+      "sota_model": "openai/gpt-5.3-codex",
+      "date": "2026-04-17",
+      "url": "resource/GPT-5-3-Codex-System-Card-02.pdf",
+      "maps_to": [
+        "CVE-Bench"
+      ]
+    },
+    {
+      "name": "AutoPenBench / AI-Pentest-Benchmark",
+      "metric": "sub-task completion",
+      "sota_score": "79.17",
+      "sota_model": "xoffense/xoffense",
+      "date": "2026-06-20",
+      "url": "https://arxiv.org/abs/2509.13021",
+      "maps_to": [
+        "AUTOPENBENCH",
+        "AI-Pentest-Benchmark"
+      ]
+    },
+    {
+      "name": "WMDP-Bio",
+      "metric": "accuracy",
+      "sota_score": "86.5%",
+      "sota_model": "anthropic/claude-mythos-preview",
+      "date": "2026-04-28",
+      "url": "https://www.anthropic.com/research",
+      "maps_to": [
+        "WMDP"
+      ]
+    },
+    {
+      "name": "WMDP-Chem",
+      "metric": "accuracy",
+      "sota_score": "81.4%",
+      "sota_model": "anthropic/claude-mythos-preview",
+      "date": "2026-04-28",
+      "url": "https://www.anthropic.com/research",
+      "maps_to": [
+        "WMDP-Chem",
+        "WMDP"
+      ]
+    },
+    {
+      "name": "RE-Bench",
+      "metric": "score",
+      "sota_score": "1.27",
+      "sota_model": "google/gemini-3.1-pro",
+      "date": "2026-06-20",
+      "url": "Gemini 3.1 Pro Model Card (Feb 2026), FSF Machine Learning R&D",
+      "maps_to": [
+        "RE-Bench"
+      ]
+    },
+    {
+      "name": "CyberSecEval3",
+      "metric": "score",
+      "sota_score": "82.1%",
+      "sota_model": "anthropic/claude-opus-4.7",
+      "date": "2026-04-28",
+      "url": "https://github.com/facebookresearch/CyberSecEval",
+      "maps_to": [
+        "CyberSecEval3",
+        "CyberSecEval 3",
+        "CyberSecEval"
+      ]
+    }
+  ]
+}

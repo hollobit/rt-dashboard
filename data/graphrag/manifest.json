@@ -1,0 +1,32 @@
+{
+  "generated": "2026-06-20",
+  "embeddings": false,
+  "modes": [
+    "local",
+    "global",
+    "citation"
+  ],
+  "algorithm": "networkx.greedy_modularity",
+  "community_count": 42,
+  "unit_count": 1138,
+  "units_by_kind": {
+    "finding": 283,
+    "control": 51,
+    "evidence": 14,
+    "risk": 38,
+    "standard": 18,
+    "attack_technique": 25,
+    "harm": 46,
+    "incident": 23,
+    "vulnerability": 38,
+    "procedure": 25,
+    "tactic": 14,
+    "source": 253,
+    "model_card": 41,
+    "product": 35,
+    "reference": 11,
+    "guideline-doc": 4,
+    "guideline-item": 177,
+    "community": 42
+  }
+}

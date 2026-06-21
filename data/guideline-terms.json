@@ -1,0 +1,987 @@
+{
+ "note": "guideline/ 문서에서 추출한 용어·약어. © 각 문서 저작권자(인용).",
+ "sources": [
+  {
+   "doc": "NIST AI 100-2e2025 — Adversarial ML: Taxonomy & Terminology",
+   "kind": "standard",
+   "terms": [
+    {
+     "term": "adversarial example",
+     "def": "A modified testing sample that induces misclassification or misbehavior of a machine learning model at deployment time."
+    },
+    {
+     "term": "adversarial machine learning",
+     "def": "Attacks that exploit the statistical, data-based nature of machine learning systems."
+    },
+    {
+     "term": "agent",
+     "def": "Software programs that can interact with their environment, receive information, and undertake self-directed actions in service of a larger, externally-specified goal."
+    },
+    {
+     "term": "area under the curve",
+     "def": "A measure of the ability of a classifier to distinguish between classes in machine learning. A higher AUC means that a model performs better when distinguishing between the two classes. AUC measures the entire two-dimensional area under the RECEIVER OPERATING CHARACTERISTIC (ROC) curve."
+    },
+    {
+     "term": "attribute inference attacks",
+     "def": "An attack against machine learning models that infers sensitive attributes of a training data record, given partial knowledge about the record."
+    },
+    {
+     "term": "availability breakdown",
+     "def": "In the AML context, a disruption of the ability of other users or processes to obtain timely and reliable access to an AI system’s outputs or functionality."
+    },
+    {
+     "term": "backdoor pattern",
+     "def": "A transformation or insertion applied to a data sample that triggers an adversary-specified behaviour in a model that has been subject to a backdoor poisoning attack. For example, in computer vision, an adversary could poison a model such that the insertion of a square of white pixels induces a desired target label."
+    },
+    {
+     "term": "backdoor poisoning attack",
+     "def": "A poisoning attack that causes a model to perform an adversaryselected behaviour in response to inputs that follow a particular BACKDOOR PATTERN."
+    },
+    {
+     "term": "classification",
+     "def": "The task of predicting which of a set of discrete categories an input belongs to."
+    },
+    {
+     "term": "convolutional neural networks",
+     "def": "A class of feed-forward neural networks that include at least one convolutional layer, referred to as CNNs. In convolutional layers, feature detectors (known as kernels or filters) detect specific features across the input data. CNNs are primarily used for processing grid-like data, such as images, and are particularly effective for tasks like image classification, object detection, and image segmentation. 5, 31"
+    },
+    {
+     "term": "data confidentiality",
+     "def": "A well-established concept in cybersecurity referring to the protection of sensitive information from unauthorized access and disclosure."
+    },
+    {
+     "term": "data poisoning",
+     "def": "A POISONING ATTACKS in which an adversary controls part of the training data."
+    },
+    {
+     "term": "data privacy attacks",
+     "def": "Attacks against machine learning models that extract sensitive information about training data."
+    },
+    {
+     "term": "data reconstruction",
+     "def": "Privacy attacks that reconstruct sensitive data in a model’s training data from aggregate information."
+    },
+    {
+     "term": "deployment stage",
+     "def": "The stage of the machine learning pipeline in which a model is deployed into a live or real-world environment for use, such as being integrated into an enterprise application or made available to end users through an API."
+    },
+    {
+     "term": "diffusion models",
+     "def": "A class of latent variable generative models consisting of three major components: a forward process, a reverse process, and a sampling procedure. The goal of the diffusion model is to learn a diffusion process that generates the probability distribution of a given dataset. It is widely used in computer vision on a variety of tasks, including image denoising, inpainting, super-resolution, and image generation."
+    },
+    {
+     "term": "direct prompt injection",
+     "def": "A DIRECT PROMPTING ATTACK in which the attacker exploits PROMPT INJECTION."
+    },
+    {
+     "term": "direct prompting attack",
+     "def": "In the generative AI context, an attack conducted by the primary user of the system through QUERY ACCESS (e.g., as opposed to through RESOURCE CONTROL)."
+    },
+    {
+     "term": "discriminative",
+     "def": "A type of machine learning method that learns to discriminate between classes."
+    },
+    {
+     "term": "energy-latency attack",
+     "def": "An attack that exploits the performance dependency on hardware and model optimizations to negate the effects of hardware optimizations, increase computational latency, increase hardware temperature, and massively increase the amount of energy consumed."
+    },
+    {
+     "term": "ensemble learning",
+     "def": "A type of a meta machine learning approach that combines the predictions of several models to improve performance."
+    },
+    {
+     "term": "expectation over transformation",
+     "def": "A method for strengthening adversarial examples to remain adversarial under image transformations that occur in the real world, such as angle and viewpoint changes. EOT models these perturbations within the optimization procedure. Rather than optimizing the log-likelihood of a single example, EOT uses a chosen distribution of transformation functions that take an input controlled by the adversary to the “true” input perceived by the classifier. 16"
+    },
+    {
+     "term": "federated learning",
+     "def": "A type of machine learning in which a model is trained in a decentralized fashion using multiple data sources without pooling or combining the data in any centralized location. Federated learning allows entities or devices to collaboratively train a global model by exchanging model updates without directly sharing the data that each entity controls."
+    },
+    {
+     "term": "feedforward neural networks",
+     "def": "Artificial neural networks in which the connections between nodes is from one layer to the next and do not form a cycle."
+    },
+    {
+     "term": "fine-tuning",
+     "def": "The process of adapting a pre-trained model to perform specific tasks or specialize in a particular domain. This phase follows the initial pre-training phase and involves further training the model on task-specific data. This is often a supervised learning task."
+    },
+    {
+     "term": "fine-tuning circumvention",
+     "def": "Fine-tuning to remove model refusal behaviour or other modellevel safety interventions."
+    },
+    {
+     "term": "formal methods",
+     "def": "A mathematically rigorous technique for the specification, development, and verification of software systems."
+    },
+    {
+     "term": "foundation model",
+     "def": "In generative AI, models trained on broad data using SELF-SUPERVISED LEARNING that can be adapted such as through fine-tuning for a variety of downstream tasks [311]."
+    },
+    {
+     "term": "functional attack",
+     "def": "An adversarial attack that is optimized for a set of data in a domain rather than per data point."
+    },
+    {
+     "term": "generative adversarial networks",
+     "def": "A machine learning framework in which two neural networks contest with each other in the form of a zero-sum game, where one agent’s gain is another agent’s loss. A GAN learns to generate new data with the same statistics as the training set. See [143] for further details."
+    },
+    {
+     "term": "generative pre-trained transformer",
+     "def": "(GPT) A family of machine learning models based on the transformer architecture [383] that are pre-trained through SELF-SUPERVISED LEARNING on large data sets of unlabelled text. This is the current predominant architecture for large language models."
+    },
+    {
+     "term": "graph neural network",
+     "def": "A neural network designed to process graph-structured data. GNNs perform optimizable transformations on graph attributes (e.g., nodes, edges, global context) while preserving graph symmetries such as permutation invariance. GNNs utilize a “graph-in, graph-out” architecture that takes an input graph with information and progressively transforms it into an output graph with the same connectivity as that of the input graph."
+    },
+    {
+     "term": "hidden",
+     "def": "Markov model A Markov model in which the system being modeled is assumed to be a Markov process with unobservable states. The model provides an observable process whose outcomes are influenced by the outcomes of a Markov model in a known way. An HMM can be used to describe the evolution of observable 109 events that depend on internal factors that are not directly observable. In machine learning, it is assumed that the internal state of a model is hidden but not its hyperparameters."
+    },
+    {
+     "term": "indirect prompt injection",
+     "def": "A type of PROMPT INJECTION executed through RESOURCE CONTROL rather than through user-provided input as in a DIRECT PROMPT INJECTION. 39–41"
+    },
+    {
+     "term": "integrity violation",
+     "def": "In the AML context, an AI system being forced to misperform against its intended objectives, producing outputs or predictions that align with the attacker’s objective."
+    },
+    {
+     "term": "jailbreak",
+     "def": "A DIRECT PROMPTING ATTACK intended to circumvent restrictions placed on model outputs, such as circumventing refusal behaviour to enable misuse."
+    },
+    {
+     "term": "label flipping",
+     "def": "A type of data poisoning attack in which an adversary is restricted to changing the training labels."
+    },
+    {
+     "term": "label limit",
+     "def": "A capability with which an attacker does not control the labels of training samples in supervised learning."
+    },
+    {
+     "term": "logistic regression",
+     "def": "A type of linear classifier that predicts the probability of an observation being part of a class."
+    },
+    {
+     "term": "machine unlearning",
+     "def": "A technique that involves selectively removing the influences of specific training data points from a trained machine learning model, such as to remove unwanted capabilities or knowledge in a foundation model, or to enable a user to request the removal of their records from a model. Efficient approximate unlearning techniques may not require retraining the ML model from scratch."
+    },
+    {
+     "term": "membership-inference attack",
+     "def": "A data privacy attack to determine whether a data sample was part of the training set of a machine learning model."
+    },
+    {
+     "term": "misuse enablement",
+     "def": "In the AML context, a circumvention of technical restrictions imposed by the AI system’s owner on its use, such as restrictions designed to prevent a GenAI system from producing outputs that could cause harm to others."
+    },
+    {
+     "term": "model control",
+     "def": "A capability with which an attacker can control the machine learning model parameters."
+    },
+    {
+     "term": "model extraction",
+     "def": "A type of privacy attack that extracts details of the model architecture and/or parameters. 7, 28, 31, 40, 41, 47"
+    },
+    {
+     "term": "model poisoning",
+     "def": "A POISONING ATTACKS which operates through MODEL CONTROL."
+    },
+    {
+     "term": "model privacy attacks",
+     "def": "An attack against machine learning models to extract sensitive information about the model."
+    },
+    {
+     "term": "multimodal models",
+     "def": "A model that processes and relates information from multiple sensory modalities that each represent primary human channels of communication and sensation, such as vision and touch."
+    },
+    {
+     "term": "out-of-distribution",
+     "def": "Data that was collected at a different time and possibly under different conditions or in a different environment than the data collected to train the model."
+    },
+    {
+     "term": "poisoning attacks",
+     "def": "Adversarial attacks in which an adversary interferes with a model during its TRAINING STAGE, such as by inserting malicious training data (DATA POISONING) or modifying the training process itself (MODEL POISONING)."
+    },
+    {
+     "term": "pre-training",
+     "def": "A component of the TRAINING STAGE in which a model learns general patterns, features, and relationships from vast amounts of unlabeled data, such as through SELF-SUPERVISED LEARNING. Pre-training can equip models with knowledge of general features or patterns which may be useful in downstream tasks (see FOUNDATION MODEL), and can be followed with additional training or fine-tuning that specializes the model for a specific downstream task."
+    },
+    {
+     "term": "privacy compromise",
+     "def": "In the AML context, the unauthorized access of restricted or proprietary information that is part of an AI system, including information about a model’s training data, weights or architecture; or sensitive information that the model accesses such as the knowledge base of a GenAI RETRIEVAL-AUGMENTED GENERATION (RAG) application."
+    },
+    {
+     "term": "prompt extraction",
+     "def": "An attack that tries to divulge the system prompt or other information in the context of a large language model that would normally be hidden from a user."
+    },
+    {
+     "term": "prompt injection",
+     "def": "An attack which exploits the concatenation of untrusted input with a prompt constructed by a higher-trust party such as the application designer."
+    },
+    {
+     "term": "property inference",
+     "def": "A data privacy attack that infers a global property about the training data of a machine learning model."
+    },
+    {
+     "term": "query access",
+     "def": "A capability with which an attacker can issue queries to a trained machine learning model and obtain predictions or generations. 8, 40, 108"
+    },
+    {
+     "term": "receiver operating characteristic",
+     "def": "(ROC) A curve that plots the true positive rate versus the false positive rate for a classifier."
+    },
+    {
+     "term": "red teaming in the",
+     "def": "AI context, means a structured testing effort, often adopting adversarial methods, to find flaws and vulnerabilities in an AI system, including unforeseen or undesirable system behaviors or potential risks associated with the misuse of the system. [366]."
+    },
+    {
+     "term": "regression",
+     "def": "A type of supervised machine learning model that is trained on data, including numerical labels (i.e., response variables). Types of regression algorithms include linear regression, polynomial regression, and various non-linear regression methods."
+    },
+    {
+     "term": "reinforcement learning",
+     "def": "A type of machine learning in which a model learns to optimize its behavior according to a reward function by interacting with and receiving feedback from an environment."
+    },
+    {
+     "term": "resource control",
+     "def": "A capability in which an attacker controls one or more external resources consumed by a machine learning model at inference time, particularly for GenAI systems such as retrieval-augmented generation applications."
+    },
+    {
+     "term": "retrieval-augmented generation",
+     "def": "(RAG) A type of GenAI system in which a model is paired with a separate information retrieval system (or ”knowledge base”). Based on a user query, the RAG system identifies relevant information within the knowledge base and provides it to the GenAI model in context for the model to use in formulating its response. RAG systems allow the internal knowledge of a GenAI model to be modified without the need for retraining."
+    },
+    {
+     "term": "rowhammer attack",
+     "def": "A software-based fault-injection attack that exploits dynamic randomaccess memory disturbance errors via user-space applications and allows the attacker to infer information about certain victim secrets stored in memory cells. Mounting this attack requires the attacker to control a user-space unprivileged process that runs on the same machine as the victim’s machine learning model."
+    },
+    {
+     "term": "self-supervised learning",
+     "def": "A type of machine learning that relies on generating implicit labels from unstructured data rather than relying on explicit, human-created labels. Self-supervised learning tasks are constructed to allow the true labels to be automatically inferred from the training data (enabling the use of large-scale training data) and to require models to capture essential features or relationships within the data to solve them. For example, a common self-supervised learning task is providing a model with partial data with the task to accurately generate the remainder."
+    },
+    {
+     "term": "semi-supervised learning",
+     "def": "A type of machine learning in which a small number of training samples are labeled, while the majority are unlabeled."
+    },
+    {
+     "term": "shadow model",
+     "def": "A model that imitates the behavior of the target model. The training datasets and the truth about membership in these datasets are known for these models. 112 Typically, the attack model is trained on the labeled inputs and outputs of the shadow model."
+    },
+    {
+     "term": "side channel",
+     "def": "Allows an attacker to infer information about a secret by observing the nonfunctional characteristics of a program (e.g., execution time or memory) or measuring or exploiting the indirect coincidental effects of the system or its hardware (e.g., power consumption variation, electromagnetic emanations) while the program is executing. Most commonly, such attacks aim to exfiltrate sensitive information, including cryptographic keys."
+    },
+    {
+     "term": "source code control",
+     "def": "A capability with which an attacker controls the source code of a machine learning algorithm."
+    },
+    {
+     "term": "supervised learning",
+     "def": "A type of machine learning in which a model learns to predict explicit (often human-generated) labels or output values for data."
+    },
+    {
+     "term": "support vector machines",
+     "def": "Models that implement a decision function in the form of a hyperplane that serves to separate (i.e., classify) observations that belong to one class from another based on patterns of information about those observations (i.e., features)."
+    },
+    {
+     "term": "system prompt",
+     "def": "Application-specific instructions provided in-context to a GenAI system by the model developer or application designer. System prompts are typically prepended to other input, and may be higher-trust than other forms of input."
+    },
+    {
+     "term": "targeted poisoning attack",
+     "def": "A poisoning attack that changes the prediction on a small number of targeted samples."
+    },
+    {
+     "term": "testing data control",
+     "def": "A capability with which an attacker controls the testing data input to the machine learning model."
+    },
+    {
+     "term": "training data control",
+     "def": "A capability in which an attacker controls some or all of the training data of a machine learning model."
+    },
+    {
+     "term": "training data extraction",
+     "def": "The ability of an attacker to extract the training data of a generative model by prompting the model with specific inputs."
+    },
+    {
+     "term": "training stage",
+     "def": "The stage of a machine learning pipeline in which a model learns parameters that minimize its error against an objective function based on training data."
+    },
+    {
+     "term": "trojan",
+     "def": "In the machine learning context, a malicious modification to a model that is difficult to detect, may appear harmless, but that can alter the intended function of the system upon a signal from an attacker to cause a malicious behavior desired by the attacker. For Trojan attacks to be effective, the trigger must be rare in the normal operating environment so that it does not affect the normal effectiveness of the AI and raise the suspicions of users. In the machine learning context, trojan may be used interchangeably with backdoor pattern. 2"
+    },
+    {
+     "term": "unsupervised learning",
+     "def": "A type of machine learning in which a model learns based on patterns in unlabeled data, such as learning a function to cluster or group data points. 5"
+    }
+   ],
+   "abbrevs": []
+  },
+  {
+   "doc": "ISO/IEC AWI TS 42119-7 — Testing of AI: Red teaming",
+   "kind": "standard",
+   "terms": [
+    {
+     "term": "red team",
+     "def": "independent group that challenges a defined target to improve its effectiveness or robustness by assuming an adversarial role or point of view"
+    },
+    {
+     "term": "AI red team",
+     "def": "stakeholders with varying backgrounds who specifically focus on identifying vulnerabilities in AI systems through adversarial method(s) (3.1.4)"
+    },
+    {
+     "term": "adversarial attack",
+     "def": "attemp to deceive AI models into making incorrect or unintended predictions or classifications using crafted inputs or data to exploit vulnerabilities"
+    },
+    {
+     "term": "adversarial method(s)",
+     "def": "process or technique that intentionally introduces engineered inputs or perturbations designed to cause an AI model or system to malfunction"
+    },
+    {
+     "term": "data poisoning",
+     "def": "manipulation of training data to maliciously influence the model's behaviour"
+    },
+    {
+     "term": "hallucination",
+     "def": "Instances where AI models generate outputs that are nonsensical or factually incorrect, particularly relevant in large scale AI systems"
+    },
+    {
+     "term": "incident",
+     "def": "anomalous or unexpected event, set of events, condition, or situation at any time during the life cycle of a project, product, service, or system [SOURCE: ISO/ IEC/IEEE 29119-1:2022]"
+    },
+    {
+     "term": "test specification",
+     "def": "complete documentation of the test design, test case (3.1.9) and test procedure (3.1.11) for a specific test item [SOURCE: ISO/ IEC/IEEE 29119-1:2022]"
+    },
+    {
+     "term": "test case",
+     "def": "set of preconditions, inputs and expected result (3.1.10), developed to drive the execution of a test item (3.1.12) to meet test objective (3.1.13) [SOURCE: ISO/ IEC/IEEE 29119-1:2022]"
+    },
+    {
+     "term": "expected result",
+     "def": "observable predicted behaviour of the test item (3.1.12) under specified conditions based on its specification or another source [SOURCE: ISO/ IEC/IEEE 29119-1:2022]"
+    },
+    {
+     "term": "test procedure",
+     "def": "sequence of test case (3.1.9) in execution order, with any associated actions required to set up preconditions and perform wrap up activities post execution [SOURCE: ISO/ IEC/IEEE 29119-1:2022]"
+    },
+    {
+     "term": "test item",
+     "def": "test object, noun"
+    },
+    {
+     "term": "work product to be tested",
+     "def": "EXAMPLESoftware component, system, requirements document, design specification, user guide. [SOURCE: ISO/ IEC/IEEE 29119-1:2022]"
+    },
+    {
+     "term": "test objective",
+     "def": "reason for performing testing [SOURCE: ISO/ IEC/IEEE 29119-1:2022]"
+    },
+    {
+     "term": "test plan",
+     "def": "detailed description of test objective (3.1.13) to be achieved and the means and schedule for achieving them, organized to coordinate testing (3.1.15) activities for some test item (3.1.12) or set of test items [SOURCE: ISO/ IEC/IEEE 29119-1:2022]"
+    },
+    {
+     "term": "testing",
+     "def": "set of activities that determine whether a work product meets specified requirements or expectations"
+    },
+    {
+     "term": "test",
+     "def": "activity in which a system or component is executed under specified conditions, the results are observed or recorded, and an evaluation is made of some aspect of the system or component [SOURCE: ISO/ IEC/IEEE 29119-1:2022]"
+    },
+    {
+     "term": "red teaming",
+     "def": "<artificial intelligence> testing practice focused on inducing an AI model or system to behave in unintended ways"
+    },
+    {
+     "term": "machine learning algorithm",
+     "def": "algorithm to determine parameters of a machine learning model from data according to given criteria [SOURCE: ISO/IEC 22989:2022, 3.3.6, deleted EXAMPLE]"
+    },
+    {
+     "term": "attack",
+     "def": "attempt to destroy, expose, alter, disable, steal or gain unauthorized access to or make unauthorized use of an asset [SOURCE: ISO/IEC 27000:2018, 3.2]"
+    },
+    {
+     "term": "test incident",
+     "def": "event occurring during the execution of a test that requires investigation [SOURCE: ISO/IEC/IEEE 29119-3:2021(en), 3.15]"
+    },
+    {
+     "term": "information security incident",
+     "def": "single or a series of unwanted or unexpected information security events that have a significant probability of compromising business operations and threatening information security [SOURCE: ISO/IEC 27000:2018, 3.31]"
+    },
+    {
+     "term": "AI incident",
+     "def": "event associated with an AI system that results or can result in harm [SOURCE: ISO/IEC AWI 25870, 3.1]"
+    },
+    {
+     "term": "evasion attack",
+     "def": "attack where the attacker is able to avoid correct behaviour of an AI system on specific input or classes of inputs [SOURCE: ISO/IEC DIS 27090, 3.13]"
+    },
+    {
+     "term": "model inversion",
+     "def": "attack where the attacker is able to retrieve the original data (or sufficient parts thereof) that was used to generate the model through (potentially repeated) use of attacker supplied inputs and observing corresponding outputs of the AI system [SOURCE: ISO/IEC DIS 27090, 3.16]"
+    },
+    {
+     "term": "vulnerability",
+     "def": "weakness of an asset or control that can be exploited by one or more threats [SOURCE: ISO/IEC 27000:2018, 3.77]"
+    },
+    {
+     "term": "prompt",
+     "def": "<generative AI>input to a generative AI system that provides overarching instructions on how to process the input [SOURCE: ISO/IEC 22989:2022/DAmd 1(en), 3.6.19]"
+    },
+    {
+     "term": "foundation model",
+     "def": "AI model that can be used for or readily adapted to a wide range of tasks in one or more domains [SOURCE: ISO/IEC 22989:2022/DAmd 1(en), 3.3.19]"
+    },
+    {
+     "term": "large language model",
+     "def": "machine learning model that encodes the functioning of natural language with a large number of parameters and facilitates a variety of NLP tasks [SOURCE: ISO/IEC 22989:2022/DAmd 1(en), 3.3.20]"
+    }
+   ],
+   "abbrevs": [
+    {
+     "abbr": "FM",
+     "full": "foundation model"
+    },
+    {
+     "abbr": "LLM",
+     "full": "large language model"
+    },
+    {
+     "abbr": "MMLM",
+     "full": "multimodal language model"
+    },
+    {
+     "abbr": "VLA",
+     "full": "visual language action"
+    },
+    {
+     "abbr": "VLM",
+     "full": "vision language model"
+    }
+   ]
+  },
+  {
+   "doc": "CSA — Agentic AI Red Teaming Guide (2025)",
+   "kind": "guide",
+   "terms": [
+    {
+     "term": "Secondary Audiences",
+     "def": "●​ AI Developers/Engineers: Developers building Agentic AI systems may benefit from"
+    }
+   ],
+   "abbrevs": [
+    {
+     "abbr": "ASB",
+     "full": "Agent Security Bench"
+    },
+    {
+     "abbr": "ASR",
+     "full": "Attack Success Rate"
+    },
+    {
+     "abbr": "MTTD",
+     "full": "Mean Time to Detection"
+    }
+   ]
+  },
+  {
+   "doc": "GenAI Red Teaming Guide (OWASP/GenAI v1.0)",
+   "kind": "guide",
+   "terms": [
+    {
+     "term": "GenAI Red Teaming Process",
+     "def": "Enhancing the Framework             12"
+    },
+    {
+     "term": "Influential AI Organizations",
+     "def": "Inside Their Red Teaming Playbooks   45"
+    },
+    {
+     "term": "Organization A",
+     "def": "Technical Sophistication with Automation         45"
+    },
+    {
+     "term": "Organization B",
+     "def": "Integrating Security and AI Expertise            45"
+    },
+    {
+     "term": "Organization C",
+     "def": "Community-Driven and Automated Innovations       46"
+    },
+    {
+     "term": "Organization D",
+     "def": "Multi-Faceted and Policy-Oriented                46"
+    },
+    {
+     "term": "Organization E",
+     "def": "Benchmarking and Guardrailing                    46"
+    },
+    {
+     "term": "Appendix A",
+     "def": "Metrics                                                  57"
+    },
+    {
+     "term": "Appendix B",
+     "def": "Tools and Datasets                                       61"
+    },
+    {
+     "term": "Appendix C",
+     "def": "Continuous Monitoring & Testing                          67"
+    },
+    {
+     "term": "Appendix D",
+     "def": "Agentic AI Systems/Applications Red Teaming"
+    },
+    {
+     "term": "You are free to",
+     "def": "● Share — copy and redistribute the material in any medium or format"
+    },
+    {
+     "term": "Link to full license text",
+     "def": "https://creativecommons.org/licenses/by-sa/4.0/legalcode"
+    }
+   ],
+   "abbrevs": [
+    {
+     "abbr": "AAD",
+     "full": "Learning"
+    },
+    {
+     "abbr": "AAOD",
+     "full": "Average Absolute Odds Difference"
+    },
+    {
+     "abbr": "ART",
+     "full": "Toolbox"
+    },
+    {
+     "abbr": "ASR",
+     "full": "Attack Success Rate"
+    },
+    {
+     "abbr": "CTF",
+     "full": "Capture-The-Flag"
+    },
+    {
+     "abbr": "DI",
+     "full": "Disparate Impact"
+    },
+    {
+     "abbr": "EOD",
+     "full": "Equal Opportunity Difference"
+    },
+    {
+     "abbr": "GOAT",
+     "full": "Tester"
+    },
+    {
+     "abbr": "ISS",
+     "full": "Information Security Services"
+    },
+    {
+     "abbr": "JSR",
+     "full": "Jailbreak Success Rate"
+    },
+    {
+     "abbr": "LLM",
+     "full": "Observability in Large Language Model"
+    },
+    {
+     "abbr": "LMM",
+     "full": "Large Multi-Modal Model"
+    },
+    {
+     "abbr": "MDLC",
+     "full": "Model Development Life Cycle"
+    },
+    {
+     "abbr": "MRM",
+     "full": "Model Risk Management"
+    },
+    {
+     "abbr": "PAIR",
+     "full": "Refinement"
+    },
+    {
+     "abbr": "QA",
+     "full": "Answering"
+    },
+    {
+     "abbr": "RAG",
+     "full": "Retrieval-Augmented Generation"
+    },
+    {
+     "abbr": "RAI",
+     "full": "Responsible AI"
+    },
+    {
+     "abbr": "SPD",
+     "full": "Statistical Parity Difference"
+    },
+    {
+     "abbr": "UEBA",
+     "full": "Analytics"
+    }
+   ]
+  },
+  {
+   "doc": "E1 — AI Safety Red Teaming v1.10 (EN)",
+   "kind": "guide",
+   "terms": [
+    {
+     "term": "Framework",
+     "def": "Generative Artificial Intelligence Profile.\""
+    }
+   ],
+   "abbrevs": [
+    {
+     "abbr": "AIBOM",
+     "full": "AI Bill of Materials"
+    },
+    {
+     "abbr": "AIM",
+     "full": "AI Incidents Monitor"
+    },
+    {
+     "abbr": "API",
+     "full": "Application Programming Interface"
+    },
+    {
+     "abbr": "ATLAS",
+     "full": "Threat Landscape for Artificial Intelligence Systems"
+    },
+    {
+     "abbr": "IDS",
+     "full": "If an Intrusion Detection System"
+    },
+    {
+     "abbr": "LLM",
+     "full": "Large Language Models"
+    },
+    {
+     "abbr": "MLSE",
+     "full": "Machine Learning Systems Engineering"
+    },
+    {
+     "abbr": "PMBOK",
+     "full": "Project Management Body of Knowledge"
+    },
+    {
+     "abbr": "RAG",
+     "full": "The LLM system can use Retrieval-Augmented Generation"
+    },
+    {
+     "abbr": "RLHF",
+     "full": "Reinforcement Learning from Human Feedback"
+    },
+    {
+     "abbr": "SBOM",
+     "full": "Software Bill of Materials"
+    }
+   ]
+  },
+  {
+   "doc": "ISO/IEC FDIS 5338:2023 — AI system life cycle processes",
+   "kind": "standard",
+   "terms": [
+    {
+     "term": "knowledge acquisition",
+     "def": "process of locating, collecting, and refining knowledge and converting it into a form that can be further processed by a knowledge-based system an important component of machine learning."
+    }
+   ],
+   "abbrevs": [
+    {
+     "abbr": "AI",
+     "full": "Artificial intelligence"
+    },
+    {
+     "abbr": "CM",
+     "full": "The purpose of the configuration management"
+    },
+    {
+     "abbr": "LASIK",
+     "full": "Keratomileusis"
+    },
+    {
+     "abbr": "ML",
+     "full": "Systems Using Machine Learning"
+    },
+    {
+     "abbr": "TBT",
+     "full": "Technical Barriers to Trade"
+    },
+    {
+     "abbr": "WTO",
+     "full": "World Trade Organization"
+    }
+   ]
+  },
+  {
+   "doc": "NIST AI 100-1 — AI Risk Management Framework (AI RMF 1.0)",
+   "kind": "standard",
+   "terms": [
+    {
+     "term": "GOVERN",
+     "def": "AI RMF 함수: 조직 전반에 위험관리 문화를 배양하고 정책·프로세스·책임을 수립하는 교차 기능."
+    },
+    {
+     "term": "MAP",
+     "def": "AI RMF 함수: AI 시스템의 맥락을 설정하고 관련 위험을 식별·프레이밍."
+    },
+    {
+     "term": "MEASURE",
+     "def": "AI RMF 함수: 식별된 위험을 분석·평가·벤치마크·모니터링(정량·정성)."
+    },
+    {
+     "term": "MANAGE",
+     "def": "AI RMF 함수: 위험에 우선순위를 매겨 자원을 배분하고 대응·복구를 실행."
+    },
+    {
+     "term": "Valid and Reliable",
+     "def": "신뢰가능 AI 특성: 의도된 사용에서 정확·견고하게 작동(다른 특성의 전제)."
+    },
+    {
+     "term": "Safe",
+     "def": "신뢰가능 AI 특성: 인간 생명·건강·재산·환경을 위태롭게 하지 않음."
+    },
+    {
+     "term": "Secure and Resilient",
+     "def": "신뢰가능 AI 특성: 공격·비정상 상황에 견디고 회복."
+    },
+    {
+     "term": "Accountable and Transparent",
+     "def": "신뢰가능 AI 특성: 정보 가용성과 책임 귀속."
+    },
+    {
+     "term": "Explainable and Interpretable",
+     "def": "신뢰가능 AI 특성: 메커니즘과 출력 의미를 이해 가능."
+    },
+    {
+     "term": "Privacy-Enhanced",
+     "def": "신뢰가능 AI 특성: 익명성·기밀성·통제 등 프라이버시 보호."
+    },
+    {
+     "term": "Fair with Harmful Bias Managed",
+     "def": "신뢰가능 AI 특성: 형평성과 유해 편향 관리."
+    }
+   ],
+   "abbrevs": [
+    {
+     "abbr": "RMF",
+     "full": "Risk Management Framework"
+    },
+    {
+     "abbr": "AI RMF",
+     "full": "AI Risk Management Framework"
+    },
+    {
+     "abbr": "AI",
+     "full": "Artificial intelligence"
+    },
+    {
+     "abbr": "OECD",
+     "full": "Organisation for Economic Co-operation and Development"
+    },
+    {
+     "abbr": "TEVV",
+     "full": "Validation"
+    }
+   ]
+  },
+  {
+   "doc": "NIST AI 600-1 — Generative AI Profile (AI RMF)",
+   "kind": "standard",
+   "terms": [
+    {
+     "term": "CBRN Information or Capabilities",
+     "def": "GenAI 위험: 화학·생물·방사능·핵 무기 관련 정보 접근성 저하 또는 설계 지원 증대."
+    },
+    {
+     "term": "Confabulation",
+     "def": "GenAI 위험: 사용자를 오도하는 확신에 찬 허위·오류 콘텐츠 생성(환각)."
+    },
+    {
+     "term": "Dangerous, Violent, or Hateful Content",
+     "def": "GenAI 위험: 폭력·증오·자해 선동 등 유해 콘텐츠 생성 용이화."
+    },
+    {
+     "term": "Data Privacy",
+     "def": "GenAI 위험: 동의 없는 개인정보 유출·추론·재식별 등 프라이버시 침해."
+    },
+    {
+     "term": "Environmental Impacts",
+     "def": "GenAI 위험: 학습·운영의 높은 자원·에너지 소비로 인한 환경 영향."
+    },
+    {
+     "term": "Harmful Bias or Homogenization",
+     "def": "GenAI 위험: 역사·사회적 편향의 증폭, 동질화로 인한 차별·왜곡."
+    },
+    {
+     "term": "Human-AI Configuration",
+     "def": "GenAI 위험: 과신뢰·의인화·부적절한 신뢰 등 인간-AI 상호작용 위험."
+    },
+    {
+     "term": "Information Integrity",
+     "def": "GenAI 위험: 대규모 허위·오정보 생성·확산으로 정보 생태계 훼손."
+    },
+    {
+     "term": "Information Security",
+     "def": "GenAI 위험: 공격 표면 확대, 해킹·악성코드 생성 지원 등 보안 위험."
+    },
+    {
+     "term": "Intellectual Property",
+     "def": "GenAI 위험: 저작권·영업비밀 등 지식재산 침해 콘텐츠 생성."
+    },
+    {
+     "term": "Obscene, Degrading, Abusive Content",
+     "def": "GenAI 위험: CSAM·비동의 친밀 이미지(NCII) 등 음란·학대 콘텐츠."
+    },
+    {
+     "term": "Value Chain and Component Integration",
+     "def": "GenAI 위험: 제3자 구성요소·데이터의 불투명성으로 인한 공급망 위험."
+    }
+   ],
+   "abbrevs": [
+    {
+     "abbr": "GAI",
+     "full": "Generative AI"
+    },
+    {
+     "abbr": "AI",
+     "full": "Generative artiﬁcial intelligence"
+    },
+    {
+     "abbr": "AIRC",
+     "full": "Responsible AI Resource Center"
+    },
+    {
+     "abbr": "EO",
+     "full": "Executive Order"
+    },
+    {
+     "abbr": "GAI",
+     "full": "Generative AI"
+    },
+    {
+     "abbr": "NIST",
+     "full": "The National Institute of Standards and Technology"
+    },
+    {
+     "abbr": "POC",
+     "full": "Points-of-Contact"
+    },
+    {
+     "abbr": "XAI",
+     "full": "Apply explainable AI"
+    }
+   ]
+  },
+  {
+   "doc": "Singapore MGF for Agentic AI v1.5 (IMDA, 2026)",
+   "kind": "guide",
+   "terms": [
+    {
+     "term": "Agentic AI",
+     "def": "목표를 위해 자율적으로 계획·추론·행동하고 도구를 사용하는 AI 시스템(MGF 정의 맥락)."
+    },
+    {
+     "term": "Agentic Governance",
+     "def": "에이전트 AI의 자율성·도구사용·다중에이전트 상호작용에 대응하는 거버넌스 체계."
+    }
+   ],
+   "abbrevs": [
+    {
+     "abbr": "MGF",
+     "full": "Model AI Governance Framework"
+    },
+    {
+     "abbr": "IMDA",
+     "full": "Infocomm Media Development Authority"
+    },
+    {
+     "abbr": "CCS",
+     "full": "Singapore"
+    },
+    {
+     "abbr": "CDL",
+     "full": "City Developments Limited"
+    },
+    {
+     "abbr": "CSA",
+     "full": "Cyber Security Agency of Singapore"
+    },
+    {
+     "abbr": "GRC",
+     "full": "Risk and Compliance"
+    },
+    {
+     "abbr": "IPOS",
+     "full": "Intellectual Property Office of Singapore"
+    },
+    {
+     "abbr": "KBTG",
+     "full": "Baker Tilly Malaysia                    Technology Group"
+    },
+    {
+     "abbr": "MAS",
+     "full": "Monetary Authority of Singapore"
+    },
+    {
+     "abbr": "MCP",
+     "full": "Model Context Protocol"
+    },
+    {
+     "abbr": "MDDI",
+     "full": "Agency of Singapore                     Information"
+    },
+    {
+     "abbr": "MGF",
+     "full": "The Model AI Governance Framework"
+    },
+    {
+     "abbr": "MOE",
+     "full": "Ministry of Education"
+    },
+    {
+     "abbr": "QA",
+     "full": "Automated quality assurance"
+    },
+    {
+     "abbr": "TEE",
+     "full": "Trusted Execution Environment"
+    },
+    {
+     "abbr": "WEF",
+     "full": "See World Economic Forum"
+    }
+   ]
+  },
+  {
+   "doc": "CSA — Agentic AI Governance: NIST Standards for Autonomous Systems",
+   "kind": "guide",
+   "terms": [],
+   "abbrevs": [
+    {
+     "abbr": "AICM",
+     "full": "AI Controls Matrix"
+    },
+    {
+     "abbr": "AIMS",
+     "full": "Artificial Intelligence Management System"
+    },
+    {
+     "abbr": "ANS",
+     "full": "Agent Naming Service"
+    },
+    {
+     "abbr": "CAISI",
+     "full": "Center for AI Standards and Innovation"
+    },
+    {
+     "abbr": "EU",
+     "full": "Regulation"
+    }
+   ]
+  }
+ ]
+}
