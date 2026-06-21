@@ -1660,6 +1660,7 @@ async function renderNews(){
 function renderChangelog(){
   const el=document.getElementById("v-changelog");if(!el)return;
   const CHANGELOG=RT_CHANGELOG=[
+    ["2026-06-22","메뉴","🛰️ ATLAS Matrix 탭 — MITRE ATLAS Matrix for AI Systems(v5.6.0) 체계적 통합. 16 전술 × 111 top-level + 74 서브기법 공식 구조, ● = 코퍼스 보유(top 83/111·sub 26/74), 기법→atlas.mitre.org 공식 페이지·코퍼스 보유분→#entity. atlas 노드 115개 공식 명칭 보강"],
     ["2026-06-21","보강","대규모 커버리지 갭 보강(다중 분석가) — attack_technique 25→142(ATLAS top-level 63/63·CSA 84·OWASP 19·AISI 11 추출), CVE 16→25(cve.org 공식 검증), incident 23→50(AI Incident DB·OECD AIM 랜드마크), MIT risk 24/24 서브도메인, 표준 18→42(dangling 해소). 논문마이닝으로 신규 attack/method/teaming/benchmark/harm/hazard 반영. 그래프 1562→2259노드, dangling 0"],
     ["2026-06-21","분류","🆕 신규 분류(추가필요) — 현 taxonomy에 없던 신규 위협 9종(membership-inference·model-inversion·evasion·DoS·training-data-poisoning·supply-chain·memory-poisoning·alignment-tampering·watermark-evasion) + 신규 수집 표준을 candidate/gapfill 표식+provenance로 명시 포함(Overview 카드 + entity 배지)"],
     ["2026-06-21","정직성","헤더 상태 배지를 실제 동작 반영으로 — 정적 핵심(no CDN·추적 없음)일 때 '● OFFLINE · NO TRACKING', 서버리스 프록시로 AI 종합·시맨틱이 켜지면 '● SECURE PROXY'(키 서버측). 마우스오버로 상세 설명"],
