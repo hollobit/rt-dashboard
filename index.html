@@ -201,6 +201,7 @@
   </section>
   <section class="view" id="v-tax"></section>
   <section class="view" id="v-atlasmatrix"></section>
+  <section class="view" id="v-mitreattack"></section>
   <section class="view" id="v-owaspllm"></section>
   <section class="view" id="v-nistrmf"></section>
   <section class="view" id="v-nistgenai"></section>
@@ -461,7 +462,7 @@ async function load(){
     renderAll(); // overview 재렌더(🆕 신규분류 카드 등 GRAPH.nodes 의존분 반영)
     renderLifecycle();renderRiskMap();renderProv();renderPapers();renderCards();renderAutoRedteam();
     renderChangelog();renderNews();renderGuideline42119();renderJapanAISI();renderOWASP();renderCSA();
-    renderGuidelineTerms();renderGenAIMethods();renderAtlasMatrix();renderOwaspLLM();renderNistRmf();renderNistGenai();renderFMF();buildGuideIndex();nodeizeGuidelines();
+    renderGuidelineTerms();renderGenAIMethods();renderAtlasMatrix();renderMitreAttack();renderOwaspLLM();renderNistRmf();renderNistGenai();renderFMF();buildGuideIndex();nodeizeGuidelines();
     // 그래프 의존 탭(graph/entity/papers/prov 등)이 열려있으면 풀 그래프로 재렌더
     selectTab(location.hash.slice(1)||"overview");
     loadSearchData();
@@ -605,6 +606,9 @@ async function buildGuideIndex(){
   if(g)(g.tactics||[]).forEach(t=>{add("ATLAS "+t.id+" "+t.name,t.name+" tactic 전술","#atlasmatrix","ATLAS 전술");
     (t.techniques||[]).forEach(it=>{add(it.id+" "+it.name,it.name+" "+it.id+" ATLAS "+t.name,"#atlasmatrix","ATLAS: "+t.name);
       (it.subs||[]).forEach(s=>add(s.id+" "+s.name,s.name+" "+s.id+" ATLAS","#atlasmatrix","ATLAS 서브"));});});
+  g=await grab("data/mitre-attack.json");
+  if(g){(g.attck_tactics||[]).forEach(t=>add("ATT&CK "+t.id+" "+t.name,t.name+" "+t.id+" MITRE ATT&CK 전술","#mitreattack","ATT&CK 전술"));
+    (g.bridge_techniques||[]).forEach(b=>add(b.attck_id+" "+b.atlas_name,b.attck_id+" "+b.atlas_name+" ATT&CK ATLAS","#mitreattack","ATT&CK↔ATLAS"));}
   g=await grab("data/owasp-llm-top10.json");
   if(g)(g.items||[]).forEach(it=>add(it.id+" "+it.name,it.name+" "+it.id+" OWASP LLM "+(it.mapped||[]).map(e=>e.label).join(" "),"#owaspllm","OWASP LLM Top 10"));
   g=await grab("data/nist-ai-rmf.json");
@@ -725,14 +729,14 @@ function buildKPIs(){
     ["standards",byType("standard_item").length],["candidates",(byType("standard_item").filter(x=>x.candidate)).length]];
   document.getElementById("kpis").innerHTML=k.map(([l,v])=>`<div class="kpi"><b>${v||0}</b><span>${l}</span></div>`).join("");
 }
-const TABS=[["overview","Overview"],["changelog","📋 Change Log"],["lifecycle","🔄 AI Lifecycle"],["prov","🔬 RT Provenance"],["papers","📚 Papers"],["search","🔎 GraphRAG Search"],["news","📰 News"],["graph","Knowledge Graph"],["tax","Threat×Attack×ATLAS"],["atlasmatrix","🛰️ ATLAS Matrix"],["owaspllm","🦉 OWASP LLM Top 10"],["nistrmf","🏛️ NIST AI RMF"],["nistgenai","🧬 NIST GenAI Profile"],["fmf","🛡️ FMF Capability Assess"],
+const TABS=[["overview","Overview"],["changelog","📋 Change Log"],["lifecycle","🔄 AI Lifecycle"],["prov","🔬 RT Provenance"],["papers","📚 Papers"],["search","🔎 GraphRAG Search"],["news","📰 News"],["graph","Knowledge Graph"],["tax","Threat×Attack×ATLAS"],["atlasmatrix","🛰️ ATLAS Matrix"],["mitreattack","🗡️ MITRE ATT&CK"],["owaspllm","🦉 OWASP LLM Top 10"],["nistrmf","🏛️ NIST AI RMF"],["nistgenai","🧬 NIST GenAI Profile"],["fmf","🛡️ FMF Capability Assess"],
   ["method","Red Teaming Methods"],["autoredteam","🎯 자동 레드티밍"],["bench","Benchmarks"],["risk","Risk & Controls"],["riskmap","⚠️ Risk Map"],
   ["frontier","🧭 Frontier Safety"],["ttp","TTP: Tactic→Proc"],["onto","Ontology: Vuln→Harm"],["std","Standards & Gaps"],["sector","Sector Red Teaming"],["disc","Disclosure / Nat-Sec"],["xwalk","🔗 External Crosswalk"],["cards","🏷️ 제품 평가"],["trend","Trends"],["g42119","📑 ISO/IEC 42119-7"],["japanaisi","🇯🇵 Japan AISI"],["owasp","🦉 OWASP GenAI"],["csa","☁️ CSA Agentic"],["gterms","📖 용어"]];
 // 2단 네비: 5개 허브 → 하위 탭 (사용자 의도 기준 그룹화)
 const HUBS=[
   ["home","🏠 시작",["overview","changelog"]],
   ["find","🔍 찾기·탐색",["search","news","papers","graph","prov"]],
-  ["threat","⚔️ 위협·공격",["tax","atlasmatrix","owaspllm","ttp","frontier","onto"]],
+  ["threat","⚔️ 위협·공격",["tax","atlasmatrix","mitreattack","owaspllm","ttp","frontier","onto"]],
   ["riskhub","🛡️ 리스크·방법",["riskmap","risk","method","autoredteam","bench","sector","lifecycle"]],
   ["gov","📋 거버넌스·동향",["std","nistrmf","nistgenai","fmf","disc","xwalk","cards","trend"]],
   ["guide","📐 가이드라인",["g42119","japanaisi","owasp","csa","gterms"]],
@@ -1534,6 +1538,25 @@ async function renderNistRmf(){
       <p class="small muted">AI 위험관리 4대 함수(GOVERN·MAP·MEASURE·MANAGE) 공식 구조에 <b>우리 코퍼스의 통제·리스크·findings</b>를 매핑(총 <b>${tot}</b>건). 서브카테고리 코드는 NIST AI 100-1 기준. 칩 클릭 → 통합 상세(#entity). AI 수명주기↔RMF 매핑은 <a href="#lifecycle">🔄 AI Lifecycle</a> 참조.</p></div>
     ${d.functions.map(fcard).join("")}`;
 }
+// 🗡️ MITRE ATT&CK — ATLAS↔ATT&CK 다리(ATLAS가 재사용하는 ATT&CK Enterprise 기법) + 코퍼스 커버리지
+let MITRE_ATTACK=null;
+async function renderMitreAttack(){
+  const el=document.getElementById("v-mitreattack");if(!el)return;
+  if(!MITRE_ATTACK){try{MITRE_ATTACK=await (await fetch("data/mitre-attack.json")).json();}catch(e){el.innerHTML='<div class="card"><p class="muted">mitre-attack.json 로드 실패</p></div>';return;}}
+  const d=MITRE_ATTACK;const cov=d.bridge_techniques.filter(b=>b.covered).length;
+  const tac=t=>`<span class="tag" title="ATT&CK ${esc(t.id)}">${esc(t.name)}</span>`;
+  const brow=b=>`<tr><td><a href="${esc(b.attck_url||'https://attack.mitre.org/techniques/'+b.attck_id)}" target="_blank">${esc(b.attck_id)}↗</a></td>
+    <td><a href="https://atlas.mitre.org/techniques/${esc(b.atlas_id)}" target="_blank" style="${b.covered?'color:var(--acc2);font-weight:600':''}">${b.covered?'● ':''}${esc(b.atlas_name)}</a> <span class="muted small">${esc(b.atlas_id.replace('AML.',''))}</span></td>
+    <td>${(b.atlas_tactics||[]).map(x=>`<span class="muted small">${esc(x)}</span>`).join(", ")}</td>
+    <td>${b.our_atk&&b.our_atk.length?`<a class="tag" href="#entity:${encodeURIComponent(b.our_atk[0])}">코퍼스↗</a>`:'—'}</td></tr>`;
+  el.innerHTML=`<div class="card"><h3>🗡️ MITRE ATT&CK <span class="muted small">${esc(d.version||'Enterprise')} · <a href="${esc(d.source)}" target="_blank">attack.mitre.org↗</a></span></h3>
+      <p class="small">${esc(d.relation||'')}</p>
+      <div style="margin:8px 0"><b class="small">ATT&CK Enterprise 전술(ATLAS 공유 14):</b><br>${d.attck_tactics.map(tac).join(" ")}</div>
+      <div style="margin:6px 0"><b class="small" style="color:var(--acc)">+ ATLAS 고유 전술(AI 특화):</b> ${d.atlas_specific_tactics.map(t=>`<span class="tag" style="border-color:var(--acc);color:var(--acc)">${esc(t.name)}</span>`).join(" ")}</div></div>
+    <div class="card"><h3>ATT&CK ↔ ATLAS 다리 기법 <span class="muted small">(ATLAS가 AI 맥락으로 재사용하는 ATT&CK 기법 ${d.bridge_techniques.length} · ● 코퍼스 보유 ${cov})</span></h3>
+      <p class="small muted">ATT&CK Enterprise 기법(좌)이 ATLAS 기법(우)으로 AI 시스템에 적용됨. ATT&CK→attack.mitre.org, ATLAS→atlas.mitre.org, 코퍼스 보유분→#entity.</p>
+      <table><tr><th>ATT&CK 기법</th><th>ATLAS 기법(AI 적용)</th><th>전술</th><th>코퍼스</th></tr>${d.bridge_techniques.map(brow).join("")}</table></div>`;
+}
 // 🦉 OWASP LLM Top 10 (2025) — 보존형 owasp-llm-top10.json을 공식 Top10 + 코퍼스 매핑 오버레이로 렌더
 let OWASP_LLM=null;
 async function renderOwaspLLM(){
@@ -1748,6 +1771,7 @@ function renderChangelog(){
   const CHANGELOG=RT_CHANGELOG=[
     ["2026-06-22","메뉴","표준·프레임워크 3종 체계적 통합 — 🏛️ NIST AI RMF(GOVERN/MAP/MEASURE/MANAGE 4함수+14서브카테고리·59 매핑), 🧬 NIST GenAI Profile(AI 600-1, 12 생성형AI 위험·56 매핑), 🛡️ FMF Frontier Capability Assessments(3 평가방법·4 능력도메인 CBRN/사이버/자율RnD/기만·개발사 6 프레임워크). 모두 공식 구조 + 코퍼스 매핑 오버레이"],
     ["2026-06-22","메뉴","🦉 OWASP LLM Top 10 탭 — OWASP Top 10 for LLM Applications(2025) 체계적 통합. 10 카테고리 공식 구조 + 코퍼스 매핑(위협·공격기법·취약점·리스크 62건), 제목→genai.owasp.org 공식 페이지·칩→#entity 상세"],
+    ["2026-06-22","메뉴","🗡️ MITRE ATT&CK 탭 — ATLAS↔ATT&CK 다리 체계적 통합. ATT&CK Enterprise 14 전술(ATLAS 공유)+AI 특화 2 전술, ATLAS가 AI 맥락으로 재사용하는 34 ATT&CK 기법(코퍼스 보유 20), ATT&CK→attack.mitre.org·ATLAS→atlas.mitre.org·코퍼스→#entity. GraphRAG 검색 포함"],
     ["2026-06-22","메뉴","🛰️ ATLAS Matrix 탭 — MITRE ATLAS Matrix for AI Systems(v5.6.0) 체계적 통합. 16 전술 × 111 top-level + 74 서브기법 공식 구조, ● = 코퍼스 보유(top 83/111·sub 26/74), 기법→atlas.mitre.org 공식 페이지·코퍼스 보유분→#entity. atlas 노드 115개 공식 명칭 보강"],
     ["2026-06-21","보강","대규모 커버리지 갭 보강(다중 분석가) — attack_technique 25→142(ATLAS top-level 63/63·CSA 84·OWASP 19·AISI 11 추출), CVE 16→25(cve.org 공식 검증), incident 23→50(AI Incident DB·OECD AIM 랜드마크), MIT risk 24/24 서브도메인, 표준 18→42(dangling 해소). 논문마이닝으로 신규 attack/method/teaming/benchmark/harm/hazard 반영. 그래프 1562→2259노드, dangling 0"],
     ["2026-06-21","분류","🆕 신규 분류(추가필요) — 현 taxonomy에 없던 신규 위협 9종(membership-inference·model-inversion·evasion·DoS·training-data-poisoning·supply-chain·memory-poisoning·alignment-tampering·watermark-evasion) + 신규 수집 표준을 candidate/gapfill 표식+provenance로 명시 포함(Overview 카드 + entity 배지)"],
