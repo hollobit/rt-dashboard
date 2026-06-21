@@ -325,6 +325,7 @@ function apiBase(){
   if(h==="127.0.0.1"||h==="localhost"||h==="0.0.0.0"||h==="")return ""; // 로컬: 상대 → llm_proxy.py
   return (RT_CONFIG&&RT_CONFIG.apiBase?String(RT_CONFIG.apiBase):"").replace(/\/$/,""); // 원격: Worker
 }
+function proxyLabel(){return apiBase()?"🔐 서버리스 Worker(키 비노출)":"🔐 .env 서버 프록시";}
 async function loadLLMProxyStatus(){try{const r=await fetch(apiBase()+"/api/llm/status",{cache:"no-store"});if(r.ok)LLM_PROXY=await r.json();}catch(e){LLM_PROXY=null;}}
 // ---- Semantic GraphRAG (임베딩 기반): 프록시 /api/embed + 빌드타임 사전계산 벡터 ----
 // 오프라인-우선: 프록시(Ollama bge-m3 등) 가용 시 시맨틱, 정적 서버면 lexical 폴백.
@@ -379,7 +380,7 @@ async function aiSynth(){
   if(!(LLM_PROXY&&LLM_PROXY.configured)){
     if(box)box.innerHTML='<p class="small" style="color:var(--acc)">🔐 LLM 보안 프록시 미설정. <code>dashboard/.env</code>에 키 입력 후 <code>python3 dashboard/llm_proxy.py</code>로 실행하면 활성화됩니다(키는 서버측 .env에만, 브라우저 미노출). <b>⚙️ LLM</b> 버튼 참고. 오프라인 기본: 위 graph 종합 결과 사용.</p>';return;}
   const lbl=LLM_LABEL[LLM_PROXY.provider]||LLM_PROXY.provider;
-  if(box)box.innerHTML=`<p class="small muted">🤖 AI 종합 분석 생성 중… (${esc(lbl)} · ${esc(LLM_PROXY.model||"")} · 🔐 서버 프록시)</p>`;
+  if(box)box.innerHTML=`<p class="small muted">🤖 AI 종합 분석 생성 중… (${esc(lbl)} · ${esc(LLM_PROXY.model||"")} · ${proxyLabel()})</p>`;
   try{
     // 브라우저는 질문+컨텍스트만 전송(키 없음). 프록시가 .env 키로 업스트림 호출.
     const r=await fetch(apiBase()+"/api/llm",{method:"POST",headers:{"Content-Type":"application/json"},
@@ -387,7 +388,7 @@ async function aiSynth(){
     const j=await r.json();
     if(!r.ok||j.error)throw new Error(j.error||("HTTP "+r.status));
     LAST_AI={query:LAST_CTX.query,provider:lbl,model:LLM_PROXY.model||"",md:j.text||""};
-    if(box)box.innerHTML=`<div class="card" style="border-top:2px solid var(--acc2)"><div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap"><h4 style="margin:0">🤖 AI 종합 분석 <span class="muted small">(${esc(lbl)} · ${esc(LLM_PROXY.model||"")} · 🔐 .env 서버 프록시)</span></h4><span style="margin-left:auto"><button onclick="exportMd()" class="tag" style="cursor:pointer">⬇ Markdown</button> <button onclick="exportPdf()" class="tag" style="cursor:pointer">⬇ PDF</button></span></div><div class="small rt-md" style="line-height:1.6;margin-top:6px">${mdToHtml(j.text||"")}</div></div>`;
+    if(box)box.innerHTML=`<div class="card" style="border-top:2px solid var(--acc2)"><div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap"><h4 style="margin:0">🤖 AI 종합 분석 <span class="muted small">(${esc(lbl)} · ${esc(LLM_PROXY.model||"")} · ${proxyLabel()})</span></h4><span style="margin-left:auto"><button onclick="exportMd()" class="tag" style="cursor:pointer">⬇ Markdown</button> <button onclick="exportPdf()" class="tag" style="cursor:pointer">⬇ PDF</button></span></div><div class="small rt-md" style="line-height:1.6;margin-top:6px">${mdToHtml(j.text||"")}</div></div>`;
   }catch(e){if(box)box.innerHTML=`<p class="small" style="color:#ff6b6b">LLM 호출 실패: ${esc(String(e))}<br>확인: .env 키·프로바이더, 프록시 로그, (Ollama local은 데몬 실행).</p>`;}
 }
 // 매칭 없음 패널: 수집 사이클 안내 + AI 직접 분석 영역
