@@ -751,9 +751,26 @@ function selectTab(spec){
 }
 // #list:<type>[:candidate] — overview stat 타일 클릭 시 해당 종류의 항목 목록(→ #entity 상세).
 // FIND(findings.json, 임계 경로 데이터) 기반이라 풀 graph 로드 전에도 동작.
+function isCVE(r){return !!(r&&(r.cve||/^vuln-cve-/i.test(r.id||"")||/\bCVE-\d{4}-\d+/.test(r.cve||"")));}
 function renderList(arg){
   const el=document.getElementById("v-list");if(!el)return;
   const parts=String(arg||"").split(":");const type=parts[0];const flag=parts[1];
+  // CVE는 vulnerability 중 CVE 보유분의 별도 분류
+  if(type==="cve"){
+    let recs=byType("vulnerability").filter(isCVE).slice().sort((a,b)=>String(b.cve||b.id).localeCompare(String(a.cve||a.id)));
+    el.innerHTML=`<div class="card"><div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+        <h3 style="margin:0">🔐 보안 CVE <span class="muted small">(${recs.length}) · cve.org/NVD 검증</span></h3>
+        <span class="muted small">AI/ML 프레임워크·서빙·에이전트 취약점 · 각 항목 → 통합 상세(#entity)</span>
+        <a class="tag" style="margin-left:auto" href="#overview">← Overview</a></div>
+      ${recs.length?recs.map(r=>{const cve=r.cve||(r.id||"").replace(/^vuln-/,"").toUpperCase();const u=`https://www.cve.org/CVERecord?id=${esc(cve)}`;
+        const sev=r.severity?`<span class="tag">${esc(r.severity)}</span>`:"";
+        return `<div style="margin:6px 0;padding:7px 0;border-bottom:1px solid var(--border)">
+          <a href="#entity:${encodeURIComponent(r.id)}" style="font-weight:600;color:var(--acc2);text-decoration:none">${esc(r.title||r.id)}</a> ↗
+          <a class="tag" href="${u}" target="_blank" title="cve.org 레코드">${esc(cve)} ↗</a>${sev}${r.disclosure?`<span class="tag">${esc(r.disclosure)}</span>`:""}
+          ${r.description?`<div class="small muted" style="margin-top:3px">${esc(String(r.description).slice(0,180))}</div>`:""}</div>`;}).join("")
+        :'<p class="muted">CVE 항목 없음</p>'}</div>`;
+    return;
+  }
   let recs=byType(type).slice();
   let title=ENTITY_KIND_LABEL[type]||ENTITY_KIND_LABEL[type.replace(/_item$/,"")]||type; // standard_item→표준
   if(flag==="candidate"){recs=recs.filter(x=>x.candidate);title+=" — 표준 후보(candidate)";}
@@ -797,8 +814,10 @@ function renderAll(){
   // stat tiles — 숫자 클릭 시 해당 목록(#list:<type>) 또는 지식그래프(#graph)로 이동.
   // 카운트는 GRAPH.stats(경량 graph-meta) 기반 → 풀 graph.json 로드 전에도 정확.
   const nc=GRAPH.stats.node_count||(GRAPH.nodes||[]).length, ec=GRAPH.stats.edge_count||(GRAPH.edges||[]).length;
+  const cveCount=byType("vulnerability").filter(isCVE).length;
   const stats=[["nodes",nc,"#graph"],["edges",ec,"#graph"],["findings",allFind.length,"#list:finding"],
     ["incidents",byType("incident").length,"#list:incident"],["vulnerabilities",byType("vulnerability").length,"#list:vulnerability"],
+    ["CVE",cveCount,"#list:cve"],
     ["attack techniques",byType("attack_technique").length,"#list:attack_technique"],["risks",byType("risk").length,"#list:risk"],
     ["standards",byType("standard_item").length,"#list:standard_item"],["candidates",byType("standard_item").filter(x=>x.candidate).length,"#list:standard_item:candidate"]];
   const statHtml=`<div class="statrow">${stats.map(([l,v,h])=>`<a class="stat" href="${h}" style="text-decoration:none;cursor:pointer" title="${esc(l)} 목록 보기 →"><div class="v" style="color:var(--acc)">${v}</div><div class="l">${esc(l)} ↗</div></a>`).join("")}</div>`;
