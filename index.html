@@ -410,39 +410,61 @@ async function aiSynthNoCorpus(){
 }
 
 async function load(){
-  try{GRAPH=await (await fetch("data/graph.json")).json();}catch(e){console.warn("graph.json",e);}
-  try{FIND=await (await fetch("data/findings.json")).json();}catch(e){console.warn("findings.json",e);}
-  try{const S=await (await fetch("data/sources.json")).json();if(Array.isArray(S))FIND=FIND.concat(S.map(s=>({...s,type:s.type||"source"})));}catch(e){console.warn("sources.json (optional)",e);}
-  try{RAG=(await (await fetch("data/graphrag/index.jsonl")).text()).trim().split("\n").filter(Boolean).map(JSON.parse);}catch(e){console.warn("graphrag index",e);}
-  try{COMM=await (await fetch("data/graphrag/community_reports.json")).json();}catch(e){console.warn("community reports",e);}
-  try{const sj=await (await fetch("data/sota.json")).json();SOTA=sj.benchmarks||[];SOTA_URL=sj.url||SOTA_URL;}catch(e){console.warn("sota.json (optional)",e);}
-  await loadRuns();
-  await loadConfig(); // 서버리스 프록시 URL(gh-pages) 로드 — apiBase() 가 status/llm/embed 호출에 사용
+  const J=async u=>{try{return await (await fetch(u)).json();}catch(e){console.warn(u,e);return null;}};
+  // ── 임계 경로: 첫 화면(KPI·네비·overview·trend)에 필요한 데이터만 병렬 fetch ──
+  const [g,find,src,sj]=await Promise.all([
+    J("data/graph.json"), J("data/findings.json"), J("data/sources.json"), J("data/sota.json")]);
+  if(g)GRAPH=g;
+  FIND=Array.isArray(find)?find:[];
+  if(Array.isArray(src))FIND=FIND.concat(src.map(s=>({...s,type:s.type||"source"})));
+  if(sj){SOTA=sj.benchmarks||[];SOTA_URL=sj.url||SOTA_URL;}
+  await Promise.all([loadRuns(), loadConfig()]);
   GRAPH.nodes=GRAPH.nodes||[];GRAPH.edges=GRAPH.edges||[];GRAPH.stats=GRAPH.stats||{};GRAPH.trends=GRAPH.trends||{};
   document.getElementById("rundate").textContent="Run: "+(GRAPH.generated||"unknown");
-  buildKPIs();buildNav();renderAll();renderLifecycle();renderRiskMap();renderProv();renderPapers();renderCards();renderAutoRedteam();renderChangelog();renderNews();renderGuideline42119();renderJapanAISI();renderOWASP();renderCSA();renderGuidelineTerms();renderGenAIMethods();buildGuideIndex();nodeizeGuidelines();loadLLMProxyStatus();loadEmbedStatus().then(()=>{if(!(EMBED_PROXY&&EMBED_PROXY.configured))return;
-    const el=document.getElementById("ragstatus");if(el)el.textContent=`${RAG.length} indexed units · ${COMM.length} communities · 🧬 시맨틱(${EMBED_PROXY.model})+lexical+graph`;
-    const q=document.getElementById("q");if(q&&q.value.trim())renderSearch(q.value.trim(),(document.getElementById("qmode")||{}).value||"auto");}); // 딥링크 진입 시 시맨틱으로 재검색
+  // ── 첫 화면 즉시 렌더(핵심만) ──
+  buildKPIs();buildNav();renderAll();
+  selectTab(location.hash.slice(1)||"overview");
   initSearch();
+  loadLLMProxyStatus();
+  loadEmbedStatus().then(()=>{updateRagStatus();
+    const q=document.getElementById("q");if(q&&q.value.trim()&&RAG.length)renderSearch(q.value.trim(),(document.getElementById("qmode")||{}).value||"auto");});
   const gq=document.getElementById("gq");
   if(gq){
     gq.addEventListener("keydown",e=>{if(e.key==="Enter"&&gq.value.trim())location.hash="search:"+encodeURIComponent(gq.value.trim());});
     const _ph=["검색…  예: GCG가 뭐지","멀티모달 탈옥 벤치마크","표준이 없는 위협","Rainbow Teaming 인용","에이전트 도구 남용 대응"];
     let _pi=0; setInterval(()=>{ if(document.activeElement!==gq){gq.placeholder=_ph[_pi=(_pi+1)%_ph.length];} },3500);
   }
-  selectTab(location.hash.slice(1)||"overview");
+  // ── 첫 페인트 후 지연: 숨김 탭 렌더 + 검색 데이터(RAG 1.36MB+COMM) + 보조 인덱스 ──
+  setTimeout(()=>{
+    renderLifecycle();renderRiskMap();renderProv();renderPapers();renderCards();renderAutoRedteam();
+    renderChangelog();renderNews();renderGuideline42119();renderJapanAISI();renderOWASP();renderCSA();
+    renderGuidelineTerms();renderGenAIMethods();buildGuideIndex();nodeizeGuidelines();
+    loadSearchData();
+  },0);
+}
+// 검색 데이터는 첫 페인트 후 로드(검색 탭/딥링크에서만 필요). 완료 후 상태·재렌더 갱신.
+async function loadSearchData(){
+  try{RAG=(await (await fetch("data/graphrag/index.jsonl")).text()).trim().split("\n").filter(Boolean).map(JSON.parse);}catch(e){console.warn("graphrag index",e);}
+  try{COMM=await (await fetch("data/graphrag/community_reports.json")).json();}catch(e){console.warn("community reports",e);}
+  updateRagStatus();
+  const q=document.getElementById("q");
+  if(q&&q.value.trim()&&location.hash.replace(/^#/,"").startsWith("search"))renderSearch(q.value.trim(),(document.getElementById("qmode")||{}).value||"auto");
 }
 
 // ---- GraphRAG client-side search (lexical + entity + 1-hop graph expansion) ----
 function initSearch(){
   const q=document.getElementById("q"),mode=document.getElementById("qmode");
-  document.getElementById("ragstatus").textContent=RAG.length
-    ? `${RAG.length} indexed units · ${COMM.length} communities · offline lexical+graph retrieval`
-    : "GraphRAG index not found — run graphrag-build. Falling back to findings text.";
+  updateRagStatus(); // RAG 지연 로드 중이면 "로딩 중" 표시
   const run=()=>renderSearch(q.value.trim(),mode.value);
   q.addEventListener("keydown",e=>{if(e.key==="Enter")run();});
   mode.addEventListener("change",run);
   renderSearch("","auto");
+}
+function updateRagStatus(){
+  const el=document.getElementById("ragstatus");if(!el)return;
+  if(!RAG.length){el.textContent="검색 인덱스 로딩 중…";return;}
+  const sem=(EMBED_PROXY&&EMBED_PROXY.configured)?` · 🧬 시맨틱(${EMBED_PROXY.model})+lexical+graph`:" · offline lexical+graph retrieval";
+  el.textContent=`${RAG.length} indexed units · ${COMM.length} communities${sem}`;
 }
 function tok(s){return (s||"").toLowerCase().match(/[a-z0-9]+|[가-힣]{2,}/g)||[];}
 function adj(id){return GRAPH.edges.filter(e=>(e.source.id||e.source)===id||(e.target.id||e.target)===id)
