@@ -317,13 +317,21 @@ const REL_LABEL={about:"관련(about)",cites:"인용(cites)","addressed-by":"대
 // 지원: openai · anthropic · gemini · ollama · ollama-cloud
 const LLM_LABEL={"openai":"OpenAI GPT","anthropic":"Anthropic Claude","gemini":"Google Gemini","ollama":"Ollama (local)","ollama-cloud":"Ollama (cloud)"};
 let LLM_PROXY=null; // {configured, provider, model} — 프록시 상태(키 없음)
-async function loadLLMProxyStatus(){try{const r=await fetch("/api/llm/status",{cache:"no-store"});if(r.ok)LLM_PROXY=await r.json();}catch(e){LLM_PROXY=null;}}
+// API 베이스 해석: 로컬은 상대경로(llm_proxy.py), gh-pages는 config.json의 서버리스 Worker URL.
+let RT_CONFIG=null;
+async function loadConfig(){try{RT_CONFIG=await (await fetch("config.json",{cache:"no-store"})).json();}catch(e){RT_CONFIG=null;}}
+function apiBase(){
+  const h=location.hostname;
+  if(h==="127.0.0.1"||h==="localhost"||h==="0.0.0.0"||h==="")return ""; // 로컬: 상대 → llm_proxy.py
+  return (RT_CONFIG&&RT_CONFIG.apiBase?String(RT_CONFIG.apiBase):"").replace(/\/$/,""); // 원격: Worker
+}
+async function loadLLMProxyStatus(){try{const r=await fetch(apiBase()+"/api/llm/status",{cache:"no-store"});if(r.ok)LLM_PROXY=await r.json();}catch(e){LLM_PROXY=null;}}
 // ---- Semantic GraphRAG (임베딩 기반): 프록시 /api/embed + 빌드타임 사전계산 벡터 ----
 // 오프라인-우선: 프록시(Ollama bge-m3 등) 가용 시 시맨틱, 정적 서버면 lexical 폴백.
 let EMBED_PROXY=null;        // {configured, provider, model}
 let EMB=null, EMB_LOADING=null;  // {ids, dim, mat:Float32Array(count*dim, L2-normed), byId:Map}
 let QVEC_CACHE={};           // query -> Float32Array (normalized)
-async function loadEmbedStatus(){try{const r=await fetch("/api/embed/status",{cache:"no-store"});if(r.ok)EMBED_PROXY=await r.json();}catch(e){EMBED_PROXY=null;}}
+async function loadEmbedStatus(){try{const r=await fetch(apiBase()+"/api/embed/status",{cache:"no-store"});if(r.ok)EMBED_PROXY=await r.json();}catch(e){EMBED_PROXY=null;}}
 async function ensureEmb(){
   if(EMB)return EMB;
   if(EMB_LOADING)return EMB_LOADING;
@@ -343,7 +351,7 @@ async function ensureEmb(){
 async function embedQuery(query){
   if(QVEC_CACHE[query])return QVEC_CACHE[query];
   try{
-    const r=await fetch("/api/embed",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({query})});
+    const r=await fetch(apiBase()+"/api/embed",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({query})});
     const j=await r.json();if(!r.ok||!j.vector)throw new Error(j.error||"no vector");
     const v=Float32Array.from(j.vector);let ss=0;for(let k=0;k<v.length;k++)ss+=v[k]*v[k];const inv=1/(Math.sqrt(ss)||1);for(let k=0;k<v.length;k++)v[k]*=inv;
     QVEC_CACHE[query]=v;return v;
@@ -374,7 +382,7 @@ async function aiSynth(){
   if(box)box.innerHTML=`<p class="small muted">🤖 AI 종합 분석 생성 중… (${esc(lbl)} · ${esc(LLM_PROXY.model||"")} · 🔐 서버 프록시)</p>`;
   try{
     // 브라우저는 질문+컨텍스트만 전송(키 없음). 프록시가 .env 키로 업스트림 호출.
-    const r=await fetch("/api/llm",{method:"POST",headers:{"Content-Type":"application/json"},
+    const r=await fetch(apiBase()+"/api/llm",{method:"POST",headers:{"Content-Type":"application/json"},
       body:JSON.stringify({query:LAST_CTX.query,context:LAST_CTX.text})});
     const j=await r.json();
     if(!r.ok||j.error)throw new Error(j.error||("HTTP "+r.status));
@@ -408,6 +416,7 @@ async function load(){
   try{COMM=await (await fetch("data/graphrag/community_reports.json")).json();}catch(e){console.warn("community reports",e);}
   try{const sj=await (await fetch("data/sota.json")).json();SOTA=sj.benchmarks||[];SOTA_URL=sj.url||SOTA_URL;}catch(e){console.warn("sota.json (optional)",e);}
   await loadRuns();
+  await loadConfig(); // 서버리스 프록시 URL(gh-pages) 로드 — apiBase() 가 status/llm/embed 호출에 사용
   GRAPH.nodes=GRAPH.nodes||[];GRAPH.edges=GRAPH.edges||[];GRAPH.stats=GRAPH.stats||{};GRAPH.trends=GRAPH.trends||{};
   document.getElementById("rundate").textContent="Run: "+(GRAPH.generated||"unknown");
   buildKPIs();buildNav();renderAll();renderLifecycle();renderRiskMap();renderProv();renderPapers();renderCards();renderAutoRedteam();renderChangelog();renderNews();renderGuideline42119();renderJapanAISI();renderOWASP();renderCSA();renderGuidelineTerms();renderGenAIMethods();buildGuideIndex();nodeizeGuidelines();loadLLMProxyStatus();loadEmbedStatus().then(()=>{if(!(EMBED_PROXY&&EMBED_PROXY.configured))return;

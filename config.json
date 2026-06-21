@@ -1,0 +1,4 @@
+{
+  "apiBase": "",
+  "_comment": "apiBase: 서버리스 LLM 프록시(Cloudflare Worker) URL. gh-pages에서 AI 종합 분석을 켜려면 wrangler deploy 후 받은 https://rt-llm-proxy.<계정>.workers.dev 를 넣고 ./deploy-pages.sh 재배포. 로컬(127.0.0.1/localhost)에서는 무시되고 llm_proxy.py(/api/llm)를 사용. 자세한 내용: serverless/README.md"
+}
