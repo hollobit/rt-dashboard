@@ -1091,7 +1091,7 @@ function renderAll(){
         atks.map(a=>[esc(a.name)+srcs(a),entChips([a.attack_class]),atlasChips(a.atlas),taxChips(a.realizes_threats),esc(a.access),benchChips(a.benchmarks)]))
         :`<p class="muted">No attack-technique records this cycle.</p>`)
     +card("💥 Harms", harms.length?tbl(["Harm","Category","Safety","Sev","Caused by threats","Sectors"],
-        harms.map(h=>[esc(h.title)+srcs(h),chip(h.category),chips(h.safety),heat(h.severity),entChips(h.caused_by_threats),entChips(h.sectors)]))
+        harms.map(h=>[esc(h.title)+srcs(h),chip(h.category),entChips(h.safety),heat(h.severity),entChips(h.caused_by_threats),entChips(h.sectors)]))
         :`<p class="muted">No harm records this cycle.</p>`);
 
   // DISCLOSURE / NATSEC
@@ -1136,9 +1136,16 @@ function chips(a){a=arr(a);return a.length?a.map(x=>`<span class="tag">${esc(x)}
 // 그래프 노드 조회(캐시) + entity 링크 칩 — id 보유 레코드/문자열을 #entity 상세로 연결, 라벨 자동 조회.
 let _NMAP=null;function nodeById(id){const n=(GRAPH.nodes||[]).length;if(!_NMAP||_NMAP._n!==n){_NMAP=new Map((GRAPH.nodes||[]).map(x=>[x.id,x]));_NMAP._n=n;}return _NMAP.get(id);}
 function nodeExists(id){return !!nodeById(id);}
-// 칩 문자열을 그래프 노드 id로 해소(원본 → bench:/atlas: 접두 시도). 못 찾으면 null.
+// 유일 라벨 → id 맵(캐시). 중복 라벨(논문 제목 등)은 모호해 제외.
+let _LMAP=null;function nodeByLabel(lbl){const cnt=(GRAPH.nodes||[]).length;
+  if(!_LMAP||_LMAP._n!==cnt){const seen={};_LMAP=new Map();_LMAP._n=cnt;
+    (GRAPH.nodes||[]).forEach(x=>{const l=x.label&&String(x.label).trim();if(l)seen[l]=(seen[l]||0)+1;});
+    (GRAPH.nodes||[]).forEach(x=>{const l=x.label&&String(x.label).trim();if(l&&seen[l]===1&&!_LMAP.has(l))_LMAP.set(l,x.id);});}
+  return _LMAP.get(String(lbl).trim())||null;}
+// 칩 문자열을 그래프 노드 id로 해소(원본 → bench:/atlas:/sector: 접두 → 유일 라벨). 못 찾으면 null.
 function resolveNodeId(raw){if(raw==null)return null;const s=String(raw);if(nodeById(s))return s;
-  for(const p of ["bench:","atlas:"]){if(nodeById(p+s))return p+s;}return null;}
+  for(const p of ["bench:","atlas:","sector:"]){if(nodeById(p+s))return p+s;}
+  return nodeByLabel(s);}
 function entChips(recs,color){recs=arr(recs);if(!recs.length)return '<span class="muted">—</span>';const st=color?` style="border-color:${color}"`:"";
   return recs.map(r=>{const raw=typeof r==="string"?r:(r&&(r.id!=null?r.id:r));const rid=resolveNodeId(raw);const n=rid?nodeById(rid):null;
     const lbl=esc(String((r&&r.label)||(n&&n.label)||(r&&r.name)||raw).slice(0,48));
