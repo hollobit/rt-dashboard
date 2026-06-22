@@ -544,7 +544,7 @@ async function renderSearch(query,mode){
     const gax=auxHits(qt,gctx);
     LAST_CTX={query,text:gctx.join("\n\n").slice(0,7000)};
     out.innerHTML=`<div class="card" style="background:var(--panel2)"><div style="display:flex;align-items:center"><b>주제 종합</b> <span class="muted small">${COMM.length} communities · 통합(news·changelog·papers·제품)</span><button onclick="aiSynth()" class="tag" style="margin-left:auto;cursor:pointer;border-color:var(--acc2);color:var(--acc2)">🤖 AI 종합</button></div><div id="ai-answer"></div></div>`+
-      (ranked.length?ranked.map(({c})=>`<div class="card" style="background:var(--panel2)"><h4 style="margin:0 0 4px;color:var(--pur)">${esc(c.title)} <span class="muted small">(${(c.entities||[]).length} entities)</span></h4><p class="small">${esc(c.summary)}</p><div>${chips((c.key_findings||[]).slice(0,6))}</div></div>`).join("")
+      (ranked.length?ranked.map(({c})=>`<div class="card" style="background:var(--panel2)"><h4 style="margin:0 0 4px;color:var(--pur)">${esc(c.title)} <span class="muted small">(${(c.entities||[]).length} entities)</span></h4><p class="small">${esc(c.summary)}</p><div>${entChips((c.key_findings||[]).slice(0,6))}</div></div>`).join("")
         :'<p class="muted">매칭 커뮤니티 없음.</p>')+guideHits(qt)+gax;
     return;
   }
@@ -1015,7 +1015,7 @@ function renderAll(){
   document.getElementById("v-risk").innerHTML=
     card("Risk chain (Threat→Hazard→Harm→Risk→Control→Residual)",
       tbl(["Threat","Hazardous situation → Harm","S","P","D","Residual","Controls"],
-        rk.map(r=>[chip(r.threat),esc(r.hazardous_situation)+" → "+esc(r.harm),
+        rk.map(r=>[entChips([r.threat]),esc(r.hazardous_situation)+" → "+esc(r.harm),
           heat(r.metrics&&r.metrics.severity),heat(r.metrics&&r.metrics.probability),heat(r.metrics&&r.metrics.detectability),
           esc(r.residual_risk),entChips(r.controls)])))
     +card("Controls",tbl(["Control","Addresses","Standards"],
@@ -1069,7 +1069,7 @@ function renderAll(){
     +card("Tactics", tacs.length?tbl(["Tactic","ATLAS","Achieved by (techniques)"],
         tacs.map(t=>[esc(t.name)+srcs(t),chip(t.atlas_tactic),entChips(t.achieved_by)])):`<p class="muted">No tactic records this cycle.</p>`)
     +card("Techniques", atks2.length?tbl(["Technique","Class","ATLAS ↗","Realizes threat","Access"],
-        atks2.map(a=>[esc(a.name)+srcs(a),chip(a.attack_class),atlasChips(a.atlas),taxChips(a.realizes_threats),esc(a.access)])):`<p class="muted">No technique records.</p>`)
+        atks2.map(a=>[esc(a.name)+srcs(a),entChips([a.attack_class]),atlasChips(a.atlas),taxChips(a.realizes_threats),esc(a.access)])):`<p class="muted">No technique records.</p>`)
     +card("Procedures (red-team test cases)", procs.length?tbl(["Procedure / test case","Implements","Tactic","Tests threat"],
         procs.map(p=>[esc(p.name)+"<br><span class='small muted'>"+esc(p.test_case||"")+"</span>"+srcs(p),entChips(p.implements_techniques),entChips(p.tactic),entChips(p.tests_threats)])):`<p class="muted">No procedure records this cycle.</p>`);
 
@@ -1088,7 +1088,7 @@ function renderAll(){
           entChips(v.threats),esc(v.severity),esc(v.disclosure),esc(v.patch_status),entChips(v.controls)]))
         :`<p class="muted">No vulnerability records this cycle.</p>`)
     +card("🎯 Attack techniques (named)", atks.length?tbl(["Technique","Class","ATLAS ↗","Realizes threat","Access","Benchmarks"],
-        atks.map(a=>[esc(a.name)+srcs(a),chip(a.attack_class),atlasChips(a.atlas),taxChips(a.realizes_threats),esc(a.access),benchChips(a.benchmarks)]))
+        atks.map(a=>[esc(a.name)+srcs(a),entChips([a.attack_class]),atlasChips(a.atlas),taxChips(a.realizes_threats),esc(a.access),benchChips(a.benchmarks)]))
         :`<p class="muted">No attack-technique records this cycle.</p>`)
     +card("💥 Harms", harms.length?tbl(["Harm","Category","Safety","Sev","Caused by threats","Sectors"],
         harms.map(h=>[esc(h.title)+srcs(h),chip(h.category),chips(h.safety),heat(h.severity),entChips(h.caused_by_threats),entChips(h.sectors)]))
@@ -1161,10 +1161,13 @@ function extLinkFor(id){if(!EXT_LINK)buildExtLink();const l=EXT_LINK[id]||EXT_LI
   if(ATTACK_EXT[id])return {url:ATLAS_BASE+"/techniques/"+ATTACK_EXT[id],fw:"MITRE ATLAS",ext:ATTACK_EXT[id]};
   if(/(^|-)attack$|^social-engineering$/.test(String(id)))return {url:ATLAS_BASE+"/matrices/ATLAS",fw:"MITRE ATLAS",ext:"ATLAS matrix"};
   return null;}
-function taxChips(a){a=arr(a);return a.length?a.map(x=>{const e=extLinkFor(x);
+function taxChips(a){a=arr(a);return a.length?a.map(x=>{const rid=resolveNodeId(x);
+  if(rid)return `<a class="tag" href="#entity:${encodeURIComponent(rid)}" title="상세 보기">${esc(x)}</a>`;
+  const e=extLinkFor(x);
   return e?`<a class="tag" href="${esc(e.url)}" target="_blank" title="${esc(e.fw||'')} ${esc(e.ext||'')} — ${esc(e.label||'')}">${esc(x)} ↗</a>`
           :`<a class="tag" href="#search:${encodeURIComponent(x)}" title="GraphRAG 검색: ${esc(x)}">${esc(x)}</a>`;}).join(""):'<span class="muted">—</span>';}
-function benchChips(a){a=arr(a);return a.length?a.map(x=>`<a class="tag" href="#search:${encodeURIComponent(x)}" title="GraphRAG 검색: ${esc(x)}">${esc(x)}</a>`).join(""):'<span class="muted">—</span>';}
+function benchChips(a){a=arr(a);return a.length?a.map(x=>{const rid=resolveNodeId(x);
+  return rid?`<a class="tag" href="#entity:${encodeURIComponent(rid)}" title="상세 보기">${esc(x)}</a>`:`<a class="tag" href="#search:${encodeURIComponent(x)}" title="GraphRAG 검색: ${esc(x)}">${esc(x)}</a>`;}).join(""):'<span class="muted">—</span>';}
 function sotaFor(name){if(!SOTA_BY){SOTA_BY={};SOTA.forEach(s=>{SOTA_BY[String(s.name).toLowerCase().trim()]=s;});}return SOTA_BY[String(name).toLowerCase().trim()];}
 // ---- 외부 SOTA 리더보드 연동: GraphRAG 검색어를 SOTA 페이지로 전달 + 결과 함께 표시 ----
 const SOTA_SITE="https://hollobit.github.io/SOTA/";
@@ -1457,7 +1460,7 @@ window.lcSelect=function(i){
     <table><tr><th>Threat</th><th style="color:#4f9cf9">Red-team methods</th><th style="color:#36cfc9">Detection</th><th style="color:#52c41a">Controls</th><th>Risk sev</th></tr>${conn||'<tr><td colspan=5 class="muted">No threats mapped to this stage.</td></tr>'}</table>
     ${lcDetailSection("🎯 Red-team method findings at this stage",methodF)}
     ${lcDetailSection("🧭 Detection / frontier-safety findings at this stage",detectF)}
-    ${risks.length?`<h4 style="margin:12px 0 4px">⚠️ Risk chains at this stage (${risks.length})</h4>`+tbl(["Threat","Hazardous situation → Harm","S","P","D","Residual"],risks.map(r=>[chip(r.threat),esc(r.hazardous_situation||"")+" → "+esc(r.harm||""),heat(r.metrics&&r.metrics.severity),heat(r.metrics&&r.metrics.probability),heat(r.metrics&&r.metrics.detectability),esc(r.residual_risk)])):''}
+    ${risks.length?`<h4 style="margin:12px 0 4px">⚠️ Risk chains at this stage (${risks.length})</h4>`+tbl(["Threat","Hazardous situation → Harm","S","P","D","Residual"],risks.map(r=>[entChips([r.threat]),esc(r.hazardous_situation||"")+" → "+esc(r.harm||""),heat(r.metrics&&r.metrics.severity),heat(r.metrics&&r.metrics.probability),heat(r.metrics&&r.metrics.detectability),esc(r.residual_risk)])):''}
     ${controls.length?`<h4 style="margin:12px 0 4px">🛡️ Controls at this stage (${controls.length})</h4>`+controls.map(c=>`<div class="small" style="margin:3px 0">• <b>${esc(c.name)}</b> ${entChips(c.addresses_threats)} ${entChips(c.standards)}</div>`).join(""):''}`;
   const el=document.getElementById("lc-detail");if(el)el.innerHTML=detail;
 };
@@ -2003,7 +2006,7 @@ function rkChainDetail(r){const m=r.metrics||{};const techs=byType("attack_techn
     <span class="rk-step" style="border-top-color:#fa8c16"><span class="l">공격</span>${techs.length?esc(techs.join(", ")):'—'}</span><b>→</b>
     <span class="rk-step" style="border-top-color:#ffb454"><span class="l">위험요소 hazard</span>${esc(r.hazard||'—')}</span><b>→</b>
     <span class="rk-step" style="border-top-color:#ff85c0"><span class="l">위험상황</span>${esc(r.hazardous_situation||'—')}</span><b>→</b>
-    <span class="rk-step" style="border-top-color:#ff4d4f"><span class="l">위해 harm</span>${chip(r.harm)}</span><b>→</b>
+    <span class="rk-step" style="border-top-color:#ff4d4f"><span class="l">위해 harm</span>${entChips([r.harm])}</span><b>→</b>
     <span class="rk-step" style="border-top-color:#b37feb"><span class="l">리스크</span>S${m.severity||'?'}·P${m.probability||'?'}·D${m.detectability||'?'} 잔여 ${esc(r.residual_risk||'?')}</span><b>→</b>
     <span class="rk-step" style="border-top-color:#52c41a"><span class="l">통제 control</span>${entChips(r.controls)}</span>
     ${arr(r.standards).length?`<span class="rk-step"><span class="l">표준</span>${entChips(r.standards)}</span>`:''}</div>
@@ -2142,7 +2145,7 @@ function renderProvDetail(){
     if(!r){box.innerHTML="";return;}
     if(r.type==="attack_technique"){const ex=explainersFor(id);
       html=`<h3>🎯 Technique — ${esc(r.name)}</h3>
-        <div class="small">${chip(r.attack_class)} ${entChips(r.atlas)} access: <b>${esc(r.access||"?")}</b> · realizes ${entChips(r.realizes_threats)} ${arr(r.benchmarks).length?"· benchmarks "+entChips(r.benchmarks):""}</div>
+        <div class="small">${entChips([r.attack_class])} ${entChips(r.atlas)} access: <b>${esc(r.access||"?")}</b> · realizes ${entChips(r.realizes_threats)} ${arr(r.benchmarks).length?"· benchmarks "+entChips(r.benchmarks):""}</div>
         ${r.description?`<p>${esc(r.description)}</p>`:""}
         <h4>Detailed explanation (from the literature)</h4>
         ${ex.length?ex.slice(0,6).map(f=>`<div style="margin:5px 0;padding:6px 9px;background:var(--panel2);border-radius:6px"><b>${esc(f.title)}</b> ${matPill(f.maturity)} ${grade(f.evidence_grade)}<br><span class="small">${esc(f.summary||"")}</span> ${srcs(f)}</div>`).join(""):'<p class="small muted">No explanatory finding matched.</p>'}
