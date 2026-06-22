@@ -1,6 +1,6 @@
 # Red-Teaming Literature Intelligence — 2026 Q2
 
-**Generated:** 2026-06-23 · RT AI Safety Assurance Platform · paper-research-pipeline (rev.2)
+**Generated:** 2026-06-23 · RT AI Safety Assurance Platform · paper-research-pipeline (rev.3)
 
 A systematic sweep of the **latest red-teaming / AI-safety / AI-security literature** on arXiv,
 read in full and distilled into the knowledge graph. **86 papers** spanning **2026-03-19 → 2026-06-18**
@@ -11,14 +11,14 @@ and integrated with strict honesty (verbatim metrics, `^[ambiguous]` flags, no f
 
 | | Before | After (this sweep) |
 |---|---|---|
-| Paper sources | 187 | **321** (+134) |
-| Graph nodes | 2,360 | **3,806** |
-| Attack techniques | 142 | **237** |
-| Vulnerabilities | 79 | **152** |
+| Paper sources | 187 | **344** (+157) |
+| Graph nodes | 2,360 | **4,069** |
+| Attack techniques | 142 | **251** |
+| Vulnerabilities | 79 | **172** |
 | Threat classes | ~72 | **~200** |
 | Controls | 75 | **133** |
-| GraphRAG units | 1,731 | **2,464** |
-| Citation-network edges | — | **821** (source→source) |
+| GraphRAG units | 1,731 | **2,604** |
+| Citation-network edges | — | **938** (source→source) |
 
 Extracted from the 86 papers: **380 records** — 161 findings, 55 attack techniques, 42 vulnerabilities
 (34 distinct CWE classes), 34 candidate threat classes, 58 controls, 21 risks, 9 harms. Quality gates
@@ -67,17 +67,18 @@ held throughout: **dangling 0 · isolated 0 · units==embeddings**.
 - Automated agentic auditing reaches **CVE-grade real-world impact** (EVOHUNT: 28 confirmed OSS vulns +
   $1,500 bounty; identifiers redacted pending coordinated disclosure → recorded as CWE-class).
 
-## 3. New threat classes (60 candidate)
-- **agent.** (3): `agent.routing-manipulation` · `agent.prompt-injection-indirect` · `agent.tool-selection-manipulation`
+## 3. New threat classes (74 candidate)
+- **agent.** (5): `agent.environment-injection` · `agent.reasoning-exploitation` · `agent.routing-manipulation` · `agent.prompt-injection-indirect` · `agent.tool-selection-manipulation`
 - **agentic.** (29): `agentic.provenance-gap` · `agentic.data-agent-risk` · `agentic.compositional-leakage` · `agentic.resource-exhaustion` · `agentic.internal-relay-leakage` · `agentic.multi-agent-propagation` · `agentic.emergent-misalignment` · `agentic.memory-poisoning-drift` · `agentic.multi-agent-prompt-contagion` · `agentic.embodied-interactive-safety-risk` · `agentic.cross-session-memory-persistence` · `agentic.decision-layer-poisoning` · `agentic.mediation-bypass` · `agentic.rag-poisoning` · `agentic.defense-inversion` · `agentic.inter-agent-comm-mitm` · `agentic.mcp-preference-manipulation` · `agentic.mcp-attack-taxonomy` · `agentic.mcp-shared-context-chain` · `agentic.plan-execute-integrity-subversion` · `agentic.privilege-usage` · `agentic.contextual-authorization` · `agentic.context-fragmented-violation` · `agentic.semantic-laundering` · `agentic.argument-authority-binding` · `agentic.cognitive-poisoning` · `agentic.attack-compression` · `agentic.cross-layer-propagation` · `agentic.supply-chain-injection`
+- **audio.** (2): `audio.modality-safety-dilution` · `audio.nonspeech-distraction`
 - **automated.** (1): `automated.injection-reformulation`
 - **frontier.** (3): `frontier.cognitive-monoculture` · `frontier.reasoning-self-censor-bypass` · `frontier.reasoning-model-risk`
-- **model.** (6): `model.reasoning-trace-leakage` · `model.over-refusal` · `model.rag-poisoning` · `model.adversarial-example` · `model.infilling-abuse` · `model.multi-turn-attack`
-- **multimodal.** (6): `multimodal.safety-comprehension-gap` · `multimodal.ood-distribution-shift` · `multimodal.vision-centric-context-injection` · `multimodal.cross-modal-attack-distribution` · `multimodal.cross-modal-synergy-perturbation` · `multimodal.foundation-encoder-super-transfer`
-- **safety.** (3): `safety.benchmark-validity-risk` · `safety.evaluation-gaming-sandbagging` · `safety.detector-evasion`
+- **model.** (8): `model.reasoning-robustness` · `model.reasoning-trace-leakage` · `model.editing-jailbreak` · `model.over-refusal` · `model.rag-poisoning` · `model.adversarial-example` · `model.infilling-abuse` · `model.multi-turn-attack`
+- **multimodal.** (10): `multimodal.image-alignment-backdoor` · `multimodal.image-caption-poisoning` · `multimodal.cross-modal-encryption-jailbreak` · `multimodal.prompt-sensitive-robustness` · `multimodal.safety-comprehension-gap` · `multimodal.ood-distribution-shift` · `multimodal.vision-centric-context-injection` · `multimodal.cross-modal-attack-distribution` · `multimodal.cross-modal-synergy-perturbation` · `multimodal.foundation-encoder-super-transfer`
+- **safety.** (5): `safety.abstention-manipulation` · `safety.over-refusal` · `safety.benchmark-validity-risk` · `safety.evaluation-gaming-sandbagging` · `safety.detector-evasion`
 - **scientific.** (1): `scientific.cyber-physical-safety`
-- **societal.** (4): `societal.opinion-manipulation` · `societal.eval-integrity` · `societal.multilingual-safety-gap` · `societal.medical-harm`
-- **software.** (4): `software.vulnerability-detection-gap` · `software.rapid-response-pipeline-poisoning` · `software.code-sabotage` · `software.code-poisoning`
+- **societal.** (5): `societal.abstention-bias` · `societal.opinion-manipulation` · `societal.eval-integrity` · `societal.multilingual-safety-gap` · `societal.medical-harm`
+- **software.** (5): `software.cross-modal-finetuning-degradation` · `software.vulnerability-detection-gap` · `software.rapid-response-pipeline-poisoning` · `software.code-sabotage` · `software.code-poisoning`
 ## 4. CVE / vulnerability disclosure
 - **CVE-2026-31431 'Copy Fail'** — Linux-kernel local privilege escalation (CWE-269, high), cited by the
   cyber-offense forecast paper and **independently verified via the NVD API** (vulnStatus *Analyzed*,
@@ -105,11 +106,10 @@ Citation enrichment added **644 source→source edges**, weaving the new papers 
 network. This confirms the new literature builds on (rather than ignores) the established canon.
 
 
-## 5.5 Peer-reviewed venue sweep (48 papers, 2025–2026)
+## 5.5 Peer-reviewed venue sweep (71 papers, 2024–2026)
 
-Beyond arXiv preprints, a Semantic-Scholar venue-filtered sweep added **48 peer-reviewed
-conference/journal papers** (IEEE S&P, ACL, NDSS, ICML, ICLR, AAAI, USENIX Security, CCS, EMNLP,
-ICCV, CVPR, IEEE TPAMI/TDSC/TIFS) — higher-citation, vetted prior work (up to 118 citations).
+Beyond arXiv preprints, a Semantic-Scholar venue-filtered sweep added **71 peer-reviewed conference/journal papers** (IEEE S&P, ACL, NDSS, ICML, ICLR, AAAI, USENIX Security, CCS, EMNLP,
+ICCV, CVPR, IEEE TPAMI/TDSC/TIFS · NAACL · TACL · ECCV, 2024 정전 포함: How-Johnny-Can-Persuade 644cit·InjecAgent 380·ArtPrompt 257) — higher-citation, vetted prior work (up to 118 citations).
 
 **Venue distribution:**
 

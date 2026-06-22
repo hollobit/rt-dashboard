@@ -1,6 +1,6 @@
 # Red-Teaming 논문 인텔리전스 — 2026 2분기
 
-**생성:** 2026-06-23 · RT AI 안전성 보증 플랫폼 · paper-research-pipeline (rev.2)
+**생성:** 2026-06-23 · RT AI 안전성 보증 플랫폼 · paper-research-pipeline (rev.3)
 
 arXiv의 **최신 red-teaming / AI 안전 / AI 보안 논문**을 체계적으로 수집해 전문 정독하고 지식그래프로
 정제했습니다. **86편**(2026-03-19 → 2026-06-18, 73%가 최근 한 달)을 발굴·다운로드하여 4명의 전문
@@ -10,14 +10,14 @@ arXiv의 **최신 red-teaming / AI 안전 / AI 보안 논문**을 체계적으�
 
 | | 이전 | 이후(이번 사이클) |
 |---|---|---|
-| 논문 소스 | 187 | **321** (+134) |
-| 그래프 노드 | 2,360 | **3,806** |
-| 공격기법 | 142 | **237** |
-| 취약점 | 79 | **152** |
+| 논문 소스 | 187 | **344** (+157) |
+| 그래프 노드 | 2,360 | **4,069** |
+| 공격기법 | 142 | **251** |
+| 취약점 | 79 | **172** |
 | 위협 분류 | 약 72 | **~200** |
 | 통제 | 75 | **133** |
-| GraphRAG 유닛 | 1,731 | **2,464** |
-| 인용망 엣지 | — | **821** (논문→논문) |
+| GraphRAG 유닛 | 1,731 | **2,604** |
+| 인용망 엣지 | — | **938** (논문→논문) |
 
 86편에서 추출: **380 레코드** — finding 161, 공격기법 55, 취약점 42(고유 CWE 34종), candidate 위협 34종,
 통제 58, 리스크 21, 위해 9. 전 과정 품질 게이트 유지: **dangling 0 · 고립 0 · 유닛=임베딩 정합**.
@@ -62,17 +62,18 @@ arXiv의 **최신 red-teaming / AI 안전 / AI 보안 논문**을 체계적으�
 - 자동 에이전트 보안감사가 **CVE급 실세계 영향** 달성(EVOHUNT: 28개 OSS 취약점 확인 + $1,500 바운티;
   식별자는 책임공개 중 redaction → CWE-class로 기록).
 
-## 3. 신규 위협 분류 (candidate 60종)
-- **agent.** (3): `agent.routing-manipulation` · `agent.prompt-injection-indirect` · `agent.tool-selection-manipulation`
+## 3. 신규 위협 분류 (candidate 74종)
+- **agent.** (5): `agent.environment-injection` · `agent.reasoning-exploitation` · `agent.routing-manipulation` · `agent.prompt-injection-indirect` · `agent.tool-selection-manipulation`
 - **agentic.** (29): `agentic.provenance-gap` · `agentic.data-agent-risk` · `agentic.compositional-leakage` · `agentic.resource-exhaustion` · `agentic.internal-relay-leakage` · `agentic.multi-agent-propagation` · `agentic.emergent-misalignment` · `agentic.memory-poisoning-drift` · `agentic.multi-agent-prompt-contagion` · `agentic.embodied-interactive-safety-risk` · `agentic.cross-session-memory-persistence` · `agentic.decision-layer-poisoning` · `agentic.mediation-bypass` · `agentic.rag-poisoning` · `agentic.defense-inversion` · `agentic.inter-agent-comm-mitm` · `agentic.mcp-preference-manipulation` · `agentic.mcp-attack-taxonomy` · `agentic.mcp-shared-context-chain` · `agentic.plan-execute-integrity-subversion` · `agentic.privilege-usage` · `agentic.contextual-authorization` · `agentic.context-fragmented-violation` · `agentic.semantic-laundering` · `agentic.argument-authority-binding` · `agentic.cognitive-poisoning` · `agentic.attack-compression` · `agentic.cross-layer-propagation` · `agentic.supply-chain-injection`
+- **audio.** (2): `audio.modality-safety-dilution` · `audio.nonspeech-distraction`
 - **automated.** (1): `automated.injection-reformulation`
 - **frontier.** (3): `frontier.cognitive-monoculture` · `frontier.reasoning-self-censor-bypass` · `frontier.reasoning-model-risk`
-- **model.** (6): `model.reasoning-trace-leakage` · `model.over-refusal` · `model.rag-poisoning` · `model.adversarial-example` · `model.infilling-abuse` · `model.multi-turn-attack`
-- **multimodal.** (6): `multimodal.safety-comprehension-gap` · `multimodal.ood-distribution-shift` · `multimodal.vision-centric-context-injection` · `multimodal.cross-modal-attack-distribution` · `multimodal.cross-modal-synergy-perturbation` · `multimodal.foundation-encoder-super-transfer`
-- **safety.** (3): `safety.benchmark-validity-risk` · `safety.evaluation-gaming-sandbagging` · `safety.detector-evasion`
+- **model.** (8): `model.reasoning-robustness` · `model.reasoning-trace-leakage` · `model.editing-jailbreak` · `model.over-refusal` · `model.rag-poisoning` · `model.adversarial-example` · `model.infilling-abuse` · `model.multi-turn-attack`
+- **multimodal.** (10): `multimodal.image-alignment-backdoor` · `multimodal.image-caption-poisoning` · `multimodal.cross-modal-encryption-jailbreak` · `multimodal.prompt-sensitive-robustness` · `multimodal.safety-comprehension-gap` · `multimodal.ood-distribution-shift` · `multimodal.vision-centric-context-injection` · `multimodal.cross-modal-attack-distribution` · `multimodal.cross-modal-synergy-perturbation` · `multimodal.foundation-encoder-super-transfer`
+- **safety.** (5): `safety.abstention-manipulation` · `safety.over-refusal` · `safety.benchmark-validity-risk` · `safety.evaluation-gaming-sandbagging` · `safety.detector-evasion`
 - **scientific.** (1): `scientific.cyber-physical-safety`
-- **societal.** (4): `societal.opinion-manipulation` · `societal.eval-integrity` · `societal.multilingual-safety-gap` · `societal.medical-harm`
-- **software.** (4): `software.vulnerability-detection-gap` · `software.rapid-response-pipeline-poisoning` · `software.code-sabotage` · `software.code-poisoning`
+- **societal.** (5): `societal.abstention-bias` · `societal.opinion-manipulation` · `societal.eval-integrity` · `societal.multilingual-safety-gap` · `societal.medical-harm`
+- **software.** (5): `software.cross-modal-finetuning-degradation` · `software.vulnerability-detection-gap` · `software.rapid-response-pipeline-poisoning` · `software.code-sabotage` · `software.code-poisoning`
 ## 4. CVE / 취약점 공개
 - **CVE-2026-31431 'Copy Fail'** — Linux 커널 로컬 권한상승(CWE-269, high), 사이버 공세 예측 논문이
   인용했고 **NVD API로 독립 검증**(vulnStatus *Analyzed*, 발행 2026-04-22). cve.org는 JS 렌더라
@@ -100,10 +101,10 @@ Citation 보강으로 **644 논문→논문 엣지**를 추가해 신규 논문�
 최신 연구가 정전을 무시하지 않고 기반으로 삼고 있음을 확인합니다.
 
 
-## 5.5 피어리뷰 학회/저널 sweep (48편, 2025–2026)
+## 5.5 피어리뷰 학회/저널 sweep (71편, 2024–2026)
 
-arXiv 프리프린트를 넘어, Semantic Scholar venue 필터로 **48편의 피어리뷰 학회/저널 논문**
-(IEEE S&P·ACL·NDSS·ICML·ICLR·AAAI·USENIX·CCS·EMNLP·ICCV·CVPR·IEEE TPAMI/TDSC/TIFS)을 추가했습니다 —
+arXiv 프리프린트를 넘어, Semantic Scholar venue 필터로 **71편의 피어리뷰 학회/저널 논문**
+(IEEE S&P·ACL·NDSS·ICML·ICLR·AAAI·USENIX·CCS·EMNLP·ICCV·CVPR·IEEE TPAMI/TDSC/TIFS · NAACL · TACL · ECCV, 2024 정전 포함: How-Johnny-Can-Persuade 644cit·InjecAgent 380·ArtPrompt 257)을 추가했습니다 —
 고인용·검증된 선행연구(최대 118 citations).
 
 **venue 분포:**
