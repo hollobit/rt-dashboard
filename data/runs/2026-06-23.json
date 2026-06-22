@@ -1,25 +1,25 @@
 {
   "date": "2026-06-23",
-  "nodes": 2979,
-  "edges": 16977,
+  "nodes": 3244,
+  "edges": 18269,
   "by_kind": {
-    "source": 463,
-    "org": 299,
-    "finding": 428,
-    "threat": 115,
-    "benchmark": 260,
-    "teaming": 104,
-    "sector": 24,
+    "source": 485,
+    "org": 319,
+    "finding": 477,
+    "threat": 153,
+    "benchmark": 291,
+    "teaming": 153,
+    "sector": 32,
     "attack": 14,
     "atlas": 116,
-    "harm": 61,
-    "attack_technique": 184,
-    "vulnerability": 114,
+    "harm": 64,
+    "attack_technique": 197,
+    "vulnerability": 121,
     "incident": 50,
     "tactic": 16,
     "procedure": 97,
-    "risk": 76,
-    "control": 113,
+    "risk": 81,
+    "control": 133,
     "standard": 42,
     "evidence": 134,
     "reference": 12,
@@ -32,23 +32,23 @@
     {
       "node": "safety.misuse-risk",
       "label": "misuse-risk",
-      "count": 251,
-      "mean_novelty": 0.645,
-      "score": 161.97
+      "count": 253,
+      "mean_novelty": 0.647,
+      "score": 163.6
     },
     {
       "node": "prompt-attack",
       "label": "prompt-attack",
-      "count": 215,
-      "mean_novelty": 0.651,
-      "score": 139.9
+      "count": 247,
+      "mean_novelty": 0.658,
+      "score": 162.64
     },
     {
       "node": "model.jailbreak",
       "label": "model.jailbreak",
-      "count": 169,
-      "mean_novelty": 0.62,
-      "score": 104.77
+      "count": 181,
+      "mean_novelty": 0.625,
+      "score": 113.15
     },
     {
       "node": "safety.cyber-risk",
@@ -58,46 +58,46 @@
       "score": 76.36
     },
     {
-      "node": "agentic.autonomy-risk",
-      "label": "autonomy-risk",
-      "count": 97,
-      "mean_novelty": 0.731,
-      "score": 70.93
-    },
-    {
       "node": "model.prompt-injection",
       "label": "model.prompt-injection",
-      "count": 93,
-      "mean_novelty": 0.705,
-      "score": 65.52
+      "count": 108,
+      "mean_novelty": 0.704,
+      "score": 76.07
+    },
+    {
+      "node": "agentic.autonomy-risk",
+      "label": "autonomy-risk",
+      "count": 103,
+      "mean_novelty": 0.733,
+      "score": 75.53
+    },
+    {
+      "node": "tool-attack",
+      "label": "tool-attack",
+      "count": 99,
+      "mean_novelty": 0.748,
+      "score": 74.03
     },
     {
       "node": "agent.tool-abuse",
       "label": "agent.tool-abuse",
-      "count": 86,
+      "count": 98,
       "mean_novelty": 0.738,
-      "score": 63.46
+      "score": 72.36
     },
     {
-      "node": "agentic.tool-risk",
-      "label": "tool-risk",
-      "count": 87,
-      "mean_novelty": 0.725,
-      "score": 63.05
+      "node": "topic:frontier-safety",
+      "label": "frontier-safety",
+      "count": 91,
+      "mean_novelty": 0.771,
+      "score": 70.15
     },
     {
       "node": "autonomous-attack",
       "label": "autonomous-attack",
-      "count": 84,
-      "mean_novelty": 0.739,
-      "score": 62.04
-    },
-    {
-      "node": "se.devsecops",
-      "label": "devsecops",
-      "count": 87,
-      "mean_novelty": 0.689,
-      "score": 59.9
+      "count": 90,
+      "mean_novelty": 0.741,
+      "score": 66.7
     }
   ],
   "news": 230

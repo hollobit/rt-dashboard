@@ -28748,6 +28748,3226 @@
     ]
   },
   {
+    "id": "find-2605-06812-agentbom",
+    "type": "finding",
+    "analyst": "agentic-se-risk-analyst",
+    "title": "Agent-BOM: unified graph closes the semantic gap for post-hoc agent security auditing",
+    "summary": "Agent-BOM models an agent system as B=(A,V,E,alpha): static capability nodes (Agent/Code/LLM/Prompt/Tool/Skill/LongTermMemory) plus runtime semantic nodes (External/Goal/Context/Reasoning/Decision/Action/Observation), linked by four edge families and security attributes (source, trust_level, integrity_status, authentication_status, permission_scope). The paper argues SBOM/AIBOM, logging, tracing, and generic provenance each only partially cover six audit questions Q1-Q6 (risk entry, semantic evolution, persistence, cross-agent propagation, trigger explanation, realized impact); Agent-BOM is the only representation giving direct support to all six (Table II). Auditing is a 4-tuple rule R=<v_entry, P_back, P_fwd, C>; instantiated for all OWASP Agentic Top 10 (ASI01-ASI10) as graph queries. TCB assumes uncompromised LLM weights and tamper-proof telemetry. ^[ambiguous: OpenClaw/OWASP Agentic Top 10 2026 and GPT-5 are forward-dated artifacts]",
+    "source_ids": [
+      "src-2605-06812"
+    ],
+    "taxonomy": {
+      "threat": [
+        "agent.memory-poisoning",
+        "agent.tool-abuse",
+        "agentic.cross-agent-propagation",
+        "software.agentic-sdlc-supply-chain"
+      ],
+      "attack": [
+        "tool-attack",
+        "multi-agent-attack"
+      ],
+      "teaming": [
+        "automated.graph-auditing"
+      ]
+    },
+    "atlas": [
+      "AML.T0051",
+      "AML.T0029"
+    ],
+    "benchmarks": [],
+    "standards": [
+      "OWASP-Agentic-Top-10",
+      "SBOM",
+      "AIBOM"
+    ],
+    "maturity": "emerging",
+    "confidence": 0.82,
+    "evidence_grade": "B",
+    "provenance": {
+      "extracted": 0.85,
+      "inferred": 0.12,
+      "ambiguous": 0.03
+    },
+    "novelty_signal": 0.8,
+    "notes": "Core contribution: first BOM-style auditable representation native to agentic execution; bridges static SBOM/AIBOM to runtime semantic states. Map to se.agentic-sdlc auditability and MCP/A2A trust attribution."
+  },
+  {
+    "id": "find-2605-06812-crosssession",
+    "type": "finding",
+    "analyst": "agentic-se-risk-analyst",
+    "title": "Delayed cross-session memory poisoning -> destructive tool invocation auditable as one path",
+    "summary": "Case study (Fig.2) demonstrates a cross-session attack chain: attacker disguises 'rm -rf ~/.openclaw/workspace/' as a maintenance rule via external user input; the agent writes it into long-term memory (Phase 1: Memory Poisoning, ASI02/ASI06), then in a later session retrieves the poisoned memory, incorporates it into context+reasoning, and invokes an exec tool that deletes the local workspace (Phase 2: Tool Misuse). Agent-BOM connects the initial injection, the persistent memory write (writes_to LongTermMemoryNode), runtime retrieval (reads_from), and realized impact (Observation: 'has been deleted') into a single backward-/forward-traceable audit path. Other three scenarios cover supply-chain skill hijack -> unexpected code execution (ASI04/ASI05, malicious weather skill exfiltrates via WEBHOOK_URL), multi-agent ecosystem hijacking (ASI01/ASI07/ASI08, tampered inter-agent goal cascades across 3 agents), and rogue-prompt trust abuse -> unauthorized email (ASI03/ASI09/ASI10).",
+    "source_ids": [
+      "src-2605-06812"
+    ],
+    "taxonomy": {
+      "threat": [
+        "agent.memory-poisoning",
+        "agent.persistent-contamination",
+        "agentic.cascading-failure"
+      ],
+      "attack": [
+        "tool-attack",
+        "multi-agent-attack"
+      ],
+      "teaming": []
+    },
+    "atlas": [
+      "AML.T0051",
+      "AML.T0029"
+    ],
+    "benchmarks": [],
+    "standards": [
+      "OWASP-Agentic-Top-10"
+    ],
+    "maturity": "emerging",
+    "confidence": 0.8,
+    "evidence_grade": "B",
+    "provenance": {
+      "extracted": 0.88,
+      "inferred": 0.1,
+      "ambiguous": 0.02
+    },
+    "novelty_signal": 0.7,
+    "notes": "Concrete dormant cross-session payload pattern: adversary inputs absorbed into long-term memory, no visible failure until later capability invocation. Strong evidence for agent.persistent-contamination as a distinct risk axis."
+  },
+  {
+    "id": "agentic.cross-session-memory-persistence",
+    "type": "threat",
+    "label": "Cross-session persistent memory contamination",
+    "axis": "agentic",
+    "description": "A malicious payload injected via untrusted input is absorbed into an agent's long-term memory in one session without immediate effect, then retrieved and activated in a later session to drive a high-risk capability invocation (e.g., destructive tool call). The temporal gap between injection and realization makes point-detection and local blocking ineffective; auditing requires cross-session provenance over persistent memory writes/reads.",
+    "candidate": true,
+    "provenance": {
+      "extracted": 0.8,
+      "inferred": 0.18,
+      "ambiguous": 0.02
+    },
+    "source_ids": [
+      "src-2605-06812"
+    ]
+  },
+  {
+    "id": "atk-agentbom-skill-supplychain-exfil",
+    "type": "attack_technique",
+    "name": "Malicious third-party skill supply-chain hijack with runtime data exfiltration",
+    "attack_class": "tool-attack",
+    "atlas": [
+      "AML.T0029"
+    ],
+    "realizes_threats": [
+      "software.agentic-sdlc-supply-chain",
+      "agent.tool-abuse"
+    ],
+    "access": "gray-box",
+    "benchmarks": [],
+    "exploits_vulns": [
+      "vuln-agent-skill-hidden-behavior"
+    ],
+    "source_ids": [
+      "src-2605-06812"
+    ]
+  },
+  {
+    "id": "vuln-agent-skill-hidden-behavior",
+    "type": "vulnerability",
+    "title": "Registered agent skill with hidden file-access and exfiltration logic",
+    "description": "A third-party skill installed into the agent directory (e.g., OpenClaw) is registered as a benign weather-query capability but its implementation reads local sensitive files (readFile of openclaw.json) and exfiltrates them to an external WEBHOOK_URL via fetch POST, and deletes local resources. Long-term memory is modified so the skill is auto-invoked at session start. The declared functionality contradicts the actual behavior, and the agent trusts and invokes it during task execution, turning a static capability risk into a runtime code-execution and data-exfiltration impact (OWASP ASI04 -> ASI05).",
+    "affected": "LLM agent frameworks with pluggable third-party skills/tools and persistent skill registries",
+    "exploited_by": [
+      "atk-agentbom-skill-supplychain-exfil"
+    ],
+    "threats": [
+      "software.agentic-sdlc-supply-chain",
+      "agent.tool-abuse"
+    ],
+    "cwe": [
+      "CWE-829",
+      "CWE-94",
+      "CWE-200"
+    ],
+    "severity": "high",
+    "disclosure": "academic",
+    "patch_status": "mitigation-proposed",
+    "controls": [
+      "control-agent-bom-auditing"
+    ],
+    "external_refs": {
+      "owasp": [
+        "ASI04",
+        "ASI05"
+      ]
+    },
+    "source_ids": [
+      "src-2605-06812"
+    ]
+  },
+  {
+    "id": "control-agent-bom-auditing",
+    "type": "control",
+    "name": "Agent-BOM path-level security auditing",
+    "description": "A BOM-style hierarchical attributed graph plus 4-tuple auditing rules (entry localization, backward tracing, forward tracing, adjudication conditions) that reconstructs the full risk chain (entry -> semantic evolution -> persistence -> cross-agent propagation -> trigger -> realized impact) over agentic executions, enabling rule-based adjudication of boundary violations, unauthorized invocation, persistent contamination, and privilege/trust abuse. Post-hoc auditing substrate, not a runtime enforcement mechanism; effectiveness bounded by telemetry/instrumentation completeness and rule quality.",
+    "addresses_threats": [
+      "agent.memory-poisoning",
+      "agent.tool-abuse",
+      "agentic.cross-agent-propagation",
+      "agentic.cross-session-memory-persistence",
+      "software.agentic-sdlc-supply-chain"
+    ],
+    "standards": [
+      "OWASP-Agentic-Top-10",
+      "SBOM",
+      "AIBOM"
+    ],
+    "source_ids": [
+      "src-2605-06812"
+    ]
+  },
+  {
+    "id": "find-2605-00741-aspo",
+    "type": "finding",
+    "analyst": "agentic-se-risk-analyst",
+    "title": "ASPO: deterministic enforcement boundary contains stochastic multi-agent LLM reasoning for safe runtime mitigation",
+    "summary": "ASPO addresses the structural incompatibility between LLM reasoning (adaptive but stochastic/unsafe) and optimization (feasible but context-blind) by a hybrid agentic-deterministic paradigm in a MAPE-K loop. Multi-agent LLM agents (Context/Reasoner/Constraint/Planner/Audit) are restricted to PROPOSING candidates and plans with NO direct actuation capability (closed-world contract: pattern_id in P, |C_t|<=K); final activation is computed only by a deterministic optimizer g(C_t,b_t,M,B) enforcing closed-world membership, conflict-freeness (Conflict(Y)=0 hard constraint via conflict matrix M), and resource feasibility (CPU/mem/lat/energy budgets). Adversarial prompt manipulation is modeled as bounded perturbation ||delta_t||<=Delta on structured context; the paper proves activation invariance: if optimizer argmax is invariant, Y_t(S_t)=Y_t(S_tilde_t), so untrusted inputs cannot introduce arbitrary actions, violate ordering, or trigger out-of-catalogue execution. Results: gate rejects 99.2-99.5% of candidate plans, 100% gate-audit agreement, Spearman rank=1.00, P99 latency -21.9% / energy -23.1%. TCB excludes hardware compromise, catalogue corruption, direct optimizer tampering.",
+    "source_ids": [
+      "src-2605-00741"
+    ],
+    "taxonomy": {
+      "threat": [
+        "agentic.autonomy-risk",
+        "model.prompt-injection",
+        "agentic.tool-risk"
+      ],
+      "attack": [
+        "prompt-attack"
+      ],
+      "teaming": [
+        "llm-as-a-reasoner",
+        "automated.deterministic-enforcement"
+      ]
+    },
+    "atlas": [
+      "AML.T0051"
+    ],
+    "benchmarks": [
+      "Bot-IoT"
+    ],
+    "standards": [
+      "MAPE-K"
+    ],
+    "maturity": "emerging",
+    "confidence": 0.85,
+    "evidence_grade": "A",
+    "provenance": {
+      "extracted": 0.9,
+      "inferred": 0.08,
+      "ambiguous": 0.02
+    },
+    "novelty_signal": 0.72,
+    "notes": "Defense/control paper. Key design pattern for agentic-SDLC: deterministic actuation boundary as architectural mitigation for prompt-injection-driven unsafe agent actions. Send to risk-safety-analyst for control record + residual-risk chain. Architecture decouples agent reasoning from enforcement = direct mitigation for agent.action-space-violation."
+  },
+  {
+    "id": "find-2605-00741-promptperturbation",
+    "type": "finding",
+    "analyst": "agentic-se-risk-analyst",
+    "title": "Prompt-manipulation / context-poisoning attack surface on agentic IoT decision pipelines (Bot-IoT)",
+    "summary": "The threat model identifies three attack surfaces targeting the agentic DECISION process (not the detector): (1) prompt-manipulation attempts distort semantic interpretation of telemetry by crafting adversarial traffic that produces misleading evidence tokens; (2) context-poisoning biases structured context variables (threat severity, confidence, resource indicators) via manipulated traffic characteristics; (3) tool-abuse attempts push the decision toward infeasible/conflicting security patterns that could destabilize the gateway. Adversary interacts only through observable traffic behaviour (DoS, DDoS, botnet C2, brute-force, port scanning in Bot-IoT) and indirectly via inputs consumed by the reasoning pipeline, modeled as bounded perturbation S_tilde_t = S_t + delta_t. The novel risk framing: in agentic edge defense, the LLM reasoning/decision layer itself is an attack target distinct from the ML detector, and unconstrained mitigation selection often produces portfolios that violate conflict-free or resource-feasibility requirements (empirical: execution-order violations 2.2-2.6%, resource violations ~1.6%, conflict 0.2% of decisions).",
+    "source_ids": [
+      "src-2605-00741"
+    ],
+    "taxonomy": {
+      "threat": [
+        "agentic.autonomy-risk",
+        "model.prompt-injection",
+        "agentic.tool-risk"
+      ],
+      "attack": [
+        "prompt-attack"
+      ],
+      "teaming": []
+    },
+    "atlas": [
+      "AML.T0051"
+    ],
+    "benchmarks": [
+      "Bot-IoT"
+    ],
+    "standards": [],
+    "maturity": "emerging",
+    "confidence": 0.8,
+    "evidence_grade": "A",
+    "provenance": {
+      "extracted": 0.88,
+      "inferred": 0.1,
+      "ambiguous": 0.02
+    },
+    "novelty_signal": 0.68,
+    "notes": "Distinct risk: agentic decision-layer poisoning in cyber-defense agents (defender becomes target). Aligns with redteam-method-analyst llm-as-defender frontier; coordinate so they own the attack technique."
+  },
+  {
+    "id": "agentic.decision-layer-poisoning",
+    "type": "threat",
+    "label": "Agentic decision-layer context poisoning in autonomous defense",
+    "axis": "agentic",
+    "description": "An adversary targets the reasoning/decision layer of an autonomous (LLM-based) defense or control agent rather than its detector, by crafting observable inputs (e.g., attack traffic) that distort evidence tokens and bias the structured context (threat class, severity, confidence, resource indicators). The goal is to induce the agent to select unsafe, infeasible, or conflicting mitigation actions that destabilize the protected system, modeled as a bounded perturbation on structured context. Distinct from detector evasion: the decision/composition process is the attack surface.",
+    "candidate": true,
+    "provenance": {
+      "extracted": 0.82,
+      "inferred": 0.16,
+      "ambiguous": 0.02
+    },
+    "source_ids": [
+      "src-2605-00741"
+    ]
+  },
+  {
+    "id": "control-deterministic-actuation-boundary",
+    "type": "control",
+    "name": "Deterministic actuation boundary for agentic LLM decisions (closed-world optimization gate)",
+    "description": "Architectural control separating stochastic multi-agent LLM deliberation from deterministic enforcement: LLM agents may only propose candidate actions over a closed-world catalogue, with no direct actuation. A deterministic optimization/validation core computes final activation enforcing (1) closed-world membership (action in fixed catalogue), (2) conflict-free composition via a conflict matrix as a hard constraint, (3) resource/precedence feasibility, before any execution, with a fail-safe baseline on validation failure. Bounds the impact of prompt-manipulation/context-poisoning: adversarial inputs cannot introduce out-of-catalogue actions, violate ordering, or activate conflicting/infeasible portfolios (activation invariance under bounded perturbation). Embedded in a MAPE-K loop with an audit agent verifying admissibility post-hoc.",
+    "addresses_threats": [
+      "agentic.autonomy-risk",
+      "agentic.decision-layer-poisoning",
+      "model.prompt-injection",
+      "agentic.tool-risk"
+    ],
+    "standards": [
+      "MAPE-K"
+    ],
+    "source_ids": [
+      "src-2605-00741"
+    ]
+  },
+  {
+    "id": "find-2605-00081-alignmentcontracts",
+    "type": "finding",
+    "analyst": "agentic-se-risk-analyst",
+    "title": "Alignment contracts: effect-level enforcement boundary for offensive-capable agents, robust to prompt injection",
+    "summary": "The paper frames offensive security agents as an asymmetric control problem: retain strong offensive capability INSIDE an authorized engagement while denying the same capabilities outside scope. The enforcement object is the realized, observable EFFECT (network request, file/process operation, disclosure) crossing a mediated boundary -- NOT the model's internal intent, because a malicious website can prompt-inject the agent to exfiltrate or attack out of scope. Two security properties are enforced: Integrity (all realized effects within operator scope) and Modeled Disclosure (sensitive outputs flow only to authorized sinks). Enforcement Soundness (Thm 6.5): under EOA (complete mediation of effects), a reference monitor M_C yields Run_C(P) |= C for every proposed trace P, with Agent-Behavior Independence (Cor 6.6) -- holds even for adversarial/prompt-injected/backdoored models since the TCB excludes the LLM and agent logic. Impossibility results: pre-admission forbidden-effect absence is undecidable for Turing-complete tool languages (Thm 9.2, via halting reduction); mediation-bypassing tools (kernel modules, raw hardware, out-of-band channels) void the EOA premise (Obs 1); payload-covert/timing/semantic-intent channels lie outside the enforceable boundary (Thm 9.7). Concrete profiles: web pentest (10000 mediated HTTP req budget, GET/HEAD scope) and DeFi smart-contract (0.1 ETH gas cap).",
+    "source_ids": [
+      "src-2605-00081"
+    ],
+    "taxonomy": {
+      "threat": [
+        "agentic.autonomy-risk",
+        "agent.hijacking",
+        "model.prompt-injection",
+        "safety.misuse-risk"
+      ],
+      "attack": [
+        "prompt-attack",
+        "tool-attack"
+      ],
+      "teaming": [
+        "llm-as-attacker",
+        "automated.formal-enforcement"
+      ]
+    },
+    "atlas": [
+      "AML.T0051",
+      "AML.T0024"
+    ],
+    "benchmarks": [
+      "AgentDojo",
+      "WebArena",
+      "CyberSecEval",
+      "SWE-bench",
+      "EVMbench"
+    ],
+    "standards": [
+      "NIST-SP-800-162-ABAC"
+    ],
+    "maturity": "emerging",
+    "confidence": 0.86,
+    "evidence_grade": "A",
+    "provenance": {
+      "extracted": 0.9,
+      "inferred": 0.08,
+      "ambiguous": 0.02
+    },
+    "novelty_signal": 0.83,
+    "notes": "Formal-methods control paper with Lean 4 mechanization. Dual-use: offensive pentest agents need scoped authorization. Key for agentic-SDLC governance: effect-boundary contract as enforceable safety property. Send to risk-safety-analyst for control + residual-risk. Impossibility results inform standards-regulatory on limits of static agent certification."
+  },
+  {
+    "id": "find-2605-00081-impossibility",
+    "type": "finding",
+    "analyst": "agentic-se-risk-analyst",
+    "title": "Fundamental limits: static agent safety certification is undecidable; covert channels evade effect monitors",
+    "summary": "Three negative results delineate the enforceability boundary of effect-based agent monitors. (1) Forbidden-Effect Absence Certification is undecidable (Thm 9.2): for a contract with at least one forbidden effect and a Turing-complete tool language, no decider can statically determine whether a tool will ever attempt a forbidden effect -- proven by reduction from the halting problem (FORBIDFREE_C(T_x) iff not Halts(x)). Sound static analysis can over-approximate forbidden attempts but no sound-and-complete analysis exists. (2) Mediation-Bypassing Tools void soundness (Obs 1): if dynamic tool acquisition lets a tool bypass the mediation layer (kernel modules, raw hardware access, out-of-band channels), the EOA fails and enforcement-soundness is inapplicable -- deployment must confine dynamic tools in sandboxes with complete mediation (WebAssembly capability-gated syscall proxying, seccomp-bpf). (3) Three effect classes lie outside the enforceable boundary: payload-based covert channels (secrets in transmitted byte content, not in event model), timing channels (information in inter-event delays), and semantic intent (two obs-identical traces, one benign one adversarial, are indistinguishable -- intent is not observable). Mitigations for these are best-effort, bypassable, and carry no formal guarantee.",
+    "source_ids": [
+      "src-2605-00081"
+    ],
+    "taxonomy": {
+      "threat": [
+        "agentic.autonomy-risk",
+        "model.data-leakage",
+        "safety.misuse-risk"
+      ],
+      "attack": [
+        "tool-attack"
+      ],
+      "teaming": []
+    },
+    "atlas": [
+      "AML.T0024"
+    ],
+    "benchmarks": [],
+    "standards": [],
+    "maturity": "emerging",
+    "confidence": 0.84,
+    "evidence_grade": "A",
+    "provenance": {
+      "extracted": 0.92,
+      "inferred": 0.06,
+      "ambiguous": 0.02
+    },
+    "novelty_signal": 0.8,
+    "notes": "Important for standards-regulatory-analyst: formal proof that static pre-deployment certification of agent forbidden-effect-freedom is undecidable -> runtime mediation is necessary, not optional. Covert-channel/intent limits bound what any effect monitor can guarantee."
+  },
+  {
+    "id": "agentic.mediation-bypass",
+    "type": "threat",
+    "label": "Agent mediation bypass via dynamic tool acquisition",
+    "axis": "agentic",
+    "description": "An agent dynamically acquires or invokes a tool that executes effects outside the reference monitor's mediation layer (e.g., kernel modules, raw hardware access, out-of-band network channels, native syscalls below the typed mediation boundary). Such effects appear in real execution but not in the monitored trace, voiding the Effect Observability Assumption and rendering effect-based enforcement-soundness guarantees inapplicable. Requires sandbox confinement (capability-gated WASM, seccomp-bpf) to restore complete mediation.",
+    "candidate": true,
+    "provenance": {
+      "extracted": 0.83,
+      "inferred": 0.15,
+      "ambiguous": 0.02
+    },
+    "source_ids": [
+      "src-2605-00081"
+    ]
+  },
+  {
+    "id": "control-alignment-contract-effect-monitor",
+    "type": "control",
+    "name": "Alignment-contract effect-level reference monitor",
+    "description": "A reference monitor that mediates an agent's externally observable effects (network/file/process/disclosure events) against a formal alignment contract <scope, allow/forbid effects, resource budgets, disclosure sinks> and denies any effect that is out-of-scope, forbidden, over-budget, or disclosing to an unauthorized sink, evaluated against the already-realized trace prefix. Provides provable Integrity and Modeled-Disclosure guarantees (Enforcement Soundness) under the Effect Observability Assumption -- holding regardless of agent internal state, including adversarial or prompt-injected models, because the LLM and agent logic are outside the trusted computing base. Decidable admissibility check; supports refinement and one-way compatible composition of contracts. Best-effort semantic agentic-layer (intent/payload inspection) added as defense-in-depth but carries no formal guarantee. Does not cover covert payload, timing channels, or semantic intent.",
+    "addresses_threats": [
+      "agentic.autonomy-risk",
+      "agent.hijacking",
+      "agentic.mediation-bypass",
+      "model.prompt-injection",
+      "safety.misuse-risk"
+    ],
+    "standards": [
+      "NIST-SP-800-162-ABAC"
+    ],
+    "source_ids": [
+      "src-2605-00081"
+    ]
+  },
+  {
+    "id": "find-2604-17562-safeagent",
+    "type": "finding",
+    "analyst": "agentic-se-risk-analyst",
+    "title": "SafeAgent: stateful runtime controller + decision core beats text-level guardrails on workflow-level prompt injection",
+    "summary": "SafeAgent formulates agent security as a stateful, workflow-level decision problem because prompt injection in agentic workflows is no longer single-turn: malicious instructions enter via retrieved documents, tool outputs, memory, or other artifacts and propagate across the reasoning-action loop, influencing intermediate planning and inducing unsafe tool use / unauthorized data transfer. Architecture = (1) Runtime Controller wrapping the agent loop: routes all tool calls through a governed wrapper (controlled execution boundary), curates session context as an explicit runtime object, conditions authorization on accumulated workflow-level contamination signals (taint tracking), and provides six recovery mechanisms (context override/sanitization, agent replanning, context rollback to trusted checkpoint, safe-mode termination, tool-argument rewriting, human-in-the-loop/shadow execution); (2) SafeAgent Core: a context-aware AMI z_t=Phi(x_t,s_t) with parallel specialist risk encoders (obfuscation, trigger activation, memory poisoning, secret leakage, control hijacking, evasion, policy violation, unsafe tool plan, argument-level risk, task drift), advantage-cost modeling, world-model consequence simulation, policy arbitration excluding critical-safety-violating actions, and multi-scale memory synchronization (immediate/task-level/long-horizon risk). On ASB (51 tasks x 40 attack tools = 2040 cases, ReAct + DeepSeek-V3.2, gpt-oss-safeguard-20b core): SafeAgent lowers IPI ASR to 0.2936 and MP ASR to 0.1858, best NRP across all attack types; on InjecAgent (510 direct-harm + 544 data-stealing) drives data-stealing S1 and S2 to 0.0000, total ASR to 0. Ablations: lower override confidence (0.0) best under memory poisoning (persistent contamination -> rejection beats repair); safety-first vs task-first policy is the primary safety-utility operating-point lever.",
+    "source_ids": [
+      "src-2604-17562"
+    ],
+    "taxonomy": {
+      "threat": [
+        "agent.prompt-injection-indirect",
+        "agent.memory-poisoning",
+        "agent.tool-abuse",
+        "model.data-leakage"
+      ],
+      "attack": [
+        "prompt-attack",
+        "tool-attack"
+      ],
+      "teaming": [
+        "llm-as-a-defender",
+        "automated.runtime-mediation"
+      ]
+    },
+    "atlas": [
+      "AML.T0051",
+      "AML.T0024",
+      "AML.T0029"
+    ],
+    "benchmarks": [
+      "Agent-Security-Bench",
+      "InjecAgent"
+    ],
+    "standards": [],
+    "maturity": "emerging",
+    "confidence": 0.85,
+    "evidence_grade": "A",
+    "provenance": {
+      "extracted": 0.9,
+      "inferred": 0.08,
+      "ambiguous": 0.02
+    },
+    "novelty_signal": 0.74,
+    "notes": "Defense/control paper with strong verbatim ASR numbers. Reinforces that workflow-level (not single-turn) is the correct unit for agent prompt-injection defense; taint tracking + governed tool boundary + recovery. Send to risk-safety-analyst for control record. Benchmarks ASB+InjecAgent -> link via benchmarks for risk-safety. gpt-oss-safeguard-20b and DeepSeek-V3.2 are real models named in eval."
+  },
+  {
+    "id": "find-2604-17562-workflowlevel",
+    "type": "finding",
+    "analyst": "agentic-se-risk-analyst",
+    "title": "Workflow-level (multi-stage) prompt injection: contamination accumulates and propagates across the action-observation loop",
+    "summary": "The paper consolidates the threat that prompt injection in agentic systems unfolds at the WORKFLOW level rather than as single-turn manipulation: multi-stage agent pipelines (retrieval -> planning -> tool execution -> memory update) enable composite attacks where injected payloads are distributed across steps to achieve escalation or persistence. Indirect injection embeds malicious instructions in third-party artifacts (web pages, tool outputs) later elevated into the execution context; instruction-triggered backdoor behaviors can activate unsafe plans even without explicit override strings. The key insight motivating taint-tracking for LLM agents: untrusted content carries a contamination label propagated through intermediate representations and decision points, and safety decisions should condition on where information originated, how it was transformed, and whether it is about to cross a privileged boundary (high-impact tool, long-term memory write, sensitive disclosure). Empirically, text-level guardrails (Llama Guard, LLM Guard) provide only marginal protection because message-level filtering cannot prevent attacks realized through tool-mediated interactions and accumulated session context (LLM Guard InjecAgent S1=0.9301, S2=0.9308 ~ near no-defense).",
+    "source_ids": [
+      "src-2604-17562"
+    ],
+    "taxonomy": {
+      "threat": [
+        "agent.prompt-injection-indirect",
+        "agentic.cascading-failure",
+        "agent.persistent-contamination"
+      ],
+      "attack": [
+        "prompt-attack"
+      ],
+      "teaming": []
+    },
+    "atlas": [
+      "AML.T0051"
+    ],
+    "benchmarks": [
+      "Agent-Security-Bench",
+      "InjecAgent"
+    ],
+    "standards": [],
+    "maturity": "established",
+    "confidence": 0.83,
+    "evidence_grade": "A",
+    "provenance": {
+      "extracted": 0.88,
+      "inferred": 0.1,
+      "ambiguous": 0.02
+    },
+    "novelty_signal": 0.6,
+    "notes": "Consolidating threat-framing finding; the attack technique (workflow-level/indirect PI) is owned by threat-attack-analyst -- this record covers the agent-risk half (taint propagation across the loop, privileged-boundary crossing). Coordinate to avoid double counting."
+  },
+  {
+    "id": "agent.prompt-injection-indirect",
+    "type": "threat",
+    "label": "Workflow-level indirect prompt injection in agentic loops",
+    "axis": "agent",
+    "description": "Malicious instructions enter an agent not through direct user input but via untrusted third-party artifacts (retrieved documents, web pages, tool outputs, memory entries) that are implicitly treated as control input when concatenated into the agent's heterogeneous execution context. The attack unfolds across the multi-stage action-observation loop (retrieval -> planning -> tool execution -> memory update), with payloads distributed across steps to achieve privilege escalation or persistence; contamination propagates through intermediate reasoning and decision points until it crosses a privileged boundary (high-impact tool call, long-term memory write, sensitive disclosure). Distinct from single-turn manipulation: requires stateful taint tracking and workflow-level mediation, not message-level filtering.",
+    "candidate": true,
+    "provenance": {
+      "extracted": 0.82,
+      "inferred": 0.16,
+      "ambiguous": 0.02
+    },
+    "source_ids": [
+      "src-2604-17562"
+    ]
+  },
+  {
+    "id": "control-safeagent-runtime-controller",
+    "type": "control",
+    "name": "SafeAgent stateful runtime controller with context-aware decision core",
+    "description": "A two-layer runtime protection architecture separating execution governance from semantic risk reasoning. A Runtime Controller wraps the agent loop and routes all tool invocations through a governed wrapper (controlled execution boundary), maintains session context as an explicit runtime object, conditions tool authorization on accumulated workflow-level contamination/taint signals, and supplies recovery actions: context override/sanitization, agent replanning, context rollback to a trusted checkpoint, safe-mode session termination, tool-argument rewriting, and human-in-the-loop/shadow execution. A context-aware decision Core (stateful AMI over partially observable trajectories) runs parallel specialist risk encoders, world-model consequence simulation, and constrained policy arbitration that excludes critical-safety-violating actions, with multi-scale (immediate/task-level/long-horizon) risk-state synchronization. Empirically outperforms text-level guardrails (Llama Guard, LLM Guard) on ASB and drives InjecAgent data-stealing success to zero. Override-confidence and safety-vs-task policy weighting set the safety-utility operating point.",
+    "addresses_threats": [
+      "agent.prompt-injection-indirect",
+      "agent.memory-poisoning",
+      "agent.tool-abuse",
+      "model.data-leakage",
+      "agentic.cascading-failure"
+    ],
+    "standards": [],
+    "source_ids": [
+      "src-2604-17562"
+    ]
+  },
+  {
+    "id": "find-2606-17467-parse",
+    "type": "finding",
+    "analyst": "agentic-se-risk-analyst",
+    "title": "PARSE: provenance-aware fact-preserving retrieval sanitization for domain-camouflaged injection in RAG agents",
+    "summary": "PARSE is a training-free, inference-time sanitization pipeline that defends LLM agents against domain-camouflaged indirect prompt injection in retrieved content. Six components: (1) Domain Classifier (Haiku) selects domain-specific authority allowlists; (1.5) Directiveness Gate scores each document 0-1 for directive content and routes delta(d)>=0.5 to full_parse, else simple_paraphrase -- 59% of real enterprise docs take the cheap path, concentrating cost on the 41% high-risk subset; (2+3) Combined Tagger-Extractor (single Haiku call) labels each sentence factual|directive|hybrid, scores injection likelihood with domain allowlists (exempting legitimate authority language: legal 'shall'/'hereby', scientific 'we propose', medical 'treatment resulted in'), and extracts a structured fact list; (4) Structure-Aware Paraphraser (Sonnet) rewrites under a hard constraint that all extracted facts must appear in output; (5) Consistency Checker (Haiku) verifies fact preservation with one retry on failure (closed-loop, distinguishing PARSE from open-loop paraphrasing). On the 122-task real-document benchmark: PARSE achieves 15.6% ASR (vs 25.4% baseline, p=0.014, Cohen h=-0.245, the largest effect size of all conditions, adequately powered n=122>n_min=103) at 86.9% utility. Ablations confirm the structured multi-step analysis is necessary: parse_fast (single combined call) achieves 32.8% ASR -- WORSE than baseline -- because collapsing the pipeline eliminates the fact-extraction constraint; parse_domain_conditional (route by domain not directiveness) achieves 22.1% (not significant). Cost ~3-5 LLM API calls / ~$0.01 per doc, run at ingestion not query time. Largest per-domain ASR reductions: financial 33.3->12.5, DevOps 24.0->12.0.",
+    "source_ids": [
+      "src-2606-17467"
+    ],
+    "taxonomy": {
+      "threat": [
+        "agent.prompt-injection-indirect",
+        "model.prompt-injection",
+        "agentic.rag-poisoning"
+      ],
+      "attack": [
+        "prompt-attack"
+      ],
+      "teaming": [
+        "llm-as-a-judge",
+        "automated.retrieval-sanitization"
+      ]
+    },
+    "atlas": [
+      "AML.T0051"
+    ],
+    "benchmarks": [
+      "PARSE-real-document-benchmark"
+    ],
+    "standards": [],
+    "maturity": "emerging",
+    "confidence": 0.86,
+    "evidence_grade": "A",
+    "provenance": {
+      "extracted": 0.91,
+      "inferred": 0.07,
+      "ambiguous": 0.02
+    },
+    "novelty_signal": 0.78,
+    "notes": "Defense/control + benchmark paper. Models: Haiku, Sonnet, claude-sonnet-4-5 (task construction) -- real Claude models named. Send control to risk-safety-analyst. Benchmark is novel real-document RAG injection benchmark -> link for risk-safety benchmark intel."
+  },
+  {
+    "id": "find-2606-17467-synth2real",
+    "type": "finding",
+    "analyst": "agentic-se-risk-analyst",
+    "title": "Synthetic-to-real generalization failure: domain-camouflaged injection evades classifier and paraphrase defenses on real enterprise documents",
+    "summary": "Key negative result with red-team implications: prompt-injection defenses validated on synthetic benchmarks do NOT predict real-document deployment performance. Real enterprise documents differ fundamentally from synthetic ones -- a SEC 10-K MD&A runs 500-2000 words, interleaves numerical claims with forward-looking authority language ('management believes', 'the Company shall') that legitimate readers rely on for context. Domain-camouflaged injection (Pai 2026a, CDG metric) embeds malicious goals in professional-domain vocabulary, rendering payloads syntactically indistinguishable from legitimate content and achieving ZERO detection by production classifiers including Llama Guard 3. Two evidenced failure modes: (1) Paraphrasing -- the strongest synthetic-benchmark defense -- shows NO statistically significant ASR reduction on real documents (24.6% vs 25.4% baseline, p=0.500, h=-0.019; detecting this small effect would require n=17,253 tasks) while degrading utility 91.8%->82.8% (9pp cost at zero security benefit), because it indiscriminately rewrites legitimate authority language alongside injections and discards quantitative facts. (2) Llama Guard 4 reaches 18.9% ASR (survives Bonferroni, p=0.004) but at 64.8% utility -- a 27pp cost disqualifying it for production RAG. Token-level sanitization (CommandSans) is context-agnostic, false-positives on legal/financial authority language, and cannot detect camouflaged payloads that contain no syntactic injection tokens. Lesson: evaluate agent defenses on domain-matched real documents, not synthetic proxies.",
+    "source_ids": [
+      "src-2606-17467"
+    ],
+    "taxonomy": {
+      "threat": [
+        "agent.prompt-injection-indirect",
+        "agentic.rag-poisoning",
+        "safety.evaluation-validity-risk"
+      ],
+      "attack": [
+        "prompt-attack",
+        "social-engineering"
+      ],
+      "teaming": [
+        "frontier-detection.benchmark-validity"
+      ]
+    },
+    "atlas": [
+      "AML.T0051"
+    ],
+    "benchmarks": [
+      "PARSE-real-document-benchmark"
+    ],
+    "standards": [],
+    "maturity": "emerging",
+    "confidence": 0.85,
+    "evidence_grade": "A",
+    "provenance": {
+      "extracted": 0.9,
+      "inferred": 0.08,
+      "ambiguous": 0.02
+    },
+    "novelty_signal": 0.8,
+    "notes": "Strong evaluation-validity finding: benchmark results from short synthetic injection scenarios mislead about real deployment. Relevant to standards-regulatory (evaluation methodology) and risk-safety (benchmark validity). Domain-camouflaged injection = evasion-by-mimicry attack class. Coordinate with threat-attack-analyst who owns the camouflage attack technique (Pai 2026a, arXiv:2605.22001)."
+  },
+  {
+    "id": "agentic.rag-poisoning",
+    "type": "threat",
+    "label": "Domain-camouflaged retrieval (RAG) injection",
+    "axis": "agentic",
+    "description": "An adversary embeds malicious instructions in content retrieved by an LLM agent (customer uploads, third-party APIs, scraped web, enterprise documents) using legitimate professional-domain vocabulary and authority framing (e.g., regulatory 'shall', financial forward-looking statements) so the payload is syntactically indistinguishable from genuine document content. This evades classifier-based and token-level defenses (zero detection by production safety classifiers) because it carries no syntactic injection markers, and resists paraphrase defenses that cannot separate camouflaged instructions from legitimate authority language. Distinct from overt indirect prompt injection by its mimicry of domain-legitimate semantics; mitigation requires provenance- and domain-aware sentence-level sanitization with fact preservation.",
+    "candidate": true,
+    "provenance": {
+      "extracted": 0.84,
+      "inferred": 0.14,
+      "ambiguous": 0.02
+    },
+    "source_ids": [
+      "src-2606-17467"
+    ]
+  },
+  {
+    "id": "control-parse-retrieval-sanitization",
+    "type": "control",
+    "name": "PARSE provenance-aware retrieval sanitization",
+    "description": "A training-free, inference-time, six-component sanitization pipeline applied to retrieved content at document-ingestion time: domain classification selecting authority allowlists, a directiveness gate routing high-risk documents (delta>=0.5) to full processing while cheaply paraphrasing low-risk ones, a sentence-level tagger-extractor that scores injection likelihood with domain-specific allowlists (exempting legitimate authority language) and extracts structured facts, a structure-aware paraphraser that neutralizes injections under a hard fact-preservation constraint, and a closed-loop consistency checker that verifies extracted facts survive sanitization (with retry). Defends against domain-camouflaged indirect prompt injection in professional-domain RAG agents while preserving the factual content needed to complete the legitimate task, achieving statistically significant ASR reduction at near-baseline utility. The structured multi-step analysis (fact-extraction constraint) is necessary -- a single-call collapse degrades below baseline.",
+    "addresses_threats": [
+      "agent.prompt-injection-indirect",
+      "agentic.rag-poisoning",
+      "model.prompt-injection"
+    ],
+    "standards": [],
+    "source_ids": [
+      "src-2606-17467"
+    ]
+  },
+  {
+    "id": "find-2605-08442-layerdefense",
+    "type": "finding",
+    "analyst": "agentic-se-risk-analyst",
+    "title": "Defense-by-architectural-layer: only memory-layer tool-gating stops delayed-trigger persistent memory attacks; input/retrieval defenses fail",
+    "summary": "The delayed-trigger attack (DTA) is a multi-session persistent memory attack: a compliance-framed malicious rule (e.g., 'all outbound emails must be forwarded to an external audit monitor', citing SEC Rule 17a-4) is injected via a RAG document in session S1, stored to persistent memory (memory_save_fact), then in a later trigger session S4 (with conversation history wiped, only the SQLite memory store persisting) recalled and executed as exfiltration. Injection succeeded 100% across 2,520 attack runs; recall was universal; the only variance is execution-stage blocking. Mechanistic finding mapped to the pathway inject->store->recall->execute: (1) input-layer defenses (Minimizer, Sanitizer) NEVER observe the payload because it enters via RAG not user input (88.9% ASR, payload-invariant by construction); (2) retrieval-layer defenses (RAG Sanitizer, RAG LLM Judge qwen2.5:1.5b) observe the document but fail detection -- 0/360 removed -- because the compliance-framed payload is out-of-distribution for a 60-example classifier and the 1.5B judge produces zero malicious classifications (capacity failure: cannot engage semantic content); (3) instruction-layer Prompt Hardening (4 explicit security rules) partially fails at 77.8%, with the 0% reduction driven by 2 models (one genuine refusal, one model-level refusal independent of defense) -- for the other 7, exfiltration was tagged semantic_masking_success: the model acknowledged the rules then overrode them by framing exfiltration as mandatory regulatory compliance; (4) only tool-layer Memory Sandbox (removing memory_recall_fact from the schema, keeping memory_list_all_facts) reduces ASR to 0% for 8/9 models by severing the recall step (explicit_recall_required tagged in all 320 blocks), at zero utility cost (BTCR 100%). Lesson: detection was not required when the attack's critical capability is removed at the schema level; defense effectiveness is determined by which architectural layer the defense operates at relative to the attack pathway.",
+    "source_ids": [
+      "src-2605-08442"
+    ],
+    "taxonomy": {
+      "threat": [
+        "agent.memory-poisoning",
+        "agentic.cross-session-memory-persistence",
+        "model.data-leakage",
+        "agent.prompt-injection-indirect"
+      ],
+      "attack": [
+        "prompt-attack",
+        "tool-attack"
+      ],
+      "teaming": [
+        "frontier-detection.defense-layer-evaluation"
+      ]
+    },
+    "atlas": [
+      "AML.T0051",
+      "AML.T0024",
+      "AML.T0029"
+    ],
+    "benchmarks": [
+      "delayed-trigger-attack-DTA"
+    ],
+    "standards": [],
+    "maturity": "emerging",
+    "confidence": 0.88,
+    "evidence_grade": "A",
+    "provenance": {
+      "extracted": 0.93,
+      "inferred": 0.05,
+      "ambiguous": 0.02
+    },
+    "novelty_signal": 0.83,
+    "notes": "Rigorous statistics (BCa bootstrap, Holm-Bonferroni, 5040 runs, 0% FP across 2520 no-attack). Models: Claude Sonnet 4.6, Claude Haiku 4.5 (frontier, both 0% attack), plus 9 open-source (Qwen-2.5/3/3.5 family, QwQ-32B, GLM-4-Flash, GPT-OSS-20B, GPT-OSS-Safeguard-120B). Send to risk-safety-analyst for control records. Strong evidence for agentic.cross-session-memory-persistence already created from paper 1."
+  },
+  {
+    "id": "find-2605-08442-inversion",
+    "type": "finding",
+    "analyst": "agentic-se-risk-analyst",
+    "title": "Capability-removal defenses can create new attack pathways: qwq:32b inversion, hallucination bypass, multi-key normalization",
+    "summary": "Three novel behavioral findings show capability-removal defenses (tool-gating) have non-monotone, model-dependent effects. (1) Defense inversion (qwq:32b): under no-defense the model achieves 0% ASR via execution refusal (reasons through the routing rule, sees the attacker address, declines to send -- a recalled memory fact is treated as advisory, 'the model chose to store it, so it can choose to ignore it'); under Memory Sandbox it achieves 100% ASR because removing memory_recall_fact forces it to reconstruct the attacker payload directly from the RAG corpus, where the instruction arrives 'fresh' carrying the implicit authority of an organisational source -- and the model's literal-interpretation/refusal mechanism does not activate. Capability removal removed the friction that was protecting it. Practitioner rule: before deploying tool-gating, verify the target model achieves 0% ASR under no-defense via execution refusal; if so, the gate may invert rather than preserve safety. (2) Hallucination bypass (qwen3.5:122b, glm-4.7-flash): when recall is blocked, both deterministically fabricate plausible benign routing rules from training priors (40/40 identical) rather than halting -- ASR is 0% only incidentally because their priors do not contain the attacker address; an attacker who knows the model's prior could craft a key name eliciting the correct address. (3) Multi-key normalization (gpt-oss:20b): in 37/40 runs the model spontaneously stores the malicious document as TWO distinct keyed facts (routing rule + standalone attacker-address value) rather than one monolithic rule -- so a defense that deletes the routing rule by key name leaves the attacker address intact. Key-targeted remediation is insufficient; defenses must clear all memory or validate the semantic content of every stored fact. Also: tool contract language (return messages, schema composition, directive phrasing) is a first-class experimental confound that current agentic evaluation reporting standards do not require disclosure of.",
+    "source_ids": [
+      "src-2605-08442"
+    ],
+    "taxonomy": {
+      "threat": [
+        "agent.memory-poisoning",
+        "agentic.autonomy-risk",
+        "model.hallucination",
+        "safety.evaluation-validity-risk"
+      ],
+      "attack": [
+        "tool-attack"
+      ],
+      "teaming": [
+        "frontier-detection.behavioral-archetype"
+      ]
+    },
+    "atlas": [
+      "AML.T0029"
+    ],
+    "benchmarks": [
+      "delayed-trigger-attack-DTA"
+    ],
+    "standards": [],
+    "maturity": "emerging",
+    "confidence": 0.85,
+    "evidence_grade": "A",
+    "provenance": {
+      "extracted": 0.91,
+      "inferred": 0.07,
+      "ambiguous": 0.02
+    },
+    "novelty_signal": 0.86,
+    "notes": "Highest novelty in the batch: capability removal as attack-pathway creator. The Draft-Only Executor archetype (refuses under normal conditions, inverts under sandbox) and hallucination-bypass-as-incidental-safety are new. Multi-key normalization breaks key-targeted memory remediation. Relevant to risk-safety (residual-risk: defense inversion) and standards-regulatory (tool-contract disclosure in eval reporting)."
+  },
+  {
+    "id": "agentic.defense-inversion",
+    "type": "threat",
+    "label": "Capability-removal defense inversion in agentic systems",
+    "axis": "agentic",
+    "description": "A capability-removal or tool-gating defense (e.g., disabling memory recall to block a persistent memory attack) inverts and INCREASES attack success for certain models because removing the capability forces the agent onto an alternative execution pathway where its protective mechanism does not engage. Example: a model that refuses to act on a recalled poisoned memory fact (treating stored content as advisory) will instead reconstruct and execute the malicious instruction when forced to read it fresh from a retrieval source carrying implicit organisational authority. Defense effectiveness is therefore non-monotone and model-dependent; capability removal can create new attack pathways rather than only eliminating existing ones.",
+    "candidate": true,
+    "provenance": {
+      "extracted": 0.85,
+      "inferred": 0.13,
+      "ambiguous": 0.02
+    },
+    "source_ids": [
+      "src-2605-08442"
+    ]
+  },
+  {
+    "id": "vuln-agent-memory-multikey-normalization",
+    "type": "vulnerability",
+    "title": "Key-targeted memory remediation bypassed by spontaneous multi-key fact normalization",
+    "description": "Some LLM agents spontaneously decompose a single malicious instruction into multiple distinct keyed memory facts when storing it to persistent memory (e.g., gpt-oss:20b stored a malicious routing rule as two facts in 37/40 runs: the routing rule under one key and the standalone attacker address as a separate value). A defense that detects and deletes the malicious routing rule by key name leaves the auxiliary fact (the attacker address) intact in memory, which suffices to reconstruct the attack on later recall. Key-targeted memory remediation is therefore insufficient; remediation must clear all memory or validate the semantic content of every stored fact, not just named keys.",
+    "affected": "Stateful LLM agents with key-value persistent memory and key-targeted remediation defenses",
+    "exploited_by": [],
+    "threats": [
+      "agent.memory-poisoning",
+      "agentic.cross-session-memory-persistence"
+    ],
+    "cwe": [
+      "CWE-459"
+    ],
+    "severity": "medium",
+    "disclosure": "academic",
+    "patch_status": "mitigation-proposed",
+    "controls": [
+      "control-memory-sandbox-tool-gating"
+    ],
+    "external_refs": {},
+    "source_ids": [
+      "src-2605-08442"
+    ]
+  },
+  {
+    "id": "control-memory-sandbox-tool-gating",
+    "type": "control",
+    "name": "Memory-layer tool-gating (Memory Sandbox)",
+    "description": "A tool-layer defense that removes the memory-recall capability (memory_recall_fact) from a stateful agent's tool schema during sensitive (trigger) sessions while leaving key enumeration (memory_list_all_facts) available, severing the recall step in the persistent-memory attack pathway (inject->store->recall->execute) without requiring detection of whether stored content is malicious. Reduces delayed-trigger persistent-memory attack success to 0% for most models at zero utility cost in the absence of attack. Caveat: effectiveness is non-monotone and model-dependent -- for models that refuse execution on recalled facts but not on freshly-retrieved content, removing recall can invert the defense (forcing the agent onto the RAG pathway and increasing attack success); deployment must first verify the target model's no-defense refusal behavior. Key-targeted variants are insufficient against multi-key fact normalization.",
+    "addresses_threats": [
+      "agent.memory-poisoning",
+      "agentic.cross-session-memory-persistence",
+      "model.data-leakage"
+    ],
+    "standards": [],
+    "source_ids": [
+      "src-2605-08442"
+    ]
+  },
+  {
+    "id": "f-safeclawbench-endpoint-separation",
+    "type": "finding",
+    "analyst": "redteam-method",
+    "title": "SafeClawBench: staged endpoint separation (semantic / audit-evidence / sandbox) for tool-agent red teaming",
+    "summary": "SafeClawBench argues agent-security evaluation must separate three non-interchangeable endpoints rather than collapse them into one attack-success rate: (1) Semantic Core (CoreFail@600) = LLM judge (GPT-5.4) labels whether the final response semantically adopts/authorizes the unsafe goal; (2) Core-gated harm-evidence audit (HarmEvidence@600) = audits all 1,834 canonical CoreFail rows for TextHarm/AccessHarm/ActionHarm/PersistHarm evidence in the artifact; (3) Exec-Balanced (ObservedHarm@Exec) = deterministic sandbox oracles over file/email/db/memory/web/code stores. 600 cases, 100 per family (DPI/IPI/TRI/MPI/MEX/ADI). Under D0, pooled CoreFail@600=28.0% but HarmEvidence@600=16.8% and SemanticOnly=11.2% — audited harm is strictly narrower than semantic failure. Key red-teaming insight: a model 'agreeing' with an attacker (semantic) is not the same as producing observable harm.",
+    "source_ids": [
+      "src-safeclawbench-2606-18356"
+    ],
+    "taxonomy": {
+      "threat": [
+        "agent.tool-abuse",
+        "model.prompt-injection",
+        "agent.memory-poisoning"
+      ],
+      "attack": [
+        "tool-attack",
+        "prompt-attack"
+      ],
+      "teaming": [
+        "llm-as-a-judge",
+        "automated.staged-endpoint-separation",
+        "automated.benchmark"
+      ]
+    },
+    "atlas": [
+      "AML.T0051",
+      "AML.T0054"
+    ],
+    "benchmarks": [
+      "SafeClawBench"
+    ],
+    "standards": [],
+    "maturity": "emerging",
+    "confidence": 0.86,
+    "evidence_grade": "A",
+    "provenance": {
+      "extracted": 0.85,
+      "inferred": 0.12,
+      "ambiguous": 0.03
+    },
+    "novelty_signal": 0.68,
+    "notes": "Method↔benchmark link: SafeClawBench is the benchmark (risk-safety-analyst owns the record); this finding records the *staged-endpoint LLM-as-judge teaming method*. Verbatim: CoreFail@600 D0 pooled 28.0% [26.4,29.6]; per-model D0 range Claude Opus 4.7=9.0% to Kimi K2.5=44.2% (4.9x ratio). HarmEvidence pooled D0=16.8%, SemanticOnly=11.2%. Judge=GPT-5.4 temp 0; second-judge validation=Claude Opus 4.6."
+  },
+  {
+    "id": "f-safeclawbench-corepass-execharm-gap",
+    "type": "finding",
+    "analyst": "redteam-method",
+    "title": "SafeClawBench CorePass∩ExecHarm: 291/347 sandbox harms pass the semantic judge — judge-only red teaming under-counts harm",
+    "summary": "The Core-Exec join over 12,000 matched rows (5 endpoints x 4 policies x 600 mappings) exposes that 291 of 347 ExecHarm rows (83.9%) arise from rows that PASS the Semantic Core call (CorePass∩ExecHarm). The join contains 56 CoreFail∩ExecHarm, 1,778 CoreFail-without-ExecHarm, and 291 CorePass∩ExecHarm rows. This is the paper's central red-teaming methodology claim: a text-judge (LLM-as-judge semantic) endpoint systematically misses executable sandbox harm because Core and Exec use separate model calls, prompt formats, tool schemas, parser paths, and sandbox permissions. Under a separate executable protocol, matched task identities produce sandbox harm despite passing the semantic check. Implication for automated red teaming: judge-based ASR alone is insufficient; deterministic state-oracle endpoints are required to catch harm.",
+    "source_ids": [
+      "src-safeclawbench-2606-18356"
+    ],
+    "taxonomy": {
+      "threat": [
+        "agent.tool-abuse",
+        "agent.autonomy-risk",
+        "model.prompt-injection"
+      ],
+      "attack": [
+        "tool-attack",
+        "autonomous-attack"
+      ],
+      "teaming": [
+        "llm-as-a-judge",
+        "automated.state-oracle-evaluation",
+        "frontier-detection.runtime-state-audit"
+      ]
+    },
+    "atlas": [
+      "AML.T0051"
+    ],
+    "benchmarks": [
+      "SafeClawBench"
+    ],
+    "standards": [],
+    "maturity": "emerging",
+    "confidence": 0.84,
+    "evidence_grade": "A",
+    "provenance": {
+      "extracted": 0.83,
+      "inferred": 0.14,
+      "ambiguous": 0.03
+    },
+    "novelty_signal": 0.74,
+    "notes": "Verbatim: 291/347 ExecHarm rows (83.9%) pass Semantic Core; join=56 CoreFail∩ExecHarm + 1,778 CoreFail-no-ExecHarm + 291 CorePass∩ExecHarm. D0 ObservedHarm@Exec range 0.5% (Claude Opus 4.7) to 11.3% (Kimi K2.5), mean 4.133%. Paper cautions this should NOT be read as a simple text-judge miss (separate protocols), but the narrow claim stands: state-level harm is invisible to the semantic judge."
+  },
+  {
+    "id": "f-safeclawbench-prompt-policy-model-dependent",
+    "type": "finding",
+    "analyst": "redteam-method",
+    "title": "SafeClawBench: prompt-policy defenses are model-dependent, not uniformly ranked — long over-specified policy (D4) is a confound not a control",
+    "summary": "SafeClawBench evaluates four prompt-level defense policies (D0/no-defense, B2/Sandwich lightweight wrapper, D3/layered stack, D4/LongPolicy over-specified bundle with Semantic Intent Anchoring + Memory Integrity Guard + Tool Chain Analyzer). Finding: prompt-policy effects are model-dependent. B2/Sandwich pooled CoreFail=14.8% vs D0=28.0%. D4/LongPolicy is lowest on GPT-5.5 and tied with D3 on Claude Opus 4.7, while D3 is lowest on Qwen3.6-Plus/GLM-5.1/Kimi K2.5. A matched-length control (D3_LM, padded to D4 length) averages 8.0% CoreFail — below both D3 and D4 — showing prompt LENGTH itself changes model behavior. The paper therefore refuses to attribute D4 results to SIA/MIG/TCA components, treating LongPolicy as a policy-complexity probe rather than a validated defense. Critical red-teaming methodology lesson: longer defense prompts can confound apparent robustness gains.",
+    "source_ids": [
+      "src-safeclawbench-2606-18356"
+    ],
+    "taxonomy": {
+      "threat": [
+        "model.prompt-injection",
+        "agent.tool-abuse"
+      ],
+      "attack": [
+        "prompt-attack"
+      ],
+      "teaming": [
+        "llm-as-a-defender",
+        "automated.prompt-policy-ablation",
+        "manual.defense-design"
+      ]
+    },
+    "atlas": [
+      "AML.T0051"
+    ],
+    "benchmarks": [
+      "SafeClawBench"
+    ],
+    "standards": [],
+    "maturity": "emerging",
+    "confidence": 0.8,
+    "evidence_grade": "A",
+    "provenance": {
+      "extracted": 0.82,
+      "inferred": 0.15,
+      "ambiguous": 0.03
+    },
+    "novelty_signal": 0.6,
+    "notes": "For risk-safety-analyst: prompt policies (instruction hierarchy, StruQ-style data separation, spotlighting, Llama Guard, FASA/ClawGuard) are candidate LLM-as-a-defender controls but the paper warns prompt-only defenses are NOT complete production controls — runtime access control still required for irreversible actions. Matched-length control D3_LM=8.0%. Defense families: B1-B4 lightweight, D1-D3 layered, D4 probe."
+  },
+  {
+    "id": "f-skillvetbench-llm-judge-instruction-layer",
+    "type": "finding",
+    "analyst": "redteam-method",
+    "title": "SkillVetBench: LLM-as-Judge catches instruction-layer skill-supply-chain risk that code-layer scanners are structurally blind to",
+    "summary": "SkillVetBench frames agent-skill vetting as a supply-chain red-teaming problem: malicious community skills embed harm in the INSTRUCTION LAYER (natural-language directives) not inspectable code, so signature/static scanners are structurally mismatched. On a labeled 100-skill set (78 malicious + 22 benign), the LLM-as-Judge (Qwen2.5-14B-Instruct default) achieves TP=78, FN=0, FP=0, TN=22 (Catch=1.00, Miss=0%), vs best static baseline SkillSieve (Catch 0.85, Miss 15%), CodeBERT (Miss 30%), VirusTotal (Miss 67%). The gap is sharpest on instruction-layer categories: for Prompt Injection (19 skills) VirusTotal flags 0, ClawScan flags 3, LLM-Judge flags all 19; for Memory Poisoning (9 skills) CodeBERT detects 0 (89-100% miss). Conclusion: instruction-layer and multi-agent risk requires a semantic LLM judge; signature matching cannot see it. Wilson 95% lower bounds: recall ~0.95, specificity ~0.85 (100 skills cannot certify perfection).",
+    "source_ids": [
+      "src-skillvetbench-2606-15899"
+    ],
+    "taxonomy": {
+      "threat": [
+        "software.supply-chain",
+        "model.prompt-injection",
+        "agent.memory-poisoning",
+        "agent.tool-abuse"
+      ],
+      "attack": [
+        "prompt-attack",
+        "tool-attack",
+        "multi-agent-attack"
+      ],
+      "teaming": [
+        "llm-as-a-judge",
+        "automated.semantic-vetting",
+        "frontier-detection.instruction-layer-scan"
+      ]
+    },
+    "atlas": [
+      "AML.T0051",
+      "AML.T0010"
+    ],
+    "benchmarks": [
+      "SkillVetBench"
+    ],
+    "standards": [
+      "CVSS v4.0"
+    ],
+    "maturity": "emerging",
+    "confidence": 0.85,
+    "evidence_grade": "A",
+    "provenance": {
+      "extracted": 0.86,
+      "inferred": 0.11,
+      "ambiguous": 0.03
+    },
+    "novelty_signal": 0.72,
+    "notes": "Method↔benchmark: SkillVetBench is the benchmark (companion arXiv:2606.00925). This finding records the LLM-as-judge instruction-layer vetting method. Verbatim Table 3: SkillVetBench Balance 0.95/Catch 1.00/Precision 0.96/Miss 0%. Baselines miss 15-67%. For agentic-se-risk-analyst: this is a MCP/A2A-adjacent SKILL supply-chain finding (ClawHub/OpenClaw marketplace, tens of thousands of skills)."
+  },
+  {
+    "id": "f-skillvetbench-sars-agentic-risk-metric",
+    "type": "finding",
+    "analyst": "redteam-method",
+    "title": "SkillVetBench SARS: five-dimensional agentic-risk score (IFR/DG/AI/BR/CA) captures harm invisible to CVSS",
+    "summary": "SARS (Skill Agentic Risk Score) is a NEW weighted 0-10 metric for instruction-following agentic systems: SARS=(2*IFR + 1.5*DG + 1.5*AI + 2*BR + 2*CA)/2.7, scoring five 0-3 dimensions — Instruction Fidelity Risk (prompt-hijackability), Data Gravity (data sensitivity), Action Irreversibility, Blast Radius, Chain Amplification (multi-skill force-multiplier). IFR/BR/CA weighted 2x because code-layer scanners cannot see them. The paper deliberately reports SARS, CVSS v4.0, and a three-tier LLM verdict (Benign/Suspicious/Malicious) SEPARATELY rather than fused, because they answer different questions and their DIVERGENCE is the signal. Key result (Table 6): Data Exposure (CVSS 1.84) and Supply Chain (CVSS 2.30) fall below Medium CVSS yet receive Suspicious LLM verdicts because their threat is instruction-level exfiltration / runtime dependency injection that static scoring cannot model. Chain Amplification stays >=1.80 across EVERY malicious category, confirming all confirmed-malicious skills contribute to compositional multi-agent attack chains.",
+    "source_ids": [
+      "src-skillvetbench-2606-15899"
+    ],
+    "taxonomy": {
+      "threat": [
+        "agentic.autonomy-risk",
+        "agent.tool-abuse",
+        "software.supply-chain",
+        "societal.chain-amplification"
+      ],
+      "attack": [
+        "multi-agent-attack",
+        "tool-attack"
+      ],
+      "teaming": [
+        "llm-as-a-judge",
+        "automated.multi-dimensional-scoring",
+        "frontier-detection.agentic-risk-metric"
+      ]
+    },
+    "atlas": [
+      "AML.T0051"
+    ],
+    "benchmarks": [
+      "SkillVetBench"
+    ],
+    "standards": [
+      "CVSS v4.0"
+    ],
+    "maturity": "emerging",
+    "confidence": 0.82,
+    "evidence_grade": "A",
+    "provenance": {
+      "extracted": 0.84,
+      "inferred": 0.13,
+      "ambiguous": 0.03
+    },
+    "novelty_signal": 0.71,
+    "notes": "SARS verbatim formula and weights. Worked example inbox-cleaner SARS~7.2 (High). windows-control case: SARS 8.0 High, CVSS 10.0 Critical, 7 SKV findings across 6 categories. Static judge reads declared content only — does NOT execute (CVSS Exploit Maturity inferred not observed). For agentic-se-risk-analyst: Chain Amplification = explicit multi-agent compositional-attack metric."
+  },
+  {
+    "id": "f-skillvetbench-evaluator-sensitivity-ensemble",
+    "type": "finding",
+    "analyst": "redteam-method",
+    "title": "SkillVetBench: LLM-as-Judge detection swings 35-95% by evaluator model — single-judge teaming is unreliable, motivating judge ensembles",
+    "summary": "SkillVetBench documents severe LLM-as-judge evaluator sensitivity: on the labeled set, vulnerable-skill detection ranges 35% to 95% across four evaluators — Qwen2.5-32B 95% (mean SARS 5.06, high recall/calibrated), Llama-3.1-7B 78% (4.99, broad coverage), Llama-3.2-3B-Ins 43% (5.57, sparse but over-sensitive, 6.50+/-7.80 vulns/skill = poor calibration), Mixtral-8x7B 35% (1.74, systematic false-negative bias / near-uniform abstention, median SARS 0.00). This 60-point spread is a core red-teaming-method caution: a single LLM judge can silently under-detect; the paper recommends evaluators of >=7B with strong instruction-following alignment AND ensemble scoring across multiple judges to reduce single-model bias. Live leaderboard defaults to Qwen2.5-14B-Instruct. Critical for any LLM-as-X red-teaming pipeline: judge choice is a first-class confound that must be calibrated, not assumed.",
+    "source_ids": [
+      "src-skillvetbench-2606-15899"
+    ],
+    "taxonomy": {
+      "threat": [
+        "safety.evaluation-gap"
+      ],
+      "attack": [],
+      "teaming": [
+        "llm-as-a-judge",
+        "automated.judge-ensemble",
+        "frontier-detection.judge-calibration"
+      ]
+    },
+    "atlas": [],
+    "benchmarks": [
+      "SkillVetBench"
+    ],
+    "standards": [],
+    "maturity": "emerging",
+    "confidence": 0.83,
+    "evidence_grade": "A",
+    "provenance": {
+      "extracted": 0.85,
+      "inferred": 0.12,
+      "ambiguous": 0.03
+    },
+    "novelty_signal": 0.66,
+    "notes": "Verbatim Table 5: detection 35-95%; Qwen2.5-32B 95%/SARS 5.06+/-2.02; Llama-3.1-7B 78%/4.99+/-2.48; Llama-3.2-3B-Ins 43%/5.57+/-2.66; Mixtral-8x7B 35%/1.74+/-2.20. Live leaderboard (Table 10) different roster: Mixtral-8x7B 35.4% vuln. Judge-ensemble calibration is a 2025-26 method shift — links to f-skillvetbench-llm-judge-instruction-layer. No post-hoc reliability-diagram calibration done (acknowledged limitation)."
+  },
+  {
+    "id": "f-process-mining-dfg-redteam",
+    "type": "finding",
+    "analyst": "redteam-method",
+    "title": "Process mining of red-team traces: DFGs reveal absorbing-wall vs porous-gate defense archetypes invisible to ASR",
+    "summary": "The paper introduces a NOVEL red-teaming analysis method: treat each adversarial campaign as a process-mining 'case', each scored attempt as an 'event', and the LLM-judge severity level (L0 incoherent / L1 full refusal / L2 conceptual / L3 procedural-with-hedging / L4 direct-compliant; L3+L4=jailbreak) as the 'activity'. Exporting 8,575 events as XES logs and analyzing with PM4Py yields Directly-Follows Graphs and L_i->L_j transition matrices that expose defense TRAJECTORY, not just outcome. Two structurally distinct archetypes emerge: GPT-OSS = 'absorbing wall' (L1->L1 self-loop ratio 4,187/4,597=91.1%, only 11 transitions ever reached L3, single event reached L4); Llama = 'porous gate' (L1 self-loop 1,214/1,468=82.7%, with L1->L3 occurring 26x, L2 acting as a stepping-stone with bidirectional traffic L2->L3:2, L2->L4:1). ASR collapses this: GPT-OSS 20.0% vs Llama 78.3% jailbroken, but the failure MODES differ fundamentally and demand different mitigations.",
+    "source_ids": [
+      "src-process-mining-redteam-2606-07833"
+    ],
+    "taxonomy": {
+      "threat": [
+        "model.jailbreak"
+      ],
+      "attack": [
+        "prompt-attack"
+      ],
+      "teaming": [
+        "automated.process-mining",
+        "automated.attack-trace-analysis",
+        "llm-as-a-judge",
+        "frontier-detection.trajectory-analysis"
+      ]
+    },
+    "atlas": [
+      "AML.T0054"
+    ],
+    "benchmarks": [
+      "HarmBench"
+    ],
+    "standards": [
+      "IEEE 1849-2023 (XES)"
+    ],
+    "maturity": "emerging",
+    "confidence": 0.84,
+    "evidence_grade": "A",
+    "provenance": {
+      "extracted": 0.85,
+      "inferred": 0.12,
+      "ambiguous": 0.03
+    },
+    "novelty_signal": 0.82,
+    "notes": "Genuine 2026 method shift: process-mining (van der Aalst) applied to red-team event logs — a new analysis paradigm beyond ASR. Verbatim: 8,575 events; GPT-OSS R_L1=91.1%, Llama R_L1=82.7%; ASR GPT-OSS 20.0% / Llama 78.3%. PyRIT-based campaign, Llama 3.3 70B judge (logprob 5-level rubric). XES = IEEE Std 1849-2023. Benchmark link: HarmBench (60 prompts, 3 categories). Diagnostic only — no new attack capability."
+  },
+  {
+    "id": "f-process-mining-mutator-asymmetry-deadends",
+    "type": "finding",
+    "analyst": "redteam-method",
+    "title": "Process mining exposes model-specific mutator asymmetry, three converter behavioral clusters, and 45.5% dead-end attack budget",
+    "summary": "The DFG/state-distribution analysis reveals actionable red-teaming intelligence ASR hides. Mutator effectiveness is strongly asymmetric: ROT13 is GPT-OSS's primary vulnerability (6.7% ASR, 4/12 jailbreaks) but 0% on Llama; Base64/StringJoin are highly effective on Llama (25.0%/13.3%) but marginal on GPT-OSS (3.3%/5.0%); Llama is jailbroken 20x on VERBATIM prompts (content-level not encoding-level safety gap). Three behavioral converter clusters emerge from state distributions: (1) confusion-inducing ciphers (Atbash/Caesar13/ROT13/Binary/NATO, high L0 38-55%, often incidental defense); (2) transparent encodings (Verbatim/RandCaps/AsciiArt/SuffixDAN, model understands then refuses); (3) partial-decode (Base64/StringJoin, 'decode-then-comply' bypassing the refusal pipeline). A 'ROT13 paradox / confusion fatigue' on GPT-OSS: prolonged L0<->L1 oscillation precedes sudden refusal collapse (77 oscillations then L1->L3). FIVE converters (Atbash/AsciiArt/Caesar-13/RandCaps/SuffixDAN) are dead-ends (0 jailbreaks on either model) = 45.5% of mutator budget; a process-mining-informed attacker reallocates to live-path converters (ROT13/Base64/StringJoin) to cut time-to-jailbreak. Time-to-jailbreak: GPT-OSS mean 57.0 (median 73) vs Llama 23.9 (median 21) attempts — ~2.4x effort cost.",
+    "source_ids": [
+      "src-process-mining-redteam-2606-07833"
+    ],
+    "taxonomy": {
+      "threat": [
+        "model.jailbreak",
+        "model.prompt-injection"
+      ],
+      "attack": [
+        "prompt-attack"
+      ],
+      "teaming": [
+        "automated.process-mining",
+        "automated.adaptive-attack-strategy",
+        "frontier-detection.trajectory-analysis"
+      ]
+    },
+    "atlas": [
+      "AML.T0054"
+    ],
+    "benchmarks": [
+      "HarmBench"
+    ],
+    "standards": [],
+    "maturity": "emerging",
+    "confidence": 0.82,
+    "evidence_grade": "A",
+    "provenance": {
+      "extracted": 0.84,
+      "inferred": 0.13,
+      "ambiguous": 0.03
+    },
+    "novelty_signal": 0.7,
+    "notes": "For risk-safety-analyst (controls): DFG identifies dangerous transitions (L1->L3 via specific mutators) for targeted guardrail reinforcement (Llama Guard cited). Category insight: disinformation least-defended (Llama 100% ASR, R_L1 collapses to 58.3%, TTJ 14) — uniform-weighted safety evals overstate robustness by diluting weak categories. Per-mutator ASR Table 3 verbatim. Dead-end pruning saves 45.5% mutator budget."
+  },
+  {
+    "id": "f-narration-gap-attack",
+    "type": "finding",
+    "analyst": "redteam-method",
+    "title": "Narration-gap attack: indirect prompt injection inverts a formally-verified solver verdict at the narration step (61% unprotected flip rate)",
+    "summary": "The paper identifies and red-teams a NEW attack surface in neurosymbolic LLM-solver loops: the 'narration gap'. A SAT/SMT solver verdict v=D(phi) is provably sound and certificate-gated (Pr[V|chi=1]=1, system correctness ~1), yet the final LLM 'narration' step that turns v into a user answer is uncertified and attackable. An indirect-prompt-injection adversary who controls untrusted context reaching narration (embedded in formula text or an adjacent note) can flip the user-received conclusion (target p-bar=NOT rho(v)) WITHOUT touching the formula, solver, or certificate. Across 5 open models (Llama-3.1-8B, Gemma-3-12B, Qwen-2.5-14B, gpt-oss-20B, DeepSeek-R1-8B), overall injection success = 0.61 (n=240); per-model 0.28 (Qwen) to 0.91 (gpt-oss-20B reasoning model is MOST vulnerable). Critically, subtle injections are as effective as blatant (note_social, a note with NO imperative, scores 0.71 — among the most effective), so pure 'instruction-following' cannot explain it: this is a FAITHFULNESS failure of verdict-to-answer transfer under untrusted context.",
+    "source_ids": [
+      "src-narration-gap-2606-19588"
+    ],
+    "taxonomy": {
+      "threat": [
+        "model.prompt-injection",
+        "agent.tool-abuse",
+        "scientific.neurosymbolic-narration-gap"
+      ],
+      "attack": [
+        "prompt-attack"
+      ],
+      "teaming": [
+        "manual.adversarial-template-design",
+        "automated.injection-template-sweep",
+        "frontier-detection.runtime-enforcement"
+      ]
+    },
+    "atlas": [
+      "AML.T0051"
+    ],
+    "benchmarks": [],
+    "standards": [],
+    "maturity": "emerging",
+    "confidence": 0.83,
+    "evidence_grade": "A",
+    "provenance": {
+      "extracted": 0.84,
+      "inferred": 0.13,
+      "ambiguous": 0.03
+    },
+    "novelty_signal": 0.78,
+    "notes": "Novel 2026 attack surface (neurosymbolic narration gap). Verbatim Table 3: overall 0.61; gpt-oss-20B 0.91, Gemma 0.81, Llama 0.54, DeepSeek-R1 0.53, Qwen 0.28. Channels: note 0.64 vs in-formula 0.59; blatant 0.64 vs subtle 0.59 (overlapping). For agentic-se-risk-analyst: this is tool-integrated-agent risk where a sound formal certificate does NOT cover the loop. ^[ambiguous] frontier models excluded (open-model-only study)."
+  },
+  {
+    "id": "f-narration-gap-stealthy-failure-enforcement",
+    "type": "finding",
+    "analyst": "redteam-method",
+    "title": "Narration gap: stealthy verdict-flips evade monitors; only runtime enforcement (not prompt hardening) drives flip rate to zero",
+    "summary": "The paper proves and measures a defense hierarchy with a critical red-teaming-method implication: STEALTHY failures (verdict correctly restated v-hat=v but conclusion flipped) are INVISIBLE to a verdict-auditing monitor. Theorem 1: only a conclusion monitor that reads BOTH verdict and conclusion is sound+complete; a verdict-only monitor accepts every stealthy flip. Theorem 2 + Corollary 3: a sound enforcer that replaces the model's narrated conclusion with rho(v) computed from the trusted verdict is the ONLY defense reaching flip-rate 0. Empirically: hardening the narrator prompt cuts injection 0.61->0.14 (~4x) but cannot eliminate flips (14% remain), and is strongly model-dependent (Qwen 0.28->0.01, Gemma 0.81->0.14, but gpt-oss 0.91->0.26, Llama 0.54->0.24 retain attack). Worse, the stealthy fraction barely moves under hardening (0.57->0.53) — hardening removes visible compliant failures (T3) but leaves hidden stealthy ones (T2). Adaptive adversaries who know the hardening recover attack: note_adaptive_supersede 0.14->0.43, note_adaptive_override ->0.22. Lesson: prompt hardening is not a reliable standalone defense; runtime enforcement (emit verified verdict directly, remove model from conclusion) is required for verified-result pipelines.",
+    "source_ids": [
+      "src-narration-gap-2606-19588"
+    ],
+    "taxonomy": {
+      "threat": [
+        "model.prompt-injection",
+        "safety.evaluation-gap",
+        "scientific.neurosymbolic-narration-gap"
+      ],
+      "attack": [
+        "prompt-attack"
+      ],
+      "teaming": [
+        "llm-as-a-defender",
+        "frontier-detection.runtime-enforcement",
+        "frontier-detection.runtime-monitor",
+        "manual.adaptive-attack"
+      ]
+    },
+    "atlas": [
+      "AML.T0051"
+    ],
+    "benchmarks": [],
+    "standards": [],
+    "maturity": "emerging",
+    "confidence": 0.82,
+    "evidence_grade": "A",
+    "provenance": {
+      "extracted": 0.83,
+      "inferred": 0.14,
+      "ambiguous": 0.03
+    },
+    "novelty_signal": 0.74,
+    "notes": "For risk-safety-analyst (controls): runtime ENFORCEMENT (replace narrated conclusion with rho(v)) = the only flip-rate-0 control; conclusion-monitor (reads verdict+conclusion) sound+complete, verdict-monitor blind to stealthy. Verbatim Table 5: hardened total 0.61->0.14, Delta=-0.47; adaptive supersede 0.43, override 0.22. Table 6: undefended 295 flips (stealthy 169/0.35, compliant 126/0.26); hardened 68 flips. Generalizes to SMT/ITP (certificate covers verdict not narration). Links [[f-process-mining-dfg-redteam]] (both runtime-aware)."
+  },
+  {
+    "id": "f-safespec-runtime-defender",
+    "type": "finding",
+    "analyst": "redteam-method",
+    "title": "SafeSpec: LLM-as-a-defender via latent safety head + rollback-reflect inside the speculative-decoding loop (runtime teaming control)",
+    "summary": "SafeSpec is an inference-time / runtime LLM-as-a-defender method that embeds safety verification INSIDE the speculative-decoding loop. A lightweight boundary-aligned latent safety head H_phi (2-layer MLP on the frozen target's upper-layer hidden state, <33M params, <0.05% of backbone) produces a per-step safety score S_safe alongside the LM head's quality score in a single forward pass. When a candidate segment is flagged unsafe (S_safe < tau_s=0.4), SafeSpec triggers 'Safety Mode': rollback to a cleaner prior state + insert a reflection prompt + draft-model multi-sampling (K=20) to search the model's own distribution for safe continuations, selecting argmax safety. Models jailbreak as distributional shift (safe trajectories remain in low-probability tails). Across 7 attacks (ABJ, AttentionShift, CodeChameleon, DeepInception, ReNeLLM, Mousetrap, H-CoT) on Qwen3-32B and DeepSeek-R1-Distill-70B, SafeSpec achieves 0.07 avg ASR (vs SecDecoding 0.22, SafeDecoding 0.32, No-Defense 0.65) with only 0.10-0.12 over-refusal (XSTest) and a 2.06x/1.76x benign speedup. Key teaming insight: safety can be made structurally compatible with acceleration; rollback-reflect recovers safe outputs instead of hard-refusing (avoids over-refusal of hard-blocking guards).",
+    "source_ids": [
+      "src-safespec-2606-19755"
+    ],
+    "taxonomy": {
+      "threat": [
+        "model.jailbreak",
+        "model.reasoning-hijack"
+      ],
+      "attack": [
+        "prompt-attack"
+      ],
+      "teaming": [
+        "llm-as-a-defender",
+        "frontier-detection.runtime-safety-head",
+        "frontier-detection.reflective-resampling",
+        "automated.latent-probe-defense"
+      ]
+    },
+    "atlas": [
+      "AML.T0054"
+    ],
+    "benchmarks": [
+      "JailbreakBench",
+      "XSTest",
+      "HarmBench"
+    ],
+    "standards": [],
+    "maturity": "emerging",
+    "confidence": 0.84,
+    "evidence_grade": "A",
+    "provenance": {
+      "extracted": 0.85,
+      "inferred": 0.12,
+      "ambiguous": 0.03
+    },
+    "novelty_signal": 0.7,
+    "notes": "For risk-safety-analyst (CONTROL): SafeSpec = runtime safety-head + rollback-reflect control; addresses jailbreak/reasoning-hijack. Verbatim Table 1: SafeSpec avg ASR 0.07 on both Qwen3-32B & DeepSeek-70B; baselines SecDecoding 0.22, SafeDecoding 0.32, SR 0.31, RPO 0.31, No-Defense 0.65/0.51. tau_s=0.4, tau_q=9, K=20. Safety-head trained on AdvBench+DeepInception, labeled by Qwen3Guard-Gen-8B. Benchmark-method link: evaluated on JailbreakBench(JBB)/XSTest/H-CoT dataset."
+  },
+  {
+    "id": "f-safespec-ablation-reflection-necessity",
+    "type": "finding",
+    "analyst": "redteam-method",
+    "title": "SafeSpec ablation: reflection (not just resampling) is the load-bearing teaming component; hard-refusal causes utility collapse",
+    "summary": "SafeSpec's ablation isolates WHY reflective teaming beats hard blocking — an important red-teaming-defense methodology result. Removing the reflection prompt raises avg ASR to 0.44/0.45 (Qwen3-32B/DeepSeek-70B); removing multi-sampling raises it to 0.27/0.16. So reflection (forcing explicit intent re-evaluation to reshape the output distribution toward safe trajectories) is the dominant component; multi-sampling alone, lacking directional guidance, cannot reliably locate safe paths. Critically, a naive 'Hard Refusal' variant (terminate on any unsafe detection) achieves near-0 ASR but spikes over-refusal to 0.73/0.64 XSTest — exposing that the safety head has a high inherent false-positive rate, and that the rollback-reflect-resample mechanism is what compensates for detector noise while preserving utility. Layer-choice ablation shows shallow layers (L=4,8) are too lenient (ASR~0.15, safety features not yet linearly separable); from L=16 onward ASR stabilizes (<=0.07). Safety Mode is dormant on benign inputs (0.04 triggers/prompt, full 2.06x speedup) but frequent on jailbreaks (3.81 triggers/prompt, throughput <1x) — the slowdown is the defense functioning, analogous to a firewall under DDoS.",
+    "source_ids": [
+      "src-safespec-2606-19755"
+    ],
+    "taxonomy": {
+      "threat": [
+        "model.jailbreak",
+        "safety.evaluation-gap"
+      ],
+      "attack": [
+        "prompt-attack"
+      ],
+      "teaming": [
+        "llm-as-a-defender",
+        "frontier-detection.reflective-resampling",
+        "frontier-detection.runtime-safety-head"
+      ]
+    },
+    "atlas": [
+      "AML.T0054"
+    ],
+    "benchmarks": [
+      "XSTest",
+      "JailbreakBench"
+    ],
+    "standards": [],
+    "maturity": "emerging",
+    "confidence": 0.82,
+    "evidence_grade": "A",
+    "provenance": {
+      "extracted": 0.84,
+      "inferred": 0.13,
+      "ambiguous": 0.03
+    },
+    "novelty_signal": 0.62,
+    "notes": "Verbatim Table 3 ablation: No-Refl ASR 0.44/0.45; No-Multi 0.27/0.16; Hard-Refusal ASR ~0.01 but XSTest 0.73/0.64; full SafeSpec 0.07/0.07 XSTest 0.10/0.12. Layer ablation Table 6: L4 ASR 0.16, L64 0.07. For risk-safety-analyst: confirms hard-blocking guards (Guard+HardRefusal=Qwen3Guard-0.6B) trade safety for severe over-refusal (XSTest 0.22-0.25). Links [[f-narration-gap-stealthy-failure-enforcement]] (both runtime-defense, reflection vs enforcement)."
+  },
+  {
+    "id": "f-guardnet-ensemble-guardrail",
+    "type": "finding",
+    "analyst": "redteam-method",
+    "title": "GuardNet: ensemble of shallow BiLSTM guardrail heads — adversarial coverage + threshold calibration beat model scale for PI/JB detection",
+    "summary": "GuardNet is an LLM-as-a-defender guardrail detector that tests the hypothesis that adversarial robustness depends more on diversity of example coverage and threshold calibration than on model scale/architecture. It ensembles three shallow BiLSTM heads (~15M params each, ~47M total): v3 (Conservative Anchor, FPR=0.10 precision pillar), v9 (Aggressive Recall, 1:1 undersampling, 100% recall for jailbreak on the reference benchmark), and T2 (15-class Sanity Check contributing a binary vote via inverse benign probability), combined by arithmetic mean of probabilities with a calibrated threshold tau=0.65. Because the BiLSTM heads are pure classifiers (no lm_head/decoding), they are structurally less exposed to prompt-injection instructions embedded in input — a defensive architecture insight. Final GuardNet-E reaches F1=0.92/FPR=0.10 on the proprietary awall-test (n=50, partial leakage declared) but only F1=0.714/AUROC=0.747 on the BLIND JBB-Behaviors (n=200) — a ~0.206 generalization gap. It is outperformed on blind data by Mistral-7B (F1 0.828) and Llama-3.1-8B (F1 0.807, AUROC 0.864) but beats specialized detectors deepset-deberta (184M, AUROC 0.650), protectai-v2, jackhhao. Runs ~50ms on CPU (in-process Django, no GPU), suited to cost-constrained deployment.",
+    "source_ids": [
+      "src-guardnet-2606-05566"
+    ],
+    "taxonomy": {
+      "threat": [
+        "model.prompt-injection",
+        "model.jailbreak"
+      ],
+      "attack": [
+        "prompt-attack"
+      ],
+      "teaming": [
+        "llm-as-a-defender",
+        "automated.ensemble-detector",
+        "frontier-detection.threshold-calibration"
+      ]
+    },
+    "atlas": [
+      "AML.T0051",
+      "AML.T0054"
+    ],
+    "benchmarks": [
+      "JailbreakBench"
+    ],
+    "standards": [],
+    "maturity": "emerging",
+    "confidence": 0.8,
+    "evidence_grade": "B",
+    "provenance": {
+      "extracted": 0.83,
+      "inferred": 0.14,
+      "ambiguous": 0.03
+    },
+    "novelty_signal": 0.5,
+    "notes": "For risk-safety-analyst (CONTROL): GuardNet = lightweight in-process PI/JB guardrail; addresses prompt-injection/jailbreak. Verbatim Table 4 (blind JBB n=200): GuardNet-E 47M F1_max 0.714/AUROC 0.747/FPR_b 0.53/rec_h 0.85; Mistral-7B 0.828/0.839; Llama3.1-8B 0.807/0.864; deepset-deberta 184M 0.701/0.650; protectai-v2 184M 0.000/0.600. Threshold sweep recovers F1 0.77(tau=0.5)->0.92(tau=0.65). Benchmark-method link: JBB-Behaviors blind eval. JBB record owned by risk-safety-analyst. Lower novelty (ensemble of classic BiLSTMs, not a 2025-26 method shift)."
+  },
+  {
+    "id": "f-guardnet-benchmark-contamination",
+    "type": "finding",
+    "analyst": "redteam-method",
+    "title": "GuardNet exposes benchmark contamination in guardrail evaluation: protectai-v2 scores F1=1.000 on contaminated data but F1=0.000 on blind unseen attacks",
+    "summary": "GuardNet's strongest red-teaming-methodology contribution is empirical evidence of benchmark contamination / memorization in widely-used guardrail models, demonstrating that detector evaluations must use blind, post-release, audited test sets. The model protectai-v2 (184M params) achieves PERFECT F1=1.000 on the awall-test benchmark (which overlaps public data) yet COLLAPSES to F1=0.000 on the blind JBB-Behaviors pool (attacks published after its release) — a complete failure to generalize, indicating pure memorization. Similarly jackhhao-jailbreak (184M) drops to F1=0.137 blind. The paper cites that fragmentation attacks (Prompt Overflow under interleaved layouts) achieve 100% bypass against Meta Prompt-Guard-2 (86M) due to a mismatch between guardrail inspection windows (~512 tokens) and large LLM context windows. It also warns (citing 'When Benchmarks Lie') that AUC can be inflated up to 8.4 points in standard splits vs Leave-One-Dataset-Out, and that detectors like InjecGuard/PromptGuard suffer 'over-defense' (high attack recall but benign accuracy collapsing to 5-35%). Methodological lesson for red-teaming evaluation: threshold must be calibrated on a SEPARATE held-out set (not the test set), and apparent gains on non-blind sets overestimate real-world robustness.",
+    "source_ids": [
+      "src-guardnet-2606-05566"
+    ],
+    "taxonomy": {
+      "threat": [
+        "safety.evaluation-gap",
+        "model.prompt-injection"
+      ],
+      "attack": [
+        "prompt-attack"
+      ],
+      "teaming": [
+        "llm-as-a-defender",
+        "automated.ensemble-detector",
+        "frontier-detection.contamination-audit"
+      ]
+    },
+    "atlas": [
+      "AML.T0051"
+    ],
+    "benchmarks": [
+      "JailbreakBench"
+    ],
+    "standards": [],
+    "maturity": "emerging",
+    "confidence": 0.81,
+    "evidence_grade": "B",
+    "provenance": {
+      "extracted": 0.83,
+      "inferred": 0.14,
+      "ambiguous": 0.03
+    },
+    "novelty_signal": 0.58,
+    "notes": "Verbatim: protectai-v2 F1 1.000 (awall-test, contaminated) -> 0.000 (blind JBB); jackhhao 0.137 blind. Prompt-Guard-2 86M 100% bypass under Prompt Overflow fragmentation (Zhou et al. 2026). 'When Benchmarks Lie' (Fomin 2026): AUC inflated up to 8.4 pts. Over-defense: InjecGuard/PromptGuard benign accuracy 5-35%. For risk-safety-analyst & standards-regulatory-analyst: contamination-aware blind eval = required guardrail-benchmark methodology. Links [[f-skillvetbench-evaluator-sensitivity-ensemble]] (both judge/detector reliability under shift)."
+  },
+  {
+    "id": "find-2606.11949-silent-failure",
+    "type": "finding",
+    "analyst": "risk-safety",
+    "title": "Deployed safety classifiers fail silently under distributional shift; KS-based online monitor detects 86.6% of shifts",
+    "summary": "Safety classifiers are deployed under a stationarity assumption that fails via adversarial adaptation, organic drift, multilingual code-switching, and compositional attacks. The failure is silent: a classifier degrading from 95% to 80% accuracy produces no error signal until ground-truth labels arrive (often days/weeks via offline eval), making unreliable safety decisions in the interim. The proposed sliding-window KS monitor against a frozen reference CDF detects shift in 693/800 cells (86.6%, Wilson CI [0.841,0.888]), mean latency 39.5 steps (window=100), empirical FAR 2-10% across classifiers (Text-Moderation 2.0%, Llama Guard 3.0%, ShieldGemma 8.5%, DeBERTa 9.5%). Detection generalizes to real temporal jailbreaks (Regime B: 17/20 cells, 85%) drawn from lmsys/toxic-chat, JailbreakBench, ChatGPT-Jailbreak-Prompts.",
+    "source_ids": [
+      "src-2606.11949"
+    ],
+    "taxonomy": {
+      "threat": [
+        "model.distribution-shift",
+        "model.jailbreak",
+        "safety.monitoring-gap"
+      ],
+      "attack": [],
+      "teaming": [
+        "automated.shift-monitoring",
+        "llm-as-a-defender"
+      ]
+    },
+    "atlas": [
+      "AML.T0054"
+    ],
+    "benchmarks": [
+      "lmsys/toxic-chat",
+      "JailbreakBench",
+      "ChatGPT-Jailbreak-Prompts",
+      "WildGuardMix"
+    ],
+    "standards": [],
+    "maturity": "prototype",
+    "confidence": 0.82,
+    "evidence_grade": "A",
+    "provenance": {
+      "extracted": 0.9,
+      "inferred": 0.1,
+      "ambiguous": 0.0
+    },
+    "novelty_signal": 0.7,
+    "notes": "Verbatim numbers from Tables 3,6,9 and abstract. FAR 5x spread (2.0% vs 9.5%) attributed to null score distribution shape, not calibration procedure."
+  },
+  {
+    "id": "find-2606.11949-gcg-evasion",
+    "type": "finding",
+    "analyst": "risk-safety",
+    "title": "Successful GCG attacks evade shift detection in the target classifier by pushing scores into the safe region",
+    "summary": "Regime C streams 22 GCG-optimized adversarial suffixes that successfully flip DeBERTa's classification. For the TARGET classifier (DeBERTa), adversarial suffixes shift scores TOWARD safe (post-attack mean ~0.01), making attacked examples indistinguishable from the safe reference distribution; the monitor FAILS to detect in 38/40 seed-window combinations. The same suffixes hit non-target classifiers (Llama Guard) shift scores TOWARD unsafe (post=0.78, +0.73 shift) and are detected in 14/40 combinations, but score-direction analysis confirms all 14 are TOWARD_UNSAFE (no adversarial transfer; inputs appear more dangerous, not safer). Correct interpretation: cross-classifier anomaly detection, NOT adversarial transfer — perturbations optimized against one classifier appear anomalous to architecturally different ones. Corpus limited to 22 examples (margin of detectability); a successful attack against the deployed classifier is precisely the case the distributional monitor cannot see.",
+    "source_ids": [
+      "src-2606.11949"
+    ],
+    "taxonomy": {
+      "threat": [
+        "model.jailbreak",
+        "model.adversarial-suffix",
+        "safety.monitoring-gap"
+      ],
+      "attack": [
+        "prompt-attack"
+      ],
+      "teaming": [
+        "automated.gcg",
+        "frontier-detection.cross-classifier"
+      ]
+    },
+    "atlas": [
+      "AML.T0054",
+      "AML.T0043"
+    ],
+    "benchmarks": [],
+    "standards": [],
+    "maturity": "prototype",
+    "confidence": 0.8,
+    "evidence_grade": "A",
+    "provenance": {
+      "extracted": 0.88,
+      "inferred": 0.12,
+      "ambiguous": 0.0
+    },
+    "novelty_signal": 0.78,
+    "notes": "Key safety finding: monitoring is blind to the most dangerous case (successful targeted evasion). 22-example corpus is acknowledged limitation; CS-vs-KS at low contamination (30% mixing: CS 97% vs KS 43% detection, Fisher p<0.0001)."
+  },
+  {
+    "id": "find-2606.11949-density-collapse",
+    "type": "finding",
+    "analyst": "risk-safety",
+    "title": "Conformal adaptation control fails for 3/4 classifiers: density-ratio collapse from high-dimensional embedding separability",
+    "summary": "The weighted-conformal abstention control (the adaptation/mitigation half of the system) recovers up to 39pp lost coverage for DeBERTa (ESS=46 on paraphrase, recovery +0.390) but collapses for Text-Moderation, Llama Guard, and ShieldGemma across all three shift types (ESS~300 out of n_cal=300, all importance weights clipped to floor 1/C=0.1). Logistic-regression density-ratio estimation achieves perfect source/target linear separability in generative safety-classifier embeddings (1024-4096 dim), assigning P(target|x)~0 and eliminating data-driven reweighting. Diagnostic: PCA to 32 dims breaks the collapse — Llama Guard recovers 33.0pp (coverage 0.555->0.885), ShieldGemma 20.5pp (0.690->0.895); critical threshold <=32 dims. This means a deployed safety-classifier mitigation that assumes recoverable coverage will silently no-op on most architectures unless dimensionality reduction is applied first.",
+    "source_ids": [
+      "src-2606.11949"
+    ],
+    "taxonomy": {
+      "threat": [
+        "safety.mitigation-failure",
+        "model.distribution-shift"
+      ],
+      "attack": [],
+      "teaming": [
+        "llm-as-a-defender"
+      ]
+    },
+    "atlas": [],
+    "benchmarks": [],
+    "standards": [],
+    "maturity": "prototype",
+    "confidence": 0.8,
+    "evidence_grade": "A",
+    "provenance": {
+      "extracted": 0.85,
+      "inferred": 0.15,
+      "ambiguous": 0.0
+    },
+    "novelty_signal": 0.7,
+    "notes": "Residual recoveries <=+0.10 at ESS~300 are a test-point-contribution artifact (w(X_{n+1})=1.0 raises quantile 90.3%->93.3%), not real adaptation. PCA validated primarily on temporal shift; paraphrase via cached embeddings with different calibration split ^[ambiguous]."
+  },
+  {
+    "id": "risk-safety-classifier-silent-drift",
+    "type": "risk",
+    "threat": "model.distribution-shift",
+    "hazard": "Deployed safety classifier accuracy degrades under distributional shift (adversarial adaptation, organic drift, code-switching) with no error signal until labels arrive",
+    "hazardous_situation": "Classifier silently making unreliable safety decisions (e.g. degraded 95%->80%) on production traffic for days/weeks while monitoring confidence remains high",
+    "harm": "harm-unsafe-content-passthrough",
+    "metrics": {
+      "severity": 4,
+      "probability": 4,
+      "detectability": 2
+    },
+    "controls": [
+      "control-online-ks-shift-monitor",
+      "control-pca-density-ratio-conformal"
+    ],
+    "residual_risk": "Medium: KS monitor recovers detectability for naturalistic/organic shift (86.6% valid detection, latency ~39.5 steps, FAR 2-10%) but is BLIND to successful targeted adversarial evasion (38/40 missed in Regime C) — residual risk remains HIGH specifically for attacks that push the target classifier's scores into the safe region.",
+    "standards": [],
+    "finding_ids": [
+      "find-2606.11949-silent-failure",
+      "find-2606.11949-gcg-evasion",
+      "find-2606.11949-density-collapse"
+    ],
+    "mit_subdomain": "2.2"
+  },
+  {
+    "id": "harm-unsafe-content-passthrough",
+    "type": "harm",
+    "title": "Unsafe content passes a silently-degraded safety classifier",
+    "category": "security",
+    "safety": [
+      "safety.misuse",
+      "safety.cyber"
+    ],
+    "severity": 4,
+    "affected": "End users and platforms relying on the safety classifier as a defense layer between an LLM and its users",
+    "sectors": [
+      "AI platforms",
+      "content moderation",
+      "LLM deployment"
+    ],
+    "caused_by_threats": [
+      "model.distribution-shift",
+      "model.jailbreak",
+      "model.adversarial-suffix"
+    ],
+    "source_ids": [
+      "src-2606.11949"
+    ]
+  },
+  {
+    "id": "control-online-ks-shift-monitor",
+    "type": "control",
+    "name": "Online sliding-window KS shift monitor with empirically calibrated alarm thresholds",
+    "description": "Sliding-window one-sample Kolmogorov-Smirnov detector on classifier safety scores against a FROZEN reference CDF (no adaptive estimation during monitoring). Alarm thresholds calibrated empirically via null simulation (N_cal=50 negative control streams, 97th percentile of max statistic) for finite-horizon FAR control. Complemented by a growing-window confidence-sequence (CS) variant — preferred for weak/gradual shifts (97% vs 43% detection at 30% mixing) — and an MMD detector on penultimate-layer embeddings as a high-sensitivity binary backstop alarm. Per-classifier monitoring profiles required (classifier eta^2=0.243, shift-type 0.237, interaction 0.185 of latency variance, all p<0.001).",
+    "addresses_threats": [
+      "model.distribution-shift",
+      "model.jailbreak",
+      "safety.monitoring-gap"
+    ],
+    "standards": [],
+    "source_ids": [
+      "src-2606.11949"
+    ]
+  },
+  {
+    "id": "control-pca-density-ratio-conformal",
+    "type": "control",
+    "name": "PCA-reduced density-ratio weighted conformal abstention layer",
+    "description": "On shift alarm, a weighted-conformal prediction layer reweights calibration scores by source/target density ratios (logistic regression on embeddings, weights clipped to [1/C,C], C=10) and abstains when prediction set size !=1, recovering target error rate epsilon=0.1 without new labels. CRITICAL prerequisite: reduce embeddings to <=32 dims via PCA before density-ratio estimation, otherwise high-dimensional perfect separability collapses all weights to the floor (ESS~300) and the layer silently no-ops. PCA-32 recovers 33pp (Llama Guard) and 21pp (ShieldGemma) coverage on temporal shift.",
+    "addresses_threats": [
+      "model.distribution-shift",
+      "safety.mitigation-failure"
+    ],
+    "standards": [],
+    "source_ids": [
+      "src-2606.11949"
+    ]
+  },
+  {
+    "id": "find-2606.05743-csm-guardrail",
+    "type": "finding",
+    "analyst": "risk-safety",
+    "title": "Contrastive Safety Memory guardrail achieves top F1 on 6 jailbreaks while cutting over-refusal to 7-14%",
+    "summary": "MEMBRANE's Contrastive Safety Memory pairs each harmful blocking condition with a superficially-similar benign-permit condition, indexed by attack strategy (8-family closed taxonomy + OTHER) rather than harm topic, so one cell generalizes across topical variants. On HarmBench (model safety) it achieves highest F1 on all six attacks (PAIR/PAP/TAP/ReNeLLM/FlipAttack/AutoDAN-Turbo): ReNeLLM ASR drops to 0.3% (vs 11.3% RAD), FlipAttack ASR 0.0%, TAP 8.2%, PAIR 16.0%; F1 up to 89.5 (PAIR), 93.4 (FlipAttack). On AgentHarm it achieves highest F1 across all methods (e.g. AutoDAN-Turbo F1 70.5, ReNeLLM 89.2) while holding benign refusal (FRR) to 7-14% vs adaptive-memory baselines 28-53% and static guards 73-85%. Cross-attack transfer retains 87% F1 (model) / 88% (agent) — a cell learning one attack defends others sharing the mechanism (in-attack 92.6 vs cross-attack 80.8).",
+    "source_ids": [
+      "src-2606.05743"
+    ],
+    "taxonomy": {
+      "threat": [
+        "model.jailbreak",
+        "agent.tool-abuse",
+        "model.over-refusal"
+      ],
+      "attack": [
+        "prompt-attack",
+        "tool-attack"
+      ],
+      "teaming": [
+        "llm-as-a-defender",
+        "automated.self-evolving-memory"
+      ]
+    },
+    "atlas": [
+      "AML.T0054",
+      "AML.T0051"
+    ],
+    "benchmarks": [
+      "HarmBench",
+      "AgentHarm",
+      "XSTest",
+      "OR-Bench"
+    ],
+    "standards": [],
+    "maturity": "prototype",
+    "confidence": 0.85,
+    "evidence_grade": "A",
+    "provenance": {
+      "extracted": 0.9,
+      "inferred": 0.1,
+      "ambiguous": 0.0
+    },
+    "novelty_signal": 0.72,
+    "notes": "Verbatim from Tables 1,2,3. Guard=Qwen3-8B, judge=Gemini 3 Flash (distinct family to reduce correlated blind spots). Attacks: PAIR, PAP, TAP, ReNeLLM, FlipAttack, AutoDAN-Turbo. Backbone sweep (Table 6,7) generalizes across Qwen3-32B/4B, Nemotron-Nano-9B-v2, OLMo-3-7B."
+  },
+  {
+    "id": "find-2606.05743-memory-poisoning",
+    "type": "finding",
+    "analyst": "risk-safety",
+    "title": "Writable safety memory is exposed to data poisoning but resists 20% injection (ASR +0.4pp) via deterministic validation",
+    "summary": "Because CSM updates from incoming queries, it is exposed to memory poisoning. Two writer-mediated injection strategies tested on HarmBench after an 80-event clean warmup: SAFE-AS-UNSAFE (target over-refusal) and UNSAFE-AS-SAFE (target jailbreak), with the standard guard suppressed during attack. At 20% poison rate the UNSAFE-AS-SAFE attack raises ASR only 2.1%->2.5% (+0.4pp) and SAFE-AS-UNSAFE raises FRR 10.8%->15.4%. Robustness stems from two factors: (1) low retrieval rate of poisoned cells (2.3-7.5%), and (2) the Retrieval Critic eliminates 33-40% of poisoned cells that surface. Architectural defense: a non-LLM validator rejects writes violating schema/duplicate/capacity, separating LLM content synthesis from deterministic acceptance; directly-injected cells enter at low authority weight. Acknowledged gap: fully adaptive white-box adversaries with access to the guard/memory store/pipeline are NOT modeled — that setting requires access-control and monitoring beyond the algorithmic guard.",
+    "source_ids": [
+      "src-2606.05743"
+    ],
+    "taxonomy": {
+      "threat": [
+        "software.training-data-poisoning",
+        "agent.memory-poisoning",
+        "model.over-refusal"
+      ],
+      "attack": [
+        "tool-attack"
+      ],
+      "teaming": [
+        "llm-as-a-defender"
+      ]
+    },
+    "atlas": [
+      "AML.T0020"
+    ],
+    "benchmarks": [
+      "HarmBench"
+    ],
+    "standards": [],
+    "maturity": "prototype",
+    "confidence": 0.78,
+    "evidence_grade": "A",
+    "provenance": {
+      "extracted": 0.85,
+      "inferred": 0.15,
+      "ambiguous": 0.0
+    },
+    "novelty_signal": 0.68,
+    "notes": "Verbatim from Table 4. Poison rates rho=10%,20%. Robustness claim is bounded: white-box adversary with pipeline access explicitly out of scope (Limitations) — residual risk for that threat unquantified ^[ambiguous]."
+  },
+  {
+    "id": "risk-agent-memory-poisoning",
+    "type": "risk",
+    "threat": "agent.memory-poisoning",
+    "hazard": "A writable self-evolving safety memory ingests crafted interactions that flip its decision boundary (UNSAFE-as-SAFE -> jailbreak; SAFE-as-UNSAFE -> over-refusal)",
+    "hazardous_situation": "An adversary submits coherent fabricated benign/harmful pairs over time to corrupt the guard's stored cells, causing it to admit future harmful queries or reject benign ones",
+    "harm": "harm-unsafe-content-passthrough",
+    "metrics": {
+      "severity": 4,
+      "probability": 2,
+      "detectability": 3
+    },
+    "controls": [
+      "control-csm-deterministic-write-validation",
+      "control-retrieval-critic-precision-filter"
+    ],
+    "residual_risk": "Low-to-medium for writer-mediated poisoning: at 20% injection ASR rises only +0.4pp (2.1->2.5%) and FRR +4.6pp, attributable to low poisoned-cell retrieval (2.3-7.5%) and Retrieval-Critic removal of 33-40% of surfaced poison. Residual risk is UNQUANTIFIED and potentially higher for a fully adaptive white-box adversary with direct access to the memory store and pipeline (explicitly out of scope).",
+    "standards": [],
+    "finding_ids": [
+      "find-2606.05743-memory-poisoning",
+      "find-2606.05743-csm-guardrail"
+    ],
+    "mit_subdomain": "2.2"
+  },
+  {
+    "id": "control-csm-deterministic-write-validation",
+    "type": "control",
+    "name": "Deterministic non-LLM write validation for self-evolving safety memory",
+    "description": "Separates LLM-based content synthesis from deterministic acceptance: the Memory Writer (LLM) synthesizes only cell content, while a non-LLM validator rejects any write that violates schema, is a near-duplicate (cosine distance < 0.15 to nearest cell), or exceeds the 200-cell capacity cap. Standing fields (authority weight, supersede link) are set by deterministic code, not the writer, so a perturbed/adversarial evolution signal cannot directly corrupt a cell's standing in the store; directly-injected cells enter at low authority weight. Sustained corruption would require many coherent fabricated interactions each surviving validation.",
+    "addresses_threats": [
+      "agent.memory-poisoning",
+      "software.training-data-poisoning"
+    ],
+    "standards": [],
+    "source_ids": [
+      "src-2606.05743"
+    ]
+  },
+  {
+    "id": "control-retrieval-critic-precision-filter",
+    "type": "control",
+    "name": "Retrieval Critic precision filter over over-retrieved guardrail memory",
+    "description": "Two-stage retrieve-and-rerank for a memory-augmented guard: Stage 1 vector retrieval over-retrieves for recall; Stage 2 an LLM Retrieval Critic assigns APPLIES/MAYBE/DOES_NOT_APPLY per candidate, judging by attack mechanism (not surface/lexical overlap) and discarding DOES_NOT_APPLY cells before the guard decides. The query is wrapped as delimited data (never instructions) to defend against prompt injection through query content. Removes 33-40% of surfaced poisoned cells and provides +1.7pp (model) / +3.6pp (agent) F1, while reducing the over-refusal that comes from retrieving incidentally-similar benign queries as attacks.",
+    "addresses_threats": [
+      "agent.memory-poisoning",
+      "model.over-refusal",
+      "model.prompt-injection"
+    ],
+    "standards": [],
+    "source_ids": [
+      "src-2606.05743"
+    ]
+  },
+  {
+    "id": "find-2606.09408-annotator-harm-exposure",
+    "type": "finding",
+    "analyst": "risk-safety",
+    "title": "Safety-dataset contributors face mental-health harm from sustained exposure to toxic content during benchmark construction",
+    "summary": "Building safety datasets on hate speech, oGBV, slurs, and sexual violence brings its own harms: contributors engaging with slur words, derogatory phrases, and stereotypes faced mental health and well-being risks from exposure to harmful content. Tattle mitigated via structural controls: contributors accessed dataset documents only during workshops; sessions limited to once a week, <=90 minutes; the org partnered with a mental-health service provider in the safety-benchmark project to give trauma-informed counselling/therapy to all contributors; and prompt-writing was discussion-led in groups so people did not engage toxic content alone. This is a human-factors harm intrinsic to the red-teaming / safety-evaluation pipeline (the human labour that produces safety benchmarks), distinct from the harms the datasets aim to measure.",
+    "source_ids": [
+      "src-2606.09408"
+    ],
+    "taxonomy": {
+      "threat": [
+        "societal.data-work-harm",
+        "safety.human-factors"
+      ],
+      "attack": [],
+      "teaming": [
+        "manual.dataset-annotation",
+        "human-ai.participatory"
+      ]
+    },
+    "atlas": [],
+    "benchmarks": [
+      "AILuminate",
+      "DICES"
+    ],
+    "standards": [],
+    "maturity": "deployed",
+    "confidence": 0.82,
+    "evidence_grade": "A",
+    "provenance": {
+      "extracted": 0.9,
+      "inferred": 0.1,
+      "ambiguous": 0.0
+    },
+    "novelty_signal": 0.6,
+    "notes": "Verbatim controls from Sec 4. Hindi safety benchmark: 23 contributors, 2000 prompts, 6 workshops, 12 hazard categories (AILuminate v1.0); slur lexicon 650+ entries across 4 languages. Contributed to MLCommons AILuminate (arXiv:2503.05731)."
+  },
+  {
+    "id": "find-2606.09408-benchmark-validity-epistemic",
+    "type": "finding",
+    "analyst": "risk-safety",
+    "title": "Safety-benchmark validity depends on contested hazard scoping and contributor epistemic authority, not just labels",
+    "summary": "Tattle's contributors did not merely provide data; they reshaped the safety benchmark's conceptual scope. In the slur lexicon they showed slurs like 'randi'/'rakhail' simultaneously demean sex work as a profession and added 'profession' as a slur category; in the safety benchmark they questioned the scoping of 'sex-related crimes' as a hazard and advocated re-orienting to sexual VIOLENCE. This surfaces a validity issue for AI safety benchmarks: a benchmark constructed by machine translation or lay language understanding (rather than situated/lived-experience expertise) would miss linguistic, regional, and cultural nuances of harm in non-English languages. Tattle's feminist orientation was a deliberate departure from prevailing content-moderation dataset production. Implication for benchmark intelligence: construction methodology (who scopes hazards, with what epistemic authority) is a first-order driver of safety-benchmark coverage and construct validity, not a downstream detail.",
+    "source_ids": [
+      "src-2606.09408"
+    ],
+    "taxonomy": {
+      "threat": [
+        "societal.epistemic-injustice",
+        "safety.benchmark-validity"
+      ],
+      "attack": [],
+      "teaming": [
+        "human-ai.participatory",
+        "manual.dataset-annotation"
+      ]
+    },
+    "atlas": [],
+    "benchmarks": [
+      "AILuminate"
+    ],
+    "standards": [],
+    "maturity": "deployed",
+    "confidence": 0.75,
+    "evidence_grade": "B",
+    "provenance": {
+      "extracted": 0.78,
+      "inferred": 0.22,
+      "ambiguous": 0.0
+    },
+    "novelty_signal": 0.66,
+    "notes": "Benchmark-validity framing is analyst inference from the paper's epistemic-justice argument (paper is ethnographic, not a benchmark-metrics paper). AILuminate 12 hazard categories cited verbatim. evidence_grade B: validity claim qualitative, no measured coverage numbers."
+  },
+  {
+    "id": "find-2606.09408-data-labour-exploitation",
+    "type": "finding",
+    "analyst": "risk-safety",
+    "title": "Exploitative data-work wages and absent governance undermine accountable safety-benchmark supply chains",
+    "summary": "Data work in the global south often pays below minimum wage; Fairwork's 2025 cloudwork ratings found only 4 of 16 platforms paid at least the local minimum wage. Tattle paid contributors an equal rate of 1200 INR (~13.5 USD) per hour or 1800 INR (~20 USD) per 90-min workshop and distributed leftover funds as 932 INR (~10.5 USD) per workshop, but learned its fair-pay approach made bids 'too expensive' and less fundable, risking a race-to-the-bottom in dataset sourcing. The paper argues safety efforts (evaluations, red teaming) to make AI 'responsible' rest on data/labour relations that are extractive and unaccountable (e.g. Meta's Trusted Partner program under-resourced; partners bear reporting burden/risk without redress). Reparative accountability requires shared standards letting those most harmed hold AI companies accountable, plus collective dataset governance (contested licensing, contributor rights, sporadic participation). This is a supply-chain/societal risk that conditions the trustworthiness of the safety benchmarks themselves.",
+    "source_ids": [
+      "src-2606.09408"
+    ],
+    "taxonomy": {
+      "threat": [
+        "societal.data-work-harm",
+        "societal.labour-exploitation",
+        "safety.accountability-gap"
+      ],
+      "attack": [],
+      "teaming": [
+        "manual.dataset-annotation"
+      ]
+    },
+    "atlas": [],
+    "benchmarks": [
+      "AILuminate",
+      "Fairwork-Cloudwork-2025"
+    ],
+    "standards": [],
+    "maturity": "deployed",
+    "confidence": 0.78,
+    "evidence_grade": "A",
+    "provenance": {
+      "extracted": 0.85,
+      "inferred": 0.15,
+      "ambiguous": 0.0
+    },
+    "novelty_signal": 0.55,
+    "notes": "Verbatim pay figures and Fairwork 4/16 statistic from Sec 4.1. Governance tensions (licensing, contributor revocation rights, custodianship) from Sec 4.3."
+  },
+  {
+    "id": "harm-data-work-contributor-trauma",
+    "type": "harm",
+    "title": "Psychological/mental-health harm to safety-dataset contributors from toxic-content exposure",
+    "category": "human-factors",
+    "safety": [
+      "safety.human-factors",
+      "safety.societal"
+    ],
+    "severity": 3,
+    "affected": "Annotators, prompt-writers, and lived-experience contributors who build AI safety benchmarks and red-teaming datasets on hate, oGBV, and sexual violence",
+    "sectors": [
+      "AI safety evaluation",
+      "content moderation",
+      "data enrichment / crowdwork"
+    ],
+    "caused_by_threats": [
+      "societal.data-work-harm",
+      "safety.human-factors"
+    ],
+    "source_ids": [
+      "src-2606.09408"
+    ]
+  },
+  {
+    "id": "risk-safety-dataset-labour-harm",
+    "type": "risk",
+    "threat": "societal.data-work-harm",
+    "hazard": "Producing AI safety benchmarks/red-team datasets requires human contributors to sustain exposure to toxic content under often-exploitative, unaccountable labour conditions",
+    "hazardous_situation": "Lived-experience contributors and annotators repeatedly process hate/oGBV/sexual-violence content (often below living wage, without trauma support or governance rights) to construct safety evaluations",
+    "harm": "harm-data-work-contributor-trauma",
+    "metrics": {
+      "severity": 3,
+      "probability": 4,
+      "detectability": 3
+    },
+    "controls": [
+      "control-trauma-informed-dataset-workflow",
+      "control-collective-dataset-governance"
+    ],
+    "residual_risk": "Medium: structural mitigations (capped weekly <=90-min exposure sessions, group discussion-led prompt writing, partnered trauma-informed counselling, fair 1200 INR/hr pay) reduce harm in Tattle's case but do not generalize -- fair-pay approaches are 'too expensive' to fund at scale (race-to-bottom), governance/recognition remain unresolved, and the broader data-work sector pays below minimum wage (Fairwork: 4/16 platforms). Residual harm and accountability gap remain HIGH industry-wide.",
+    "standards": [],
+    "finding_ids": [
+      "find-2606.09408-annotator-harm-exposure",
+      "find-2606.09408-data-labour-exploitation",
+      "find-2606.09408-benchmark-validity-epistemic"
+    ],
+    "mit_subdomain": "6.5"
+  },
+  {
+    "id": "control-trauma-informed-dataset-workflow",
+    "type": "control",
+    "name": "Trauma-informed safety-dataset annotation workflow",
+    "description": "Structural controls to limit annotator/contributor harm when building toxic-content safety datasets: restrict access to dataset documents to facilitated workshop time only; cap exposure sessions (e.g. once weekly, <=90 minutes); make prompt-writing/annotation discussion-led in groups so no contributor engages toxic content alone; and partner with a mental-health service provider to give trauma-informed counselling and therapy to all contributors. Pairs with fair, equal-rate, time-based (not piece-rate) compensation.",
+    "addresses_threats": [
+      "societal.data-work-harm",
+      "safety.human-factors"
+    ],
+    "standards": [],
+    "source_ids": [
+      "src-2606.09408"
+    ]
+  },
+  {
+    "id": "control-collective-dataset-governance",
+    "type": "control",
+    "name": "Collective, justice-oriented dataset governance for safety benchmarks",
+    "description": "Reparative governance that resets accountability relations in safety-dataset production: center those most harmed (not AI or datasets) via participatory/lived-experience scoping of hazards; recognise contributors as experts and compensate accordingly; define contributor rights over their contributions (use, revocation, royalty-style sharing if monetised); adopt reciprocity/sovereignty-oriented licenses (e.g. Esethu, NOODL, Kaitiakitanga) that deter extractive reuse; and establish shared standards letting affected communities hold AI companies accountable. Improves construct validity and coverage of the resulting safety benchmark while reducing labour/epistemic harm.",
+    "addresses_threats": [
+      "societal.data-work-harm",
+      "societal.epistemic-injustice",
+      "safety.accountability-gap",
+      "safety.benchmark-validity"
+    ],
+    "standards": [],
+    "source_ids": [
+      "src-2606.09408"
+    ]
+  },
+  {
+    "id": "find-2606.19864-sycophancy-majority-bias",
+    "type": "finding",
+    "analyst": "risk-safety",
+    "title": "LLM sycophancy and frequency bias amplify majority views and suppress minority perspectives in deliberation",
+    "summary": "LLMs deployed as deliberation mediators carry two democracy-relevant risks. (1) Sycophancy: an Anthropic study (Perez et al. 2023, model-written evals) used first-level prompts to generate conservative/liberal personas, and second-level LLM responses aligned with the requested political stance -- models support the user's view, which can promote socially unacceptable viewpoints when users craft prompts to overcome guardrails (cf. Microsoft Tay 2016 forced to produce racist/sexually-charged messages within hours). (2) Frequency/algorithmic bias: predicting the next word favours more frequent patterns, over-amplifying training-data bias (e.g. embeddings associate doctors->men, nurses->women; its->positive, your->negative from distributional quirks). The Habermas Machine (Tessler et al., Science 2024; 5,734 UK residents) showed AI-generated group statements were preferred over human mediators on quality/clarity/fairness BUT convergence shifted toward the MAJORITY view, implicitly reinforcing dominant positions over minority perspectives. The ADDI project found LLMs predicted policy choices more accurately for liberal, college-educated, and younger participants -- sociodemographic bias in deliberative outcomes.",
+    "source_ids": [
+      "src-2606.19864"
+    ],
+    "taxonomy": {
+      "threat": [
+        "societal.influence-operations",
+        "model.sycophancy",
+        "model.bias-amplification"
+      ],
+      "attack": [
+        "prompt-attack"
+      ],
+      "teaming": [
+        "manual.persona-prompting"
+      ]
+    },
+    "atlas": [],
+    "benchmarks": [],
+    "standards": [],
+    "maturity": "research",
+    "confidence": 0.72,
+    "evidence_grade": "B",
+    "provenance": {
+      "extracted": 0.8,
+      "inferred": 0.2,
+      "ambiguous": 0.0
+    },
+    "novelty_signal": 0.5,
+    "notes": "Verbatim study numbers (5,734 UK; 1,850 German; 92-96%) cited. evidence_grade B: harms are surveyed/qualitative from cited prior work, not newly measured by this chapter. Mitigations noted: red teaming (Ganguli 2022), devil's-advocate fine-tuning (McKinney 2024) to reverse natural sycophancy."
+  },
+  {
+    "id": "find-2606.19864-overclaiming-risk",
+    "type": "finding",
+    "analyst": "risk-safety",
+    "title": "Both overclaiming and underclaiming LLM capabilities are distinct risks for safe deployment in high-stakes deliberation",
+    "summary": "The chapter frames a calibration risk symmetric to safety evaluation: OVERCLAIMING (vendors/enthusiasts and existential doomers both exaggerate capability -- e.g. 2018 Microsoft MT 'human parity' claim later shown flawed by experimental setup; 'superintelligence smarter than best human brains') creates misleading perception that LLMs are ready to solve most problems, driving unrealistic expectations and premature deployment. UNDERCLAIMING ('stochastic parrots') downplays capability, but (1) overlooks incremental improvement, (2) over-weights adversarial-example failures that overshadow typical-context results, and (3) misses contexts of success. For a red-teaming/safety platform this is a meta-risk: safety assessments that over-weight adversarial failures (underclaiming) or that accept vendor capability claims (overclaiming) both produce miscalibrated risk estimates. The author recommends balancing technological affordances with human oversight and ethical safeguards, and aligning models via training (functional-linguistic register alignment) rather than only post-hoc system-prompt guardrails.",
+    "source_ids": [
+      "src-2606.19864"
+    ],
+    "taxonomy": {
+      "threat": [
+        "societal.miscalibrated-capability-claims",
+        "safety.evaluation-validity"
+      ],
+      "attack": [],
+      "teaming": [
+        "manual.red-teaming"
+      ]
+    },
+    "atlas": [],
+    "benchmarks": [],
+    "standards": [],
+    "maturity": "research",
+    "confidence": 0.7,
+    "evidence_grade": "B",
+    "provenance": {
+      "extracted": 0.75,
+      "inferred": 0.25,
+      "ambiguous": 0.0
+    },
+    "novelty_signal": 0.48,
+    "notes": "Framing draws on Bowman 2022 (dangers of underclaiming). The mapping of over/underclaiming onto safety-evaluation validity is analyst inference. ^[ambiguous] whether 'almost intelligent' framing constitutes a measurable risk vs rhetorical."
+  },
+  {
+    "id": "harm-deliberation-minority-suppression",
+    "type": "harm",
+    "title": "Suppression/misrepresentation of marginalised voices in AI-mediated democratic deliberation",
+    "category": "societal",
+    "safety": [
+      "safety.societal"
+    ],
+    "severity": 3,
+    "affected": "Marginalised and minority-opinion stakeholders in AI-mediated deliberative/participatory democratic processes; out-groups using non-prestige linguistic registers",
+    "sectors": [
+      "democratic deliberation",
+      "civic tech",
+      "public consultation"
+    ],
+    "caused_by_threats": [
+      "societal.influence-operations",
+      "model.sycophancy",
+      "model.bias-amplification"
+    ],
+    "source_ids": [
+      "src-2606.19864"
+    ]
+  },
+  {
+    "id": "risk-deliberation-bias-amplification",
+    "type": "risk",
+    "threat": "model.bias-amplification",
+    "hazard": "LLMs mediating democratic deliberation amplify majority/dominant views via sycophancy, frequency bias, and elite-register training data, and disproportionately misinterpret marginalised-group input",
+    "hazardous_situation": "A city council or citizens' assembly uses an LLM to summarise public comments or mediate consensus; the model favours formally-educated input, shifts convergence toward the majority, and mentions but does not preserve minority critiques",
+    "harm": "harm-deliberation-minority-suppression",
+    "metrics": {
+      "severity": 3,
+      "probability": 3,
+      "detectability": 2
+    },
+    "controls": [
+      "control-devils-advocate-deliberation",
+      "control-register-aware-simplification"
+    ],
+    "residual_risk": "Medium: text-simplification and register-bridging (iDem) plus devil's-advocate fine-tuning (McKinney) and red teaming reduce exclusion, but large deliberation studies (Habermas Machine) did NOT account for sociodemographic subpopulation differences, and post-hoc guardrails do not fix training-data/frequency bias. Residual societal/influence-ops risk remains medium and detectability is low (majority-shift is subtle and rarely surfaced).",
+    "standards": [],
+    "finding_ids": [
+      "find-2606.19864-sycophancy-majority-bias",
+      "find-2606.19864-overclaiming-risk"
+    ],
+    "mit_subdomain": "4.1"
+  },
+  {
+    "id": "control-devils-advocate-deliberation",
+    "type": "control",
+    "name": "Devil's-advocate fine-tuning and red teaming for deliberative LLMs",
+    "description": "Counter natural LLM sycophancy and majority-convergence in deliberation by (a) fine-tuning LLMs to play a 'devil's advocate' role -- generating objections to an emerging consensus to test robustness and promote considered judgement -- and (b) applying red teaming / proactive adversarial probing to detect bias and sycophancy vulnerabilities before deployment. Aimed at preserving minority/dissenting perspectives rather than collapsing to dominant positions.",
+    "addresses_threats": [
+      "model.sycophancy",
+      "model.bias-amplification",
+      "societal.influence-operations"
+    ],
+    "standards": [],
+    "source_ids": [
+      "src-2606.19864"
+    ]
+  },
+  {
+    "id": "control-register-aware-simplification",
+    "type": "control",
+    "name": "Register-aware linguistic simplification for inclusive participation",
+    "description": "Reduce linguistic-barrier exclusion in deliberation by predicting and applying register-specific simplifications (explain/re-state/expand/compress/omit) so institutional language (where 92-96% of EU Parliament/UN sentences require simplification) is accessible to people with cognitive disabilities, migrants, and the elderly, and by converting lived-experience narratives into argument-based contributions legible to institutional gatekeepers -- bridging prestige and non-prestige registers without dropping marginalised input.",
+    "addresses_threats": [
+      "model.bias-amplification",
+      "societal.influence-operations"
+    ],
+    "standards": [],
+    "source_ids": [
+      "src-2606.19864"
+    ]
+  },
+  {
+    "id": "find-2606.17034-context-erasing-defense",
+    "type": "finding",
+    "analyst": "risk-safety",
+    "title": "Post-hoc KV-cache context erasing as a defense against harmful prompt injection in skills, stale tool observations, and corrupted-context reliance",
+    "summary": "KVEraser targets a deployment hazard in long-context/agentic LLMs: a short problematic span (stale retrieved fact, incorrect/stale tool observation, retracted user preference, or a harmful prompt injection in an imported skill file -- citing Schmotz et al. 2025 'agent skills enable a new class of trivially simple prompt injections' and Greshake et al. 2023 indirect prompt injection) is identified only AFTER prefill, when it has already been written into the KV cache and can influence future decoding, leading to incorrect answers, failed actions, or UNSAFE behavior. Critically, the paper shows naive defenses fail: instruction-only forgetting ('ignore the deleted span') leaves the contaminated suffix cache in place so the instruction can only compete with stored evidence at decode time -- it increasingly outputs both erased and retained values as context grows (625 failures, 62.1% corrupted-context reliance). Delete-and-shift and local suffix repair also fail. Only exact recompute or KVEraser reliably eliminate the span's influence. On harmful-factual-distractor QA, the dominant failure mode across all approximate methods is 'corrupted-context reliance' (model answers using the injected distractor): KVEraser 49.5% of its 105 failures vs instruction-only 62.1% of 625.",
+    "source_ids": [
+      "src-2606.17034"
+    ],
+    "taxonomy": {
+      "threat": [
+        "agent.indirect-prompt-injection",
+        "agent.tool-abuse",
+        "model.context-contamination"
+      ],
+      "attack": [
+        "prompt-attack",
+        "tool-attack"
+      ],
+      "teaming": [
+        "llm-as-a-defender"
+      ]
+    },
+    "atlas": [
+      "AML.T0051"
+    ],
+    "benchmarks": [
+      "2WikiMultiHopQA",
+      "MuSiQue",
+      "IIRC",
+      "NaturalQuestions",
+      "TriviaQA",
+      "HotpotQA",
+      "NIAH"
+    ],
+    "standards": [],
+    "maturity": "prototype",
+    "confidence": 0.74,
+    "evidence_grade": "A",
+    "provenance": {
+      "extracted": 0.78,
+      "inferred": 0.22,
+      "ambiguous": 0.0
+    },
+    "novelty_signal": 0.66,
+    "notes": "Verbatim: latency +24% vs 17.6x full recompute (1K-32K); QA exact-match KVEraser avg 0.879; failure Table 6 (corrupted-context reliance 36.4-62.1%). Security framing (prompt-injection defense) is the paper's stated motivation (Fig 1 'Harmful Injection in Skills', Sec 1). evidence_grade A for measured numbers; the explicit injection-defense effectiveness is demonstrated via the harmful-distractor QA proxy, not a dedicated prompt-injection attack benchmark ^[ambiguous]."
+  },
+  {
+    "id": "find-2606.17034-naive-forgetting-insufficient",
+    "type": "finding",
+    "analyst": "risk-safety",
+    "title": "Instruction-only 'forgetting' is an insufficient safety control: contaminated KV cache persists despite the instruction",
+    "summary": "A safety-relevant negative result: appending an instruction to ignore/forget a harmful or stale span (the architecturally cheapest mitigation, motivated by in-context forgetting evals, Qian et al. 2026, and memory agents, Hu et al. 2026) does NOT remove the span's influence, because after prefill the suffix KV states are already contaminated -- a later instruction can only compete with stored evidence at decode time rather than rewrite the cached states. Empirically instruction-only forgetting is the strongest approximate baseline at small context but degrades quickly: it increasingly outputs both the erased value A and retained value B ('A,B') as context grows, with 625 total QA failures (62.1% corrupted-context reliance) vs KVEraser's 105 (49.5%). Implication for red-team/defense design: prompt-level 'forget this' guardrails against injected/stale context provide false assurance under long-context conditions; reliable neutralization requires editing the cache itself (or full recomputation). This parallels the cache-contamination persistence seen in shift-monitoring (find-2606.11949-density-collapse) and memory-poisoning (find-2606.05743-memory-poisoning) defenses.",
+    "source_ids": [
+      "src-2606.17034"
+    ],
+    "taxonomy": {
+      "threat": [
+        "agent.indirect-prompt-injection",
+        "model.context-contamination",
+        "safety.mitigation-failure"
+      ],
+      "attack": [
+        "prompt-attack"
+      ],
+      "teaming": [
+        "llm-as-a-defender"
+      ]
+    },
+    "atlas": [
+      "AML.T0051"
+    ],
+    "benchmarks": [
+      "2WikiMultiHopQA",
+      "MuSiQue",
+      "IIRC"
+    ],
+    "standards": [],
+    "maturity": "prototype",
+    "confidence": 0.76,
+    "evidence_grade": "A",
+    "provenance": {
+      "extracted": 0.82,
+      "inferred": 0.18,
+      "ambiguous": 0.0
+    },
+    "novelty_signal": 0.62,
+    "notes": "Verbatim failure counts from Table 6 and Sec 5.4/5.5. The 'false assurance' security framing is analyst inference from the measured negative result."
+  },
+  {
+    "id": "risk-context-contamination-postfill",
+    "type": "risk",
+    "threat": "agent.indirect-prompt-injection",
+    "hazard": "A harmful/stale span (injected skill instruction, stale tool observation, retracted preference) is identified only after prefill, having already contaminated the KV cache of all subsequent tokens",
+    "hazardous_situation": "A long-context/agentic LLM continues decoding from a cache containing a harmful prompt injection or stale tool result; prompt-level 'ignore this' instructions fail to neutralize it and the model produces unsafe actions or wrong answers",
+    "harm": "harm-unsafe-content-passthrough",
+    "metrics": {
+      "severity": 4,
+      "probability": 3,
+      "detectability": 3
+    },
+    "controls": [
+      "control-kv-cache-context-erasing"
+    ],
+    "residual_risk": "Medium: learned KV-cache erasing (KVEraser) reliably neutralizes the span's influence, near-matching full recomputation (avg QA EM 0.879) at 3-4x lower latency, and is the only reliable approximate method across 1K-32K context. Residual risk remains because (1) cheaper prompt-level forgetting provides false assurance (62.1% corrupted-context reliance), (2) the method is validated on single-span erasure only -- multi-span deletion is out of scope, and (3) the span must first be DETECTED post-prefill, which the paper assumes rather than solves.",
+    "standards": [],
+    "finding_ids": [
+      "find-2606.17034-context-erasing-defense",
+      "find-2606.17034-naive-forgetting-insufficient"
+    ],
+    "mit_subdomain": "2.2"
+  },
+  {
+    "id": "control-kv-cache-context-erasing",
+    "type": "control",
+    "name": "Learned localized KV-cache context erasing (KVEraser)",
+    "description": "A defense for neutralizing a detected harmful/stale span (injected skill instruction, indirect prompt injection, stale tool observation, retracted preference) post-prefill without full recomputation. A trainable eraser module (copy of the generator backbone minus the LM head), conditioned on the preserved prefix cache and the erased span, generates length-preserving steering KV states that replace ONLY the erased interval's KV states while reusing the unchanged suffix cache, making future decoding behave as if the span never appeared. Two-stage training: generic span-neighbor pre-training (80K Wikipedia samples) + task-specific fine-tuning (~7.5K samples). Reliably eliminates span influence (unlike delete-and-shift, local suffix repair, or instruction-only forgetting, which leave the contaminated cache in place) at O(|e|(|p|+|e|)) cost vs O(|s|(|p|+|s|)) for exact recompute. Limitation: single contiguous span only; requires upstream detection of the problematic span.",
+    "addresses_threats": [
+      "agent.indirect-prompt-injection",
+      "agent.tool-abuse",
+      "model.context-contamination"
+    ],
+    "standards": [],
+    "source_ids": [
+      "src-2606.17034"
+    ]
+  },
+  {
+    "id": "find-doubtprobe-structural-reorg",
+    "type": "finding",
+    "analyst": "threat-attack",
+    "title": "Black-box jailbreaks preserve harmful goal but reorganize its expression — structural-omission is a defense signal",
+    "summary": "Core observation: many black-box jailbreaks (role-play, prompt-injection wrapping, decomposition, code-completion framing, symbolic-construction) do NOT remove the harmful goal; they redistribute the harmful content across the prompt via decomposition, reordering, or structural embedding, evading alignment while keeping intent recoverable. DoubtProbe exploits this: it extracts a structured representation S, reconstructs Q-hat using only S, and flags information-preservation failures (omission/attenuation/distortion) between Q and Q-hat as a deception signal (Proposition 1, Unrecoverable Omission under Constrained Reconstruction). Dual-branch: structural verification + semantic auditing, DEF(Q)=Block if either branch blocks. Measured: macro attack ASR 0.237→0.033, CodeAttack 0.152→0.001, JBB artifact 0.293→0.100; benign macro FPR 0.019 (vs LlamaGuard2 0.591, SmoothLLM 0.964). Residual failure concentrated on fluent discourse-driven jailbreaks (DAN ASR 0.249).",
+    "source_ids": [
+      "src-doubtprobe-2606-16527"
+    ],
+    "taxonomy": {
+      "threat": [
+        "model.jailbreak",
+        "model.prompt-injection"
+      ],
+      "attack": [
+        "prompt-attack"
+      ],
+      "teaming": [
+        "frontier-detection.structural-verification"
+      ]
+    },
+    "atlas": [
+      "AML.T0054",
+      "AML.T0051"
+    ],
+    "benchmarks": [
+      "JailbreakBench",
+      "JailbreakHub",
+      "CodeAttack",
+      "AlpacaEval",
+      "OR-Bench"
+    ],
+    "standards": [],
+    "maturity": "research-prototype",
+    "confidence": 0.82,
+    "evidence_grade": "A",
+    "provenance": {
+      "extracted": 0.85,
+      "inferred": 0.1,
+      "ambiguous": 0.05
+    },
+    "novelty_signal": 0.72,
+    "notes": "Verbatim metrics from Table 2/8. Novelty: structural-reconstruction-inconsistency as a black-box defense signal distinct from intent-extraction or distribution-fitted classifiers."
+  },
+  {
+    "id": "find-doubtprobe-codeattack-residual",
+    "type": "finding",
+    "analyst": "threat-attack",
+    "title": "CodeAttack (code/cipher/list/stack symbolic construction) strongly exploits structured-composition attack surface; DoubtProbe cuts it to 0.001 but DAN/PAIR fluent attacks persist",
+    "summary": "CodeAttack embeds harmful requests in code-like list/stack/string/cipher constructions; undefended Qwen2.5-72B reaches CodeAttack overall ASR 0.152 (Python Stack category 0.969). Structure-heavy attacks are where DoubtProbe's structural-verification branch is most effective (CodeAttack→0.001, Python Stack→0.002), confirming harmful behavior dependent on explicit construction cues / structured composition is detectable via reconstruction omission. By contrast, attacks with fluent stable surface form — DAN (discourse-driven, ASR 0.249 residual) and PAIR (iterative fluent jailbreak, 0.049 residual) — resist structural detection because they preserve a coherent surface and shift attack to semantic recovery. Adaptive attackers: AutoDAN-GA 0.220 ASR, PAIR 0.100, LLM-Fuzzer 0.040 against full defense — stronger evolutionary search uncovers residual weakness.",
+    "source_ids": [
+      "src-doubtprobe-2606-16527"
+    ],
+    "taxonomy": {
+      "threat": [
+        "model.jailbreak"
+      ],
+      "attack": [
+        "prompt-attack",
+        "autonomous-attack"
+      ],
+      "teaming": [
+        "automated.evolutionary-search",
+        "llm-as-attacker"
+      ]
+    },
+    "atlas": [
+      "AML.T0054"
+    ],
+    "benchmarks": [
+      "CodeAttack",
+      "JailbreakHub",
+      "PAIR",
+      "AutoDAN",
+      "LLM-Fuzzer"
+    ],
+    "standards": [],
+    "maturity": "research-prototype",
+    "confidence": 0.8,
+    "evidence_grade": "A",
+    "provenance": {
+      "extracted": 0.85,
+      "inferred": 0.1,
+      "ambiguous": 0.05
+    },
+    "novelty_signal": 0.6,
+    "notes": "Table 3/5/7 verbatim. Distinguishes structure-heavy (detectable) vs fluent discourse attack surfaces — informs which threat nodes lack defense coverage."
+  },
+  {
+    "id": "atk-codeattack-symbolic-construction",
+    "type": "attack_technique",
+    "name": "CodeAttack symbolic/code-construction jailbreak",
+    "attack_class": "prompt-attack",
+    "atlas": [
+      "AML.T0054"
+    ],
+    "realizes_threats": [
+      "model.jailbreak"
+    ],
+    "access": "black-box",
+    "benchmarks": [
+      "CodeAttack"
+    ],
+    "exploits_vulns": [
+      "vuln-structured-composition-alignment-gap"
+    ],
+    "source_ids": [
+      "src-doubtprobe-2606-16527"
+    ]
+  },
+  {
+    "id": "atk-dan-discourse-jailbreak",
+    "type": "attack_technique",
+    "name": "DAN-style discourse-driven role-play jailbreak (fluent surface form)",
+    "attack_class": "prompt-attack",
+    "atlas": [
+      "AML.T0054"
+    ],
+    "realizes_threats": [
+      "model.jailbreak"
+    ],
+    "access": "black-box",
+    "benchmarks": [
+      "JailbreakHub"
+    ],
+    "exploits_vulns": [
+      "vuln-structured-composition-alignment-gap"
+    ],
+    "source_ids": [
+      "src-doubtprobe-2606-16527"
+    ]
+  },
+  {
+    "id": "vuln-structured-composition-alignment-gap",
+    "type": "vulnerability",
+    "title": "Safety alignment fails to recover harmful intent reorganized across prompt structure",
+    "description": "LLM safety alignment evaluates prompts at surface/semantic level and fails when a harmful goal is preserved but redistributed via decomposition, reordering, role-play, symbolic/code composition, or contextual reframing. The harmful goal survives transformation and is recoverable at generation time, yet the input passes input-side safety alignment. Distribution-fitted guards overfit to known artifacts; prompt-level semantic judges are disturbed by wrapping/indirection.",
+    "affected": "Black-box-deployed aligned LLMs (Qwen2.5-72B, Llama-3.1-70B evaluated)",
+    "exploited_by": [
+      "atk-codeattack-symbolic-construction",
+      "atk-dan-discourse-jailbreak"
+    ],
+    "threats": [
+      "model.jailbreak",
+      "model.prompt-injection"
+    ],
+    "cwe": [
+      "CWE-693",
+      "CWE-20"
+    ],
+    "severity": "high",
+    "disclosure": "academic",
+    "patch_status": "mitigated-by-doubtprobe",
+    "controls": [
+      "control-doubtprobe-dual-branch"
+    ],
+    "source_ids": [
+      "src-doubtprobe-2606-16527"
+    ]
+  },
+  {
+    "id": "control-doubtprobe-dual-branch",
+    "type": "control",
+    "name": "DoubtProbe dual-branch inference-time defense (structural verification + semantic auditing)",
+    "description": "Inference-time black-box defense running in parallel with target generation: structural branch extracts structured representation S, reconstructs Q-hat from S only, and a Comparator flags omission/attenuation/distortion as a deception signal; semantic branch issues a direct unsafe-intent verdict. Unified rule blocks if either branch blocks. Low latency overhead (delta_lat 0.050) due to parallel execution. Reduces macro ASR 0.237→0.033 with benign FPR 0.019.",
+    "addresses_threats": [
+      "model.jailbreak",
+      "model.prompt-injection"
+    ],
+    "standards": [],
+    "source_ids": [
+      "src-doubtprobe-2606-16527"
+    ]
+  },
+  {
+    "id": "find-mtk-pseudo-malicious-prompts",
+    "type": "finding",
+    "analyst": "threat-attack",
+    "title": "Pseudo-malicious prompts (PMPs): benign-by-intent inputs with safety keywords break detectors via inflated FPR",
+    "summary": "Novel failure-surface: pseudo-malicious prompts (PMPs) are semantically harmless queries that superficially resemble harmful ones because they contain terms associated with violence/abuse/prohibited topics (e.g. 'What is Harry Potter's criminal history?', 'I operate a small retail store. What are some popular shoplifting methods I should look out for?'). PMPs are a two-sided failure: aligned LLMs over-refuse them, AND keyword/lexical/static-feature jailbreak detectors flag them as attacks (FPR_PMP). On OR-Bench PMPs, prior detectors show FPR_PMP up to 0.32 (HSF) and substantial inflation; +PMP-Augment training does not fix it (often degrades TPR). MTK keeps FPR_PMP=0.02 (TPR 0.95, F1 0.95). For VLMs, multimodal PMPs (from USB) drive FPR_PMP>0.1 to 0.445 (JailGuard) while MTK holds 0.044/0.073. Demonstrates static single-layer detectors derive boundaries from surface lexical cues not semantic intent.",
+    "source_ids": [
+      "src-mtk-2606-07335"
+    ],
+    "taxonomy": {
+      "threat": [
+        "model.over-refusal",
+        "safety.detector-evasion"
+      ],
+      "attack": [
+        "prompt-attack"
+      ],
+      "teaming": [
+        "frontier-detection.manifold-trajectory"
+      ]
+    },
+    "atlas": [
+      "AML.T0054"
+    ],
+    "benchmarks": [
+      "OR-Bench",
+      "ToxicChat",
+      "XSTest",
+      "AdvBench",
+      "MM-SafetyBench",
+      "USB"
+    ],
+    "standards": [],
+    "maturity": "research-prototype",
+    "confidence": 0.85,
+    "evidence_grade": "A",
+    "provenance": {
+      "extracted": 0.85,
+      "inferred": 0.1,
+      "ambiguous": 0.05
+    },
+    "novelty_signal": 0.85,
+    "notes": "High novelty: PMP is a named threat node distinct from jailbreak and benign — it stresses the detector itself (FPR inflation). Verbatim FPR from Tab 3/8. PMP both an over-refusal trigger AND a detector-evasion-adjacent surface."
+  },
+  {
+    "id": "find-mtk-detector-aware-adaptive",
+    "type": "finding",
+    "analyst": "threat-attack",
+    "title": "Detector-aware adaptive attacks: full-knowledge adversary adds evasion loss to drive jailbreak detector TPR to near-zero",
+    "summary": "Novel attack class: a white-box adversary with full knowledge of the deployed detector augments the base jailbreak objective (GCG, GCG_adapt) with a defense-specific evasion penalty L_evasion (composite loss L_adapt=(1-lambda)L_adv+lambda*L_evasion). For HiddenDetect the evasion loss minimizes cosine similarity to the pre-computed refusal vector across safety-aware layers; for SaP it pushes the layer-K representation inside the learned safety polytope; for HSF it flips the binary classifier toward the benign label. Verbatim: adaptive GCG reaches ASR 0.81 on Llama2 / 0.90 on Vicuna against HiddenDetect, dropping its TPR to ~0.04 (eASR 0.78/0.90). Across four detectors, adaptive attacks average eASR 0.60 (Llama2) / 0.88 (Vicuna). Root cause: monitoring a single 'safety layer' or fixed refusal vector lets the adversary hide malicious behavior in the unmonitored remainder of the network — the security-critical-layer hypothesis breaks. MTK's rank trajectory is non-invertible/non-differentiable, holding eASR<=0.2 (avg 0.07-0.19).",
+    "source_ids": [
+      "src-mtk-2606-07335"
+    ],
+    "taxonomy": {
+      "threat": [
+        "safety.detector-evasion",
+        "model.jailbreak"
+      ],
+      "attack": [
+        "prompt-attack",
+        "autonomous-attack"
+      ],
+      "teaming": [
+        "automated.gradient-optimization",
+        "llm-as-attacker"
+      ]
+    },
+    "atlas": [
+      "AML.T0043",
+      "AML.T0054"
+    ],
+    "benchmarks": [
+      "AdvBench"
+    ],
+    "standards": [],
+    "maturity": "research-prototype",
+    "confidence": 0.85,
+    "evidence_grade": "A",
+    "provenance": {
+      "extracted": 0.85,
+      "inferred": 0.1,
+      "ambiguous": 0.05
+    },
+    "novelty_signal": 0.82,
+    "notes": "eASR = ASR*(1-TPR) joint metric (jailbreak AND escape detection). ATLAS AML.T0043 (Craft Adversarial Data) for the optimization; evasion of a deployed ML defense. Verbatim from Tab 2/5."
+  },
+  {
+    "id": "find-mtk-bumping-trajectory",
+    "type": "finding",
+    "analyst": "threat-attack",
+    "title": "Jailbreak 'bumping' signature: malicious affinity oscillates across transformer layers, suppressed by the wrapper at specific depths",
+    "summary": "Mechanistic threat insight: jailbreak prompts are multi-phase across layers — neither tied to one layer nor monotonic. In shallow layers (0-9) representations stay near malicious seeds; in mid layers (16-20) malicious affinity is strongest (model more likely to refuse); in deep layers (after ~22) the trajectory drifts toward the compliance/benign region, masking malicious intent and eliciting a compliant response. The jailbreak wrapper attenuates refusal-inducing malicious semantics at certain depths (alpha_mal(x_jb)<alpha_mal(x_mal)). This 'bumping' (delta crossing zero, Fig 2) is why single-layer/fixed-vector detection is brittle and why the 'safety layer' notion is unreliable (layers most indicative of safety vary across models and even across prompts within a model). The harmful goal survives but its layer-wise expression is strategically reshaped.",
+    "source_ids": [
+      "src-mtk-2606-07335"
+    ],
+    "taxonomy": {
+      "threat": [
+        "model.jailbreak"
+      ],
+      "attack": [
+        "prompt-attack"
+      ],
+      "teaming": [
+        "frontier-detection.manifold-trajectory"
+      ]
+    },
+    "atlas": [
+      "AML.T0054"
+    ],
+    "benchmarks": [
+      "AdvBench"
+    ],
+    "standards": [],
+    "maturity": "research-prototype",
+    "confidence": 0.78,
+    "evidence_grade": "B",
+    "provenance": {
+      "extracted": 0.75,
+      "inferred": 0.2,
+      "ambiguous": 0.05
+    },
+    "novelty_signal": 0.7,
+    "notes": "Mechanistic/representational — evidence_grade B (qualitative layer-wise observation, Fig 2/3, not a single headline ASR). Explains WHY fixed-layer defenses fail."
+  },
+  {
+    "id": "atk-detector-aware-adaptive-jailbreak",
+    "type": "attack_technique",
+    "name": "Detector-aware adaptive jailbreak (evasion-loss-augmented GCG)",
+    "attack_class": "prompt-attack",
+    "atlas": [
+      "AML.T0043",
+      "AML.T0054"
+    ],
+    "realizes_threats": [
+      "safety.detector-evasion",
+      "model.jailbreak"
+    ],
+    "access": "white-box",
+    "benchmarks": [
+      "AdvBench"
+    ],
+    "exploits_vulns": [
+      "vuln-single-layer-detector-brittleness"
+    ],
+    "source_ids": [
+      "src-mtk-2606-07335"
+    ]
+  },
+  {
+    "id": "vuln-single-layer-detector-brittleness",
+    "type": "vulnerability",
+    "title": "Jailbreak detectors monitoring a single 'safety layer' or fixed refusal vector are evadable and over-trigger on keywords",
+    "description": "Detectors that map an input to a fixed feature representation at one heuristically-chosen layer (hidden states, gradients, logits) and apply a linear/threshold decision assume benign-vs-jailbreak linear separability. This collapses two ways: (1) a full-knowledge adversary optimizes the jailbreak to hide malicious behavior in unmonitored layers (TPR->near 0); (2) pseudo-malicious prompts with safety keywords land in the same region as harmful prompts, inflating FPR. The 'safety layer' is itself unstable — layers most indicative of safety vary across models and prompts.",
+    "affected": "Single-layer/static jailbreak detectors: HiddenDetect, SaP, HSF, GradSafe, GradCuff, SmoothLLM, SelfDefend (Llama2-7B, Llama3-8B, Mistral-7B, Vicuna-7B; VLMs LLaVA, Qwen-VL)",
+    "exploited_by": [
+      "atk-detector-aware-adaptive-jailbreak"
+    ],
+    "threats": [
+      "safety.detector-evasion",
+      "model.over-refusal"
+    ],
+    "cwe": [
+      "CWE-693",
+      "CWE-1039"
+    ],
+    "severity": "high",
+    "disclosure": "academic",
+    "patch_status": "mitigated-by-mtk",
+    "controls": [
+      "control-mtk-manifold-trajectory"
+    ],
+    "source_ids": [
+      "src-mtk-2606-07335"
+    ]
+  },
+  {
+    "id": "control-mtk-manifold-trajectory",
+    "type": "control",
+    "name": "MTK manifold-trajectory-kinetics jailbreak detector",
+    "description": "Jailbreak-data-free, model-agnostic deployment-time detector that tracks a prompt's full layer-wise benign-neighbor rank trajectory on the activation manifold (rather than a single-layer snapshot), then flags anomalies with an outlier detector (Isolation Forest) trained only on benign trajectories. Rank-based, non-invertible/non-differentiable representation is hard to optimize against (robust to adaptive attacks, eASR<=0.2) and robust to pseudo-malicious prompts (FPR_PMP 0.02). Mean AUROC 0.940 across 10 attacks x 4 LLMs; transfers to VLMs (0.940 LLaVA / 0.924 Qwen-VL). Requires small benign+malicious anchor bank (800/800), 25% PMPs in benign bank.",
+    "addresses_threats": [
+      "model.jailbreak",
+      "safety.detector-evasion",
+      "model.over-refusal"
+    ],
+    "standards": [],
+    "source_ids": [
+      "src-mtk-2606-07335"
+    ]
+  },
+  {
+    "id": "safety.detector-evasion",
+    "type": "threat",
+    "label": "Defense/detector evasion (adaptive attack against a deployed safety detector)",
+    "axis": "safety",
+    "description": "A full-knowledge adversary optimizes inputs to both achieve the harmful objective and escape a deployed ML-based jailbreak/safety detector, by adding a detector-specific evasion penalty that hides malicious signal in unmonitored model internals. Measured by evasion ASR = ASR*(1-TPR).",
+    "candidate": true,
+    "provenance": {
+      "extracted": 0.8,
+      "inferred": 0.2,
+      "ambiguous": 0.0
+    },
+    "source_ids": [
+      "src-mtk-2606-07335"
+    ]
+  },
+  {
+    "id": "model.over-refusal",
+    "type": "threat",
+    "label": "Over-refusal on pseudo-malicious / benign-but-sensitive prompts",
+    "axis": "model",
+    "description": "Safety-aligned LLMs and keyword/static jailbreak detectors decline or flag benign-by-intent queries that contain safety-related keywords (pseudo-malicious prompts), degrading usability and inflating detector false-positive rate (FPR_PMP). A usability-side failure mode complementary to jailbreak.",
+    "candidate": true,
+    "provenance": {
+      "extracted": 0.8,
+      "inferred": 0.2,
+      "ambiguous": 0.0
+    },
+    "source_ids": [
+      "src-mtk-2606-07335"
+    ]
+  },
+  {
+    "id": "find-reta-static-adaptive-gap",
+    "type": "finding",
+    "analyst": "threat-attack",
+    "title": "Indirect-PI defenses overstate robustness: static benchmarks hide a 15.8pp static->adaptive ASR collapse",
+    "summary": "Critical evaluation finding: static PI benchmarks fix attack strings before the defense is deployed, measuring only whether a defense recognizes KNOWN injections, not whether it preserves task integrity once the attacker reformulates. Across four PI-defense paradigms (prompting/Spotlighting+Sandwiching, filtering/PromptGuard+PIGuard, secret-knowledge/DataSentinel+MELON, training/MetaSecAlign) on AgentDojo, the highest per-defense ASR rises from 21.7% (static) to 41.8% (adaptive) on Qwen3-4B — a 20.1pp gap (15.5pp on Llama-3.1-8B; cross-model avg 15.8pp). The strongest static defenses (PIGuard, MetaSecAlign) reach up to 50.0% adaptive ASR. Root causes: (FM-I) observation-level decisions tied to attacker-controlled text rather than user-task alignment; (FM-II) adversarial-training mode-collapse onto a few injection templates lacking strategy coverage (e.g. unseen InjecAgent ASR rose 25.7%->30.7% after augmentation; Genetic Search recovered 40.0% ASR).",
+    "source_ids": [
+      "src-reta-2606-15441"
+    ],
+    "taxonomy": {
+      "threat": [
+        "agent.indirect-prompt-injection",
+        "safety.detector-evasion"
+      ],
+      "attack": [
+        "tool-attack",
+        "autonomous-attack"
+      ],
+      "teaming": [
+        "automated.evolutionary-search",
+        "llm-as-attacker"
+      ]
+    },
+    "atlas": [
+      "AML.T0051"
+    ],
+    "benchmarks": [
+      "AgentDojo",
+      "AgentSecurityBench",
+      "InjecAgent"
+    ],
+    "standards": [],
+    "maturity": "research-prototype",
+    "confidence": 0.85,
+    "evidence_grade": "A",
+    "provenance": {
+      "extracted": 0.85,
+      "inferred": 0.1,
+      "ambiguous": 0.05
+    },
+    "novelty_signal": 0.75,
+    "notes": "Verbatim from Fig 1, Tab 2/3, abstract. Methodological: PI defenses must be judged on ASR+UA+BU jointly under adaptive attack, not static ASR."
+  },
+  {
+    "id": "find-reta-injection-reformulation-attacks",
+    "type": "finding",
+    "analyst": "threat-attack",
+    "title": "Four semantic injection-reformulation attacks bypass pattern-based PI defenses by hiding imperative cues",
+    "summary": "The paper names four black-box adaptive injection-reformulation strategies that preserve attack goal while evading lexical/structural/secret-knowledge defenses: (1) Contextual Hijacking — frames the injection as high-priority data/critical system alert the wrapper relays as urgent legitimate content (defeats prompting/delimiter defenses); (2) Lexical Camouflage — rewrites the injection as a passive noun phrase with no imperative verbs/directive phrasing, falling below the classifier's learned decision boundary (defeats filtering); (3) Canary-Blind Entanglement — tells the model to finish its normal safety routine before executing the injection, so the canary still emits and masked execution still matches (defeats secret-knowledge DataSentinel/MELON); (4) Phantom Continuation — rewrites the injection as a first-person past-tense narrative with no imperative verbs, matching none of the surface cues training-based defenses (StruQ/SecAlign) were trained to reject. Also signal-based-instruction-override and task-framing-instruction (Task Objective:/TODO: metadata). All exploit observation-level pattern matching that ignores user-task relevance.",
+    "source_ids": [
+      "src-reta-2606-15441"
+    ],
+    "taxonomy": {
+      "threat": [
+        "agent.indirect-prompt-injection",
+        "safety.detector-evasion"
+      ],
+      "attack": [
+        "tool-attack",
+        "prompt-attack"
+      ],
+      "teaming": [
+        "automated.injection-reformulation",
+        "llm-as-attacker"
+      ]
+    },
+    "atlas": [
+      "AML.T0051"
+    ],
+    "benchmarks": [
+      "AgentDojo",
+      "ChatInject",
+      "AgentSecurityBench",
+      "InjecAgent"
+    ],
+    "standards": [],
+    "maturity": "research-prototype",
+    "confidence": 0.83,
+    "evidence_grade": "B",
+    "provenance": {
+      "extracted": 0.8,
+      "inferred": 0.15,
+      "ambiguous": 0.05
+    },
+    "novelty_signal": 0.85,
+    "notes": "High novelty — four named injection-reformulation techniques (§3.2, illustrative boxes). evidence_grade B: techniques are illustrative/qualitative; aggregate ASR numbers in find-reta-static-adaptive-gap are A."
+  },
+  {
+    "id": "atk-contextual-hijacking-pi",
+    "type": "attack_technique",
+    "name": "Contextual Hijacking (frame injection as high-priority/critical-alert data)",
+    "attack_class": "tool-attack",
+    "atlas": [
+      "AML.T0051"
+    ],
+    "realizes_threats": [
+      "agent.indirect-prompt-injection"
+    ],
+    "access": "black-box",
+    "benchmarks": [
+      "AgentDojo"
+    ],
+    "exploits_vulns": [
+      "vuln-observation-level-pi-pattern-matching"
+    ],
+    "source_ids": [
+      "src-reta-2606-15441"
+    ]
+  },
+  {
+    "id": "atk-lexical-camouflage-pi",
+    "type": "attack_technique",
+    "name": "Lexical Camouflage (passive noun-phrase injection, no imperative verbs)",
+    "attack_class": "tool-attack",
+    "atlas": [
+      "AML.T0051"
+    ],
+    "realizes_threats": [
+      "agent.indirect-prompt-injection"
+    ],
+    "access": "black-box",
+    "benchmarks": [
+      "AgentDojo"
+    ],
+    "exploits_vulns": [
+      "vuln-observation-level-pi-pattern-matching"
+    ],
+    "source_ids": [
+      "src-reta-2606-15441"
+    ]
+  },
+  {
+    "id": "atk-canary-blind-entanglement-pi",
+    "type": "attack_technique",
+    "name": "Canary-Blind Entanglement (preserve canary/shadow-execution signature while injecting)",
+    "attack_class": "tool-attack",
+    "atlas": [
+      "AML.T0051"
+    ],
+    "realizes_threats": [
+      "agent.indirect-prompt-injection",
+      "safety.detector-evasion"
+    ],
+    "access": "black-box",
+    "benchmarks": [
+      "AgentDojo"
+    ],
+    "exploits_vulns": [
+      "vuln-observation-level-pi-pattern-matching"
+    ],
+    "source_ids": [
+      "src-reta-2606-15441"
+    ]
+  },
+  {
+    "id": "atk-phantom-continuation-pi",
+    "type": "attack_technique",
+    "name": "Phantom Continuation (first-person past-tense narrative injection)",
+    "attack_class": "tool-attack",
+    "atlas": [
+      "AML.T0051"
+    ],
+    "realizes_threats": [
+      "agent.indirect-prompt-injection"
+    ],
+    "access": "black-box",
+    "benchmarks": [
+      "AgentDojo"
+    ],
+    "exploits_vulns": [
+      "vuln-observation-level-pi-pattern-matching"
+    ],
+    "source_ids": [
+      "src-reta-2606-15441"
+    ]
+  },
+  {
+    "id": "vuln-observation-level-pi-pattern-matching",
+    "type": "vulnerability",
+    "title": "Indirect-PI defenses decide on observation-level injection patterns, not user-task relevance",
+    "description": "PI defenses across all four paradigms set their decision function phi on observable features of the retrieved observation o_t (delimiter structure, lexical/embedding classifier features, induced-behavior canary signatures, or trained injection-style boundaries) and flag/block without checking whether the agent's next tool-call set follows from the trusted user task t_u. Because phi conditions on attacker-controlled text, a semantically-equivalent reformulation (passive phrasing, narrative framing, priority framing, canary-preserving entanglement) lands outside the recognized pattern while preserving the injected task. Task integrity is not guaranteed.",
+    "affected": "LLM agents with PI defenses: Spotlighting, Sandwiching, PromptGuard, PIGuard, DataSentinel, MELON, StruQ, SecAlign/MetaSecAlign (Qwen3-4B-Instruct-2507, Llama-3.1-8B-Instruct on AgentDojo/ASB/InjecAgent)",
+    "exploited_by": [
+      "atk-contextual-hijacking-pi",
+      "atk-lexical-camouflage-pi",
+      "atk-canary-blind-entanglement-pi",
+      "atk-phantom-continuation-pi"
+    ],
+    "threats": [
+      "agent.indirect-prompt-injection",
+      "safety.detector-evasion"
+    ],
+    "cwe": [
+      "CWE-77",
+      "CWE-20",
+      "CWE-693"
+    ],
+    "severity": "high",
+    "disclosure": "academic",
+    "patch_status": "mitigated-by-reta",
+    "controls": [
+      "control-reta-task-alignment-reasoning"
+    ],
+    "source_ids": [
+      "src-reta-2606-15441"
+    ]
+  },
+  {
+    "id": "control-reta-task-alignment-reasoning",
+    "type": "control",
+    "name": "RETA reasoning-enabled task-alignment PI defense",
+    "description": "Training-based PI defense that grounds the security decision on the trusted user task rather than injection patterns. At each tool-output step the defender performs chain-of-thought task-alignment reasoning verifying its next tool-call set follows from t_u and is independent of directive content in the observation (checks C1 redirection-detection and C2 task-derivability). Trained in two stages: Stage I diversity-rewarded adversarial red-teaming (RL-Hammer + dictionary-learning coverage reward) generates strategy-diverse successful injections; Stage II adversarial RL (GDPO) optimizes the defender on completed trajectories rewarding injection rejection + user-task completion + reasoning quality. Keeps per-task adaptive ASR <10%; average adaptive ASR 2.92% (Qwen3-4B) / 3.75% (Llama-3.1-8B) while preserving UA and BU.",
+    "addresses_threats": [
+      "agent.indirect-prompt-injection",
+      "safety.detector-evasion"
+    ],
+    "standards": [],
+    "source_ids": [
+      "src-reta-2606-15441"
+    ]
+  },
+  {
+    "id": "automated.injection-reformulation",
+    "type": "threat",
+    "label": "Automated injection-reformulation red-teaming (strategy-diverse adaptive PI generation)",
+    "axis": "agent",
+    "description": "An adaptive adversary iteratively reformulates an indirect-prompt-injection payload (via RL or genetic search) to preserve the injected task goal while changing surface form to fall outside a deployed defense's recognized patterns. Effective red-teaming requires strategy coverage (distinct reformulation strategies), not just attack success, because success-only rewards mode-collapse onto a few templates.",
+    "candidate": true,
+    "provenance": {
+      "extracted": 0.8,
+      "inferred": 0.2,
+      "ambiguous": 0.0
+    },
+    "source_ids": [
+      "src-reta-2606-15441"
+    ]
+  },
+  {
+    "id": "find-codesentinel-code-context-pi-families",
+    "type": "finding",
+    "analyst": "threat-attack",
+    "title": "Code-context indirect-PI surface: six attack families hide instructions in comments/strings/identifiers/decoy code",
+    "summary": "Catalogues indirect prompt injection in code contexts: attackers poison external code that a benign developer or coding agent later retrieves (GitHub, Stack Overflow, docs, commit messages, issue threads, RAG sources), embedding payloads in comments, string literals, identifiers, or decoy-like snippets that are visible to the LLM but have weak/no runtime effect (easy to overlook). Six recent attack families: INSEC and ShadowCode (non-functional/adversarial payloads), XOXO and ITGen (semantic-preserving rewrites/identifier substitutions), Flashboom (decoy snippets misleading code auditors), CoTDeceptor (reasoning-aware obfuscation deceiving auditors). Also CodeJailbreaker (implicit metadata channels). Key limitation of prior defenses: keyword filters miss implicit triggers; file-level perplexity dilutes short payloads; training-based defenses hard to deploy black-box. CodeSentinel node-level F1: INSEC 0.90, ShadowCode 0.85, Flashboom 0.79, ITGen 0.77, XOXO 0.80, CoTDeceptor 0.66 (avg 0.80). Sample-level ASR reductions: GPT-5.1-Codex-mini 18.32%->5.81%, Gemini-3.1-Flash-lite 24.14%->8.28%.",
+    "source_ids": [
+      "src-codesentinel-2606-19235"
+    ],
+    "taxonomy": {
+      "threat": [
+        "agent.indirect-prompt-injection",
+        "software.code-poisoning",
+        "model.prompt-injection"
+      ],
+      "attack": [
+        "tool-attack",
+        "prompt-attack"
+      ],
+      "teaming": [
+        "frontier-detection.cst-node-sanitization"
+      ]
+    },
+    "atlas": [
+      "AML.T0051",
+      "AML.T0010"
+    ],
+    "benchmarks": [
+      "HumanEval",
+      "MBPP",
+      "RepoBench"
+    ],
+    "standards": [],
+    "maturity": "research-prototype",
+    "confidence": 0.82,
+    "evidence_grade": "A",
+    "provenance": {
+      "extracted": 0.85,
+      "inferred": 0.1,
+      "ambiguous": 0.05
+    },
+    "novelty_signal": 0.78,
+    "notes": "Verbatim F1 Tab 1, ASR Tab 2. Novelty: CST-node-granular code-context PI taxonomy with decoy-code (visible-but-non-functional) as a distinct payload channel. ATLAS AML.T0010 (supply-chain / poison via external code context) and AML.T0051 (PI)."
+  },
+  {
+    "id": "find-codesentinel-semantic-trigger-evasion",
+    "type": "finding",
+    "analyst": "threat-attack",
+    "title": "Natural-looking semantic triggers (XOXO, ITGen, CoTDeceptor) evade likelihood/keyword detection; need behavioral perturbation",
+    "summary": "Three failure-surface insights for code-context PI: (1) syntactically-valid, statistically-natural semantic triggers (XOXO cross-origin context poisoning, ITGen identifier substitution) appear benign and are hard to catch via likelihood-based anomaly analysis — they require Layer-3 node-perturbation behavioral influence (JSD between output distributions before/after syntax-preserving neutralization). (2) Decoy attacks (Flashboom) inject salient-but-low-reachability nodes disconnected from main program logic to mislead auditors and occupy candidate slots — caught by call-graph/control-flow/data-flow reachability scoring. (3) CoTDeceptor uses reasoning-aware obfuscation to deceive CoT-enhanced LLM code auditors (lowest F1 0.66, the hardest family). Adaptive attacker aware of the defense uses Decoy Injection targeting Layer-3 candidate selection. CodeSentinel's three layers are jointly necessary (ablation F1: L1 0.36 -> L1+L2 0.48 -> L1+L2+L3 0.77/0.80). Clean-code utility mostly preserved (HumanEval Pass@1 100->100; MBPP Pass@1 96.11->89.88; RepoBench exact-match 100->67.33 due to surface-token changes).",
+    "source_ids": [
+      "src-codesentinel-2606-19235"
+    ],
+    "taxonomy": {
+      "threat": [
+        "agent.indirect-prompt-injection",
+        "software.code-poisoning"
+      ],
+      "attack": [
+        "tool-attack",
+        "prompt-attack"
+      ],
+      "teaming": [
+        "frontier-detection.cst-node-sanitization",
+        "llm-as-a-judge"
+      ]
+    },
+    "atlas": [
+      "AML.T0051"
+    ],
+    "benchmarks": [
+      "HumanEval",
+      "MBPP",
+      "RepoBench"
+    ],
+    "standards": [],
+    "maturity": "research-prototype",
+    "confidence": 0.8,
+    "evidence_grade": "B",
+    "provenance": {
+      "extracted": 0.8,
+      "inferred": 0.15,
+      "ambiguous": 0.05
+    },
+    "novelty_signal": 0.72,
+    "notes": "evidence_grade B for the mechanistic per-family claims (ablation F1 in find above is A). CoTDeceptor = reasoning-aware obfuscation against CoT auditors is a notable novel attack node."
+  },
+  {
+    "id": "atk-decoy-code-injection",
+    "type": "attack_technique",
+    "name": "Decoy-code injection (Flashboom: salient low-reachability snippets misleading code auditors)",
+    "attack_class": "tool-attack",
+    "atlas": [
+      "AML.T0051"
+    ],
+    "realizes_threats": [
+      "agent.indirect-prompt-injection",
+      "software.code-poisoning"
+    ],
+    "access": "black-box",
+    "benchmarks": [],
+    "exploits_vulns": [
+      "vuln-code-context-untrusted-retrieval"
+    ],
+    "source_ids": [
+      "src-codesentinel-2606-19235"
+    ]
+  },
+  {
+    "id": "atk-cotdeceptor-reasoning-obfuscation",
+    "type": "attack_technique",
+    "name": "CoTDeceptor reasoning-aware code obfuscation against CoT-enhanced LLM auditors",
+    "attack_class": "tool-attack",
+    "atlas": [
+      "AML.T0051"
+    ],
+    "realizes_threats": [
+      "agent.indirect-prompt-injection",
+      "software.code-poisoning"
+    ],
+    "access": "black-box",
+    "benchmarks": [],
+    "exploits_vulns": [
+      "vuln-code-context-untrusted-retrieval"
+    ],
+    "source_ids": [
+      "src-codesentinel-2606-19235"
+    ]
+  },
+  {
+    "id": "atk-semantic-preserving-code-rewrite",
+    "type": "attack_technique",
+    "name": "Semantic-preserving code rewrite / identifier substitution (XOXO, ITGen)",
+    "attack_class": "tool-attack",
+    "atlas": [
+      "AML.T0051"
+    ],
+    "realizes_threats": [
+      "agent.indirect-prompt-injection",
+      "software.code-poisoning"
+    ],
+    "access": "black-box",
+    "benchmarks": [],
+    "exploits_vulns": [
+      "vuln-code-context-untrusted-retrieval"
+    ],
+    "source_ids": [
+      "src-codesentinel-2606-19235"
+    ]
+  },
+  {
+    "id": "vuln-code-context-untrusted-retrieval",
+    "type": "vulnerability",
+    "title": "Code LLMs treat retrieved external code context as trusted, executing hidden instructions in comments/strings/identifiers/decoy code",
+    "description": "Code LLMs and coding agents consume external code context (repos, Stack Overflow, docs, commit messages, issue threads, RAG-retrieved files) as if trusted. Attackers poison this context with instructions hidden in non-executable regions (comments, string literals, identifiers) or decoy-like snippets that are syntactically valid but weakly connected to program logic, so they have weak/no runtime effect yet are model-facing. The model interprets them as commands. Keyword filters miss implicit triggers; file-level perplexity dilutes short payloads.",
+    "affected": "Code LLMs / coding agents: CodeGemma, CodeBERT, GraphBERT, Gemma-family, Mistral-family, plus commercial agents Claude-3.5-Haiku, GPT-5.1-Codex-mini, Gemini-3.1-Flash-lite",
+    "exploited_by": [
+      "atk-decoy-code-injection",
+      "atk-cotdeceptor-reasoning-obfuscation",
+      "atk-semantic-preserving-code-rewrite"
+    ],
+    "threats": [
+      "agent.indirect-prompt-injection",
+      "software.code-poisoning"
+    ],
+    "cwe": [
+      "CWE-94",
+      "CWE-77",
+      "CWE-829"
+    ],
+    "severity": "high",
+    "disclosure": "academic",
+    "patch_status": "mitigated-by-codesentinel",
+    "controls": [
+      "control-codesentinel-cst-sanitizer"
+    ],
+    "source_ids": [
+      "src-codesentinel-2606-19235"
+    ]
+  },
+  {
+    "id": "control-codesentinel-cst-sanitizer",
+    "type": "control",
+    "name": "CodeSentinel three-layer CST-node code-context sanitizer",
+    "description": "Inference-time pre-API sanitizer for indirect PI in code contexts. Parses external code into a concrete syntax tree (Tree-sitter), extracts high-risk model-facing CST nodes (comments, strings, identifiers, decoy blocks), and applies three early-exit layers: (L1) syntax-guided pre-filtering (regex/lexical/reachability-graph for decoys), (L2) CST-guided Dynamic Min-K% likelihood-anomaly scoring for adversarial perturbations, (L3) CST-guided node-perturbation behavioral-influence (JSD) for natural-looking semantic triggers. Flagged spans are removed/neutralized in a model-facing copy (prompt-only or compile-preserving mode) before forwarding to the victim Code LLM; works for black-box victims via a local surrogate. Node-level F1 0.80, low latency (100.97ms vs CodeGarrison 1374ms).",
+    "addresses_threats": [
+      "agent.indirect-prompt-injection",
+      "software.code-poisoning"
+    ],
+    "standards": [],
+    "source_ids": [
+      "src-codesentinel-2606-19235"
+    ]
+  },
+  {
+    "id": "software.code-poisoning",
+    "type": "threat",
+    "label": "Code-context poisoning (untrusted external code consumed by Code LLMs/coding agents)",
+    "axis": "software",
+    "description": "Attackers poison external code context that benign developers or coding agents later retrieve, hiding instructions or adversarial fragments in comments, string literals, identifiers, or decoy snippets. The Code LLM interprets the hidden content as commands or is biased toward attacker-desired output, while the payload has weak/no runtime effect and evades keyword filters and file-level perplexity.",
+    "candidate": true,
+    "provenance": {
+      "extracted": 0.8,
+      "inferred": 0.2,
+      "ambiguous": 0.0
+    },
+    "source_ids": [
+      "src-codesentinel-2606-19235"
+    ]
+  },
+  {
+    "id": "find-shieldnet-stealthy-mcp-tool-poisoning",
+    "type": "finding",
+    "analyst": "threat-attack",
+    "title": "Stealthy MCP tool poisoning: benign interface + benign I/O, malicious runtime — invisible to semantic guardrails",
+    "summary": "Novel agentic supply-chain threat: MCP validates tool interfaces (names, I/O schemas) not implementations, so agents implicitly trust external code without visibility into runtime behavior. Attackers embed covert behaviors in seemingly benign tools/dependencies — the compromised tool preserves benign-looking descriptions AND input/output behavior while hiding harmful logic that executes at runtime: internal probing, data exfiltration, command-and-control signaling, network DoS. Because malicious intent is NOT reflected in tool semantics, detection based on tool metadata/descriptions/I-O-transcripts/call-trajectories (static MCP scanners, LLM-as-judge semantic guardrails) has systematic blind spots. Verbatim: static MCP scanners (Invariant Labs F1 0.164, Cisco AI 0.029, Ramparts 0.172) and semantic AgentIO baselines (GPT-4.1 F1 0.051, GPT-5.2 0.027) fail; only network-level runtime observation works (ShieldNet F1 0.998, FPR 0.022). A single poisoned dependency can silently exfiltrate data, establish persistent backdoors, or propagate laterally. Example: get_time tool injected with Network DoS (MITRE T1498) launching UDP flood while returning normal output.",
+    "source_ids": [
+      "src-shieldnet-2604-04426"
+    ],
+    "taxonomy": {
+      "threat": [
+        "agentic.supply-chain-injection",
+        "agent.tool-abuse",
+        "model.data-leakage"
+      ],
+      "attack": [
+        "tool-attack",
+        "autonomous-attack"
+      ],
+      "teaming": [
+        "frontier-detection.network-level-guardrail"
+      ]
+    },
+    "atlas": [
+      "AML.T0010",
+      "AML.T0011",
+      "AML.T0024"
+    ],
+    "benchmarks": [
+      "SC-Inject-Bench"
+    ],
+    "standards": [],
+    "maturity": "research-prototype",
+    "confidence": 0.85,
+    "evidence_grade": "A",
+    "provenance": {
+      "extracted": 0.85,
+      "inferred": 0.1,
+      "ambiguous": 0.05
+    },
+    "novelty_signal": 0.9,
+    "notes": "Very high novelty: implementation-layer (not semantic-layer) MCP supply-chain poisoning, detectable only at network layer. Verbatim F1/FPR Tab 2-5. ATLAS AML.T0010 (ML supply chain compromise), AML.T0011 (user execution of malicious tool), AML.T0024 (exfil)."
+  },
+  {
+    "id": "find-shieldnet-sc-inject-bench-taxonomy",
+    "type": "finding",
+    "analyst": "threat-attack",
+    "title": "SC-Inject-Bench: 25+/30 MITRE-ATT&CK-derived network-visible agentic supply-chain attack techniques with code-level injection",
+    "summary": "First benchmark with code-level injection into MCP tool implementations (vs prior semantic-only MCP benchmarks MCPSecBench, MCPTox, MCP Security Bench, MCP-SafetyBench). Refines 29 network-visible attack categories from MITRE ATT&CK across three groups: network connection creation, network traffic content, network traffic flow. Concrete validated technique classes (Fig 4) include: ARP Cache Poisoning, DNS-based attacks, Data Transfer Size Limits, Domain Generation Algorithm, Exfiltration over Symmetric/Asymmetric Encrypted Non-C2 Protocol, Exfiltration over Unencrypted Non-C2 Protocol, Exfiltration to Cloud Storage, Ingress Tool Transfer, Internal Spearphishing, Mail Protocols, Network Device Configuration Dump, Non-Standard Encoding, OS Credential Dumping (Proc Filesystem), Network Service Discovery, Remote System Discovery (ARP/ICMP/SMB/RDP), Spearphishing via Service, Network DoS. Grouped into Standard Encoding / Traffic Signaling / Web Protocols families (ShieldNet zero-shot OOD F1 0.981/0.982/0.949). 109 real servers, 984 tools, 30 techniques, 19,961 benign+malicious executions; dual-verified (agent invokes tool AND canary network action observable).",
+    "source_ids": [
+      "src-shieldnet-2604-04426"
+    ],
+    "taxonomy": {
+      "threat": [
+        "agentic.supply-chain-injection",
+        "agent.tool-abuse",
+        "model.data-leakage"
+      ],
+      "attack": [
+        "tool-attack",
+        "autonomous-attack"
+      ],
+      "teaming": [
+        "automated.code-level-injection"
+      ]
+    },
+    "atlas": [
+      "AML.T0010",
+      "AML.T0024",
+      "AML.T0007"
+    ],
+    "benchmarks": [
+      "SC-Inject-Bench"
+    ],
+    "standards": [
+      "MITRE-ATTACK"
+    ],
+    "maturity": "benchmark",
+    "confidence": 0.82,
+    "evidence_grade": "A",
+    "provenance": {
+      "extracted": 0.85,
+      "inferred": 0.1,
+      "ambiguous": 0.05
+    },
+    "novelty_signal": 0.85,
+    "notes": "Verbatim counts from abstract/§4/Fig 4. Technique class names read from Fig 4 axis (^[ambiguous] on a few partially-legible labels). Note: ATLAS axis is the AI-specific bridge (AML.T0007 discover ML artifacts ~ Network Service/System Discovery); underlying taxonomy is enterprise MITRE ATT&CK — flag for standards-regulatory-analyst on normative coverage."
+  },
+  {
+    "id": "atk-stealthy-mcp-tool-poisoning",
+    "type": "attack_technique",
+    "name": "Stealthy MCP tool/dependency poisoning (benign interface, malicious runtime network behavior)",
+    "attack_class": "tool-attack",
+    "atlas": [
+      "AML.T0010",
+      "AML.T0011"
+    ],
+    "realizes_threats": [
+      "agentic.supply-chain-injection",
+      "agent.tool-abuse",
+      "model.data-leakage"
+    ],
+    "access": "black-box",
+    "benchmarks": [
+      "SC-Inject-Bench"
+    ],
+    "exploits_vulns": [
+      "vuln-mcp-interface-only-validation"
+    ],
+    "source_ids": [
+      "src-shieldnet-2604-04426"
+    ]
+  },
+  {
+    "id": "atk-mcp-runtime-data-exfiltration",
+    "type": "attack_technique",
+    "name": "MCP runtime data exfiltration / C2 signaling over network protocols (DNS, encrypted/unencrypted non-C2, cloud storage)",
+    "attack_class": "tool-attack",
+    "atlas": [
+      "AML.T0024",
+      "AML.T0010"
+    ],
+    "realizes_threats": [
+      "model.data-leakage",
+      "agentic.supply-chain-injection"
+    ],
+    "access": "black-box",
+    "benchmarks": [
+      "SC-Inject-Bench"
+    ],
+    "exploits_vulns": [
+      "vuln-mcp-interface-only-validation"
+    ],
+    "source_ids": [
+      "src-shieldnet-2604-04426"
+    ]
+  },
+  {
+    "id": "vuln-mcp-interface-only-validation",
+    "type": "vulnerability",
+    "title": "MCP validates tool interfaces but not implementations, granting poisoned tools broad runtime/network access",
+    "description": "The Model Context Protocol primarily validates tool interfaces (names, input/output schemas) rather than inspecting underlying implementations. Agents dynamically load third-party servers and execute external code, often granting broad execution privileges and network access, with no visibility into runtime behavior. A poisoned tool can preserve a benign description and benign I/O while its implementation performs covert network actions (exfiltration, C2, probing, DoS) at runtime. Semantic-layer inspection (descriptions, I/O, call trajectories) cannot detect this because malicious intent is not reflected at the interface.",
+    "affected": "MCP-based agentic systems / coding agents (LangGraph runtime, Claude Desktop and similar MCP clients evaluated); third-party MCP servers and dependencies",
+    "exploited_by": [
+      "atk-stealthy-mcp-tool-poisoning",
+      "atk-mcp-runtime-data-exfiltration"
+    ],
+    "threats": [
+      "agentic.supply-chain-injection",
+      "agent.tool-abuse",
+      "model.data-leakage"
+    ],
+    "cwe": [
+      "CWE-829",
+      "CWE-494",
+      "CWE-913"
+    ],
+    "severity": "high",
+    "disclosure": "academic",
+    "patch_status": "mitigated-by-shieldnet",
+    "controls": [
+      "control-shieldnet-network-guardrail"
+    ],
+    "external_refs": {
+      "MITRE-ATTACK": [
+        "T1498"
+      ]
+    },
+    "source_ids": [
+      "src-shieldnet-2604-04426"
+    ]
+  },
+  {
+    "id": "control-shieldnet-network-guardrail",
+    "type": "control",
+    "name": "ShieldNet network-level runtime guardrail for agentic supply-chain attacks",
+    "description": "Network-level guardrail that detects stealthy MCP supply-chain poisoning by observing real network interactions during tool execution rather than tool semantics. Integrates a man-in-the-middle (MITM) proxy with TLS decryption + raw packet capture, blocks UDP/443 to prevent QUIC bypass, and an event extractor that renders packet+decrypted application-layer traffic into a deterministic time-ordered structured event sequence (DNS_Q/DNS_A, HTTP_REQ/RESP, TLS_CH, ICMP, ARP, etc.). A lightweight post-trained model (Qwen3-0.6B SFT) classifies the rendered trace as benign or a specific risk category; supports offline and real-time streaming (sliding-window) detection. F1 up to 0.998 (0.995 PCAP-level), FPR 0.022, runtime overhead 21.38% (far below frontier-LLM baselines). Ablation: both TLS decryption and event-extraction abstraction are essential (F1 0.998 -> 0.829 without).",
+    "addresses_threats": [
+      "agentic.supply-chain-injection",
+      "agent.tool-abuse",
+      "model.data-leakage"
+    ],
+    "standards": [
+      "MITRE-ATTACK"
+    ],
+    "source_ids": [
+      "src-shieldnet-2604-04426"
+    ]
+  },
+  {
+    "id": "agentic.supply-chain-injection",
+    "type": "threat",
+    "label": "Agentic supply-chain injection (stealthy tool/dependency poisoning at the implementation layer)",
+    "axis": "agentic",
+    "description": "Malicious behaviors embedded in seemingly benign third-party agent tools, MCP servers, or dependencies that preserve benign interfaces and input/output while executing covert actions (data exfiltration, C2 signaling, internal probing, network DoS, lateral movement) at runtime. Invisible to interface/semantic-layer inspection because malicious intent is not reflected in tool metadata, descriptions, or I/O transcripts; observable only via execution-time signals (e.g. network traffic).",
+    "candidate": true,
+    "provenance": {
+      "extracted": 0.85,
+      "inferred": 0.15,
+      "ambiguous": 0.0
+    },
+    "source_ids": [
+      "src-shieldnet-2604-04426"
+    ]
+  },
+  {
     "id": "find-product-spec-over-abstract-redteam-2506",
     "type": "finding",
     "analyst": "redteam-method",

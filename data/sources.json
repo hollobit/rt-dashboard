@@ -200,8 +200,10 @@
       "src-coin-flip-judge-reliability",
       "src-cop-composition-principles",
       "src-crossgen-transfer-qd",
+      "src-doubtprobe-2606-16527",
       "src-j2-jailbreaking-to-jailbreak",
       "src-moesafety-2605-29708",
+      "src-process-mining-redteam-2606-07833",
       "src-qd-semantic-strategy-evolution",
       "src-radar-roleplay-multiagent",
       "src-scanners-lie-evaluator-instability",
@@ -861,7 +863,8 @@
       "arxiv-2508-14925",
       "arxiv-2509-05755",
       "arxiv-2606-14517",
-      "src-2603-19469-formal-agent-sec"
+      "src-2603-19469-formal-agent-sec",
+      "src-2605-08442"
     ]
   },
   {
@@ -1091,12 +1094,14 @@
       "src-coin-flip-judge-reliability",
       "src-cop-composition-principles",
       "src-crossgen-transfer-qd",
+      "src-doubtprobe-2606-16527",
       "src-egashira-exploit-quantization-2024",
       "src-jovanovic-watermark-stealing-2024",
       "src-kuo-hcot-2025",
       "src-liu-psychological-jb-2025",
       "src-lowresource-jailbreak-2023",
       "src-moesafety-2605-29708",
+      "src-process-mining-redteam-2606-07833",
       "src-qd-semantic-strategy-evolution",
       "src-qdrt-behavior-conditioned",
       "src-radar-roleplay-multiagent",
@@ -1590,6 +1595,7 @@
       "arxiv-2606-16751",
       "src-2606-03647",
       "src-2606-05609",
+      "src-2606.05743",
       "src-2606.09084",
       "src-2606.10525",
       "src-adversa-multijudge-consensus",
@@ -1597,6 +1603,7 @@
       "src-arxiv-2604-17730-mhsafeeval",
       "src-autorise-strategy-evolution",
       "src-cop-composition-principles",
+      "src-doubtprobe-2606-16527",
       "src-j2-jailbreaking-to-jailbreak",
       "src-liu-psychological-jb-2025",
       "src-pismith-rl-prompt-injection",
@@ -1671,6 +1678,7 @@
       "src-2606-04027",
       "src-2606-05609",
       "src-2606-11817",
+      "src-2606.05743",
       "src-2606.10525",
       "src-adversa-multijudge-consensus",
       "src-agentic-era-dreadnode",
@@ -1680,11 +1688,13 @@
       "src-coin-flip-judge-reliability",
       "src-cop-composition-principles",
       "src-crossgen-transfer-qd",
+      "src-doubtprobe-2606-16527",
       "src-egashira-exploit-quantization-2024",
       "src-j2-jailbreaking-to-jailbreak",
       "src-liu-psychological-jb-2025",
       "src-moesafety-2605-29708",
       "src-pismith-rl-prompt-injection",
+      "src-process-mining-redteam-2606-07833",
       "src-qd-semantic-strategy-evolution",
       "src-qdrt-behavior-conditioned",
       "src-radar-roleplay-multiagent",
@@ -1913,6 +1923,7 @@
       "arxiv-2606-16242",
       "src-2603-19469-formal-agent-sec",
       "src-2604-27464",
+      "src-2605-00081",
       "src-authgraph-2605-26497"
     ]
   },
@@ -3656,6 +3667,7 @@
       "src-arxiv-2503-04957-safearena",
       "src-arxiv-2505-21605-sosbench",
       "src-autorise-strategy-evolution",
+      "src-doubtprobe-2606-16527",
       "src-j2-jailbreaking-to-jailbreak",
       "src-liu-psychological-jb-2025",
       "src-tmap-agent-trajectory-evo"
@@ -3708,6 +3720,7 @@
       "arxiv-2606-11425",
       "src-2606-03647",
       "src-2606-04027",
+      "src-2606.05743",
       "src-autorise-strategy-evolution",
       "src-cop-composition-principles",
       "src-qdrt-behavior-conditioned"
@@ -3753,6 +3766,7 @@
       "arxiv-2505-04806",
       "arxiv-2606-11425",
       "src-2606-04027",
+      "src-2606.05743",
       "src-j2-jailbreaking-to-jailbreak",
       "src-radar-roleplay-multiagent"
     ]
@@ -4028,7 +4042,8 @@
       "arxiv-2510-17687",
       "arxiv-2512-20677",
       "src-arxiv-2504-09689-emoagent",
-      "src-arxiv-2505-21605-sosbench"
+      "src-arxiv-2505-21605-sosbench",
+      "src-doubtprobe-2606-16527"
     ]
   },
   {
@@ -4120,6 +4135,7 @@
       "arxiv-2606-09178",
       "src-arxiv-2603-01291-jailnewsbench",
       "src-lowresource-jailbreak-2023",
+      "src-process-mining-redteam-2606-07833",
       "src-radar-roleplay-multiagent",
       "src-wang-refusal-direction-universal-2025",
       "src-yong-lowresource-jb-2023"
@@ -4787,7 +4803,8 @@
     "provenance": "extracted",
     "cited_by": [
       "arxiv-2509-05755",
-      "src-2605-17453-trust-no-tool"
+      "src-2605-17453-trust-no-tool",
+      "src-shieldnet-2604-04426"
     ]
   },
   {
@@ -5082,6 +5099,7 @@
       "src-2606-04027",
       "src-2606-05609",
       "src-2606.10525",
+      "src-2606.17034",
       "src-arxiv-2509-23694-safesearch",
       "src-coin-flip-judge-reliability",
       "src-pismith-rl-prompt-injection"
@@ -5132,6 +5150,7 @@
       "src-arxiv-2510-27629-biorisk-openweight",
       "src-coin-flip-judge-reliability",
       "src-cop-composition-principles",
+      "src-doubtprobe-2606-16527",
       "src-hsiung-guardrail-collapse-2025",
       "src-j2-jailbreaking-to-jailbreak",
       "src-kuo-hcot-2025",
@@ -5173,6 +5192,7 @@
     "cited_by": [
       "arxiv-2406-04313",
       "arxiv-2412-16339",
+      "src-2606.17034",
       "src-wang-implicit-crossmodal-jb-2025"
     ]
   },
@@ -9903,6 +9923,7 @@
       "arxiv-2606-15609",
       "src-2603-19469-formal-agent-sec",
       "src-2604-23374-neurotaint",
+      "src-2605-06812",
       "src-2606.09084",
       "src-2606.10749",
       "src-bentov-gaslite-2024"
@@ -9941,6 +9962,7 @@
       "arxiv-2402-07867"
     ],
     "cited_by": [
+      "src-2605-08442",
       "src-2606.10749"
     ]
   },
@@ -11342,7 +11364,8 @@
     "s2_id": "arXiv:2508.13220",
     "provenance": "extracted",
     "cited_by": [
-      "src-2606.10749"
+      "src-2606.10749",
+      "src-shieldnet-2604-04426"
     ]
   },
   {
@@ -11569,7 +11592,8 @@
     "cited_by": [
       "src-2603-19469-formal-agent-sec",
       "src-2605-31593",
-      "src-2606-03647"
+      "src-2606-03647",
+      "src-doubtprobe-2606-16527"
     ]
   },
   {
@@ -12948,7 +12972,8 @@
     "influential_citation_count": 0,
     "cites": [
       "arxiv-2307-15043",
-      "arxiv-2410-07283"
+      "arxiv-2410-07283",
+      "src-2604-17562"
     ]
   },
   {
@@ -13438,6 +13463,501 @@
     "influential_citation_count": 0,
     "cites": [
       "arxiv-2401-05566"
+    ]
+  },
+  {
+    "id": "src-2605-06812",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Towards Security-Auditable LLM Agents: A Unified Graph Representation",
+    "authors": [
+      "Chaofan Li",
+      "Lyuye Zhang",
+      "Jintao Zhai",
+      "Siyue Feng",
+      "Xichun Yang",
+      "Huahao Wang",
+      "Shihan Dou",
+      "Yu Ji",
+      "Yutao Hu",
+      "Yueming Wu",
+      "Yang Liu",
+      "Deqing Zou"
+    ],
+    "org": "Huazhong University of Science and Technology / Nanyang Technological University / Fudan University",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2605.06812",
+    "published": "2026-05-07",
+    "retrieved": "2026-06-23",
+    "abstract": "Proposes Agent-BOM (Agent Bill of Materials), a unified hierarchical attributed directed graph for security auditing of LLM agentic systems. It separates a static capability layer (models, prompts, tools, skills, long-term memory, code) from a runtime semantic layer (goals, context, reasoning, decisions, actions, observations), connected by structural-dependency, runtime-evolution, cross-layer-binding, and cross-agent-propagation edges with security attributes. A 4-tuple auditing rule (entry localization, backward tracing, forward tracing, adjudication conditions) maps the OWASP Agentic Top 10 to queryable audit paths. Instantiated on OpenClaw (GPT-5 base) and evaluated on four composite attack scenarios covering all ten ASI risks.",
+    "citation_count": 0,
+    "influential_citation_count": 0,
+    "cites": [
+      "src-arxiv-2407-12784-agentpoison"
+    ]
+  },
+  {
+    "id": "src-2605-00741",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Self-Adaptive Multi-Agent LLM-Based Security Pattern Selection for IoT Systems",
+    "authors": [
+      "Saeid Jamshidi",
+      "Foutse Khomh",
+      "Carol Fung",
+      "Kawser Wazed Nafi"
+    ],
+    "org": "Polytechnique Montreal (SWAT Lab) / Concordia University",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2605.00741",
+    "published": "2026-05-01",
+    "retrieved": "2026-06-23",
+    "abstract": "Introduces ASPO, a self-adaptive multi-agent LLM-based runtime security pattern selection system for resource-constrained IoT edge gateways. ASPO integrates LLM-based reasoning with deterministic enforcement inside a MAPE-K control loop, explicitly separating stochastic decision generation (LLM agents proposing candidate mitigation portfolios) from deterministic execution (a closed-world optimization core enforcing action integrity, conflict-free composition, and resource feasibility). Five specialized agents (Context, Reasoner, Constraint, Planner, Audit) propose candidates over a closed catalogue of 10 security patterns; only a deterministic validation layer actuates. Evaluated on a distributed edge testbed (10 Raspberry Pi 4) with the Bot-IoT dataset over 500/1000 decisions, achieving 100% conflict-free activation, perfect rank preservation, and 21.9%/23.1% tail latency/energy reduction.",
+    "citation_count": 0,
+    "influential_citation_count": 0
+  },
+  {
+    "id": "src-2605-00081",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Alignment Contracts for Agentic Security Systems",
+    "authors": [
+      "Isaac David",
+      "Marco Guarnieri",
+      "Arthur Gervais"
+    ],
+    "org": "UCL / IMDEA Software Institute",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2605.00081",
+    "published": "2026-04-30",
+    "retrieved": "2026-06-23",
+    "abstract": "Introduces alignment contracts, a formal framework for specifying and enforcing behavioral constraints over observable effect traces of offensive-capable agentic security systems (e.g., autonomous pentest agents). A contract C=<S,E_allow,E_forbid,B,D,Res,cost,flows> defines scope, allowed/forbidden effects, resource budgets, and disclosure sinks. The paper gives finite-trace-based semantics, characterizes satisfaction as a safety property with finite violation witnesses, develops refinement and one-way composition, and proves admissibility checking is decidable. Under an Effect Observability Assumption (EOA), a reference monitor produces only contract-satisfying traces regardless of the underlying model (Enforcement Soundness, Theorem 6.5), including adversarial/prompt-injected agents. Establishes impossibility results (pre-admission forbidden-effect absence is undecidable; mediation-bypassing tools void soundness). A Lean 4 artifact mechanizes the core theorems.",
+    "citation_count": 0,
+    "influential_citation_count": 0,
+    "cites": [
+      "arxiv-2503-00061"
+    ]
+  },
+  {
+    "id": "src-2604-17562",
+    "type": "source",
+    "source_type": "paper",
+    "title": "SafeAgent: A Runtime Protection Architecture for Agentic Systems",
+    "authors": [
+      "Hailin Liu",
+      "Eugene Ilyushin",
+      "Jie Ni",
+      "Min Zhu"
+    ],
+    "org": "Lomonosov Moscow State University / Central University",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2604.17562",
+    "published": "2026-04-19",
+    "retrieved": "2026-06-23",
+    "abstract": "Presents SafeAgent, a runtime security architecture that treats agent safety as a stateful decision problem over evolving interaction trajectories rather than single-turn input-output filtering. It separates execution governance from semantic risk reasoning via two coordinated components: a Runtime Controller that mediates actions around the agent loop (governed tool access, context override, replanning, rollback, safe-mode termination, tool-argument rewriting, human-in-the-loop) and a context-aware decision Core formalized as a context-aware Advanced Machine Intelligence (AMI) system with operators for risk encoding, utility-cost evaluation, consequence (world-model) modeling, policy arbitration, and state synchronization. Evaluated on Agent Security Bench (ASB) and InjecAgent against direct/indirect prompt injection and memory poisoning; reduces ASB attack success rates (IPI ASR 0.2936, MP ASR 0.1858) and drives InjecAgent data-stealing S1/S2 to 0.0000.",
+    "cited_by": [
+      "src-2605-11039-pact"
+    ],
+    "citation_count": 3,
+    "influential_citation_count": 0
+  },
+  {
+    "id": "src-2606-17467",
+    "type": "source",
+    "source_type": "paper",
+    "title": "PARSE: Provenance-Aware Retrieval Sanitization for Professional Domain LLM Agents",
+    "authors": [
+      "Aaditya Pai"
+    ],
+    "org": "Data Science Institute, Columbia University",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2606.17467",
+    "published": "2026-06-16",
+    "retrieved": "2026-06-23",
+    "abstract": "Demonstrates that prompt-injection defenses evaluated on synthetic benchmarks do not generalize to real enterprise documents, using a real-document benchmark of 122 tasks across five professional domains (financial, legal, medical, scientific, DevOps) built from actual SEC filings, Federal Register rules, PubMed abstracts, arXiv papers, and GitHub postmortems with domain-camouflaged injection payloads. Paraphrasing, the strongest synthetic-benchmark defense, shows no statistically significant attack-success reduction on real documents (p=0.500) while degrading utility 91.8%->82.8%. Introduces PARSE, a six-component inference-time, training-free, provenance-aware fact-preserving sanitization pipeline (domain classifier, directiveness gate, combined tagger-extractor, structure-aware paraphraser, consistency checker, output builder) that achieves 15.6% ASR (38% reduction vs 25.4% baseline, p=0.014) at 86.9% utility -- the only condition both statistically significant and near-baseline utility."
+  },
+  {
+    "id": "src-2605-08442",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Defense Effectiveness Across Architectural Layers: A Mechanistic Evaluation of Persistent Memory Attacks on Stateful LLM Agents",
+    "authors": [
+      "Jun Wen Leong"
+    ],
+    "org": "independent",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2605.08442",
+    "published": "2026-05-08",
+    "retrieved": "2026-06-23",
+    "abstract": "First systematic evaluation of defense effectiveness against persistent (delayed-trigger) memory attacks on stateful LLM agents. Evaluates six defenses across four architectural layers (input, retrieval, instruction, tool) against delayed-trigger attacks on nine open-source models (5,040 runs, N=40/condition, 108 pre-specified comparisons, BCa bootstrap CIs, Holm-Bonferroni). Four defenses (input-level Minimizer/Sanitizer, retrieval-level RAG Sanitizer/RAG LLM Judge) fail at 88-89% ASR, statistically indistinguishable from the 88.6% undefended baseline; Prompt Hardening partially fails (77.8%). Only tool-gating at the memory layer (Memory Sandbox, removing recall capability) reduces ASR to 0% for eight of nine models at zero utility cost. The exception inverts: qwq:32b achieves 0% ASR under no-defense via execution refusal but 100% ASR under Memory Sandbox because removing recall forces it onto the fresh-RAG pathway. Frontier screening: Claude Sonnet 4.6 resists injection entirely (0%), Claude Haiku 4.5 detects and stores a security alert instead of the payload (0% attack).",
+    "citation_count": 1,
+    "influential_citation_count": 1,
+    "cites": [
+      "arxiv-2406-13352",
+      "src-arxiv-2602-15654-zombie-agents"
+    ]
+  },
+  {
+    "id": "src-safeclawbench-2606-18356",
+    "type": "source",
+    "source_type": "paper",
+    "title": "SafeClawBench: Separating Semantic, Audit-Evidence, and Sandbox Harm in Tool-Using LLM Agents",
+    "authors": [
+      "Yuchuan Tian",
+      "Mengyu Zheng",
+      "Haocheng Mei",
+      "Ye Yuan",
+      "Chao Xu",
+      "Xinghao Chen",
+      "Hanting Chen",
+      "Yu Wang"
+    ],
+    "org": "Peking University; Beijing Jiaotong University; SUIBE; Huawei; Tsinghua University",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2606.18356",
+    "published": "2026-06-16",
+    "retrieved": "2026-06-23",
+    "abstract": "Tool-using LLM agents introduce security failures beyond unsafe text: disclosing protected objects, persistent memory writes, harmful tool/state effects. Existing evals collapse staged attacks into a single attack success rate. SafeClawBench is a staged benchmark with 600 controlled adversarial tasks across six attack families (direct/indirect prompt injection, tool-return injection, memory poisoning, memory extraction, ambiguity-driven unsafe inference). It reports three separate endpoints: semantic attack acceptance, audit-visible harm evidence, and sandbox-observed tool/state harm. Five agent endpoints under four prompt policies; semantic failure rates 9.0%-44.2%; in a 12,000-row matched analysis 291 of 347 observed sandbox harms occur in rows passing the semantic check."
+  },
+  {
+    "id": "src-skillvetbench-2606-15899",
+    "type": "source",
+    "source_type": "paper",
+    "title": "SkillVetBench: LLM-as-Judge for Multi-Dimensional Security Risk Evaluation in Open-Source LLM Agent Skills",
+    "authors": [
+      "Ismail Hossain",
+      "Sai Puppala",
+      "Md Jahangir Alam",
+      "Tanzim Ahad",
+      "Sajedul Talukder"
+    ],
+    "org": "SUPREME Lab, University of Texas at El Paso",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2606.15899",
+    "published": "2026-06-14",
+    "retrieved": "2026-06-23",
+    "abstract": "Open-source LLM agent ecosystems grow rapidly but community-contributed skills (modular tool definitions) remain unvetted. Existing scanners operate at the code layer and are blind to instruction-layer and multi-agent risk. SkillVetBench is a public Hugging Face leaderboard using an LLM-as-Judge to vet agent skills. Introduces SARS (Skill Agentic Risk Score), a five-dimensional agentic-risk metric; integrates full CVSS v4.0 vector decomposition and a ClawHub dual-view that places the LLM-generated review beside the official marketplace verdict. LLM-as-Judge achieves zero false negatives across 78 confirmed-malicious skills and zero false positives across 22 benign controls; best static baseline (SkillSieve) misses 15%; for Prompt Injection and Memory Poisoning conventional tools miss 89-100% of threats (CodeBERT detects none of nine memory-poisoning skills). Detection rate varies 35-95% across four LLM evaluators, motivating ensemble scoring.",
+    "citation_count": 0,
+    "influential_citation_count": 0
+  },
+  {
+    "id": "src-process-mining-redteam-2606-07833",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Beyond Pass/Fail: Using Process Mining to Understand How LLMs Resist (and Fail) Red Team Attacks",
+    "authors": [
+      "Zvi Topol"
+    ],
+    "org": "MuyVentive, LLC",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2606.07833",
+    "published": "2026-06-05",
+    "retrieved": "2026-06-23",
+    "abstract": "Standard AI red teaming reduces adversarial campaigns to a single binary outcome (attack success rate, ASR), ignoring the sequential structure of how models resist or yield. The paper applies process mining to red teaming traces. A controlled experiment pits 60 HarmBench prompts against GPT-OSS 120B and Llama 3.3 70B using 10 prompt mutation strategies over up to 110 attempts per prompt. From 8,575 scored events it extracts Directly-Follows Graphs (DFGs) and state transition matrices revealing structurally distinct defense profiles invisible to ASR: GPT-OSS exhibits a near-absorbing refusal state ('absorbing wall'), while Llama presents multiple porous escape routes ('porous gate'). Mutator effectiveness is asymmetric across models; time-to-jailbreak distributions differ by an order of magnitude.",
+    "citation_count": 0,
+    "influential_citation_count": 0,
+    "cites": [
+      "arxiv-2307-15043",
+      "arxiv-2310-06474",
+      "arxiv-2310-08419",
+      "arxiv-2402-04249"
+    ]
+  },
+  {
+    "id": "src-narration-gap-2606-19588",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Analyzing the Narration Gap in LLM-Solver Loops",
+    "authors": [
+      "Zunchen Huang",
+      "Songgaojun Deng"
+    ],
+    "org": "Centrum Wiskunde & Informatica, Amsterdam; Eindhoven University of Technology",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2606.19588",
+    "published": "2026-06-17",
+    "retrieved": "2026-06-23",
+    "abstract": "Formal tools (SAT/SMT solvers) are increasingly embedded in LLM reasoning pipelines for safety/security-critical questions formulated in logic. A solver produces a sound, independently verifiable answer, but the soundness guarantee can be lost in the solver-model interaction. The hybrid pipeline has three components: formalizing the question, deciding it, and narrating the result. Prior work studied formalization and decision but not narration — the step turning a formal tool's output into the user answer. The paper models the LLM-solver loop as a verified decision procedure, evaluates five open-source models under prompt injection, and finds certificate gating makes the solver verdict sound while an adversary can INVERT a verified conclusion across phrasings and channels. Hardened prompts reduce injection but cannot eliminate it and still suffer under adaptive attack."
+  },
+  {
+    "id": "src-safespec-2606-19755",
+    "type": "source",
+    "source_type": "paper",
+    "title": "SafeSpec: Fast and Safe LLM via Dynamic Reflective Sampling",
+    "authors": [
+      "Haotian Xu",
+      "Zeyang Zhang",
+      "Linbao Li",
+      "Huadi Zheng",
+      "Yu Li",
+      "Cheng Zhuo"
+    ],
+    "org": "Zhejiang University; Harbin Institute of Technology, Shenzhen; Huawei",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2606.19755",
+    "published": "2026-06-18",
+    "retrieved": "2026-06-23",
+    "abstract": "Speculative inference accelerates LLM decoding but provides no inherent safety guarantees; existing safety defenses are largely incompatible with speculative inference. SafeSpec is a safety-aware speculative inference framework that integrates risk estimation directly into the verification process. It attaches a lightweight latent safety head to the target model to jointly evaluate semantic validity and safety in a single forward pass. When unsafe generations are detected, SafeSpec applies rollback and safety-guided reflective multi-sampling to recover safe continuations rather than terminating. Models jailbreak attacks as distributional shifts over generative trajectories. On Qwen3-32B, SafeSpec reduces attack success rates by 15% while preserving a 2.06x inference speedup. Published ICML 2026."
+  },
+  {
+    "id": "src-guardnet-2606-05566",
+    "type": "source",
+    "source_type": "paper",
+    "title": "GuardNet: Ensemble Strategies of Shallow Neural Networks for Robust Prompt Injection and Jailbreak Detection",
+    "authors": [
+      "Paulo Ricardo Ferreira Neves",
+      "Edson Rodrigues da Cruz Filho",
+      "Paulo Henrique Eleuterio Falsetti",
+      "Joao Vitor Pavan",
+      "Ian Degaspari",
+      "Henrique Vieira Laturrague",
+      "Patrick Vieira Laturrague",
+      "Guilherme Nielsen Dias",
+      "Marccello Wilson Perez Berto",
+      "Gustavo Voltani Von Atzingen"
+    ],
+    "org": "Quickium Technology Ltd.; Federal University of Sao Carlos (UFSCar); IFSP Piracicaba",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2606.05566",
+    "published": "2026-06-05",
+    "retrieved": "2026-06-23",
+    "abstract": "LLMs remain vulnerable to Prompt Injection (PI) and Jailbreak (JB) attacks, and benchmark evaluations may be affected by contamination and partial information leakage. GuardNet is a guardrail system based on an ensemble of shallow neural networks (BiLSTMs) with ~47 million parameters. The work investigates the hypothesis that robustness in adversarial scenarios depends more on the diversity of example coverage and threshold calibration than on model scale. GuardNet achieves competitive performance vs lightweight detectors at low latency (~50ms CPU), though larger LLMs (Mistral-7B, Llama-3.1-8B) achieve superior F1/AUROC on the blind JBB-Behaviors benchmark. GuardNet achieves AUROC 0.747 on the blind dataset (n=200) and F1 0.92 on a proprietary benchmark (n=50).",
+    "citation_count": 0,
+    "influential_citation_count": 0
+  },
+  {
+    "id": "src-2606.11949",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Online Shift Detection and Conformal Adaptation for Deployed Safety Classifiers",
+    "authors": [
+      "Jun Wen Leong"
+    ],
+    "org": "independent",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2606.11949",
+    "published": "2026-06-10",
+    "retrieved": "2026-06-23",
+    "abstract": "An online monitoring system for distributional shift in deployed LLM safety classifiers using calibrated sequential KS test statistics, with a conformal abstention layer to recover decision thresholds. Pre-registered 4-classifier x 5-shift x 20-seed x 2-window factorial (800 cells) achieves 86.6% valid detection (95% CI [84.1,88.8]), mean latency 39.5 steps at window 100, FAR 2-10%. Validated on synthetic onset, real temporal jailbreaks, and a GCG adversarial demonstration showing successful attacks produce insufficient distributional signal for detection in the target classifier. Weighted conformal recovers up to 39pp coverage for DeBERTa but density-ratio estimation collapses (ESS~300) for other classifiers due to high-dimensional perfect separability; PCA to 32 dims breaks the collapse.",
+    "citation_count": 0,
+    "influential_citation_count": 0
+  },
+  {
+    "id": "src-2606.05743",
+    "type": "source",
+    "source_type": "paper",
+    "title": "MEMBRANE: A Self-Evolving Contrastive Safety Memory for LLM Agent Defense",
+    "authors": [
+      "Minseok Choi",
+      "Seungbin Yang",
+      "Dongjin Kim",
+      "Subin Kim",
+      "Jungmin Son",
+      "Yunseung Lee",
+      "Jaegul Choo",
+      "Youngjun Kwak"
+    ],
+    "org": "KAIST AI; KakaoBank Financial Tech Lab",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2606.05743",
+    "published": "2026-06-04",
+    "retrieved": "2026-06-23",
+    "abstract": "MEMBRANE is a self-evolving external guardrail built on Contrastive Safety Memory (CSM): each cell pairs the conditions for blocking a harmful query with those for permitting a superficially similar benign request, indexed by underlying attack strategy so one cell generalizes across topical variants of the same mechanism. Without retraining, MEMBRANE evolves CSM via experience-driven create/update/delete. Across model-level safety on HarmBench and agent-level safety on AgentHarm, it achieves the highest F1 on all six jailbreak attacks, keeps benign refusal on AgentHarm at 7-14% (vs 28-85% for prior guards), retains 87-88% F1 under cross-attack transfer, and remains stable under 20% memory poisoning (ASR drift below 1 point). Motivates with AISI 2026 evaluations reporting Claude Mythos Preview and GPT-5.5 autonomously executing 32-step cyberattacks in controlled settings.",
+    "citation_count": 0,
+    "influential_citation_count": 0,
+    "cites": [
+      "arxiv-2310-08419",
+      "arxiv-2311-08268",
+      "arxiv-2312-02119",
+      "arxiv-2410-05295"
+    ]
+  },
+  {
+    "id": "src-2606.09408",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Can Data Work be Reparative?",
+    "authors": [
+      "Srravya Chandhiramowuli",
+      "Ding Wang",
+      "Alex S. Taylor"
+    ],
+    "org": "University of Edinburgh; Google Research",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2606.09408",
+    "published": "2026-06-08",
+    "retrieved": "2026-06-23",
+    "abstract": "An ethnographic study (April-December 2024, 12 interviews + 8 months immersion) of Tattle Civic Tech, an India-based civic-tech initiative building online-safety datasets collaboratively from a feminist perspective with those most impacted by online harms (oGBV, hate, sexual violence). Examines two dataset projects -- a gendered-slur lexicon in four Indian languages (650+ entries Hindi/Tamil/Malayalam/Indian English) and a Hindi LLM safety benchmark (2000 prompts, hate + sex-related crimes) contributed as a pilot to MLCommons' AILuminate v1.0 AI Safety benchmark. Through an STS lens of reparative justice, argues the work of repairing data work lies in resetting the relations of accountability in AI, and surfaces tensions in just reward, recognition, and collective dataset governance. To FAccT 2026.",
+    "citation_count": 0,
+    "influential_citation_count": 0
+  },
+  {
+    "id": "src-2606.19864",
+    "type": "source",
+    "source_type": "paper",
+    "title": "The Almost Intelligent Revolution: Options for Scaling Up Deliberation and Empowering People with AI",
+    "authors": [
+      "Serge Sharoff"
+    ],
+    "org": "University of Leeds",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2606.19864",
+    "published": "2026-06-18",
+    "retrieved": "2026-06-23",
+    "abstract": "A book chapter (Handbook of Democracy in the Era of Artificial Intelligence, 2026) exploring how LLMs can scale up and democratise deliberation while introducing biases, sycophancy, and hallucinations that distort it. Drawing on Systemic-Functional Linguistics, examines how variation across language users and language use shapes participation in AI-supported deliberation. Reviews deliberation studies (Habermas Machine on 5,734 UK residents; Jungherr-Rauchfleisch AI-penalty study on 1,850 German participants; iDem text-simplification project where 92-96% of EU Parliament/UN sentences required simplification) and assesses potential to scaffold argument and reduce exclusionary linguistic norms, while cautioning against overclaiming (unrealistic expectations) and underclaiming (missed opportunities)."
+  },
+  {
+    "id": "src-2606.17034",
+    "type": "source",
+    "source_type": "paper",
+    "title": "KVEraser: Learning to Steer KV Cache for Efficient Localized Context Erasing",
+    "authors": [
+      "Mufei Li",
+      "Shikun Liu",
+      "Dongqi Fu",
+      "Haoyu Wang",
+      "Yinglong Xia",
+      "Hong Li",
+      "Hong Yan",
+      "Pan Li"
+    ],
+    "org": "Georgia Institute of Technology; Meta",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2606.17034",
+    "published": "2026-06-15",
+    "retrieved": "2026-06-23",
+    "abstract": "KVEraser is a learned KV-cache editing method for efficient localized post-hoc context erasing. A local edit to a processed context has a global consequence: once a span is processed its influence propagates into cached states of all subsequent tokens, so exact erasing must recompute all tokens after the deleted span. KVEraser replaces only the KV states of the erased interval with learned steering states while reusing the remaining cache, via a two-stage pipeline (generic span-neighbor pre-training + task-specific fine-tuning). Motivated by long-context LLM applications where stale retrieved facts, incorrect tool observations, retracted user preferences, or harmful prompt injections in imported skill files are identified only after prefill. Nearly matches full recomputation across 1K-32K contexts while latency increases only 24% vs 17.6x for full recompute; generalizes to unseen long-document QA with harmful factual distractors at 3-4x speedup over recomputation.",
+    "citation_count": 0,
+    "influential_citation_count": 0,
+    "cites": [
+      "alibaba-qwen3-report-2025",
+      "arxiv-2403-05530"
+    ]
+  },
+  {
+    "id": "src-doubtprobe-2606-16527",
+    "type": "source",
+    "source_type": "paper",
+    "title": "DoubtProbe: Black-Box Jailbreak Defense via Structural Verification and Semantic Auditing",
+    "authors": [
+      "Xuanyu Yin",
+      "Yilin Jiang",
+      "Jun Zhou",
+      "Kai Chen",
+      "Zhenfu Cao",
+      "Xiaolei Dong"
+    ],
+    "org": "East China Normal University; HKUST(GZ); Institute of Information Engineering, CAS",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2606.16527",
+    "published": "2026-06-15",
+    "retrieved": "2026-06-23",
+    "abstract": "DoubtProbe is a dual-branch inference-time black-box jailbreak defense combining structural verification (extract a structured representation S from request Q, reconstruct Q-hat from S only, and detect information-preservation failures via a Comparator) with semantic auditing (direct unsafe-intent verdict on Q). The key observation is that many black-box jailbreaks do not remove the harmful goal but reorganize the information needed to express it, evading safety alignment while remaining recoverable. Formulated as consistency checking under controlled transformation. On Qwen2.5-72B it reduces JBB artifact ASR from 0.293 to 0.100 and CodeAttack ASR from 0.152 to 0.001, with benign macro FPR 0.019; pattern stable on Llama-3.1-70B.",
+    "citation_count": 0,
+    "influential_citation_count": 0,
+    "cites": [
+      "arxiv-2307-15043",
+      "arxiv-2310-08419",
+      "arxiv-2312-02119",
+      "arxiv-2402-04249",
+      "arxiv-2404-01833",
+      "arxiv-2404-03027",
+      "arxiv-2407-21783",
+      "src-constitutional-classifiers"
+    ]
+  },
+  {
+    "id": "src-mtk-2606-07335",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Defending Jailbreak Attacks on Large Language Models via Manifold Trajectory Kinetics",
+    "authors": [
+      "Hangtao Zhang",
+      "Yucheng Zhao",
+      "Sishun Liu",
+      "Ziqi Zhou",
+      "Zeyu Ye",
+      "Wei Wan",
+      "Minghui Li",
+      "Shengshan Hu",
+      "Yanjun Zhang",
+      "Yi Liu",
+      "Leo Yu Zhang"
+    ],
+    "org": "Huazhong University of Science and Technology; Changsha University of Science and Technology; Xiangtan University; City University of Macau; Griffith University",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2606.07335",
+    "published": "2026-06-05",
+    "retrieved": "2026-06-23",
+    "abstract": "Prior jailbreak detectors assume benign and jailbreak prompts are linearly separable in a fixed metric space (raw inputs, gradients, or hidden features). This breaks under (i) pseudo-malicious prompts (PMPs) — benign-by-intent prompts containing safety-related keywords — and (ii) detector-aware adaptive attacks. MTK (Manifold Trajectory Kinetics) treats an LLM as a kinetic system and tracks how a prompt's neighborhood (benign-neighbor rank) structure evolves across layers; jailbreak prompts exhibit a 'bumping' trajectory near malicious seeds that later shifts toward benign neighborhoods to evade refusal. MTK reaches jailbreak TPR 95% at FPR 5% on benign and 2% FPR on PMPs; under adaptive attacks TPR 85% (eASR<=0.2). Mean AUROC 0.940 across 10 attacks x 4 LLMs; extends to VLMs.",
+    "citation_count": 0,
+    "influential_citation_count": 0
+  },
+  {
+    "id": "src-reta-2606-15441",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Defending against Adaptive Prompt Injection Attacks via Reasoning-enabled Task Alignment",
+    "authors": [
+      "Lipeng He",
+      "Yihan Wang",
+      "Jiawen Zhang",
+      "N. Asokan"
+    ],
+    "org": "University of Waterloo; Zhejiang University; KTH Royal Institute of Technology",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2606.15441",
+    "published": "2026-06-13",
+    "retrieved": "2026-06-23",
+    "abstract": "Indirect prompt injection (PI) hijacks LLM agents by embedding malicious instructions in third-party data retrieved during tool execution. Existing defenses report near-zero ASR on static benchmarks but collapse under adaptive attacks (per-defense highest ASR rises 15.8 percentage points static->adaptive). Two failure modes: (1) observation-level defenses recognize specific injection patterns instead of checking whether each embedded instruction is relevant to the user task (evadable by reformulation: Contextual Hijacking, Lexical Camouflage, Canary-Blind Entanglement, Phantom Continuation); (2) adversarial training mode-collapses onto a few templates lacking strategy coverage. RETA grounds defense in user-task alignment via chain-of-thought reasoning at each tool-output step, trained with diversity-rewarded adversarial RL. Keeps per-task adaptive ASR <10%, average adaptive ASR 2.92%/3.75% on Qwen3-4B/Llama-3.1-8B while preserving UA/BU.",
+    "citation_count": 0,
+    "influential_citation_count": 0
+  },
+  {
+    "id": "src-codesentinel-2606-19235",
+    "type": "source",
+    "source_type": "paper",
+    "title": "CodeSentinel: A Three-Layer Defense Against Indirect Prompt Injection in Code Contexts",
+    "authors": [
+      "Po-Han Cheng",
+      "Chia-Mu Yu",
+      "Ying-Dar Lin",
+      "Yu-Sung Wu",
+      "Wei-Bin Lee"
+    ],
+    "org": "National Yang Ming Chiao Tung University; Hon Hai Research Institute",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2606.19235",
+    "published": "2026-06-17",
+    "retrieved": "2026-06-23",
+    "abstract": "Code LLMs retrieve external code context from repositories, documentation, issue threads, and coding-agent environments, creating an indirect-prompt-injection surface where attackers hide instructions in comments, strings, identifiers, or decoy code. CodeSentinel is a three-layer inference-time sanitizer using Tree-sitter to extract high-risk model-facing CST nodes, then combines syntax-guided pre-filtering, CST-guided Dynamic Min-K% scoring, and node perturbation analysis to detect adversarial and natural-looking semantic triggers. Detected nodes are removed/neutralized before reaching the downstream Code LLM. Across six recent attack families CodeSentinel achieves 0.80 average node-level F1 (AUROC 0.82), outperforming CodeGarrison (0.70), DePA (0.51), KillBadCode (0.30); reduces sample-level ASR on open/commercial victims (e.g. Claude-3.5-Haiku 27.11%->7.72%)."
+  },
+  {
+    "id": "src-shieldnet-2604-04426",
+    "type": "source",
+    "source_type": "paper",
+    "title": "ShieldNet: Network-Level Guardrails against Emerging Supply-Chain Injections in Agentic Systems",
+    "authors": [
+      "Zhuowen Yuan",
+      "Zhaorun Chen",
+      "Zhen Xiang",
+      "Nathaniel D. Bastian",
+      "Seyyed Hadi Hashemi",
+      "Chaowei Xiao",
+      "Wenbo Guo",
+      "Bo Li"
+    ],
+    "org": "UIUC; University of Chicago; University of Georgia; United States Military Academy; eBay; Johns Hopkins University; UCSB; Virtue AI",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2604.04426",
+    "published": "2026-04-07",
+    "retrieved": "2026-06-23",
+    "abstract": "As agents increasingly rely on third-party tools and MCP servers, a new class of supply-chain threats emerges where malicious behaviors are embedded in seemingly benign tools, preserving benign interfaces and I/O while hiding harmful logic at runtime, leading to sensitive data leakage or unauthorized actions. Existing MCP scanners and semantic guardrails perform poorly due to stealthiness. SC-Inject-Bench: large-scale supply-chain benchmark with 10,000+ malicious MCP tools in a taxonomy of 25+ attack types derived from MITRE ATT&CK (109 servers, 984 tools, 30 techniques, 19,961 validated executions). ShieldNet is a network-level guardrail integrating a MITM proxy + event extractor to identify critical network behaviors, then a lightweight post-trained guardrail model (Qwen3-0.6B) for detection. Achieves up to 0.995 F-1 with 0.8% false positives, low runtime overhead.",
+    "citation_count": 0,
+    "influential_citation_count": 0,
+    "cites": [
+      "arxiv-2508-14925",
+      "src-mcpsecbench"
     ]
   }
 ]
