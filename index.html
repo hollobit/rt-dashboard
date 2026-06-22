@@ -1629,7 +1629,7 @@ async function renderMitreAttack(){
   const el=document.getElementById("v-mitreattack");if(!el)return;
   if(!MITRE_ATTACK){try{MITRE_ATTACK=await (await fetch("data/mitre-attack.json")).json();}catch(e){el.innerHTML='<div class="card"><p class="muted">mitre-attack.json 로드 실패</p></div>';return;}}
   const d=MITRE_ATTACK;const cov=d.bridge_techniques.filter(b=>b.covered).length;
-  const tac=t=>`<span class="tag" title="ATT&CK ${esc(t.id)}">${esc(t.name)}</span>`;
+  const tac=t=>entChip1(t.name,esc(t.name),null);  // 전술명 → 코퍼스 전술 노드(#entity) 라벨 해소
   const brow=b=>`<tr><td><a href="${esc(b.attck_url||'https://attack.mitre.org/techniques/'+b.attck_id)}" target="_blank">${esc(b.attck_id)}↗</a></td>
     <td><a href="https://atlas.mitre.org/techniques/${esc(b.atlas_id)}" target="_blank" style="${b.covered?'color:var(--acc2);font-weight:600':''}">${b.covered?'● ':''}${esc(b.atlas_name)}</a> <span class="muted small">${esc(b.atlas_id.replace('AML.',''))}</span></td>
     <td>${(b.atlas_tactics||[]).map(x=>`<span class="muted small">${esc(x)}</span>`).join(", ")}</td>
@@ -1637,7 +1637,7 @@ async function renderMitreAttack(){
   el.innerHTML=`<div class="card"><h3>🗡️ MITRE ATT&CK <span class="muted small">${esc(d.version||'Enterprise')} · <a href="${esc(d.source)}" target="_blank">attack.mitre.org↗</a></span></h3>
       <p class="small">${esc(d.relation||'')}</p>
       <div style="margin:8px 0"><b class="small">ATT&CK Enterprise 전술(ATLAS 공유 14):</b><br>${d.attck_tactics.map(tac).join(" ")}</div>
-      <div style="margin:6px 0"><b class="small" style="color:var(--acc)">+ ATLAS 고유 전술(AI 특화):</b> ${d.atlas_specific_tactics.map(t=>`<span class="tag" style="border-color:var(--acc);color:var(--acc)">${esc(t.name)}</span>`).join(" ")}</div></div>
+      <div style="margin:6px 0"><b class="small" style="color:var(--acc)">+ ATLAS 고유 전술(AI 특화):</b> ${d.atlas_specific_tactics.map(t=>entChip1(t.name,esc(t.name),"border-color:var(--acc);color:var(--acc)")).join(" ")}</div></div>
     <div class="card"><h3>ATT&CK ↔ ATLAS 다리 기법 <span class="muted small">(ATLAS가 AI 맥락으로 재사용하는 ATT&CK 기법 ${d.bridge_techniques.length} · ● 코퍼스 보유 ${cov})</span></h3>
       <p class="small muted">ATT&CK Enterprise 기법(좌)이 ATLAS 기법(우)으로 AI 시스템에 적용됨. ATT&CK→attack.mitre.org, ATLAS→atlas.mitre.org, 코퍼스 보유분→#entity.</p>
       <table><tr><th>ATT&CK 기법</th><th>ATLAS 기법(AI 적용)</th><th>전술</th><th>코퍼스</th></tr>${d.bridge_techniques.map(brow).join("")}</table></div>`;
