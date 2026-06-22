@@ -50,6 +50,7 @@
       "arxiv-2505-22037",
       "arxiv-2605-04019",
       "src-2606-09701",
+      "src-advreason-2502.01633",
       "src-agentic-era-dreadnode",
       "src-autorise-strategy-evolution",
       "src-cop-composition-principles",
@@ -184,12 +185,15 @@
       "arxiv-2606-11409",
       "arxiv-2606-11425",
       "arxiv-2606-14154",
+      "src-2504-10694",
+      "src-2505-24445",
       "src-2606-02630",
       "src-2606-03647",
       "src-2606-04027",
       "src-2606-05233",
       "src-2606-09701",
       "src-adversa-multijudge-consensus",
+      "src-advreason-2502.01633",
       "src-agentic-era-dreadnode",
       "src-arxiv-2503-04957-safearena",
       "src-arxiv-2505-21605-sosbench",
@@ -201,11 +205,15 @@
       "src-cop-composition-principles",
       "src-crossgen-transfer-qd",
       "src-doubtprobe-2606-16527",
+      "src-fitd-2502.19820",
       "src-j2-jailbreaking-to-jailbreak",
+      "src-know-thy-judge-2503.04474",
       "src-moesafety-2605-29708",
+      "src-mtsa-2505.17147",
       "src-process-mining-redteam-2606-07833",
       "src-qd-semantic-strategy-evolution",
       "src-radar-roleplay-multiagent",
+      "src-repbend-2504.01550",
       "src-scanners-lie-evaluator-instability",
       "src-self-play-moving-targets",
       "src-wang-refusal-direction-universal-2025",
@@ -261,8 +269,10 @@
       "arxiv-2502-05209",
       "arxiv-2510-07192",
       "arxiv-2606-14154",
+      "src-2504-10694",
       "src-2606-03647",
       "src-2606-04027",
+      "src-advreason-2502.01633",
       "src-arxiv-2505-21605-sosbench",
       "src-arxiv-2509-23694-safesearch",
       "src-coin-flip-judge-reliability",
@@ -367,15 +377,20 @@
       "arxiv-2410-09024",
       "arxiv-2412-16339",
       "arxiv-2606-11409",
+      "src-2504-10694",
+      "src-2505-24445",
       "src-2603-19469-formal-agent-sec",
       "src-2606-03647",
       "src-2606-04027",
       "src-adversa-multijudge-consensus",
+      "src-advreason-2502.01633",
       "src-arxiv-2505-21605-sosbench",
       "src-arxiv-2603-01291-jailnewsbench",
       "src-autorise-strategy-evolution",
       "src-cop-composition-principles",
+      "src-know-thy-judge-2503.04474",
       "src-liu-psychological-jb-2025",
+      "src-pif-2502.03052",
       "src-xie-overfit-finetune-jb-2025"
     ]
   },
@@ -430,14 +445,19 @@
       "arxiv-2606-12918",
       "arxiv-2606-14517",
       "arxiv-2606-15609",
+      "src-2504-10694",
       "src-2603-19469-formal-agent-sec",
       "src-2605-17453-trust-no-tool",
       "src-2606.09084",
       "src-2606.10749",
+      "src-advreason-2502.01633",
       "src-arxiv-2503-04957-safearena",
       "src-arxiv-2509-23694-safesearch",
       "src-arxiv-2510-00857-managerbench",
+      "src-autonomy-induced-risks-survey",
+      "src-gsafeguard-2502.11127",
       "src-j2-jailbreaking-to-jailbreak",
+      "src-lrm-hidden-risks-r1",
       "src-tmap-agent-trajectory-evo"
     ]
   },
@@ -1073,6 +1093,15 @@
       "arxiv-2606-15057",
       "arxiv-2606-15609",
       "arxiv-2606-16751",
+      "src-2501-04931",
+      "src-2501-09798",
+      "src-2502-18511",
+      "src-2503-20823",
+      "src-2504-10694",
+      "src-2505-24445",
+      "src-2506-01307",
+      "src-2509-07764",
+      "src-2512-07086",
       "src-2603-19469-formal-agent-sec",
       "src-2605-11039-pact",
       "src-2606-03647",
@@ -1083,30 +1112,42 @@
       "src-2606-12716",
       "src-2606.10525",
       "src-adversa-multijudge-consensus",
+      "src-advreason-2502.01633",
       "src-agentic-era-dreadnode",
+      "src-agentsundersiege-2504.00218",
       "src-arxiv-2407-12784-agentpoison",
       "src-arxiv-2503-04957-safearena",
       "src-arxiv-2505-21605-sosbench",
       "src-arxiv-2506-04704-holisafe",
       "src-arxiv-2603-01291-jailnewsbench",
+      "src-autonomy-induced-risks-survey",
       "src-bentov-gaslite-2024",
       "src-cohen-morris-ii-worm-2024",
       "src-coin-flip-judge-reliability",
       "src-cop-composition-principles",
       "src-crossgen-transfer-qd",
+      "src-datasentinel-2504.11358",
       "src-doubtprobe-2606-16527",
       "src-egashira-exploit-quantization-2024",
+      "src-fitd-2502.19820",
       "src-jovanovic-watermark-stealing-2024",
       "src-kuo-hcot-2025",
+      "src-leaderboard-manipulation-2501.07493",
       "src-liu-psychological-jb-2025",
       "src-lowresource-jailbreak-2023",
+      "src-lrm-hidden-risks-r1",
+      "src-melon-2502.05174",
       "src-moesafety-2605-29708",
+      "src-mtsa-2505.17147",
+      "src-pif-2502.03052",
       "src-process-mining-redteam-2606-07833",
       "src-qd-semantic-strategy-evolution",
       "src-qdrt-behavior-conditioned",
       "src-radar-roleplay-multiagent",
+      "src-repbend-2504.01550",
       "src-reverse-constitutional-ai",
       "src-tmap-agent-trajectory-evo",
+      "src-toolhijacker-2504.19793",
       "src-wang-activation-attack-2023",
       "src-wang-implicit-crossmodal-jb-2025",
       "src-wang-refusal-direction-universal-2025",
@@ -1527,10 +1568,14 @@
       "arxiv-2410-09097",
       "arxiv-2504-15047",
       "arxiv-2606-11425",
+      "src-2501-09798",
+      "src-2504-10694",
+      "src-2509-21011",
       "src-2606-03647",
       "src-cop-composition-principles",
       "src-j2-jailbreaking-to-jailbreak",
       "src-liu-psychological-jb-2025",
+      "src-pif-2502.03052",
       "src-qd-semantic-strategy-evolution",
       "src-radar-roleplay-multiagent",
       "src-self-play-moving-targets",
@@ -1593,12 +1638,15 @@
       "arxiv-2606-11409",
       "arxiv-2606-11425",
       "arxiv-2606-16751",
+      "src-2501-09798",
+      "src-2504-10694",
       "src-2606-03647",
       "src-2606-05609",
       "src-2606.05743",
       "src-2606.09084",
       "src-2606.10525",
       "src-adversa-multijudge-consensus",
+      "src-advreason-2502.01633",
       "src-agentic-era-dreadnode",
       "src-arxiv-2604-17730-mhsafeeval",
       "src-autorise-strategy-evolution",
@@ -1606,11 +1654,13 @@
       "src-doubtprobe-2606-16527",
       "src-j2-jailbreaking-to-jailbreak",
       "src-liu-psychological-jb-2025",
+      "src-pif-2502.03052",
       "src-pismith-rl-prompt-injection",
       "src-radar-roleplay-multiagent",
       "src-reverse-constitutional-ai",
       "src-self-play-moving-targets",
-      "src-tmap-agent-trajectory-evo"
+      "src-tmap-agent-trajectory-evo",
+      "src-toolhijacker-2504.19793"
     ]
   },
   {
@@ -1674,13 +1724,18 @@
       "arxiv-2606-11409",
       "arxiv-2606-11425",
       "arxiv-2606-16242",
+      "src-2501-09798",
+      "src-2503-20823",
+      "src-2506-01307",
       "src-2606-03647",
       "src-2606-04027",
       "src-2606-05609",
       "src-2606-11817",
       "src-2606.05743",
       "src-2606.10525",
+      "src-ace-2504.20984",
       "src-adversa-multijudge-consensus",
+      "src-advreason-2502.01633",
       "src-agentic-era-dreadnode",
       "src-arxiv-2604-17730-mhsafeeval",
       "src-autorise-strategy-evolution",
@@ -1690,9 +1745,12 @@
       "src-crossgen-transfer-qd",
       "src-doubtprobe-2606-16527",
       "src-egashira-exploit-quantization-2024",
+      "src-fitd-2502.19820",
       "src-j2-jailbreaking-to-jailbreak",
       "src-liu-psychological-jb-2025",
       "src-moesafety-2605-29708",
+      "src-mtsa-2505.17147",
+      "src-pif-2502.03052",
       "src-pismith-rl-prompt-injection",
       "src-process-mining-redteam-2606-07833",
       "src-qd-semantic-strategy-evolution",
@@ -1881,7 +1939,9 @@
     "cites": [
       "arxiv-2311-08268"
     ],
-    "cited_by": []
+    "cited_by": [
+      "src-autonomy-induced-risks-survey"
+    ]
   },
   {
     "id": "arxiv-2503-00061",
@@ -1924,7 +1984,8 @@
       "src-2603-19469-formal-agent-sec",
       "src-2604-27464",
       "src-2605-00081",
-      "src-authgraph-2605-26497"
+      "src-authgraph-2605-26497",
+      "src-ipiguard-2508.15310"
     ]
   },
   {
@@ -1998,7 +2059,8 @@
     "cited_by": [
       "src-arxiv-2510-00857-managerbench",
       "src-arxiv-2605-20744-hack-verifiable",
-      "src-arxiv-2605-21384-specbench"
+      "src-arxiv-2605-21384-specbench",
+      "src-trust-ai-benchmarks"
     ]
   },
   {
@@ -2240,7 +2302,8 @@
     "cites": [],
     "cited_by": [
       "arxiv-2503-16861",
-      "src-arxiv-2510-00857-managerbench"
+      "src-arxiv-2510-00857-managerbench",
+      "src-trust-ai-benchmarks"
     ]
   },
   {
@@ -2318,7 +2381,8 @@
       "arxiv-2406-07358",
       "arxiv-2410-09097",
       "arxiv-2506-05376",
-      "arxiv-2606-06529"
+      "arxiv-2606-06529",
+      "src-2505-24445"
     ]
   },
   {
@@ -2427,9 +2491,11 @@
     ],
     "cited_by": [
       "arxiv-2506-05376",
+      "src-advreason-2502.01633",
       "src-arxiv-2505-21605-sosbench",
       "src-arxiv-2509-23694-safesearch",
-      "src-kuo-hcot-2025"
+      "src-kuo-hcot-2025",
+      "src-lrm-hidden-risks-r1"
     ]
   },
   {
@@ -2467,7 +2533,8 @@
       "arxiv-2403-13793"
     ],
     "cited_by": [
-      "arxiv-2502-05209"
+      "arxiv-2502-05209",
+      "src-trust-ai-benchmarks"
     ]
   },
   {
@@ -3142,6 +3209,7 @@
       "arxiv-2307-15043",
       "arxiv-2402-04249",
       "arxiv-2404-03027",
+      "src-llmattacker-2501.15850",
       "src-szegedy-adversarial-2013"
     ],
     "provenance": "extracted",
@@ -3374,7 +3442,8 @@
     "s2_id": "6eb897c804d44c5adf45493b485021940f652ea3",
     "citation_count": 0,
     "cites": [
-      "arxiv-2402-04249"
+      "arxiv-2402-04249",
+      "src-aitm-2502.14847"
     ],
     "provenance": "extracted",
     "cited_by": [],
@@ -3661,6 +3730,7 @@
       "arxiv-2606-11409",
       "arxiv-2606-11425",
       "arxiv-2606-16242",
+      "src-2507-02844",
       "src-2606-09701",
       "src-2606.09084",
       "src-agentic-era-dreadnode",
@@ -3668,6 +3738,7 @@
       "src-arxiv-2505-21605-sosbench",
       "src-autorise-strategy-evolution",
       "src-doubtprobe-2606-16527",
+      "src-fitd-2502.19820",
       "src-j2-jailbreaking-to-jailbreak",
       "src-liu-psychological-jb-2025",
       "src-tmap-agent-trajectory-evo"
@@ -3721,8 +3792,10 @@
       "src-2606-03647",
       "src-2606-04027",
       "src-2606.05743",
+      "src-advreason-2502.01633",
       "src-autorise-strategy-evolution",
       "src-cop-composition-principles",
+      "src-lrm-hidden-risks-r1",
       "src-qdrt-behavior-conditioned"
     ]
   },
@@ -3767,7 +3840,9 @@
       "arxiv-2606-11425",
       "src-2606-04027",
       "src-2606.05743",
+      "src-fitd-2502.19820",
       "src-j2-jailbreaking-to-jailbreak",
+      "src-pif-2502.03052",
       "src-radar-roleplay-multiagent"
     ]
   },
@@ -3810,7 +3885,9 @@
     "citation_count": 1448,
     "cited_by": [
       "arxiv-2606-16751",
-      "src-arxiv-2410-14182-labsafety"
+      "src-2509-21011",
+      "src-arxiv-2410-14182-labsafety",
+      "src-mpma-2505.11154"
     ]
   },
   {
@@ -3887,6 +3964,7 @@
       "arxiv-2506-05376",
       "arxiv-2510-07192",
       "arxiv-2606-15609",
+      "src-2504-10694",
       "src-2603-19469-formal-agent-sec",
       "src-adversa-multijudge-consensus",
       "src-arxiv-2505-21605-sosbench",
@@ -3894,8 +3972,10 @@
       "src-arxiv-2510-00857-managerbench",
       "src-arxiv-2602-13379-mt-agentrisk",
       "src-arxiv-2603-01291-jailnewsbench",
+      "src-fitd-2502.19820",
       "src-liu-psychological-jb-2025",
       "src-lowresource-jailbreak-2023",
+      "src-pif-2502.03052",
       "src-wang-implicit-crossmodal-jb-2025",
       "src-yong-lowresource-jb-2023"
     ]
@@ -3995,6 +4075,7 @@
       "src-2603-19469-formal-agent-sec",
       "src-2604-22879-cfv",
       "src-adversa-multijudge-consensus",
+      "src-agentsundersiege-2504.00218",
       "src-arxiv-2505-21605-sosbench",
       "src-arxiv-2602-19948-clinical-rt",
       "src-autorise-strategy-evolution",
@@ -4088,6 +4169,10 @@
     "cited_by": [
       "arxiv-2410-00296",
       "arxiv-2510-17687",
+      "src-2501-04931",
+      "src-2503-20823",
+      "src-2505-05528",
+      "src-2507-02844",
       "src-2606-07706",
       "src-arxiv-2506-04704-holisafe",
       "src-cheng-tvpi-2025",
@@ -4133,8 +4218,11 @@
       "arxiv-2404-01318",
       "arxiv-2404-01833",
       "arxiv-2606-09178",
+      "src-2501-04931",
+      "src-2504-10694",
       "src-arxiv-2603-01291-jailnewsbench",
       "src-lowresource-jailbreak-2023",
+      "src-pif-2502.03052",
       "src-process-mining-redteam-2606-07833",
       "src-radar-roleplay-multiagent",
       "src-wang-refusal-direction-universal-2025",
@@ -4222,7 +4310,8 @@
       "src-2603-19469-formal-agent-sec",
       "src-2606.08661",
       "src-arxiv-2509-23694-safesearch",
-      "src-arxiv-2602-15654-zombie-agents"
+      "src-arxiv-2602-15654-zombie-agents",
+      "src-topicfliprag-2502.01386"
     ]
   },
   {
@@ -4314,12 +4403,18 @@
       "arxiv-2505-22037",
       "arxiv-2506-05376",
       "arxiv-2606-16242",
+      "src-2505-24445",
       "src-2603-19469-formal-agent-sec",
+      "src-ace-2504.20984",
+      "src-advreason-2502.01633",
       "src-arxiv-2503-04957-safearena",
       "src-arxiv-2510-27629-biorisk-openweight",
       "src-coin-flip-judge-reliability",
       "src-cop-composition-principles",
+      "src-fitd-2502.19820",
       "src-j2-jailbreaking-to-jailbreak",
+      "src-lrm-hidden-risks-r1",
+      "src-repbend-2504.01550",
       "src-self-play-moving-targets"
     ]
   },
@@ -4373,8 +4468,10 @@
       "arxiv-2406-07358",
       "arxiv-2501-07238",
       "arxiv-2502-05209",
+      "src-2504-10694",
       "src-arxiv-2505-21605-sosbench",
-      "src-arxiv-2510-27629-biorisk-openweight"
+      "src-arxiv-2510-27629-biorisk-openweight",
+      "src-repbend-2504.01550"
     ]
   },
   {
@@ -4759,9 +4856,13 @@
     ],
     "provenance": "extracted",
     "cited_by": [
+      "src-2509-21011",
       "src-2605-11039-pact",
       "src-2606.09084",
-      "src-authgraph-2605-26497"
+      "src-authgraph-2605-26497",
+      "src-autonomy-induced-risks-survey",
+      "src-saga-2504.21034",
+      "src-toolhijacker-2504.19793"
     ]
   },
   {
@@ -5142,18 +5243,27 @@
       "arxiv-2510-07192",
       "arxiv-2606-09178",
       "arxiv-2606-11409",
+      "src-2501-04931",
+      "src-2502-00306",
+      "src-2503-09598",
       "src-2605-17453-trust-no-tool",
       "src-2606-03647",
       "src-2606-05609",
       "src-2606-11817",
+      "src-agentsundersiege-2504.00218",
       "src-arxiv-2412-13178-safeagentbench",
       "src-arxiv-2510-27629-biorisk-openweight",
+      "src-autonomy-induced-risks-survey",
       "src-coin-flip-judge-reliability",
       "src-cop-composition-principles",
       "src-doubtprobe-2606-16527",
+      "src-fitd-2502.19820",
+      "src-gsafeguard-2502.11127",
       "src-hsiung-guardrail-collapse-2025",
       "src-j2-jailbreaking-to-jailbreak",
       "src-kuo-hcot-2025",
+      "src-leaderboard-manipulation-2501.07493",
+      "src-lrm-hidden-risks-r1",
       "src-ocelot-2606-12341",
       "src-qdrt-behavior-conditioned",
       "src-xie-overfit-finetune-jb-2025"
@@ -5192,7 +5302,10 @@
     "cited_by": [
       "arxiv-2406-04313",
       "arxiv-2412-16339",
+      "src-2501-09798",
       "src-2606.17034",
+      "src-leaderboard-manipulation-2501.07493",
+      "src-mpma-2505.11154",
       "src-wang-implicit-crossmodal-jb-2025"
     ]
   },
@@ -5955,7 +6068,10 @@
     "s2_id": "arXiv:2403.13793",
     "provenance": "extracted",
     "local_pdf": "card/evaluating-frontier-dangerous-capabilities.pdf",
-    "citation_count": 130
+    "citation_count": 130,
+    "cited_by": [
+      "src-repbend-2504.01550"
+    ]
   },
   {
     "id": "nvd-cve-2024-37032",
@@ -6484,7 +6600,10 @@
     ],
     "provenance": "extracted",
     "citation_count": 130,
-    "influential_citation_count": 7
+    "influential_citation_count": 7,
+    "cited_by": [
+      "src-autonomy-induced-risks-survey"
+    ]
   },
   {
     "id": "medrxiv-adversarial-hallucination-cds-2025",
@@ -6694,6 +6813,7 @@
     "citation_count": 1731,
     "influential_citation_count": 236,
     "cited_by": [
+      "src-2505-24445",
       "src-coin-flip-judge-reliability",
       "src-lowresource-jailbreak-2023",
       "src-toxigen-2022",
@@ -8112,6 +8232,7 @@
       "src-tramer-model-stealing-2016"
     ],
     "cited_by": [
+      "src-llm-privacy-survey",
       "src-shumailov-sponge-2020",
       "src-wang-implicit-crossmodal-jb-2025",
       "src-wanger-vectorsmuggle-2026"
@@ -8164,6 +8285,7 @@
     "s2_id": "arXiv:1609.02943",
     "provenance": "extracted",
     "cited_by": [
+      "src-2501-09798",
       "src-shokri-membership-inference-2017"
     ],
     "citation_count": 2128,
@@ -8200,7 +8322,9 @@
     "provenance": "extracted",
     "cited_by": [
       "arxiv-2512-20677",
+      "src-2505-05528",
       "src-bentov-gaslite-2024",
+      "src-datasentinel-2504.11358",
       "src-gu-badnets-2017",
       "src-j2-jailbreaking-to-jailbreak",
       "src-shumailov-sponge-2020",
@@ -8240,6 +8364,7 @@
     ],
     "cited_by": [
       "arxiv-2606-16242",
+      "src-2502-18511",
       "src-lieber-loratk-2024",
       "src-wang-implicit-crossmodal-jb-2025",
       "src-wanger-vectorsmuggle-2026"
@@ -8302,7 +8427,8 @@
     "citation_count": 568,
     "influential_citation_count": 37,
     "cited_by": [
-      "src-cohen-morris-ii-worm-2024"
+      "src-cohen-morris-ii-worm-2024",
+      "src-trust-ai-benchmarks"
     ]
   },
   {
@@ -8334,6 +8460,9 @@
       "arxiv-2307-15043",
       "arxiv-2310-08419",
       "src-carlini-extract-training-data-2023"
+    ],
+    "cited_by": [
+      "src-saga-2504.21034"
     ]
   },
   {
@@ -8370,6 +8499,7 @@
     ],
     "cited_by": [
       "arxiv-2606-16751",
+      "src-2512-07086",
       "src-2606.08661"
     ]
   },
@@ -9926,7 +10056,9 @@
       "src-2605-06812",
       "src-2606.09084",
       "src-2606.10749",
-      "src-bentov-gaslite-2024"
+      "src-autonomy-induced-risks-survey",
+      "src-bentov-gaslite-2024",
+      "src-gsafeguard-2502.11127"
     ]
   },
   {
@@ -10342,6 +10474,9 @@
     "cites": [
       "arxiv-2212-08073",
       "arxiv-2307-15043"
+    ],
+    "cited_by": [
+      "src-mtsa-2505.17147"
     ]
   },
   {
@@ -10627,10 +10762,13 @@
       "arxiv-2604-23067",
       "arxiv-2605-04019",
       "arxiv-2606-09178",
+      "src-2503-20823",
+      "src-2504-10694",
       "src-2606-05609",
       "src-2606-07706",
       "src-2606-11817",
-      "src-agentic-era-dreadnode"
+      "src-agentic-era-dreadnode",
+      "src-pif-2502.03052"
     ],
     "citation_count": 347,
     "influential_citation_count": 28,
@@ -10676,6 +10814,9 @@
       "arxiv-2307-15043",
       "arxiv-2407-21783",
       "arxiv-2412-16339"
+    ],
+    "cited_by": [
+      "src-2507-02844"
     ]
   },
   {
@@ -10854,6 +10995,7 @@
     "cited_by": [
       "arxiv-2603-10807",
       "arxiv-2604-23067",
+      "src-2507-02844",
       "src-arxiv-2602-13379-mt-agentrisk",
       "src-arxiv-2604-17730-mhsafeeval",
       "src-cop-composition-principles",
@@ -11274,7 +11416,8 @@
     "cites": [
       "arxiv-2310-08419",
       "arxiv-2402-04249",
-      "arxiv-2508-18076"
+      "arxiv-2508-18076",
+      "src-know-thy-judge-2503.04474"
     ]
   },
   {
@@ -11590,6 +11733,7 @@
     "citation_count": 159,
     "influential_citation_count": 16,
     "cited_by": [
+      "src-2505-24445",
       "src-2603-19469-formal-agent-sec",
       "src-2605-31593",
       "src-2606-03647",
@@ -11664,7 +11808,10 @@
     "s2_id": "arXiv:2606.15008",
     "provenance": "extracted",
     "citation_count": 0,
-    "influential_citation_count": 0
+    "influential_citation_count": 0,
+    "cites": [
+      "src-toolhijacker-2504.19793"
+    ]
   },
   {
     "id": "arxiv-2606-12918",
@@ -11700,7 +11847,8 @@
     "citation_count": 0,
     "influential_citation_count": 0,
     "cites": [
-      "arxiv-2410-09024"
+      "arxiv-2410-09024",
+      "src-aitm-2502.14847"
     ]
   },
   {
@@ -11768,7 +11916,9 @@
       "alibaba-qwen3-report-2025",
       "arxiv-2307-15043",
       "arxiv-2406-13352",
-      "arxiv-2410-09024"
+      "arxiv-2410-09024",
+      "src-2512-07086",
+      "src-melon-2502.05174"
     ]
   },
   {
@@ -11871,7 +12021,8 @@
     "citation_count": 0,
     "cites": [
       "arxiv-2307-15043",
-      "arxiv-2310-08419"
+      "arxiv-2310-08419",
+      "src-ace-2504.20984"
     ],
     "cited_by": [],
     "provenance": "extracted",
@@ -11906,7 +12057,9 @@
     "cites": [
       "arxiv-2402-04249",
       "arxiv-2402-07867",
-      "arxiv-2402-10260"
+      "arxiv-2402-10260",
+      "src-datasentinel-2504.11358",
+      "src-toolhijacker-2504.19793"
     ],
     "cited_by": [],
     "provenance": "extracted",
@@ -12031,7 +12184,8 @@
       "arxiv-2406-13352",
       "arxiv-2410-06703",
       "arxiv-2503-09780",
-      "mc-src-gemini-2-5-report"
+      "mc-src-gemini-2-5-report",
+      "src-toolhijacker-2504.19793"
     ],
     "provenance": "extracted",
     "influential_citation_count": 0
@@ -12383,7 +12537,8 @@
     "influential_citation_count": 0,
     "cites": [
       "arxiv-2402-07867",
-      "src-shumailov-sponge-2020"
+      "src-shumailov-sponge-2020",
+      "src-topicfliprag-2502.01386"
     ]
   },
   {
@@ -12408,7 +12563,8 @@
       "alibaba-qwen3-report-2025",
       "arxiv-2307-15043",
       "arxiv-2310-08419",
-      "arxiv-2312-02119"
+      "arxiv-2312-02119",
+      "src-toolhijacker-2504.19793"
     ]
   },
   {
@@ -12427,7 +12583,12 @@
     "retrieved": "2026-06-22",
     "abstract": "Tool-using LLM agents face two distinct security failures: unauthorized external actions and exposure of sensitive plaintext inside the runtime before any final output check can intervene. Existing defenses usually protect one boundary (planner/runtime or action sink) and so cannot secure both surfaces. SecureClaw is a dual-boundary architecture placing authorization at the effect sink (writes follow a PREVIEW->COMMIT protocol; only a trusted executor commits the exact canonical request authorized by policy) and plaintext confinement at the read boundary (sensitive reads pass through a trusted gateway returning opaque handles plus bounded summaries as an explicit declassification interface). Across AgentDojo, AgentLeak, and ASB, SecureClaw is the only evaluated common-harness baseline that simultaneously retains usable utility and achieves 0% ASR on ASB, 0.64% ASR on AgentDojo, and 3.23% overall leak on AgentLeak's attacked parity lane.",
     "citation_count": 0,
-    "influential_citation_count": 0
+    "influential_citation_count": 0,
+    "cites": [
+      "src-ace-2504.20984",
+      "src-ipiguard-2508.15310",
+      "src-toolhijacker-2504.19793"
+    ]
   },
   {
     "id": "src-2606.10749",
@@ -12451,12 +12612,20 @@
     "cites": [
       "arxiv-2410-09024",
       "arxiv-2509-05755",
+      "src-2509-21011",
       "src-2603-19469-formal-agent-sec",
+      "src-ace-2504.20984",
+      "src-agentsundersiege-2504.00218",
+      "src-aitm-2502.14847",
       "src-arxiv-2407-12784-agentpoison",
       "src-arxiv-2412-13178-safeagentbench",
       "src-arxiv-2503-04957-safearena",
       "src-arxiv-2602-15654-zombie-agents",
-      "src-mcpsecbench"
+      "src-autonomy-induced-risks-survey",
+      "src-ipiguard-2508.15310",
+      "src-mcpsecbench",
+      "src-melon-2502.05174",
+      "src-toolhijacker-2504.19793"
     ]
   },
   {
@@ -12481,7 +12650,10 @@
     "retrieved": "2026-06-22",
     "abstract": "PI-Hunter is an automated agentic auditing framework that shifts red-teaming of LLM agents from attack-success optimization to injection-exposure: it statically maps an agent's tools/retrieval interfaces/external sources, then evolves source-aware probing test cases through feedback-driven mutation to induce the agent to retrieve, process and reveal latent malicious instructions embedded in untrusted external sources, localizing the specific source->tool ingestion path. A patch-and-reexplore loop applies transient mitigations to drive coverage toward unexplored attack surfaces. On AgentDojo and AgentDyn it substantially improves source localization, instruction exposure and ingestion-path diversity over a strong agentic baseline, and remains effective under Spotlighting, MELON and PIGuard defenses.",
     "citation_count": 0,
-    "influential_citation_count": 0
+    "influential_citation_count": 0,
+    "cites": [
+      "src-melon-2502.05174"
+    ]
   },
   {
     "id": "arxiv-2606-06140",
@@ -12973,7 +13145,9 @@
     "cites": [
       "arxiv-2307-15043",
       "arxiv-2410-07283",
-      "src-2604-17562"
+      "src-2604-17562",
+      "src-melon-2502.05174",
+      "src-toolhijacker-2504.19793"
     ]
   },
   {
@@ -13106,7 +13280,12 @@
     "influential_citation_count": 0,
     "cites": [
       "arxiv-2410-09024",
-      "src-arxiv-2407-12784-agentpoison"
+      "src-2509-07764",
+      "src-agentsundersiege-2504.00218",
+      "src-arxiv-2407-12784-agentpoison",
+      "src-mpma-2505.11154",
+      "src-saga-2504.21034",
+      "src-toolhijacker-2504.19793"
     ]
   },
   {
@@ -13315,7 +13494,8 @@
     "influential_citation_count": 0,
     "cites": [
       "arxiv-2410-07283",
-      "arxiv-2503-00061"
+      "arxiv-2503-00061",
+      "src-ace-2504.20984"
     ]
   },
   {
@@ -13439,7 +13619,9 @@
     "influential_citation_count": 0,
     "cites": [
       "arxiv-2503-00061",
-      "src-pismith-rl-prompt-injection"
+      "src-aitm-2502.14847",
+      "src-pismith-rl-prompt-injection",
+      "src-toolhijacker-2504.19793"
     ]
   },
   {
@@ -13863,6 +14045,7 @@
       "arxiv-2404-01833",
       "arxiv-2404-03027",
       "arxiv-2407-21783",
+      "src-2509-07764",
       "src-constitutional-classifiers"
     ]
   },
@@ -13957,7 +14140,1362 @@
     "influential_citation_count": 0,
     "cites": [
       "arxiv-2508-14925",
-      "src-mcpsecbench"
+      "src-mcpsecbench",
+      "src-toolhijacker-2504.19793"
+    ]
+  },
+  {
+    "id": "src-toolhijacker-2504.19793",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Prompt Injection Attack to Tool Selection in LLM Agents",
+    "authors": [
+      "Jiawen Shi",
+      "Zenghui Yuan",
+      "Guiyao Tie",
+      "Pan Zhou",
+      "Neil Zhenqiang Gong",
+      "Lichao Sun"
+    ],
+    "org": "Huazhong University of Science and Technology; Duke University; Lehigh University",
+    "venue": "NDSS Symposium 2026",
+    "url": "https://arxiv.org/abs/2504.19793",
+    "published": "2025-08-24",
+    "retrieved": "2026-06-23",
+    "abstract": "Introduces ToolHijacker, the first prompt injection attack targeting tool selection (retrieval+selection) in LLM agents under a no-box scenario. ToolHijacker injects a single malicious tool document into the tool library to compel the agent to consistently choose the attacker's tool for a target task. Crafting the malicious document is formulated as a two-phase optimization (retrieval objective R + selection objective S) solved by gradient-free and gradient-based methods. Evaluated on MetaTool and ToolBench across 8 LLMs and 4 retrievers; achieves up to 100% AHR and ~96.7% ASR on GPT-4o, defeats prevention (StruQ, SecAlign) and detection (known-answer, DataSentinel, PPL, PPL-W) defenses.",
+    "cited_by": [
+      "arxiv-2606-02302",
+      "arxiv-2606-13385",
+      "arxiv-2606-14154",
+      "arxiv-2606-15008",
+      "src-2509-21011",
+      "src-2604-27464",
+      "src-2605-11039-pact",
+      "src-2606.09549",
+      "src-2606.10525",
+      "src-2606.10749",
+      "src-mpma-2505.11154",
+      "src-shieldnet-2604-04426"
+    ],
+    "citation_count": 97,
+    "influential_citation_count": 3,
+    "cites": [
+      "arxiv-2307-15043",
+      "arxiv-2312-02119",
+      "arxiv-2410-07283",
+      "src-datasentinel-2504.11358"
+    ]
+  },
+  {
+    "id": "src-aitm-2502.14847",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Red-Teaming LLM Multi-Agent Systems via Communication Attacks",
+    "authors": [
+      "Pengfei He",
+      "Yupin Lin",
+      "Shen Dong",
+      "Han Xu",
+      "Yue Xing",
+      "Hui Liu"
+    ],
+    "org": "Michigan State University; University of Arizona",
+    "venue": "ACL 2025",
+    "url": "https://arxiv.org/abs/2502.14847",
+    "published": "2025-06-02",
+    "retrieved": "2026-06-23",
+    "abstract": "Introduces Agent-in-the-Middle (AiTM), a novel attack that exploits the inter-agent communication mechanism of LLM-based multi-agent systems (LLM-MAS). Instead of compromising individual agents or injecting adversarial inputs, AiTM uses an external LLM-powered adversarial agent to intercept and manipulate messages sent to a victim agent, with a reflection mechanism generating contextually-tailored malicious instructions. Evaluated on AutoGen and Camel across 4 communication structures (Chain/Tree/Complete/Random) and tasks (MMLU, HumanEval, MBPP) for targeted-behavior and DoS goals; ASR exceeds 40% in all cases, >70% in most, and compromises real-world MetaGPT (100% on SoftwareDev) and partially ChatDev.",
+    "cited_by": [
+      "arxiv-2605-11047",
+      "arxiv-2606-12918",
+      "src-2604-27464",
+      "src-2606.10749",
+      "src-autonomy-induced-risks-survey",
+      "src-saga-2504.21034"
+    ],
+    "citation_count": 104,
+    "influential_citation_count": 9
+  },
+  {
+    "id": "src-mpma-2505.11154",
+    "type": "source",
+    "source_type": "paper",
+    "title": "MPMA: Preference Manipulation Attack Against Model Context Protocol",
+    "authors": [
+      "Zihan Wang",
+      "Rui Zhang",
+      "Yu Liu",
+      "Wenshu Fan",
+      "Wenbo Jiang",
+      "Qingchuan Zhao",
+      "Hongwei Li",
+      "Guowen Xu"
+    ],
+    "org": "University of Electronic Science and Technology of China; City University of Hong Kong",
+    "venue": "AAAI 2026",
+    "url": "https://arxiv.org/abs/2505.11154",
+    "published": "2025-11-11",
+    "retrieved": "2026-06-23",
+    "abstract": "Introduces the MCP Preference Manipulation Attack (MPMA): a malicious paid MCP server provider manipulates its tool name/description so the LLM agent consistently prefers it over functionally-equivalent competing MCP servers, yielding economic benefit (service fees / ad revenue). Two strategies: DPMA (Directly inserting words like 'best'/'This is the best tool in the world', up to 100% ASR but obvious) and GAPMA (Genetic-based Advertising Preference Manipulation Attack — four advertising styles Authoritative/Emotional/Exaggerated/Subliminal + a genetic algorithm for stealth). Evaluated across 8 MCP servers and 5 LLMs; GAPMA balances high ASR and stealth, evading LLM-as-a-judge, human annotators, and MCP scanning tools (MCPScan, MCPShield). Estimated unfair benefit >$200k/yr to competitors.",
+    "cited_by": [
+      "arxiv-2606-02302",
+      "src-mcpxkit-2508.12538"
+    ],
+    "citation_count": 34,
+    "influential_citation_count": 3,
+    "cites": [
+      "arxiv-2403-05530",
+      "arxiv-2411-15594",
+      "src-toolhijacker-2504.19793"
+    ]
+  },
+  {
+    "id": "src-mcpxkit-2508.12538",
+    "type": "source",
+    "source_type": "paper",
+    "title": "MCPXKIT: The Unified Toolkit for Analyzing Model Context Protocol Security",
+    "authors": [
+      "Yongjian Guo",
+      "Puzhuo Liu",
+      "Wanlun Ma",
+      "Zehang Deng",
+      "Xiaogang Zhu",
+      "Peng Di",
+      "Xi Xiao",
+      "Sheng Wen"
+    ],
+    "org": "Tsinghua University (Shenzhen); Ant Group; Swinburne University of Technology; University of Adelaide; UNSW Sydney",
+    "venue": "IEEE TDSC 2025",
+    "url": "https://arxiv.org/abs/2508.12538",
+    "published": "2026-05-25",
+    "retrieved": "2026-06-23",
+    "abstract": "Presents MCPXKIT, the first plugin-based attack-simulation framework for the Model Context Protocol, plus a four-dimensional taxonomy of 31 distinct MCP attack types: Direct Tool Injection, Indirect Tool Injection, Malicious User, and LLM Inherent attacks. Conducts the first quantitative efficacy analysis (Attack Efficacy = entropy-weighted combination of success rate S, security risk level L, persistent impact scope I, implementation difficulty D). Four key insights: file-based ops execute without confirmation, MCP agents blindly rely on tool descriptions (LLM sycophancy), shared-context chain attacks (infectious + multi-tool cooperation), and agents cannot distinguish external data from executable instructions.",
+    "citation_count": 26,
+    "influential_citation_count": 6,
+    "cites": [
+      "src-mpma-2505.11154"
+    ]
+  },
+  {
+    "id": "src-ace-2504.20984",
+    "type": "source",
+    "source_type": "paper",
+    "title": "ACE: A Security Architecture for LLM-Integrated App Systems",
+    "authors": [
+      "Evan Li",
+      "Tushin Mallick",
+      "Evan Rose",
+      "William Robertson",
+      "Alina Oprea",
+      "Cristina Nita-Rotaru"
+    ],
+    "org": "Northeastern University",
+    "venue": "NDSS Symposium 2026",
+    "url": "https://arxiv.org/abs/2504.20984",
+    "published": "2025-09-10",
+    "retrieved": "2026-06-23",
+    "abstract": "Identifies three new attacks (Execution Flow Disruption, Execution Manager Hijack, Planner Manipulation) that subvert the planning and execution integrity/availability of LLM-integrated app systems, demonstrated against IsolateGPT. Proposes Abstract-Concrete-Execute (ACE), a three-phase security architecture: abstract planning over only trusted user-query info, concrete plan instantiation via registered apps, and isolated execution under a static-analysis-verified lattice-based information-flow policy and least-privilege. ACE blocks all attacks on INJECAGENT (100% security) and Agent Security Bench (≥86% utility), prevents the three new attacks, and retains ≥80% utility on the LangChain Tool Usage benchmark.",
+    "cited_by": [
+      "arxiv-2606-15057",
+      "src-2606.09549",
+      "src-2606.10749",
+      "src-authgraph-2605-26497"
+    ],
+    "citation_count": 32,
+    "influential_citation_count": 4,
+    "cites": [
+      "arxiv-2310-08419",
+      "arxiv-2406-04313"
+    ]
+  },
+  {
+    "id": "src-gsafeguard-2502.11127",
+    "type": "source",
+    "source_type": "paper",
+    "title": "G-Safeguard: A Topology-Guided Security Lens and Treatment on LLM-based Multi-agent Systems",
+    "authors": [
+      "Shilong Wang",
+      "Guibin Zhang",
+      "Miao Yu",
+      "Guancheng Wan",
+      "Fanci Meng",
+      "Chongye Guo",
+      "Kun Wang",
+      "Yang Wang"
+    ],
+    "org": "USTC; Tongji University; Wuhan University; Shanghai University",
+    "venue": "ACL 2025",
+    "url": "https://arxiv.org/abs/2502.11127",
+    "published": "2025-02-16",
+    "retrieved": "2026-06-23",
+    "abstract": "Introduces G-Safeguard, a topology-guided security lens and treatment for LLM-based multi-agent systems. It constructs a multi-agent utterance graph capturing inter-agent communication and topology, formulates attack detection as a GNN node-classification (anomaly) problem to pinpoint high-risk/compromised agents, and performs topological intervention (edge pruning) to remediate by blocking malicious-information propagation. Across LLM backbones, MAS frameworks (incl. Camel), and topologies (chain/tree/star/random), G-Safeguard recovers >40% of performance under prompt injection, reduces ASR by 21.38%/22.01% (prompt injection on CSQA/MMLU), 12.67% (tool attack), 16.27% (memory poison), and transfers to large-scale MAS (up to 80 agents) without retraining (39.23% recovery at 65 agents).",
+    "citation_count": 47,
+    "influential_citation_count": 7,
+    "cites": [
+      "arxiv-2407-21783",
+      "arxiv-2410-09024",
+      "src-arxiv-2407-12784-agentpoison"
+    ]
+  },
+  {
+    "id": "src-datasentinel-2504.11358",
+    "type": "source",
+    "source_type": "paper",
+    "title": "DataSentinel: A Game-Theoretic Detection of Prompt Injection Attacks",
+    "authors": [
+      "Yupei Liu",
+      "Yuqi Jia",
+      "Jinyuan Jia",
+      "Dawn Song",
+      "Neil Zhenqiang Gong"
+    ],
+    "org": "Penn State / Duke / UC Berkeley",
+    "venue": "IEEE Symposium on Security and Privacy (S&P) 2025",
+    "url": "https://arxiv.org/abs/2504.11358",
+    "published": "2025-04-15",
+    "retrieved": "2026-06-23",
+    "abstract": "DataSentinel fine-tunes a detection LLM via a minimax (game-theoretic) formulation to detect inputs contaminated with injected prompts that are strategically adapted to evade detection. The inner-max optimizes adaptive attacks; the outer-min fine-tunes the detection LLM. Evaluated on 7 tasks, 9 injected datasets, 6 LLMs, 9 existing + 3 adaptive prompt injection attacks; achieves FPR/FNR close to 0 and at most 0.07, outperforming 6 baselines.",
+    "cited_by": [
+      "arxiv-2606-14154",
+      "src-2509-21011",
+      "src-toolhijacker-2504.19793"
+    ],
+    "citation_count": 118,
+    "influential_citation_count": 13,
+    "cites": [
+      "arxiv-2307-15043",
+      "src-szegedy-adversarial-2013"
+    ]
+  },
+  {
+    "id": "src-melon-2502.05174",
+    "type": "source",
+    "source_type": "paper",
+    "title": "MELON: Provable Defense Against Indirect Prompt Injection Attacks in AI Agents",
+    "authors": [
+      "Kaijie Zhu",
+      "Xianjun Yang",
+      "Jindong Wang",
+      "Wenbo Guo",
+      "William Wang"
+    ],
+    "org": "UC Santa Barbara / William & Mary",
+    "venue": "International Conference on Machine Learning (ICML) 2025",
+    "url": "https://arxiv.org/abs/2502.05174",
+    "published": "2025-02-07",
+    "retrieved": "2026-06-23",
+    "abstract": "MELON (Masked re-Execution and tooL comparisON) is a training-free indirect-prompt-injection (IPI) defense for LLM agents. It re-executes the agent's trajectory with a masked, task-neutral user prompt and detects an attack when tool calls in the original run match those of the masked run (indicating the action depends on injected content, not the user task). Three designs (custom masking function, tool-call cache, tool-call comparison) reduce FPs/FNs. On AgentDojo across GPT-4o, o3-mini, Llama-3.3-70B, MELON and MELON-Aug outperform 5 SOTA defenses; MELON-Aug reaches 0.32% ASR with 68.72% utility on GPT-4o.",
+    "cited_by": [
+      "arxiv-2606-12737",
+      "arxiv-2606-14517",
+      "src-2605-11039-pact",
+      "src-2606.10749"
+    ],
+    "citation_count": 47,
+    "influential_citation_count": 8,
+    "cites": [
+      "arxiv-2307-15043"
+    ]
+  },
+  {
+    "id": "src-ipiguard-2508.15310",
+    "type": "source",
+    "source_type": "paper",
+    "title": "IPIGuard: A Novel Tool Dependency Graph-Based Defense Against Indirect Prompt Injection in LLM Agents",
+    "authors": [
+      "Hengyu An",
+      "Jinghuai Zhang",
+      "Tianyu Du",
+      "Chunyi Zhou",
+      "Qingming Li",
+      "Tao Lin",
+      "Shouling Ji"
+    ],
+    "org": "Zhejiang University / UCLA / Westlake University",
+    "venue": "Conference on Empirical Methods in Natural Language Processing (EMNLP) 2025",
+    "url": "https://arxiv.org/abs/2508.15310",
+    "published": "2025-08-21",
+    "retrieved": "2026-06-23",
+    "abstract": "IPIGuard is an execution-centric IPI defense that models an LLM agent's task execution as traversal over a planned Tool Dependency Graph (TDG). By decoupling action planning from interaction with external data and restricting tool invocations to a pre-approved plan, it prevents injected-instruction-triggered tool calls at the source. Argument Estimation and Node Expansion handle dynamic planning; Fake Tool Invocation handles user/injected task overlap. On AgentDojo across six LLMs and four IPI attacks, IPIGuard achieves the lowest average ASR (<1%) with strong utility.",
+    "cited_by": [
+      "src-2606.09549",
+      "src-2606.10749"
+    ],
+    "citation_count": 34,
+    "influential_citation_count": 5,
+    "cites": [
+      "arxiv-2503-00061"
+    ]
+  },
+  {
+    "id": "src-saga-2504.21034",
+    "type": "source",
+    "source_type": "paper",
+    "title": "SAGA: A Security Architecture for Governing AI Agentic Systems",
+    "authors": [
+      "Georgios Syros",
+      "Anshuman Suri",
+      "Jacob Ginesin",
+      "Cristina Nita-Rotaru",
+      "Alina Oprea"
+    ],
+    "org": "Northeastern University",
+    "venue": "Network and Distributed System Security Symposium (NDSS) 2026",
+    "url": "https://arxiv.org/abs/2504.21034",
+    "published": "2025-04-29",
+    "retrieved": "2026-06-23",
+    "abstract": "SAGA is a Security Architecture for Governing Agentic systems giving users oversight over their LLM agents' lifecycle. Users register agents with a central Provider holding contact info and user-defined Access Contact Policies; a cryptographic mechanism derives Access Control Tokens (encrypted under a Diffie-Hellman-derived shared key, scoped by expiry and request quota) for fine-grained control over inter-agent communication. Formally verified with ProVerif (Dolev-Yao). Integrates with Google A2A and Model Context Protocol. Evaluated on calendar/email/writing agentic tasks across on-device and cloud LLMs with <0.6% overhead on fast tasks; scales to ~300M agents.",
+    "cited_by": [
+      "arxiv-2606-02302"
+    ],
+    "citation_count": 35,
+    "influential_citation_count": 2,
+    "cites": [
+      "arxiv-2410-07283",
+      "src-agentsundersiege-2504.00218",
+      "src-aitm-2502.14847",
+      "src-cohen-morris-ii-worm-2024"
+    ]
+  },
+  {
+    "id": "src-mtsa-2505.17147",
+    "type": "source",
+    "source_type": "paper",
+    "title": "MTSA: Multi-turn Safety Alignment for LLMs through Multi-round Red-teaming",
+    "authors": [
+      "Weiyang Guo",
+      "Jing Li",
+      "Wenya Wang",
+      "Yu Li",
+      "Daojing He",
+      "Jun Yu",
+      "Min Zhang"
+    ],
+    "org": "Harbin Institute of Technology Shenzhen / NTU Singapore / Zhejiang University",
+    "venue": "Annual Meeting of the Association for Computational Linguistics (ACL) 2025",
+    "url": "https://arxiv.org/abs/2505.17147",
+    "published": "2025-05-22",
+    "retrieved": "2026-06-23",
+    "abstract": "MTSA is a two-stage framework securing LLMs against multi-round jailbreaks. Stage 1 (thought-guided attack learning) builds a Think-before-attack dataset and fine-tunes a red-team model. Stage 2 (adversarial iterative optimization) co-evolves the red-team and target models, with a multi-turn RL algorithm based on future rewards for robust safety alignment. The red-team model reaches SOTA attack success while the target model significantly improves multi-turn and single-turn safety without losing generality or over-refusing.",
+    "citation_count": 31,
+    "influential_citation_count": 6,
+    "cites": [
+      "arxiv-2307-15043",
+      "arxiv-2310-08419",
+      "arxiv-2402-04249",
+      "src-wang-activation-attack-2023"
+    ]
+  },
+  {
+    "id": "src-repbend-2504.01550",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Representation Bending for Large Language Model Safety",
+    "authors": [
+      "Ashkan Yousefpour",
+      "Taeheon Kim",
+      "Ryan S. Kwon",
+      "Seungbeen Lee",
+      "Wonje Jeung",
+      "Seungju Han",
+      "Alvin Wan",
+      "Harrison Ngan",
+      "Youngjae Yu",
+      "Jonghyun Choi"
+    ],
+    "org": "Seoul National University / Yonsei University / AIM Intelligence / University of Michigan / Stanford / Amazon AWS",
+    "venue": "Annual Meeting of the Association for Computational Linguistics (ACL) 2025",
+    "url": "https://arxiv.org/abs/2504.01550",
+    "published": "2025-04-02",
+    "retrieved": "2026-06-23",
+    "abstract": "REPBEND is a fine-tuning approach that disrupts the representations underlying harmful behaviors in LLMs by bending the safe and unsafe representation spaces apart. Extending activation steering into a LoRA fine-tuning loss (retain + forget + cosine + KL terms), REPBEND achieves up to 95% reduction in attack success rates across diverse black-box and white-box jailbreak benchmarks, outperforming Circuit Breaker, RMU, and NPO, with negligible loss of usability/general capability.",
+    "citation_count": 24,
+    "influential_citation_count": 4,
+    "cites": [
+      "arxiv-2307-15043",
+      "arxiv-2402-04249",
+      "arxiv-2403-03218",
+      "arxiv-2406-04313",
+      "mc-src-dangerous-capabilities"
+    ]
+  },
+  {
+    "id": "src-lrm-hidden-risks-r1",
+    "type": "source",
+    "source_type": "paper",
+    "title": "The Hidden Risks of Large Reasoning Models: A Safety Assessment of R1",
+    "authors": [
+      "Kaiwen Zhou",
+      "Chengzhi Liu",
+      "Xuandong Zhao",
+      "Shreedhar Jangam",
+      "Jayanth Srinivasa",
+      "Gaowen Liu",
+      "Dawn Song",
+      "Xin Eric Wang"
+    ],
+    "org": "UC Santa Cruz; UC Berkeley; UC Santa Barbara; Cisco Research",
+    "venue": "IJCNLP-AACL 2025",
+    "url": "https://arxiv.org/abs/2502.12659",
+    "published": "2025-02-18",
+    "retrieved": "2026-06-23",
+    "abstract": "A comprehensive safety assessment of large reasoning models (LRMs) such as DeepSeek-R1 against established safety benchmarks and adversarial attacks (jailbreak, prompt injection). Four key findings: (1) significant safety gap between open-source reasoning models and o3-mini; (2) stronger reasoning ability increases potential harm of unsafe answers; (3) safety thinking emerges in LRM reasoning but fails against adversarial attacks; (4) the thinking process in R1 poses greater safety concerns than final answers.",
+    "citation_count": 97,
+    "influential_citation_count": 7,
+    "cites": [
+      "arxiv-2307-15043",
+      "arxiv-2406-04313",
+      "arxiv-2407-21783",
+      "arxiv-2410-05295",
+      "arxiv-2410-09024",
+      "arxiv-2412-16339"
+    ]
+  },
+  {
+    "id": "src-llm-privacy-survey",
+    "type": "source",
+    "source_type": "paper",
+    "title": "A Survey on Privacy Risks and Protection in Large Language Models",
+    "authors": [
+      "Kang Chen",
+      "Xiuze Zhou",
+      "Yuanguo Lin",
+      "Shibo Feng",
+      "Li Shen",
+      "Pengcheng Wu"
+    ],
+    "org": "Jimei University; Wenzhou-Kean University; HKUST(GZ); NTU; New York University",
+    "venue": "Journal of King Saud University - Computer and Information Sciences 2025",
+    "url": "https://arxiv.org/abs/2505.01976",
+    "published": "2025-05-04",
+    "retrieved": "2026-06-23",
+    "abstract": "Comprehensive survey of privacy risks in LLMs. Analyzes privacy leakage (sensitive-information leakage, contextual leakage, personal-preferences leakage) and privacy attacks (model-based: backdoor/model-inversion/model-stealing; data-based: data-stealing/training-data-extraction; user-based: membership-inference/attribute-inference). Reviews countermeasures (data cleaning, inference detection, federated learning, differential privacy, cryptography, backdoor removal, confidential computing) and proposes future directions: privacy-preserving model compression, privacy risk assessment, secure knowledge transfer, interdisciplinary governance frameworks.",
+    "citation_count": 45,
+    "influential_citation_count": 3,
+    "cites": [
+      "src-shokri-membership-inference-2017"
+    ]
+  },
+  {
+    "id": "src-autonomy-induced-risks-survey",
+    "type": "source",
+    "source_type": "paper",
+    "title": "A Survey on Autonomy-Induced Security Risks in Large Model-Based Agents",
+    "authors": [
+      "Hang Su",
+      "Jun Luo",
+      "Chang Liu",
+      "Xiao Yang",
+      "Yichi Zhang",
+      "Yinpeng Dong",
+      "Jun Zhu"
+    ],
+    "org": "Tsinghua University (Dept. CS&Tech, THBI Lab, Tsinghua-Bosch Joint Center for ML); BNRist Center; RealAI",
+    "venue": "IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI) 2025",
+    "url": "https://arxiv.org/abs/2506.23844",
+    "published": "2025-06-30",
+    "retrieved": "2026-06-23",
+    "abstract": "Survey examining structural foundations of large-model agents (memory retention, modular tool use, recursive planning, reflective reasoning) and the qualitatively new security risks autonomy introduces (memory poisoning, tool misuse, reward hacking, emergent misalignment) that extend beyond conventional systems and standalone LLMs. Introduces a five-level autonomy taxonomy, maps risks to a modular agent architecture and across abilities x autonomy levels, formalizes failure modes as Constrained Markov Decision Process (CMDP) constraint violations, reviews a vertically integrated defense stack, and proposes the Reflective Risk-Aware Agent Architecture (R2A2) for intrinsic safety.",
+    "cited_by": [
+      "src-2606.10749"
+    ],
+    "citation_count": 25,
+    "influential_citation_count": 2,
+    "cites": [
+      "arxiv-2307-15043",
+      "arxiv-2407-21783",
+      "arxiv-2410-07283",
+      "arxiv-2410-09024",
+      "arxiv-2505-04806",
+      "arxiv-medical-hallucinations-2025",
+      "src-aitm-2502.14847",
+      "src-arxiv-2407-12784-agentpoison"
+    ]
+  },
+  {
+    "id": "src-is-bench-embodied-safety",
+    "type": "source",
+    "source_type": "paper",
+    "title": "IS-Bench: Evaluating Interactive Safety of VLM-Driven Embodied Agents in Daily Household Tasks",
+    "authors": [
+      "Xiaoya Lu",
+      "Zeren Chen",
+      "Xuhao Hu",
+      "Yijin Zhou",
+      "Weichen Zhang",
+      "Dongrui Liu",
+      "Lu Sheng",
+      "Jing Shao"
+    ],
+    "org": "Shanghai Jiao Tong University; Shanghai AI Laboratory; Beihang University; Fudan University",
+    "venue": "AAAI 2026",
+    "url": "https://arxiv.org/abs/2506.16402",
+    "published": "2025-06-19",
+    "retrieved": "2026-06-23",
+    "abstract": "IS-Bench is the first multi-modal interactive safety benchmark for VLM-driven embodied agents, featuring 161 challenging scenarios with 388 unique safety risks across 10 domestic categories, instantiated in the OmniGibson high-fidelity physics simulator. It introduces process-oriented evaluation that verifies whether risk-mitigation actions are performed in the correct procedural order (before/after risk-prone steps), unlike termination-oriented benchmarks that only check final state. Experiments on 16 VLMs (GPT-4o, Gemini-2.5, Claude-3.7-Sonnet, Qwen2.5-VL, InternVL series, Llama-3.2) show agents lack interactive safety awareness, and safety-aware CoT improves safety but compromises task success.",
+    "citation_count": 26,
+    "influential_citation_count": 3
+  },
+  {
+    "id": "src-trust-ai-benchmarks",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Can We Trust AI Benchmarks? An Interdisciplinary Review of Current Issues in AI Evaluation",
+    "authors": [
+      "Maria Eriksson",
+      "Erasmo Purificato",
+      "Arman Noroozian",
+      "João Vinagre",
+      "Guillaume Chaslot",
+      "Emilia Gómez",
+      "David Fernandez-Llorca"
+    ],
+    "org": "European Commission, Joint Research Centre (JRC)",
+    "venue": "AAAI/ACM AIES 2025",
+    "url": "https://arxiv.org/abs/2502.06559",
+    "published": "2025-02-10",
+    "retrieved": "2026-06-23",
+    "abstract": "Interdisciplinary meta-review of ~110 studies (Jan 2014-Dec 2024, snowball-sampled, >half from 2023+) on shortcomings of quantitative AI benchmarking. Presents nine interrelated reasons to be cautious with benchmarks: (1) data collection/annotation/documentation problems, (2) weak construct validity & epistemological claims, (3) sociocultural context & gap, (4) narrow diversity & scope, (5) economic/competitive/commercial roots, (6) rigging/gaming/measure-becoming-target, (7) dubious community vetting & path dependencies, (8) rapid development & benchmark saturation, (9) AI complexity & unknown unknowns. Argues AI safety benchmarks must themselves be subjected to the same transparency/fairness/explainability demands as the models they evaluate, especially as the EU AI Act relies on benchmarks for high-risk and GPAI-systemic-risk assessment.",
+    "citation_count": 61,
+    "influential_citation_count": 5,
+    "cites": [
+      "arxiv-2406-07358",
+      "arxiv-2412-04984",
+      "arxiv-2412-14093",
+      "src-carlini-extract-training-data-2023"
+    ]
+  },
+  {
+    "id": "src-jitvul-vuln-detection",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Benchmarking LLMs and LLM-based Agents in Practical Vulnerability Detection for Code Repositories",
+    "authors": [
+      "Alperen Yildiz",
+      "Sin G. Teo",
+      "Yiling Lou",
+      "Yebo Feng",
+      "Chong Wang",
+      "Dinil Mon Divakaran"
+    ],
+    "org": "National University of Singapore; Institute for Infocomm Research A*STAR; Fudan University; Nanyang Technological University",
+    "venue": "ACL 2025 (Findings)",
+    "url": "https://arxiv.org/abs/2503.03586",
+    "published": "2025-03-05",
+    "retrieved": "2026-06-23",
+    "abstract": "Introduces JITVUL, a just-in-time (JIT) vulnerability-detection benchmark linking each function to its vulnerability-introducing and fixing commits, built from 879 CVEs spanning 91 CWEs (1,758 pairwise commits) on top of PrimeVul. Enables pairwise evaluation (vulnerable vs patched-benign versions) and interprocedural context. Evaluates Plain LLM, Dependency-Augmented LLM, and ReAct Agents (with get_callers/get_callees/get_definition tools) across CoT/few-shot prompting and GPT-4o/GPT-4o-mini/Llama-3.1-8B. Finds ReAct Agents leverage thought-action-observation + interprocedural context to better distinguish vulnerable from benign code, but both LLMs and agents show inconsistent analysis (misidentifying vulnerabilities or over-analyzing security guards), indicating significant room for improvement.",
+    "citation_count": 42,
+    "influential_citation_count": 5
+  },
+  {
+    "id": "src-fitd-2502.19820",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Foot-In-The-Door: A Multi-turn Jailbreak for LLMs",
+    "authors": [
+      "Zixuan Weng",
+      "Xiaolong Jin",
+      "Jinyuan Jia",
+      "Xiangyu Zhang"
+    ],
+    "org": "University of Notre Dame; Purdue University; Pennsylvania State University",
+    "venue": "EMNLP 2025",
+    "url": "https://arxiv.org/abs/2502.19820",
+    "published": "2025-03-28",
+    "retrieved": "2026-06-23",
+    "abstract": "FITD is a multi-turn jailbreak leveraging the psychological foot-in-the-door phenomenon: minor initial commitments lower resistance to larger transgressions. The attack progressively escalates malicious intent through intermediate bridge prompts and self-aligns the model's responses to induce toxic outputs. Achieves an average 94% attack success rate across seven widely used models, outperforming SOTA methods. Includes an in-depth analysis of LLM self-corruption.",
+    "citation_count": 38,
+    "influential_citation_count": 8,
+    "cites": [
+      "arxiv-2204-05862",
+      "arxiv-2307-15043",
+      "arxiv-2310-08419",
+      "arxiv-2311-08268",
+      "arxiv-2402-04249",
+      "arxiv-2404-01833",
+      "arxiv-2406-04313",
+      "arxiv-2407-21783"
+    ]
+  },
+  {
+    "id": "src-pif-2502.03052",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Understanding and Enhancing the Transferability of Jailbreaking Attacks",
+    "authors": [
+      "Runqi Lin",
+      "Bo Han",
+      "Fengwang Li",
+      "Tongliang Liu"
+    ],
+    "org": "The University of Sydney; Hong Kong Baptist University",
+    "venue": "ICLR 2025",
+    "url": "https://arxiv.org/abs/2502.03052",
+    "published": "2025-05-17",
+    "retrieved": "2026-06-23",
+    "abstract": "This work analyzes why jailbreaking attacks fail to transfer to proprietary LLMs by examining their impact on the model's intent perception. Adversarial sequences create deceptive high-importance regions that divert the source LLM's focus away from malicious-intent tokens, but fail to mislead target LLMs due to inherent distributional dependency from overfitting source-model parameters. The proposed Perceived-importance Flatten (PiF) method uniformly disperses focus across neutral-intent tokens via synonym token replacement, providing efficient transferable red-teaming evaluation of proprietary LLMs.",
+    "citation_count": 27,
+    "influential_citation_count": 1,
+    "cites": [
+      "arxiv-2204-05862",
+      "arxiv-2307-15043",
+      "arxiv-2309-10253",
+      "arxiv-2310-06474",
+      "arxiv-2310-08419",
+      "arxiv-2311-08268",
+      "arxiv-2312-02119",
+      "arxiv-2404-01318",
+      "src-yong-lowresource-jb-2023"
+    ]
+  },
+  {
+    "id": "src-advreason-2502.01633",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Adversarial Reasoning at Jailbreaking Time",
+    "authors": [
+      "Mahdi Sabbaghi",
+      "Paul Kassianik",
+      "George Pappas",
+      "Yaron Singer",
+      "Amin Karbasi",
+      "Hamed Hassani"
+    ],
+    "org": "University of Pennsylvania; Robust Intelligence @ Cisco",
+    "venue": "ICML 2025",
+    "url": "https://arxiv.org/abs/2502.01633",
+    "published": "2025-06-25",
+    "retrieved": "2026-06-23",
+    "abstract": "Adversarial Reasoning is a gradient-free jailbreaking framework that applies test-time-compute reasoning to exploit a target LLM's loss signal. It formulates jailbreaking as optimizing a reasoning string via three steps — reason (CoT tree), verify (loss-as-process-reward-model score), and search (tree search with backtracking) — realized by Attacker, Feedback, and Refiner LLM modules. Achieves SOTA attack success rates against many aligned and adversarially-trained LLMs, including those that trade inference-time compute for safety, laying the foundation for more robust AI systems.",
+    "citation_count": 26,
+    "influential_citation_count": 1,
+    "cites": [
+      "arxiv-2307-15043",
+      "arxiv-2310-08419",
+      "arxiv-2312-02119",
+      "arxiv-2402-04249",
+      "arxiv-2402-10260",
+      "arxiv-2402-16822",
+      "arxiv-2404-01318",
+      "arxiv-2406-04313",
+      "arxiv-2410-05295",
+      "arxiv-2410-09024",
+      "arxiv-2412-16339"
+    ]
+  },
+  {
+    "id": "src-topicfliprag-2502.01386",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Topic-FlipRAG: Topic-Orientated Adversarial Opinion Manipulation Attacks to Retrieval-Augmented Generation Models",
+    "authors": [
+      "Yuyang Gong",
+      "Zhuo Chen",
+      "Jiawei Liu",
+      "Miaokun Chen",
+      "Fengchang Yu",
+      "Wei Lu",
+      "XiaoFeng Wang",
+      "Xiaozhong Liu"
+    ],
+    "org": "Wuhan University; Nanyang Technological University; Worcester Polytechnic Institute",
+    "venue": "USENIX Security 2025",
+    "url": "https://arxiv.org/abs/2502.01386",
+    "published": "2025-12-29",
+    "retrieved": "2026-06-23",
+    "abstract": "Topic-FlipRAG is a two-stage adversarial opinion manipulation attack on RAG systems that shifts the stance polarity of model outputs across multiple related topic queries (not single factual queries). Stage 1 (knowledge-guided attack) uses an LLM's internal semantic knowledge to perform stealthy multi-granular edits with polarity control on a target document; Stage 2 uses gradients from an open-source neural ranking model (NRM) to generate an adversarial trigger maximizing retrieval. The poisoned document is injected into the RAG knowledge base. Experiments show significant opinion shifts; existing defenses (perplexity detection, masking, paraphrasing, reranking) are inadequate.",
+    "cited_by": [
+      "src-2606.08661"
+    ],
+    "citation_count": 24,
+    "influential_citation_count": 3,
+    "cites": [
+      "arxiv-2402-07867"
+    ]
+  },
+  {
+    "id": "src-llmattacker-2501.15850",
+    "type": "source",
+    "source_type": "paper",
+    "title": "LLM-attacker: Enhancing Closed-loop Adversarial Scenario Generation for Autonomous Driving with Large Language Models",
+    "authors": [
+      "Yuewen Mei",
+      "Tong Nie",
+      "Jian Sun",
+      "Ye Tian"
+    ],
+    "org": "Tongji University; The Hong Kong Polytechnic University",
+    "venue": "IEEE Transactions on Intelligent Transportation Systems (TITS) 2025",
+    "url": "https://arxiv.org/abs/2501.15850",
+    "published": "2025-06-07",
+    "retrieved": "2026-06-23",
+    "abstract": "LLM-attacker is a closed-loop adversarial scenario generation framework for autonomous driving systems (ADS). Multiple collaborating LLM agents (Initialization, Reflection, Modification) automatically identify optimal adversarial vehicles within complex traffic scenes; their adversarial trajectories are optimized to maximize collision likelihood with the ego vehicle, and scenarios are iteratively refined based on ADS performance for adversarial training. LLM-attacker creates more dangerous scenarios than baseline methods, and ADS trained with it achieves a collision rate half that of training with normal scenarios — supporting safety assurance and policy verification compliant with regulatory standards.",
+    "cited_by": [
+      "arxiv-2512-20677"
+    ],
+    "citation_count": 32,
+    "influential_citation_count": 2
+  },
+  {
+    "id": "src-agentsundersiege-2504.00218",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Agents Under Siege: Breaking Pragmatic Multi-Agent LLM Systems with Optimized Prompt Attacks",
+    "authors": [
+      "Rana Muhammad Shahroz Khan",
+      "Zhen Tan",
+      "Sukwon Yun",
+      "Charles Fleming",
+      "Tianlong Chen"
+    ],
+    "org": "University of North Carolina at Chapel Hill; Arizona State University; Cisco",
+    "venue": "ACL 2025",
+    "url": "https://arxiv.org/abs/2504.00218",
+    "published": "2025-10-08",
+    "retrieved": "2026-06-23",
+    "abstract": "This work attacks pragmatic multi-agent LLM systems that have real constraints: limited token bandwidth, message latency, and distributed safety mechanisms. It designs a permutation-invariant adversarial attack that optimizes prompt distribution across latency- and bandwidth-constrained network topologies to bypass distributed safety. The attack path is formulated as a maximum-flow minimum-cost problem, coupled with a novel Permutation-Invariant Evasion Loss (PIEL), leveraging graph-based optimization to maximize attack success while minimizing detection risk. Across Llama, Mistral, Gemma, DeepSeek-R1 variants on JailbreakBench, AdversarialBench, and In-the-wild Jailbreak Prompts, it outperforms conventional attacks by up to 7x; existing defenses (Llama-Guard variants, PromptGuard) fail to prohibit it.",
+    "cited_by": [
+      "arxiv-2606-02302",
+      "src-2606.10749",
+      "src-saga-2504.21034"
+    ],
+    "citation_count": 26,
+    "influential_citation_count": 3,
+    "cites": [
+      "arxiv-2212-08073",
+      "arxiv-2307-15043",
+      "arxiv-2407-21783"
+    ]
+  },
+  {
+    "id": "src-2502-00306",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Riddle Me This! Stealthy Membership Inference for Retrieval-Augmented Generation",
+    "authors": [
+      "Ali Naseh",
+      "Yuefeng Peng",
+      "Anshuman Suri",
+      "Harsh Chaudhari",
+      "Alina Oprea",
+      "Amir Houmansadr"
+    ],
+    "org": "University of Massachusetts Amherst; Northeastern University",
+    "venue": "ACM CCS 2025",
+    "url": "https://arxiv.org/abs/2502.00306",
+    "published": "2025-06-30",
+    "retrieved": "2026-06-23",
+    "abstract": "Introduces Interrogation Attack (IA), a black-box membership inference attack against RAG datastores that crafts natural-text queries answerable only with the target document, achieving near-perfect inference with ~30 queries while evading off-the-shelf prompt-injection/jailbreak detectors. Reports 2x TPR@1%FPR improvement over prior RAG inference attacks at <$0.02/document, with detection rates as low as 5% vs ~90% for prior attacks.",
+    "citation_count": 24,
+    "influential_citation_count": 5,
+    "cites": [
+      "arxiv-2407-21783"
+    ]
+  },
+  {
+    "id": "src-2509-07764",
+    "type": "source",
+    "source_type": "paper",
+    "title": "AgentSentinel: An End-to-End and Real-Time Security Defense Framework for Computer-Use Agents",
+    "authors": [
+      "Haitao Hu",
+      "Peng Chen",
+      "Yanpeng Zhao",
+      "Yuqi Chen"
+    ],
+    "org": "ShanghaiTech University; Independent Researchers",
+    "venue": "ACM CCS 2025",
+    "url": "https://arxiv.org/abs/2509.07764",
+    "published": "2025-09-09",
+    "retrieved": "2026-06-23",
+    "abstract": "Proposes AgentSentinel, an end-to-end real-time security defense for computer-use agents that intercepts sensitive OS operations (process/file/network) via eBPF+LSM tracing and a hybrid rule-based + LLM-based auditor that correlates task context with system traces. Presents BadComputerUse, a benchmark of 60 attack scenarios across seven attack categories (avg ASR 87% on 4 SOTA LLMs). AgentSentinel achieves avg defense success rate 79.6% (up to 96.7% with Claude 3.7 Sonnet), FPR 10.8%, defends 17/20 adaptive attacks.",
+    "cited_by": [
+      "arxiv-2606-02302",
+      "src-doubtprobe-2606-16527"
+    ],
+    "citation_count": 21,
+    "influential_citation_count": 1,
+    "cites": [
+      "arxiv-2307-15043"
+    ]
+  },
+  {
+    "id": "src-2509-21011",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Automatic Red Teaming LLM-based Agents with Model Context Protocol Tools",
+    "authors": [
+      "Ping He",
+      "Changjiang Li",
+      "Binbin Zhao",
+      "Tianyu Du",
+      "Shouling Ji"
+    ],
+    "org": "Zhejiang University; Palo Alto Networks",
+    "venue": "IEEE Transactions on Information Forensics and Security (TIFS) 2025",
+    "url": "https://arxiv.org/abs/2509.21011",
+    "published": "2025-09-25",
+    "retrieved": "2026-06-23",
+    "abstract": "Proposes AutoMalTool, the first automated red-teaming framework that generates malicious MCP server packages (tool-poisoning attacks) from benign ones via a four-agent system (Initial Generator, Oracle, Effectiveness Evaluator, Tool Optimizer). Targets two malicious behaviors: incorrect parameter invocation (IPI) and output results manipulation (ORM). Evaluated on Claude Desktop and Cline across 53 MCP tools / 3 servers (Alpaca, WhatsApp, Filesystem): avg GSR ~85%, avg ESR 35.3% (>70% in some cases), cost ~$0.03/tool, <200s/tool. Evades MCP-Scan (detection 11.1%) and A.I.G (23.4%).",
+    "cited_by": [
+      "src-2606.10749"
+    ],
+    "citation_count": 14,
+    "influential_citation_count": 0,
+    "cites": [
+      "arxiv-2309-10253",
+      "arxiv-2410-07283",
+      "arxiv-2411-15594",
+      "src-datasentinel-2504.11358",
+      "src-toolhijacker-2504.19793"
+    ]
+  },
+  {
+    "id": "src-2512-07086",
+    "type": "source",
+    "source_type": "paper",
+    "title": "ThinkTrap: Denial-of-Service Attacks against Black-box LLM Services via Infinite Thinking",
+    "authors": [
+      "Yunzhe Li",
+      "Jianan Wang",
+      "Hongzi Zhu",
+      "James Lin",
+      "Shan Chang",
+      "Minyi Guo"
+    ],
+    "org": "Shanghai Jiao Tong University; Donghua University",
+    "venue": "Network and Distributed System Security Symposium (NDSS) 2026",
+    "url": "https://arxiv.org/abs/2512.07086",
+    "published": "2025-12-08",
+    "retrieved": "2026-06-23",
+    "abstract": "Proposes ThinkTrap, a black-box input-space optimization DoS attack that crafts adversarial prompts inducing excessively long / non-terminating LLM reasoning to exhaust backend GPU compute. Maps discrete tokens to a continuous embedding space, applies derivative-free (CMA-ES) optimization in a low-dimensional subspace, and decodes via surrogate-vocabulary nearest-neighbor. Evaluated on 8 LLMs (GPT-o4, Gemini 2.5 Pro, DeepSeek R1, etc.); even at 10 RPM degrades throughput to as low as 1% of capacity, up to 100x latency, sometimes complete service failure, at ~$0.02 per attack.",
+    "cited_by": [
+      "arxiv-2606-14517"
+    ],
+    "citation_count": 16,
+    "influential_citation_count": 3,
+    "cites": [
+      "arxiv-2307-15043",
+      "src-shumailov-sponge-2020"
+    ]
+  },
+  {
+    "id": "src-2501-09798",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Fun-tuning: Characterizing the Vulnerability of Proprietary LLMs to Optimization-based Prompt Injection Attacks via the Fine-Tuning Interface",
+    "authors": [
+      "Andrey Labunets",
+      "Nishit V. Pandya",
+      "Ashish Hooda",
+      "Xiaohan Fu",
+      "Earlence Fernandes"
+    ],
+    "org": "UC San Diego; University of Wisconsin Madison",
+    "venue": "IEEE Symposium on Security and Privacy (S&P) 2025",
+    "url": "https://arxiv.org/abs/2501.09798",
+    "published": "2025-05-10",
+    "retrieved": "2026-06-23",
+    "abstract": "Surfaces a new graybox attack channel: the remote fine-tuning interface of closed-weight LLMs leaks a loss-like signal that an attacker can exploit (via a single very-small-learning-rate fine-tune iteration plus a de-randomization of the API's permuted losses) to guide discrete optimization of prompt-injection payloads. On the PurpleLlama (PPL40) benchmark, achieves 65% ASR on Gemini 1.5 Flash and 82% on Gemini 1.0 Pro, transferring across the Gemini family (>72-88% in some configs), at <$10 total / ~90 fine-tuning calls per example. Google deployed a mitigation in April 2025 (capped learning rate, min batch size 4).",
+    "citation_count": 18,
+    "influential_citation_count": 0,
+    "cites": [
+      "arxiv-2307-15043",
+      "arxiv-2309-10253",
+      "arxiv-2310-08419",
+      "arxiv-2312-02119",
+      "arxiv-2403-05530",
+      "src-tramer-model-stealing-2016"
+    ]
+  },
+  {
+    "id": "src-2505-24445",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Learning Safety Constraints for Large Language Models",
+    "authors": [
+      "Xin Chen",
+      "Yarden As",
+      "Andreas Krause"
+    ],
+    "org": "ETH Zurich",
+    "venue": "International Conference on Machine Learning (ICML) 2025",
+    "url": "https://arxiv.org/abs/2505.24445",
+    "published": "2025-05-30",
+    "retrieved": "2026-06-23",
+    "abstract": "Proposes SaP (Safety Polytope), a geometric, post-hoc approach that learns multiple safety constraints as the facets of a polytope in an LLM's representation space and enforces them via inference-time representation steering (SafeFlow), without modifying model weights. Frames LLM safety as a Constrained Markov Decision Process / convex-polytope learning problem. On HarmBench across 9 attacks and 3 LLMs (Llama2-7B, Ministral-8B, Qwen2-1.5B), reduces attack success rate (e.g., Llama2 12.92%->0.26%) while preserving MMLU accuracy; learned facets specialize to distinct semantic harm categories.",
+    "citation_count": 12,
+    "influential_citation_count": 2,
+    "cites": [
+      "arxiv-2307-15043",
+      "arxiv-2312-06942",
+      "arxiv-2402-04249",
+      "arxiv-2404-01318",
+      "arxiv-2406-04313",
+      "src-constitutional-classifiers",
+      "src-realtoxicityprompts-2020"
+    ]
+  },
+  {
+    "id": "src-know-thy-judge-2503.04474",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Know Thy Judge: On the Robustness Meta-Evaluation of LLM Safety Judges",
+    "authors": [
+      "Francisco Eiras",
+      "Eliott Zemour",
+      "Eric Lin",
+      "Vaikkunth Mugunthan"
+    ],
+    "org": "Dynamo AI",
+    "venue": "ICLR 2025 Workshop (I Can't Believe It's Not Better)",
+    "url": "https://arxiv.org/abs/2503.04474",
+    "published": "2025-03-06",
+    "retrieved": "2026-06-23",
+    "abstract": "LLM-based judges underpin safety evaluation processes (offline benchmarking, automated red-teaming, online guardrailing). The paper highlights two overlooked challenges in safety-judge meta-evaluation: (i) evaluations in the wild (prompt sensitivity, distribution shift) and (ii) adversarial attacks targeting the judge. Small stylistic changes to model output cause jumps of up to 0.24 in false negative rate; adversarial output-level modifications can fool some judges into misclassifying 100% of harmful generations as safe, revealing that low attack success under a judge can create a false sense of security.",
+    "cited_by": [
+      "src-scanners-lie-evaluator-instability"
+    ],
+    "citation_count": 17,
+    "influential_citation_count": 3,
+    "cites": [
+      "arxiv-2402-04249",
+      "arxiv-2404-01318"
+    ]
+  },
+  {
+    "id": "src-leaderboard-manipulation-2501.07493",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Exploring and Mitigating Adversarial Manipulation of Voting-Based Leaderboards",
+    "authors": [
+      "Yangsibo Huang",
+      "Milad Nasr",
+      "Anastasios Angelopoulos",
+      "Nicholas Carlini",
+      "Wei-Lin Chiang",
+      "Christopher A. Choquette-Choo",
+      "Daphne Ippolito",
+      "Matthew Jagielski",
+      "Katherine Lee",
+      "Ken Ziyu Liu",
+      "Ion Stoica",
+      "Florian Tramer",
+      "Chiyuan Zhang"
+    ],
+    "org": "Google / UC Berkeley / CMU / Stanford / ETH Zurich",
+    "venue": "ICML 2025",
+    "url": "https://arxiv.org/abs/2501.07493",
+    "published": "2025-01-13",
+    "retrieved": "2026-06-23",
+    "abstract": "Voting-based LLM leaderboards (e.g., Chatbot Arena) rank models via crowdsourced anonymous pairwise votes and are widely trusted as fair capability measures. The paper shows that without bot protection and similar defenses, these benchmarks are vulnerable to adversarial manipulation. An attacker can alter the leaderboard (promote a favorite model or demote competitors) at the cost of roughly a thousand votes (verified in a simulated offline Chatbot Arena). The attack is two-step: (1) de-anonymize which model produced a reply with >95% accuracy, (2) consistently vote for/against a target. Working with the Chatbot Arena developers, they identify, propose and implement mitigations (Cloudflare bot protection, malicious-user detection, rate limiting, reCAPTCHA, login) that substantially raise attack cost.",
+    "citation_count": 20,
+    "influential_citation_count": 4,
+    "cites": [
+      "arxiv-2307-15043",
+      "arxiv-2403-05530",
+      "arxiv-2407-21783"
+    ]
+  },
+  {
+    "id": "src-saeuron-2501.18052",
+    "type": "source",
+    "source_type": "paper",
+    "title": "SAeUron: Interpretable Concept Unlearning in Diffusion Models with Sparse Autoencoders",
+    "authors": [
+      "Bartosz Cywinski",
+      "Kamil Deja"
+    ],
+    "org": "Warsaw University of Technology / IDEAS NCBR / IDEAS Research Institute",
+    "venue": "ICML 2025",
+    "url": "https://arxiv.org/abs/2501.18052",
+    "published": "2025-05-21",
+    "retrieved": "2026-06-23",
+    "abstract": "Diffusion models can inadvertently generate harmful or undesirable content. SAeUron is a machine-unlearning method that leverages features learned by sparse autoencoders (SAEs) to remove unwanted concepts in text-to-image diffusion models. SAEs trained unsupervised on activations from multiple denoising timesteps of Stable Diffusion capture sparse, interpretable concept-specific features; a score-based feature-selection method enables precise interventions on model activations to block targeted content while preserving overall performance. SAeUron outperforms prior methods on the UnlearnCanvas benchmark for concept and style unlearning, effectively eliminates nudity on I2P, supports removing multiple concepts with a single SAE, and—because SAEs are trained unsupervised—mitigates the possibility of generating unwanted content under adversarial attack.",
+    "citation_count": 65,
+    "influential_citation_count": 5
+  },
+  {
+    "id": "src-internal-activation-revision-2501.16378",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Internal Activation Revision: Safeguarding Vision Language Models Without Parameter Update",
+    "authors": [
+      "Qing Li",
+      "Jiahui Geng",
+      "Zongxiong Chen",
+      "Kun Song",
+      "Lei Ma",
+      "Fakhri Karray"
+    ],
+    "org": "Mohamed bin Zayed University of Artificial Intelligence / Fraunhofer FOKUS / University of Tokyo / University of Alberta",
+    "venue": "AAAI 2025",
+    "url": "https://arxiv.org/abs/2501.16378",
+    "published": "2025-01-24",
+    "retrieved": "2026-06-23",
+    "abstract": "Vision-language models (VLMs) are more susceptible than their backbone LLMs to generating harmful content. The integration of images significantly shifts internal activations during the forward pass, diverging from text-only inputs, and the inherited LLM safety alignment is not robust to these activation discrepancies, leaving VLMs vulnerable to even the simplest jailbreaking attacks. The paper proposes internal activation revision, a training-free approach that revises activations during generation (at layer and head granularity) to steer the model toward safer outputs, using positive/negative sample revision vectors. The method reduces attack success rates by 48.94%, 34.34%, 43.92%, and 52.98% on SafeBench, Safe-Unsafe, Unsafe, and MM-SafetyBench respectively, while minimally impacting helpfulness.",
+    "citation_count": 15,
+    "influential_citation_count": 0
+  },
+  {
+    "id": "src-clipure-2502.18176",
+    "type": "source",
+    "source_type": "paper",
+    "title": "CLIPure: Purification in Latent Space via CLIP for Adversarially Robust Zero-Shot Classification",
+    "authors": [
+      "Mingkun Zhang",
+      "Keping Bi",
+      "Wei Chen",
+      "Jiafeng Guo",
+      "Xueqi Cheng"
+    ],
+    "org": "State Key Lab of AI Safety, Institute of Computing Technology, Chinese Academy of Sciences / University of Chinese Academy of Sciences",
+    "venue": "ICLR 2025",
+    "url": "https://arxiv.org/abs/2502.18176",
+    "published": "2025-03-02",
+    "retrieved": "2026-06-23",
+    "abstract": "The paper builds an adversarially robust zero-shot image classifier grounded on CLIP, using adversarial purification (no adversarial training, so it can cope with unforeseen attacks). It formulates purification risk as the KL divergence between the purification (denoising) and attack (perturbing) processes via bidirectional Stochastic Differential Equations, motivating purification in CLIP's multi-modal latent space. Two variants: CLIPure-Diff (models image latent likelihood with DaLLE-2's DiffusionPrior) and CLIPure-Cos (models likelihood via cosine similarity between image embedding and 'a photo of a.' text embedding — the first purification method not based on generative models). CLIPure boosts SOTA robustness from 71.7% to 91.1% on CIFAR-10, 59.6% to 72.6% on ImageNet, and gives 108% relative average-robustness improvement across 13 datasets.",
+    "citation_count": 13,
+    "influential_citation_count": 1
+  },
+  {
+    "id": "src-apd-semantic-graph-2605.27823",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Disentangling Adversarial Prompts: A Semantic-Graph Defense for Robust LLM Security",
+    "authors": [
+      "Xiang Fang",
+      "Wanlong Fang"
+    ],
+    "org": "Huazhong University of Science and Technology / Nanyang Technological University",
+    "venue": "AAAI 2026",
+    "url": "https://arxiv.org/abs/2605.27823",
+    "published": "2026-05-27",
+    "retrieved": "2026-06-23",
+    "abstract": "LLMs are vulnerable to adversarial prompts that exploit semantic ambiguities to bypass safety mechanisms (jailbreaking, prompt injection). The paper proposes the Adversarial Prompt Disentanglement (APD) framework, a proactive defense that identifies and neutralizes malicious components in input prompts before they reach the LLM. APD integrates three innovations: (1) a mutual-information-based semantic decomposition (VAE) that isolates adversarial and benign prompt components by minimizing their mutual information for statistical independence; (2) a graph-based intent classification using spectral analysis (semantic graph Laplacian, Cheeger's inequality) to detect malicious patterns; and (3) a lightweight transformer-based Adversarial Intent Detector trained on real-world toxic/jailbreaking datasets. APD reduces harmful output generation by over 85% while maintaining negligible impact on model performance, supporting real-time deployment.",
+    "citation_count": 22,
+    "influential_citation_count": 0,
+    "cites": [
+      "src-2605-26501"
+    ],
+    "cited_by": [
+      "src-2605-26501"
+    ]
+  },
+  {
+    "id": "src-2507-10695",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Exploring User Security and Privacy Attitudes and Concerns Toward the Use of General-Purpose LLM Chatbots for Mental Health",
+    "authors": [
+      "Jabari Kwesi",
+      "Jiaxun Cao",
+      "Riya Manchanda",
+      "Pardis Emami-Naeini"
+    ],
+    "org": "Duke University",
+    "venue": "USENIX Security 2025",
+    "url": "https://arxiv.org/abs/2507.10695",
+    "published": "2025-07-14",
+    "retrieved": "2026-06-23",
+    "abstract": "Qualitative study (21 semi-structured interviews, U.S. adults, Aug-Sep 2024) of users' security & privacy attitudes toward general-purpose LLM chatbots (ChatGPT, Pi, Replika, Gemini, Copilot, My AI) used for mental health support. Identifies critical misconceptions: users conflate LLM human-like empathy with accountability, mistakenly believe interactions are HIPAA-protected, and undervalue 'intangible vulnerability' (emotional/psychological disclosures vs financial/location data). Proposes harm-reduction framework: contextual just-in-time warnings, strong default protections/ephemeral storage, targeted oversight/audits.",
+    "citation_count": 24,
+    "influential_citation_count": 1
+  },
+  {
+    "id": "src-2503-18172",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Unmasking Deceptive Visuals: Benchmarking Multimodal Large Language Models on Misleading Chart Question Answering",
+    "authors": [
+      "Zixin Chen",
+      "Sicheng Song",
+      "Kashun Shum",
+      "Yanna Lin",
+      "Rui Sheng",
+      "Weiqi Wang",
+      "Huamin Qu"
+    ],
+    "org": "The Hong Kong University of Science and Technology",
+    "venue": "EMNLP 2025",
+    "url": "https://arxiv.org/abs/2503.18172",
+    "published": "2025-09-20",
+    "retrieved": "2026-06-23",
+    "abstract": "Introduces Misleading ChartQA benchmark: 3,026 curated multimodal MCQ examples spanning 21 misleader types and 10 chart types, each with standardized D3.js chart code, CSV data, MCQ, and labeled explanations. Built via a misleader taxonomy (4 groups: manipulated data, annotation, visual encoding, scale), seed MCQ design, GPT-4o-driven augmentation, and intensive expert validation (20 PhD students, $30/hr, 3-stage). Benchmarks 24 SOTA MLLMs; proposes a Region-Aware Misleader Reasoning (RAMR) pipeline. Finds models score ~40% (vs ~90% on standard ChartQA), are more misled by misleading distractors than generic ones, and weakest on scale manipulations.",
+    "citation_count": 16,
+    "influential_citation_count": 1
+  },
+  {
+    "id": "src-2503-09598",
+    "type": "source",
+    "source_type": "paper",
+    "title": "How to Protect Yourself from 5G Radiation? Investigating LLM Responses to Implicit Misinformation",
+    "authors": [
+      "Ruohao Guo",
+      "Wei Xu",
+      "Alan Ritter"
+    ],
+    "org": "Georgia Institute of Technology",
+    "venue": "EMNLP 2025",
+    "url": "https://arxiv.org/abs/2503.09598",
+    "published": "2025-09-29",
+    "retrieved": "2026-06-23",
+    "abstract": "Introduces ECHOMIST, the first comprehensive benchmark for implicit misinformation: false assumptions embedded as unchallenged premises in user queries to LLMs. Curated from real human-LLM conversations (WildChat, LMSYS-Chat-1M), social media (Snopes-traced), and LLM-rewritten queries; 2,691 queries (2,085 implicit) over 216 misinformation claims, 5 query-type taxonomy. Evaluates 15 SOTA LLMs via a Claude-3.5-Sonnet LLM-as-judge (r=0.92 with humans). Finds models perform alarmingly poorly: reinforce implicit misinformation in 25.8%-57% of cases, worse on post-training-cutoff claims. Proposes Self-Alert and RAG mitigations (GPT-4 +13.4% / +15.7%).",
+    "citation_count": 16,
+    "influential_citation_count": 0,
+    "cites": [
+      "arxiv-2407-21783"
+    ]
+  },
+  {
+    "id": "src-2505-17332",
+    "type": "source",
+    "source_type": "paper",
+    "title": "SweEval: Do LLMs Really Swear? A Safety Benchmark for Testing Limits for Enterprise Use",
+    "authors": [
+      "Hitesh Laxmichand Patel",
+      "Amit Agarwal",
+      "Arion Das",
+      "Bhargava Kumar",
+      "Srikant Panda",
+      "Priyaranjan Pattnayak",
+      "Taki Hasan Rafi",
+      "Tejaswini Kumar",
+      "Dong-Kyu Chae"
+    ],
+    "org": "Oracle AI / IIIT Ranchi / TD Securities / Columbia University / Hanyang University",
+    "venue": "NAACL 2025",
+    "url": "https://arxiv.org/abs/2505.17332",
+    "published": "2025-05-22",
+    "retrieved": "2026-06-23",
+    "abstract": "Introduces SweEval, the first cross-lingual enterprise-safety benchmark testing whether LLMs comply with or resist explicit instructions to include swear words while completing enterprise communication tasks (emails, sales pitches, research drafts) across tone (positive/negative) and context (formal/informal). 109 English prompts x 25 swear words across 8 languages (English, Spanish, French, German, Hindi, Marathi, Bengali, Gujarati) = 2,725 prompts/language; two cases (multilingual + transliterated swearing). Evaluates 13 open-source LLMs (Mistral, Phi, Qwen, Llama; 7B-141B). Metric: Harmful Rate. Finds high harmful rates, worse in Indic/low-resource languages (Latin avg 0.46-0.63 vs Indic 0.62-0.79) and with transliterated swears.",
+    "citation_count": 17,
+    "influential_citation_count": 0
+  },
+  {
+    "id": "src-2504-10694",
+    "type": "source",
+    "source_type": "paper",
+    "title": "The Jailbreak Tax: How Useful are Your Jailbreak Outputs?",
+    "authors": [
+      "Kristina Nikolic",
+      "Luze Sun",
+      "Jie Zhang",
+      "Florian Tramer"
+    ],
+    "org": "ETH Zurich / University of Pennsylvania",
+    "venue": "ICML 2025",
+    "url": "https://arxiv.org/abs/2504.10694",
+    "published": "2025-04-14",
+    "retrieved": "2026-06-23",
+    "abstract": "Proposes the 'jailbreak tax' — the degradation in model utility that occurs when circumventing safety guardrails — as a new metric for AI safety. Builds jailbreak evaluation sets on objectively verifiable tasks (WMDP bio-security MCQ, GSM8K and MATH math reasoning) by aligning/pseudo-aligning models to refuse benign topics (via system prompt, SFT, or the new EvilMath dataset), then jailbreaking. Evaluates 8 representative jailbreaks (system-prompt JB, finetuning, GCG, AutoDAN, many-shot, MultiJail, PAIR, TAP) across LLaMA 3.1 8B/70B/405B and Claude 3.5 Haiku. Finds jailbreak success rate does not correlate with jailbreak tax; some attacks (PAIR) cut accuracy up to 92%.",
+    "citation_count": 23,
+    "influential_citation_count": 2,
+    "cites": [
+      "arxiv-2204-05862",
+      "arxiv-2307-15043",
+      "arxiv-2309-10253",
+      "arxiv-2310-06474",
+      "arxiv-2312-02119",
+      "arxiv-2402-04249",
+      "arxiv-2402-10260",
+      "arxiv-2403-03218",
+      "arxiv-2404-01318",
+      "arxiv-2410-09024",
+      "src-yong-lowresource-jb-2023"
+    ]
+  },
+  {
+    "id": "src-2502-18511",
+    "type": "source",
+    "source_type": "paper",
+    "title": "ELBA-Bench: An Efficient Learning Backdoor Attacks Benchmark for Large Language Models",
+    "authors": [
+      "Xuxu Liu",
+      "Siyuan Liang",
+      "Mengya Han",
+      "Yong Luo",
+      "Aishan Liu",
+      "Xiantao Cai",
+      "Zheng He",
+      "Dacheng Tao"
+    ],
+    "org": "Wuhan University / National University of Singapore / Beihang University / Nanyang Technological University",
+    "venue": "ACL 2025",
+    "url": "https://arxiv.org/abs/2502.18511",
+    "published": "2025-02-22",
+    "retrieved": "2026-06-23",
+    "abstract": "Establishes ELBA-Bench, a comprehensive unified backdoor-attack benchmark for LLMs under two efficient-learning paradigms: parameter-efficient fine-tuning (PEFT, e.g. LoRA) and without-fine-tuning (W/o FT, e.g. in-context learning). Covers 12 attack methods, 18 datasets, 12 LLMs (open+closed), 1300+ experiments, 5 evaluation metrics (CACC, ASR, FTR, RR, PassR) and 2 stealthiness measures (semantic change, perplexity change). Key findings: PEFT attacks outperform W/o-FT in classification with strong cross-dataset generalization; BadChain achieves universal dominance in knowledge-reasoning; stronger reasoning LLMs are paradoxically MORE vulnerable to chain-of-thought backdoors; PoisonRAG dominates QA (>90% ASR in 27 combos).",
+    "citation_count": 12,
+    "influential_citation_count": 0,
+    "cites": [
+      "arxiv-2307-15043",
+      "src-gu-badnets-2017"
+    ]
+  },
+  {
+    "id": "src-2501-04931",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Jailbreaking Multimodal Large Language Models via Shuffle Inconsistency",
+    "authors": [
+      "Shiji Zhao",
+      "Ranjie Duan",
+      "Fengxiang Wang",
+      "Chi Chen",
+      "Caixin Kang",
+      "Shouwei Ruan",
+      "Jialing Tao",
+      "YueFeng Chen",
+      "Hui Xue",
+      "Xingxing Wei"
+    ],
+    "org": "Institute of Artificial Intelligence, Beihang University; Alibaba Group",
+    "venue": "ICCV 2025",
+    "url": "https://arxiv.org/abs/2501.04931",
+    "published": "2025-01-08",
+    "retrieved": "2026-06-23",
+    "abstract": "MLLMs exhibit a 'Shuffle Inconsistency' between comprehension ability and safety ability for shuffled harmful instructions: MLLMs can still understand shuffled harmful text-image instructions, but their defense mechanisms can be easily bypassed by the shuffled inputs, leading to harmful responses. The authors propose SI-Attack, a query-based black-box optimization jailbreak using a toxic judge model to select the most harmful shuffled inputs, improving attack success rate on commercial closed-source MLLMs such as GPT-4o and Claude-3.5-Sonnet.",
+    "citation_count": 48,
+    "influential_citation_count": 10,
+    "cites": [
+      "arxiv-2307-15043",
+      "arxiv-2310-06474",
+      "arxiv-2311-05608",
+      "arxiv-2407-21783"
+    ],
+    "cited_by": [
+      "src-2507-02844"
+    ]
+  },
+  {
+    "id": "src-2503-20823",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Playing the Fool: Jailbreaking LLMs and Multimodal LLMs with Out-of-Distribution Strategy",
+    "authors": [
+      "Joonhyun Jeong",
+      "Seyun Bae",
+      "Yeonsung Jung",
+      "Jaeryong Hwang",
+      "Eunho Yang"
+    ],
+    "org": "NAVER Cloud ImageVision; KAIST; Republic of Korea Naval Academy; AITRICS",
+    "venue": "CVPR 2025",
+    "url": "https://arxiv.org/abs/2503.20823",
+    "published": "2025-03-26",
+    "retrieved": "2026-06-23",
+    "abstract": "The paper investigates the vulnerability of safety alignment to out-of-distribution (OOD) harmful inputs that fall outside the aligned data distribution. Key observation: OOD-ifying vanilla harmful inputs highly increases the model's uncertainty in discerning malicious intent, raising the chance of being jailbroken. The authors propose JOOD, a black-box jailbreak framework that OOD-ifies harmful inputs via off-the-shelf visual and textual transformations (text-mixing, image mixup/CutMix). JOOD jailbreaks proprietary LLMs and MLLMs including GPT-4 and o1 with high ASR, achieving 63% ASR against GPT-4V in Bombs/Explosives and +42% ASR vs SOTA baseline in Hacking.",
+    "citation_count": 35,
+    "influential_citation_count": 8,
+    "cites": [
+      "arxiv-2307-15043",
+      "arxiv-2310-08419",
+      "arxiv-2311-05608",
+      "src-yong-lowresource-jb-2023"
+    ]
+  },
+  {
+    "id": "src-2507-02844",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Visual Contextual Attack: Jailbreaking MLLMs with Image-Driven Context Injection",
+    "authors": [
+      "Ziqi Miao",
+      "Yi Ding",
+      "Lijun Li",
+      "Jing Shao"
+    ],
+    "org": "Shanghai Artificial Intelligence Laboratory; Purdue University",
+    "venue": "EMNLP 2025",
+    "url": "https://arxiv.org/abs/2507.02844",
+    "published": "2025-07-03",
+    "retrieved": "2026-06-23",
+    "abstract": "Defines a novel 'vision-centric jailbreak' setting where visual information serves as a necessary component in constructing a complete and realistic jailbreak scenario, not merely a trigger. Proposes the VisCo (Visual Contextual) Attack, which fabricates a deceptive multi-turn dialogue context using four vision-focused strategies, dynamically generating auxiliary images, then applies automatic toxicity obfuscation and semantic refinement. VisCo achieves toxicity 4.78 and ASR 85% on MM-SafetyBench against GPT-4o (vs QR baseline 2.48/22.2%), and 4.88/91.07% on Gemini-2.0-Flash.",
+    "citation_count": 24,
+    "influential_citation_count": 1,
+    "cites": [
+      "arxiv-2311-05608",
+      "arxiv-2404-01833",
+      "src-2501-04931",
+      "src-kuo-hcot-2025",
+      "src-x-teaming-multiturn"
+    ]
+  },
+  {
+    "id": "src-2506-01307",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Align is not Enough: Multimodal Universal Jailbreak Attack against Multimodal Large Language Models",
+    "authors": [
+      "Youze Wang",
+      "Wenbo Hu",
+      "Yinpeng Dong",
+      "Jing Liu",
+      "Hanwang Zhang",
+      "Richang Hong"
+    ],
+    "org": "Hefei University of Technology; Tsinghua University; Institute of Automation CAS; Nanyang Technological University",
+    "venue": "IEEE Transactions on Circuits and Systems for Video Technology (TCSVT) 2025",
+    "url": "https://arxiv.org/abs/2506.01307",
+    "published": "2025-06-02",
+    "retrieved": "2026-06-23",
+    "abstract": "Proposes a unified multimodal universal jailbreak attack framework that leverages iterative image-text interactions and a transfer-based strategy to generate a universal adversarial suffix and image. The work shows that multimodal universal jailbreak attacks bring higher-quality undesirable generations across different MLLMs, validating that multimodal interaction is a critical vulnerability and that current safety alignment is inadequate against sophisticated multimodal attacks. Evaluated on LLaVA, Yi-VL, MiniGPT4, MiniGPT-v2, InstructBLIP and transferred across 17 MLLMs.",
+    "citation_count": 20,
+    "influential_citation_count": 1,
+    "cites": [
+      "arxiv-2307-15043",
+      "arxiv-2310-08419"
+    ]
+  },
+  {
+    "id": "src-2605-26501",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Unveiling the Fragility of Vision-Language Models: Multi-Modal Adversarial Synergy via Texture-Constrained Perturbations and Cross-Modal Optimization",
+    "authors": [
+      "Xiang Fang",
+      "Wanlong Fang",
+      "Changshuo Wang"
+    ],
+    "org": "Huazhong University of Science and Technology; Nanyang Technological University; University College London",
+    "venue": "AAAI 2026",
+    "url": "https://arxiv.org/abs/2605.26501",
+    "published": "2026-05-26",
+    "retrieved": "2026-06-23",
+    "abstract": "Introduces Multi-Modal Adversarial Synergy (MMAS), the first black-box, universal, multi-modal adversarial attack framework against Large Vision-Language Models (LVLMs). MMAS simultaneously generates a texture scale-constrained Universal Adversarial Perturbation (UAP) for images (wavelet-based, l_inf-bounded, visually imperceptible) and a learnable prompt perturbation for text (l_2-norm in embedding space), optimized jointly using only model queries. A novel cross-modal regularization term aligns the perturbations' gradient directions, enhancing synergistic impact and transferability across tasks and models. MMAS can force an LVLM to misclassify a 'stop sign' image paired with a 'proceed' prompt as 'go', threatening autonomous driving and content moderation.",
+    "cited_by": [
+      "src-apd-semantic-graph-2605.27823"
+    ],
+    "citation_count": 21,
+    "influential_citation_count": 0,
+    "cites": [
+      "src-apd-semantic-graph-2605.27823"
+    ]
+  },
+  {
+    "id": "src-2505-05528",
+    "type": "source",
+    "source_type": "paper",
+    "title": "X-Transfer Attacks: Towards Super Transferable Adversarial Attacks on CLIP",
+    "authors": [
+      "Hanxun Huang",
+      "Sarah Erfani",
+      "Yige Li",
+      "Xingjun Ma",
+      "James Bailey"
+    ],
+    "org": "University of Melbourne; Singapore Management University; Fudan University",
+    "venue": "ICML 2025",
+    "url": "https://arxiv.org/abs/2505.05528",
+    "published": "2025-05-29",
+    "retrieved": "2026-06-23",
+    "abstract": "Introduces X-Transfer, a novel attack that generates a Universal Adversarial Perturbation (UAP) capable of deceiving various CLIP encoders and downstream VLMs across different samples, tasks, and domains simultaneously — a property the authors term 'super transferability' (cross-data, cross-domain, cross-model, and cross-task). This is achieved via efficient surrogate scaling that dynamically selects a small subset of suitable surrogate CLIP encoders from a large search space using a multi-armed-bandit / UCB strategy. X-Transfer significantly outperforms prior UAP methods and establishes the X-TransferBench benchmark.",
+    "citation_count": 19,
+    "influential_citation_count": 5,
+    "cites": [
+      "arxiv-2311-05608",
+      "src-szegedy-adversarial-2013"
     ]
   }
 ]
