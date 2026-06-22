@@ -1,6 +1,6 @@
 # Red-Teaming 논문 인텔리전스 — 2026 2분기
 
-**생성:** 2026-06-23 · RT AI 안전성 보증 플랫폼 · paper-research-pipeline
+**생성:** 2026-06-23 · RT AI 안전성 보증 플랫폼 · paper-research-pipeline (rev.2)
 
 arXiv의 **최신 red-teaming / AI 안전 / AI 보안 논문**을 체계적으로 수집해 전문 정독하고 지식그래프로
 정제했습니다. **86편**(2026-03-19 → 2026-06-18, 73%가 최근 한 달)을 발굴·다운로드하여 4명의 전문
@@ -10,14 +10,14 @@ arXiv의 **최신 red-teaming / AI 안전 / AI 보안 논문**을 체계적으�
 
 | | 이전 | 이후(이번 사이클) |
 |---|---|---|
-| 논문 소스 | 187 | **273** (+86) |
-| 그래프 노드 | 2,360 | **3,244** |
-| 공격기법 | 142 | **197** |
-| 취약점 | 79 | **121** |
-| 위협 분류 | 약 72 | **153** |
+| 논문 소스 | 187 | **321** (+134) |
+| 그래프 노드 | 2,360 | **3,806** |
+| 공격기법 | 142 | **237** |
+| 취약점 | 79 | **152** |
+| 위협 분류 | 약 72 | **~200** |
 | 통제 | 75 | **133** |
-| GraphRAG 유닛 | 1,731 | **2,173** |
-| 인용망 엣지 | — | **644** (논문→논문) |
+| GraphRAG 유닛 | 1,731 | **2,464** |
+| 인용망 엣지 | — | **821** (논문→논문) |
 
 86편에서 추출: **380 레코드** — finding 161, 공격기법 55, 취약점 42(고유 CWE 34종), candidate 위협 34종,
 통제 58, 리스크 21, 위해 9. 전 과정 품질 게이트 유지: **dangling 0 · 고립 0 · 유닛=임베딩 정합**.
@@ -62,16 +62,17 @@ arXiv의 **최신 red-teaming / AI 안전 / AI 보안 논문**을 체계적으�
 - 자동 에이전트 보안감사가 **CVE급 실세계 영향** 달성(EVOHUNT: 28개 OSS 취약점 확인 + $1,500 바운티;
   식별자는 책임공개 중 redaction → CWE-class로 기록).
 
-## 3. 신규 위협 분류 (candidate 34종)
-- **agent.** (2): `agent.routing-manipulation` — Model-routing / compute-allocation manipulation in cascades  · `agent.prompt-injection-indirect` — Workflow-level indirect prompt injection in agentic loops
-- **agentic.** (20): `agentic.provenance-gap` — Artifact provenance gap (cross-session/instance artifact-med · `agentic.data-agent-risk` — LLM-driven data/analytics agent risk (interpretation/executi · `agentic.compositional-leakage` — Compositional/cumulative disclosure leakage across multi-ste · `agentic.resource-exhaustion` — Agentic resource-drain / denial-of-service via induced costl · `agentic.internal-relay-leakage` — Internal-relay sensitive-data leakage (inter-agent / memory  · `agentic.multi-agent-propagation` — Multi-agent propagation / coordination-channel contagion · `agentic.cross-session-memory-persistence` — Cross-session persistent memory contamination · `agentic.decision-layer-poisoning` — Agentic decision-layer context poisoning in autonomous defen · `agentic.mediation-bypass` — Agent mediation bypass via dynamic tool acquisition · `agentic.rag-poisoning` — Domain-camouflaged retrieval (RAG) injection · `agentic.defense-inversion` — Capability-removal defense inversion in agentic systems · `agentic.privilege-usage` — Agent privilege usage / misuse · `agentic.contextual-authorization` — Contextual authorization failure · `agentic.context-fragmented-violation` — Context-Fragmented Violation (multi-agent) · `agentic.semantic-laundering` — Semantic laundering of security taint · `agentic.argument-authority-binding` — Authority-bearing argument binding by untrusted data · `agentic.cognitive-poisoning` — Cognitive poisoning via exploratory trust formation · `agentic.attack-compression` — Agentic AI attack compression (cyber kill-chain cost collaps · `agentic.cross-layer-propagation` — Cross-layer attack propagation in autonomous agent framework · `agentic.supply-chain-injection` — Agentic supply-chain injection (stealthy tool/dependency poi
-- **automated.** (1): `automated.injection-reformulation` — Automated injection-reformulation red-teaming (strategy-dive
-- **frontier.** (2): `frontier.cognitive-monoculture` — Cognitive monoculture of foundation-model agent populations · `frontier.reasoning-self-censor-bypass` — Trainable bypass of reasoning-model self-censoring
-- **model.** (3): `model.over-refusal` — Over-refusal on pseudo-malicious / benign-but-sensitive prom · `model.infilling-abuse` — Infilling / mask-fill abuse (non-autoregressive generation) · `model.multi-turn-attack` — Multi-turn conversational jailbreak / escalation
-- **safety.** (1): `safety.detector-evasion` — Defense/detector evasion (adaptive attack against a deployed
-- **societal.** (2): `societal.multilingual-safety-gap` — Multilingual / cross-lingual safety-coverage gap · `societal.medical-harm` — Patient-facing medical-AI harm
-- **software.** (3): `software.rapid-response-pipeline-poisoning` — Rapid-response / continual-retraining pipeline poisoning · `software.code-sabotage` — Compromised-agent code sabotage in multi-agent SDLC · `software.code-poisoning` — Code-context poisoning (untrusted external code consumed by 
-
+## 3. 신규 위협 분류 (candidate 60종)
+- **agent.** (3): `agent.routing-manipulation` · `agent.prompt-injection-indirect` · `agent.tool-selection-manipulation`
+- **agentic.** (29): `agentic.provenance-gap` · `agentic.data-agent-risk` · `agentic.compositional-leakage` · `agentic.resource-exhaustion` · `agentic.internal-relay-leakage` · `agentic.multi-agent-propagation` · `agentic.emergent-misalignment` · `agentic.memory-poisoning-drift` · `agentic.multi-agent-prompt-contagion` · `agentic.embodied-interactive-safety-risk` · `agentic.cross-session-memory-persistence` · `agentic.decision-layer-poisoning` · `agentic.mediation-bypass` · `agentic.rag-poisoning` · `agentic.defense-inversion` · `agentic.inter-agent-comm-mitm` · `agentic.mcp-preference-manipulation` · `agentic.mcp-attack-taxonomy` · `agentic.mcp-shared-context-chain` · `agentic.plan-execute-integrity-subversion` · `agentic.privilege-usage` · `agentic.contextual-authorization` · `agentic.context-fragmented-violation` · `agentic.semantic-laundering` · `agentic.argument-authority-binding` · `agentic.cognitive-poisoning` · `agentic.attack-compression` · `agentic.cross-layer-propagation` · `agentic.supply-chain-injection`
+- **automated.** (1): `automated.injection-reformulation`
+- **frontier.** (3): `frontier.cognitive-monoculture` · `frontier.reasoning-self-censor-bypass` · `frontier.reasoning-model-risk`
+- **model.** (6): `model.reasoning-trace-leakage` · `model.over-refusal` · `model.rag-poisoning` · `model.adversarial-example` · `model.infilling-abuse` · `model.multi-turn-attack`
+- **multimodal.** (6): `multimodal.safety-comprehension-gap` · `multimodal.ood-distribution-shift` · `multimodal.vision-centric-context-injection` · `multimodal.cross-modal-attack-distribution` · `multimodal.cross-modal-synergy-perturbation` · `multimodal.foundation-encoder-super-transfer`
+- **safety.** (3): `safety.benchmark-validity-risk` · `safety.evaluation-gaming-sandbagging` · `safety.detector-evasion`
+- **scientific.** (1): `scientific.cyber-physical-safety`
+- **societal.** (4): `societal.opinion-manipulation` · `societal.eval-integrity` · `societal.multilingual-safety-gap` · `societal.medical-harm`
+- **software.** (4): `software.vulnerability-detection-gap` · `software.rapid-response-pipeline-poisoning` · `software.code-sabotage` · `software.code-poisoning`
 ## 4. CVE / 취약점 공개
 - **CVE-2026-31431 'Copy Fail'** — Linux 커널 로컬 권한상승(CWE-269, high), 사이버 공세 예측 논문이
   인용했고 **NVD API로 독립 검증**(vulnStatus *Analyzed*, 발행 2026-04-22). cve.org는 JS 렌더라
@@ -97,6 +98,87 @@ red-teaming 논문을 충실히 인용**합니다 — 신규 논문이 가장 �
 
 Citation 보강으로 **644 논문→논문 엣지**를 추가해 신규 논문을 Papers 탭 인용망에 편입했습니다.
 최신 연구가 정전을 무시하지 않고 기반으로 삼고 있음을 확인합니다.
+
+
+## 5.5 피어리뷰 학회/저널 sweep (48편, 2025–2026)
+
+arXiv 프리프린트를 넘어, Semantic Scholar venue 필터로 **48편의 피어리뷰 학회/저널 논문**
+(IEEE S&P·ACL·NDSS·ICML·ICLR·AAAI·USENIX·CCS·EMNLP·ICCV·CVPR·IEEE TPAMI/TDSC/TIFS)을 추가했습니다 —
+고인용·검증된 선행연구(최대 118 citations).
+
+**venue 분포:**
+
+| venue | 논문 수 |
+|---|---|
+| ICML 2025 | 5 |
+| ACL 2025 | 4 |
+| AAAI 2026 | 4 |
+| EMNLP 2025 | 4 |
+| USENIX Security 2025 | 3 |
+| AAAI 2025 | 2 |
+| ICML | 2 |
+| NDSS Symposium 2026 | 2 |
+| IEEE Symposium on Security and Privacy (S&P) 2025 | 2 |
+| International Conference on Machine Learning (ICML) 2025 | 2 |
+
+주요 발견: **MCP/에이전트 보안**(MPMA 선호조작·SAGA ProVerif 검증 거버넌스·MCPXKIT·AgentSentinel);
+**멀티모달 jailbreak**(SI-Attack 셔플불일치·JOOD OOD·VisCo vision-centric·X-Transfer CLIP super-전이
+=공유인코더 공급망 단일실패점); **평가 무결성**(Chatbot Arena ~$440 재순위·safety judge FNR 0.02→1.00);
+**증명가능 방어**(DataSentinel·MELON·IPIGuard). 신규 멀티모달 위협: `multimodal.safety-comprehension-gap`·
+`ood-distribution-shift`·`foundation-encoder-super-transfer`·`vision-centric-context-injection`·`societal.eval-integrity`.
+
+### 분석 venue 논문 (48)
+
+| 인용 | 연도 | venue | 제목 |
+|---|---|---|---|
+| 118 | 2025 | IEEE Symposium on Security and Pri | [2504.11358](https://arxiv.org/abs/2504.11358) DataSentinel: A Game-Theoretic Detection of Prompt |
+| 104 | 2025 | Annual Meeting of the Association  | [2502.14847](https://arxiv.org/abs/2502.14847) Red-Teaming LLM Multi-Agent Systems via Communicat |
+| 97 | 2025 | Network and Distributed System Sec | [2504.19793](https://arxiv.org/abs/2504.19793) Prompt Injection Attack to Tool Selection in LLM A |
+| 97 | 2025 | IJCNLP-AACL | [2502.12659](https://arxiv.org/abs/2502.12659) The Hidden Risks of Large Reasoning Models: A Safe |
+| 65 | 2025 | International Conference on Machin | [2501.18052](https://arxiv.org/abs/2501.18052) SAeUron: Interpretable Concept Unlearning in Diffu |
+| 61 | 2025 | Proceedings of the AAAI/ACM Confer | [2502.06559](https://arxiv.org/abs/2502.06559) Can We Trust AI Benchmarks? An Interdisciplinary R |
+| 48 | 2025 | IEEE International Conference on C | [2501.04931](https://arxiv.org/abs/2501.04931) Jailbreaking Multimodal Large Language Models via  |
+| 47 | 2025 | Annual Meeting of the Association  | [2502.11127](https://arxiv.org/abs/2502.11127) G-Safeguard: A Topology-Guided Security Lens and T |
+| 47 | 2025 | International Conference on Machin | [2502.05174](https://arxiv.org/abs/2502.05174) MELON: Provable Defense Against Indirect Prompt In |
+| 45 | 2025 | Journal of King Saud University: C | [2505.01976](https://arxiv.org/abs/2505.01976) A survey on privacy risks and protection in large  |
+| 42 | 2025 | Annual Meeting of the Association  | [2503.03586](https://arxiv.org/abs/2503.03586) Benchmarking LLMs and LLM-based Agents in Practica |
+| 38 | 2025 | Conference on Empirical Methods in | [2502.19820](https://arxiv.org/abs/2502.19820) Foot-In-The-Door: A Multi-turn Jailbreak for LLMs |
+| 35 | 2025 | Network and Distributed System Sec | [2504.21034](https://arxiv.org/abs/2504.21034) SAGA: A Security Architecture for Governing AI Age |
+| 35 | 2025 | Computer Vision and Pattern Recogn | [2503.20823](https://arxiv.org/abs/2503.20823) Playing the Fool: Jailbreaking LLMs and Multimodal |
+| 34 | 2025 | Conference on Empirical Methods in | [2508.15310](https://arxiv.org/abs/2508.15310) IPIGuard: A Novel Tool Dependency Graph-Based Defe |
+| 34 | 2025 | AAAI Conference on Artificial Inte | [2505.11154](https://arxiv.org/abs/2505.11154) MPMA: Preference Manipulation Attack Against Model |
+| 32 | 2025 | Network and Distributed System Sec | [2504.20984](https://arxiv.org/abs/2504.20984) ACE: A Security Architecture for LLM-Integrated Ap |
+| 32 | 2025 | IEEE transactions on intelligent t | [2501.15850](https://arxiv.org/abs/2501.15850) LLM-Attacker: Enhancing Closed-Loop Adversarial Sc |
+| 31 | 2025 | Annual Meeting of the Association  | [2505.17147](https://arxiv.org/abs/2505.17147) MTSA: Multi-turn Safety Alignment for LLMs through |
+| 27 | 2025 | International Conference on Learni | [2502.03052](https://arxiv.org/abs/2502.03052) Understanding and Enhancing the Transferability of |
+| 26 | 2025 | International Conference on Machin | [2502.01633](https://arxiv.org/abs/2502.01633) Adversarial Reasoning at Jailbreaking Time |
+| 26 | 2025 | Annual Meeting of the Association  | [2504.00218](https://arxiv.org/abs/2504.00218) Agents Under Siege: Breaking Pragmatic Multi-Agent |
+| 26 | 2025 | AAAI Conference on Artificial Inte | [2506.16402](https://arxiv.org/abs/2506.16402) IS-Bench: Evaluating Interactive Safety of VLM-Dri |
+| 26 | 2025 | IEEE Transactions on Dependable an | [2508.12538](https://arxiv.org/abs/2508.12538) MCPXKIT: the Unified Toolkit for Analyzing Model C |
+| 25 | 2025 | IEEE Transactions on Pattern Analy | [2506.23844](https://arxiv.org/abs/2506.23844) A Survey on Autonomy-Induced Security Risks in Lar |
+| 24 | 2025 | Annual Meeting of the Association  | [2504.01550](https://arxiv.org/abs/2504.01550) Representation Bending for Large Language Model Sa |
+| 24 | 2025 | USENIX Security Symposium | [2502.01386](https://arxiv.org/abs/2502.01386) Topic-FlipRAG: Topic-Orientated Adversarial Opinio |
+| 24 | 2025 | Conference on Empirical Methods in | [2507.02844](https://arxiv.org/abs/2507.02844) Visual Contextual Attack: Jailbreaking MLLMs with  |
+| 24 | 2025 | Conference on Computer and Communi | [2502.00306](https://arxiv.org/abs/2502.00306) Riddle Me This! Stealthy Membership Inference for  |
+| 24 | 2025 | USENIX Security Symposium | [2507.10695](https://arxiv.org/abs/2507.10695) Exploring User Security and Privacy Attitudes and  |
+| 23 | 2025 | International Conference on Machin | [2504.10694](https://arxiv.org/abs/2504.10694) The Jailbreak Tax: How Useful are Your Jailbreak O |
+| 22 | 2026 | AAAI Conference on Artificial Inte | [2605.27823](https://arxiv.org/abs/2605.27823) Disentangling Adversarial Prompts: A Semantic-Grap |
+| 21 | 2026 | AAAI Conference on Artificial Inte | [2605.26501](https://arxiv.org/abs/2605.26501) Unveiling the Fragility of Vision-Language Models: |
+| 21 | 2025 | Conference on Computer and Communi | [2509.07764](https://arxiv.org/abs/2509.07764) AgentSentinel: An End-to-End and Real-Time Securit |
+| 20 | 2025 | IEEE transactions on circuits and  | [2506.01307](https://arxiv.org/abs/2506.01307) Align Is Not Enough: Multimodal Universal Jailbrea |
+| 20 | 2025 | International Conference on Machin | [2501.07493](https://arxiv.org/abs/2501.07493) Exploring and Mitigating Adversarial Manipulation  |
+| 19 | 2025 | International Conference on Machin | [2505.05528](https://arxiv.org/abs/2505.05528) X-Transfer Attacks: Towards Super Transferable Adv |
+| 18 | 2025 | IEEE Symposium on Security and Pri | [2501.09798](https://arxiv.org/abs/2501.09798) Fun-tuning: Characterizing the Vulnerability of Pr |
+| 17 | 2025 | International Conference on Learni | [2503.04474](https://arxiv.org/abs/2503.04474) Know Thy Judge: On the Robustness Meta-Evaluation  |
+| 17 | 2025 | North American Chapter of the Asso | [2505.17332](https://arxiv.org/abs/2505.17332) SweEval: Do LLMs Really Swear? A Safety Benchmark  |
+| 16 | 2025 | Conference on Empirical Methods in | [2503.18172](https://arxiv.org/abs/2503.18172) Unmasking Deceptive Visuals: Benchmarking Multimod |
+| 16 | 2025 | Network and Distributed System Sec | [2512.07086](https://arxiv.org/abs/2512.07086) ThinkTrap: Denial-of-Service Attacks against Black |
+| 16 | 2025 | Conference on Empirical Methods in | [2503.09598](https://arxiv.org/abs/2503.09598) How to Protect Yourself from 5G Radiation? Investi |
+| 15 | 2025 | AAAI Conference on Artificial Inte | [2501.16378](https://arxiv.org/abs/2501.16378) Internal Activation Revision: Safeguarding Vision  |
+| 14 | 2025 | IEEE Transactions on Information F | [2509.21011](https://arxiv.org/abs/2509.21011) Automatic Red Teaming LLM-Based Agents With Model  |
+| 13 | 2025 | International Conference on Learni | [2502.18176](https://arxiv.org/abs/2502.18176) CLIPure: Purification in Latent Space via CLIP for |
+| 12 | 2025 | Annual Meeting of the Association  | [2502.18511](https://arxiv.org/abs/2502.18511) ELBA-Bench: An Efficient Learning Backdoor Attacks |
+| 12 | 2025 | International Conference on Machin | [2505.24445](https://arxiv.org/abs/2505.24445) Learning Safety Constraints for Large Language Mod |
 
 ## 6. 방법론
 **`paper-research-pipeline`** 스킬로 재현 가능: arXiv 발굴(코퍼스 대비 중복제거) → 선별 PDF 다운로드 →
