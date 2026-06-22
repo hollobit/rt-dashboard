@@ -1854,6 +1854,7 @@ async function renderNews(){
 function renderChangelog(){
   const el=document.getElementById("v-changelog");if(!el)return;
   const CHANGELOG=RT_CHANGELOG=[
+    ["2026-06-22","데이터","최신 arXiv red-teaming 논문 20편 전문 분석(2026-06-11~18) → 신규 공격기법 13(GAS-Leak GA suffix·FragFuse 메모리단편·MAStrike Shapley 담합·AutoDojo 적응형 IPI·Forced Deferral 라우팅조작·guardrail DoS 등)·취약점 9(CWE-1427/693/770/284/863/285 등)·candidate 위협 2(rapid-response 파이프라인 중독·모델 라우팅 조작)·리스크 6·위해 2 추가. 그래프 2360→2536노드, 논문 187→207, 재임베딩 1846유닛, dangling 0·고립 0"],
     ["2026-06-22","메뉴","표준·프레임워크 3종 체계적 통합 — 🏛️ NIST AI RMF(GOVERN/MAP/MEASURE/MANAGE 4함수+14서브카테고리·59 매핑), 🧬 NIST GenAI Profile(AI 600-1, 12 생성형AI 위험·56 매핑), 🛡️ FMF Frontier Capability Assessments(3 평가방법·4 능력도메인 CBRN/사이버/자율RnD/기만·개발사 6 프레임워크). 모두 공식 구조 + 코퍼스 매핑 오버레이"],
     ["2026-06-22","메뉴","🦉 OWASP LLM Top 10 탭 — OWASP Top 10 for LLM Applications(2025) 체계적 통합. 10 카테고리 공식 구조 + 코퍼스 매핑(위협·공격기법·취약점·리스크 62건), 제목→genai.owasp.org 공식 페이지·칩→#entity 상세"],
     ["2026-06-22","메뉴","🗡️ MITRE ATT&CK 탭 — ATLAS↔ATT&CK 다리 체계적 통합. ATT&CK Enterprise 14 전술(ATLAS 공유)+AI 특화 2 전술, ATLAS가 AI 맥락으로 재사용하는 34 ATT&CK 기법(코퍼스 보유 20), ATT&CK→attack.mitre.org·ATLAS→atlas.mitre.org·코퍼스→#entity. GraphRAG 검색 포함"],

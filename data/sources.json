@@ -10539,5 +10539,691 @@
     ],
     "s2_id": "arXiv:2501.18837",
     "provenance": "extracted"
+  },
+  {
+    "id": "arxiv-2606-15609",
+    "type": "source",
+    "source_type": "paper",
+    "title": "FragFuse: Bypassing Access Control of Large Language Model Agents via Memory-Based Query Fragmentation and Fusion",
+    "authors": [
+      "Zixin Rao",
+      "Wentian Zhu",
+      "Chan Aristella Lu",
+      "Zhaorun Chen",
+      "Wei Niu",
+      "Le Guan",
+      "Bo Li",
+      "Zhen Xiang"
+    ],
+    "org": "University of Georgia / University of Chicago / University of Illinois Urbana-Champaign",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2606.15609",
+    "published": "2026-06-14",
+    "retrieved": "2026-06-22",
+    "abstract": "FragFuse is the first attack that bypasses LLM-agent access control by fragmenting a prohibited query, writing the fragments into the agent's long-term memory in benign form via a 'carrier query', then retrieving and fusing them at execution time via an optimized fusion instruction. Exploits a 'temporal channel': the malicious intent never appears explicitly in the final user query. Black-box, ordinary-user threat model. Achieves average 86.3% bypass success rate (BSR) and 41.1% end-to-end harmful-task success across RAP/SeeAct/OSAgent/InspAgent vs 3 SOTA access-control mechanisms (GuardAgent, AGrail, ShieldAgent), with only 4.4% avg task-success degradation; defeats prompt-injection and perplexity detectors.",
+    "topics": [
+      "llm-agents",
+      "access-control-bypass",
+      "memory-attack",
+      "prompt-injection",
+      "temporal-channel"
+    ],
+    "s2_id": "arXiv:2606.15609",
+    "cites": [
+      "arxiv-2606-14517"
+    ],
+    "provenance": "extracted"
+  },
+  {
+    "id": "arxiv-2606-15008",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Security Engineering of OpenClaw: Analyzing Attack Surface Expansion and Trust-Boundary Violations",
+    "authors": [
+      "Saeid Jamshidi",
+      "Arghavan Moradi Dakhel",
+      "Kawser Wazed Nafi",
+      "Foutse Khomh"
+    ],
+    "org": "SWAT Laboratory, Polytechnique Montreal",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2606.15008",
+    "published": "2026-06-12",
+    "retrieved": "2026-06-22",
+    "abstract": "Structural security analysis of OpenClaw, a self-hosted execution-coupled multi-agent LLM system where semantic outputs map directly to executable primitives (shell, files, network, skills). Introduces quantitative metrics for compromise amplification, cumulative boundary instability (CBI), privilege drift, attack-surface entropy, and escalation curvature. With one agent, compromise probability is 0.24; with seven agents under a permissive 'any-agent' aggregation rule, it rises to 0.86 (3.58x amplification). Prompt injection raises attack-surface entropy 0.42->0.71 and mean privilege drift 0.03->0.21, with positive escalation curvature (0.08). Defensive controls (policy gating, execution filtering) cut compromise/boundary-failure/privilege-drift by 0.10/0.10/0.02 (all p<0.0001), at the cost of task utility (0.93->0.89) and latency (420->468 ms).",
+    "topics": [
+      "multi-agent",
+      "execution-coupling",
+      "privilege-escalation",
+      "trust-boundary",
+      "prompt-injection",
+      "aggregation-policy"
+    ],
+    "s2_id": "arXiv:2606.15008",
+    "provenance": "extracted"
+  },
+  {
+    "id": "arxiv-2606-12918",
+    "type": "source",
+    "source_type": "paper",
+    "title": "MAStrike: Shapley-Guided Collusive Red-Teaming on Multi-Agent Systems",
+    "authors": [
+      "Chejian Xu",
+      "Zhaorun Chen",
+      "Jingyang Zhang",
+      "Freddy Lecue",
+      "Avni Kothari",
+      "Sarah Tan",
+      "Wenbo Guo",
+      "Bo Li"
+    ],
+    "org": "University of Illinois Urbana-Champaign / Virtue AI / University of Chicago",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2606.12918",
+    "published": "2026-06-11",
+    "retrieved": "2026-06-22",
+    "abstract": "MAStrike is a closed-loop framework for collusive red-teaming of hierarchical multi-agent systems (MAS). It proposes the first agent-level Shapley value analysis for MAS — quantifying each agent's marginal contribution to system robustness using attack success rate (ASR) as a coalition value function, plus a pairwise Shapley interaction index. A Shapley-guided red-team agent then selects synergy-aware coalitions and generates coordinated, role-aware adversarial injections, iteratively refined via structured failure diagnosis. Introduces MABench (finance, software-engineering, CRM hierarchical MAS). Achieves 61.8% ASR on Claude Opus 4.7 and 55.6% on GPT-5.5 (compromise budget k=2), vs near-zero for prior single-agent/template baselines (TAMAS, GCA, AutoTransform, AiTM). Shows enterprise guardrails detect single-agent signals but miss distributed collusion.",
+    "topics": [
+      "multi-agent",
+      "collusion",
+      "red-teaming",
+      "shapley-value",
+      "coalition-attack",
+      "hierarchical-mas"
+    ],
+    "s2_id": "arXiv:2606.12918",
+    "provenance": "extracted"
+  },
+  {
+    "id": "arxiv-2606-17092",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Securing Multi-Agent GIS Systems: Risk Evaluation and Prompt Hardening Optimization",
+    "authors": [
+      "Kyle Gao",
+      "Pranavi Kotta",
+      "Linlin Lincoln Xu",
+      "Jonathan Li",
+      "David A. Clausi"
+    ],
+    "org": "University of Waterloo / University of Calgary",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2606.17092",
+    "published": "2026-06-13",
+    "retrieved": "2026-06-22",
+    "abstract": "Security-oriented framework for risk identification, evaluation, and mitigation in a commercial multi-agent conversational GIS (geospatial) system. Reproduces the commercial architecture (conversational assistant + geospatial recommender + helper agents) in a LangGraph state machine, red-teams it with an adaptive attacker LLM and deterministic binary judge over multi-turn (<=3 turn) attacks across 8 adversarial personas in 3 categories (Security, Topic/Identity, Recommender-Integrity), and hardens it via DSPy prompt optimization treating prompts as structured signatures with adversarial few-shot demonstrations. SEC attacks (credential/system-prompt extraction) are at 0% ceiling with good baseline prompts. DSPy reduces out-of-scope attacker success 84->55% and competitor-probing 87->73%, but vague-location attacks stay high because the recommender agent lacks a chain-of-thought layer (a routing-level, not prompt-level, vulnerability).",
+    "topics": [
+      "multi-agent",
+      "geospatial",
+      "gis",
+      "prompt-hardening",
+      "dspy",
+      "red-teaming",
+      "sector-government"
+    ],
+    "s2_id": "arXiv:2606.17092",
+    "provenance": "extracted"
+  },
+  {
+    "id": "arxiv-2606-14517",
+    "type": "source",
+    "source_type": "paper",
+    "title": "From Shield to Target: Denial-of-Service Attacks on LLM-Based Agent Guardrails",
+    "authors": [
+      "Yuguang Zhou",
+      "Xunguang Wang",
+      "Pingchuan Ma",
+      "Zhantong Xue",
+      "Zhaoyu Wang",
+      "Shuai Wang"
+    ],
+    "org": "Hong Kong University of Science and Technology / Zhejiang University of Technology",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2606.14517",
+    "published": "2026-06-16",
+    "retrieved": "2026-06-22",
+    "abstract": "Reveals 'reasoning-extension DoS', a new vulnerability class in LLM-based agent guardrails: because guardrails follow a structured analytical schema (enumerate risk categories, assess evidence, produce a verdict), adversarial content shaped like the guardrail's own schema traps it in unbounded reasoning loops, inflating per-call compute 13-63x (up to 148x latency). A beam-search optimizer (LLM-as-Proposer with a strategy bank, or a mechanism-aware structural mutator) crafts fluent natural-language payloads on a single open-source surrogate (TS-Guard-8B) that transfer to 8 guardrail backbones. Demonstrated end-to-end on OpenHands (code), LangGraph (multi-agent), BrowserGym (web), OSWorld (desktop) with up to 148x latency amplification and systemic head-of-line blocking that starves co-located agents sharing the guardrail. A single poisoned document persists as a long-lived trigger; mitigations (pre-inference filters, token budgets) only shift the failure mode (fail-open bypass vs fail-closed denial).",
+    "topics": [
+      "agent-guardrails",
+      "denial-of-service",
+      "reasoning-extension",
+      "prompt-injection",
+      "schema-following",
+      "fail-open-fail-closed"
+    ],
+    "s2_id": "arXiv:2606.14517",
+    "provenance": "extracted"
+  },
+  {
+    "id": "arxiv-2606-18193",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Measuring the Residual Jailbreak Surface of Frontier Large Language Models: A red-team study of Anthropic Fable 5 & Opus 4.8 models",
+    "authors": [
+      "Nicola Franco"
+    ],
+    "org": "AI4I — Italian Institute of Artificial Intelligence (AI Security Lab)",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2606.18193",
+    "published": "2026-06-16",
+    "retrieved": "2026-06-22",
+    "abstract": "Automated red-team campaign on two Anthropic frontier models (Opus 4.8, Fable 5) across 7,826 harmful intents (10 categories, 55 subcategories) and four attack families (TAP, PAIR, PAP, h4rm3l) using the HackAgent framework. Every apparent success was re-adjudicated by an independent 3-judge panel (majority vote: Qwen3.7 Max, Gemini 3.5 Flash, GPT 5.5). Adaptive tree-of-attacks breaks Opus 4.8 on 11.5% of intents (6.1% Fable 5); static obfuscation is near-fully neutralised (<=0.2%). Models produced 1,620 (Opus) and 702 (Fable) panel-confirmed harmful completions spanning every harm category, found automatically, cheaply, and early.",
+    "topics": [
+      "jailbreak",
+      "automated-red-teaming",
+      "frontier-model-evaluation",
+      "judge-panel",
+      "tree-of-attacks",
+      "adaptive-attack"
+    ],
+    "s2_id": "arXiv:2606.18193",
+    "citation_count": 0,
+    "cites": [
+      "arxiv-2312-02119",
+      "arxiv-2310-08419",
+      "arxiv-2401-06373",
+      "arxiv-2402-04249"
+    ],
+    "cited_by": [],
+    "provenance": "extracted"
+  },
+  {
+    "id": "arxiv-2606-16420",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Transferable Self-Evolving Playbooks for Agentic Security Auditing",
+    "authors": [
+      "Ziyue Wang",
+      "Cheuk Wang Maurice Ng",
+      "Chenchen Yu",
+      "Strick Sheng",
+      "Kaihua Qin",
+      "Liyi Zhou"
+    ],
+    "org": "University of Sydney / University of Warwick / UC Berkeley RDI",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2606.16420",
+    "published": "2026-06-15",
+    "retrieved": "2026-06-22",
+    "abstract": "EVOHUNT instantiates a playbook-evolution environment for agentic vulnerability discovery: three agents (audit/discovery, evaluator, reviser) drive a loop that, starting from an EMPTY unconstrained playbook, freely adds/removes workflows, heuristics, and vulnerability knowledge based on failure analysis, with the underlying LLM and harness held fixed. Evaluated on 813 OSS GitHub advisories (training) + 371 held-out (testing). Evolution lifts Codex/GPT5.4-xhigh end-to-end exploits 6x (1.1%->6.2%); evolved OpenCode/GLM5.1 playbook surpasses OpenAI Codex Security on every metric (11.3% vs 9.2% match). Teacher->student transfer lifts Qwen students (27B 2.4%->6.5%; A3B 1.1%->4.6%). Produced 28 confirmed disclosures + a $1,500 bounty.",
+    "topics": [
+      "agentic-security-auditing",
+      "self-evolving-playbook",
+      "vulnerability-discovery",
+      "procedure-learning",
+      "teacher-student-transfer",
+      "ai-auditor-agent"
+    ],
+    "s2_id": "arXiv:2606.16420",
+    "citation_count": 0,
+    "cites": [
+      "arxiv-2406-11704"
+    ],
+    "cited_by": [],
+    "provenance": "extracted"
+  },
+  {
+    "id": "arxiv-2606-15057",
+    "type": "source",
+    "source_type": "paper",
+    "title": "AutoDojo: Adaptive Attacks Expose Superficial Defenses and User-Underspecification Limits in LLM Agents",
+    "authors": [
+      "Xinhang Ma",
+      "Taoran Li",
+      "Chaowei Xiao",
+      "Zhiyuan Yu",
+      "Ning Zhang",
+      "Yevgeniy Vorobeychik"
+    ],
+    "org": "Washington University in St. Louis / Texas A&M / Johns Hopkins",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2606.15057",
+    "published": "2026-06-13",
+    "retrieved": "2026-06-22",
+    "abstract": "AutoDojo extends AgentDojo to turn any indirect-prompt-injection (IPI) attack into a cheap black-box ADAPTIVE one against a defended agent, using a small offline optimizer LLM (Gemini 3.1 Pro), a leaderboard of candidates, and only the binary ASR success signal (no weights/gradients, budget of 6 iterations). Across 9 SOTA IPI defenses x 5 target models x 3 task suites (banking/slack/travel), adaptive optimization raises ASR well above static-injection levels: against a filter that drives static ASR to 0%, AutoDojo recovers 28% overall and 64% on action-open tasks. Also exposes a structural limit — ASR is much higher on under-specified (action-open) tasks where the user delegates the action to attacker-controlled content.",
+    "topics": [
+      "indirect-prompt-injection",
+      "adaptive-attack",
+      "agent-security",
+      "defense-evaluation",
+      "black-box",
+      "user-underspecification"
+    ],
+    "s2_id": "arXiv:2606.15057",
+    "citation_count": 0,
+    "cites": [
+      "arxiv-2310-08419"
+    ],
+    "cited_by": [],
+    "provenance": "extracted"
+  },
+  {
+    "id": "arxiv-2606-14154",
+    "type": "source",
+    "source_type": "paper",
+    "title": "SkillMutator: Benchmarking and Defending Language-and-Code Cross-modal Attacks on LLM Agent Skills",
+    "authors": [
+      "Youngduk Kim",
+      "Minkyoo Song",
+      "Seungwon Shin"
+    ],
+    "org": "KAIST — School of Electrical Engineering",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2606.14154",
+    "published": "2026-06-12",
+    "retrieved": "2026-06-22",
+    "abstract": "SkillMutator is the first benchmark for install-time detection of language-and-code CROSS-MODAL attacks on LLM Agent Skills (composite artifacts pairing a natural-language SKILL.md with executable scripts/resources). An adaptive attacker mutates benign skills across 13 attack categories (4 threat groups) via 4-stage analysis + iterative scanner-evasion refinement, yielding 187 mutated scenarios where unsafe behavior emerges from the interaction of SKILL.md directives and helper code. Existing scanners detect only 2%-8% (open-source), 9%-17% (commercial). A 4-phase reasoning-trajectory distillation framework lifts a local Qwen2.5-Coder-7B scanner from 17.1% to 88.2% detection, exceeding frontier GPT-5.4 (86.8%) without third-party content exposure.",
+    "topics": [
+      "agent-skills",
+      "cross-modal-attack",
+      "install-time-detection",
+      "skill-mutation",
+      "llm-scanner",
+      "reasoning-distillation"
+    ],
+    "s2_id": "arXiv:2606.14154",
+    "citation_count": 0,
+    "cites": [],
+    "cited_by": [],
+    "provenance": "extracted"
+  },
+  {
+    "id": "arxiv-2606-19887",
+    "type": "source",
+    "source_type": "paper",
+    "title": "FinRED: An Expert-Guided Benchmark Generation and Evaluation Framework for Financial LLM Red-Teaming",
+    "authors": [
+      "Chaeyun Kim",
+      "Dae-Young Park",
+      "Junghwan Kim",
+      "Jinyoung Jeong",
+      "Eunji Song",
+      "YongTaek Lim",
+      "Minwoo Kim"
+    ],
+    "org": "DATUMO INC. / KAIST / Financial Security Institute (FSI), Republic of Korea",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2606.19887",
+    "published": "2026-06-18",
+    "retrieved": "2026-06-22",
+    "abstract": "FinRED is an expert-guided red-teaming construction+evaluation framework for financial LLM safety. It uses a two-level financial risk taxonomy (5 Level-1 categories / 26 Level-2 subtypes) mapping global standards (FATF, EU DORA, ISO/IEC 27001, BIS/BCBS, NIST, OWASP) to threats from regulatory evasion to complex fraud, plus a schema-driven pipeline converting ~500 real financial/regulatory documents into context-grounded Behavioral Prompt seeds (5,805 expert-validated seeds). A finance-specific 5-dimension judge rubric (harmfulness/persuasiveness/refusal-quality/factualness/evasiveness) aligns better with 12 FSI experts than static rubrics (human-LLM agreement 76.92%->88.46%, critical false negatives cut 28->12). Deployed in South Korea's FSI regulatory sandbox.",
+    "topics": [
+      "financial-llm",
+      "red-teaming-benchmark",
+      "expert-guided",
+      "risk-taxonomy",
+      "llm-as-a-judge",
+      "regulatory-evasion",
+      "sector-redteaming"
+    ],
+    "s2_id": "arXiv:2606.19887",
+    "citation_count": 0,
+    "cites": [
+      "arxiv-2402-04249",
+      "arxiv-2310-08419"
+    ],
+    "cited_by": [],
+    "provenance": "extracted"
+  },
+  {
+    "id": "arxiv-2606-17114",
+    "type": "source",
+    "source_type": "paper",
+    "title": "An Evaluation of Data Leakage Risks in Tool-Using LLM Agents in Realistic Scenarios",
+    "authors": [
+      "Hankyul Baek",
+      "Jaewon Noh",
+      "Sang Seo",
+      "Yongsu Kim",
+      "Gabriel Waikin Loh Matienzo",
+      "Young Il Kim",
+      "Ee Wei Seah",
+      "Akriti Vij"
+    ],
+    "org": "Korea AI Safety Institute / Singapore AI Safety Institute",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2606.17114",
+    "published": "2026-06-15",
+    "retrieved": "2026-06-22",
+    "abstract": "Joint SG AISI / KR AISI evaluation of agent data leakage across 12 realistic non-adversarial tasks (HR, DevOps, customer support, web automation, productivity), covering 5 risk types: data awareness, audience awareness, policy compliance, data minimization, access-boundary awareness. Using ReAct scaffolds, MCP tool environments, LLM-simulated users and task-specific LLM-judge rubrics over 3 agent models x 10 runs/scenario, none achieved fully correct AND fully safe execution. Operational leakage in benign workflows is a first-order safety concern distinct from adversarial exfiltration; capability and data-handling safety must be evaluated separately.",
+    "topics": [
+      "agentic-safety",
+      "data-leakage",
+      "privacy",
+      "benchmark",
+      "mcp",
+      "llm-judge",
+      "sector-government"
+    ],
+    "s2_id": "arXiv:2606.17114",
+    "citation_count": 0,
+    "cites": [
+      "arxiv-2406-12045",
+      "arxiv-2406-13352",
+      "arxiv-2410-09024",
+      "arxiv-2309-15817",
+      "arxiv-2503-09780"
+    ],
+    "provenance": "extracted"
+  },
+  {
+    "id": "arxiv-2606-13385",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Who Pays the Price? Stakeholder-Centric Prompt Injection Benchmarking for Real-world Web Agents",
+    "authors": [
+      "Zihao Wang",
+      "Yiming Li",
+      "Yutong Wu",
+      "Zheyu Liu",
+      "Kangjie Chen",
+      "Fok Kar Wai",
+      "Pin-Yu Chen",
+      "Vrizlynn L. L. Thing",
+      "Bo Li",
+      "Dacheng Tao",
+      "Tianwei Zhang"
+    ],
+    "org": "Nanyang Technological University / ST Engineering / IBM Research / UIUC",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2606.13385",
+    "published": "2026-06-11",
+    "retrieved": "2026-06-22",
+    "abstract": "StakeBench is a stakeholder-centric prompt-injection benchmark for LLM web agents that attributes harm to the affected entity (User, third-party Seller, Platform) rather than the attack surface. 12 attack objectives realized by 22 templates (9 DPI, 13 IPI) across 12 product categories = 264 executable cases on OneStopMarket/VisualWebArena. Evaluated on NanoBrowser and BrowserUse with GPT-5 and Gemini-2.5-Flash backbones (3,168 attacked runs), measured along ASR, Task Deviation Rate (TDR), Behavioral Irregularity Rate (BIR). IPI ASR 41.67-68.16%. Failures split into Stealthy Parasitism, Misaligned Disruption, Compounded Failure regimes; vulnerability profiles diverge by stakeholder.",
+    "topics": [
+      "prompt-injection",
+      "web-agent",
+      "benchmark",
+      "stakeholder-harm",
+      "indirect-injection",
+      "asr",
+      "sector-financial"
+    ],
+    "s2_id": "arXiv:2606.13385",
+    "citation_count": 0,
+    "cites": [
+      "arxiv-2406-13352",
+      "arxiv-2503-09780",
+      "arxiv-2410-06703",
+      "arxiv-2307-13854"
+    ],
+    "provenance": "extracted"
+  },
+  {
+    "id": "arxiv-2606-13737",
+    "type": "source",
+    "source_type": "paper",
+    "title": "FreoStream: Enhancing Stream Guardrails via Future-Aware Reasoning and Safety-Aligned Optimization",
+    "authors": [
+      "Jianwei Wang",
+      "Guoyang Shen",
+      "Yanhong Wu",
+      "Haoran Li",
+      "Hao Peng",
+      "Huiping Zhuang",
+      "Cen Chen",
+      "Ziqian Zeng"
+    ],
+    "org": "South China University of Technology / BUAA",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2606.13737",
+    "published": "2026-06-11",
+    "retrieved": "2026-06-22",
+    "abstract": "FreoStream is a streaming (token-level) LLM guardrail framework addressing two failure modes of stream guardrails: over-refusal of sensitive-but-benign tokens and safety degradation against implicit jailbreaks under incomplete context. It fine-tunes a LoRA reasoning adapter for Future-Reason-Judge (predict future, reason over full context, judge) triggered when the base guardrail flags an unsafe token, and a Safety-Aligned Optimization module that decomposes reasoning gradients to keep only the safety-aligned component. On Qwen3Guard-Stream-0.6B backbone it lowers both Over-Refusal Rate (ORR) and Attack Success Rate (ASR) vs baselines including Qwen-Stream-8B.",
+    "topics": [
+      "guardrail",
+      "stream-detection",
+      "over-refusal",
+      "jailbreak-defense",
+      "llm-as-a-defender",
+      "content-safety"
+    ],
+    "s2_id": "arXiv:2606.13737",
+    "citation_count": 0,
+    "cites": [
+      "arxiv-2312-06674",
+      "arxiv-2501-18492",
+      "arxiv-2307-15043",
+      "arxiv-2506-09996"
+    ],
+    "provenance": "extracted"
+  },
+  {
+    "id": "arxiv-2606-18550",
+    "type": "source",
+    "source_type": "paper",
+    "title": "The Gate Is Only as Honest as Its Contracts: ContractGuard for the Contract Layer of Risk-Aware Causal Gating",
+    "authors": [
+      "Laxmipriya Ganesh Iyer",
+      "Rahul Suresh Babu"
+    ],
+    "org": "Independent Researcher",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2606.18550",
+    "published": "2026-06-17",
+    "retrieved": "2026-06-22",
+    "abstract": "Analyzes Risk-Aware Causal Gating (RACG), which defends tool-using LLM agents against indirect prompt injection by removing dangerous tools from the visible action space. Shows the structural guarantee relocates trust into the integrity of tool contracts (declared preconditions R_i, effects E_i, risk rho_i, authorization alpha_i). RACG contains two gates (causal + admissibility); effect integrity (E_i+R_i causal routing), not the risk label, is the load-bearing assumption. Introduces ContractGuard, a verifier with signed provenance, typed contract attestation, and runtime effect verification forming a strict necessity ladder restoring injection success to zero (L3) across an exhaustive white-box adaptive attacker and six hosted frontier models (Claude Opus 4.8/Sonnet 4.6/Haiku 4.5, Amazon Nova Premier/Nova 2 Lite, GPT-OSS-120B).",
+    "topics": [
+      "prompt-injection",
+      "tool-contracts",
+      "agent-safety",
+      "supply-chain-security",
+      "least-privilege",
+      "mcp",
+      "function-calling"
+    ],
+    "s2_id": "arXiv:2606.18550",
+    "citation_count": 0,
+    "cites": [
+      "arxiv-2406-13352",
+      "arxiv-2309-15817",
+      "arxiv-2302-12173",
+      "arxiv-2406-12814"
+    ],
+    "provenance": "extracted"
+  },
+  {
+    "id": "arxiv-2606-19660",
+    "type": "source",
+    "source_type": "paper",
+    "title": "A Layered Security Framework Against Prompt Injection in RAG-Based Chatbots",
+    "authors": [
+      "G. Saleem",
+      "N. Ahmed",
+      "M. I. Zaman",
+      "A. Hassan"
+    ],
+    "org": "Sparkverse AI Ltd",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2606.19660",
+    "published": "2026-06-17",
+    "retrieved": "2026-06-22",
+    "abstract": "A three-layer model-agnostic middleware defense against direct and indirect prompt injection in RAG chatbots: Layer 1 input screening (rule pattern library + fine-tuned semantic anomaly classifier), Layer 2 provenance-based instruction hierarchy at context assembly (operator/retrieval/user privilege tiers), Layer 3 output auditing (policy rule engine + semantic drift detection), plus a continuous audit/retraining loop. Evaluated on 5,080 samples across GPT-4o, Llama 3, Mistral 7B against three attacker goals (Instruction Override, Data Exfiltration, Behavioral Manipulation). Reduces macro-averaged ASR from 71.4% to 11.3%, 4.8% FPR, 61.2ms median latency; layered effect exceeds sum of single layers.",
+    "topics": [
+      "prompt-injection",
+      "rag",
+      "guardrail",
+      "defense-in-depth",
+      "instruction-hierarchy",
+      "indirect-injection",
+      "owasp-llm"
+    ],
+    "s2_id": "arXiv:2606.19660",
+    "citation_count": 0,
+    "cites": [
+      "arxiv-2312-14197",
+      "arxiv-2302-12173",
+      "arxiv-2310-10501",
+      "arxiv-2312-06674",
+      "arxiv-2404-13208"
+    ],
+    "provenance": "extracted"
+  },
+  {
+    "id": "arxiv-2606-16242",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Rapid Poison: Practical Poisoning Attacks Against the Rapid Response Framework",
+    "authors": [
+      "David Huang",
+      "Jaewon Chang",
+      "Avidan Shah",
+      "Prateek Mittal",
+      "Chawin Sitawarin"
+    ],
+    "org": "Princeton University / Anthropic / UC Berkeley / NYU / Google DeepMind",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2606.16242",
+    "published": "2026-06-15",
+    "retrieved": "2026-06-22",
+    "abstract": "Reveals that prompt injection can infiltrate the Rapid Response (RR) jailbreak-defense pipeline (deployed in Anthropic ASL-3 safeguards) by injecting poisoned samples into the proliferation/SFT training set. Two objectives: (I) targeted false positives on harmless samples (utility degradation) and (II) concept-based backdoor (Omission Attack) causing false negatives that generalize even to jailbreaks the defender trained against. With only 1% poisoning: up to 100% FPR and up to 96% FNR. Attacker constrained to modify only positive-class (unsafe) samples, no label poisoning.",
+    "topics": [
+      "data-poisoning",
+      "backdoor",
+      "rapid-response",
+      "prompt-injection",
+      "jailbreak",
+      "guard-model",
+      "shortcut-learning"
+    ],
+    "s2_id": "arXiv:2606.16242",
+    "citation_count": 0,
+    "cites": [
+      "arxiv-2307-15043"
+    ],
+    "provenance": "extracted"
+  },
+  {
+    "id": "arxiv-2606-16751",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Automated jailbreak attack targeting multiple defense strategies (UniAttack)",
+    "authors": [
+      "Qi Wang",
+      "Chengcheng Wan",
+      "Weijia He",
+      "Yanqing Li",
+      "Hanqi Sun",
+      "Xiaodong Gu",
+      "Jiangtao Wang"
+    ],
+    "org": "East China Normal University / University of Southampton / Shanghai Jiao Tong University",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2606.16751",
+    "published": "2026-06-15",
+    "retrieved": "2026-06-22",
+    "abstract": "UniAttack is a fusion-based single-turn black-box adversarial testing framework built from a defense-oriented perspective. It extracts minimal high-impact attack features from diverse existing attacks, optimizes them via a specialized attacker LLM, and composes them into flexible templates through automated refinement. Motivated by the Swiss-cheese model, it simultaneously targets input filtering, model alignment, and output detection layers in one prompt. Achieves average ASR 87.17% (64.63%-248.82% improvement over PAIR/CIPHER/DEEPINCEPTION/LLM-FUZZER baselines) across 9 LLMs at only 0.03-4.96% of baseline token cost, with 1.01-2.81 queries per success.",
+    "topics": [
+      "jailbreak",
+      "automated-red-teaming",
+      "feature-fusion",
+      "black-box",
+      "multi-layer-defense",
+      "single-turn"
+    ],
+    "s2_id": "arXiv:2606.16751",
+    "citation_count": 0,
+    "cites": [
+      "arxiv-2310-08419"
+    ],
+    "provenance": "extracted"
+  },
+  {
+    "id": "arxiv-2606-15788",
+    "type": "source",
+    "source_type": "paper",
+    "title": "GAS-Leak-LLM: Genetic Algorithm-Based Suffix Optimization for Black-Box LLM Jailbreaking",
+    "authors": [
+      "Aman Anifer",
+      "Vignesh Kumar Kembu",
+      "Vishnu M",
+      "Antonino Nocera",
+      "Vinod P.",
+      "Amal Murali PK",
+      "Akshay S Rajan"
+    ],
+    "org": "University of Pavia / Cochin University of Science and Technology",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2606.15788",
+    "published": "2026-06-14",
+    "retrieved": "2026-06-22",
+    "abstract": "GAS-Leak-LLM is a black-box jailbreak that evolves a UNIVERSAL adversarial suffix using a genetic algorithm (selection, crossover, mutation, elitism over 100 generations), requiring no gradient or model internals. Fitness = similarity(response, harmful target) - similarity(response, refusal). Two suffix types: meaningless (Qwen3-Embedding-0.6B vocabulary tokens) and meaningful (LLM-composed coherent sentences from frequent English words). Key findings: instruction fine-tuning strongly improves alignment; semantically meaningful suffixes are substantially more effective than meaningless ones; longer suffixes matter more for robust models like Llama.",
+    "topics": [
+      "jailbreak",
+      "adversarial-suffix",
+      "genetic-algorithm",
+      "black-box",
+      "universal-attack",
+      "evolutionary-search"
+    ],
+    "s2_id": "arXiv:2606.15788",
+    "citation_count": 0,
+    "cites": [
+      "arxiv-2307-15043"
+    ],
+    "provenance": "extracted"
+  },
+  {
+    "id": "arxiv-2606-15308",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Forced Deferral: Manipulating Routing Decisions in Multimodal LLM Cascades",
+    "authors": [
+      "Zhongye Liu",
+      "Yaopei Zeng",
+      "Yurui Chang",
+      "Lu Lin"
+    ],
+    "org": "Pennsylvania State University",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2606.15308",
+    "published": "2026-06-13",
+    "retrieved": "2026-06-22",
+    "abstract": "Multimodal LLM (MLLM) cascades route to a strong model only when a cheap weak model is unconfident. The Forced Deferral Attack (FDA) is an adversarial image attack that lowers the weak model's confidence to force unnecessary deferral to the strong model, shifting compute cost to the provider without targeting answer correctness. FDA learns a universal border trigger by optimizing a temperature-flattened teacher-forcing KL objective that is metric-agnostic (works against any uncertainty score), semantics-preserving (border-only, central content intact), and universal across queries. Consistently increases strong-model routing across datasets/families/deferral metrics, beating image-perturbation and prompt-injection baselines, and survives JPEG/Gaussian/bit-depth preprocessing.",
+    "topics": [
+      "multimodal",
+      "mllm-cascade",
+      "routing-attack",
+      "compute-allocation",
+      "adversarial-image",
+      "universal-trigger",
+      "deferral"
+    ],
+    "s2_id": "arXiv:2606.15308",
+    "citation_count": 0,
+    "cites": [],
+    "provenance": "extracted"
+  },
+  {
+    "id": "arxiv-2606-20470",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Analyzing Defensive Misdirection Against Model-Guided Automated Attacks on Agentic AI Systems",
+    "authors": [
+      "Reza Soosahabi",
+      "Vivek Namsani"
+    ],
+    "org": "Keysight Technologies (Application & Threat Intelligence Research Center)",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2606.20470",
+    "published": "2026-06-18",
+    "retrieved": "2026-06-22",
+    "abstract": "Probabilistic analysis of model-guided automated jailbreak/prompt-injection attacks that use an automated LLM judge to evaluate target responses and refine prompts. Shows conventional detect-and-block defenses let attacker ASR approach 1 as query budget grows, because predictable refusals give useful feedback to automated search. Proposes detect-and-misdirect: detected malicious interactions get controlled, plausible but non-operational misleading responses that induce false positives in the attacker's judge, bounding asymptotic ASR. A proof-of-concept, Contextual Misdirection via Progressive Engagement (CMPE), reduces estimated ASR by up to two orders of magnitude and nearly eliminates verified success in end-to-end PAIR and GPTFuzz runs.",
+    "topics": [
+      "model-guided-attack",
+      "automated-red-teaming",
+      "llm-as-a-judge",
+      "prompt-injection",
+      "jailbreak",
+      "active-defense",
+      "deception",
+      "agentic-security"
+    ],
+    "s2_id": "arXiv:2606.20470",
+    "citation_count": 0,
+    "cites": [
+      "arxiv-2307-15043"
+    ],
+    "provenance": "extracted"
   }
 ]
