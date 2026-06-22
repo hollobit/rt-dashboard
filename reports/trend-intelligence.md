@@ -8,7 +8,7 @@ reproducible by re-running the build pipeline.
 
 ## 0. Corpus growth (snapshot delta, 5 cycles)
 
-| 날짜 | 노드 | 엣지 | 논문 | 위협 | 뉴스 |
+| 날짜 | 노드 | 엣지 | 소스(전체) | 위협 | 뉴스 |
 |---|---|---|---|---|---|
 | 2026-06-19 | 1,322 | 7,840 | ? | ? | 5 |
 | 2026-06-20 | 1,381 | 8,030 | 274 | 62 | 222 |
