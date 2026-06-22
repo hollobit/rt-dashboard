@@ -1,0 +1,104 @@
+{
+  "date": "2026-06-23",
+  "nodes": 2979,
+  "edges": 16977,
+  "by_kind": {
+    "source": 463,
+    "org": 299,
+    "finding": 428,
+    "threat": 115,
+    "benchmark": 260,
+    "teaming": 104,
+    "sector": 24,
+    "attack": 14,
+    "atlas": 116,
+    "harm": 61,
+    "attack_technique": 184,
+    "vulnerability": 114,
+    "incident": 50,
+    "tactic": 16,
+    "procedure": 97,
+    "risk": 76,
+    "control": 113,
+    "standard": 42,
+    "evidence": 134,
+    "reference": 12,
+    "product": 35,
+    "model_card": 41,
+    "guideline-doc": 4,
+    "guideline-item": 177
+  },
+  "emerging": [
+    {
+      "node": "safety.misuse-risk",
+      "label": "misuse-risk",
+      "count": 251,
+      "mean_novelty": 0.645,
+      "score": 161.97
+    },
+    {
+      "node": "prompt-attack",
+      "label": "prompt-attack",
+      "count": 215,
+      "mean_novelty": 0.651,
+      "score": 139.9
+    },
+    {
+      "node": "model.jailbreak",
+      "label": "model.jailbreak",
+      "count": 169,
+      "mean_novelty": 0.62,
+      "score": 104.77
+    },
+    {
+      "node": "safety.cyber-risk",
+      "label": "cyber-risk",
+      "count": 106,
+      "mean_novelty": 0.72,
+      "score": 76.36
+    },
+    {
+      "node": "agentic.autonomy-risk",
+      "label": "autonomy-risk",
+      "count": 97,
+      "mean_novelty": 0.731,
+      "score": 70.93
+    },
+    {
+      "node": "model.prompt-injection",
+      "label": "model.prompt-injection",
+      "count": 93,
+      "mean_novelty": 0.705,
+      "score": 65.52
+    },
+    {
+      "node": "agent.tool-abuse",
+      "label": "agent.tool-abuse",
+      "count": 86,
+      "mean_novelty": 0.738,
+      "score": 63.46
+    },
+    {
+      "node": "agentic.tool-risk",
+      "label": "tool-risk",
+      "count": 87,
+      "mean_novelty": 0.725,
+      "score": 63.05
+    },
+    {
+      "node": "autonomous-attack",
+      "label": "autonomous-attack",
+      "count": 84,
+      "mean_novelty": 0.739,
+      "score": 62.04
+    },
+    {
+      "node": "se.devsecops",
+      "label": "devsecops",
+      "count": 87,
+      "mean_novelty": 0.689,
+      "score": 59.9
+    }
+  ],
+  "news": 230
+}

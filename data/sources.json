@@ -48,7 +48,16 @@
       "arxiv-2405-18540",
       "arxiv-2504-15047",
       "arxiv-2505-22037",
-      "arxiv-2605-04019"
+      "arxiv-2605-04019",
+      "src-2606-09701",
+      "src-agentic-era-dreadnode",
+      "src-autorise-strategy-evolution",
+      "src-cop-composition-principles",
+      "src-j2-jailbreaking-to-jailbreak",
+      "src-qd-semantic-strategy-evolution",
+      "src-qdrt-behavior-conditioned",
+      "src-self-play-moving-targets",
+      "src-tmap-agent-trajectory-evo"
     ]
   },
   {
@@ -158,6 +167,7 @@
       "arxiv-2405-18540",
       "arxiv-2406-04313",
       "arxiv-2406-13352",
+      "arxiv-2407-01850",
       "arxiv-2410-05295",
       "arxiv-2410-09024",
       "arxiv-2410-09097",
@@ -166,10 +176,38 @@
       "arxiv-2505-22037",
       "arxiv-2508-05360",
       "arxiv-2508-18076",
+      "arxiv-2510-18131",
       "arxiv-2512-20677",
       "arxiv-2603-10807",
       "arxiv-2605-04019",
-      "arxiv-2605-11047"
+      "arxiv-2605-11047",
+      "arxiv-2606-11409",
+      "arxiv-2606-11425",
+      "arxiv-2606-14154",
+      "src-2606-02630",
+      "src-2606-03647",
+      "src-2606-04027",
+      "src-2606-05233",
+      "src-2606-09701",
+      "src-adversa-multijudge-consensus",
+      "src-agentic-era-dreadnode",
+      "src-arxiv-2503-04957-safearena",
+      "src-arxiv-2505-21605-sosbench",
+      "src-arxiv-2509-23694-safesearch",
+      "src-arxiv-2510-00857-managerbench",
+      "src-arxiv-2602-19948-clinical-rt",
+      "src-autorise-strategy-evolution",
+      "src-coin-flip-judge-reliability",
+      "src-cop-composition-principles",
+      "src-crossgen-transfer-qd",
+      "src-j2-jailbreaking-to-jailbreak",
+      "src-moesafety-2605-29708",
+      "src-qd-semantic-strategy-evolution",
+      "src-radar-roleplay-multiagent",
+      "src-scanners-lie-evaluator-instability",
+      "src-self-play-moving-targets",
+      "src-wang-refusal-direction-universal-2025",
+      "src-xie-overfit-finetune-jb-2025"
     ]
   },
   {
@@ -219,7 +257,15 @@
       "arxiv-2404-01318",
       "arxiv-2412-16339",
       "arxiv-2502-05209",
-      "arxiv-2510-07192"
+      "arxiv-2510-07192",
+      "arxiv-2606-14154",
+      "src-2606-03647",
+      "src-2606-04027",
+      "src-arxiv-2505-21605-sosbench",
+      "src-arxiv-2509-23694-safesearch",
+      "src-coin-flip-judge-reliability",
+      "src-self-play-moving-targets",
+      "src-xie-overfit-finetune-jb-2025"
     ]
   },
   {
@@ -317,7 +363,18 @@
       "arxiv-2402-16822",
       "arxiv-2406-13352",
       "arxiv-2410-09024",
-      "arxiv-2412-16339"
+      "arxiv-2412-16339",
+      "arxiv-2606-11409",
+      "src-2603-19469-formal-agent-sec",
+      "src-2606-03647",
+      "src-2606-04027",
+      "src-adversa-multijudge-consensus",
+      "src-arxiv-2505-21605-sosbench",
+      "src-arxiv-2603-01291-jailnewsbench",
+      "src-autorise-strategy-evolution",
+      "src-cop-composition-principles",
+      "src-liu-psychological-jb-2025",
+      "src-xie-overfit-finetune-jb-2025"
     ]
   },
   {
@@ -366,7 +423,21 @@
       "arxiv-2406-13352",
       "arxiv-2408-08926"
     ],
-    "cited_by": []
+    "cited_by": [
+      "arxiv-2606-02302",
+      "arxiv-2606-12918",
+      "arxiv-2606-14517",
+      "arxiv-2606-15609",
+      "src-2603-19469-formal-agent-sec",
+      "src-2605-17453-trust-no-tool",
+      "src-2606.09084",
+      "src-2606.10749",
+      "src-arxiv-2503-04957-safearena",
+      "src-arxiv-2509-23694-safesearch",
+      "src-arxiv-2510-00857-managerbench",
+      "src-j2-jailbreaking-to-jailbreak",
+      "src-tmap-agent-trajectory-evo"
+    ]
   },
   {
     "id": "anthropic-frontier-red-team-2025",
@@ -449,7 +520,8 @@
     "citation_count": 225,
     "cites": [],
     "cited_by": [
-      "arxiv-2508-06471"
+      "arxiv-2508-06471",
+      "src-arxiv-2603-01291-jailnewsbench"
     ]
   },
   {
@@ -787,7 +859,9 @@
       "arxiv-2410-09024",
       "arxiv-2503-00061",
       "arxiv-2508-14925",
-      "arxiv-2509-05755"
+      "arxiv-2509-05755",
+      "arxiv-2606-14517",
+      "src-2603-19469-formal-agent-sec"
     ]
   },
   {
@@ -871,7 +945,9 @@
       "arxiv-2407-21783"
     ],
     "cited_by": [
-      "arxiv-2410-09097"
+      "arxiv-2410-09097",
+      "arxiv-2510-17687",
+      "src-qdrt-behavior-conditioned"
     ]
   },
   {
@@ -973,6 +1049,8 @@
       "arxiv-2405-18540",
       "arxiv-2406-04313",
       "arxiv-2406-13352",
+      "arxiv-2407-01850",
+      "arxiv-2410-00296",
       "arxiv-2410-05295",
       "arxiv-2410-07283",
       "arxiv-2410-09024",
@@ -984,9 +1062,51 @@
       "arxiv-2504-15047",
       "arxiv-2505-22037",
       "arxiv-2506-05376",
+      "arxiv-2510-18131",
       "arxiv-2512-20677",
       "arxiv-2604-23067",
-      "arxiv-2605-04019"
+      "arxiv-2605-04019",
+      "arxiv-2606-14517",
+      "arxiv-2606-15057",
+      "arxiv-2606-15609",
+      "arxiv-2606-16751",
+      "src-2603-19469-formal-agent-sec",
+      "src-2605-11039-pact",
+      "src-2606-03647",
+      "src-2606-04027",
+      "src-2606-05609",
+      "src-2606-07706",
+      "src-2606-09701",
+      "src-2606-12716",
+      "src-2606.10525",
+      "src-adversa-multijudge-consensus",
+      "src-agentic-era-dreadnode",
+      "src-arxiv-2407-12784-agentpoison",
+      "src-arxiv-2503-04957-safearena",
+      "src-arxiv-2505-21605-sosbench",
+      "src-arxiv-2506-04704-holisafe",
+      "src-arxiv-2603-01291-jailnewsbench",
+      "src-bentov-gaslite-2024",
+      "src-cohen-morris-ii-worm-2024",
+      "src-coin-flip-judge-reliability",
+      "src-cop-composition-principles",
+      "src-crossgen-transfer-qd",
+      "src-egashira-exploit-quantization-2024",
+      "src-jovanovic-watermark-stealing-2024",
+      "src-kuo-hcot-2025",
+      "src-liu-psychological-jb-2025",
+      "src-lowresource-jailbreak-2023",
+      "src-moesafety-2605-29708",
+      "src-qd-semantic-strategy-evolution",
+      "src-qdrt-behavior-conditioned",
+      "src-radar-roleplay-multiagent",
+      "src-reverse-constitutional-ai",
+      "src-tmap-agent-trajectory-evo",
+      "src-wang-activation-attack-2023",
+      "src-wang-implicit-crossmodal-jb-2025",
+      "src-wang-refusal-direction-universal-2025",
+      "src-xie-overfit-finetune-jb-2025",
+      "src-yong-lowresource-jb-2023"
     ]
   },
   {
@@ -1168,9 +1288,11 @@
     "cites": [
       "arxiv-2310-08419",
       "arxiv-2402-04249",
-      "arxiv-2404-01833"
+      "arxiv-2404-01833",
+      "src-x-teaming-multiturn"
     ],
-    "cited_by": []
+    "cited_by": [],
+    "influential_citation_count": 0
   },
   {
     "id": "bloomberg-genai-finance-risks-2025",
@@ -1398,7 +1520,16 @@
       "arxiv-2404-01318",
       "arxiv-2404-01833",
       "arxiv-2410-09097",
-      "arxiv-2504-15047"
+      "arxiv-2504-15047",
+      "arxiv-2606-11425",
+      "src-2606-03647",
+      "src-cop-composition-principles",
+      "src-j2-jailbreaking-to-jailbreak",
+      "src-liu-psychological-jb-2025",
+      "src-qd-semantic-strategy-evolution",
+      "src-radar-roleplay-multiagent",
+      "src-self-play-moving-targets",
+      "src-wang-implicit-crossmodal-jb-2025"
     ]
   },
   {
@@ -1444,6 +1575,7 @@
       "arxiv-2402-16822",
       "arxiv-2404-01318",
       "arxiv-2406-04313",
+      "arxiv-2407-01850",
       "arxiv-2410-05295",
       "arxiv-2410-07283",
       "arxiv-2410-09097",
@@ -1452,7 +1584,26 @@
       "arxiv-2505-22037",
       "arxiv-2506-05376",
       "arxiv-2604-23067",
-      "arxiv-2605-04019"
+      "arxiv-2605-04019",
+      "arxiv-2606-11409",
+      "arxiv-2606-11425",
+      "arxiv-2606-16751",
+      "src-2606-03647",
+      "src-2606-05609",
+      "src-2606.09084",
+      "src-2606.10525",
+      "src-adversa-multijudge-consensus",
+      "src-agentic-era-dreadnode",
+      "src-arxiv-2604-17730-mhsafeeval",
+      "src-autorise-strategy-evolution",
+      "src-cop-composition-principles",
+      "src-j2-jailbreaking-to-jailbreak",
+      "src-liu-psychological-jb-2025",
+      "src-pismith-rl-prompt-injection",
+      "src-radar-roleplay-multiagent",
+      "src-reverse-constitutional-ai",
+      "src-self-play-moving-targets",
+      "src-tmap-agent-trajectory-evo"
     ]
   },
   {
@@ -1502,6 +1653,8 @@
       "arxiv-2404-01833",
       "arxiv-2405-18540",
       "arxiv-2406-04313",
+      "arxiv-2407-01850",
+      "arxiv-2410-00296",
       "arxiv-2412-16339",
       "arxiv-2501-07238",
       "arxiv-2502-05209",
@@ -1510,7 +1663,38 @@
       "arxiv-2506-05376",
       "arxiv-2603-10807",
       "arxiv-2603-25176",
-      "arxiv-2605-04019"
+      "arxiv-2605-04019",
+      "arxiv-2606-11409",
+      "arxiv-2606-11425",
+      "arxiv-2606-16242",
+      "src-2606-03647",
+      "src-2606-04027",
+      "src-2606-05609",
+      "src-2606-11817",
+      "src-2606.10525",
+      "src-adversa-multijudge-consensus",
+      "src-agentic-era-dreadnode",
+      "src-arxiv-2604-17730-mhsafeeval",
+      "src-autorise-strategy-evolution",
+      "src-cohen-morris-ii-worm-2024",
+      "src-coin-flip-judge-reliability",
+      "src-cop-composition-principles",
+      "src-crossgen-transfer-qd",
+      "src-egashira-exploit-quantization-2024",
+      "src-j2-jailbreaking-to-jailbreak",
+      "src-liu-psychological-jb-2025",
+      "src-moesafety-2605-29708",
+      "src-pismith-rl-prompt-injection",
+      "src-qd-semantic-strategy-evolution",
+      "src-qdrt-behavior-conditioned",
+      "src-radar-roleplay-multiagent",
+      "src-reverse-constitutional-ai",
+      "src-scanners-lie-evaluator-instability",
+      "src-self-play-moving-targets",
+      "src-tmap-agent-trajectory-evo",
+      "src-wang-implicit-crossmodal-jb-2025",
+      "src-wang-juli-logprob-jb-2025",
+      "src-xie-overfit-finetune-jb-2025"
     ]
   },
   {
@@ -1724,7 +1908,12 @@
       "arxiv-2406-13352"
     ],
     "cited_by": [
-      "arxiv-2509-05755"
+      "arxiv-2509-05755",
+      "arxiv-2605-24309",
+      "arxiv-2606-16242",
+      "src-2603-19469-formal-agent-sec",
+      "src-2604-27464",
+      "src-authgraph-2605-26497"
     ]
   },
   {
@@ -1795,7 +1984,11 @@
     "s2_id": "eba762de9b2120f778b6ccd6c26d3ba00b6f73b5",
     "citation_count": 262,
     "cites": [],
-    "cited_by": []
+    "cited_by": [
+      "src-arxiv-2510-00857-managerbench",
+      "src-arxiv-2605-20744-hack-verifiable",
+      "src-arxiv-2605-21384-specbench"
+    ]
   },
   {
     "id": "arxiv-2401-05566",
@@ -1847,7 +2040,11 @@
       "arxiv-2404-01318",
       "arxiv-2406-07358",
       "arxiv-2503-00061",
-      "arxiv-2510-07192"
+      "arxiv-2510-07192",
+      "src-2606-12709",
+      "src-arxiv-2605-20744-hack-verifiable",
+      "src-lieber-loratk-2024",
+      "src-reverse-constitutional-ai"
     ]
   },
   {
@@ -2031,7 +2228,8 @@
     "citation_count": 235,
     "cites": [],
     "cited_by": [
-      "arxiv-2503-16861"
+      "arxiv-2503-16861",
+      "src-arxiv-2510-00857-managerbench"
     ]
   },
   {
@@ -2108,7 +2306,8 @@
     "cited_by": [
       "arxiv-2406-07358",
       "arxiv-2410-09097",
-      "arxiv-2506-05376"
+      "arxiv-2506-05376",
+      "arxiv-2606-06529"
     ]
   },
   {
@@ -2216,7 +2415,10 @@
       "arxiv-2407-21783"
     ],
     "cited_by": [
-      "arxiv-2506-05376"
+      "arxiv-2506-05376",
+      "src-arxiv-2505-21605-sosbench",
+      "src-arxiv-2509-23694-safesearch",
+      "src-kuo-hcot-2025"
     ]
   },
   {
@@ -2853,7 +3055,9 @@
     "provenance": "extracted",
     "s2_id": "add98c38c95c9639e0f7d07ca0087b087e1d00d1",
     "citation_count": 4,
-    "cited_by": []
+    "cited_by": [
+      "src-2606.10749"
+    ]
   },
   {
     "id": "arxiv-2509-06136",
@@ -2926,12 +3130,14 @@
       "arxiv-2212-08073",
       "arxiv-2307-15043",
       "arxiv-2402-04249",
-      "arxiv-2404-03027"
+      "arxiv-2404-03027",
+      "src-szegedy-adversarial-2013"
     ],
     "provenance": "extracted",
     "s2_id": "07b98b209c23bd53a177ca648f6630714bc455a2",
     "citation_count": 0,
-    "cited_by": []
+    "cited_by": [],
+    "influential_citation_count": 0
   },
   {
     "id": "arxiv-2602-02164",
@@ -3075,10 +3281,13 @@
     "cites": [
       "arxiv-2307-15043",
       "arxiv-2310-02446",
-      "arxiv-2312-02119"
+      "arxiv-2312-02119",
+      "src-x-teaming-multiturn",
+      "src-yong-lowresource-jb-2023"
     ],
     "cited_by": [],
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "influential_citation_count": 0
   },
   {
     "id": "arxiv-2605-04019",
@@ -3117,10 +3326,13 @@
       "arxiv-2402-04249",
       "arxiv-2402-16822",
       "arxiv-2404-01833",
-      "arxiv-2501-07238"
+      "arxiv-2501-07238",
+      "mc-src-ms-red-teaming-100",
+      "src-yong-lowresource-jb-2023"
     ],
     "cited_by": [],
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "influential_citation_count": 0
   },
   {
     "id": "arxiv-2605-11047",
@@ -3154,7 +3366,8 @@
       "arxiv-2402-04249"
     ],
     "provenance": "extracted",
-    "cited_by": []
+    "cited_by": [],
+    "influential_citation_count": 0
   },
   {
     "id": "arxiv-2605-17075",
@@ -3186,7 +3399,8 @@
     "citation_count": 0,
     "cites": [],
     "provenance": "extracted",
-    "cited_by": []
+    "cited_by": [],
+    "influential_citation_count": 0
   },
   {
     "id": "acm-aisec25-ai-cve",
@@ -3426,12 +3640,25 @@
     "s2_id": "2c4d2d889a1f0ff9598de829a001df11a95d3294",
     "citation_count": 342,
     "cited_by": [
+      "arxiv-2410-00296",
       "arxiv-2501-07238",
       "arxiv-2505-22037",
       "arxiv-2506-05376",
       "arxiv-2603-10807",
       "arxiv-2603-25176",
-      "arxiv-2605-04019"
+      "arxiv-2605-04019",
+      "arxiv-2606-11409",
+      "arxiv-2606-11425",
+      "arxiv-2606-16242",
+      "src-2606-09701",
+      "src-2606.09084",
+      "src-agentic-era-dreadnode",
+      "src-arxiv-2503-04957-safearena",
+      "src-arxiv-2505-21605-sosbench",
+      "src-autorise-strategy-evolution",
+      "src-j2-jailbreaking-to-jailbreak",
+      "src-liu-psychological-jb-2025",
+      "src-tmap-agent-trajectory-evo"
     ]
   },
   {
@@ -3477,7 +3704,13 @@
     "citation_count": 186,
     "cited_by": [
       "arxiv-2504-15047",
-      "arxiv-2505-22037"
+      "arxiv-2505-22037",
+      "arxiv-2606-11425",
+      "src-2606-03647",
+      "src-2606-04027",
+      "src-autorise-strategy-evolution",
+      "src-cop-composition-principles",
+      "src-qdrt-behavior-conditioned"
     ]
   },
   {
@@ -3517,7 +3750,11 @@
     "s2_id": "c4ff1be5c254b60b96b7455eefcc4ec9583f82ed",
     "citation_count": 287,
     "cited_by": [
-      "arxiv-2505-04806"
+      "arxiv-2505-04806",
+      "arxiv-2606-11425",
+      "src-2606-04027",
+      "src-j2-jailbreaking-to-jailbreak",
+      "src-radar-roleplay-multiagent"
     ]
   },
   {
@@ -3557,7 +3794,10 @@
     "provenance": "extracted",
     "s2_id": "e24424283c02fbe7f641e5b3490d7bb059f8355a",
     "citation_count": 1448,
-    "cited_by": []
+    "cited_by": [
+      "arxiv-2606-16751",
+      "src-arxiv-2410-14182-labsafety"
+    ]
   },
   {
     "id": "arxiv-2204-05862",
@@ -3628,9 +3868,22 @@
       "arxiv-2405-18540",
       "arxiv-2406-11704",
       "arxiv-2406-13352",
+      "arxiv-2407-01850",
       "arxiv-2412-08905",
       "arxiv-2506-05376",
-      "arxiv-2510-07192"
+      "arxiv-2510-07192",
+      "arxiv-2606-15609",
+      "src-2603-19469-formal-agent-sec",
+      "src-adversa-multijudge-consensus",
+      "src-arxiv-2505-21605-sosbench",
+      "src-arxiv-2509-10970-psychosis-bench",
+      "src-arxiv-2510-00857-managerbench",
+      "src-arxiv-2602-13379-mt-agentrisk",
+      "src-arxiv-2603-01291-jailnewsbench",
+      "src-liu-psychological-jb-2025",
+      "src-lowresource-jailbreak-2023",
+      "src-wang-implicit-crossmodal-jb-2025",
+      "src-yong-lowresource-jb-2023"
     ]
   },
   {
@@ -3718,10 +3971,25 @@
       "arxiv-2402-04249",
       "arxiv-2403-03218",
       "arxiv-2405-18540",
+      "arxiv-2407-01850",
       "arxiv-2412-16339",
       "arxiv-2508-18076",
       "arxiv-2512-20677",
-      "arxiv-2603-25176"
+      "arxiv-2603-25176",
+      "arxiv-2606-09178",
+      "arxiv-2606-16751",
+      "src-2603-19469-formal-agent-sec",
+      "src-2604-22879-cfv",
+      "src-adversa-multijudge-consensus",
+      "src-arxiv-2505-21605-sosbench",
+      "src-arxiv-2602-19948-clinical-rt",
+      "src-autorise-strategy-evolution",
+      "src-j2-jailbreaking-to-jailbreak",
+      "src-lowresource-jailbreak-2023",
+      "src-qdrt-behavior-conditioned",
+      "src-self-play-moving-targets",
+      "src-wang-activation-attack-2023",
+      "src-yong-lowresource-jb-2023"
     ]
   },
   {
@@ -3757,7 +4025,10 @@
     "provenance": "extracted",
     "cited_by": [
       "arxiv-2410-05295",
-      "arxiv-2512-20677"
+      "arxiv-2510-17687",
+      "arxiv-2512-20677",
+      "src-arxiv-2504-09689-emoagent",
+      "src-arxiv-2505-21605-sosbench"
     ]
   },
   {
@@ -3799,7 +4070,14 @@
       "arxiv-2310-08419"
     ],
     "provenance": "extracted",
-    "cited_by": []
+    "cited_by": [
+      "arxiv-2410-00296",
+      "arxiv-2510-17687",
+      "src-2606-07706",
+      "src-arxiv-2506-04704-holisafe",
+      "src-cheng-tvpi-2025",
+      "src-wang-implicit-crossmodal-jb-2025"
+    ]
   },
   {
     "id": "arxiv-2310-06474",
@@ -3838,7 +4116,13 @@
       "arxiv-2310-02446",
       "arxiv-2311-05608",
       "arxiv-2404-01318",
-      "arxiv-2404-01833"
+      "arxiv-2404-01833",
+      "arxiv-2606-09178",
+      "src-arxiv-2603-01291-jailnewsbench",
+      "src-lowresource-jailbreak-2023",
+      "src-radar-roleplay-multiagent",
+      "src-wang-refusal-direction-universal-2025",
+      "src-yong-lowresource-jb-2023"
     ]
   },
   {
@@ -3917,7 +4201,12 @@
     ],
     "provenance": "extracted",
     "cited_by": [
-      "arxiv-2602-11327"
+      "arxiv-2602-11327",
+      "arxiv-2606-14154",
+      "src-2603-19469-formal-agent-sec",
+      "src-2606.08661",
+      "src-arxiv-2509-23694-safesearch",
+      "src-arxiv-2602-15654-zombie-agents"
     ]
   },
   {
@@ -4007,7 +4296,15 @@
       "arxiv-2410-09024",
       "arxiv-2502-05209",
       "arxiv-2505-22037",
-      "arxiv-2506-05376"
+      "arxiv-2506-05376",
+      "arxiv-2606-16242",
+      "src-2603-19469-formal-agent-sec",
+      "src-arxiv-2503-04957-safearena",
+      "src-arxiv-2510-27629-biorisk-openweight",
+      "src-coin-flip-judge-reliability",
+      "src-cop-composition-principles",
+      "src-j2-jailbreaking-to-jailbreak",
+      "src-self-play-moving-targets"
     ]
   },
   {
@@ -4059,7 +4356,9 @@
       "arxiv-2406-04313",
       "arxiv-2406-07358",
       "arxiv-2501-07238",
-      "arxiv-2502-05209"
+      "arxiv-2502-05209",
+      "src-arxiv-2505-21605-sosbench",
+      "src-arxiv-2510-27629-biorisk-openweight"
     ]
   },
   {
@@ -4157,7 +4456,8 @@
     "provenance": "extracted",
     "citation_count": 38,
     "cited_by": [
-      "arxiv-2505-22037"
+      "arxiv-2505-22037",
+      "src-hsiung-guardrail-collapse-2025"
     ]
   },
   {
@@ -4195,7 +4495,9 @@
     ],
     "provenance": "extracted",
     "citation_count": 26,
-    "cited_by": []
+    "cited_by": [
+      "src-scanners-lie-evaluator-instability"
+    ]
   },
   {
     "id": "arxiv-2505-22037",
@@ -4244,7 +4546,9 @@
     ],
     "provenance": "extracted",
     "citation_count": 4,
-    "cited_by": []
+    "cited_by": [
+      "src-autorise-strategy-evolution"
+    ]
   },
   {
     "id": "arxiv-2408-08926",
@@ -4284,7 +4588,9 @@
     "provenance": "extracted",
     "cited_by": [
       "arxiv-2410-09024",
-      "arxiv-2602-02164"
+      "arxiv-2602-02164",
+      "src-2604-18718",
+      "src-2605-31593"
     ]
   },
   {
@@ -4324,7 +4630,8 @@
     "cites": [],
     "provenance": "extracted",
     "cited_by": [
-      "arxiv-2602-02164"
+      "arxiv-2602-02164",
+      "src-2605-31593"
     ]
   },
   {
@@ -4400,7 +4707,9 @@
       "arxiv-2407-21783"
     ],
     "provenance": "extracted",
-    "cited_by": []
+    "cited_by": [
+      "arxiv-2606-16242"
+    ]
   },
   {
     "id": "arxiv-2410-07283",
@@ -4433,7 +4742,11 @@
       "arxiv-2312-02119"
     ],
     "provenance": "extracted",
-    "cited_by": []
+    "cited_by": [
+      "src-2605-11039-pact",
+      "src-2606.09084",
+      "src-authgraph-2605-26497"
+    ]
   },
   {
     "id": "arxiv-2508-14925",
@@ -4473,7 +4786,8 @@
     ],
     "provenance": "extracted",
     "cited_by": [
-      "arxiv-2509-05755"
+      "arxiv-2509-05755",
+      "src-2605-17453-trust-no-tool"
     ]
   },
   {
@@ -4758,7 +5072,20 @@
       "guardrails",
       "moderation"
     ],
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "cited_by": [
+      "arxiv-2606-11409",
+      "arxiv-2606-11425",
+      "arxiv-2606-14517",
+      "src-2603-28166-grantbox",
+      "src-2605-17453-trust-no-tool",
+      "src-2606-04027",
+      "src-2606-05609",
+      "src-2606.10525",
+      "src-arxiv-2509-23694-safesearch",
+      "src-coin-flip-judge-reliability",
+      "src-pismith-rl-prompt-injection"
+    ]
   },
   {
     "id": "arxiv-2407-21783",
@@ -4794,7 +5121,23 @@
       "arxiv-2412-16339",
       "arxiv-2501-13411",
       "arxiv-2502-05209",
-      "arxiv-2510-07192"
+      "arxiv-2510-07192",
+      "arxiv-2606-09178",
+      "arxiv-2606-11409",
+      "src-2605-17453-trust-no-tool",
+      "src-2606-03647",
+      "src-2606-05609",
+      "src-2606-11817",
+      "src-arxiv-2412-13178-safeagentbench",
+      "src-arxiv-2510-27629-biorisk-openweight",
+      "src-coin-flip-judge-reliability",
+      "src-cop-composition-principles",
+      "src-hsiung-guardrail-collapse-2025",
+      "src-j2-jailbreaking-to-jailbreak",
+      "src-kuo-hcot-2025",
+      "src-ocelot-2606-12341",
+      "src-qdrt-behavior-conditioned",
+      "src-xie-overfit-finetune-jb-2025"
     ]
   },
   {
@@ -4829,7 +5172,8 @@
     "provenance": "extracted",
     "cited_by": [
       "arxiv-2406-04313",
-      "arxiv-2412-16339"
+      "arxiv-2412-16339",
+      "src-wang-implicit-crossmodal-jb-2025"
     ]
   },
   {
@@ -4932,7 +5276,9 @@
     "citation_count": 296,
     "cites": [],
     "provenance": "extracted",
-    "cited_by": []
+    "cited_by": [
+      "src-arxiv-2509-23694-safesearch"
+    ]
   },
   {
     "id": "arxiv-2508-06471",
@@ -5167,7 +5513,10 @@
     "s2_id": "arXiv:2410.21514",
     "citation_count": 46,
     "provenance": "extracted",
-    "local_pdf": "card/anthropic-sabotage-evaluations.pdf"
+    "local_pdf": "card/anthropic-sabotage-evaluations.pdf",
+    "cited_by": [
+      "arxiv-2606-06529"
+    ]
   },
   {
     "id": "mc-src-gpt5-system-card",
@@ -5439,7 +5788,13 @@
     "s2_id": "arXiv:2507.06261",
     "provenance": "extracted",
     "local_pdf": "card/gemini-2-5-report.pdf",
-    "citation_count": 3263
+    "citation_count": 3263,
+    "cited_by": [
+      "arxiv-2606-13385",
+      "src-arxiv-2412-13178-safeagentbench",
+      "src-arxiv-2510-00857-managerbench",
+      "src-arxiv-2604-17730-mhsafeeval"
+    ]
   },
   {
     "id": "mc-src-grok-4-card",
@@ -5547,7 +5902,11 @@
     "s2_id": "arXiv:2501.07238",
     "provenance": "extracted",
     "local_pdf": "card/ms-red-teaming-100-genai.pdf",
-    "citation_count": 27
+    "citation_count": 27,
+    "cited_by": [
+      "arxiv-2605-04019",
+      "src-agentic-era-dreadnode"
+    ]
   },
   {
     "id": "mc-src-dangerous-capabilities",
@@ -6051,7 +6410,10 @@
       "medical-safety-eval",
       "hallucination"
     ],
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "cited_by": [
+      "src-arxiv-2602-19948-clinical-rt"
+    ]
   },
   {
     "id": "arxiv-medsafetybench-2024",
@@ -6100,7 +6462,9 @@
       "hallucination",
       "clinical-decision-support"
     ],
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "citation_count": 130,
+    "influential_citation_count": 7
   },
   {
     "id": "medrxiv-adversarial-hallucination-cds-2025",
@@ -6306,7 +6670,15 @@
       "benchmark",
       "content-safety"
     ],
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "citation_count": 1731,
+    "influential_citation_count": 236,
+    "cited_by": [
+      "src-coin-flip-judge-reliability",
+      "src-lowresource-jailbreak-2023",
+      "src-toxigen-2022",
+      "src-yong-lowresource-jb-2023"
+    ]
   },
   {
     "id": "src-toxigen-2022",
@@ -6333,7 +6705,15 @@
       "implicit-bias",
       "content-safety"
     ],
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "citation_count": 605,
+    "influential_citation_count": 63,
+    "cites": [
+      "src-realtoxicityprompts-2020"
+    ],
+    "cited_by": [
+      "src-bentov-gaslite-2024"
+    ]
   },
   {
     "id": "src-garcia-characterai-2024",
@@ -6429,7 +6809,16 @@
       "safety-gap",
       "multilingual"
     ],
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "citation_count": 347,
+    "influential_citation_count": 28,
+    "cites": [
+      "arxiv-2204-05862",
+      "arxiv-2212-08073",
+      "arxiv-2307-15043",
+      "arxiv-2310-06474",
+      "src-realtoxicityprompts-2020"
+    ]
   },
   {
     "id": "src-fcc-biden-robocall-2024",
@@ -6596,7 +6985,9 @@
       "ai-coding-assistant",
       "insecure-code"
     ],
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "citation_count": 362,
+    "influential_citation_count": 25
   },
   {
     "id": "src-mata-avianca-2023",
@@ -6669,7 +7060,9 @@
       "systemic-risk",
       "agency"
     ],
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "citation_count": 63,
+    "influential_citation_count": 6
   },
   {
     "id": "src-salvi-gpt4-persuasion-2024",
@@ -6694,7 +7087,9 @@
       "manipulation",
       "influence"
     ],
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "citation_count": 160,
+    "influential_citation_count": 9
   },
   {
     "id": "src-allcott-welfare-social-media-2020",
@@ -6765,7 +7160,9 @@
       "research-concentration",
       "inequality"
     ],
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "citation_count": 156,
+    "influential_citation_count": 12
   },
   {
     "id": "src-imf-ai-work-2024",
@@ -6947,7 +7344,13 @@
       "alignment",
       "safety"
     ],
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "citation_count": 233,
+    "influential_citation_count": 13,
+    "cited_by": [
+      "src-2606-03647",
+      "src-egashira-exploit-quantization-2024"
+    ]
   },
   {
     "id": "src-eu-ai-act-timeline-2024",
@@ -7017,7 +7420,9 @@
       "data-center",
       "sustainability"
     ],
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "citation_count": 209,
+    "influential_citation_count": 20
   },
   {
     "id": "src-strubell-energy-2019",
@@ -7161,7 +7566,9 @@
       "consciousness",
       "rights"
     ],
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "citation_count": 46,
+    "influential_citation_count": 3
   },
   {
     "id": "src-anthropic-end-conversations-2025",
@@ -7258,7 +7665,17 @@
       "adversarial-defender",
       "self-play"
     ],
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "citation_count": 3,
+    "influential_citation_count": 0,
+    "cites": [
+      "arxiv-2204-05862",
+      "arxiv-2212-08073",
+      "arxiv-2307-15043",
+      "arxiv-2310-08419",
+      "arxiv-2312-02119",
+      "arxiv-2402-04249"
+    ]
   },
   {
     "id": "arxiv-2410-00296",
@@ -7287,7 +7704,15 @@
       "guardrail",
       "defense"
     ],
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "citation_count": 20,
+    "influential_citation_count": 2,
+    "cites": [
+      "arxiv-2307-15043",
+      "arxiv-2310-08419",
+      "arxiv-2311-05608",
+      "arxiv-2404-01833"
+    ]
   },
   {
     "id": "arxiv-2510-17687",
@@ -7311,7 +7736,14 @@
       "defense",
       "joint-modal"
     ],
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "citation_count": 1,
+    "influential_citation_count": 0,
+    "cites": [
+      "arxiv-2311-05608",
+      "arxiv-2404-03027",
+      "arxiv-2405-18540"
+    ]
   },
   {
     "id": "arxiv-2510-18131",
@@ -7337,7 +7769,16 @@
       "code-generation",
       "automated-red-teaming"
     ],
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "citation_count": 1,
+    "influential_citation_count": 0,
+    "cites": [
+      "arxiv-2307-15043",
+      "arxiv-2402-04249"
+    ],
+    "cited_by": [
+      "src-2605-17453-trust-no-tool"
+    ]
   },
   {
     "id": "card-claude-opus-4-6",
@@ -7644,7 +8085,17 @@
       "privacy-attack"
     ],
     "s2_id": "arXiv:1610.05820",
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "citation_count": 5320,
+    "influential_citation_count": 751,
+    "cites": [
+      "src-tramer-model-stealing-2016"
+    ],
+    "cited_by": [
+      "src-shumailov-sponge-2020",
+      "src-wang-implicit-crossmodal-jb-2025",
+      "src-wanger-vectorsmuggle-2026"
+    ]
   },
   {
     "id": "src-fredrikson-model-inversion-2015",
@@ -7691,7 +8142,15 @@
       "model-stealing"
     ],
     "s2_id": "arXiv:1609.02943",
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "cited_by": [
+      "src-shokri-membership-inference-2017"
+    ],
+    "citation_count": 2128,
+    "influential_citation_count": 195,
+    "cites": [
+      "src-biggio-poisoning-svm-2012"
+    ]
   },
   {
     "id": "src-szegedy-adversarial-2013",
@@ -7718,7 +8177,18 @@
       "adversarial-examples"
     ],
     "s2_id": "arXiv:1312.6199",
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "cited_by": [
+      "arxiv-2512-20677",
+      "src-bentov-gaslite-2024",
+      "src-gu-badnets-2017",
+      "src-j2-jailbreaking-to-jailbreak",
+      "src-shumailov-sponge-2020",
+      "src-violet-teaming",
+      "src-wang-implicit-crossmodal-jb-2025"
+    ],
+    "citation_count": 16648,
+    "influential_citation_count": 1361
   },
   {
     "id": "src-gu-badnets-2017",
@@ -7742,7 +8212,18 @@
       "supply-chain"
     ],
     "s2_id": "arXiv:1708.06733",
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "citation_count": 2262,
+    "influential_citation_count": 550,
+    "cites": [
+      "src-szegedy-adversarial-2013"
+    ],
+    "cited_by": [
+      "arxiv-2606-16242",
+      "src-lieber-loratk-2024",
+      "src-wang-implicit-crossmodal-jb-2025",
+      "src-wanger-vectorsmuggle-2026"
+    ]
   },
   {
     "id": "src-biggio-poisoning-svm-2012",
@@ -7765,7 +8246,14 @@
       "training-time-attack"
     ],
     "s2_id": "arXiv:1206.6389",
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "cited_by": [
+      "arxiv-2606-16242",
+      "src-bentov-gaslite-2024",
+      "src-tramer-model-stealing-2016"
+    ],
+    "citation_count": 1826,
+    "influential_citation_count": 114
   },
   {
     "id": "src-carlini-extract-training-data-2023",
@@ -7790,7 +8278,12 @@
       "memorization"
     ],
     "s2_id": "arXiv:2311.17035",
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "citation_count": 568,
+    "influential_citation_count": 37,
+    "cited_by": [
+      "src-cohen-morris-ii-worm-2024"
+    ]
   },
   {
     "id": "src-cohen-morris-ii-worm-2024",
@@ -7814,7 +8307,14 @@
       "agentic"
     ],
     "s2_id": "arXiv:2403.02817",
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "citation_count": 58,
+    "influential_citation_count": 7,
+    "cites": [
+      "arxiv-2307-15043",
+      "arxiv-2310-08419",
+      "src-carlini-extract-training-data-2023"
+    ]
   },
   {
     "id": "src-shumailov-sponge-2020",
@@ -7841,7 +8341,17 @@
       "sponge"
     ],
     "s2_id": "arXiv:2006.03463",
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "citation_count": 188,
+    "influential_citation_count": 32,
+    "cites": [
+      "src-shokri-membership-inference-2017",
+      "src-szegedy-adversarial-2013"
+    ],
+    "cited_by": [
+      "arxiv-2606-16751",
+      "src-2606.08661"
+    ]
   },
   {
     "id": "src-owasp-llm-top10-2025",
@@ -8793,7 +9303,12 @@
       "benchmark"
     ],
     "s2_id": "arXiv:2509.10970",
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "citation_count": 22,
+    "influential_citation_count": 2,
+    "cites": [
+      "arxiv-2204-05862"
+    ]
   },
   {
     "id": "src-arxiv-2504-09689-emoagent",
@@ -8824,7 +9339,15 @@
       "benchmark"
     ],
     "s2_id": "arXiv:2504.09689",
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "citation_count": 27,
+    "influential_citation_count": 4,
+    "cites": [
+      "arxiv-2404-03027"
+    ],
+    "cited_by": [
+      "src-arxiv-2602-19948-clinical-rt"
+    ]
   },
   {
     "id": "src-arxiv-2512-18776-arsh",
@@ -8849,7 +9372,9 @@
       "human-centered-design"
     ],
     "s2_id": "arXiv:2512.18776",
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "citation_count": 1,
+    "influential_citation_count": 0
   },
   {
     "id": "src-arxiv-2602-19948-clinical-rt",
@@ -8877,7 +9402,15 @@
       "sector-medical"
     ],
     "s2_id": "arXiv:2602.19948",
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "citation_count": 1,
+    "influential_citation_count": 0,
+    "cites": [
+      "arxiv-2212-08073",
+      "arxiv-2402-04249",
+      "healthbench-openai-2025",
+      "src-arxiv-2504-09689-emoagent"
+    ]
   },
   {
     "id": "src-arxiv-2509-24857-help-harm-crisis",
@@ -8908,7 +9441,9 @@
       "benchmark"
     ],
     "s2_id": "arXiv:2509.24857",
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "citation_count": 6,
+    "influential_citation_count": 0
   },
   {
     "id": "src-arxiv-2503-04957-safearena",
@@ -8939,7 +9474,20 @@
       "autonomous-attack"
     ],
     "s2_id": "arXiv:2503.04957",
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "citation_count": 65,
+    "influential_citation_count": 6,
+    "cites": [
+      "arxiv-2307-15043",
+      "arxiv-2402-04249",
+      "arxiv-2404-01833",
+      "arxiv-2406-04313",
+      "arxiv-2410-09024"
+    ],
+    "cited_by": [
+      "src-2606.10749",
+      "src-arxiv-2602-13379-mt-agentrisk"
+    ]
   },
   {
     "id": "src-arxiv-2509-23694-safesearch",
@@ -8970,7 +9518,19 @@
       "benchmark"
     ],
     "s2_id": "arXiv:2509.23694",
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "citation_count": 1,
+    "influential_citation_count": 0,
+    "cites": [
+      "alibaba-qwen3-report-2025",
+      "arxiv-2402-04249",
+      "arxiv-2402-07867",
+      "arxiv-2402-10260",
+      "arxiv-2410-09024",
+      "arxiv-2412-16339",
+      "arxiv-2507-20534",
+      "src-arxiv-2412-13178-safeagentbench"
+    ]
   },
   {
     "id": "src-arxiv-2604-02022-atbench",
@@ -9001,7 +9561,9 @@
       "benchmark"
     ],
     "s2_id": "arXiv:2604.02022",
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "citation_count": 6,
+    "influential_citation_count": 0
   },
   {
     "id": "src-arxiv-2602-13379-mt-agentrisk",
@@ -9032,7 +9594,17 @@
       "defense"
     ],
     "s2_id": "arXiv:2602.13379",
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "citation_count": 9,
+    "influential_citation_count": 3,
+    "cites": [
+      "arxiv-2204-05862",
+      "src-arxiv-2503-04957-safearena",
+      "src-x-teaming-multiturn"
+    ],
+    "cited_by": [
+      "src-2605-17453-trust-no-tool"
+    ]
   },
   {
     "id": "src-arxiv-2510-00857-managerbench",
@@ -9061,7 +9633,17 @@
       "alignment"
     ],
     "s2_id": "arXiv:2510.00857",
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "citation_count": 2,
+    "influential_citation_count": 1,
+    "cites": [
+      "arxiv-2204-05862",
+      "arxiv-2402-04249",
+      "arxiv-2410-09024",
+      "arxiv-2412-04984",
+      "arxiv-2412-14093",
+      "mc-src-gemini-2-5-report"
+    ]
   },
   {
     "id": "src-arxiv-2505-21605-sosbench",
@@ -9092,7 +9674,21 @@
       "chemical-design"
     ],
     "s2_id": "arXiv:2505.21605",
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "citation_count": 12,
+    "influential_citation_count": 3,
+    "cites": [
+      "arxiv-2204-05862",
+      "arxiv-2212-08073",
+      "arxiv-2307-15043",
+      "arxiv-2402-04249",
+      "arxiv-2402-10260",
+      "arxiv-2403-03218",
+      "arxiv-2404-01318",
+      "arxiv-2404-01833",
+      "arxiv-2404-03027",
+      "arxiv-2412-16339"
+    ]
   },
   {
     "id": "src-arxiv-2602-23329-bio-uplift",
@@ -9123,7 +9719,9 @@
       "benchmark"
     ],
     "s2_id": "arXiv:2602.23329",
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "citation_count": 1,
+    "influential_citation_count": 0
   },
   {
     "id": "src-arxiv-2510-27629-biorisk-openweight",
@@ -9154,7 +9752,14 @@
       "benchmark"
     ],
     "s2_id": "arXiv:2510.27629",
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "citation_count": 4,
+    "influential_citation_count": 0,
+    "cites": [
+      "arxiv-2403-03218",
+      "arxiv-2406-04313",
+      "arxiv-2407-21783"
+    ]
   },
   {
     "id": "src-arxiv-2506-04704-holisafe",
@@ -9185,7 +9790,13 @@
       "jailbreak"
     ],
     "s2_id": "arXiv:2506.04704",
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "citation_count": 4,
+    "influential_citation_count": 1,
+    "cites": [
+      "arxiv-2307-15043",
+      "arxiv-2311-05608"
+    ]
   },
   {
     "id": "src-arxiv-2601-10527-frontier-safety-report",
@@ -9216,7 +9827,9 @@
       "image-generation"
     ],
     "s2_id": "arXiv:2601.10527",
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "citation_count": 4,
+    "influential_citation_count": 0
   },
   {
     "id": "src-arxiv-2603-01291-jailnewsbench",
@@ -9242,7 +9855,16 @@
       "benchmark"
     ],
     "s2_id": "arXiv:2603.01291",
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "citation_count": 1,
+    "influential_citation_count": 0,
+    "cites": [
+      "arxiv-2204-05862",
+      "arxiv-2307-15043",
+      "arxiv-2309-07045",
+      "arxiv-2310-06474",
+      "arxiv-2404-01318"
+    ]
   },
   {
     "id": "src-arxiv-2407-12784-agentpoison",
@@ -9270,7 +9892,21 @@
       "red-teaming"
     ],
     "s2_id": "arXiv:2407.12784",
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "citation_count": 343,
+    "influential_citation_count": 39,
+    "cites": [
+      "arxiv-2307-15043"
+    ],
+    "cited_by": [
+      "arxiv-2606-02302",
+      "arxiv-2606-15609",
+      "src-2603-19469-formal-agent-sec",
+      "src-2604-23374-neurotaint",
+      "src-2606.09084",
+      "src-2606.10749",
+      "src-bentov-gaslite-2024"
+    ]
   },
   {
     "id": "src-arxiv-2602-15654-zombie-agents",
@@ -9298,7 +9934,15 @@
       "backdoor"
     ],
     "s2_id": "arXiv:2602.15654",
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "citation_count": 14,
+    "influential_citation_count": 1,
+    "cites": [
+      "arxiv-2402-07867"
+    ],
+    "cited_by": [
+      "src-2606.10749"
+    ]
   },
   {
     "id": "src-arxiv-2508-17511-school-reward-hacks",
@@ -9326,7 +9970,12 @@
       "frontier"
     ],
     "s2_id": "arXiv:2508.17511",
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "citation_count": 42,
+    "influential_citation_count": 2,
+    "cited_by": [
+      "src-arxiv-2605-20744-hack-verifiable"
+    ]
   },
   {
     "id": "src-arxiv-2605-21384-specbench",
@@ -9353,7 +10002,12 @@
       "benchmark"
     ],
     "s2_id": "arXiv:2605.21384",
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "citation_count": 1,
+    "influential_citation_count": 0,
+    "cites": [
+      "arxiv-2412-14093"
+    ]
   },
   {
     "id": "src-arxiv-2605-20744-hack-verifiable",
@@ -9381,7 +10035,14 @@
       "benchmark"
     ],
     "s2_id": "arXiv:2605.20744",
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "citation_count": 1,
+    "influential_citation_count": 0,
+    "cites": [
+      "arxiv-2401-05566",
+      "arxiv-2412-14093",
+      "src-arxiv-2508-17511-school-reward-hacks"
+    ]
   },
   {
     "id": "src-arxiv-2512-07810-auditing-sandbagging",
@@ -9412,7 +10073,9 @@
       "control-evaluation"
     ],
     "s2_id": "arXiv:2512.07810",
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "citation_count": 10,
+    "influential_citation_count": 1
   },
   {
     "id": "src-arxiv-2412-13178-safeagentbench",
@@ -9443,7 +10106,17 @@
       "benchmark"
     ],
     "s2_id": "arXiv:2412.13178",
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "cited_by": [
+      "src-2606.10749",
+      "src-arxiv-2509-23694-safesearch"
+    ],
+    "citation_count": 88,
+    "influential_citation_count": 15,
+    "cites": [
+      "arxiv-2407-21783",
+      "mc-src-gemini-2-5-report"
+    ]
   },
   {
     "id": "src-arxiv-2410-14182-labsafety",
@@ -9474,7 +10147,12 @@
       "sector-biosecurity"
     ],
     "s2_id": "arXiv:2410.14182",
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "citation_count": 20,
+    "influential_citation_count": 2,
+    "cites": [
+      "arxiv-2411-15594"
+    ]
   },
   {
     "id": "src-arxiv-2604-17730-mhsafeeval",
@@ -9502,7 +10180,15 @@
       "benchmark"
     ],
     "s2_id": "arXiv:2604.17730",
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "citation_count": 1,
+    "influential_citation_count": 0,
+    "cites": [
+      "arxiv-2310-08419",
+      "arxiv-2312-02119",
+      "mc-src-gemini-2-5-report",
+      "src-x-teaming-multiturn"
+    ]
   },
   {
     "id": "src-lieber-loratk-2024",
@@ -9532,7 +10218,13 @@
       "supply-chain",
       "peft"
     ],
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "citation_count": 26,
+    "influential_citation_count": 3,
+    "cites": [
+      "arxiv-2401-05566",
+      "src-gu-badnets-2017"
+    ]
   },
   {
     "id": "src-xie-overfit-finetune-jb-2025",
@@ -9556,7 +10248,17 @@
       "safety-collapse",
       "jailbreak"
     ],
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "citation_count": 9,
+    "influential_citation_count": 2,
+    "cites": [
+      "arxiv-2307-15043",
+      "arxiv-2310-08419",
+      "arxiv-2402-04249",
+      "arxiv-2402-10260",
+      "arxiv-2404-01318",
+      "arxiv-2407-21783"
+    ]
   },
   {
     "id": "src-hsiung-guardrail-collapse-2025",
@@ -9583,7 +10285,13 @@
       "fine-tuning-attack",
       "safety-collapse"
     ],
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "citation_count": 21,
+    "influential_citation_count": 1,
+    "cites": [
+      "arxiv-2407-21783",
+      "arxiv-2502-05209"
+    ]
   },
   {
     "id": "src-wang-activation-attack-2023",
@@ -9606,7 +10314,13 @@
       "representation-attack",
       "jailbreak"
     ],
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "citation_count": 32,
+    "influential_citation_count": 1,
+    "cites": [
+      "arxiv-2212-08073",
+      "arxiv-2307-15043"
+    ]
   },
   {
     "id": "src-wang-refusal-direction-universal-2025",
@@ -9632,7 +10346,14 @@
       "activation-ablation",
       "multilingual"
     ],
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "citation_count": 19,
+    "influential_citation_count": 3,
+    "cites": [
+      "arxiv-2307-15043",
+      "arxiv-2310-06474",
+      "arxiv-2402-04249"
+    ]
   },
   {
     "id": "src-wang-juli-logprob-jb-2025",
@@ -9656,7 +10377,15 @@
       "decoding-attack",
       "jailbreak"
     ],
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "citation_count": 2,
+    "influential_citation_count": 0,
+    "cites": [
+      "arxiv-2310-08419"
+    ],
+    "cited_by": [
+      "src-2606-11817"
+    ]
   },
   {
     "id": "src-wang-implicit-crossmodal-jb-2025",
@@ -9681,7 +10410,20 @@
       "vlm-jailbreak",
       "steganography"
     ],
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "citation_count": 6,
+    "influential_citation_count": 0,
+    "cites": [
+      "arxiv-2204-05862",
+      "arxiv-2307-15043",
+      "arxiv-2309-10253",
+      "arxiv-2310-08419",
+      "arxiv-2311-05608",
+      "arxiv-2403-05530",
+      "src-gu-badnets-2017",
+      "src-shokri-membership-inference-2017",
+      "src-szegedy-adversarial-2013"
+    ]
   },
   {
     "id": "src-cheng-tvpi-2025",
@@ -9709,7 +10451,12 @@
       "visual-prompt-injection",
       "typographic"
     ],
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "citation_count": 15,
+    "influential_citation_count": 2,
+    "cites": [
+      "arxiv-2311-05608"
+    ]
   },
   {
     "id": "src-jovanovic-watermark-stealing-2024",
@@ -9733,7 +10480,12 @@
       "watermark-spoofing",
       "provenance"
     ],
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "citation_count": 96,
+    "influential_citation_count": 10,
+    "cites": [
+      "arxiv-2307-15043"
+    ]
   },
   {
     "id": "src-morris-embedding-inversion-2023",
@@ -9758,7 +10510,12 @@
       "privacy",
       "rag"
     ],
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "citation_count": 230,
+    "influential_citation_count": 34,
+    "cited_by": [
+      "src-bentov-gaslite-2024"
+    ]
   },
   {
     "id": "src-bentov-gaslite-2024",
@@ -9781,7 +10538,17 @@
       "rag",
       "retrieval-poisoning"
     ],
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "citation_count": 18,
+    "influential_citation_count": 2,
+    "cites": [
+      "arxiv-2307-15043",
+      "src-arxiv-2407-12784-agentpoison",
+      "src-biggio-poisoning-svm-2012",
+      "src-morris-embedding-inversion-2023",
+      "src-szegedy-adversarial-2013",
+      "src-toxigen-2022"
+    ]
   },
   {
     "id": "src-wanger-vectorsmuggle-2026",
@@ -9803,7 +10570,13 @@
       "steganography",
       "rag"
     ],
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "citation_count": 0,
+    "influential_citation_count": 0,
+    "cites": [
+      "src-gu-badnets-2017",
+      "src-shokri-membership-inference-2017"
+    ]
   },
   {
     "id": "src-yong-lowresource-jb-2023",
@@ -9827,7 +10600,25 @@
       "low-resource",
       "jailbreak"
     ],
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "cited_by": [
+      "arxiv-2604-23067",
+      "arxiv-2605-04019",
+      "arxiv-2606-09178",
+      "src-2606-05609",
+      "src-2606-07706",
+      "src-2606-11817",
+      "src-agentic-era-dreadnode"
+    ],
+    "citation_count": 347,
+    "influential_citation_count": 28,
+    "cites": [
+      "arxiv-2204-05862",
+      "arxiv-2212-08073",
+      "arxiv-2307-15043",
+      "arxiv-2310-06474",
+      "src-realtoxicityprompts-2020"
+    ]
   },
   {
     "id": "src-kuo-hcot-2025",
@@ -9856,7 +10647,14 @@
       "cot-hijack",
       "jailbreak"
     ],
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "citation_count": 104,
+    "influential_citation_count": 16,
+    "cites": [
+      "arxiv-2307-15043",
+      "arxiv-2407-21783",
+      "arxiv-2412-16339"
+    ]
   },
   {
     "id": "src-egashira-exploit-quantization-2024",
@@ -9882,7 +10680,14 @@
       "conditioned-backdoor",
       "supply-chain"
     ],
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "citation_count": 82,
+    "influential_citation_count": 5,
+    "cites": [
+      "arxiv-2307-15043",
+      "arxiv-2310-08419",
+      "src-anwar-foundational-challenges-2024"
+    ]
   },
   {
     "id": "src-kuchler-architectural-backdoor-2025",
@@ -9907,7 +10712,9 @@
       "data-stealing",
       "batched-inference"
     ],
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "citation_count": 4,
+    "influential_citation_count": 0
   },
   {
     "id": "src-liu-psychological-jb-2025",
@@ -9930,7 +10737,18 @@
       "persuasion",
       "jailbreak"
     ],
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "citation_count": 1,
+    "influential_citation_count": 0,
+    "cites": [
+      "arxiv-2204-05862",
+      "arxiv-2307-15043",
+      "arxiv-2309-10253",
+      "arxiv-2310-08419",
+      "arxiv-2312-02119",
+      "arxiv-2404-01318",
+      "arxiv-2404-01833"
+    ]
   },
   {
     "id": "src-j2-jailbreaking-to-jailbreak",
@@ -9962,7 +10780,23 @@
       "self-jailbreak"
     ],
     "s2_id": "arXiv:2502.09638",
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "citation_count": 9,
+    "influential_citation_count": 0,
+    "cites": [
+      "arxiv-2212-08073",
+      "arxiv-2309-10253",
+      "arxiv-2310-08419",
+      "arxiv-2311-08268",
+      "arxiv-2312-02119",
+      "arxiv-2402-04249",
+      "arxiv-2402-16822",
+      "arxiv-2404-01833",
+      "arxiv-2406-04313",
+      "arxiv-2407-21783",
+      "arxiv-2410-09024",
+      "src-szegedy-adversarial-2013"
+    ]
   },
   {
     "id": "src-x-teaming-multiturn",
@@ -9994,7 +10828,17 @@
       "defense-dataset"
     ],
     "s2_id": "arXiv:2504.13203",
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "cited_by": [
+      "arxiv-2603-10807",
+      "arxiv-2604-23067",
+      "src-arxiv-2602-13379-mt-agentrisk",
+      "src-arxiv-2604-17730-mhsafeeval",
+      "src-cop-composition-principles",
+      "src-self-play-moving-targets"
+    ],
+    "citation_count": 90,
+    "influential_citation_count": 32
   },
   {
     "id": "src-agenticred-evolving-systems",
@@ -10020,7 +10864,9 @@
       "automated-red-teaming"
     ],
     "s2_id": "arXiv:2601.13518",
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "citation_count": 1,
+    "influential_citation_count": 0
   },
   {
     "id": "src-autorise-strategy-evolution",
@@ -10042,7 +10888,20 @@
       "automated-red-teaming"
     ],
     "s2_id": "arXiv:2604.22871",
-    "provenance": "ambiguous"
+    "provenance": "ambiguous",
+    "citation_count": 0,
+    "influential_citation_count": 0,
+    "cites": [
+      "arxiv-2212-08073",
+      "arxiv-2310-08419",
+      "arxiv-2312-02119",
+      "arxiv-2402-04249",
+      "arxiv-2402-16822",
+      "arxiv-2404-01318",
+      "arxiv-2404-01833",
+      "arxiv-2410-05295",
+      "arxiv-2505-22037"
+    ]
   },
   {
     "id": "src-agentic-era-dreadnode",
@@ -10067,7 +10926,19 @@
       "tooling-orchestration"
     ],
     "s2_id": "arXiv:2605.04019",
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "citation_count": 0,
+    "influential_citation_count": 0,
+    "cites": [
+      "arxiv-2307-15043",
+      "arxiv-2310-08419",
+      "arxiv-2312-02119",
+      "arxiv-2402-04249",
+      "arxiv-2402-16822",
+      "arxiv-2404-01833",
+      "mc-src-ms-red-teaming-100",
+      "src-yong-lowresource-jb-2023"
+    ]
   },
   {
     "id": "src-radar-roleplay-multiagent",
@@ -10089,7 +10960,18 @@
       "safety-evaluation"
     ],
     "s2_id": "arXiv:2509.25271",
-    "provenance": "ambiguous"
+    "provenance": "ambiguous",
+    "citation_count": 4,
+    "influential_citation_count": 0,
+    "cites": [
+      "arxiv-2307-15043",
+      "arxiv-2309-10253",
+      "arxiv-2310-06474",
+      "arxiv-2310-08419",
+      "arxiv-2311-08268",
+      "arxiv-2312-02119",
+      "arxiv-2402-04249"
+    ]
   },
   {
     "id": "src-jailbreak-r1-rl",
@@ -10112,7 +10994,12 @@
       "reward-shaping"
     ],
     "s2_id": "arXiv:2506.00782",
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "citation_count": 17,
+    "influential_citation_count": 5,
+    "cited_by": [
+      "src-2606-03647"
+    ]
   },
   {
     "id": "src-self-play-moving-targets",
@@ -10135,7 +11022,23 @@
       "attacker-defender"
     ],
     "s2_id": "arXiv:2506.07468",
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "citation_count": 27,
+    "influential_citation_count": 6,
+    "cites": [
+      "arxiv-2212-08073",
+      "arxiv-2309-10253",
+      "arxiv-2310-08419",
+      "arxiv-2312-02119",
+      "arxiv-2402-04249",
+      "arxiv-2402-10260",
+      "arxiv-2402-16822",
+      "arxiv-2406-04313",
+      "src-x-teaming-multiturn"
+    ],
+    "cited_by": [
+      "src-2606-09701"
+    ]
   },
   {
     "id": "src-cop-composition-principles",
@@ -10158,7 +11061,22 @@
       "ai-assisted"
     ],
     "s2_id": "arXiv:2506.00781",
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "citation_count": 8,
+    "influential_citation_count": 0,
+    "cites": [
+      "arxiv-2307-15043",
+      "arxiv-2309-10253",
+      "arxiv-2310-08419",
+      "arxiv-2312-02119",
+      "arxiv-2402-04249",
+      "arxiv-2402-16822",
+      "arxiv-2404-01318",
+      "arxiv-2406-04313",
+      "arxiv-2407-21783",
+      "arxiv-2410-05295",
+      "src-x-teaming-multiturn"
+    ]
   },
   {
     "id": "src-qdrt-behavior-conditioned",
@@ -10182,7 +11100,18 @@
       "diversity"
     ],
     "s2_id": "arXiv:2506.07121",
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "citation_count": 7,
+    "influential_citation_count": 0,
+    "cites": [
+      "arxiv-2212-08073",
+      "arxiv-2307-15043",
+      "arxiv-2310-08419",
+      "arxiv-2402-16822",
+      "arxiv-2405-18540",
+      "arxiv-2407-21783",
+      "arxiv-2410-05295"
+    ]
   },
   {
     "id": "src-qd-semantic-strategy-evolution",
@@ -10206,7 +11135,19 @@
       "diversity"
     ],
     "s2_id": "arXiv:2606.00801",
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "citation_count": 1,
+    "influential_citation_count": 0,
+    "cites": [
+      "arxiv-2307-15043",
+      "arxiv-2309-10253",
+      "arxiv-2310-08419",
+      "arxiv-2402-04249",
+      "arxiv-2402-16822"
+    ],
+    "cited_by": [
+      "src-crossgen-transfer-qd"
+    ]
   },
   {
     "id": "src-crossgen-transfer-qd",
@@ -10229,7 +11170,15 @@
       "continuous-red-teaming"
     ],
     "s2_id": "arXiv:2606.00813",
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "citation_count": 0,
+    "influential_citation_count": 0,
+    "cites": [
+      "arxiv-2307-15043",
+      "arxiv-2310-08419",
+      "arxiv-2402-04249",
+      "src-qd-semantic-strategy-evolution"
+    ]
   },
   {
     "id": "src-coin-flip-judge-reliability",
@@ -10258,7 +11207,23 @@
       "judge-variance"
     ],
     "s2_id": "arXiv:2603.06594",
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "citation_count": 6,
+    "influential_citation_count": 0,
+    "cites": [
+      "alibaba-qwen3-report-2025",
+      "arxiv-2307-15043",
+      "arxiv-2310-08419",
+      "arxiv-2402-04249",
+      "arxiv-2402-10260",
+      "arxiv-2406-04313",
+      "arxiv-2407-21783",
+      "src-realtoxicityprompts-2020"
+    ],
+    "cited_by": [
+      "arxiv-2606-11409",
+      "src-2606-03647"
+    ]
   },
   {
     "id": "src-scanners-lie-evaluator-instability",
@@ -10281,7 +11246,14 @@
       "reliability"
     ],
     "s2_id": "arXiv:2603.14633",
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "citation_count": 0,
+    "influential_citation_count": 0,
+    "cites": [
+      "arxiv-2310-08419",
+      "arxiv-2402-04249",
+      "arxiv-2508-18076"
+    ]
   },
   {
     "id": "src-adversa-multijudge-consensus",
@@ -10304,7 +11276,18 @@
       "guardrail-degradation"
     ],
     "s2_id": "arXiv:2603.10068",
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "citation_count": 0,
+    "influential_citation_count": 0,
+    "cites": [
+      "arxiv-2204-05862",
+      "arxiv-2212-08073",
+      "arxiv-2307-15043",
+      "arxiv-2310-08419",
+      "arxiv-2312-02119",
+      "arxiv-2402-04249",
+      "arxiv-2404-01318"
+    ]
   },
   {
     "id": "src-multibreak-bench",
@@ -10326,7 +11309,10 @@
       "safety-eval"
     ],
     "s2_id": "arXiv:2605.01687",
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "cited_by": [
+      "arxiv-2606-11425"
+    ]
   },
   {
     "id": "src-mcpsecbench",
@@ -10354,7 +11340,10 @@
       "prompt-injection"
     ],
     "s2_id": "arXiv:2508.13220",
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "cited_by": [
+      "src-2606.10749"
+    ]
   },
   {
     "id": "src-pismith-rl-prompt-injection",
@@ -10377,7 +11366,18 @@
       "mcp-security"
     ],
     "s2_id": "arXiv:2603.13026",
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "citation_count": 5,
+    "influential_citation_count": 0,
+    "cites": [
+      "alibaba-qwen3-report-2025",
+      "arxiv-2310-08419",
+      "arxiv-2312-02119"
+    ],
+    "cited_by": [
+      "src-2604-27464",
+      "src-2606-09701"
+    ]
   },
   {
     "id": "src-reverse-constitutional-ai",
@@ -10400,7 +11400,15 @@
       "data-generation"
     ],
     "s2_id": "arXiv:2604.17769",
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "citation_count": 0,
+    "influential_citation_count": 0,
+    "cites": [
+      "arxiv-2307-15043",
+      "arxiv-2310-08419",
+      "arxiv-2312-02119",
+      "arxiv-2401-05566"
+    ]
   },
   {
     "id": "src-nrt-bench-control-room",
@@ -10447,7 +11455,9 @@
       "clinician-calibration"
     ],
     "s2_id": "arXiv:2508.00923",
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "citation_count": 14,
+    "influential_citation_count": 1
   },
   {
     "id": "src-tmap-agent-trajectory-evo",
@@ -10470,7 +11480,17 @@
       "quality-diversity"
     ],
     "s2_id": "arXiv:2603.22341",
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "citation_count": 2,
+    "influential_citation_count": 0,
+    "cites": [
+      "arxiv-2307-15043",
+      "arxiv-2310-08419",
+      "arxiv-2312-02119",
+      "arxiv-2402-16822",
+      "arxiv-2404-01833",
+      "arxiv-2410-09024"
+    ]
   },
   {
     "id": "src-violet-teaming",
@@ -10494,7 +11514,12 @@
       "responsible-by-design"
     ],
     "s2_id": "arXiv:2308.14253",
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "citation_count": 6,
+    "influential_citation_count": 0,
+    "cites": [
+      "src-szegedy-adversarial-2013"
+    ]
   },
   {
     "id": "src-bugcrowd-2026-predictions",
@@ -10538,7 +11563,14 @@
       "bug-bounty"
     ],
     "s2_id": "arXiv:2501.18837",
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "citation_count": 159,
+    "influential_citation_count": 16,
+    "cited_by": [
+      "src-2603-19469-formal-agent-sec",
+      "src-2605-31593",
+      "src-2606-03647"
+    ]
   },
   {
     "id": "arxiv-2606-15609",
@@ -10570,9 +11602,15 @@
     ],
     "s2_id": "arXiv:2606.15609",
     "cites": [
-      "arxiv-2606-14517"
+      "arxiv-2204-05862",
+      "arxiv-2307-15043",
+      "arxiv-2410-09024",
+      "arxiv-2606-14517",
+      "src-arxiv-2407-12784-agentpoison"
     ],
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "citation_count": 0,
+    "influential_citation_count": 0
   },
   {
     "id": "arxiv-2606-15008",
@@ -10600,7 +11638,9 @@
       "aggregation-policy"
     ],
     "s2_id": "arXiv:2606.15008",
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "citation_count": 0,
+    "influential_citation_count": 0
   },
   {
     "id": "arxiv-2606-12918",
@@ -10632,7 +11672,12 @@
       "hierarchical-mas"
     ],
     "s2_id": "arXiv:2606.12918",
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "citation_count": 0,
+    "influential_citation_count": 0,
+    "cites": [
+      "arxiv-2410-09024"
+    ]
   },
   {
     "id": "arxiv-2606-17092",
@@ -10692,7 +11737,15 @@
       "fail-open-fail-closed"
     ],
     "s2_id": "arXiv:2606.14517",
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "citation_count": 0,
+    "influential_citation_count": 0,
+    "cites": [
+      "alibaba-qwen3-report-2025",
+      "arxiv-2307-15043",
+      "arxiv-2406-13352",
+      "arxiv-2410-09024"
+    ]
   },
   {
     "id": "arxiv-2606-18193",
@@ -10760,7 +11813,8 @@
       "arxiv-2406-11704"
     ],
     "cited_by": [],
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "influential_citation_count": 0
   },
   {
     "id": "arxiv-2606-15057",
@@ -10792,10 +11846,12 @@
     "s2_id": "arXiv:2606.15057",
     "citation_count": 0,
     "cites": [
+      "arxiv-2307-15043",
       "arxiv-2310-08419"
     ],
     "cited_by": [],
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "influential_citation_count": 0
   },
   {
     "id": "arxiv-2606-14154",
@@ -10823,9 +11879,14 @@
     ],
     "s2_id": "arXiv:2606.14154",
     "citation_count": 0,
-    "cites": [],
+    "cites": [
+      "arxiv-2402-04249",
+      "arxiv-2402-07867",
+      "arxiv-2402-10260"
+    ],
     "cited_by": [],
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "influential_citation_count": 0
   },
   {
     "id": "arxiv-2606-19887",
@@ -10942,12 +12003,14 @@
     "s2_id": "arXiv:2606.13385",
     "citation_count": 0,
     "cites": [
+      "arxiv-2307-13854",
       "arxiv-2406-13352",
-      "arxiv-2503-09780",
       "arxiv-2410-06703",
-      "arxiv-2307-13854"
+      "arxiv-2503-09780",
+      "mc-src-gemini-2-5-report"
     ],
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "influential_citation_count": 0
   },
   {
     "id": "arxiv-2606-13737",
@@ -10981,12 +12044,13 @@
     "s2_id": "arXiv:2606.13737",
     "citation_count": 0,
     "cites": [
+      "arxiv-2307-15043",
       "arxiv-2312-06674",
       "arxiv-2501-18492",
-      "arxiv-2307-15043",
       "arxiv-2506-09996"
     ],
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "influential_citation_count": 0
   },
   {
     "id": "arxiv-2606-18550",
@@ -11089,9 +12153,17 @@
     "s2_id": "arXiv:2606.16242",
     "citation_count": 0,
     "cites": [
-      "arxiv-2307-15043"
+      "arxiv-2307-15043",
+      "arxiv-2310-08419",
+      "arxiv-2404-01833",
+      "arxiv-2406-04313",
+      "arxiv-2503-00061",
+      "arxiv-2510-07192",
+      "src-biggio-poisoning-svm-2012",
+      "src-gu-badnets-2017"
     ],
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "influential_citation_count": 0
   },
   {
     "id": "arxiv-2606-16751",
@@ -11124,9 +12196,15 @@
     "s2_id": "arXiv:2606.16751",
     "citation_count": 0,
     "cites": [
-      "arxiv-2310-08419"
+      "arxiv-2212-08073",
+      "arxiv-2307-15043",
+      "arxiv-2310-08419",
+      "arxiv-2312-02119",
+      "arxiv-2411-15594",
+      "src-shumailov-sponge-2020"
     ],
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "influential_citation_count": 0
   },
   {
     "id": "arxiv-2606-15788",
@@ -11161,7 +12239,8 @@
     "cites": [
       "arxiv-2307-15043"
     ],
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "influential_citation_count": 0
   },
   {
     "id": "arxiv-2606-15308",
@@ -11192,7 +12271,8 @@
     "s2_id": "arXiv:2606.15308",
     "citation_count": 0,
     "cites": [],
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "influential_citation_count": 0
   },
   {
     "id": "arxiv-2606-20470",
@@ -11225,5 +12305,1139 @@
       "arxiv-2307-15043"
     ],
     "provenance": "extracted"
+  },
+  {
+    "id": "src-2606.09084",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Context-Fractured Decomposition Attacks on Tool-Using LLM Agents: Exploiting Artifact Provenance Gaps",
+    "authors": [
+      "Xiaofeng Lin",
+      "Yukai Yang",
+      "Daniel Guo",
+      "Sahil Arun Nale",
+      "Charles Fleming",
+      "Guang Cheng"
+    ],
+    "org": "UCLA; Texas A&M; Cisco; University of Mississippi",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2606.09084",
+    "published": "2026-06-08",
+    "retrieved": "2026-06-22",
+    "abstract": "Tool-using LLM agents persist state in artifacts (files, logs) so jailbreak defenses must reason across cross-step composition. The paper operationalizes the 'provenance gap' for tool-using agents and introduces Context-Fractured Decomposition (CFD): cross-context multi-step jailbreaks that preserve benign-looking intermediate artifacts in an early interaction and elicit harmful behavior later, possibly in a different agent instance or workflow stage, via individually innocuous tool actions whose risk emerges only under delayed artifact-mediated composition. Across agent-system jailbreak benchmarks (AgentDojo), CFD improves attack success rates by up to 28.14 percentage points over SOTA baselines even against strong single-turn judges. Accepted at ICML 2026 Workshop on Failure Modes in Agentic AI (FAGEN).",
+    "citation_count": 0,
+    "influential_citation_count": 0,
+    "cites": [
+      "arxiv-2312-02119",
+      "arxiv-2404-01833",
+      "arxiv-2410-07283",
+      "arxiv-2410-09024",
+      "src-arxiv-2407-12784-agentpoison"
+    ]
+  },
+  {
+    "id": "src-2606.08661",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Data Agents Under Attack: Vulnerabilities in LLM-Driven Analytical Systems",
+    "authors": [
+      "Kuncan Wang",
+      "Ziting Wang",
+      "Peizhuo Lv",
+      "Haoyang Li",
+      "Guoliang Li",
+      "Gao Cong",
+      "Wei Dong"
+    ],
+    "org": "Nanyang Technological University; The Hong Kong Polytechnic University; Tsinghua University",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2606.08661",
+    "published": "2026-06-07",
+    "retrieved": "2026-06-22",
+    "abstract": "Data agents interleave LLM-driven reasoning with relational data access, executable analytical tools, and multi-step workflow orchestration, recombining concerns of database security and LLM-agent security into failure modes neither captures alone. The paper develops a layered vulnerability framework identifying eight data-agent-specific vulnerabilities (V1-V8) across interpretation, execution, and policy layers; introduces an attack taxonomy of three adversary goals (Hijack, Mislead, Drain), seven tactics, and fourteen techniques (T1.1-T7.2) paired with an LLM payload-generation pipeline grounded in real database schemas; and evaluates these on six systems (DataInterpreter, DB-GPT, DeepAnalyze, LAMBDA, Databricks Genie, BigQuery) yielding 3,075 tests.",
+    "citation_count": 0,
+    "influential_citation_count": 0,
+    "cites": [
+      "arxiv-2402-07867",
+      "src-shumailov-sponge-2020"
+    ]
+  },
+  {
+    "id": "src-2606.10525",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Assessing Automated Prompt Injection Attacks in Agentic Environments",
+    "authors": [
+      "David Hofer",
+      "Edoardo Debenedetti",
+      "Florian Tramèr"
+    ],
+    "org": "ETH Zurich",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2606.10525",
+    "published": "2026-06-09",
+    "retrieved": "2026-06-22",
+    "abstract": "Indirect prompt injection threatens LLM agents that interact with untrusted external data, yet automated attack methods proven effective for jailbreaking remain underexplored in realistic agentic settings. The paper presents an empirical evaluation of automated prompt-injection attacks against LLM agents, adapting white-box (GCG) and black-box (TAP) methods to the agentic setting within AgentDojo. Across 80 task pairs over four domains and three models (Qwen3-4B, Gemma3-4B, GPT-5), black-box TAP substantially outperforms gradient-based GCG (45.2% vs 24.1% ASR on Qwen3-4B). Task-universal attacks transfer effectively, but attacks optimized on smaller open-source models do not transfer to frontier models like GPT-5, highlighting automated prompt injection as a credible but model-dependent threat with significant barriers to model-agnostic exploitation.",
+    "citation_count": 0,
+    "influential_citation_count": 0,
+    "cites": [
+      "alibaba-qwen3-report-2025",
+      "arxiv-2307-15043",
+      "arxiv-2310-08419",
+      "arxiv-2312-02119"
+    ]
+  },
+  {
+    "id": "src-2606.09549",
+    "type": "source",
+    "source_type": "paper",
+    "title": "SecureClaw: Clawing Back Control of LLM Agents",
+    "authors": [
+      "Yuhan Ma",
+      "Stefan Schmid"
+    ],
+    "org": "TU Berlin",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2606.09549",
+    "published": "2026-06-08",
+    "retrieved": "2026-06-22",
+    "abstract": "Tool-using LLM agents face two distinct security failures: unauthorized external actions and exposure of sensitive plaintext inside the runtime before any final output check can intervene. Existing defenses usually protect one boundary (planner/runtime or action sink) and so cannot secure both surfaces. SecureClaw is a dual-boundary architecture placing authorization at the effect sink (writes follow a PREVIEW->COMMIT protocol; only a trusted executor commits the exact canonical request authorized by policy) and plaintext confinement at the read boundary (sensitive reads pass through a trusted gateway returning opaque handles plus bounded summaries as an explicit declassification interface). Across AgentDojo, AgentLeak, and ASB, SecureClaw is the only evaluated common-harness baseline that simultaneously retains usable utility and achieves 0% ASR on ASB, 0.64% ASR on AgentDojo, and 3.23% overall leak on AgentLeak's attacked parity lane.",
+    "citation_count": 0,
+    "influential_citation_count": 0
+  },
+  {
+    "id": "src-2606.10749",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Toward Secure LLM Agents: Threat Surfaces, Attacks, Defenses, and Evaluation",
+    "authors": [
+      "Yuchen Ling",
+      "Shengcheng Yu",
+      "Zhenyu Chen",
+      "Chunrong Fang"
+    ],
+    "org": "Nanjing University; Technical University of Munich",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2606.10749",
+    "published": "2026-06-09",
+    "retrieved": "2026-06-22",
+    "abstract": "A lifecycle-based, systems-oriented SoK synthesizing 247 papers (2023-Apr 2026) on LLM agent security. Models agent security around the interaction of information flow, delegated authority, and persistent state across the agentic loop, organized by four research questions (modeling, threat surfaces/attack families, defenses/tradeoffs, evaluation/benchmark gaps). Finds prompt injection and tool-mediated control-flow hijacking dominate the field while persistent state corruption and multi-agent propagation are emerging central concerns; current defenses provide useful building blocks but remain weakly compositional; existing benchmarks underrepresent long-horizon, stateful, and deployment-sensitive risks. Argues secure agents require explicit trust boundaries, principled privilege control, provenance-aware state management, and deployment-aligned evaluation.",
+    "citation_count": 0,
+    "influential_citation_count": 0,
+    "cites": [
+      "arxiv-2410-09024",
+      "arxiv-2509-05755",
+      "src-2603-19469-formal-agent-sec",
+      "src-arxiv-2407-12784-agentpoison",
+      "src-arxiv-2412-13178-safeagentbench",
+      "src-arxiv-2503-04957-safearena",
+      "src-arxiv-2602-15654-zombie-agents",
+      "src-mcpsecbench"
+    ]
+  },
+  {
+    "id": "arxiv-2606-12737",
+    "type": "source",
+    "source_type": "paper",
+    "title": "PI-Hunter: Automated Red-Teaming for Exposing and Localizing Prompt Injections",
+    "authors": [
+      "Pengfei He",
+      "Lesly Miculicich",
+      "Vishesh Sharma",
+      "Ash Fox",
+      "George Lee",
+      "Jiliang Tang",
+      "Tomas Pfister",
+      "Long T. Le"
+    ],
+    "org": "Google Cloud AI Research; Google; Michigan State University",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2606.12737",
+    "published": "2026-06-10",
+    "retrieved": "2026-06-22",
+    "abstract": "PI-Hunter is an automated agentic auditing framework that shifts red-teaming of LLM agents from attack-success optimization to injection-exposure: it statically maps an agent's tools/retrieval interfaces/external sources, then evolves source-aware probing test cases through feedback-driven mutation to induce the agent to retrieve, process and reveal latent malicious instructions embedded in untrusted external sources, localizing the specific source->tool ingestion path. A patch-and-reexplore loop applies transient mitigations to drive coverage toward unexplored attack surfaces. On AgentDojo and AgentDyn it substantially improves source localization, instruction exposure and ingestion-path diversity over a strong agentic baseline, and remains effective under Spotlighting, MELON and PIGuard defenses.",
+    "citation_count": 0,
+    "influential_citation_count": 0
+  },
+  {
+    "id": "arxiv-2606-06140",
+    "type": "source",
+    "source_type": "paper",
+    "title": "RedEdit: Agentic Red-Teaming of Image Safety Classifiers via MCTS-Guided Photo-Editing",
+    "authors": [
+      "Weilin Lin",
+      "Ziqi Lin",
+      "Zhenxing Zhou",
+      "Jianze Li",
+      "Tong Zhang",
+      "Hui Xiong",
+      "Li Liu"
+    ],
+    "org": "HKUST (Guangzhou); Sun Yat-sen University; Weixin AI, Tencent",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2606.06140",
+    "published": "2026-06-04",
+    "retrieved": "2026-06-22",
+    "abstract": "RedEdit is a black-box red-teaming agent that formulates user-style photo-editing evasion of image safety classifiers as a combinatorial search over edit-tool sequences. A VLM-based proposer supplies domain-aware candidate edits and a Monte-Carlo Tree Search planner prioritizes promising edit paths while backtracking from ineffective ones, under a dual-gate (detector-evasion + content-preservation) success criterion. On 777 UnsafeBench unsafe images, RedEdit reaches 76.2% ASR with fewer than 2 edits on average while retaining 93.0% malicious semantics, transfers across 12 detectors without re-optimization, and exposes architecture-agnostic systemic blind spots in current image content moderation.",
+    "citation_count": 0,
+    "influential_citation_count": 0
+  },
+  {
+    "id": "arxiv-2606-09178",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Culturally-Adapted Red-Teaming Across East and Southeast Asian Contexts: A Methodological and Comparative Analysis",
+    "authors": [
+      "Hyeji Choi",
+      "Yongtaek Lim",
+      "Minwoo Kim"
+    ],
+    "org": "AI Safety Team, DATUMO INC.",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2606.09178",
+    "published": "2026-06-08",
+    "retrieved": "2026-06-22",
+    "abstract": "This study shows that direct-translation (DT) of English safety benchmarks systematically underestimates multilingual LLM risk because it strips the cultural context embedded in threat scenarios, social norms and legal frameworks. Using a culturally-adaptive red-teaming benchmark generator extended to Korean/Japanese/Thai/Khmer (500 DT + 500 culturally-adapted CA prompts per language, 12 risk categories, 1:1 seed matching), the authors show CA yields positive delta-ASR across all 16 language x model combinations (mean +9.3 pp) and DT underestimates risk in 44 of 48 category x language combinations. A 3-criteria Cultural Realism rubric finds DT Cultural-Depth scores stay below 1.0/3.0 (mean 0.17) vs CA up to 2.51, showing DT prompts diverge from real multicultural inputs.",
+    "citation_count": 0,
+    "influential_citation_count": 0,
+    "cites": [
+      "arxiv-2212-08073",
+      "arxiv-2310-06474",
+      "arxiv-2407-21783",
+      "src-yong-lowresource-jb-2023"
+    ]
+  },
+  {
+    "id": "arxiv-2606-13038",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Nous: An Attempt to Extract and Inject the Cognition Behind Prediction-Market Behavior",
+    "authors": [
+      "Haowei Qian"
+    ],
+    "org": "Independent Researcher",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2606.13038",
+    "published": "2026-06-11",
+    "retrieved": "2026-06-22",
+    "abstract": "Nous extracts a structured eight-dimension behavioral profile from real Polymarket trading activity and injects it into LLM agents via prompts to test whether human cognitive diversity can be recovered and transferred to counter the 'cognitive monoculture' of agents built on shared foundation models (frontier-model forecasting errors correlate r~0.77). Central finding is a dissociation: extraction works partially (8/14 parameters temporally stable, ICC>=0.5; wallets identifiable above chance; 2/4 dimensions predict realized profit out-of-sample), but prompt-level injection does NOT measurably transmit the profile -- structured injection shows no significant advantage over a length-matched control and the induced diversity neither reduces ensemble error correlation nor improves Brier score, locating the bottleneck in the structure-to-narrative translator before the model.",
+    "citation_count": 0,
+    "influential_citation_count": 0
+  },
+  {
+    "id": "arxiv-2606-11425",
+    "type": "source",
+    "source_type": "paper",
+    "title": "JailbreakOPT: Tool-Assisted Iterative Jailbreak Prompt Optimization",
+    "authors": [
+      "Ge Shi",
+      "Jun Yin",
+      "Donglin Xie",
+      "Fangyi Liu",
+      "Yucan Li",
+      "Menglin Liu"
+    ],
+    "org": "UC Davis; Renmin University of China; Nankai University; Cornell University; CUHK Shenzhen",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2606.11425",
+    "published": "2026-06-09",
+    "retrieved": "2026-06-22",
+    "abstract": "JailbreakOPT is a tool-assisted framework for iterative single-turn jailbreak prompt optimization. It organizes diverse atomic jailbreak prompts into an attack tool library and composes them through a unified intra-episode orchestrator-mutator-evaluator-selector optimization abstraction (encode/decode chains) to generate stronger standalone attack prompts, and frames inter-episode tool selection as a contextual bandit solved with contextual Thompson sampling to reuse experience across attack episodes. Across multiple target LLMs and attack goals it improves ASR while reducing the number of attacks until success (No.A) versus atomic single-turn attacks and existing iterative single-turn optimization baselines.",
+    "citation_count": 0,
+    "influential_citation_count": 0,
+    "cites": [
+      "alibaba-qwen3-report-2025",
+      "arxiv-2309-10253",
+      "arxiv-2310-08419",
+      "arxiv-2311-08268",
+      "arxiv-2312-02119",
+      "arxiv-2402-04249",
+      "arxiv-2404-01833",
+      "arxiv-2410-05295",
+      "src-multibreak-bench"
+    ]
+  },
+  {
+    "id": "src-2606-08372",
+    "type": "source",
+    "source_type": "paper",
+    "title": "SoK: Reconstruction Attacks on Synthetic Tabular Data (Insights from Winning the NIST CRC)",
+    "authors": [
+      "Steven Golob",
+      "Sikha Pentyala",
+      "Martine De Cock"
+    ],
+    "org": "University of Washington Tacoma; Ghent University",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2606.08372",
+    "published": "2026-06-06",
+    "retrieved": "2026-06-22",
+    "abstract": "First systematization of reconstruction (attribute inference) attacks on de-identified and synthetic tabular data. Contributes a taxonomy organizing attacks by exploited structure, evaluates 14 attacks against 9 SDG methods across 5 benchmark datasets (the strongest, CoBP-RA, is new), and a memorization test that distinguishes reconstruction of population distribution from memorization of training records. Findings: SDG method choice governs risk more than attack choice; differential privacy protects mainly at small budgets (epsilon<=1) then plateaus; de-identification is the most exposed family; most reconstruction reflects distributional structure not memorization, concentrating individual risk on atypical records. Externally validated by first-place finish among red teams in the 2025 NIST Collaborative Research Cycle.",
+    "citation_count": 0,
+    "influential_citation_count": 0
+  },
+  {
+    "id": "src-2606-13044",
+    "type": "source",
+    "source_type": "paper",
+    "title": "No Hidden Prompts Needed! You Can Game AI Peer Review with Presentation-Only Revisions",
+    "authors": [
+      "Xu Yang",
+      "Zhizhou Sha",
+      "Junbo Li",
+      "Jian Yu",
+      "Yifan Sun",
+      "Matthew Zhao",
+      "Jinrui Fang",
+      "Xinyue Guo",
+      "Yining Wu",
+      "Xu Hu",
+      "Yifu Luo",
+      "Qiang Liu",
+      "Zhangyang Wang"
+    ],
+    "org": "UT Austin; UIUC; UT Dallas",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2606.13044",
+    "published": "2026-06-11",
+    "retrieved": "2026-06-22",
+    "abstract": "Studies a policy-relevant failure mode of AI peer review with no hidden text, no prompt injection, and no changes to methods/experiments/figures/equations/proofs/numerical results — the attacker modifies only presentation-level content (abstract, contribution framing, related work, discussion, narrative). Introduces adversarial repackaging: a closed-loop attack using AI-reviewer feedback to search presentation-level revisions while holding scientific evidence fixed. Across three reviewer models achieves 75.1% attack success rate and +1.21/10 mean score gain. Reveals two structural failure modes: AI reviewers are easier to impress than to convince (strength amplification reliable, weakness rebuttal backfires 31.6%), and AI reviewers confuse the appearance of addressing a limitation with resolving it. Releases a contamination-free rolling benchmark and attack framework.",
+    "citation_count": 0,
+    "influential_citation_count": 0
+  },
+  {
+    "id": "src-2606-12716",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Does AI Reviewer See the Full Picture? Attacking and Defending Multimodal Peer Review",
+    "authors": [
+      "Xinyu Zhao",
+      "Rana Muhammad Shahroz Khan",
+      "Zhen Xu",
+      "Zhen Tan",
+      "Tianlong Chen"
+    ],
+    "org": "University of North Carolina at Chapel Hill; Arizona State University",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2606.12716",
+    "published": "2026-06-10",
+    "retrieved": "2026-06-22",
+    "abstract": "Introduces PaperGuard, first comprehensive benchmark to systematically evaluate and defend AI-generated peer review against domain-specific, cross-modal adversarial attacks. Three pillars: (1) a multimodal peer-review dataset (1136 papers from ICLR and F1000Research, parsed to extract text and key figures); (2) a unified attack suite — black-box prompt injection plus white-box GCG (text) and PGD/APGD/C&W (image figure perturbation) — targeting score inflation, a domain-specific targeted failure distinct from jailbreaking; (3) a chunk-based embedding-similarity-search defense for the long-context needle-in-haystack problem. Black-box prompt injection reaches up to 80% ASR against proprietary models (Claude-Sonnet-4.5) with +14.14 score inflation; white-box visual attacks inflate scores up to +14.11 via imperceptible figure perturbation alone. Chunk-based defense achieves 95.0%/93.5% text/visual accuracy at near-zero FPR and 100% recall on 17 real arxiv papers with confirmed hidden injections.",
+    "citation_count": 0,
+    "influential_citation_count": 0,
+    "cites": [
+      "arxiv-2307-15043"
+    ]
+  },
+  {
+    "id": "src-2606-05233",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Domain-Conditioned Safety in Frontier Computer-Using Agents: A 793-Episode Browser Benchmark, a Coding-Domain Cross-Reference, and a Reproducibility Audit of Recent Red-Teaming",
+    "authors": [
+      "Nicholas Saban"
+    ],
+    "org": "Patronus AI; University of California, Berkeley",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2606.05233",
+    "published": "2026-06-03",
+    "retrieved": "2026-06-22",
+    "abstract": "Asks whether headline CUA red-teaming techniques (RL-Hammer, WASP, TRAP, RedTeamCUA, MUZZLE; reported ASR 42-98%) reproduced as hand-crafted templates still work against current frontier CUAs. Releases CUA-HANDCRAFTED, a 793-episode public benchmark (24 multi-step web tasks, 56 attack templates, 8 attack families, 4 system-prompt configs). Against Claude Sonnet 4.6 and GPT-5.4 measures 0/140 multi-step attack success (Clopper-Pearson 95% upper bound 2.60%); a prompt ablation shows resistance lives in model weights not the system prompt. Yet it does not generalize: on a sister coding-agent benchmark (SKILLBENCH) the same weights fall to hand-crafted skill-injection at up to 100%. Argues literature's high ASR is largely attributable to RL-optimized injection text, and frontier safety hardening is domain-conditioned (browser-specific). Reporting techniques without releasing optimized strings, or extrapolating browser-domain safety to other CUA modalities, makes published ASR numbers unreproducible.",
+    "citation_count": 0,
+    "influential_citation_count": 0,
+    "cites": [
+      "arxiv-2402-04249"
+    ]
+  },
+  {
+    "id": "src-2605-31593",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Stateful Online Monitoring Catches Distributed Agent Attacks",
+    "authors": [
+      "Davis Brown",
+      "Samarth Bhargav",
+      "Arav Santhanam",
+      "Kasper Hong",
+      "Ivan Zhang",
+      "Matan Shtepel",
+      "Steffi Chern",
+      "Alexander Robey",
+      "Eric Wong",
+      "Hamed Hassani"
+    ],
+    "org": "University of Pennsylvania; Carnegie Mellon University",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2605.31593",
+    "published": "2026-05-29",
+    "retrieved": "2026-06-22",
+    "abstract": "Builds the first distributed agent attack — a multi-agent scaffold that completes hard cybersecurity tasks while hiding the harmful objective across subagents with limited contexts, evading a standard per-transcript monitor by splitting misuse across many user accounts so each transcript looks benign; caught only a fifth as often as prior agent attacks. Develops an online stateful monitor that uses real-time clustering to collect weak suspiciousness signals across many agent transcripts and escalates rarely to a language model that flags misuse across user accounts. Pareto dominates standard monitors, catching distributed attacks 30% earlier and flagging cyber misuse before the most harmful stages, at negligible latency for ~99% of traffic. An extensive red-teaming exercise (>100k attacks, 2 months) further improves the defense and finds it also catches standard jailbreaks since adaptive attackers reuse attack variants across accounts.",
+    "citation_count": 0,
+    "influential_citation_count": 0,
+    "cites": [
+      "arxiv-2408-08926",
+      "arxiv-2505-15216",
+      "src-constitutional-classifiers"
+    ]
+  },
+  {
+    "id": "src-2606-11817",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Grammar-Constrained Decoding Can Jailbreak LLMs into Generating Malicious Code",
+    "authors": [
+      "Yitong Zhang",
+      "Shiteng Lu",
+      "Jia Li"
+    ],
+    "org": "Tsinghua University; University of Electronic Science and Technology of China",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2606.11817",
+    "published": "2026-06-10",
+    "retrieved": "2026-06-22",
+    "abstract": "Reveals that Grammar-Constrained Decoding (GCD), a reliability mechanism for code generation, can be turned into an attack surface. The CodeSpear jailbreak applies a benign off-the-shelf code grammar to constrain decoding, removing the natural-language refusal from the valid output space and forcing the model to emit malicious code. No adversarial grammar, no gradient, no fine-tuning, no prompt engineering required — only a standard GCD interface. Evaluated on 10 LLMs across 4 benchmarks; the CodeShield honeypot-code DPO defense restores safety under GCD.",
+    "citation_count": 0,
+    "influential_citation_count": 0,
+    "cites": [
+      "arxiv-2310-08419",
+      "arxiv-2407-21783",
+      "src-wang-juli-logprob-jb-2025",
+      "src-yong-lowresource-jb-2023"
+    ]
+  },
+  {
+    "id": "src-2606-05609",
+    "type": "source",
+    "source_type": "paper",
+    "title": "SlotGCG: Exploiting the Positional Vulnerability in LLMs for Jailbreak Attacks",
+    "authors": [
+      "Seungwon Jeong",
+      "Jiwoo Jeong",
+      "Hyeonjin Kim",
+      "Yunseok Lee",
+      "Woojin Lee"
+    ],
+    "org": "Dongguk University-Seoul",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2606.05609",
+    "published": "2026-06-04",
+    "retrieved": "2026-06-22",
+    "abstract": "Shows that GCG-family jailbreaks waste capacity by restricting adversarial tokens to a fixed suffix slot. Introduces the Vulnerable Slot Score (VSS), an attention-based metric that quantifies how susceptible each insertion position ('slot') is to adversarial tokens, and SlotGCG, which distributes adversarial tokens across high-VSS slots. The position-search mechanism is attack-agnostic and plugs into any optimization-based attack with ~200ms preprocessing, yielding +14% average ASR over GCG-based methods, faster convergence, and 42% higher ASR under input-filtering defenses. ICLR 2026.",
+    "citation_count": 0,
+    "influential_citation_count": 0,
+    "cites": [
+      "alibaba-qwen3-report-2025",
+      "arxiv-2307-15043",
+      "arxiv-2310-08419",
+      "arxiv-2312-02119",
+      "arxiv-2407-21783",
+      "src-yong-lowresource-jb-2023"
+    ]
+  },
+  {
+    "id": "src-2606-07706",
+    "type": "source",
+    "source_type": "paper",
+    "title": "MLingualFC: Evaluating Jailbreak Vulnerabilities in Multilingual Vision-Language Models",
+    "authors": [
+      "Rishabh Makwana",
+      "Mamta",
+      "Deeksha Varshney",
+      "Oana Cocarascu"
+    ],
+    "org": "DJ Sanghvi College of Engineering; King's College London; IIT Jodhpur",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2606.07706",
+    "published": "2026-06-05",
+    "retrieved": "2026-06-22",
+    "abstract": "Introduces MLingualFC, a multilingual multimodal benchmark that encodes harmful instructions as structured flowchart images (horizontal/vertical/tortuous layouts) across Hindi, Punjabi, Spanish, Romanian, and German, paired with a benign text prompt. Evaluates Qwen2.5-VL, Gemma-4, and Pangea under a black-box single-turn threat model. Visual encoding of harmful content combined with non-English text bypasses safety alignment that operates only in text and in English. Latin-script languages reach >80% ASR while Indic scripts show low ASR attributed to weak visual text recognition, not stronger safety.",
+    "citation_count": 0,
+    "influential_citation_count": 0,
+    "cites": [
+      "arxiv-2307-15043",
+      "arxiv-2311-05608",
+      "src-yong-lowresource-jb-2023"
+    ]
+  },
+  {
+    "id": "src-2606-04027",
+    "type": "source",
+    "source_type": "paper",
+    "title": "MaskForge: Structure-Aware Adaptive Attacks for Jailbreaking Diffusion Large Language Models",
+    "authors": [
+      "Yingzi Ma",
+      "Zhengyue Zhao",
+      "Xiaogeng Liu",
+      "Minhui Xue",
+      "Yue Zhao",
+      "Chaowei Xiao"
+    ],
+    "org": "University of Wisconsin-Madison; Johns Hopkins University; University of Southern California; RAIR Centre, University of Adelaide",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2606.04027",
+    "published": "2026-06-01",
+    "retrieved": "2026-06-22",
+    "abstract": "Diffusion LLMs (dLLMs) generate text by iteratively denoising masked spans under bidirectional context, exposing a safety surface distinct from autoregressive LLMs: mask tokens are native inputs and harmful content can be induced through the model's own infilling rather than attacker-written continuation. MaskForge is a black-box adaptive attack that casts dLLM red-teaming as optimized search over a growing library of reusable structural patterns (typed mask-bearing scaffolds), selected via a UCB bandit with a scorer-guided drafter fallback. Achieves 79.3% avg ASR (+17.6% relative over strongest dLLM baseline) across 5 dLLMs and 3 benchmarks; the matured pattern library transfers to AdvBench at 88.2% ASR with no further updates.",
+    "citation_count": 0,
+    "influential_citation_count": 0,
+    "cites": [
+      "alibaba-qwen3-report-2025",
+      "arxiv-2307-15043",
+      "arxiv-2310-08419",
+      "arxiv-2311-08268",
+      "arxiv-2402-04249",
+      "arxiv-2402-10260",
+      "arxiv-2404-01318",
+      "arxiv-2410-05295"
+    ]
+  },
+  {
+    "id": "src-2606-02630",
+    "type": "source",
+    "source_type": "paper",
+    "title": "MultiTurnPSB: Evaluating Multi-Turn Jailbreak Attacks and Classifier-Based Defenses for Medical AI Safety",
+    "authors": [
+      "Anushka Sheoran",
+      "Yiduo Hao"
+    ],
+    "org": "University of Pennsylvania",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2606.02630",
+    "published": "2026-05-30",
+    "retrieved": "2026-06-22",
+    "abstract": "Extends PatientSafetyBench (466 patient-facing medical safety prompts, 5 categories) into a four-turn adversarial dialogue benchmark with three attack modalities (fixed-template, template-adaptive, live adversarial). Evaluates GPT-4.1-mini and Claude Sonnet 4.5. Unsafe responses rise from 35% to ~80% by Turn 4 under live attack; two models statistically indistinguishable at baseline diverge to a 19x gap by Turn 4. Identifies a two-element attack formula (emergency framing + medical authority claim) responsible for most catastrophic failures, with Turn 2 the critical vulnerability window. A lightweight input-side classifier reduces Turn-4 unsafe rate by 52.2 pp but with a 45% benign false-alarm rate. Also finds Claude refused to act as adversarial attacker in >half of late-turn conversations.",
+    "citation_count": 0,
+    "influential_citation_count": 0,
+    "cites": [
+      "arxiv-2402-04249"
+    ]
+  },
+  {
+    "id": "src-2603-28166-grantbox",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Evaluating Privilege Usage of Agents with Real-World Tools",
+    "authors": [
+      "Quan Zhang",
+      "Lianhang Fu",
+      "Lvsi Lian",
+      "Gwihwan Go",
+      "Yujue Wang",
+      "Chijin Zhou",
+      "Yu Jiang",
+      "Geguang Pu"
+    ],
+    "org": "ECNU / Tsinghua University / Xinjiang University",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2603.28166",
+    "published": "2026-04-20",
+    "retrieved": "2026-06-22",
+    "abstract": "GrantBox is a security evaluation sandbox that automatically integrates real-world MCP servers and lets LLM agents invoke genuine privileges, enabling evaluation of privilege usage under prompt injection. Ten real-world MCP servers with 122 privilege-sensitive tools (cloud infra, databases, personal data) were integrated; 100 benign privileged requests (avg 5.67 tools) and 50 privilege-hijacking cases across five attack categories were generated. Four LLMs (GPT-5, Gemini3-Flash, Qwen3-Max, Deepseek-v3) evaluated in ReAct and Plan-and-Execute modes show average ASR 90.55% (ReAct) and 79.05% (Plan-and-Execute), reaching 84.80% average in carefully crafted scenarios. FSE Companion '26.",
+    "citation_count": 5,
+    "influential_citation_count": 0,
+    "cites": [
+      "alibaba-qwen3-report-2025"
+    ],
+    "cited_by": [
+      "src-2605-17453-trust-no-tool"
+    ]
+  },
+  {
+    "id": "src-2603-19469-formal-agent-sec",
+    "type": "source",
+    "source_type": "paper",
+    "title": "A Framework for Formalizing LLM Agent Security",
+    "authors": [
+      "Vincent Siu",
+      "Jingxuan He",
+      "Kyle Montgomery",
+      "Zhun Wang",
+      "Neil Gong",
+      "Chenguang Wang",
+      "Dawn Song"
+    ],
+    "org": "UC Santa Cruz / UC Berkeley / Duke University",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2603.19469",
+    "published": "2026-03-19",
+    "retrieved": "2026-06-22",
+    "abstract": "A contextual-security framework systematizing LLM agent attacks and defenses. Defines execution context C_t=(p,Tr_{t-1},M_t,E_t,S_auth,t,G) and four security properties — task alignment, action alignment, source authorization, data isolation — verified by five oracle functions (instruction attribution I, source attribution L, objective evaluators H_p/H_Tr/H_a). Reformalizes indirect/direct prompt injection, jailbreak, task drift, agentic misalignment, confused deputy, capability misuse, cross-context leakage, malicious tool exploitation, and memory poisoning as violations of one or more properties. Analysis of 87 papers maps documented attacks to property violations; existing context-agnostic defenses are structurally incapable of distinguishing attack from legitimate task.",
+    "cited_by": [
+      "src-2606.10749"
+    ],
+    "citation_count": 5,
+    "influential_citation_count": 0,
+    "cites": [
+      "arxiv-2204-05862",
+      "arxiv-2212-08073",
+      "arxiv-2307-15043",
+      "arxiv-2402-07867",
+      "arxiv-2404-01318",
+      "arxiv-2406-04313",
+      "arxiv-2406-13352",
+      "arxiv-2410-09024",
+      "arxiv-2503-00061",
+      "src-arxiv-2407-12784-agentpoison",
+      "src-constitutional-classifiers"
+    ]
+  },
+  {
+    "id": "src-2604-22879-cfv",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Beyond Single-Agent Alignment: Preventing Context-Fragmented Violations in Multi-Agent Systems",
+    "authors": [
+      "Jie Wu",
+      "Ming Gong"
+    ],
+    "org": "Atlassian",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2604.22879",
+    "published": "2026-04-24",
+    "retrieved": "2026-06-22",
+    "abstract": "Identifies and formalizes Context-Fragmented Violations (CFVs) — cross-agent action sequences where each agent action is locally policy-compliant but collectively violates organizational invariants because critical policy facts are siloed in different departments' private contexts. Also formalizes Semantic Laundering (loss of security taint as information flows through LLM summarization/paraphrasing). Proposes Distributed Sentinel: a sidecar zero-trust architecture with a Semantic Taint Token (STT) protocol and Counterfactual Graph Simulation. On the PhantomEcosystem benchmark (200 scenarios, 9 CFV categories), Distributed Sentinel reaches F1=0.95 vs 0.85 (prompt filtering) and 0.65 (rule-based DLP). Eight frontier LLMs (Claude Opus 4.6, Sonnet 4.6, Gemini 2.5 Pro/Flash, GPT-5.4/-mini/-nano, GPT-4.1) show 14-98% violation rates in cross-domain multi-agent workflows.",
+    "citation_count": 0,
+    "influential_citation_count": 0,
+    "cites": [
+      "arxiv-2212-08073"
+    ]
+  },
+  {
+    "id": "src-2604-23374-neurotaint",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Ghost in the Agent: Redefining Information Flow Tracking for LLM Agents",
+    "authors": [
+      "Yuandao Cai",
+      "Wensheng Tang",
+      "Cheng Wen",
+      "Shengchao Qin"
+    ],
+    "org": "HKUST / Xidian University",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2604.23374",
+    "published": "2026-04-25",
+    "retrieved": "2026-06-22",
+    "abstract": "NeuroTaint is a provenance-oriented offline taint-tracking framework for LLM agents. Key insight: taint propagation in agents must capture not only explicit content propagation but also semantic transformation, causal influence on decisions, and cross-session persistence through memory. It identifies three orthogonal information-flow classes (explicit content propagation, implicit control influence, asynchronous provenance reuse) requiring different detection. Built on a Dynamic Context Provenance Graph (DCPG) backbone plus a Hybrid Semantic Tracker and a Sink-Driven Causal Analyzer. On TaintBench (400 scenarios, 20 frameworks) NeuroTaint reaches P=0.921/R=0.935/F1=0.928 vs F1=0.522 for FIDES (IFC baseline), while remaining effective on InjecAgent and ToolEmu.",
+    "citation_count": 3,
+    "influential_citation_count": 1,
+    "cites": [
+      "src-arxiv-2407-12784-agentpoison"
+    ]
+  },
+  {
+    "id": "src-2605-11039-pact",
+    "type": "source",
+    "source_type": "paper",
+    "title": "The Granularity Mismatch in Agent Security: Argument-Level Provenance Solves Enforcement and Isolates the LLM Reasoning Bottleneck",
+    "authors": [
+      "Linfeng Fan",
+      "Ziwei Li",
+      "Yuan Tian",
+      "Yichen Wang",
+      "Rongsheng Li",
+      "Xiong Wang"
+    ],
+    "org": "Renmin University of China / KAUST / Dongbei University of Finance and Economics / USTC",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2605.11039",
+    "published": "2026-05-11",
+    "retrieved": "2026-06-22",
+    "abstract": "Identifies the granularity mismatch in agent security: indirect prompt injection becomes dangerous not when untrusted content appears in context, but when it determines an AUTHORITY-BEARING ARGUMENT of a tool call. Whole-call defenses force a brittle choice (allow content to influence calls and risk hijacked destinations, or quarantine and block benign retrieve-then-act). PACT (Provenance-Aware Capability Contracts) is a runtime monitor that assigns semantic roles to tool arguments (target/command/credential/content/selector/control), tracks value provenance across replanning steps, and checks each argument against its role-specific trust requirement. Under oracle provenance PACT achieves 100% utility and 100% security on mixed-trust suites; in full AgentDojo across five models it reaches 100% security on the three strongest models while recovering 38.1-46.4% utility, 8-16 points above CaMeL.",
+    "citation_count": 0,
+    "influential_citation_count": 0,
+    "cites": [
+      "arxiv-2307-15043",
+      "arxiv-2410-07283"
+    ]
+  },
+  {
+    "id": "src-2605-17453-trust-no-tool",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Trust No Tool: Evaluating and Defending LLM Agents under Untrusted Tool Feedback",
+    "authors": [
+      "Lecheng Yan",
+      "Ruizhe Li",
+      "Xicheng Han",
+      "Wenxi Li",
+      "Binwu Wang",
+      "Longyue Wang",
+      "Chenyang Lyu",
+      "Guanhua Chen"
+    ],
+    "org": "Southern University of Science and Technology / USTC / University of Birmingham / Zhejiang University / ECNU / Alibaba Group",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2605.17453",
+    "published": "2026-05-17",
+    "retrieved": "2026-06-22",
+    "abstract": "Studies cognitive poisoning: a malicious tool behaves plausibly during exploration, accumulates trust through benign-looking feedback, and becomes harmful only when hidden state conditions align with the final executable action. Constructs TRUST-Bench (1,970 episodes / 1,753 source tasks, 7,012 variants from 5 upstream suites) of task-conditioned hidden-trigger tool-compromise episodes with matched safe controls, introduces the asymmetric GuardedJoint metric, and presents VISTA-Guard, a backbone-agnostic final-action risk scorer using trajectory-state and parameter evidence. Under GuardedJoint VISTA-Guard reaches 84.2 in-domain and 56.9 balanced OOD, while prompt-centric, heuristic, and scalarized baselines collapse to zero.",
+    "citation_count": 0,
+    "influential_citation_count": 0,
+    "cites": [
+      "alibaba-qwen3-report-2025",
+      "arxiv-2407-21783",
+      "arxiv-2410-09024",
+      "arxiv-2508-14925",
+      "arxiv-2510-18131",
+      "src-2603-28166-grantbox",
+      "src-arxiv-2602-13379-mt-agentrisk"
+    ]
+  },
+  {
+    "id": "arxiv-2606-06529",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Attack Selection in Agentic AI Control Evaluations Meaningfully Decreases Safety",
+    "authors": [
+      "Catherine Ge-Wang",
+      "Tyler Crosse",
+      "Benjamin Hadad IV",
+      "Joachim Schaeffer",
+      "Ram Potham",
+      "Tyler Tracy"
+    ],
+    "org": "University of Oxford / MARS / CAISH / Georgia Tech / MATS / Astra / Redwood Research",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2606.06529",
+    "published": "2026-06-03",
+    "retrieved": "2026-06-22",
+    "abstract": "Studies attack selection in agentic AI control evaluations: an attacker that strategically chooses WHEN to attack (vs indiscriminately) is much harder to catch. Decomposes attack decisions into a task-level start policy (whether a main-task/side-task pair is worth attacking) and a per-turn stop policy (whether to abort an in-progress attack). Across BashArena and LinuxArena under trusted-monitoring with a 1% audit budget, the start policy lowers empirical safety by ~20pp and the stop policy by 20-28pp, without changing underlying attack capability. Recommends control evaluations, system cards, and safety cases explicitly elicit attack selection to avoid overly optimistic safety estimates.",
+    "citation_count": 0,
+    "influential_citation_count": 0,
+    "cites": [
+      "arxiv-2312-06942",
+      "mc-src-anthropic-sabotage-evals"
+    ]
+  },
+  {
+    "id": "arxiv-2606-11409",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Risk Under Pressure: Compute-Aware Evaluation of Adversarial Robustness in Language Models",
+    "authors": [
+      "Malikeh Ehghaghi",
+      "Boglarka Ecsedi",
+      "Marsha Chechik",
+      "Colin Raffel"
+    ],
+    "org": "University of Toronto / Vector Institute / Hugging Face",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2606.11409",
+    "published": "2026-06-09",
+    "retrieved": "2026-06-22",
+    "abstract": "Adversarial-robustness evaluations of LLMs typically report attack success rate (ASR) at a fixed query budget, implicitly treating all attacks as equally costly. Proposes a compute-aware evaluation framework based on computational pressure measured in cumulative FLOPs as a proxy for adversarial effort. Introduces risk-compute curves mapping compute budgets to attack risk, and two scalar metrics: C@tau (compute to reach tau% risk) and AE (average efficiency, risk per FLOP). Across ten models, four training/alignment stages, three attacks (GCG, PAIR, JailBroken) on HarmBench + JailbreakBench, finds alignment training has non-monotonic effects on compute-space robustness, scaling reduces gradient-attack effectiveness but not template attacks, surrogate-optimized attacks transfer, compute cost varies up to ~5x across harm categories, and safety-RL leaves some categories disproportionately accessible.",
+    "citation_count": 0,
+    "influential_citation_count": 0,
+    "cites": [
+      "alibaba-qwen3-report-2025",
+      "arxiv-2310-08419",
+      "arxiv-2312-02119",
+      "arxiv-2402-04249",
+      "arxiv-2404-01318",
+      "arxiv-2404-01833",
+      "arxiv-2407-21783",
+      "src-coin-flip-judge-reliability"
+    ]
+  },
+  {
+    "id": "arxiv-2606-02302",
+    "type": "source",
+    "source_type": "paper",
+    "title": "SeClaw: Spec-Driven Security Task Synthesis for Evaluating Autonomous Agents",
+    "authors": [
+      "Hao Cheng",
+      "Changtao Miao",
+      "Tianle Song",
+      "Yin Wu",
+      "He Liu",
+      "Erjia Xiao",
+      "Junchi Chen",
+      "Xiaoyu Shi",
+      "Yichi Wang",
+      "Jing Yang",
+      "Taowen Wang",
+      "Jinhao Duan",
+      "Mengshu Sun",
+      "Peiyan Dong",
+      "Xuan Shen",
+      "Yang Cao",
+      "Renjing Xu",
+      "Kaidi Xu",
+      "Jindong Gu",
+      "Bo Zhang",
+      "Jize Zhang",
+      "Chenhao Lin",
+      "Philip Torr",
+      "Chao Shen"
+    ],
+    "org": "HKUST / Ant Digital Technologies / Xi'an Jiaotong / Oxford / CityU HK / MIT / Zhejiang U / UNC",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2606.02302",
+    "published": "2026-06-01",
+    "retrieved": "2026-06-22",
+    "abstract": "SeClaw is a framework combining specification-driven security task synthesis and execution-based security evaluation for autonomous LLM agents. Spec-Driven Security Task Synthesis uses a multi-agent collaborative pipeline (with Claude Code + human experts) to generate security tasks from structured risk specifications, covering resource, task, environment, and intrinsic risks. A Docker-based testbed (SeClaw-Docker) reconstructs task-specific user environments via ToolHub-based Skill and MCP configurations, logs fine-grained agent-environment trajectories, and supports trajectory-aware assessment of unsafe actions beyond final responses. Provides a reproducible foundation for measuring, diagnosing, and comparing security failures in autonomous LLM agents.",
+    "citation_count": 0,
+    "influential_citation_count": 0,
+    "cites": [
+      "arxiv-2410-09024",
+      "src-arxiv-2407-12784-agentpoison"
+    ]
+  },
+  {
+    "id": "arxiv-2604-06762",
+    "type": "source",
+    "source_type": "paper",
+    "title": "ARuleCon: Agentic Security Rule Conversion",
+    "authors": [
+      "Ming Xu",
+      "Hongtai Wang",
+      "Yanpei Guo",
+      "Zhengmin Yu",
+      "Weili Han",
+      "Hoon Wei Lim",
+      "Jin Song Dong",
+      "Jiaheng Zhang"
+    ],
+    "org": "National University of Singapore / Fudan University / NCS Group",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2604.06762",
+    "published": "2026-04-08",
+    "retrieved": "2026-06-22",
+    "abstract": "ARuleCon is the first agentic framework for autonomous cross-SIEM security rule conversion. It distills a source rule's core detection logic into a vendor-agnostic conversion Intermediate Representation (IR), drafts the target rule via LLM reasoning, then refines it with two autonomous reflection agents: an Agentic-RAG pipeline that retrieves authoritative vendor documentation to fix convention/schema mismatches, and a Python-based consistency check that compiles source and target IRs into executable code and runs both over synthetic test logs to verify functional equivalence. Evaluated on 1,492 rule-conversion pairs across five mainstream SIEM platforms (Splunk SPL, Microsoft KQL, IBM AQL, Google YARA-L, RSA ESA), ARuleCon improves logic alignment, semantic validity, and execution success, outperforming general LLMs by ~15% in similarity. Industry case studies with Singtel Singapore.",
+    "citation_count": 0,
+    "influential_citation_count": 0
+  },
+  {
+    "id": "arxiv-2605-24309",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Reframing LLM Agent Security as an Agent-Human Interaction Problem",
+    "authors": [
+      "Peiran Wang",
+      "Ying Li",
+      "Yuan Tian"
+    ],
+    "org": "UCLA",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2605.24309",
+    "published": "2026-05-23",
+    "retrieved": "2026-06-22",
+    "abstract": "Argues LLM agent security is fundamentally an agent-human interaction (AHI) problem, not a purely algorithmic one. Systematic analysis of 59 academic papers, 21 production agent systems, and 26 security plugins (as of April 2026) reveals that three human-centric security mechanisms (policy specification, runtime approval, scope configuration) dominate industry practice (adopted by 14-16 of 21 systems), while the categories most heavily studied in academia (intent anchoring and trust labeling) see ZERO production deployment. Current human-participation mechanisms suffer a cognitive-burden vs security-guarantee trade-off, leaving users caught between approval fatigue and uncontrolled agent autonomy. Proposes a three-direction research agenda and calls for AHI security to be a first-class research citizen.",
+    "citation_count": 2,
+    "influential_citation_count": 0,
+    "cites": [
+      "arxiv-2503-00061"
+    ]
+  },
+  {
+    "id": "arxiv-2604-13298",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Can Agents Secure Hardware? Evaluating Agentic LLM-Driven Obfuscation for IP Protection",
+    "authors": [
+      "Sujan Ghimire",
+      "Parsa Mirfasihi",
+      "Muhtasim Alam Chowdhury",
+      "Veeramani Pugazhenthi",
+      "Harish Kumar Dharavath",
+      "Farshad Firouzi",
+      "Rozhin Yasaei",
+      "Pratik Satam",
+      "Soheil Salehi"
+    ],
+    "org": "University of Arizona / Arizona State University",
+    "venue": "arXiv (IEEE)",
+    "url": "https://arxiv.org/abs/2604.13298",
+    "published": "2026-04-14",
+    "retrieved": "2026-06-22",
+    "abstract": "Presents an agentic LLM-driven framework for automated hardware netlist obfuscation for IP protection. The framework combines retrieval-grounded planning, structured lock-plan generation, deterministic netlist compilation, functional verification, and SAT-based security evaluation, decomposing the task into specialized stages rather than single prompt-to-output generation. Evaluated on ISCAS-85 benchmarks with functional equivalence checking and SAT-based attacks across GPT-5, LLaMA-3.1-8B, and Qwen-2.5-Coder-14B (72 runs). Results show the framework generates correct locked netlists with measurable wrong-key output corruption, but SAT attacks remain effective in all cases, highlighting both the potential and current limitations of agentic LLM-driven obfuscation.",
+    "citation_count": 1,
+    "influential_citation_count": 0
+  },
+  {
+    "id": "src-ocelot-2606-12341",
+    "type": "source",
+    "source_type": "paper",
+    "title": "OCELOT: Inference-Leakage Budgets for Privacy-Preserving LLM Agents",
+    "authors": [
+      "Jin Xie",
+      "Songze Li"
+    ],
+    "org": "unspecified",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2606.12341",
+    "published": "2026-06-10",
+    "retrieved": "2026-06-22",
+    "abstract": "LLM agents act on a user's behalf, leaking PII across trust boundaries at every step. Privacy is a property of an entire trajectory; leakage is cumulative across honest-but-curious or colluding sinks, bidirectional (observations can inject instructions), and task-dependent. The paper recasts agent privacy as posterior-risk control and presents OCELOT, a runtime mediator that budgets how much an adversary's belief about a secret may improve across a trajectory. Its mechanism, Witness-Verified Declassification (WVD), separates judgment from trust: an untrusted locally fine-tuned defender LLM inspects each candidate release and emits structured evidence; a deterministic trusted verifier audits it, charges a certified min-entropy cost, and authorizes the least-disclosing variant under a sink-trust-weighted budget on a tamper-evident ledger. Across five benchmarks and five defenses, OCELOT attains lowest leakage at higher task utility, resists adaptive injection, jailbreak, cumulative inference, and sink collusion, at 18% overhead.",
+    "citation_count": 0,
+    "influential_citation_count": 0,
+    "cites": [
+      "arxiv-2407-21783"
+    ]
+  },
+  {
+    "id": "src-robotsafety-2606-05952",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Learning of Robot Safety Policies via Adversarial Synthetic Scenarios",
+    "authors": [
+      "Nikolai Dorofeev",
+      "Alexey Odinokov",
+      "Rostislav Yavorskiy"
+    ],
+    "org": "SafePI.ai",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2606.05952",
+    "published": "2026-06-04",
+    "retrieved": "2026-06-22",
+    "abstract": "Ensuring safety of robotic systems in open-ended human-centric environments is a fundamental challenge. Foundation-model robots generalize via in-context learning and fine-tuning but lack systematic mechanisms for structured safety knowledge, while hazard-informed engineering pipelines suffer combinatorial explosion at scale. The paper proposes an agentic gamification framework: scenario generation is an adversarial game between a Red Team agent that constructs hazardous situations and a Blue Team agent that incrementally refines safety policies. A five-stage hazard-informed pipeline (asset declaration, exposure modeling, hazard scenario definition, simulation-based data generation, safety-oriented training) is formalized. A proof-of-concept Webots experiment trains a safe/unsafe object-placement classifier.",
+    "citation_count": 0,
+    "influential_citation_count": 0
+  },
+  {
+    "id": "src-safemed-2605-28338",
+    "type": "source",
+    "source_type": "paper",
+    "title": "SafeMed-R1: Clinician-Audited Safety and Ethics Alignment for Medical Large Language Models",
+    "authors": [
+      "Chao Ding",
+      "Mouxiao Bian",
+      "Tianbin Li",
+      "Minjia Yuan",
+      "Yidong Jiang",
+      "Yankai Jiang",
+      "Lu Lu",
+      "Jinru Ding",
+      "Jiayuan Chen",
+      "Zhuangzhi Gao",
+      "Pengcheng Chen",
+      "Zhao He",
+      "Rongzhao Zhang",
+      "Meiling Liu",
+      "Luyi Jiang",
+      "Jie Xu"
+    ],
+    "org": "Shanghai Artificial Intelligence Laboratory",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2605.28338",
+    "published": "2026-05-28",
+    "retrieved": "2026-06-22",
+    "abstract": "Medical LLMs match expert performance on licensing exams yet routine clinical use is limited because governance requires auditable reasoning, safety/ethics alignment, and resilience to adversarial misuse. SafeMed-R1 is trained with a traceable Clinical Trust Signals (CTS) pipeline linking each reasoning instance to clinician rubric scores and edit histories, and aligned via safety/ethics supervision and red-team stress testing. It attains 79.6% macro-averaged accuracy across clinical benchmarks; under adversarial safety testing it shows the lowest aggregated risk and reduces unsafe outputs by about 3-5% relative to its baseline. In a paired expert study of 30 medication-safety vignettes it matches PGY1/PGY2 residents on correctness and scores higher for medication safety, guideline consistency, and clinical usefulness.",
+    "citation_count": 0,
+    "influential_citation_count": 0
+  },
+  {
+    "id": "src-aiscientist-2606-09556",
+    "type": "source",
+    "source_type": "paper",
+    "title": "AI Scientists Are Only as Good as Their Evidence: A Stratified Ablation of Proprietary Data and Reasoning Skills in Drug-Asset Valuation",
+    "authors": [
+      "Yinan Wang"
+    ],
+    "org": "Noah AI Research",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2606.09556",
+    "published": "2026-06-08",
+    "retrieved": "2026-06-22",
+    "abstract": "AI Scientist agents are often evaluated as if capability were mainly a function of model quality, prompting, or reasoning scaffolds. In specialized scientific/commercial domains the limiting factor may be the evidence substrate: the private, curated, long-tail record on which the agent reasons. A controlled three-arm ablation on a production drug-asset valuation agent — A (plain LLM + web search), B (+ public structured tools, verifier, objectivity policy, adversarial red-team), and C (+ proprietary Noah AI database) — run on Claude Code with Opus 4.8 MAX. Skills/public tools improve calibration (tier-in-range 0.80->0.89) and objectivity (3.16->3.30) but do not remove the factual ceiling: A and B recover only 0.25 and 0.38 of the curated gold competitive record while C recovers 0.96. Completeness-aware informed decision-quality is 7.43 for C vs 1.76/2.57 for A/B.",
+    "citation_count": 0,
+    "influential_citation_count": 0
+  },
+  {
+    "id": "src-moesafety-2605-29708",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Understanding Safety-Sensitive Expert Behavior in Mixture-of-Experts LLMs",
+    "authors": [
+      "Zhibo Zhang",
+      "Yuxi Li",
+      "Zhen Ouyang",
+      "Ling Shi",
+      "Kailong Wang"
+    ],
+    "org": "Huazhong University of Science and Technology; Nanyang Technological University",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2605.29708",
+    "published": "2026-05-28",
+    "retrieved": "2026-06-22",
+    "abstract": "Mixture-of-Experts (MoE) LLMs rely on sparse router-driven expert activation, yet how safety alignment interacts with routed expert specialization is underexplored. Through three routing probes the paper provides evidence that routing in aligned MoE LLMs is largely topic-driven while safety behavior can be altered with little change to the intrinsic routing path: safety-related refusal is mediated inside expert representations rather than by router-selected safety routes. Motivated by this, it presents RASET (Router-Agnostic Safety-critical Expert Tuning), a red-teaming framework that identifies safety-critical experts via a contrastive routing-sensitivity criterion and applies parameter-efficient tuning only to selected experts, reaching 50.5% average ASR_hq while updating only 0.12-0.95% of parameters and preserving benign utility.",
+    "citation_count": 0,
+    "influential_citation_count": 0,
+    "cites": [
+      "arxiv-2307-15043",
+      "arxiv-2310-08419",
+      "arxiv-2402-04249"
+    ]
+  },
+  {
+    "id": "src-authgraph-2605-26497",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Aligning Provenance with Authorization: A Dual-Graph Defense for LLM Agents",
+    "authors": [
+      "Peiran Wang",
+      "Ying Li",
+      "Yuan Tian"
+    ],
+    "org": "UCLA",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2605.26497",
+    "published": "2026-05-26",
+    "retrieved": "2026-06-22",
+    "abstract": "LLM agents interact with the external world through tool calling and must read external data sources attackers can control; through indirect prompt injection attackers embed malicious instructions to manipulate agents into unauthorized operations. Existing defenses perform tool-call-level value checking without tracking where parameter values originate, or analyze execution traces from a single perspective without a clean authorization baseline. AUTHGRAPH constructs two complementary graphs: an injected reasoning graph (IRG) modeling provenance from the actual trajectory (including manipulated attributions), and an authorization graph (AG) derived from user intent in an isolated clean context that is information-theoretically impossible to influence by injection; a graph alignment checker structurally compares them to detect tool-level and parameter-source-level deviations. On AgentDojo it reduces ASR 40%->1% (UR 76%) on GPT-4o; on AgentDyn 39%->2% (UR 51%).",
+    "citation_count": 0,
+    "influential_citation_count": 0,
+    "cites": [
+      "arxiv-2410-07283",
+      "arxiv-2503-00061"
+    ]
+  },
+  {
+    "id": "src-2606-03647",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Black-box, Adaptive, Efficient, Transferable, Harmful, Applicable... Attacks Are All You Need to Break LLMs",
+    "authors": [
+      "Vincent Limbach",
+      "Jonas Dornbusch",
+      "David Ludke",
+      "Stephan Gunnemann",
+      "Leo Schwinn"
+    ],
+    "org": "Technical University of Munich / Munich Data Science Institute / Helmholtz AI",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2606.03647",
+    "published": "2026-06-02",
+    "retrieved": "2026-06-23",
+    "abstract": "Introduces Indirect Harm Optimization (IHO), a masked diffusion language model attacker trained via iterative Direct Preference Optimization against an LLM harmfulness judge, requiring only black-box access to the target. The same method serves as a strong adaptive attack on individual behaviors, or as an efficient amortized policy that transfers to held-out behaviors and unseen target models without fine-tuning. Against layered defenses (Circuit Breaker + auxiliary detector), IHO improves attack success considerably over SOTA without defense-specific adaptation. Proposes Expected Volume Under the Surface (EVUS) as a more reliable metric than ASR.",
+    "citation_count": 0,
+    "influential_citation_count": 0,
+    "cites": [
+      "arxiv-2307-15043",
+      "arxiv-2309-10253",
+      "arxiv-2310-08419",
+      "arxiv-2312-02119",
+      "arxiv-2402-04249",
+      "arxiv-2402-10260",
+      "arxiv-2404-01318",
+      "arxiv-2407-21783",
+      "arxiv-2410-05295",
+      "src-anwar-foundational-challenges-2024",
+      "src-coin-flip-judge-reliability",
+      "src-constitutional-classifiers",
+      "src-jailbreak-r1-rl"
+    ]
+  },
+  {
+    "id": "src-2606-09701",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Learning to Attack and Defend: Adaptive Red Teaming of Language Models via GRPO",
+    "authors": [
+      "Blake Bullwinkel",
+      "Eugenia Kim",
+      "Amanda Minnich",
+      "Mark Russinovich"
+    ],
+    "org": "Microsoft AI Red Team / Microsoft Azure",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2606.09701",
+    "published": "2026-06-08",
+    "retrieved": "2026-06-23",
+    "abstract": "Introduces AdvGRPO, an attacker-defender co-training framework that makes GRPO viable for joint optimization using dense multi-channel rewards (attack, prompt, thinking-trace, helpfulness) and Group reward-Decoupled Policy Optimization (GDPO) advantage normalization, plus a curriculum from single-turn to closed-loop multi-turn attacks. Produces highly effective and transferable single-turn, multi-turn, and reasoning attackers, and co-trained defenders that outperform baselines on safety benchmarks while preserving utility. Shows unaligned models do not automatically make good attackers.",
+    "citation_count": 0,
+    "influential_citation_count": 0,
+    "cites": [
+      "arxiv-2307-15043",
+      "arxiv-2402-04249",
+      "arxiv-2402-16822",
+      "arxiv-2404-01833",
+      "src-pismith-rl-prompt-injection",
+      "src-self-play-moving-targets"
+    ]
+  },
+  {
+    "id": "src-2605-06713",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Agentic AI and the Industrialization of Cyber Offense: Forecast, Consequences, and Defensive Priorities for Enterprises and the Mittelstand",
+    "authors": [
+      "Christopher Koch"
+    ],
+    "org": "Independent Researcher",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2605.06713",
+    "published": "2026-05-06",
+    "retrieved": "2026-06-23",
+    "abstract": "A bounded evidence synthesis arguing that agentic AI is an attack compression technology: it lowers the time, skill, and cost to move through intrusion phases (reconnaissance, phishing, credential abuse, vulnerability triage, exploit adaptation, post-compromise decision support). Introduces a Three-Channel Agentic Cyber-Risk Model (attacker-side augmentation, agentic systems as targets, internal agents as risky actors) and an Agentic Attack Compression Model. Uses the 2026 Linux kernel Copy Fail incident (CVE-2026-31431) as a foothold-to-root case study and develops a 2026-2028 forecast and prioritized defense roadmap.",
+    "citation_count": 0,
+    "influential_citation_count": 0
+  },
+  {
+    "id": "src-2604-18718",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Towards Optimal Agentic Architectures for Offensive Security Tasks",
+    "authors": [
+      "Isaac David",
+      "Arthur Gervais"
+    ],
+    "org": "University College London",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2604.18718",
+    "published": "2026-04-20",
+    "retrieved": "2026-06-23",
+    "abstract": "A controlled 600-run benchmark of 20 interactive offensive-security targets (10 web/API, 10 binary), each exposing one ground-truth vulnerability, evaluated across five agent coordination topologies (SAS, MAS-Indep, MAS-Decent, MAS-Central, MAS-Hybrid), three model families (GPT-5.2, Claude Opus 4, Kimi K2), and whitebox/blackbox access modes. Detection-any reaches 58.0% and validated detection 49.8%. MAS-Indep attains the highest validated detection (64.2%); SAS is the strongest efficiency baseline at $0.058 per validated finding. Whitebox materially outperforms blackbox (67.0% vs 32.7%) and web outperforms binary (74.3% vs 25.3%). The main result is a non-monotonic cost-quality frontier: broader coordination does not dominate once latency, token cost, and exploit-validation difficulty are considered.",
+    "citation_count": 3,
+    "influential_citation_count": 0,
+    "cites": [
+      "arxiv-2408-08926"
+    ]
+  },
+  {
+    "id": "src-2604-27464",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Security Attack and Defense Strategies for Autonomous Agent Frameworks: A Layered Review with OpenClaw as a Case Study",
+    "authors": [
+      "Luyao Xu",
+      "Xiang Chen"
+    ],
+    "org": "Nantong University / State Key Lab for Novel Software Technology, Nanjing University",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2604.27464",
+    "published": "2026-04-30",
+    "retrieved": "2026-06-23",
+    "abstract": "A layered review of security risks and defenses in autonomous agent frameworks organized into four security-relevant layers: context/instruction, tool/action, state/persistence, and ecosystem/automation. For each layer it summarizes the attack surface, representative attacks, and defenses, then identifies cross-layer threat propagation where a single injected instruction escalates from manipulated input to unsafe action to persistent state contamination to ecosystem-level impact. Uses the OpenClaw framework as a case study and highlights research imbalance across layers, lack of long-horizon evaluation, and weak ecosystem trust models.",
+    "citation_count": 0,
+    "influential_citation_count": 0,
+    "cites": [
+      "arxiv-2503-00061",
+      "src-pismith-rl-prompt-injection"
+    ]
+  },
+  {
+    "id": "src-2606-12709",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Smarter Saboteurs, Better Fixers: Scaling & Security in Linear Multi-Agent Workflows",
+    "authors": [
+      "Timothy McAllister",
+      "Sina Abdidizaji",
+      "Ivan Garibay",
+      "Ozlem Ozmen Garibay"
+    ],
+    "org": "University of Central Florida",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2606.12709",
+    "published": "2026-06-10",
+    "retrieved": "2026-06-23",
+    "abstract": "Investigates how model scale affects the security of strictly linear LLM-based multi-agent SDLC workflows by injecting an adversarially-instructed 'Mischievous Engineer' agent that introduces subtle logic bugs into generated code, evaluated on HumanEval across five parameter sizes of Gemma 3 and Qwen 3.5. Reveals a compliance-correction symmetry: larger models are far more likely to faithfully execute malicious instructions (uncorrected malicious drop reaching 53.7pp at 27B), but a lightweight terminal QA->Fixer correction stage collapses this to 0.6pp, restoring statistical parity. The brittleness attributed to linear topology may stem from lack of correction rather than topology itself.",
+    "citation_count": 0,
+    "influential_citation_count": 0,
+    "cites": [
+      "arxiv-2401-05566"
+    ]
   }
 ]
