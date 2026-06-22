@@ -185,7 +185,7 @@ arXiv 프리프린트를 넘어, Semantic Scholar venue 필터로 **48편의 피
 4 전문 분석가 전문 정독 → 레코드 검증 → CVE 연계(NVD) → Semantic Scholar citation 보강 → 그래프·임베딩
 재합성 → 배포. 전 스크립트는 `.claude/skills/paper-research-pipeline/`.
 
-## 7. 분석 논문 86편
+## 7. 분석 논문 — arXiv 프리프린트 (86)
 
 ### 2026-06 (63편)
 

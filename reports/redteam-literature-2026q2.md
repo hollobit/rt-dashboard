@@ -195,7 +195,7 @@ download → 4 specialist analysts read each PDF in full → record validation �
 Scholar citation enrichment → graph + embedding re-synthesis → deploy. All scripts under
 `.claude/skills/paper-research-pipeline/`.
 
-## 7. Analyzed papers (86)
+## 7. Analyzed papers — arXiv preprints (86)
 
 ### 2026-06 (63편)
 
