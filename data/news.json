@@ -1,5 +1,5 @@
 {
- "note": "AI 안전·레드티밍 큐레이트 뉴스 — AI 기업(OpenAI·Anthropic·Google DeepMind) + 8개국 AISI + 국제기구(FMF·MLCommons)",
+ "note": "AI 안전·레드티밍 큐레이트 뉴스 — AI 기업(OpenAI·Anthropic·Google DeepMind) + 9개국 AISI(+Singapore) + 국제기구(FMF·MLCommons)",
  "items": [
   [
    "2026-06-19",
@@ -639,6 +639,13 @@
    "https://www.frontiermodelforum.org/updates/progress-update-fmf-information-sharing-of-frontier-ai-threats-and-vulnerabilities/"
   ],
   [
+   "2026-02-16",
+   "안전",
+   "Redefining AI Safety for a Multimodal and Multicultural World (다국어·다문화 GenAI 안전 평가)",
+   "Singapore AISI",
+   "https://www.imda.gov.sg/resources/blog/blog-articles/2026/02/redefining-ai-safety"
+  ],
+  [
    "2026-02-14",
    "표준",
    "NAMES 국제네트워크, 평가 모범사례 국제 합의 공개",
@@ -763,6 +770,13 @@
    "한-싱 AISI MoU + AI 에이전트 데이터유출 공동테스트 결과",
    "Korea AISI",
    "https://www.aisi.re.kr/kor/article/ATCL75b4fb0a5/88"
+  ],
+  [
+   "2026-01-19",
+   "동향",
+   "Making AI Assurance Work in the Real World (신뢰가능 GenAI 배포·다국어 맥락 평가 행사)",
+   "Singapore AISI",
+   "https://sgaisi.sg/"
   ],
   [
    "2026-01-12",
