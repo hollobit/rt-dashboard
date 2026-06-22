@@ -7,26 +7,26 @@
     "citation"
   ],
   "algorithm": "networkx.greedy_modularity",
-  "community_count": 31,
-  "unit_count": 2464,
+  "community_count": 35,
+  "unit_count": 2604,
   "units_by_kind": {
-    "finding": 560,
-    "control": 183,
+    "finding": 612,
+    "control": 198,
     "evidence": 134,
-    "risk": 100,
+    "risk": 107,
     "standard": 42,
-    "attack_technique": 237,
+    "attack_technique": 251,
     "procedure": 97,
-    "vulnerability": 152,
+    "vulnerability": 172,
     "tactic": 16,
     "incident": 50,
-    "harm": 75,
-    "source": 519,
+    "harm": 80,
+    "source": 542,
     "model_card": 41,
     "product": 35,
     "reference": 11,
     "guideline-doc": 4,
     "guideline-item": 177,
-    "community": 31
+    "community": 35
   }
 }

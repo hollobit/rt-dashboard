@@ -192,6 +192,7 @@
       "src-2606-04027",
       "src-2606-05233",
       "src-2606-09701",
+      "src-abstention-2407.18418",
       "src-adversa-multijudge-consensus",
       "src-advreason-2502.01633",
       "src-agentic-era-dreadnode",
@@ -200,6 +201,7 @@
       "src-arxiv-2509-23694-safesearch",
       "src-arxiv-2510-00857-managerbench",
       "src-arxiv-2602-19948-clinical-rt",
+      "src-audio-achilles-2410.23861",
       "src-autorise-strategy-evolution",
       "src-coin-flip-judge-reliability",
       "src-cop-composition-principles",
@@ -217,7 +219,9 @@
       "src-scanners-lie-evaluator-instability",
       "src-self-play-moving-targets",
       "src-wang-refusal-direction-universal-2025",
-      "src-xie-overfit-finetune-jb-2025"
+      "src-wang2024-astra",
+      "src-xie-overfit-finetune-jb-2025",
+      "src-zeng2024-beear"
     ]
   },
   {
@@ -272,6 +276,7 @@
       "src-2504-10694",
       "src-2606-03647",
       "src-2606-04027",
+      "src-abstention-2407.18418",
       "src-advreason-2502.01633",
       "src-arxiv-2505-21605-sosbench",
       "src-arxiv-2509-23694-safesearch",
@@ -382,6 +387,7 @@
       "src-2603-19469-formal-agent-sec",
       "src-2606-03647",
       "src-2606-04027",
+      "src-abstention-2407.18418",
       "src-adversa-multijudge-consensus",
       "src-advreason-2502.01633",
       "src-arxiv-2505-21605-sosbench",
@@ -391,6 +397,7 @@
       "src-know-thy-judge-2503.04474",
       "src-liu-psychological-jb-2025",
       "src-pif-2502.03052",
+      "src-wang2024-astra",
       "src-xie-overfit-finetune-jb-2025"
     ]
   },
@@ -884,7 +891,8 @@
       "arxiv-2509-05755",
       "arxiv-2606-14517",
       "src-2603-19469-formal-agent-sec",
-      "src-2605-08442"
+      "src-2605-08442",
+      "src-taskshield-2412"
     ]
   },
   {
@@ -1111,10 +1119,12 @@
       "src-2606-09701",
       "src-2606-12716",
       "src-2606.10525",
+      "src-abstention-2407.18418",
       "src-adversa-multijudge-consensus",
       "src-advreason-2502.01633",
       "src-agentic-era-dreadnode",
       "src-agentsundersiege-2504.00218",
+      "src-artprompt-2402-11753",
       "src-arxiv-2407-12784-agentpoison",
       "src-arxiv-2503-04957-safearena",
       "src-arxiv-2505-21605-sosbench",
@@ -1128,8 +1138,13 @@
       "src-crossgen-transfer-qd",
       "src-datasentinel-2504.11358",
       "src-doubtprobe-2606-16527",
+      "src-drattack-2402-16914",
       "src-egashira-exploit-quantization-2024",
+      "src-fitd-2410",
       "src-fitd-2502.19820",
+      "src-hades-2403.09792",
+      "src-imgtrojan-2403.02910",
+      "src-injecagent-2403",
       "src-jovanovic-watermark-stealing-2024",
       "src-kuo-hcot-2025",
       "src-leaderboard-manipulation-2501.07493",
@@ -1137,22 +1152,29 @@
       "src-lowresource-jailbreak-2023",
       "src-lrm-hidden-risks-r1",
       "src-melon-2502.05174",
+      "src-mml-2412.00473",
       "src-moesafety-2605-29708",
       "src-mtsa-2505.17147",
+      "src-pap-2401-06373",
       "src-pif-2502.03052",
+      "src-popup-2411",
       "src-process-mining-redteam-2606-07833",
       "src-qd-semantic-strategy-evolution",
       "src-qdrt-behavior-conditioned",
       "src-radar-roleplay-multiagent",
       "src-repbend-2504.01550",
       "src-reverse-constitutional-ai",
+      "src-taskshield-2412",
       "src-tmap-agent-trajectory-evo",
       "src-toolhijacker-2504.19793",
       "src-wang-activation-attack-2023",
       "src-wang-implicit-crossmodal-jb-2025",
       "src-wang-refusal-direction-universal-2025",
+      "src-wang2024-astra",
       "src-xie-overfit-finetune-jb-2025",
-      "src-yong-lowresource-jb-2023"
+      "src-yong-lowresource-jb-2023",
+      "src-zeng2024-beear",
+      "src-zhou2024-icag"
     ]
   },
   {
@@ -1572,14 +1594,21 @@
       "src-2504-10694",
       "src-2509-21011",
       "src-2606-03647",
+      "src-abstention-2407.18418",
+      "src-artprompt-2402-11753",
       "src-cop-composition-principles",
+      "src-dap-2403-08424",
+      "src-drattack-2402-16914",
       "src-j2-jailbreaking-to-jailbreak",
       "src-liu-psychological-jb-2025",
+      "src-pap-2401-06373",
       "src-pif-2502.03052",
       "src-qd-semantic-strategy-evolution",
       "src-radar-roleplay-multiagent",
       "src-self-play-moving-targets",
-      "src-wang-implicit-crossmodal-jb-2025"
+      "src-wang-implicit-crossmodal-jb-2025",
+      "src-wang2024-astra",
+      "src-zhou2024-icag"
     ]
   },
   {
@@ -1651,12 +1680,14 @@
       "src-arxiv-2604-17730-mhsafeeval",
       "src-autorise-strategy-evolution",
       "src-cop-composition-principles",
+      "src-dap-2403-08424",
       "src-doubtprobe-2606-16527",
       "src-j2-jailbreaking-to-jailbreak",
       "src-liu-psychological-jb-2025",
       "src-pif-2502.03052",
       "src-pismith-rl-prompt-injection",
       "src-radar-roleplay-multiagent",
+      "src-raina2024-judge-robust",
       "src-reverse-constitutional-ai",
       "src-self-play-moving-targets",
       "src-tmap-agent-trajectory-evo",
@@ -1733,36 +1764,47 @@
       "src-2606-11817",
       "src-2606.05743",
       "src-2606.10525",
+      "src-abstention-2407.18418",
       "src-ace-2504.20984",
       "src-adversa-multijudge-consensus",
       "src-advreason-2502.01633",
       "src-agentic-era-dreadnode",
+      "src-artprompt-2402-11753",
       "src-arxiv-2604-17730-mhsafeeval",
+      "src-audio-achilles-2410.23861",
       "src-autorise-strategy-evolution",
       "src-cohen-morris-ii-worm-2024",
       "src-coin-flip-judge-reliability",
       "src-cop-composition-principles",
       "src-crossgen-transfer-qd",
+      "src-dap-2403-08424",
       "src-doubtprobe-2606-16527",
+      "src-drattack-2402-16914",
       "src-egashira-exploit-quantization-2024",
       "src-fitd-2502.19820",
+      "src-hades-2403.09792",
+      "src-imgtrojan-2403.02910",
       "src-j2-jailbreaking-to-jailbreak",
       "src-liu-psychological-jb-2025",
+      "src-mml-2412.00473",
       "src-moesafety-2605-29708",
       "src-mtsa-2505.17147",
+      "src-pap-2401-06373",
       "src-pif-2502.03052",
       "src-pismith-rl-prompt-injection",
       "src-process-mining-redteam-2606-07833",
       "src-qd-semantic-strategy-evolution",
       "src-qdrt-behavior-conditioned",
       "src-radar-roleplay-multiagent",
+      "src-raina2024-judge-robust",
       "src-reverse-constitutional-ai",
       "src-scanners-lie-evaluator-instability",
       "src-self-play-moving-targets",
       "src-tmap-agent-trajectory-evo",
       "src-wang-implicit-crossmodal-jb-2025",
       "src-wang-juli-logprob-jb-2025",
-      "src-xie-overfit-finetune-jb-2025"
+      "src-xie-overfit-finetune-jb-2025",
+      "src-zhou2024-icag"
     ]
   },
   {
@@ -2116,8 +2158,10 @@
       "arxiv-2510-07192",
       "src-2606-12709",
       "src-arxiv-2605-20744-hack-verifiable",
+      "src-imgtrojan-2403.02910",
       "src-lieber-loratk-2024",
-      "src-reverse-constitutional-ai"
+      "src-reverse-constitutional-ai",
+      "src-zeng2024-beear"
     ]
   },
   {
@@ -3738,6 +3782,7 @@
       "src-arxiv-2505-21605-sosbench",
       "src-autorise-strategy-evolution",
       "src-doubtprobe-2606-16527",
+      "src-fitd-2410",
       "src-fitd-2502.19820",
       "src-j2-jailbreaking-to-jailbreak",
       "src-liu-psychological-jb-2025",
@@ -3840,6 +3885,7 @@
       "arxiv-2606-11425",
       "src-2606-04027",
       "src-2606.05743",
+      "src-dap-2403-08424",
       "src-fitd-2502.19820",
       "src-j2-jailbreaking-to-jailbreak",
       "src-pif-2502.03052",
@@ -3966,7 +4012,9 @@
       "arxiv-2606-15609",
       "src-2504-10694",
       "src-2603-19469-formal-agent-sec",
+      "src-abstention-2407.18418",
       "src-adversa-multijudge-consensus",
+      "src-artprompt-2402-11753",
       "src-arxiv-2505-21605-sosbench",
       "src-arxiv-2509-10970-psychosis-bench",
       "src-arxiv-2510-00857-managerbench",
@@ -3975,6 +4023,7 @@
       "src-fitd-2502.19820",
       "src-liu-psychological-jb-2025",
       "src-lowresource-jailbreak-2023",
+      "src-mml-2412.00473",
       "src-pif-2502.03052",
       "src-wang-implicit-crossmodal-jb-2025",
       "src-yong-lowresource-jb-2023"
@@ -4079,8 +4128,11 @@
       "src-arxiv-2505-21605-sosbench",
       "src-arxiv-2602-19948-clinical-rt",
       "src-autorise-strategy-evolution",
+      "src-dap-2403-08424",
+      "src-drattack-2402-16914",
       "src-j2-jailbreaking-to-jailbreak",
       "src-lowresource-jailbreak-2023",
+      "src-pap-2401-06373",
       "src-qdrt-behavior-conditioned",
       "src-self-play-moving-targets",
       "src-wang-activation-attack-2023",
@@ -4124,7 +4176,8 @@
       "arxiv-2512-20677",
       "src-arxiv-2504-09689-emoagent",
       "src-arxiv-2505-21605-sosbench",
-      "src-doubtprobe-2606-16527"
+      "src-doubtprobe-2606-16527",
+      "src-mml-2412.00473"
     ]
   },
   {
@@ -4175,8 +4228,12 @@
       "src-2507-02844",
       "src-2606-07706",
       "src-arxiv-2506-04704-holisafe",
+      "src-audio-achilles-2410.23861",
       "src-cheng-tvpi-2025",
-      "src-wang-implicit-crossmodal-jb-2025"
+      "src-hades-2403.09792",
+      "src-mml-2412.00473",
+      "src-wang-implicit-crossmodal-jb-2025",
+      "src-wang2024-astra"
     ]
   },
   {
@@ -4415,7 +4472,8 @@
       "src-j2-jailbreaking-to-jailbreak",
       "src-lrm-hidden-risks-r1",
       "src-repbend-2504.01550",
-      "src-self-play-moving-targets"
+      "src-self-play-moving-targets",
+      "src-wang2024-astra"
     ]
   },
   {
@@ -4471,7 +4529,8 @@
       "src-2504-10694",
       "src-arxiv-2505-21605-sosbench",
       "src-arxiv-2510-27629-biorisk-openweight",
-      "src-repbend-2504.01550"
+      "src-repbend-2504.01550",
+      "src-zeng2024-beear"
     ]
   },
   {
@@ -5253,6 +5312,7 @@
       "src-agentsundersiege-2504.00218",
       "src-arxiv-2412-13178-safeagentbench",
       "src-arxiv-2510-27629-biorisk-openweight",
+      "src-atm-2405",
       "src-autonomy-induced-risks-survey",
       "src-coin-flip-judge-reliability",
       "src-cop-composition-principles",
@@ -5304,8 +5364,10 @@
       "arxiv-2412-16339",
       "src-2501-09798",
       "src-2606.17034",
+      "src-audio-achilles-2410.23861",
       "src-leaderboard-manipulation-2501.07493",
       "src-mpma-2505.11154",
+      "src-popup-2411",
       "src-wang-implicit-crossmodal-jb-2025"
     ]
   },
@@ -6814,10 +6876,15 @@
     "influential_citation_count": 236,
     "cited_by": [
       "src-2505-24445",
+      "src-abstention-2407.18418",
+      "src-artprompt-2402-11753",
       "src-coin-flip-judge-reliability",
       "src-lowresource-jailbreak-2023",
+      "src-pap-2401-06373",
       "src-toxigen-2022",
-      "src-yong-lowresource-jb-2023"
+      "src-wang2024-astra",
+      "src-yong-lowresource-jb-2023",
+      "src-zeng2024-beear"
     ]
   },
   {
@@ -6852,6 +6919,7 @@
       "src-realtoxicityprompts-2020"
     ],
     "cited_by": [
+      "src-abstention-2407.18418",
       "src-bentov-gaslite-2024"
     ]
   },
@@ -7489,6 +7557,7 @@
     "influential_citation_count": 13,
     "cited_by": [
       "src-2606-03647",
+      "src-abstention-2407.18418",
       "src-egashira-exploit-quantization-2024"
     ]
   },
@@ -8323,13 +8392,17 @@
     "cited_by": [
       "arxiv-2512-20677",
       "src-2505-05528",
+      "src-apt-2403.01849",
       "src-bentov-gaslite-2024",
       "src-datasentinel-2504.11358",
       "src-gu-badnets-2017",
       "src-j2-jailbreaking-to-jailbreak",
+      "src-mml-2412.00473",
+      "src-raina2024-judge-robust",
       "src-shumailov-sponge-2020",
       "src-violet-teaming",
-      "src-wang-implicit-crossmodal-jb-2025"
+      "src-wang-implicit-crossmodal-jb-2025",
+      "src-wang2024-tapt"
     ],
     "citation_count": 16648,
     "influential_citation_count": 1361
@@ -8428,6 +8501,7 @@
     "influential_citation_count": 37,
     "cited_by": [
       "src-cohen-morris-ii-worm-2024",
+      "src-raina2024-judge-robust",
       "src-trust-ai-benchmarks"
     ]
   },
@@ -10767,7 +10841,10 @@
       "src-2606-05609",
       "src-2606-07706",
       "src-2606-11817",
+      "src-abstention-2407.18418",
       "src-agentic-era-dreadnode",
+      "src-dap-2403-08424",
+      "src-pap-2401-06373",
       "src-pif-2502.03052"
     ],
     "citation_count": 347,
@@ -11064,7 +11141,9 @@
       "arxiv-2404-01318",
       "arxiv-2404-01833",
       "arxiv-2410-05295",
-      "arxiv-2505-22037"
+      "arxiv-2505-22037",
+      "src-artprompt-2402-11753",
+      "src-pap-2401-06373"
     ]
   },
   {
@@ -11918,7 +11997,8 @@
       "arxiv-2406-13352",
       "arxiv-2410-09024",
       "src-2512-07086",
-      "src-melon-2502.05174"
+      "src-melon-2502.05174",
+      "src-taskshield-2412"
     ]
   },
   {
@@ -12022,7 +12102,9 @@
     "cites": [
       "arxiv-2307-15043",
       "arxiv-2310-08419",
-      "src-ace-2504.20984"
+      "src-ace-2504.20984",
+      "src-injecagent-2403",
+      "src-taskshield-2412"
     ],
     "cited_by": [],
     "provenance": "extracted",
@@ -12185,6 +12267,7 @@
       "arxiv-2410-06703",
       "arxiv-2503-09780",
       "mc-src-gemini-2-5-report",
+      "src-injecagent-2403",
       "src-toolhijacker-2504.19793"
     ],
     "provenance": "extracted",
@@ -12338,7 +12421,8 @@
       "arxiv-2503-00061",
       "arxiv-2510-07192",
       "src-biggio-poisoning-svm-2012",
-      "src-gu-badnets-2017"
+      "src-gu-badnets-2017",
+      "src-pap-2401-06373"
     ],
     "provenance": "extracted",
     "influential_citation_count": 0
@@ -12622,9 +12706,11 @@
       "src-arxiv-2503-04957-safearena",
       "src-arxiv-2602-15654-zombie-agents",
       "src-autonomy-induced-risks-survey",
+      "src-fitd-2410",
       "src-ipiguard-2508.15310",
       "src-mcpsecbench",
       "src-melon-2502.05174",
+      "src-taskshield-2412",
       "src-toolhijacker-2504.19793"
     ]
   },
@@ -12652,7 +12738,9 @@
     "citation_count": 0,
     "influential_citation_count": 0,
     "cites": [
-      "src-melon-2502.05174"
+      "src-injecagent-2403",
+      "src-melon-2502.05174",
+      "src-taskshield-2412"
     ]
   },
   {
@@ -12750,7 +12838,9 @@
       "arxiv-2402-04249",
       "arxiv-2404-01833",
       "arxiv-2410-05295",
-      "src-multibreak-bench"
+      "src-artprompt-2402-11753",
+      "src-multibreak-bench",
+      "src-pap-2401-06373"
     ]
   },
   {
@@ -12799,7 +12889,10 @@
     "retrieved": "2026-06-22",
     "abstract": "Studies a policy-relevant failure mode of AI peer review with no hidden text, no prompt injection, and no changes to methods/experiments/figures/equations/proofs/numerical results — the attacker modifies only presentation-level content (abstract, contribution framing, related work, discussion, narrative). Introduces adversarial repackaging: a closed-loop attack using AI-reviewer feedback to search presentation-level revisions while holding scientific evidence fixed. Across three reviewer models achieves 75.1% attack success rate and +1.21/10 mean score gain. Reveals two structural failure modes: AI reviewers are easier to impress than to convince (strength amplification reliable, weakness rebuttal backfires 31.6%), and AI reviewers confuse the appearance of addressing a limitation with resolving it. Releases a contamination-free rolling benchmark and attack framework.",
     "citation_count": 0,
-    "influential_citation_count": 0
+    "influential_citation_count": 0,
+    "cites": [
+      "src-raina2024-judge-robust"
+    ]
   },
   {
     "id": "src-2606-12716",
@@ -12822,7 +12915,8 @@
     "citation_count": 0,
     "influential_citation_count": 0,
     "cites": [
-      "arxiv-2307-15043"
+      "arxiv-2307-15043",
+      "src-raina2024-judge-robust"
     ]
   },
   {
@@ -12842,7 +12936,9 @@
     "citation_count": 0,
     "influential_citation_count": 0,
     "cites": [
-      "arxiv-2402-04249"
+      "arxiv-2402-04249",
+      "src-injecagent-2403",
+      "src-popup-2411"
     ]
   },
   {
@@ -12873,7 +12969,8 @@
     "cites": [
       "arxiv-2408-08926",
       "arxiv-2505-15216",
-      "src-constitutional-classifiers"
+      "src-constitutional-classifiers",
+      "src-drattack-2402-16914"
     ]
   },
   {
@@ -12952,6 +13049,7 @@
     "cites": [
       "arxiv-2307-15043",
       "arxiv-2311-05608",
+      "src-mml-2412.00473",
       "src-yong-lowresource-jb-2023"
     ]
   },
@@ -13146,6 +13244,7 @@
       "arxiv-2307-15043",
       "arxiv-2410-07283",
       "src-2604-17562",
+      "src-injecagent-2403",
       "src-melon-2502.05174",
       "src-toolhijacker-2504.19793"
     ]
@@ -13180,7 +13279,9 @@
       "arxiv-2508-14925",
       "arxiv-2510-18131",
       "src-2603-28166-grantbox",
-      "src-arxiv-2602-13379-mt-agentrisk"
+      "src-arxiv-2602-13379-mt-agentrisk",
+      "src-injecagent-2403",
+      "src-taskshield-2412"
     ]
   },
   {
@@ -13495,7 +13596,8 @@
     "cites": [
       "arxiv-2410-07283",
       "arxiv-2503-00061",
-      "src-ace-2504.20984"
+      "src-ace-2504.20984",
+      "src-injecagent-2403"
     ]
   },
   {
@@ -13717,7 +13819,8 @@
     "citation_count": 0,
     "influential_citation_count": 0,
     "cites": [
-      "arxiv-2503-00061"
+      "arxiv-2503-00061",
+      "src-injecagent-2403"
     ]
   },
   {
@@ -13951,7 +14054,8 @@
       "arxiv-2310-08419",
       "arxiv-2311-08268",
       "arxiv-2312-02119",
-      "arxiv-2410-05295"
+      "arxiv-2410-05295",
+      "src-pap-2401-06373"
     ]
   },
   {
@@ -14046,7 +14150,9 @@
       "arxiv-2404-03027",
       "arxiv-2407-21783",
       "src-2509-07764",
-      "src-constitutional-classifiers"
+      "src-artprompt-2402-11753",
+      "src-constitutional-classifiers",
+      "src-pap-2401-06373"
     ]
   },
   {
@@ -15497,5 +15603,684 @@
       "arxiv-2311-05608",
       "src-szegedy-adversarial-2013"
     ]
+  },
+  {
+    "id": "src-injecagent-2403",
+    "type": "source",
+    "source_type": "paper",
+    "title": "InjecAgent: Benchmarking Indirect Prompt Injections in Tool-Integrated Large Language Model Agents",
+    "authors": [
+      "Qiusi Zhan",
+      "Zhixiang Liang",
+      "Zifan Ying",
+      "Daniel Kang"
+    ],
+    "org": "University of Illinois Urbana-Champaign",
+    "venue": "ACL 2024 (Findings)",
+    "url": "https://arxiv.org/abs/2403.02691",
+    "published": "2024-03-05",
+    "retrieved": "2026-06-23",
+    "abstract": "InjecAgent is the first benchmark to assess the vulnerability of tool-integrated LLM agents to indirect prompt injection (IPI) attacks. It comprises 1,054 test cases covering 17 user tools and 62 attacker tools, categorizing attack intentions into direct harm and data exfiltration. Evaluating 30 LLM agents, ReAct-prompted GPT-4 is vulnerable 24% of the time, rising to 47% in an enhanced setting where attacker instructions are reinforced with a hacking prompt.",
+    "cited_by": [
+      "arxiv-2606-12737",
+      "arxiv-2606-13385",
+      "arxiv-2606-15057",
+      "src-2605-00081",
+      "src-2605-11039-pact",
+      "src-2605-17453-trust-no-tool",
+      "src-2606-05233",
+      "src-authgraph-2605-26497",
+      "src-fitd-2410",
+      "src-popup-2411",
+      "src-taskshield-2412"
+    ],
+    "citation_count": 380,
+    "influential_citation_count": 55,
+    "cites": [
+      "arxiv-2307-15043"
+    ]
+  },
+  {
+    "id": "src-popup-2411",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Attacking Vision-Language Computer Agents via Pop-ups",
+    "authors": [
+      "Yanzhe Zhang",
+      "Tao Yu",
+      "Diyi Yang"
+    ],
+    "org": "Georgia Tech / University of Hong Kong / Stanford University",
+    "venue": "ACL 2024 (short)",
+    "url": "https://arxiv.org/abs/2411.02391",
+    "published": "2024-11-04",
+    "retrieved": "2026-06-23",
+    "abstract": "This work demonstrates that VLM-based computer agents can be easily attacked by carefully designed adversarial pop-ups that human users would typically recognize and ignore. The distraction leads agents to click the pop-ups instead of performing their tasks. Integrating these pop-ups into OSWorld and VisualWebArena yields an average attack success rate of 86% (OSWorld) / 73.1% (VisualWebArena) and decreases task success rate by 47%. Basic defenses (ignore-pop-up prompts, advertisement notices) are ineffective.",
+    "cited_by": [
+      "src-2606-05233"
+    ],
+    "citation_count": 105,
+    "influential_citation_count": 10,
+    "cites": [
+      "arxiv-2307-15043",
+      "arxiv-2403-05530",
+      "src-injecagent-2403",
+      "src-pap-2401-06373"
+    ]
+  },
+  {
+    "id": "src-taskshield-2412",
+    "type": "source",
+    "source_type": "paper",
+    "title": "The Task Shield: Enforcing Task Alignment to Defend Against Indirect Prompt Injection in LLM Agents",
+    "authors": [
+      "Feiran Jia",
+      "Tong Wu",
+      "Xin Qin",
+      "Anna Squicciarini"
+    ],
+    "org": "Pennsylvania State University / Princeton University / California State University, Long Beach",
+    "venue": "ACL 2024",
+    "url": "https://arxiv.org/abs/2412.16682",
+    "published": "2024-12-21",
+    "retrieved": "2026-06-23",
+    "abstract": "Task Shield reframes agent security from preventing harmful actions to ensuring task alignment — every agent action must serve user objectives, asking 'Does this serve the intended task?' rather than 'Is this harmful?'. It is a test-time defense that systematically verifies whether each instruction and tool call contributes to user-specified goals. On the AgentDojo benchmark, Task Shield reduces attack success rates to 2.07% while maintaining 69.79% task utility on GPT-4o, outperforming existing defenses.",
+    "cited_by": [
+      "arxiv-2606-12737",
+      "arxiv-2606-14517",
+      "arxiv-2606-15057",
+      "src-2605-17453-trust-no-tool",
+      "src-2606.10749"
+    ],
+    "citation_count": 64,
+    "influential_citation_count": 6,
+    "cites": [
+      "arxiv-2307-15043",
+      "arxiv-2406-13352",
+      "src-injecagent-2403"
+    ]
+  },
+  {
+    "id": "src-atm-2405",
+    "type": "source",
+    "source_type": "paper",
+    "title": "ATM: Adversarial Tuning Multi-agent System Makes a Robust Retrieval-Augmented Generator",
+    "authors": [
+      "Junda Zhu",
+      "Lingyong Yan",
+      "Haibo Shi",
+      "Dawei Yin",
+      "Lei Sha"
+    ],
+    "org": "Beihang University / Baidu Inc.",
+    "venue": "EMNLP 2024",
+    "url": "https://arxiv.org/abs/2405.18111",
+    "published": "2024-05-28",
+    "retrieved": "2026-06-23",
+    "abstract": "ATM is an Adversarial Tuning Multi-agent system that hardens a retrieval-augmented Generator against noisy and LLM-fabricated documents in RAG-QA. An auxiliary Attacker agent fabricates misleading documents (Fabrication Generation) and shuffles document order (List Permutation) to maximize the Generator's perplexity; the Generator is iteratively tuned via a Multi-agent Iterative Tuning Optimization (MITO) loss to discriminate useful documents amid fabrications. After several adversarial rounds the Generator outperforms RAG robustness baselines (RetRobust, RAAT, REAR, Self-RAG).",
+    "citation_count": 26,
+    "influential_citation_count": 4,
+    "cites": [
+      "arxiv-2407-21783"
+    ]
+  },
+  {
+    "id": "src-fitd-2410",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Breaking ReAct Agents: Foot-in-the-Door Attack Will Get You In",
+    "authors": [
+      "Itay Nakash",
+      "George Kour",
+      "Guy Uziel",
+      "Ateret Anaby-Tavor"
+    ],
+    "org": "IBM Research AI",
+    "venue": "NAACL 2024",
+    "url": "https://arxiv.org/abs/2410.16950",
+    "published": "2024-10-22",
+    "retrieved": "2026-06-23",
+    "abstract": "This work introduces the Foot-in-the-Door (FITD) attack on ReAct LLM agents: an indirect prompt injection is prefaced by a small, harmless, unrelated request (a distractor, e.g. a basic calculation) that establishes a 'foot in the door', getting both the benign and malicious actions into the agent's thought process. Because a ReAct agent seldom re-evaluates an action once it enters its thought, the distractor significantly increases the likelihood of executing the subsequent malicious action — raising attack success rate by up to 44.8%. A reflection-based defense is proposed to mitigate it.",
+    "cited_by": [
+      "src-2606.10749"
+    ],
+    "citation_count": 25,
+    "influential_citation_count": 2,
+    "cites": [
+      "arxiv-2307-15043",
+      "arxiv-2404-01833",
+      "src-injecagent-2403"
+    ]
+  },
+  {
+    "id": "src-r2ata-2411",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Reasoning Robustness of LLMs to Adversarial Typographical Errors",
+    "authors": [
+      "Esther Gan",
+      "Yiran Zhao",
+      "Liying Cheng",
+      "Yancan Mao",
+      "Anirudh Goyal",
+      "Kenji Kawaguchi",
+      "Min-Yen Kan",
+      "Michael Shieh"
+    ],
+    "org": "National University of Singapore / Singapore University of Technology and Design / Google DeepMind",
+    "venue": "EMNLP 2024",
+    "url": "https://arxiv.org/abs/2411.05345",
+    "published": "2024-11-08",
+    "retrieved": "2026-06-23",
+    "abstract": "This work studies the robustness of Chain-of-Thought (CoT) reasoning in LLMs to typographical errors that naturally occur in users' queries. It introduces the Adversarial Typo Attack (ATA), a gradient-guided algorithm that iteratively samples realistic typos for query words important to the model and selects the edit most likely to make the model fail. With 1 character edit, Mistral-7B-Instruct accuracy drops from 43.7% to 38.6% on GSM8K, and 8 edits halve it to 19.2%. The R2ATA benchmark applies ATA to GSM8K, BBH, and MMLU and shows transferable performance drops across large and closed-source LLMs.",
+    "citation_count": 29,
+    "influential_citation_count": 2
+  },
+  {
+    "id": "src-raina2024-judge-robust",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Is LLM-as-a-Judge Robust? Investigating Universal Adversarial Attacks on Zero-shot LLM Assessment",
+    "authors": [
+      "Vyas Raina",
+      "Adian Liusie",
+      "Mark Gales"
+    ],
+    "org": "University of Cambridge",
+    "venue": "EMNLP 2024",
+    "url": "https://arxiv.org/abs/2402.14016",
+    "published": "2024-02-21",
+    "retrieved": "2026-06-23",
+    "abstract": "First study on adversarial robustness of LLM-as-a-judge zero-shot assessment. Short universal adversarial phrases concatenated to candidate responses inflate scores. A surrogate attack (learn on FlanT5-3B, transfer to unseen judge-LLMs) drastically inflates scores irrespective of input text. Judge-LLMs are far more susceptible for absolute scoring than comparative assessment. Perplexity is explored as an initial detection defence.",
+    "cited_by": [
+      "src-2606-12716",
+      "src-2606-13044"
+    ],
+    "citation_count": 138,
+    "influential_citation_count": 7,
+    "cites": [
+      "arxiv-2310-08419",
+      "arxiv-2312-02119",
+      "src-carlini-extract-training-data-2023",
+      "src-pap-2401-06373",
+      "src-szegedy-adversarial-2013"
+    ]
+  },
+  {
+    "id": "src-zeng2024-beear",
+    "type": "source",
+    "source_type": "paper",
+    "title": "BEEAR: Embedding-based Adversarial Removal of Safety Backdoors in Instruction-tuned Language Models",
+    "authors": [
+      "Yi Zeng",
+      "Weiyu Sun",
+      "Tran Ngoc Huynh",
+      "Dawn Song",
+      "Bo Li",
+      "Ruoxi Jia"
+    ],
+    "org": "Virginia Tech / Georgia Tech / UC Berkeley / University of Chicago",
+    "venue": "EMNLP 2024",
+    "url": "https://arxiv.org/abs/2406.17092",
+    "published": "2024-06-24",
+    "retrieved": "2026-06-23",
+    "abstract": "BEEAR mitigates safety-backdoor attacks in instruction-tuned LLMs via the insight that backdoor triggers induce a relatively uniform drift in the model's embedding space. A bi-level optimization (Backdoor Embedding Entrapment + Adversarial Removal) identifies universal embedding perturbations eliciting unwanted behaviors and fine-tunes parameters to reinforce safe behaviors against them. Reduces RLHF-time backdoor ASR from >95% to <1% and instruction-tuning-time code backdoors from 47% to 0% without compromising utility, requiring only defender-defined safe/unsafe behaviors and no trigger-format assumptions.",
+    "citation_count": 62,
+    "influential_citation_count": 10,
+    "cites": [
+      "arxiv-2307-15043",
+      "arxiv-2401-05566",
+      "arxiv-2402-04249",
+      "arxiv-2403-03218",
+      "src-pap-2401-06373",
+      "src-realtoxicityprompts-2020"
+    ]
+  },
+  {
+    "id": "src-wang2024-astra",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Steering Away from Harm: An Adaptive Approach to Defending Vision Language Model Against Jailbreaks",
+    "authors": [
+      "Han Wang",
+      "Gang Wang",
+      "Huan Zhang"
+    ],
+    "org": "University of Illinois Urbana-Champaign",
+    "venue": "CVPR 2024",
+    "url": "https://arxiv.org/abs/2411.16721",
+    "published": "2024-11-25",
+    "retrieved": "2026-06-23",
+    "abstract": "ASTRA is an efficient, effective defense that adaptively steers Vision Language Models away from adversarial feature directions to resist jailbreaks. Transferable steering vectors representing the direction of harmful response are built by randomly ablating visual tokens of adversarial images and identifying those most associated with jailbreaks; adaptive activation steering via projection between steering vectors and calibrated activations is applied at inference. ASTRA achieves SOTA with little benign-performance drop and good transferability to unseen attacks (structured-based, PGD variants, text-only).",
+    "citation_count": 41,
+    "influential_citation_count": 6,
+    "cites": [
+      "arxiv-2307-15043",
+      "arxiv-2309-10253",
+      "arxiv-2311-05608",
+      "arxiv-2402-04249",
+      "arxiv-2404-01318",
+      "arxiv-2406-04313",
+      "src-hades-2403.09792",
+      "src-realtoxicityprompts-2020"
+    ]
+  },
+  {
+    "id": "src-zhou2024-icag",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Defending Jailbreak Prompts via In-Context Adversarial Game",
+    "authors": [
+      "Yujun Zhou",
+      "Yufei Han",
+      "Haomin Zhuang",
+      "Kehan Guo",
+      "Zhenwen Liang",
+      "Hongyan Bao",
+      "Xiangliang Zhang"
+    ],
+    "org": "University of Notre Dame / INRIA / KAUST",
+    "venue": "EMNLP 2024",
+    "url": "https://arxiv.org/abs/2402.13148",
+    "published": "2024-02-20",
+    "retrieved": "2026-06-23",
+    "abstract": "ICAG defends against jailbreaks without fine-tuning by running an in-context adversarial game between an attack agent and a defense agent that iteratively co-evolve via agent learning (reflection + insight extraction). The defense agent produces a single safety-enhancing system prompt. ICAG reduces Jailbreak Success Rate by an average 7.99% over the best baseline across ten unseen attacks on four defense LLMs and transfers across LLMs with only a 2.86% average JSR increase.",
+    "citation_count": 39,
+    "influential_citation_count": 1,
+    "cites": [
+      "arxiv-2307-15043",
+      "arxiv-2309-10253",
+      "arxiv-2310-08419",
+      "src-drattack-2402-16914"
+    ],
+    "cited_by": [
+      "src-abstention-2407.18418"
+    ]
+  },
+  {
+    "id": "src-wang2024-tapt",
+    "type": "source",
+    "source_type": "paper",
+    "title": "TAPT: Test-Time Adversarial Prompt Tuning for Robust Inference in Vision-Language Models",
+    "authors": [
+      "Xin Wang",
+      "Kai Chen",
+      "Jiaming Zhang",
+      "Jingjing Chen",
+      "Xingjun Ma"
+    ],
+    "org": "Fudan University / HKUST",
+    "venue": "CVPR 2024",
+    "url": "https://arxiv.org/abs/2411.13136",
+    "published": "2024-11-20",
+    "retrieved": "2026-06-23",
+    "abstract": "TAPT is the first inference-time (test-time) adversarial defense for pre-trained VLMs such as CLIP. It learns defensive bimodal (textual+visual) prompts per test sample, unsupervised, by minimizing a multi-view entropy and aligning adversarial-clean embedding distributions against pre-computed public-dataset (ImageNet) statistics. Across 11 datasets it enhances CLIP's zero-shot adversarial robustness by >=48.9% against AutoAttack while largely maintaining clean performance, and outperforms existing adversarial prompt-tuning methods by an average of at least 36.6%.",
+    "citation_count": 29,
+    "influential_citation_count": 5,
+    "cites": [
+      "src-apt-2403.01849",
+      "src-szegedy-adversarial-2013"
+    ]
+  },
+  {
+    "id": "src-hades-2403.09792",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Images are Achilles' Heel of Alignment: Exploiting Visual Vulnerabilities for Jailbreaking Multimodal Large Language Models",
+    "authors": [
+      "Yifan Li",
+      "Hangyu Guo",
+      "Kun Zhou",
+      "Wayne Xin Zhao",
+      "Ji-Rong Wen"
+    ],
+    "org": "Renmin University of China",
+    "venue": "ECCV 2024",
+    "url": "https://arxiv.org/abs/2403.09792",
+    "published": "2024-03-14",
+    "retrieved": "2026-06-23",
+    "abstract": "Empirical analysis of MLLM harmlessness alignment showing the image input poses an alignment vulnerability, plus HADES — a jailbreak that hides and amplifies harmful intent within meticulously crafted images. Achieves average ASR of 90.26% on LLaVA-1.5 and 71.60% on Gemini Pro Vision.",
+    "cited_by": [
+      "src-wang2024-astra"
+    ],
+    "citation_count": 136,
+    "influential_citation_count": 34,
+    "cites": [
+      "arxiv-2307-15043",
+      "arxiv-2310-08419",
+      "arxiv-2311-05608",
+      "src-imgtrojan-2403.02910"
+    ]
+  },
+  {
+    "id": "src-imgtrojan-2403.02910",
+    "type": "source",
+    "source_type": "paper",
+    "title": "ImgTrojan: Jailbreaking Vision-Language Models with ONE Image",
+    "authors": [
+      "Xijia Tao",
+      "Shuai Zhong",
+      "Lei Li",
+      "Qi Liu",
+      "Lingpeng Kong"
+    ],
+    "org": "The University of Hong Kong",
+    "venue": "NAACL 2024",
+    "url": "https://arxiv.org/abs/2403.02910",
+    "published": "2024-03-05",
+    "retrieved": "2026-06-23",
+    "abstract": "A data-poisoning jailbreak against VLMs: poisoned (image, text) pairs replace original captions with malicious jailbreak prompts in the training set. Poisoning one image among 10,000 raises ASR by 51.2% absolute; with <100 poisoned samples ASR reaches 83.5%, while clean-image captioning degrades minimally. Studies poison ratio, trainable-parameter locus, persistence, and stealth.",
+    "cited_by": [
+      "src-hades-2403.09792"
+    ],
+    "citation_count": 58,
+    "influential_citation_count": 5,
+    "cites": [
+      "arxiv-2307-15043",
+      "arxiv-2310-08419",
+      "arxiv-2401-05566"
+    ]
+  },
+  {
+    "id": "src-mml-2412.00473",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Jailbreak Large Vision-Language Models Through Multi-Modal Linkage",
+    "authors": [
+      "Yu Wang",
+      "Xiaofei Zhou",
+      "Yichen Wang",
+      "Geyuan Zhang",
+      "Tianxing He"
+    ],
+    "org": "Institute of Information Engineering, Chinese Academy of Sciences / Tsinghua University / University of Chicago",
+    "venue": "ACL 2024",
+    "url": "https://arxiv.org/abs/2412.00473",
+    "published": "2024-11-30",
+    "retrieved": "2026-06-23",
+    "abstract": "Multi-Modal Linkage (MML) is a structure-based jailbreak for SOTA closed-source VLMs. Inspired by cryptography, it applies an encryption-decryption process across text and image modalities to mitigate over-exposure of malicious content, plus 'evil alignment' that frames the attack as a video-game development scenario. MML jailbreaks GPT-4o at 99.40% on SafeBench, 98.81% on MM-SafeBench, and 99.07% on HADES-Dataset.",
+    "cited_by": [
+      "src-2606-07706"
+    ],
+    "citation_count": 57,
+    "influential_citation_count": 9,
+    "cites": [
+      "arxiv-2204-05862",
+      "arxiv-2307-15043",
+      "arxiv-2310-08419",
+      "arxiv-2311-05608",
+      "arxiv-2404-03027",
+      "src-pap-2401-06373",
+      "src-szegedy-adversarial-2013"
+    ]
+  },
+  {
+    "id": "src-audio-achilles-2410.23861",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Audio Is the Achilles' Heel: Red Teaming Audio Large Multimodal Models",
+    "authors": [
+      "Hao Yang",
+      "Lizhen Qu",
+      "Ehsan Shareghi",
+      "Gholamreza Haffari"
+    ],
+    "org": "Monash University",
+    "venue": "NAACL 2024",
+    "url": "https://arxiv.org/abs/2410.23861",
+    "published": "2024-10-31",
+    "retrieved": "2026-06-23",
+    "abstract": "First systematic red teaming of five audio LMMs (Qwen-Audio, Qwen2-Audio, SALMONN-7B/13B, Gemini-1.5-Pro) under three settings: harmful questions in audio+text, harmful text with distracting non-speech audio, and speech-specific jailbreaks. Open-source audio LMMs show an average 69.14% ASR on harmful audio questions and safety drops when distracted by non-speech noise; a speech-specific jailbreak achieves 70.67% ASR on Gemini-1.5-Pro.",
+    "citation_count": 33,
+    "influential_citation_count": 7,
+    "cites": [
+      "arxiv-2310-08419",
+      "arxiv-2311-05608",
+      "arxiv-2402-04249",
+      "arxiv-2403-05530",
+      "src-pap-2401-06373"
+    ]
+  },
+  {
+    "id": "src-apt-2403.01849",
+    "type": "source",
+    "source_type": "paper",
+    "title": "One Prompt Word is Enough to Boost Adversarial Robustness of Vision-Language Models",
+    "authors": [
+      "Lin Li",
+      "Haoyan Guan",
+      "Jianing Qiu",
+      "Michael Spratling"
+    ],
+    "org": "King's College London / Imperial College London",
+    "venue": "CVPR 2024",
+    "url": "https://arxiv.org/abs/2403.01849",
+    "published": "2024-03-04",
+    "retrieved": "2026-06-23",
+    "abstract": "Studies adversarial robustness of pre-trained CLIP-like VLMs from the text-prompt perspective (weights frozen). Shows both adversarial attack and defense are sensitive to the text prompt, then proposes Adversarial Prompt Tuning (APT) — learning a robust text prompt. Adding one learned word boosts accuracy +13% and robustness +8.5% over hand-engineered prompts (ε=4/255), up to +26.4%/+16.7% in the best setting, across 15 datasets and 4 data-sparsity schemes.",
+    "cited_by": [
+      "src-wang2024-tapt"
+    ],
+    "citation_count": 63,
+    "influential_citation_count": 10,
+    "cites": [
+      "src-szegedy-adversarial-2013"
+    ]
+  },
+  {
+    "id": "src-abstention-2407.18418",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Know Your Limits: A Survey of Abstention in Large Language Models",
+    "authors": [
+      "Bingbing Wen",
+      "Jihan Yao",
+      "Shangbin Feng",
+      "Chenjun Xu",
+      "Yulia Tsvetkov",
+      "Bill Howe",
+      "Lucy Lu Wang"
+    ],
+    "org": "University of Washington / Allen Institute for AI",
+    "venue": "TACL 2024",
+    "url": "https://arxiv.org/abs/2407.18418",
+    "published": "2024-07-25",
+    "retrieved": "2026-06-23",
+    "abstract": "Survey framing abstention (refusal to answer) as a safety/reliability meta-capability, analyzed from three perspectives — query answerability a(x), model confidence/knowledge c(x,y), and human-value alignment h(x),h(x,y). Organizes abstention methods by LLM lifecycle stage (pretraining/alignment/inference) and surveys benchmarks and metrics, identifying gaps including over-abstention, abstention manipulation, and demographic bias.",
+    "citation_count": 98,
+    "influential_citation_count": 4,
+    "cites": [
+      "arxiv-2204-05862",
+      "arxiv-2307-15043",
+      "arxiv-2309-10253",
+      "arxiv-2310-08419",
+      "arxiv-2402-04249",
+      "arxiv-2402-10260",
+      "arxiv-2404-01318",
+      "src-anwar-foundational-challenges-2024",
+      "src-realtoxicityprompts-2020",
+      "src-toxigen-2022",
+      "src-yong-lowresource-jb-2023",
+      "src-zhou2024-icag"
+    ]
+  },
+  {
+    "id": "src-pap-2401-06373",
+    "type": "source",
+    "source_type": "paper",
+    "title": "How Johnny Can Persuade LLMs to Jailbreak Them: Rethinking Persuasion to Challenge AI Safety by Humanizing LLMs",
+    "authors": [
+      "Yi Zeng",
+      "Hongpeng Lin",
+      "Jingwen Zhang",
+      "Diyi Yang",
+      "Ruoxi Jia",
+      "Weiyan Shi"
+    ],
+    "org": "Virginia Tech / Renmin University of China / UC Davis / Stanford",
+    "venue": "ACL 2024",
+    "url": "https://arxiv.org/abs/2401.06373",
+    "published": "2024-01-12",
+    "retrieved": "2026-06-23",
+    "abstract": "Introduces a persuasion taxonomy (40 techniques, 13 strategies) from decades of social science to automatically paraphrase plain harmful queries into human-readable Persuasive Adversarial Prompts (PAP). PAP achieves >92% attack success rate on Llama-2-7b-Chat, GPT-3.5, and GPT-4 within 10 trials without specialized optimization, surpassing recent algorithm-focused attacks. A significant gap exists in current post-hoc defenses against PAP; the authors propose adaptive defenses (adaptive system prompt, base/tuned summarizer).",
+    "cited_by": [
+      "arxiv-2606-11425",
+      "arxiv-2606-16242",
+      "src-2606.05743",
+      "src-audio-achilles-2410.23861",
+      "src-autorise-strategy-evolution",
+      "src-doubtprobe-2606-16527",
+      "src-mml-2412.00473",
+      "src-popup-2411",
+      "src-raina2024-judge-robust",
+      "src-zeng2024-beear"
+    ],
+    "citation_count": 644,
+    "influential_citation_count": 75,
+    "cites": [
+      "arxiv-2212-08073",
+      "arxiv-2307-15043",
+      "arxiv-2309-10253",
+      "arxiv-2310-08419",
+      "src-realtoxicityprompts-2020",
+      "src-yong-lowresource-jb-2023"
+    ]
+  },
+  {
+    "id": "src-artprompt-2402-11753",
+    "type": "source",
+    "source_type": "paper",
+    "title": "ArtPrompt: ASCII Art-based Jailbreak Attacks against Aligned LLMs",
+    "authors": [
+      "Fengqing Jiang",
+      "Zhangchen Xu",
+      "Luyao Niu",
+      "Zhen Xiang",
+      "Bhaskar Ramasubramanian",
+      "Bo Li",
+      "Radha Poovendran"
+    ],
+    "org": "University of Washington / UIUC / Western Washington University / University of Chicago",
+    "venue": "ACL 2024",
+    "url": "https://arxiv.org/abs/2402.11753",
+    "published": "2024-02-19",
+    "retrieved": "2026-06-23",
+    "abstract": "Current LLM safety alignment presumes corpora are interpreted solely by semantics. ArtPrompt exploits LLMs' poor ability to recognize ASCII art (quantified by a new Vision-in-Text Challenge, ViTC, benchmark) to mask safety-trigger words and bypass alignment. A two-step black-box attack (word masking + cloaked ASCII-art prompt generation) induces unsafe behavior from GPT-3.5, GPT-4, Claude, Gemini, and Llama2, outperforming five SOTA jailbreaks on average and bypassing perplexity/paraphrase/retokenization defenses.",
+    "cited_by": [
+      "arxiv-2606-11425",
+      "src-autorise-strategy-evolution",
+      "src-doubtprobe-2606-16527"
+    ],
+    "citation_count": 257,
+    "influential_citation_count": 27,
+    "cites": [
+      "arxiv-2204-05862",
+      "arxiv-2307-15043",
+      "arxiv-2309-10253",
+      "arxiv-2310-08419",
+      "src-realtoxicityprompts-2020"
+    ]
+  },
+  {
+    "id": "src-drattack-2402-16914",
+    "type": "source",
+    "source_type": "paper",
+    "title": "DrAttack: Prompt Decomposition and Reconstruction Makes Powerful LLM Jailbreakers",
+    "authors": [
+      "Xirui Li",
+      "Ruochen Wang",
+      "Minhao Cheng",
+      "Tianyi Zhou",
+      "Cho-Jui Hsieh"
+    ],
+    "org": "UCLA / Penn State / University of Maryland College Park",
+    "venue": "EMNLP 2024",
+    "url": "https://arxiv.org/abs/2402.16914",
+    "published": "2024-02-26",
+    "retrieved": "2026-06-23",
+    "abstract": "Existing jailbreaks treat the harmful prompt as a whole and fail to reduce LLM attention on combinations of malicious words. DrAttack introduces a fourth 'decomposition-based' category: it (a) decomposes a malicious prompt into benign sub-prompts via syntactic parsing, (b) implicitly reconstructs them via in-context learning with benign assembling examples, and (c) runs synonym search on sub-prompts. On GPT-4 it achieves >80% ASR (human eval), surpassing prior SOTA by 65% absolute, with merely ~15 queries, and bypasses real-world defenses (OpenAI Moderation, perplexity filter, RA-LLM, output filter).",
+    "cited_by": [
+      "src-2605-31593",
+      "src-zhou2024-icag"
+    ],
+    "citation_count": 115,
+    "influential_citation_count": 12,
+    "cites": [
+      "arxiv-2212-08073",
+      "arxiv-2307-15043",
+      "arxiv-2309-10253",
+      "arxiv-2310-08419"
+    ]
+  },
+  {
+    "id": "src-jpa-2404-02928",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Jailbreaking Prompt Attack: A Controllable Adversarial Attack against Diffusion Models",
+    "authors": [
+      "Jiachen Ma",
+      "Yijiang Li",
+      "Zhiqing Xiao",
+      "Anda Cao",
+      "Jie Zhang",
+      "Chao Ye",
+      "Junbo Zhao"
+    ],
+    "org": "Zhejiang University / UC San Diego / ETH Zurich",
+    "venue": "NAACL 2024",
+    "url": "https://arxiv.org/abs/2404.02928",
+    "published": "2024-04-02",
+    "retrieved": "2026-06-23",
+    "abstract": "Text-to-Image (T2I) diffusion models can be misused to generate NSFW content. JPA (Jailbreaking Prompt Attack) is a practical, universal, black-box attack that does not require a target model. It exploits the fact that the high-dimensional CLIP text embedding space inherently contains NSFW concepts: it searches a concept embedding via ChatGPT-generated antonyms, adds it to the prompt, then optimizes a discrete prefix prompt with a soft-assignment + gradient-masking technique. JPA bypasses both text and image safety checkers and concept-removal methods while preserving semantic alignment, and runs 4x faster than prior methods.",
+    "citation_count": 82,
+    "influential_citation_count": 6
+  },
+  {
+    "id": "src-dap-2403-08424",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Distract Large Language Models for Automatic Jailbreak Attack",
+    "authors": [
+      "Zeguan Xiao",
+      "Yan Yang",
+      "Guanhua Chen",
+      "Yun Chen"
+    ],
+    "org": "Shanghai University of Finance and Economics / Southern University of Science and Technology",
+    "venue": "EMNLP 2024",
+    "url": "https://arxiv.org/abs/2403.08424",
+    "published": "2024-03-13",
+    "retrieved": "2026-06-23",
+    "abstract": "DAP (Distraction-based Adversarial Prompts) is a black-box automatic jailbreak framework motivated by the distractibility and over-confidence phenomena of LLMs. It (1) conceals the malicious query as an auxiliary task inside a complex, unrelated main task to distract the model's safety attention, (2) uses a memory-reframing scheme that forces the target to begin its response with an affirmative string so it follows its own partial output, and (3) iteratively optimizes the jailbreak template with an attacker LLM and a fine-tuned DeBERTa judge. DAP achieves Top-1 ASR 66.7%/38.0% on ChatGPT/GPT-4 and transfers across models and queries.",
+    "citation_count": 52,
+    "influential_citation_count": 3,
+    "cites": [
+      "arxiv-2212-08073",
+      "arxiv-2309-10253",
+      "arxiv-2310-08419",
+      "arxiv-2311-08268",
+      "arxiv-2312-02119",
+      "src-yong-lowresource-jb-2023"
+    ]
+  },
+  {
+    "id": "src-sowing-2401-10647",
+    "type": "source",
+    "source_type": "paper",
+    "title": "Sowing the Wind, Reaping the Whirlwind: The Impact of Editing Language Models",
+    "authors": [
+      "Rima Hazra",
+      "Sayan Layek",
+      "Somnath Banerjee",
+      "Soujanya Poria"
+    ],
+    "org": "Indian Institute of Technology Kharagpur / Singapore University of Technology and Design",
+    "venue": "ACL 2024 (Findings)",
+    "url": "https://arxiv.org/abs/2401.10647",
+    "published": "2024-01-19",
+    "retrieved": "2026-06-23",
+    "abstract": "Investigates how knowledge/model editing (ROME, MEMIT) affects LLM safety. Reveals a paradox: injecting sensitive-yet-accurate information to improve reliability can destabilize the model's guardrails, so a single correct edit can instigate unethical responses. Introduces NicheHazardQA (500 unethical questions across six sensitive topics) and shows editing is a cost-effective tool for topical red-teaming, with effects that are topic-centric/niche and persist within and across topical domains.",
+    "citation_count": 25,
+    "influential_citation_count": 1
   }
 ]
