@@ -868,7 +868,7 @@ function renderList(arg){
       r.access,r.attack_class,r.body,r.date,r.status,r.disclosure,r.candidate&&"⭐candidate"].filter(Boolean);
     return `<div style="margin:6px 0;padding:7px 0;border-bottom:1px solid var(--border)">
       <a href="#entity:${encodeURIComponent(r.id)}" style="font-weight:600;color:var(--acc2);text-decoration:none">${esc(nm)}</a> ↗
-      ${tags.map(t=>`<span class="tag">${esc(String(t))}</span>`).join("")}
+      ${tags.map(t=>entChip1(String(t),esc(String(t)),null)).join("")}
       ${desc?`<div class="small muted" style="margin-top:3px">${esc(desc)}</div>`:""}</div>`;
   };
   el.innerHTML=`<div class="card"><div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
