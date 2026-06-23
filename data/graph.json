@@ -16013,7 +16013,7 @@
       "id": "societal.overreliance",
       "kind": "threat",
       "label": "societal.overreliance",
-      "weight": 22,
+      "weight": 24,
       "meta": {
         "axis": "threat"
       }
@@ -25074,15 +25074,6 @@
         "sectors": [],
         "benchmarks": [],
         "topics": []
-      }
-    },
-    {
-      "id": "societal.over-reliance",
-      "kind": "threat",
-      "label": "societal.over-reliance",
-      "weight": 2,
-      "meta": {
-        "axis": "threat"
       }
     },
     {
@@ -99140,7 +99131,7 @@
     },
     {
       "source": "find-2507-10695-intangible-vulnerability",
-      "target": "societal.over-reliance",
+      "target": "societal.overreliance",
       "rel": "about",
       "weight": 1,
       "meta": {}
@@ -99167,7 +99158,7 @@
       "meta": {}
     },
     {
-      "source": "societal.over-reliance",
+      "source": "societal.overreliance",
       "target": "human-ai.user-study",
       "rel": "addressed-by",
       "weight": 1,
@@ -125515,7 +125506,7 @@
       "meta": {}
     },
     {
-      "source": "societal.over-reliance",
+      "source": "societal.overreliance",
       "target": "harm-mental-health-disclosure-misuse",
       "rel": "causes",
       "weight": 1,
@@ -168381,6 +168372,13 @@
     },
     {
       "source": "control-psychosocial-guardrail-eval",
+      "target": "harm-mental-health-disclosure-misuse",
+      "rel": "prevents",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "control-psychosocial-guardrail-eval",
       "target": "harm-overreliance",
       "rel": "prevents",
       "weight": 1,
@@ -168463,6 +168461,13 @@
     {
       "source": "control-compassionate-completion",
       "target": "harm-iatrogenic-mental-health",
+      "rel": "prevents",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "control-compassionate-completion",
+      "target": "harm-mental-health-disclosure-misuse",
       "rel": "prevents",
       "weight": 1,
       "meta": {}
@@ -168598,6 +168603,13 @@
     {
       "source": "control-clinical-rt-mentalhealth",
       "target": "harm-abrupt-refusal-secondary",
+      "rel": "prevents",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "control-clinical-rt-mentalhealth",
+      "target": "harm-mental-health-disclosure-misuse",
       "rel": "prevents",
       "weight": 1,
       "meta": {}
@@ -170459,6 +170471,13 @@
     {
       "source": "control-usage-wellbeing-monitoring",
       "target": "harm-iatrogenic-mental-health",
+      "rel": "prevents",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "control-usage-wellbeing-monitoring",
+      "target": "harm-mental-health-disclosure-misuse",
       "rel": "prevents",
       "weight": 1,
       "meta": {}
@@ -181379,6 +181398,13 @@
     },
     {
       "source": "control-overreliance-friction-verification",
+      "target": "harm-mental-health-disclosure-misuse",
+      "rel": "prevents",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "control-overreliance-friction-verification",
       "target": "harm-overreliance",
       "rel": "prevents",
       "weight": 1,
@@ -181454,6 +181480,13 @@
     {
       "source": "control-human-oversight-meaningful",
       "target": "harm-iatrogenic-mental-health",
+      "rel": "prevents",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "control-human-oversight-meaningful",
+      "target": "harm-mental-health-disclosure-misuse",
       "rel": "prevents",
       "weight": 1,
       "meta": {}
@@ -222971,15 +223004,6 @@
     },
     {
       "source": "gi-owasp-c-3-2",
-      "target": "societal.over-reliance",
-      "rel": "about",
-      "weight": 1,
-      "meta": {
-        "guideline": true
-      }
-    },
-    {
-      "source": "gi-owasp-c-3-2",
       "target": "harm-automation-bias-deskilling",
       "rel": "about",
       "weight": 1,
@@ -228098,13 +228122,13 @@
     ]
   },
   "stats": {
-    "node_count": 4017,
-    "edge_count": 23282,
+    "node_count": 4016,
+    "edge_count": 23287,
     "by_kind": {
       "source": 524,
       "org": 383,
       "finding": 612,
-      "threat": 219,
+      "threat": 218,
       "benchmark": 424,
       "teaming": 231,
       "sector": 57,
@@ -228128,7 +228152,7 @@
     },
     "by_rel": {
       "published-by": 511,
-      "about": 4432,
+      "about": 4431,
       "uses": 1244,
       "cites": 2664,
       "from-org": 821,
@@ -228159,7 +228183,7 @@
       "controlled-by": 221,
       "governed-by": 171,
       "from-finding": 147,
-      "prevents": 1851,
+      "prevents": 1857,
       "uses-teaming": 147,
       "aligned-with": 429,
       "covers": 164,
@@ -228200,6 +228224,6 @@
       "deployment-provenance": true
     },
     "guideline_nodes": 181,
-    "guideline_edges": 461
+    "guideline_edges": 460
   }
 }

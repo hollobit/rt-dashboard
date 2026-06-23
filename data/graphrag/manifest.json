@@ -7,8 +7,8 @@
     "citation"
   ],
   "algorithm": "networkx.greedy_modularity",
-  "community_count": 33,
-  "unit_count": 2571,
+  "community_count": 34,
+  "unit_count": 2572,
   "units_by_kind": {
     "finding": 612,
     "control": 198,
@@ -27,6 +27,6 @@
     "reference": 11,
     "guideline-doc": 4,
     "guideline-item": 177,
-    "community": 33
+    "community": 34
   }
 }

@@ -37358,7 +37358,7 @@
     ],
     "taxonomy": {
       "threat": [
-        "societal.over-reliance",
+        "societal.overreliance",
         "model.data-leakage",
         "societal.privacy-erosion"
       ],
@@ -37400,7 +37400,7 @@
     ],
     "caused_by_threats": [
       "model.data-leakage",
-      "societal.over-reliance",
+      "societal.overreliance",
       "societal.privacy-erosion"
     ],
     "source_ids": [
