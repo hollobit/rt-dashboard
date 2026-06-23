@@ -772,7 +772,7 @@ async function buildAuxIndex(){
   byType("source").filter(s=>(s.source_type==="paper")||s.url).forEach(s=>push({kind:"paper",label:s.title||s.id,meta:`${s.org||""}${s.published?" · "+s.published:""}`,text:`${s.title||""} ${s.abstract||""} ${arr(s.authors).join(" ")} ${s.org||""} ${arr(s.topics).join(" ")}`,hash:"#entity:"+encodeURIComponent(s.id),url:s.url,id:s.id}));
   byType("model_card").forEach(c=>push({kind:"product",label:c.name||c.id,meta:`${c.org||""}${c.date?" · "+c.date:""}`,text:`${c.name||""} ${c.org||""} ${c.results||""} ${c.redteam_summary||""} ${arr(c.benchmarks).join(" ")} ${arr(c.applied_techniques).join(" ")}`,hash:"#entity:"+encodeURIComponent(c.id),id:c.id,results:c.results,bench:arr(c.benchmarks)}));
   // 외부 프레임워크 매핑(crosswalk): CWE/OWASP/MIT/ATLAS 외부 ID로 검색
-  byType("crosswalk").forEach(x=>{const nd=(GRAPH.nodes||[]).find(n=>n.id===x.from);push({kind:"crosswalk",label:arr(x.external_ids).join(", ")||x.from,meta:`${(x.framework||"").toUpperCase()} ↔ ${(nd&&nd.label)||x.from}`,text:`${arr(x.external_ids).join(" ")} ${x.framework||""} ${x.note||""} ${(nd&&nd.label)||x.from}`,hash:"#entity:"+encodeURIComponent(x.from),id:x.from});});
+  byType("crosswalk").forEach(x=>{const fid=resolveNodeId(x.from)||x.from;const nd=nodeById(fid);push({kind:"crosswalk",label:arr(x.external_ids).join(", ")||x.from,meta:`${(x.framework||"").toUpperCase()} ↔ ${(nd&&nd.label)||x.from}`,text:`${arr(x.external_ids).join(" ")} ${x.framework||""} ${x.note||""} ${(nd&&nd.label)||x.from}`,hash:nd?"#entity:"+encodeURIComponent(fid):"#xwalk",id:nd?fid:null});});
   // SOTA 리더보드: 벤치마크·지표·SOTA 점수·모델
   (SOTA||[]).forEach(s=>push({kind:"sota",label:`${s.name} — ${s.sota_score||"?"} (${s.sota_model||"?"})`,meta:`${s.metric||""}${s.date?" · "+s.date:""}`,text:`${s.name||""} ${s.metric||""} ${s.sota_score||""} ${s.sota_model||""}`,hash:"#bench",url:s.url}));
   // evidence: 근거 claim 텍스트
@@ -1247,6 +1247,8 @@ let _LMAP=null;function nodeByLabel(lbl){const cnt=(GRAPH.nodes||[]).length;
 // 칩 문자열을 그래프 노드 id로 해소(원본 → bench:/atlas:/sector: 접두 → 유일 라벨). 못 찾으면 null.
 function resolveNodeId(raw){if(raw==null)return null;const s=String(raw);if(nodeById(s))return s;
   for(const p of ["bench:","atlas:","sector:"]){if(nodeById(p+s))return p+s;}
+  const nt=s.replace(/^threat\./,"");if(nt!==s&&nodeById(nt))return nt;   // threat. 접두 제거(크로스워크 from 등)
+  if(nodeById("threat."+s))return "threat."+s;                            // threat. 접두 추가
   return nodeByLabel(s);}
 function entChips(recs,color){recs=arr(recs);if(!recs.length)return '<span class="muted">—</span>';const st=color?` style="border-color:${color}"`:"";
   return recs.map(r=>{const raw=typeof r==="string"?r:(r&&(r.id!=null?r.id:r));const rid=resolveNodeId(raw);const n=rid?nodeById(rid):null;
@@ -1259,7 +1261,7 @@ function chip(x){return x?`<span class="tag">${esc(x)}</span>`:'<span class="mut
 function conf(c){return c==null?'—':`<span class="bar" style="width:${Math.round(c*40)}px"></span> ${c}`;}
 function heat(v){v=v||0;const col=v>=4?'#ff6b6b':v>=3?'#ffb454':'#52c41a';return `<span class="heat" style="background:${col}33;color:${col}">${v||'—'}</span>`;}
 let SRC_URL=null,SRC_TITLE=null;
-function srcUrl(id){if(!SRC_URL){SRC_URL={};SRC_TITLE={};FIND.forEach(r=>{if(r.url)SRC_URL[r.id]=r.url;SRC_TITLE[r.id]=r.title||r.name||r.id;});}return SRC_URL[id];}
+function srcUrl(id){if(!SRC_URL||SRC_URL._n!==FIND.length){SRC_URL={_n:FIND.length};SRC_TITLE={};FIND.forEach(r=>{if(r.url)SRC_URL[r.id]=r.url;SRC_TITLE[r.id]=r.title||r.name||r.id;});}return SRC_URL[id];}
 function srcs(f){const s=arr(f.source_ids);if(!s.length)return "";
   return " "+s.map(id=>{const u=srcUrl(id);const t=(SRC_TITLE&&SRC_TITLE[id])||id;const lbl=String(id).replace(/^arxiv-/,"").slice(0,12);
     return u?`<a class="srclink" href="${esc(u)}" target="_blank" title="${esc(t)}">[↗${esc(lbl)}]</a>`:`<span class="small muted" title="${esc(t)}">[${esc(id)}]</span>`;}).join(" ");}
@@ -1280,7 +1282,7 @@ function taxChips(a){a=arr(a);return a.length?a.map(x=>{const rid=resolveNodeId(
           :`<a class="tag" href="#search:${encodeURIComponent(x)}" title="GraphRAG 검색: ${esc(x)}">${esc(x)}</a>`;}).join(""):'<span class="muted">—</span>';}
 function benchChips(a){a=arr(a);return a.length?a.map(x=>{const rid=resolveNodeId(x);
   return rid?`<a class="tag" href="#entity:${encodeURIComponent(rid)}" title="상세 보기">${esc(x)}</a>`:`<a class="tag" href="#search:${encodeURIComponent(x)}" title="GraphRAG 검색: ${esc(x)}">${esc(x)}</a>`;}).join(""):'<span class="muted">—</span>';}
-function sotaFor(name){if(!SOTA_BY){SOTA_BY={};SOTA.forEach(s=>{SOTA_BY[String(s.name).toLowerCase().trim()]=s;});}return SOTA_BY[String(name).toLowerCase().trim()];}
+function sotaFor(name){if(!SOTA_BY||SOTA_BY._n!==SOTA.length){SOTA_BY={_n:SOTA.length};SOTA.forEach(s=>{SOTA_BY[String(s.name).toLowerCase().trim()]=s;});}return SOTA_BY[String(name).toLowerCase().trim()];}
 // ---- 외부 SOTA 리더보드 연동: GraphRAG 검색어를 SOTA 페이지로 전달 + 결과 함께 표시 ----
 const SOTA_SITE="https://hollobit.github.io/SOTA/";
 let SOTA_LIVE=null, SOTA_LIVE_DONE=false;  // 라이브 data/sota.json 캐시(세션 1회), CORS *
@@ -1956,6 +1958,7 @@ async function renderNews(){
 function renderChangelog(){
   const el=document.getElementById("v-changelog");if(!el)return;
   const CHANGELOG=RT_CHANGELOG=[
+    ["2026-06-23","수정","전 화면 색상·연결 감사 — ① resolveNodeId에 threat. 접두 정규화 추가(크로스워크 from 'threat.model.jailbreak'↔노드 'model.jailbreak' 불일치 해소) → GraphRAG 검색의 '외부 프레임워크 매핑' 깨진 칩 4건 수정 ② srcUrl·sotaFor 캐시도 버전토큰(FIND/SOTA.length)으로 무효화(지연로드 stale 예방). 33개 탭 렌더 OK·entity칩 13,336개 전부 해소·깨짐 0 확인"],
     ["2026-06-23","수정","Papers citation network 색상 복구 — communityOf가 RAG(유닛) 지연로드 전에 빈 캐시로 고정돼 전 노드 무색(#5b6472)이던 버그. ① communityOf 캐시를 RAG.length 변화 시 재생성 ② Papers 탭 진입 시 loadSearchData()로 RAG 보장 후 drawPaperGraph. → GraphRAG 커뮤니티별 13색 복구"],
     ["2026-06-23","연결","🧩 AI 종합 분석에 프레임워크·연구 맥락 9차원 추가 — 관련 논문(고인용)·연구동향·MITRE ATLAS 위치·OWASP LLM Top10/Agentic·NIST AI RMF·FMF Frontier 능력영역·레드팀기법·자동 레드티밍·벤치마크·AI 수명주기·MIT AI Risk. frameworkLens()가 매칭 엔티티를 crosswalk·atlas·benchmark·teaming·lifecycle·source·trends로 종합해 카드+AI 컨텍스트에 투입, Worker 프롬프트에 ⑥ 프레임워크 맥락 섹션 추가"],
     ["2026-06-23","연결","🤖 AI 종합 분석 강화 — ① 검색결과에 '🔗 관계 체인(다중 홉)' 카드 추가(위협→공격→취약점→통제→표준→위해 BFS 경로) ② AI 컨텍스트에 관계 체인 투입 + 캡 7000→13000자 ③ Worker 프롬프트를 5섹션 종합분석(핵심요약·연관관계·근거·표준갭·시사점)·충분한 설명 지향으로 강화, max_tokens 1500→3500"],
