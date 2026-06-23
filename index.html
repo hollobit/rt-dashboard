@@ -524,6 +524,32 @@ function tok(s){return (s||"").toLowerCase().match(/[a-z0-9]+|[가-힣]{2,}/g)||
 function adj(id){return GRAPH.edges.filter(e=>(e.source.id||e.source)===id||(e.target.id||e.target)===id)
   .map(e=>((e.source.id||e.source)===id?(e.target.id||e.target):(e.source.id||e.source)));}
 function relNeighbors(id,edges){const o=[];edges.forEach(e=>{const s=e.source.id||e.source,t=e.target.id||e.target,rel=e.rel||"rel";if(s===id)o.push({nid:t,rel});else if(t===id)o.push({nid:s,rel});});return o;}
+// 다중 홉 관계 체인 — AI 종합 분석이 "어떻게 연결되는지"를 설명하도록 위협→공격→취약점→통제→표준→위해 사슬을 텍스트로.
+function relChains(startIds,edges,nById,maxHops){
+  maxHops=maxHops||3;const lbl=id=>{const n=nById[id];return n?((n.label||id)+(n.kind?" ["+n.kind+"]":"")):id;};
+  const adj={};edges.forEach(e=>{const s=e.source.id||e.source,t=e.target.id||e.target,r=e.rel||"rel";(adj[s]=adj[s]||[]).push([t,r,"→"]);(adj[t]=adj[t]||[]).push([s,r,"←"]);});
+  const lines=[],seen=new Set();
+  (startIds||[]).slice(0,4).forEach(start=>{
+    // BFS 경로(중복 노드 회피), 의미있는 rel 우선
+    const PRIO={"realizes":1,"exploits":1,"mitigates":1,"prevents":1,"addresses":1,"causes":1,"aligned-with":2,"maps-to":2,"under-tactic":2,"detects":2,"about":3,"cites":4,"from-org":5};
+    const q=[[start,[lbl(start)],new Set([start])]];let made=0;
+    while(q.length&&made<6){
+      const [cur,path,vis]=q.shift();
+      const nbrs=(adj[cur]||[]).filter(([n])=>!vis.has(n))
+        .sort((a,b)=>(PRIO[a[1]]||6)-(PRIO[b[1]]||6)).slice(0,4);
+      if(path.length>=2&&(nbrs.length===0||path.length>=maxHops+1)){
+        const key=path.join("|");if(!seen.has(key)){seen.add(key);lines.push(path.join(" "));made++;}
+        continue;
+      }
+      for(const [n,r,dir] of nbrs){
+        if(path.length>maxHops)break;
+        q.push([n,path.concat([(REL_LABEL[r]||r)+dir,lbl(n)]),new Set([...vis,n])]);
+      }
+      if(nbrs.length===0&&path.length>=2){const key=path.join("|");if(!seen.has(key)){seen.add(key);lines.push(path.join(" "));made++;}}
+    }
+  });
+  return lines.slice(0,14);
+}
 async function renderSearch(query,mode){
   const out=document.getElementById("qresults");
   if(!query){out.innerHTML='<p class="muted">질문을 입력하고 Enter. <b>auto</b>=종합 분석(정의·핵심 엔티티·의미적 연계·근거·주제·가이드라인), <b>local</b>=엔티티 이웃, <b>global</b>=커뮤니티 주제, <b>citation</b>=인용 추적. 예: "prompt injection", "표준이 없는 위협", "rainbow teaming은 무엇에 기반하나".</p>';LAST_CTX=null;LAST_QVEC=null;SEM_ON=false;return;}
@@ -543,7 +569,7 @@ async function renderSearch(query,mode){
     const ranked=COMM.map(c=>({c,s:score(qt,tok((c.title||"")+" "+(c.summary||"")))})).filter(x=>x.s>0).sort((a,b)=>b.s-a.s).slice(0,6);
     const gctx=["주제 종합:\n"+ranked.map(({c})=>`- ${c.title}: ${c.summary}`).join("\n")];
     const gax=auxHits(qt,gctx);
-    LAST_CTX={query,text:gctx.join("\n\n").slice(0,7000)};
+    LAST_CTX={query,text:gctx.join("\n\n").slice(0,13000)};
     out.innerHTML=`<div class="card" style="background:var(--panel2)"><div style="display:flex;align-items:center"><b>주제 종합</b> <span class="muted small">${COMM.length} communities · 통합(news·changelog·papers·제품)</span><button onclick="aiSynth()" class="tag" style="margin-left:auto;cursor:pointer;border-color:var(--acc2);color:var(--acc2)">🤖 AI 종합</button></div><div id="ai-answer"></div></div>`+
       (ranked.length?ranked.map(({c})=>`<div class="card" style="background:var(--panel2)"><h4 style="margin:0 0 4px;color:var(--pur)">${esc(c.title)} <span class="muted small">(${(c.entities||[]).length} entities)</span></h4><p class="small">${esc(c.summary)}</p><div>${entChips((c.key_findings||[]).slice(0,6))}</div></div>`).join("")
         :'<p class="muted">매칭 커뮤니티 없음.</p>')+guideHits(qt)+gax;
@@ -585,6 +611,16 @@ async function renderSearch(query,mode){
       const det=wd.length?`<details class="small" style="margin-top:2px"><summary class="muted" style="cursor:pointer">원문 설명 ${wd.length}건 ▶</summary>${wd.map(({n,d})=>`<div style="margin:3px 0;padding-left:8px;border-left:2px solid var(--line)"><a href="#entity:${encodeURIComponent(n.id)}"><b>${esc((n.label||n.id).slice(0,40))}</b></a>: <span class="muted">${esc(d.slice(0,280))}${d.length>280?'…':''}</span></div>`).join("")}</details>`:"";
       return `<div class="small" style="margin:4px 0"><b style="color:var(--acc)">${esc(ENTITY_KIND_LABEL[k]||k)}</b> (${byKind[k].length}): ${chips}${det}</div>`;}).join("")+`</div>`;
     ctx.push("연계 엔티티(종류별):\n"+kinds.map(k=>`- ${k}: ${byKind[k].slice(0,10).map(n=>n.label||n.id).join(", ")}`).join("\n"));}
+  // (4b) 다중 홉 관계 체인 — "어떻게 연결되는지" 명시(AI 종합 분석 품질 향상)
+  const chainStarts=[focus&&focus.id].concat(
+    ["threat","attack_technique","vulnerability","control"].flatMap(k=>(byKind[k]||[]).slice(0,2).map(n=>n.id))
+  ).filter(Boolean);
+  const chains=relChains([...new Set(chainStarts)],edges,nById,3);
+  if(chains.length){
+    html+=`<div class="card"><h4>🔗 관계 체인 (다중 홉) <span class="muted small">— 위협·공격·취약점·통제·표준·위해가 어떻게 연결되는지</span></h4>`
+      +`<ul class="small" style="margin:4px 0 0;padding-left:18px;line-height:1.7">`+chains.slice(0,8).map(c=>`<li>${esc(c)}</li>`).join("")+`</ul></div>`;
+    ctx.push("관계 체인(다중 홉, 어떻게 연결되는지):\n"+chains.map(c=>"- "+c).join("\n"));
+  }
   // (5) 근거 findings
   if(seeds.length){html+=`<div class="card"><h4>📑 근거 ${SEM_ON?'<span class="muted small">(🧬 시맨틱 cosine + lexical 하이브리드 랭킹)</span>':'findings'} <span class="muted small">— 원문 펼침(▶): 본문·출처 초록</span> (상위 ${Math.min(seeds.length,6)})</h4>`
       +seeds.slice(0,6).map(({u,s,sm})=>evidenceBlock(u,s,sm)).join("")+`</div>`;
@@ -599,7 +635,7 @@ async function renderSearch(query,mode){
   const gh=guideHits(qt);html+=gh;if(GUIDE_IDX.length){const ghTerms=GUIDE_IDX.map(g=>({g,s:score(qt,tok(g.text))})).filter(x=>x.s>0).sort((a,b)=>b.s-a.s).slice(0,8);if(ghTerms.length)ctx.push("가이드라인 매치:\n"+ghTerms.map(({g})=>`- ${g.label} (${g.tab})`).join("\n"));}
   // (8) 통합: News · Change Log · Papers · 제품평가
   const ax=auxHits(qt,ctx);html+=ax;
-  LAST_CTX={query,text:ctx.join("\n\n").slice(0,7000)};
+  LAST_CTX={query,text:ctx.join("\n\n").slice(0,13000)};
   const head=`<div class="card" style="background:var(--panel2)"><div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap"><b>🔎 종합 검색 결과</b><span class="muted small">정의 ${defs.length} · 연계 ${agg.size} · 근거 ${seeds.length} · 통합(news·changelog·papers·제품)</span><button onclick="aiSynth()" class="tag" style="margin-left:auto;cursor:pointer;border-color:var(--acc2);color:var(--acc2)">🤖 AI 종합 분석</button></div><div id="ai-answer"></div></div>`;
   const hasHit=(defs.length||focus||seeds.length||kinds.length||gh||ax);
   if(hasHit){out.innerHTML=head+html+'<div id="sota-live-sec"></div>';}
@@ -1855,6 +1891,7 @@ async function renderNews(){
 function renderChangelog(){
   const el=document.getElementById("v-changelog");if(!el)return;
   const CHANGELOG=RT_CHANGELOG=[
+    ["2026-06-23","연결","🤖 AI 종합 분석 강화 — ① 검색결과에 '🔗 관계 체인(다중 홉)' 카드 추가(위협→공격→취약점→통제→표준→위해 BFS 경로) ② AI 컨텍스트에 관계 체인 투입 + 캡 7000→13000자 ③ Worker 프롬프트를 5섹션 종합분석(핵심요약·연관관계·근거·표준갭·시사점)·충분한 설명 지향으로 강화, max_tokens 1500→3500"],
     ["2026-06-23","데이터","CVPR/ICCV/ECCV/ACL/EMNLP/NAACL 정전급 논문 23편 추가 분석(2024 고인용) — How Johnny Can Persuade(PAP 644cit)·InjecAgent(380)·ArtPrompt(257)·Images are Achilles' Heel(ECCV)·ImgTrojan·Audio Achilles' Heel·DrAttack·BEEAR·Task Shield·ICAG·LLM-as-Judge robust 등. 신규 공격 20·취약점 20·위협 14(agent.environment-injection·reasoning-exploitation 등). 그래프 →4069노드, 논문 321→344, citation 938엣지(정전 논문이 GCG 117·PAIR 79·HarmBench 63 피인용 hub 형성)"],
     ["2026-06-23","데이터","주요 학회·저널 논문 48편 전문 분석(venue_discover 확장: Semantic Scholar venue 필터) — IEEE S&P·ACL·NDSS·ICML·ICLR·AAAI·USENIX·CCS·EMNLP·ICCV·CVPR·IEEE TPAMI/TDSC/TIFS의 피어리뷰·고인용(최대 118cit) 정전급. DataSentinel·MELON·MPMA(MCP)·SAGA·Foot-In-The-Door·멀티모달 jailbreak(SI-Attack/JOOD/VisCo/X-Transfer CLIP)·judge/leaderboard 조작 등. 신규 멀티모달 위협(multimodal.safety-comprehension-gap·foundation-encoder-super-transfer 등)·eval-integrity·공격 40·취약점 31·통제 50. 그래프 →3806노드, 논문 273→321, citation 821엣지"],
     ["2026-06-23","메뉴","📄 인텔리전스 리포트 추가 — Red-Teaming Literature 2026 Q2(86편 분석 종합: 코퍼스 영향·주제별 발견·신규 위협 34종·CVE 검증·citation 영향력). Papers 탭에 리포트 5종 링크 노출(reports/*.md)"],
