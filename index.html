@@ -927,7 +927,7 @@ function selectTab(spec){
   const tb=document.querySelector(`#navtabs button[data-v="${tab}"]`);if(tb)tb.classList.add("active");
   const view=document.getElementById("v-"+tab);if(view)view.classList.add("active");
   if(tab==="graph")drawGraph();
-  if(tab==="papers"){drawPaperGraph();if(arg)setTimeout(()=>showPaper(decodeURIComponent(arg)),60);}
+  if(tab==="papers"){const _pdraw=()=>{drawPaperGraph();if(arg)setTimeout(()=>showPaper(decodeURIComponent(arg)),60);};if(RAG.length)_pdraw();else loadSearchData().then(_pdraw);}
   if(tab==="prov"&&arg)provSelect(decodeURIComponent(arg));
   if(tab==="lifecycle"&&arg)lcSelect(+arg||0);
   if(tab==="riskmap"&&arg)setTimeout(()=>rkSelect(decodeURIComponent(arg),true),80);
@@ -1956,6 +1956,7 @@ async function renderNews(){
 function renderChangelog(){
   const el=document.getElementById("v-changelog");if(!el)return;
   const CHANGELOG=RT_CHANGELOG=[
+    ["2026-06-23","수정","Papers citation network 색상 복구 — communityOf가 RAG(유닛) 지연로드 전에 빈 캐시로 고정돼 전 노드 무색(#5b6472)이던 버그. ① communityOf 캐시를 RAG.length 변화 시 재생성 ② Papers 탭 진입 시 loadSearchData()로 RAG 보장 후 drawPaperGraph. → GraphRAG 커뮤니티별 13색 복구"],
     ["2026-06-23","연결","🧩 AI 종합 분석에 프레임워크·연구 맥락 9차원 추가 — 관련 논문(고인용)·연구동향·MITRE ATLAS 위치·OWASP LLM Top10/Agentic·NIST AI RMF·FMF Frontier 능력영역·레드팀기법·자동 레드티밍·벤치마크·AI 수명주기·MIT AI Risk. frameworkLens()가 매칭 엔티티를 crosswalk·atlas·benchmark·teaming·lifecycle·source·trends로 종합해 카드+AI 컨텍스트에 투입, Worker 프롬프트에 ⑥ 프레임워크 맥락 섹션 추가"],
     ["2026-06-23","연결","🤖 AI 종합 분석 강화 — ① 검색결과에 '🔗 관계 체인(다중 홉)' 카드 추가(위협→공격→취약점→통제→표준→위해 BFS 경로) ② AI 컨텍스트에 관계 체인 투입 + 캡 7000→13000자 ③ Worker 프롬프트를 5섹션 종합분석(핵심요약·연관관계·근거·표준갭·시사점)·충분한 설명 지향으로 강화, max_tokens 1500→3500"],
     ["2026-06-23","데이터","CVPR/ICCV/ECCV/ACL/EMNLP/NAACL 정전급 논문 23편 추가 분석(2024 고인용) — How Johnny Can Persuade(PAP 644cit)·InjecAgent(380)·ArtPrompt(257)·Images are Achilles' Heel(ECCV)·ImgTrojan·Audio Achilles' Heel·DrAttack·BEEAR·Task Shield·ICAG·LLM-as-Judge robust 등. 신규 공격 20·취약점 20·위협 14(agent.environment-injection·reasoning-exploitation 등). 그래프 →4069노드, 논문 321→344, citation 938엣지(정전 논문이 GCG 117·PAIR 79·HarmBench 63 피인용 hub 형성)"],
@@ -2353,7 +2354,7 @@ function eid(x){return (x&&x.id)||x;}
 function paperNodes(){return GRAPH.nodes.filter(n=>n.kind==="source");}
 function citeEdges(){return GRAPH.edges.filter(e=>e.rel==="cites");}
 let RAG_BY_ID=null;
-function communityOf(id){if(!RAG_BY_ID){RAG_BY_ID={};RAG.forEach(u=>{RAG_BY_ID[String(u.id).replace(/^unit-/,"")]=u.community;});}return RAG_BY_ID[id]!=null?RAG_BY_ID[id]:null;}
+function communityOf(id){if(!RAG_BY_ID||RAG_BY_ID._n!==RAG.length){RAG_BY_ID={_n:RAG.length};RAG.forEach(u=>{RAG_BY_ID[String(u.id).replace(/^unit-/,"")]=u.community;});}return RAG_BY_ID[id]!=null?RAG_BY_ID[id]:null;}
 function citeCount(id){const r=FIND.find(x=>x.id===id);return (r&&r.citation_count)||0;}
 function paperTitle(id){const r=FIND.find(x=>x.id===id);return (r&&(r.title||r.name))||id;}
 function statTiles(items){return `<div class="statrow">${items.map(([l,v])=>`<div class="stat"><div class="v">${v}</div><div class="l">${esc(l)}</div></div>`).join("")}</div>`;}
