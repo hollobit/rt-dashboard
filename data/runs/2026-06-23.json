@@ -1,13 +1,13 @@
 {
   "date": "2026-06-23",
-  "nodes": 4068,
-  "edges": 23348,
+  "nodes": 4017,
+  "edges": 23282,
   "by_kind": {
-    "source": 555,
-    "org": 384,
+    "source": 524,
+    "org": 383,
     "finding": 612,
     "threat": 219,
-    "benchmark": 443,
+    "benchmark": 424,
     "teaming": 231,
     "sector": 57,
     "attack": 35,

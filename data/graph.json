@@ -118,34 +118,6 @@
       "meta": {}
     },
     {
-      "id": "oecd-ai-incidents-monitor",
-      "kind": "source",
-      "label": "OECD AI Incidents Monitor (AIM)",
-      "weight": 1,
-      "meta": {
-        "source_type": "regulatory",
-        "org": "OECD",
-        "url": "https://oecd.ai/en/incidents",
-        "venue": "OECD.AI Policy Observatory",
-        "published": "2023-11-01",
-        "citation_count": null,
-        "topics": [
-          "ai-incident-reporting",
-          "cvd-vdp",
-          "governance",
-          "oecd",
-          "harm-tracking"
-        ]
-      }
-    },
-    {
-      "id": "org:OECD",
-      "kind": "org",
-      "label": "OECD",
-      "weight": 2,
-      "meta": {}
-    },
-    {
       "id": "eu-ai-act-art73-incident-reporting",
       "kind": "source",
       "label": "EU AI Act Article 73 — Reporting of Serious Incidents (and GPAI serious-incident reporting template)",
@@ -259,7 +231,7 @@
       "id": "org:Anthropic",
       "kind": "org",
       "label": "Anthropic",
-      "weight": 51,
+      "weight": 43,
       "meta": {}
     },
     {
@@ -289,7 +261,7 @@
       "id": "org:Google DeepMind",
       "kind": "org",
       "label": "Google DeepMind",
-      "weight": 25,
+      "weight": 23,
       "meta": {}
     },
     {
@@ -669,7 +641,7 @@
       "id": "org:MITRE",
       "kind": "org",
       "label": "MITRE",
-      "weight": 5,
+      "weight": 4,
       "meta": {}
     },
     {
@@ -786,7 +758,7 @@
       "id": "org:OpenAI",
       "kind": "org",
       "label": "OpenAI",
-      "weight": 41,
+      "weight": 33,
       "meta": {}
     },
     {
@@ -874,7 +846,7 @@
       "id": "org:Microsoft AI Red Team",
       "kind": "org",
       "label": "Microsoft AI Red Team",
-      "weight": 3,
+      "weight": 2,
       "meta": {}
     },
     {
@@ -1858,53 +1830,6 @@
       }
     },
     {
-      "id": "openai-gpt4o-system-card-2024",
-      "kind": "source",
-      "label": "GPT-4o System Card",
-      "weight": 1,
-      "meta": {
-        "source_type": "industry_report",
-        "org": "OpenAI",
-        "url": "https://openai.com/index/gpt-4o-system-card/",
-        "venue": "OpenAI / arXiv:2410.21276",
-        "published": "2024-08-08",
-        "citation_count": null,
-        "topics": [
-          "model-card",
-          "system-card",
-          "red-teaming",
-          "preparedness",
-          "persuasion",
-          "cbrn",
-          "cyber-uplift",
-          "multimodal-safety"
-        ]
-      }
-    },
-    {
-      "id": "openai-o1-system-card-2024",
-      "kind": "source",
-      "label": "OpenAI o1 System Card",
-      "weight": 1,
-      "meta": {
-        "source_type": "industry_report",
-        "org": "OpenAI",
-        "url": "https://cdn.openai.com/o1-system-card-20241205.pdf",
-        "venue": "OpenAI / arXiv:2412.16720",
-        "published": "2024-12-05",
-        "citation_count": null,
-        "topics": [
-          "model-card",
-          "system-card",
-          "red-teaming",
-          "deliberative-alignment",
-          "deceptive-alignment",
-          "jailbreak",
-          "preparedness"
-        ]
-      }
-    },
-    {
       "id": "openai-o3mini-system-card-2025",
       "kind": "source",
       "label": "OpenAI o3-mini System Card",
@@ -1924,73 +1849,6 @@
           "cbrn",
           "persuasion",
           "model-autonomy"
-        ]
-      }
-    },
-    {
-      "id": "openai-deep-research-system-card-2025",
-      "kind": "source",
-      "label": "Deep Research System Card",
-      "weight": 1,
-      "meta": {
-        "source_type": "industry_report",
-        "org": "OpenAI",
-        "url": "https://cdn.openai.com/deep-research-system-card.pdf",
-        "venue": "OpenAI",
-        "published": "2025-02-25",
-        "citation_count": null,
-        "topics": [
-          "model-card",
-          "system-card",
-          "red-teaming",
-          "agentic-safety",
-          "prompt-injection",
-          "preparedness"
-        ]
-      }
-    },
-    {
-      "id": "openai-o3-o4mini-system-card-2025",
-      "kind": "source",
-      "label": "OpenAI o3 and o4-mini System Card",
-      "weight": 1,
-      "meta": {
-        "source_type": "industry_report",
-        "org": "OpenAI",
-        "url": "https://cdn.openai.com/pdf/2221c875-02dc-4789-800b-e7758f3722c1/o3-and-o4-mini-system-card.pdf",
-        "venue": "OpenAI",
-        "published": "2025-04-16",
-        "citation_count": null,
-        "topics": [
-          "model-card",
-          "system-card",
-          "red-teaming",
-          "preparedness",
-          "cbrn",
-          "cyber-uplift"
-        ]
-      }
-    },
-    {
-      "id": "openai-gpt45-system-card-2025",
-      "kind": "source",
-      "label": "OpenAI GPT-4.5 System Card",
-      "weight": 1,
-      "meta": {
-        "source_type": "industry_report",
-        "org": "OpenAI",
-        "url": "https://cdn.openai.com/gpt-4-5-system-card-2272025.pdf",
-        "venue": "OpenAI",
-        "published": "2025-02-27",
-        "citation_count": null,
-        "topics": [
-          "model-card",
-          "system-card",
-          "red-teaming",
-          "preparedness",
-          "persuasion",
-          "jailbreak",
-          "hallucination"
         ]
       }
     },
@@ -2036,76 +1894,6 @@
           "cbrn",
           "aisi",
           "metr"
-        ]
-      }
-    },
-    {
-      "id": "anthropic-claude37-system-card-2025",
-      "kind": "source",
-      "label": "Claude 3.7 Sonnet System Card",
-      "weight": 1,
-      "meta": {
-        "source_type": "industry_report",
-        "org": "Anthropic",
-        "url": "https://www.anthropic.com/claude-3-7-sonnet-system-card",
-        "venue": "Anthropic",
-        "published": "2025-02-24",
-        "citation_count": null,
-        "topics": [
-          "model-card",
-          "system-card",
-          "red-teaming",
-          "rsp",
-          "asl-2",
-          "cbrn",
-          "uplift-study",
-          "extended-thinking"
-        ]
-      }
-    },
-    {
-      "id": "anthropic-claude4-system-card-2025",
-      "kind": "source",
-      "label": "System Card: Claude Opus 4 & Claude Sonnet 4",
-      "weight": 1,
-      "meta": {
-        "source_type": "industry_report",
-        "org": "Anthropic",
-        "url": "https://www-cdn.anthropic.com/6d8a8055020700718b0c49369f60816ba2a7c285/Claude%204%20System%20Card.pdf",
-        "venue": "Anthropic",
-        "published": "2025-05-22",
-        "citation_count": null,
-        "topics": [
-          "model-card",
-          "system-card",
-          "red-teaming",
-          "rsp",
-          "asl-3",
-          "cbrn",
-          "agentic-safety",
-          "alignment",
-          "frontier-safety"
-        ]
-      }
-    },
-    {
-      "id": "google-gemini15-report-2024",
-      "kind": "source",
-      "label": "Gemini 1.5: Unlocking multimodal understanding across millions of tokens (Technical Report)",
-      "weight": 1,
-      "meta": {
-        "source_type": "industry_report",
-        "org": "Google DeepMind",
-        "url": "https://arxiv.org/abs/2403.05530",
-        "venue": "Google DeepMind / arXiv:2403.05530",
-        "published": "2024-03-08",
-        "citation_count": null,
-        "topics": [
-          "model-card",
-          "red-teaming",
-          "dangerous-capability-eval",
-          "content-safety",
-          "multimodal-safety"
         ]
       }
     },
@@ -2178,7 +1966,7 @@
       "id": "org:Meta",
       "kind": "org",
       "label": "Meta",
-      "weight": 11,
+      "weight": 10,
       "meta": {}
     },
     {
@@ -2203,35 +1991,6 @@
       }
     },
     {
-      "id": "microsoft-phi4-tech-report-2024",
-      "kind": "source",
-      "label": "Phi-4 Technical Report",
-      "weight": 1,
-      "meta": {
-        "source_type": "industry_report",
-        "org": "Microsoft",
-        "url": "https://arxiv.org/abs/2412.08905",
-        "venue": "Microsoft Research / arXiv:2412.08905",
-        "published": "2024-12-12",
-        "citation_count": null,
-        "topics": [
-          "model-card",
-          "red-teaming",
-          "ai-red-team",
-          "jailbreak",
-          "responsible-ai",
-          "content-safety"
-        ]
-      }
-    },
-    {
-      "id": "org:Microsoft",
-      "kind": "org",
-      "label": "Microsoft",
-      "weight": 7,
-      "meta": {}
-    },
-    {
       "id": "nvidia-nemotron4-340b-card-2024",
       "kind": "source",
       "label": "Nemotron-4 340B Instruct Model Card",
@@ -2250,28 +2009,6 @@
           "garak",
           "content-safety",
           "safety-classifier"
-        ]
-      }
-    },
-    {
-      "id": "microsoft-redteam-100-products-2025",
-      "kind": "source",
-      "label": "Lessons from Red Teaming 100 Generative AI Products",
-      "weight": 1,
-      "meta": {
-        "source_type": "industry_report",
-        "org": "Microsoft AI Red Team",
-        "url": "https://arxiv.org/abs/2501.07238",
-        "venue": "Microsoft / arXiv:2501.07238",
-        "published": "2025-01-13",
-        "citation_count": null,
-        "topics": [
-          "industry-report",
-          "red-teaming",
-          "ai-red-team",
-          "copilot",
-          "automated-red-teaming",
-          "content-safety"
         ]
       }
     },
@@ -2608,7 +2345,7 @@
       "id": "org:Dreadnode",
       "kind": "org",
       "label": "Dreadnode",
-      "weight": 2,
+      "weight": 1,
       "meta": {}
     },
     {
@@ -2906,6 +2643,13 @@
       }
     },
     {
+      "id": "org:Microsoft",
+      "kind": "org",
+      "label": "Microsoft",
+      "weight": 5,
+      "meta": {}
+    },
+    {
       "id": "arxiv-2410-05295",
       "kind": "source",
       "label": "AutoDAN-Turbo: A Lifelong Agent for Strategy Self-Exploration to Jailbreak LLMs",
@@ -3155,7 +2899,7 @@
       "id": "org:Brown University",
       "kind": "org",
       "label": "Brown University",
-      "weight": 3,
+      "weight": 1,
       "meta": {}
     },
     {
@@ -3592,146 +3336,6 @@
       "meta": {}
     },
     {
-      "id": "openai-gpt5-system-card-2025",
-      "kind": "source",
-      "label": "GPT-5 System Card",
-      "weight": 1,
-      "meta": {
-        "source_type": "industry_report",
-        "org": "OpenAI",
-        "url": "https://cdn.openai.com/gpt-5-system-card.pdf",
-        "venue": "OpenAI",
-        "published": "2025-08-13",
-        "citation_count": null,
-        "topics": [
-          "model-card",
-          "system-card",
-          "preparedness-framework",
-          "red-teaming",
-          "cbrn",
-          "jailbreak",
-          "prompt-injection",
-          "deception"
-        ]
-      }
-    },
-    {
-      "id": "openai-gpt52-update-2025",
-      "kind": "source",
-      "label": "Update to GPT-5 System Card: GPT-5.2",
-      "weight": 1,
-      "meta": {
-        "source_type": "industry_report",
-        "org": "OpenAI",
-        "url": "https://cdn.openai.com/pdf/3a4153c8-c748-4b71-8e31-aecbde944f8d/oai_5_2_system-card.pdf",
-        "venue": "OpenAI",
-        "published": "2025-12-11",
-        "citation_count": null,
-        "topics": [
-          "model-card",
-          "system-card",
-          "preparedness-framework",
-          "red-teaming",
-          "cbrn",
-          "cyber",
-          "jailbreak",
-          "sandbagging"
-        ]
-      }
-    },
-    {
-      "id": "anthropic-claude-opus41-card-2025",
-      "kind": "source",
-      "label": "System Card Addendum: Claude Opus 4.1",
-      "weight": 1,
-      "meta": {
-        "source_type": "industry_report",
-        "org": "Anthropic",
-        "url": "https://www.anthropic.com/claude-opus-4-1-system-card",
-        "venue": "Anthropic",
-        "published": "2025-08",
-        "citation_count": null,
-        "topics": [
-          "model-card",
-          "system-card",
-          "responsible-scaling-policy",
-          "asl-3",
-          "cbrn",
-          "alignment"
-        ]
-      }
-    },
-    {
-      "id": "anthropic-claude-sonnet45-card-2025",
-      "kind": "source",
-      "label": "System Card: Claude Sonnet 4.5",
-      "weight": 1,
-      "meta": {
-        "source_type": "industry_report",
-        "org": "Anthropic",
-        "url": "https://www.anthropic.com/claude-sonnet-4-5-system-card",
-        "venue": "Anthropic",
-        "published": "2025-09",
-        "citation_count": null,
-        "topics": [
-          "model-card",
-          "system-card",
-          "responsible-scaling-policy",
-          "asl-3",
-          "cbrn",
-          "alignment",
-          "evaluation-awareness",
-          "situational-awareness"
-        ]
-      }
-    },
-    {
-      "id": "anthropic-claude-haiku45-card-2025",
-      "kind": "source",
-      "label": "System Card: Claude Haiku 4.5",
-      "weight": 1,
-      "meta": {
-        "source_type": "industry_report",
-        "org": "Anthropic",
-        "url": "https://assets.anthropic.com/m/99128ddd009bdcb/original/Claude-Haiku-4-5-System-Card.pdf",
-        "venue": "Anthropic",
-        "published": "2025-10",
-        "citation_count": null,
-        "topics": [
-          "model-card",
-          "system-card",
-          "responsible-scaling-policy",
-          "asl-2",
-          "cbrn",
-          "alignment"
-        ]
-      }
-    },
-    {
-      "id": "anthropic-claude-opus45-card-2025",
-      "kind": "source",
-      "label": "System Card: Claude Opus 4.5",
-      "weight": 1,
-      "meta": {
-        "source_type": "industry_report",
-        "org": "Anthropic",
-        "url": "https://www-cdn.anthropic.com/bf10f64990cfda0ba858290be7b8cc6317685f47/Claude%20Opus%204.5%20System%20Card.pdf",
-        "venue": "Anthropic",
-        "published": "2025-11",
-        "citation_count": null,
-        "topics": [
-          "model-card",
-          "system-card",
-          "responsible-scaling-policy",
-          "asl-3",
-          "cbrn",
-          "alignment",
-          "agentic-safety",
-          "prompt-injection"
-        ]
-      }
-    },
-    {
       "id": "google-gemini3-pro-fsf-2025",
       "kind": "source",
       "label": "Frontier Safety Framework Report - Gemini 3 Pro",
@@ -3755,60 +3359,6 @@
           "red-teaming"
         ]
       }
-    },
-    {
-      "id": "meta-llama4-model-card-2025",
-      "kind": "source",
-      "label": "Llama 4 Model Card (Scout & Maverick)",
-      "weight": 1,
-      "meta": {
-        "source_type": "industry_report",
-        "org": "Meta",
-        "url": "https://github.com/meta-llama/llama-models/blob/main/models/llama4/MODEL_CARD.md",
-        "venue": "GitHub",
-        "published": "2025-04-05",
-        "citation_count": null,
-        "topics": [
-          "model-card",
-          "red-teaming",
-          "cbrne",
-          "cyber",
-          "child-safety",
-          "open-weight",
-          "guardrails"
-        ]
-      }
-    },
-    {
-      "id": "xai-grok4-model-card-2025",
-      "kind": "source",
-      "label": "Grok 4 Model Card",
-      "weight": 1,
-      "meta": {
-        "source_type": "industry_report",
-        "org": "xAI",
-        "url": "https://data.x.ai/2025-08-20-grok-4-model-card.pdf",
-        "venue": "xAI",
-        "published": "2025-08-20",
-        "citation_count": null,
-        "topics": [
-          "model-card",
-          "risk-management-framework",
-          "red-teaming",
-          "cbrn",
-          "cyber",
-          "deception",
-          "agentic-safety",
-          "dual-use"
-        ]
-      }
-    },
-    {
-      "id": "org:xAI",
-      "kind": "org",
-      "label": "xAI",
-      "weight": 5,
-      "meta": {}
     },
     {
       "id": "nist-caisi-deepseek-eval-2025",
@@ -3838,36 +3388,6 @@
       "kind": "org",
       "label": "NIST CAISI (Center for AI Standards and Innovation)",
       "weight": 1,
-      "meta": {}
-    },
-    {
-      "id": "moonshot-kimi-k2-report-2025",
-      "kind": "source",
-      "label": "Kimi K2: Open Agentic Intelligence - Technical Report",
-      "weight": 1,
-      "meta": {
-        "source_type": "industry_report",
-        "org": "Moonshot AI",
-        "url": "https://arxiv.org/abs/2507.20534",
-        "venue": "arXiv",
-        "published": "2025-07",
-        "citation_count": null,
-        "topics": [
-          "model-card",
-          "technical-report",
-          "open-weight",
-          "safety",
-          "cbrne",
-          "agentic",
-          "dual-use"
-        ]
-      }
-    },
-    {
-      "id": "org:Moonshot AI",
-      "kind": "org",
-      "label": "Moonshot AI",
-      "weight": 5,
       "meta": {}
     },
     {
@@ -4025,6 +3545,13 @@
           "open-weight"
         ]
       }
+    },
+    {
+      "id": "org:Moonshot AI",
+      "kind": "org",
+      "label": "Moonshot AI",
+      "weight": 4,
+      "meta": {}
     },
     {
       "id": "arxiv-2508-06471",
@@ -4212,27 +3739,6 @@
       }
     },
     {
-      "id": "mc-src-anthropic-sabotage-evals",
-      "kind": "source",
-      "label": "Sabotage Evaluations for Frontier Models",
-      "weight": 1,
-      "meta": {
-        "source_type": "paper",
-        "org": "Anthropic",
-        "url": "https://arxiv.org/abs/2410.21514",
-        "venue": "arXiv",
-        "published": "2024-10-28",
-        "citation_count": 46,
-        "topics": [
-          "model-card",
-          "sabotage-evaluation",
-          "frontier-safety",
-          "dangerous-capability-eval",
-          "control-evaluation"
-        ]
-      }
-    },
-    {
       "id": "mc-src-gpt5-system-card",
       "kind": "source",
       "label": "GPT-5 System Card",
@@ -4383,27 +3889,6 @@
       }
     },
     {
-      "id": "mc-src-preparedness-framework-v2",
-      "kind": "source",
-      "label": "OpenAI Preparedness Framework (Version 2)",
-      "weight": 1,
-      "meta": {
-        "source_type": "industry_report",
-        "org": "OpenAI",
-        "url": "https://cdn.openai.com/pdf/18a02b5d-6b67-4cec-ab64-68cdfbddebcd/preparedness-framework-v2.pdf",
-        "venue": "OpenAI",
-        "published": "2025-04-15",
-        "citation_count": null,
-        "topics": [
-          "preparedness",
-          "governance",
-          "tracked-categories",
-          "frontier-risk",
-          "sandbagging"
-        ]
-      }
-    },
-    {
       "id": "mc-src-gemini-3-pro-fsf",
       "kind": "source",
       "label": "Gemini 3 Pro Frontier Safety Framework Report",
@@ -4495,6 +3980,13 @@
       }
     },
     {
+      "id": "org:xAI",
+      "kind": "org",
+      "label": "xAI",
+      "weight": 4,
+      "meta": {}
+    },
+    {
       "id": "mc-src-xai-rmf",
       "kind": "source",
       "label": "xAI Risk Management Framework (Draft)",
@@ -4536,51 +4028,6 @@
           "cyber-uplift",
           "llama-guard",
           "prompt-guard"
-        ]
-      }
-    },
-    {
-      "id": "mc-src-ms-red-teaming-100",
-      "kind": "source",
-      "label": "Lessons From Red Teaming 100 Generative AI Products",
-      "weight": 1,
-      "meta": {
-        "source_type": "paper",
-        "org": "Microsoft",
-        "url": "https://arxiv.org/abs/2501.07238",
-        "venue": "arXiv",
-        "published": "2025-01-13",
-        "citation_count": 27,
-        "topics": [
-          "red-teaming",
-          "airt",
-          "pyrit",
-          "threat-ontology",
-          "mitre-atlas",
-          "xpia",
-          "responsible-ai-harms"
-        ]
-      }
-    },
-    {
-      "id": "mc-src-dangerous-capabilities",
-      "kind": "source",
-      "label": "Evaluating Frontier Models for Dangerous Capabilities",
-      "weight": 1,
-      "meta": {
-        "source_type": "paper",
-        "org": "Google DeepMind",
-        "url": "https://arxiv.org/abs/2403.13793",
-        "venue": "arXiv",
-        "published": "2024-04-05",
-        "citation_count": 130,
-        "topics": [
-          "frontier-safety-eval",
-          "dangerous-capability-eval",
-          "self-proliferation",
-          "persuasion-deception",
-          "cyber-uplift",
-          "early-warning"
         ]
       }
     },
@@ -5250,7 +4697,7 @@
         "org": "OECD",
         "url": "https://oecd.ai/en/incidents",
         "venue": "OECD.AI",
-        "published": null,
+        "published": "2023-11-01",
         "citation_count": null,
         "topics": [
           "incident-reporting",
@@ -5258,6 +4705,13 @@
           "oecd-aim"
         ]
       }
+    },
+    {
+      "id": "org:OECD",
+      "kind": "org",
+      "label": "OECD",
+      "weight": 1,
+      "meta": {}
     },
     {
       "id": "src-gendershades-2018",
@@ -5283,33 +4737,6 @@
       "id": "org:MIT Media Lab",
       "kind": "org",
       "label": "MIT Media Lab",
-      "weight": 1,
-      "meta": {}
-    },
-    {
-      "id": "src-reuters-amazon-recruit-2018",
-      "kind": "source",
-      "label": "Amazon scraps secret AI recruiting tool that showed bias against women",
-      "weight": 1,
-      "meta": {
-        "source_type": "industry_report",
-        "org": "Reuters",
-        "url": "https://www.reuters.com/article/world/insight-amazon-scraps-secret-ai-recruiting-tool-that-showed-bias-against-women-idUSKCN1MK0AG/",
-        "venue": "Reuters",
-        "published": "2018-01-01",
-        "citation_count": null,
-        "topics": [
-          "discrimination",
-          "hiring",
-          "bias",
-          "gender"
-        ]
-      }
-    },
-    {
-      "id": "org:Reuters",
-      "kind": "org",
-      "label": "Reuters",
       "weight": 1,
       "meta": {}
     },
@@ -5467,26 +4894,6 @@
       "label": "UC Berkeley / Univ. of Chicago",
       "weight": 1,
       "meta": {}
-    },
-    {
-      "id": "src-lowresource-jailbreak-2023",
-      "kind": "source",
-      "label": "Low-Resource Languages Jailbreak GPT-4",
-      "weight": 1,
-      "meta": {
-        "source_type": "paper",
-        "org": "Brown University",
-        "url": "https://arxiv.org/abs/2310.02446",
-        "venue": "arXiv (NeurIPS 2023 SoLaR)",
-        "published": "2023-01-01",
-        "citation_count": 347,
-        "topics": [
-          "unequal-performance",
-          "low-resource-languages",
-          "safety-gap",
-          "multilingual"
-        ]
-      }
     },
     {
       "id": "src-fcc-biden-robocall-2024",
@@ -6343,7 +5750,7 @@
       "id": "org:OWASP",
       "kind": "org",
       "label": "OWASP",
-      "weight": 8,
+      "weight": 7,
       "meta": {}
     },
     {
@@ -6638,25 +6045,6 @@
       "label": "Cloud Security Alliance",
       "weight": 1,
       "meta": {}
-    },
-    {
-      "id": "src-mitre-atlas-matrix",
-      "kind": "source",
-      "label": "MITRE ATLAS — Adversarial Threat Landscape for Artificial-Intelligence Systems (technique matrix)",
-      "weight": 1,
-      "meta": {
-        "source_type": "attack-kb",
-        "org": "MITRE",
-        "url": "https://atlas.mitre.org/matrices/ATLAS",
-        "venue": "MITRE ATLAS",
-        "published": "2025-01-01",
-        "citation_count": null,
-        "topics": [
-          "mitre-atlas",
-          "attack-taxonomy",
-          "adversarial-ml"
-        ]
-      }
     },
     {
       "id": "src-atlas-data-yaml",
@@ -6962,24 +6350,6 @@
       "label": "University of Cambridge",
       "weight": 2,
       "meta": {}
-    },
-    {
-      "id": "src-owasp-llm-top10-2025",
-      "kind": "source",
-      "label": "OWASP Top 10 for LLM Applications 2025",
-      "weight": 1,
-      "meta": {
-        "source_type": "industry_report",
-        "org": "OWASP",
-        "url": "https://genai.owasp.org/llm-top-10/",
-        "venue": "OWASP",
-        "published": "2024-11-18",
-        "citation_count": null,
-        "topics": [
-          "owasp",
-          "llm-top-10"
-        ]
-      }
     },
     {
       "id": "src-nvd-cve-2025-32434",
@@ -9164,25 +8534,6 @@
       }
     },
     {
-      "id": "src-yong-lowresource-jb-2023",
-      "kind": "source",
-      "label": "Low-Resource Languages Jailbreak GPT-4",
-      "weight": 1,
-      "meta": {
-        "source_type": "paper",
-        "org": "Brown University",
-        "url": "https://arxiv.org/abs/2310.02446",
-        "venue": "NeurIPS SoLaR Workshop",
-        "published": "2023-10-03",
-        "citation_count": 347,
-        "topics": [
-          "multilingual",
-          "low-resource",
-          "jailbreak"
-        ]
-      }
-    },
-    {
       "id": "src-kuo-hcot-2025",
       "kind": "source",
       "label": "H-CoT: Hijacking the Chain-of-Thought Safety Reasoning Mechanism to Jailbreak Large Reasoning Models, Including OpenAI o1/o3, DeepSeek-R1, and Gemini 2.0 Flash Thinking",
@@ -9362,26 +8713,6 @@
           "self-improving-attacker",
           "strategy-evolution",
           "automated-red-teaming"
-        ]
-      }
-    },
-    {
-      "id": "src-agentic-era-dreadnode",
-      "kind": "source",
-      "label": "Redefining AI Red Teaming in the Agentic Era: From Weeks to Hours",
-      "weight": 1,
-      "meta": {
-        "source_type": "paper",
-        "org": "Dreadnode",
-        "url": "https://arxiv.org/abs/2605.04019",
-        "venue": "arXiv",
-        "published": "2026-05-05",
-        "citation_count": 0,
-        "topics": [
-          "agentic-red-teaming",
-          "ai-auditor-agent",
-          "human-ai",
-          "tooling-orchestration"
         ]
       }
     },
@@ -9770,26 +9101,6 @@
           "crowdsourced-red-teaming",
           "bug-bounty",
           "ai-red-teaming"
-        ]
-      }
-    },
-    {
-      "id": "src-constitutional-classifiers",
-      "kind": "source",
-      "label": "Constitutional Classifiers: Defending against Universal Jailbreaks across Thousands of Hours of Red Teaming",
-      "weight": 1,
-      "meta": {
-        "source_type": "paper",
-        "org": "Anthropic",
-        "url": "https://arxiv.org/abs/2501.18837",
-        "venue": "arXiv",
-        "published": "2025-02-03",
-        "citation_count": 159,
-        "topics": [
-          "constitutional-classifiers",
-          "llm-as-defender",
-          "crowdsourced-red-teaming",
-          "bug-bounty"
         ]
       }
     },
@@ -13612,7 +12923,7 @@
       "id": "bench:CyberSecEval 3",
       "kind": "benchmark",
       "label": "CyberSecEval 3",
-      "weight": 3,
+      "weight": 5,
       "meta": {}
     },
     {
@@ -14116,7 +13427,7 @@
       "id": "bench:Cybench",
       "kind": "benchmark",
       "label": "Cybench",
-      "weight": 9,
+      "weight": 13,
       "meta": {}
     },
     {
@@ -14217,7 +13528,7 @@
       "id": "bench:Agent Red Teaming",
       "kind": "benchmark",
       "label": "Agent Red Teaming",
-      "weight": 1,
+      "weight": 2,
       "meta": {}
     },
     {
@@ -14263,7 +13574,7 @@
       "id": "bench:Shade",
       "kind": "benchmark",
       "label": "Shade",
-      "weight": 1,
+      "weight": 2,
       "meta": {}
     },
     {
@@ -14858,7 +14169,7 @@
         ],
         "benchmarks": [
           "StrongReject",
-          "Agent-Red-Teaming"
+          "Agent Red Teaming"
         ],
         "topics": []
       }
@@ -14885,14 +14196,7 @@
       "id": "bench:StrongReject",
       "kind": "benchmark",
       "label": "StrongReject",
-      "weight": 6,
-      "meta": {}
-    },
-    {
-      "id": "bench:Agent-Red-Teaming",
-      "kind": "benchmark",
-      "label": "Agent-Red-Teaming",
-      "weight": 1,
+      "weight": 31,
       "meta": {}
     },
     {
@@ -15324,18 +14628,11 @@
           "WMDP",
           "VCT",
           "BioLP-Bench",
-          "CyBench",
+          "Cybench",
           "MakeMeSay"
         ],
         "topics": []
       }
-    },
-    {
-      "id": "bench:CyBench",
-      "kind": "benchmark",
-      "label": "CyBench",
-      "weight": 5,
-      "meta": {}
     },
     {
       "id": "find-grok4-propensities-deception",
@@ -15470,17 +14767,17 @@
           "cyber"
         ],
         "benchmarks": [
-          "Hack-The-Box",
+          "Hack the Box",
           "In-house-CTF"
         ],
         "topics": []
       }
     },
     {
-      "id": "bench:Hack-The-Box",
+      "id": "bench:Hack the Box",
       "kind": "benchmark",
-      "label": "Hack-The-Box",
-      "weight": 1,
+      "label": "Hack the Box",
+      "weight": 3,
       "meta": {}
     },
     {
@@ -16033,7 +15330,7 @@
       "id": "bench:Agent Security Bench",
       "kind": "benchmark",
       "label": "Agent Security Bench",
-      "weight": 3,
+      "weight": 7,
       "meta": {}
     },
     {
@@ -16396,18 +15693,11 @@
         "novelty_signal": 0.85,
         "sectors": [],
         "benchmarks": [
-          "StrongREJECT",
+          "StrongReject",
           "HarmBench"
         ],
         "topics": []
       }
-    },
-    {
-      "id": "bench:StrongREJECT",
-      "kind": "benchmark",
-      "label": "StrongREJECT",
-      "weight": 26,
-      "meta": {}
     },
     {
       "id": "find-evaluator-instability-scanners-lie",
@@ -16431,7 +15721,7 @@
       "id": "bench:garak",
       "kind": "benchmark",
       "label": "garak",
-      "weight": 3,
+      "weight": 5,
       "meta": {}
     },
     {
@@ -17769,7 +17059,7 @@
         "benchmarks": [
           "BIPIA",
           "PromptBench",
-          "MS-MARCO"
+          "MS MARCO"
         ],
         "topics": []
       }
@@ -17789,10 +17079,10 @@
       "meta": {}
     },
     {
-      "id": "bench:MS-MARCO",
+      "id": "bench:MS MARCO",
       "kind": "benchmark",
-      "label": "MS-MARCO",
-      "weight": 4,
+      "label": "MS MARCO",
+      "weight": 6,
       "meta": {}
     },
     {
@@ -17941,7 +17231,7 @@
         "novelty_signal": 0.9,
         "sectors": [],
         "benchmarks": [
-          "MMBench",
+          "MM-Bench",
           "MMMU",
           "ScienceQA"
         ],
@@ -17963,10 +17253,10 @@
       "meta": {}
     },
     {
-      "id": "bench:MMBench",
+      "id": "bench:MM-Bench",
       "kind": "benchmark",
-      "label": "MMBench",
-      "weight": 2,
+      "label": "MM-Bench",
+      "weight": 3,
       "meta": {}
     },
     {
@@ -18661,7 +17951,7 @@
       "id": "bench:WildGuard-Mix",
       "kind": "benchmark",
       "label": "WildGuard-Mix",
-      "weight": 1,
+      "weight": 2,
       "meta": {}
     },
     {
@@ -18682,7 +17972,7 @@
       "id": "bench:Do-Not-Answer",
       "kind": "benchmark",
       "label": "Do-Not-Answer",
-      "weight": 3,
+      "weight": 5,
       "meta": {}
     },
     {
@@ -19551,7 +18841,7 @@
         "sectors": [],
         "benchmarks": [
           "HarmBench",
-          "StrongREJECT",
+          "StrongReject",
           "JailbreakBench",
           "AdvBench"
         ],
@@ -19587,7 +18877,7 @@
       "id": "bench:JailbreakBench",
       "kind": "benchmark",
       "label": "JailbreakBench",
-      "weight": 36,
+      "weight": 37,
       "meta": {}
     },
     {
@@ -19606,7 +18896,7 @@
           "AdvBench",
           "HarmBench",
           "JailbreakBench",
-          "StrongREJECT"
+          "StrongReject"
         ],
         "topics": []
       }
@@ -20946,7 +20236,7 @@
           "AdvBench",
           "TruthfulQA",
           "MMLU",
-          "StrongREJECT"
+          "StrongReject"
         ],
         "topics": []
       }
@@ -21394,7 +20684,7 @@
         "novelty_signal": 0.74,
         "sectors": [],
         "benchmarks": [
-          "Agent-Security-Bench",
+          "Agent Security Bench",
           "InjecAgent"
         ],
         "topics": []
@@ -21417,13 +20707,6 @@
       }
     },
     {
-      "id": "bench:Agent-Security-Bench",
-      "kind": "benchmark",
-      "label": "Agent-Security-Bench",
-      "weight": 2,
-      "meta": {}
-    },
-    {
       "id": "find-2604-17562-workflowlevel",
       "kind": "finding",
       "label": "Workflow-level (multi-stage) prompt injection: contamination accumulates and propagates across the action-observation loop",
@@ -21436,7 +20719,7 @@
         "novelty_signal": 0.6,
         "sectors": [],
         "benchmarks": [
-          "Agent-Security-Bench",
+          "Agent Security Bench",
           "InjecAgent"
         ],
         "topics": []
@@ -22174,7 +21457,7 @@
           "lmsys/toxic-chat",
           "JailbreakBench",
           "ChatGPT-Jailbreak-Prompts",
-          "WildGuardMix"
+          "WildGuard-Mix"
         ],
         "topics": []
       }
@@ -22217,13 +21500,6 @@
       "id": "bench:ChatGPT-Jailbreak-Prompts",
       "kind": "benchmark",
       "label": "ChatGPT-Jailbreak-Prompts",
-      "weight": 1,
-      "meta": {}
-    },
-    {
-      "id": "bench:WildGuardMix",
-      "kind": "benchmark",
-      "label": "WildGuardMix",
       "weight": 1,
       "meta": {}
     },
@@ -22626,7 +21902,7 @@
           "2WikiMultiHopQA",
           "MuSiQue",
           "IIRC",
-          "NaturalQuestions",
+          "Natural Questions",
           "TriviaQA",
           "HotpotQA",
           "NIAH"
@@ -22674,10 +21950,10 @@
       "meta": {}
     },
     {
-      "id": "bench:NaturalQuestions",
+      "id": "bench:Natural Questions",
       "kind": "benchmark",
-      "label": "NaturalQuestions",
-      "weight": 1,
+      "label": "Natural Questions",
+      "weight": 6,
       "meta": {}
     },
     {
@@ -22930,18 +22206,11 @@
         "sectors": [],
         "benchmarks": [
           "AgentDojo",
-          "AgentSecurityBench",
+          "Agent Security Bench",
           "InjecAgent"
         ],
         "topics": []
       }
-    },
-    {
-      "id": "bench:AgentSecurityBench",
-      "kind": "benchmark",
-      "label": "AgentSecurityBench",
-      "weight": 2,
-      "meta": {}
     },
     {
       "id": "find-reta-injection-reformulation-attacks",
@@ -22958,7 +22227,7 @@
         "benchmarks": [
           "AgentDojo",
           "ChatInject",
-          "AgentSecurityBench",
+          "Agent Security Bench",
           "InjecAgent"
         ],
         "topics": []
@@ -23857,9 +23126,9 @@
         "sectors": [],
         "benchmarks": [
           "AdvBench",
-          "BeaverTails",
+          "Beavertails",
           "CoSafe",
-          "MT-Bench",
+          "MT-bench",
           "AlpacaEval",
           "XSTest"
         ],
@@ -23894,10 +23163,10 @@
       }
     },
     {
-      "id": "bench:BeaverTails",
+      "id": "bench:Beavertails",
       "kind": "benchmark",
-      "label": "BeaverTails",
-      "weight": 3,
+      "label": "Beavertails",
+      "weight": 4,
       "meta": {}
     },
     {
@@ -23908,10 +23177,10 @@
       "meta": {}
     },
     {
-      "id": "bench:MT-Bench",
+      "id": "bench:MT-bench",
       "kind": "benchmark",
-      "label": "MT-Bench",
-      "weight": 5,
+      "label": "MT-bench",
+      "weight": 6,
       "meta": {}
     },
     {
@@ -23935,7 +23204,7 @@
           "GCG",
           "XSTest",
           "WildJailbreak-Benign",
-          "MT-Bench",
+          "MT-bench",
           "MMLU"
         ],
         "topics": []
@@ -24531,7 +23800,7 @@
           "TruthfulQA",
           "GPQA",
           "QuALITY",
-          "MT-Bench",
+          "MT-bench",
           "LMSYS-Chatbot-Arena",
           "ANLI",
           "AdvGLUE",
@@ -25040,13 +24309,6 @@
       "meta": {}
     },
     {
-      "id": "bench:MS MARCO",
-      "kind": "benchmark",
-      "label": "MS MARCO",
-      "weight": 2,
-      "meta": {}
-    },
-    {
       "id": "bench:PROCON",
       "kind": "benchmark",
       "label": "PROCON",
@@ -25432,7 +24694,7 @@
         "benchmarks": [
           "HarmBench",
           "JailbreakBench",
-          "BeaverTails",
+          "Beavertails",
           "MMLU"
         ],
         "topics": []
@@ -25734,7 +24996,7 @@
         "novelty_signal": 0.6,
         "sectors": [],
         "benchmarks": [
-          "JailBreakBench",
+          "JailbreakBench",
           "ToxicPrompts",
           "AdvPromptGen"
         ],
@@ -25749,13 +25011,6 @@
       "meta": {
         "axis": "teaming"
       }
-    },
-    {
-      "id": "bench:JailBreakBench",
-      "kind": "benchmark",
-      "label": "JailBreakBench",
-      "weight": 1,
-      "meta": {}
     },
     {
       "id": "bench:ToxicPrompts",
@@ -26861,13 +26116,6 @@
       }
     },
     {
-      "id": "bench:Natural Questions",
-      "kind": "benchmark",
-      "label": "Natural Questions",
-      "weight": 5,
-      "meta": {}
-    },
-    {
       "id": "bench:WebQuestions",
       "kind": "benchmark",
       "label": "WebQuestions",
@@ -27145,7 +26393,7 @@
         "sectors": [],
         "benchmarks": [
           "AdvBench",
-          "MT-Bench"
+          "MT-bench"
         ],
         "topics": []
       }
@@ -27173,7 +26421,7 @@
         "sectors": [],
         "benchmarks": [
           "AdvBench",
-          "MT-Bench",
+          "MT-bench",
           "CodeQL-CWE"
         ],
         "topics": []
@@ -27231,13 +26479,6 @@
       "id": "bench:MM-Vet",
       "kind": "benchmark",
       "label": "MM-Vet",
-      "weight": 1,
-      "meta": {}
-    },
-    {
-      "id": "bench:MM-Bench",
-      "kind": "benchmark",
-      "label": "MM-Bench",
       "weight": 1,
       "meta": {}
     },
@@ -27649,7 +26890,7 @@
           "SafeBench",
           "MM-SafetyBench",
           "HADES-Dataset",
-          "JailBreakV-28K",
+          "JailbreakV-28K",
           "RTVLM"
         ],
         "topics": []
@@ -27696,10 +26937,10 @@
       "meta": {}
     },
     {
-      "id": "bench:JailBreakV-28K",
+      "id": "bench:JailbreakV-28K",
       "kind": "benchmark",
-      "label": "JailBreakV-28K",
-      "weight": 5,
+      "label": "JailbreakV-28K",
+      "weight": 6,
       "meta": {}
     },
     {
@@ -27743,7 +26984,7 @@
           "SafeBench",
           "MM-SafetyBench",
           "HADES-Dataset",
-          "JailBreakV-28K",
+          "JailbreakV-28K",
           "RTVLM"
         ],
         "topics": []
@@ -28129,13 +27370,6 @@
       "meta": {}
     },
     {
-      "id": "bench:Beavertails",
-      "kind": "benchmark",
-      "label": "Beavertails",
-      "weight": 1,
-      "meta": {}
-    },
-    {
       "id": "bench:CValues",
       "kind": "benchmark",
       "label": "CValues",
@@ -28255,13 +27489,6 @@
         ],
         "topics": []
       }
-    },
-    {
-      "id": "bench:MT-bench",
-      "kind": "benchmark",
-      "label": "MT-bench",
-      "weight": 1,
-      "meta": {}
     },
     {
       "id": "f-artprompt-asr",
@@ -28963,7 +28190,7 @@
           "cyber"
         ],
         "benchmarks": [
-          "CyBench",
+          "Cybench",
           "BountyBench",
           "CyberGym",
           "CWE",
@@ -29001,7 +28228,7 @@
           "cyber"
         ],
         "benchmarks": [
-          "CyBench",
+          "Cybench",
           "BountyBench",
           "CyberGym"
         ],
@@ -29734,7 +28961,7 @@
         "sectors": [],
         "benchmarks": [
           "HarmBench",
-          "StrongREJECT"
+          "StrongReject"
         ],
         "topics": []
       }
@@ -29810,7 +29037,7 @@
         "benchmarks": [
           "HarmBench",
           "JailbreakBench",
-          "StrongREJECT"
+          "StrongReject"
         ],
         "topics": []
       }
@@ -29919,7 +29146,7 @@
         "novelty_signal": 0.7,
         "sectors": [],
         "benchmarks": [
-          "JailBreakV-28K",
+          "JailbreakV-28K",
           "RedTeam-2K",
           "HarmBench",
           "AdvBench"
@@ -29950,7 +29177,7 @@
           "financial"
         ],
         "benchmarks": [
-          "JailBreakV-28K",
+          "JailbreakV-28K",
           "RedTeam-2K"
         ],
         "topics": []
@@ -30089,7 +29316,7 @@
         "benchmarks": [
           "Natural Questions",
           "HotpotQA",
-          "MS-MARCO"
+          "MS MARCO"
         ],
         "topics": []
       }
@@ -30114,7 +29341,7 @@
         "benchmarks": [
           "Natural Questions",
           "HotpotQA",
-          "MS-MARCO"
+          "MS MARCO"
         ],
         "topics": []
       }
@@ -30247,7 +29474,7 @@
         "novelty_signal": 0.9,
         "sectors": [],
         "benchmarks": [
-          "StrongREJECT"
+          "StrongReject"
         ],
         "topics": []
       }
@@ -30268,7 +29495,7 @@
         ],
         "benchmarks": [
           "WMDP",
-          "StrongREJECT"
+          "StrongReject"
         ],
         "topics": []
       }
@@ -30330,7 +29557,7 @@
         "sectors": [],
         "benchmarks": [
           "HarmBench",
-          "StrongREJECT",
+          "StrongReject",
           "JailbreakBench"
         ],
         "topics": []
@@ -30352,20 +29579,13 @@
         ],
         "benchmarks": [
           "Cybench",
-          "HackTheBox",
+          "Hack the Box",
           "SekaiCTF",
           "Glacier",
           "HKCert"
         ],
         "topics": []
       }
-    },
-    {
-      "id": "bench:HackTheBox",
-      "kind": "benchmark",
-      "label": "HackTheBox",
-      "weight": 1,
-      "meta": {}
     },
     {
       "id": "bench:SekaiCTF",
@@ -31561,13 +30781,6 @@
       }
     },
     {
-      "id": "bench:Hack the Box",
-      "kind": "benchmark",
-      "label": "Hack the Box",
-      "weight": 1,
-      "meta": {}
-    },
-    {
       "id": "bench:DiverseVul",
       "kind": "benchmark",
       "label": "DiverseVul",
@@ -31655,7 +30868,7 @@
         ],
         "benchmarks": [
           "AEGIS",
-          "Garak"
+          "garak"
         ],
         "topics": []
       }
@@ -31665,13 +30878,6 @@
       "kind": "benchmark",
       "label": "AEGIS",
       "weight": 1,
-      "meta": {}
-    },
-    {
-      "id": "bench:Garak",
-      "kind": "benchmark",
-      "label": "Garak",
-      "weight": 2,
       "meta": {}
     },
     {
@@ -31690,7 +30896,7 @@
           "Promptfoo",
           "CyberSecEval",
           "HarmBench",
-          "DoNotAnswer"
+          "Do-Not-Answer"
         ],
         "topics": []
       }
@@ -31700,13 +30906,6 @@
       "kind": "benchmark",
       "label": "Promptfoo",
       "weight": 3,
-      "meta": {}
-    },
-    {
-      "id": "bench:DoNotAnswer",
-      "kind": "benchmark",
-      "label": "DoNotAnswer",
-      "weight": 2,
       "meta": {}
     },
     {
@@ -31947,7 +31146,7 @@
         "novelty_signal": 0.6,
         "sectors": [],
         "benchmarks": [
-          "StrongREJECT",
+          "StrongReject",
           "AdvBench"
         ],
         "topics": []
@@ -32278,7 +31477,7 @@
         "novelty_signal": 0.55,
         "sectors": [],
         "benchmarks": [
-          "StrongREJECT"
+          "StrongReject"
         ],
         "topics": []
       }
@@ -32370,17 +31569,10 @@
           "cyber"
         ],
         "benchmarks": [
-          "CyberSecEval3"
+          "CyberSecEval 3"
         ],
         "topics": []
       }
-    },
-    {
-      "id": "bench:CyberSecEval3",
-      "kind": "benchmark",
-      "label": "CyberSecEval3",
-      "weight": 3,
-      "meta": {}
     },
     {
       "id": "find-safetybench-mcq-multilingual",
@@ -32415,7 +31607,7 @@
         "benchmarks": [
           "HarmBench",
           "JailbreakBench",
-          "StrongREJECT",
+          "StrongReject",
           "AgentHarm"
         ],
         "topics": []
@@ -32456,7 +31648,7 @@
           "biosecurity"
         ],
         "benchmarks": [
-          "CyberSecEval3"
+          "CyberSecEval 3"
         ],
         "topics": []
       }
@@ -32657,7 +31849,7 @@
         "novelty_signal": 0.45,
         "sectors": [],
         "benchmarks": [
-          "StrongREJECT"
+          "StrongReject"
         ],
         "topics": []
       }
@@ -36439,7 +35631,7 @@
           "AML.T0051.000"
         ],
         "benchmarks": [
-          "Garak",
+          "garak",
           "Promptfoo"
         ],
         "realizes_threats": [
@@ -36505,7 +35697,7 @@
         ],
         "benchmarks": [
           "JailbreakBench",
-          "StrongREJECT"
+          "StrongReject"
         ],
         "realizes_threats": [
           "model.jailbreak",
@@ -37725,7 +36917,7 @@
           "AML.T0018"
         ],
         "benchmarks": [
-          "StrongREJECT",
+          "StrongReject",
           "HarmBench"
         ],
         "realizes_threats": [
@@ -37748,7 +36940,7 @@
         ],
         "benchmarks": [
           "HarmBench",
-          "StrongREJECT"
+          "StrongReject"
         ],
         "realizes_threats": [
           "model.alignment-tampering",
@@ -37797,13 +36989,6 @@
           "model.prompt-injection"
         ]
       }
-    },
-    {
-      "id": "bench:JailbreakV-28K",
-      "kind": "benchmark",
-      "label": "JailbreakV-28K",
-      "weight": 1,
-      "meta": {}
     },
     {
       "id": "atk-typographic-visual-prompt-injection",
@@ -37892,7 +37077,7 @@
           "AML.T0071"
         ],
         "benchmarks": [
-          "MS-MARCO"
+          "MS MARCO"
         ],
         "realizes_threats": [
           "model.prompt-injection",
@@ -37954,7 +37139,7 @@
           "AML.T0065"
         ],
         "benchmarks": [
-          "StrongREJECT"
+          "StrongReject"
         ],
         "realizes_threats": [
           "model.jailbreak",
@@ -38023,7 +37208,7 @@
           "AML.T0065"
         ],
         "benchmarks": [
-          "StrongREJECT",
+          "StrongReject",
           "HarmBench"
         ],
         "realizes_threats": [
@@ -38278,7 +37463,7 @@
           "AML.T0043"
         ],
         "benchmarks": [
-          "MMBench",
+          "MM-Bench",
           "MMMU",
           "ScienceQA"
         ],
@@ -38632,7 +37817,7 @@
         ],
         "benchmarks": [
           "HarmBench",
-          "StrongREJECT",
+          "StrongReject",
           "JailbreakBench",
           "AdvBench"
         ],
@@ -39368,7 +38553,7 @@
         ],
         "benchmarks": [
           "AdvBench",
-          "BeaverTails",
+          "Beavertails",
           "CoSafe"
         ],
         "realizes_threats": [
@@ -54879,7 +54064,7 @@
             "label": "SOTA 4.8% (anthropic/claude-opus-4.7)",
             "url": "https://hollobit.github.io/SOTA/#overview",
             "maps_to": [
-              "JailBreakV-28K"
+              "JailbreakV-28K"
             ]
           },
           {
@@ -54887,7 +54072,6 @@
             "label": "SOTA 3.5% (anthropic/claude-opus-4.7)",
             "url": "https://hollobit.github.io/SOTA/#overview",
             "maps_to": [
-              "StrongREJECT",
               "StrongReject"
             ]
           },
@@ -54920,8 +54104,7 @@
             "label": "SOTA 100.0% (anthropic/claude-mythos-preview)",
             "url": "https://hollobit.github.io/SOTA/#overview",
             "maps_to": [
-              "Cybench",
-              "CyBench"
+              "Cybench"
             ]
           },
           {
@@ -54979,7 +54162,6 @@
             "label": "SOTA 82.1% (anthropic/claude-opus-4.7)",
             "url": "https://hollobit.github.io/SOTA/#overview",
             "maps_to": [
-              "CyberSecEval3",
               "CyberSecEval 3",
               "CyberSecEval"
             ]
@@ -55703,18 +54885,11 @@
           "CyberGym",
           "Firefox 147 exploit",
           "ART prompt injection",
-          "SHADE",
+          "Shade",
           "SWE-bench Pro",
           "Humanity's Last Exam"
         ]
       }
-    },
-    {
-      "id": "bench:SHADE",
-      "kind": "benchmark",
-      "label": "SHADE",
-      "weight": 1,
-      "meta": {}
     },
     {
       "id": "bench:SWE-bench Pro",
@@ -55847,7 +55022,7 @@
           "atk-llm-social-engineering-cyber"
         ],
         "benchmarks": [
-          "StrongREJECT"
+          "StrongReject"
         ]
       }
     },
@@ -55872,7 +55047,7 @@
           "atk-llm-social-engineering-cyber"
         ],
         "benchmarks": [
-          "StrongREJECT",
+          "StrongReject",
           "CyberSecEval"
         ]
       }
@@ -56045,7 +55220,7 @@
           "AgentHarm",
           "AgentDojo",
           "WMDP",
-          "CyBench"
+          "Cybench"
         ]
       }
     },
@@ -56145,7 +55320,7 @@
           "Promptfoo",
           "CyberSecEval",
           "HarmBench",
-          "DoNotAnswer"
+          "Do-Not-Answer"
         ]
       }
     },
@@ -56233,7 +55408,7 @@
           "atk-llm-social-engineering-cyber"
         ],
         "benchmarks": [
-          "StrongREJECT"
+          "StrongReject"
         ]
       }
     },
@@ -56256,7 +55431,7 @@
           "atk-llm-social-engineering-cyber"
         ],
         "benchmarks": [
-          "StrongREJECT"
+          "StrongReject"
         ]
       }
     },
@@ -56302,7 +55477,7 @@
           "atk-llm-social-engineering-cyber"
         ],
         "benchmarks": [
-          "StrongREJECT",
+          "StrongReject",
           "CyberSecEval"
         ]
       }
@@ -56325,7 +55500,7 @@
           "atk-llm-social-engineering-cyber"
         ],
         "benchmarks": [
-          "StrongREJECT"
+          "StrongReject"
         ]
       }
     },
@@ -56621,9 +55796,9 @@
       "meta": {}
     },
     {
-      "id": "arxiv-2406-12045",
+      "id": "arxiv-2309-15817",
       "kind": "source",
-      "label": "arxiv-2406-12045",
+      "label": "arxiv-2309-15817",
       "weight": 1,
       "meta": {
         "source_type": "referenced",
@@ -56631,9 +55806,9 @@
       }
     },
     {
-      "id": "arxiv-2309-15817",
+      "id": "arxiv-2406-12045",
       "kind": "source",
-      "label": "arxiv-2309-15817",
+      "label": "arxiv-2406-12045",
       "weight": 1,
       "meta": {
         "source_type": "referenced",
@@ -56721,9 +55896,9 @@
       }
     },
     {
-      "id": "arxiv-2312-14197",
+      "id": "arxiv-2310-10501",
       "kind": "source",
-      "label": "arxiv-2312-14197",
+      "label": "arxiv-2310-10501",
       "weight": 1,
       "meta": {
         "source_type": "referenced",
@@ -56731,9 +55906,9 @@
       }
     },
     {
-      "id": "arxiv-2310-10501",
+      "id": "arxiv-2312-14197",
       "kind": "source",
-      "label": "arxiv-2310-10501",
+      "label": "arxiv-2312-14197",
       "weight": 1,
       "meta": {
         "source_type": "referenced",
@@ -58426,13 +57601,6 @@
       "meta": {}
     },
     {
-      "source": "oecd-ai-incidents-monitor",
-      "target": "org:OECD",
-      "rel": "published-by",
-      "weight": 1,
-      "meta": {}
-    },
-    {
       "source": "eu-ai-act-art73-incident-reporting",
       "target": "org:European Commission / European AI Office",
       "rel": "published-by",
@@ -58867,42 +58035,7 @@
       "meta": {}
     },
     {
-      "source": "openai-gpt4o-system-card-2024",
-      "target": "org:OpenAI",
-      "rel": "published-by",
-      "weight": 1,
-      "meta": {}
-    },
-    {
-      "source": "openai-o1-system-card-2024",
-      "target": "org:OpenAI",
-      "rel": "published-by",
-      "weight": 1,
-      "meta": {}
-    },
-    {
       "source": "openai-o3mini-system-card-2025",
-      "target": "org:OpenAI",
-      "rel": "published-by",
-      "weight": 1,
-      "meta": {}
-    },
-    {
-      "source": "openai-deep-research-system-card-2025",
-      "target": "org:OpenAI",
-      "rel": "published-by",
-      "weight": 1,
-      "meta": {}
-    },
-    {
-      "source": "openai-o3-o4mini-system-card-2025",
-      "target": "org:OpenAI",
-      "rel": "published-by",
-      "weight": 1,
-      "meta": {}
-    },
-    {
-      "source": "openai-gpt45-system-card-2025",
       "target": "org:OpenAI",
       "rel": "published-by",
       "weight": 1,
@@ -58918,27 +58051,6 @@
     {
       "source": "anthropic-claude35-addendum-2024",
       "target": "org:Anthropic",
-      "rel": "published-by",
-      "weight": 1,
-      "meta": {}
-    },
-    {
-      "source": "anthropic-claude37-system-card-2025",
-      "target": "org:Anthropic",
-      "rel": "published-by",
-      "weight": 1,
-      "meta": {}
-    },
-    {
-      "source": "anthropic-claude4-system-card-2025",
-      "target": "org:Anthropic",
-      "rel": "published-by",
-      "weight": 1,
-      "meta": {}
-    },
-    {
-      "source": "google-gemini15-report-2024",
-      "target": "org:Google DeepMind",
       "rel": "published-by",
       "weight": 1,
       "meta": {}
@@ -58972,22 +58084,8 @@
       "meta": {}
     },
     {
-      "source": "microsoft-phi4-tech-report-2024",
-      "target": "org:Microsoft",
-      "rel": "published-by",
-      "weight": 1,
-      "meta": {}
-    },
-    {
       "source": "nvidia-nemotron4-340b-card-2024",
       "target": "org:NVIDIA",
-      "rel": "published-by",
-      "weight": 1,
-      "meta": {}
-    },
-    {
-      "source": "microsoft-redteam-100-products-2025",
-      "target": "org:Microsoft AI Red Team",
       "rel": "published-by",
       "weight": 1,
       "meta": {}
@@ -59301,48 +58399,6 @@
       "meta": {}
     },
     {
-      "source": "openai-gpt5-system-card-2025",
-      "target": "org:OpenAI",
-      "rel": "published-by",
-      "weight": 1,
-      "meta": {}
-    },
-    {
-      "source": "openai-gpt52-update-2025",
-      "target": "org:OpenAI",
-      "rel": "published-by",
-      "weight": 1,
-      "meta": {}
-    },
-    {
-      "source": "anthropic-claude-opus41-card-2025",
-      "target": "org:Anthropic",
-      "rel": "published-by",
-      "weight": 1,
-      "meta": {}
-    },
-    {
-      "source": "anthropic-claude-sonnet45-card-2025",
-      "target": "org:Anthropic",
-      "rel": "published-by",
-      "weight": 1,
-      "meta": {}
-    },
-    {
-      "source": "anthropic-claude-haiku45-card-2025",
-      "target": "org:Anthropic",
-      "rel": "published-by",
-      "weight": 1,
-      "meta": {}
-    },
-    {
-      "source": "anthropic-claude-opus45-card-2025",
-      "target": "org:Anthropic",
-      "rel": "published-by",
-      "weight": 1,
-      "meta": {}
-    },
-    {
       "source": "google-gemini3-pro-fsf-2025",
       "target": "org:Google DeepMind",
       "rel": "published-by",
@@ -59350,29 +58406,8 @@
       "meta": {}
     },
     {
-      "source": "meta-llama4-model-card-2025",
-      "target": "org:Meta",
-      "rel": "published-by",
-      "weight": 1,
-      "meta": {}
-    },
-    {
-      "source": "xai-grok4-model-card-2025",
-      "target": "org:xAI",
-      "rel": "published-by",
-      "weight": 1,
-      "meta": {}
-    },
-    {
       "source": "nist-caisi-deepseek-eval-2025",
       "target": "org:NIST CAISI (Center for AI Standards and Innovation)",
-      "rel": "published-by",
-      "weight": 1,
-      "meta": {}
-    },
-    {
-      "source": "moonshot-kimi-k2-report-2025",
-      "target": "org:Moonshot AI",
       "rel": "published-by",
       "weight": 1,
       "meta": {}
@@ -59476,13 +58511,6 @@
       "meta": {}
     },
     {
-      "source": "mc-src-anthropic-sabotage-evals",
-      "target": "org:Anthropic",
-      "rel": "published-by",
-      "weight": 1,
-      "meta": {}
-    },
-    {
       "source": "mc-src-gpt5-system-card",
       "target": "org:OpenAI",
       "rel": "published-by",
@@ -59532,13 +58560,6 @@
       "meta": {}
     },
     {
-      "source": "mc-src-preparedness-framework-v2",
-      "target": "org:OpenAI",
-      "rel": "published-by",
-      "weight": 1,
-      "meta": {}
-    },
-    {
       "source": "mc-src-gemini-3-pro-fsf",
       "target": "org:Google DeepMind",
       "rel": "published-by",
@@ -59576,20 +58597,6 @@
     {
       "source": "mc-src-llama4-card",
       "target": "org:Meta",
-      "rel": "published-by",
-      "weight": 1,
-      "meta": {}
-    },
-    {
-      "source": "mc-src-ms-red-teaming-100",
-      "target": "org:Microsoft",
-      "rel": "published-by",
-      "weight": 1,
-      "meta": {}
-    },
-    {
-      "source": "mc-src-dangerous-capabilities",
-      "target": "org:Google DeepMind",
       "rel": "published-by",
       "weight": 1,
       "meta": {}
@@ -59798,13 +58805,6 @@
       "meta": {}
     },
     {
-      "source": "src-reuters-amazon-recruit-2018",
-      "target": "org:Reuters",
-      "rel": "published-by",
-      "weight": 1,
-      "meta": {}
-    },
-    {
       "source": "src-bloomberg-gpt-hiring-2024",
       "target": "org:Bloomberg",
       "rel": "published-by",
@@ -59842,13 +58842,6 @@
     {
       "source": "src-obermeyer-2019",
       "target": "org:UC Berkeley / Univ. of Chicago",
-      "rel": "published-by",
-      "weight": 1,
-      "meta": {}
-    },
-    {
-      "source": "src-lowresource-jailbreak-2023",
-      "target": "org:Brown University",
       "rel": "published-by",
       "weight": 1,
       "meta": {}
@@ -60176,13 +59169,6 @@
       "meta": {}
     },
     {
-      "source": "src-mitre-atlas-matrix",
-      "target": "org:MITRE",
-      "rel": "published-by",
-      "weight": 1,
-      "meta": {}
-    },
-    {
       "source": "src-atlas-data-yaml",
       "target": "org:MITRE",
       "rel": "published-by",
@@ -60269,13 +59255,6 @@
     {
       "source": "src-shumailov-sponge-2020",
       "target": "org:University of Cambridge",
-      "rel": "published-by",
-      "weight": 1,
-      "meta": {}
-    },
-    {
-      "source": "src-owasp-llm-top10-2025",
-      "target": "org:OWASP",
       "rel": "published-by",
       "weight": 1,
       "meta": {}
@@ -60883,13 +59862,6 @@
       "meta": {}
     },
     {
-      "source": "src-yong-lowresource-jb-2023",
-      "target": "org:Brown University",
-      "rel": "published-by",
-      "weight": 1,
-      "meta": {}
-    },
-    {
       "source": "src-kuo-hcot-2025",
       "target": "org:Duke University",
       "rel": "published-by",
@@ -60941,13 +59913,6 @@
     {
       "source": "src-autorise-strategy-evolution",
       "target": "org:academic",
-      "rel": "published-by",
-      "weight": 1,
-      "meta": {}
-    },
-    {
-      "source": "src-agentic-era-dreadnode",
-      "target": "org:Dreadnode",
       "rel": "published-by",
       "weight": 1,
       "meta": {}
@@ -61081,13 +60046,6 @@
     {
       "source": "src-bugcrowd-2026-predictions",
       "target": "org:Bugcrowd",
-      "rel": "published-by",
-      "weight": 1,
-      "meta": {}
-    },
-    {
-      "source": "src-constitutional-classifiers",
-      "target": "org:Anthropic",
       "rel": "published-by",
       "weight": 1,
       "meta": {}
@@ -64699,7 +63657,7 @@
     },
     {
       "source": "find-anthropic-opus45-shade-arena-sabotage",
-      "target": "mc-src-anthropic-sabotage-evals",
+      "target": "arxiv-2410-21514",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -65098,7 +64056,7 @@
     },
     {
       "source": "find-anthropic-opus4-blackmail-self-exfiltration",
-      "target": "mc-src-anthropic-sabotage-evals",
+      "target": "arxiv-2410-21514",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -66029,7 +64987,7 @@
     },
     {
       "source": "find-anthropic-sabotage-evals-methodology",
-      "target": "mc-src-anthropic-sabotage-evals",
+      "target": "arxiv-2410-21514",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -66624,7 +65582,7 @@
     },
     {
       "source": "find-gpt5-violent-attack-and-promptinjection-redteam",
-      "target": "bench:Agent-Red-Teaming",
+      "target": "bench:Agent Red Teaming",
       "rel": "uses",
       "weight": 1,
       "meta": {}
@@ -68577,7 +67535,7 @@
     },
     {
       "source": "find-openai-preparedness-v2-framework",
-      "target": "mc-src-preparedness-framework-v2",
+      "target": "openai-preparedness-framework-v2",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -69361,7 +68319,7 @@
     },
     {
       "source": "find-grok4-dualuse-bio-superhuman",
-      "target": "bench:CyBench",
+      "target": "bench:Cybench",
       "rel": "uses",
       "weight": 1,
       "meta": {}
@@ -69851,14 +68809,14 @@
     },
     {
       "source": "find-ms-airt-ontology",
-      "target": "mc-src-ms-red-teaming-100",
+      "target": "arxiv-2501-07238",
       "rel": "cites",
       "weight": 1,
       "meta": {}
     },
     {
       "source": "find-ms-airt-ontology",
-      "target": "org:Microsoft",
+      "target": "org:Microsoft AI Red Team",
       "rel": "from-org",
       "weight": 1,
       "meta": {}
@@ -69991,14 +68949,14 @@
     },
     {
       "source": "find-ms-airt-lessons",
-      "target": "mc-src-ms-red-teaming-100",
+      "target": "arxiv-2501-07238",
       "rel": "cites",
       "weight": 1,
       "meta": {}
     },
     {
       "source": "find-ms-airt-lessons",
-      "target": "org:Microsoft",
+      "target": "org:Microsoft AI Red Team",
       "rel": "from-org",
       "weight": 1,
       "meta": {}
@@ -70166,7 +69124,7 @@
     },
     {
       "source": "find-deepmind-dangerous-capabilities",
-      "target": "bench:Hack-The-Box",
+      "target": "bench:Hack the Box",
       "rel": "uses",
       "weight": 1,
       "meta": {}
@@ -70187,7 +69145,7 @@
     },
     {
       "source": "find-deepmind-dangerous-capabilities",
-      "target": "mc-src-dangerous-capabilities",
+      "target": "arxiv-2403-13793",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -73519,7 +72477,7 @@
     },
     {
       "source": "find-agentic-era-nl-orchestrated-redteam",
-      "target": "src-agentic-era-dreadnode",
+      "target": "arxiv-2605-04019",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -74016,7 +72974,7 @@
     },
     {
       "source": "find-coin-flip-judge-unreliable",
-      "target": "bench:StrongREJECT",
+      "target": "bench:StrongReject",
       "rel": "uses",
       "weight": 1,
       "meta": {}
@@ -74982,7 +73940,7 @@
     },
     {
       "source": "find-crowdsourced-bugbounty-redteam-collaboration",
-      "target": "src-constitutional-classifiers",
+      "target": "arxiv-2501-18837",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -79091,7 +78049,7 @@
     },
     {
       "source": "find-layered-rag-injection-defense-2026",
-      "target": "bench:MS-MARCO",
+      "target": "bench:MS MARCO",
       "rel": "uses",
       "weight": 1,
       "meta": {}
@@ -79553,7 +78511,7 @@
     },
     {
       "source": "find-forced-deferral-routing-attack-2606",
-      "target": "bench:MMBench",
+      "target": "bench:MM-Bench",
       "rel": "uses",
       "weight": 1,
       "meta": {}
@@ -84005,7 +82963,7 @@
     },
     {
       "source": "find-maskforge-dllm-infill",
-      "target": "bench:StrongREJECT",
+      "target": "bench:StrongReject",
       "rel": "uses",
       "weight": 1,
       "meta": {}
@@ -84117,7 +83075,7 @@
     },
     {
       "source": "find-maskforge-structural-priors-transfer",
-      "target": "bench:StrongREJECT",
+      "target": "bench:StrongReject",
       "rel": "uses",
       "weight": 1,
       "meta": {}
@@ -87995,7 +86953,7 @@
     },
     {
       "source": "find-moesafety-raset-expert-reprogramming-attack",
-      "target": "bench:StrongREJECT",
+      "target": "bench:StrongReject",
       "rel": "uses",
       "weight": 1,
       "meta": {}
@@ -89577,7 +88535,7 @@
     },
     {
       "source": "find-2604-17562-safeagent",
-      "target": "bench:Agent-Security-Bench",
+      "target": "bench:Agent Security Bench",
       "rel": "uses",
       "weight": 1,
       "meta": {}
@@ -89647,7 +88605,7 @@
     },
     {
       "source": "find-2604-17562-workflowlevel",
-      "target": "bench:Agent-Security-Bench",
+      "target": "bench:Agent Security Bench",
       "rel": "uses",
       "weight": 1,
       "meta": {}
@@ -92090,7 +91048,7 @@
     },
     {
       "source": "find-2606.11949-silent-failure",
-      "target": "bench:WildGuardMix",
+      "target": "bench:WildGuard-Mix",
       "rel": "uses",
       "weight": 1,
       "meta": {}
@@ -92979,7 +91937,7 @@
     },
     {
       "source": "find-2606.17034-context-erasing-defense",
-      "target": "bench:NaturalQuestions",
+      "target": "bench:Natural Questions",
       "rel": "uses",
       "weight": 1,
       "meta": {}
@@ -93630,7 +92588,7 @@
     },
     {
       "source": "find-reta-static-adaptive-gap",
-      "target": "bench:AgentSecurityBench",
+      "target": "bench:Agent Security Bench",
       "rel": "uses",
       "weight": 1,
       "meta": {}
@@ -93742,7 +92700,7 @@
     },
     {
       "source": "find-reta-injection-reformulation-attacks",
-      "target": "bench:AgentSecurityBench",
+      "target": "bench:Agent Security Bench",
       "rel": "uses",
       "weight": 1,
       "meta": {}
@@ -96024,7 +94982,7 @@
     },
     {
       "source": "find-mtsa-coevolving-multiturn-redteam",
-      "target": "bench:BeaverTails",
+      "target": "bench:Beavertails",
       "rel": "uses",
       "weight": 1,
       "meta": {}
@@ -96038,7 +94996,7 @@
     },
     {
       "source": "find-mtsa-coevolving-multiturn-redteam",
-      "target": "bench:MT-Bench",
+      "target": "bench:MT-bench",
       "rel": "uses",
       "weight": 1,
       "meta": {}
@@ -96164,7 +95122,7 @@
     },
     {
       "source": "find-repbend-representation-engineering-defense",
-      "target": "bench:MT-Bench",
+      "target": "bench:MT-bench",
       "rel": "uses",
       "weight": 1,
       "meta": {}
@@ -97641,7 +96599,7 @@
     },
     {
       "source": "f-benchmark-construct-validity-safetywashing",
-      "target": "bench:MT-Bench",
+      "target": "bench:MT-bench",
       "rel": "uses",
       "weight": 1,
       "meta": {}
@@ -99454,7 +98412,7 @@
     },
     {
       "source": "find-sap-safety-polytope-steering",
-      "target": "bench:BeaverTails",
+      "target": "bench:Beavertails",
       "rel": "uses",
       "weight": 1,
       "meta": {}
@@ -100098,7 +99056,7 @@
     },
     {
       "source": "find-apd-semantic-graph-prompt-defense-2605.27823",
-      "target": "bench:JailBreakBench",
+      "target": "bench:JailbreakBench",
       "rel": "uses",
       "weight": 1,
       "meta": {}
@@ -103801,7 +102759,7 @@
     },
     {
       "source": "find-zeng2024-embedding-drift-backdoor-removal",
-      "target": "bench:MT-Bench",
+      "target": "bench:MT-bench",
       "rel": "uses",
       "weight": 1,
       "meta": {}
@@ -103878,7 +102836,7 @@
     },
     {
       "source": "find-zeng2024-backdoor-removal-efficacy",
-      "target": "bench:MT-Bench",
+      "target": "bench:MT-bench",
       "rel": "uses",
       "weight": 1,
       "meta": {}
@@ -105110,7 +104068,7 @@
     },
     {
       "source": "find-mml-encryption-jailbreak",
-      "target": "bench:JailBreakV-28K",
+      "target": "bench:JailbreakV-28K",
       "rel": "uses",
       "weight": 1,
       "meta": {}
@@ -105208,7 +104166,7 @@
     },
     {
       "source": "bench-safebench",
-      "target": "bench:JailBreakV-28K",
+      "target": "bench:JailbreakV-28K",
       "rel": "uses",
       "weight": 1,
       "meta": {}
@@ -108148,7 +107106,7 @@
     },
     {
       "source": "find-co-redteam-multiagent-exploit-2026",
-      "target": "bench:CyBench",
+      "target": "bench:Cybench",
       "rel": "uses",
       "weight": 1,
       "meta": {}
@@ -108288,7 +107246,7 @@
     },
     {
       "source": "find-co-redteam-execution-feedback-critical-2026",
-      "target": "bench:CyBench",
+      "target": "bench:Cybench",
       "rel": "uses",
       "weight": 1,
       "meta": {}
@@ -111739,7 +110697,7 @@
     },
     {
       "source": "find-autodan-turbo-lifelong-strategy-discovery-2410",
-      "target": "bench:StrongREJECT",
+      "target": "bench:StrongReject",
       "rel": "uses",
       "weight": 1,
       "meta": {}
@@ -112047,7 +111005,7 @@
     },
     {
       "source": "find-llm-judge-formal-definition-pipeline-2411",
-      "target": "bench:StrongREJECT",
+      "target": "bench:StrongReject",
       "rel": "uses",
       "weight": 1,
       "meta": {}
@@ -112446,7 +111404,7 @@
     },
     {
       "source": "find-text-jailbreaks-transfer-to-mllms-2404",
-      "target": "bench:JailBreakV-28K",
+      "target": "bench:JailbreakV-28K",
       "rel": "uses",
       "weight": 1,
       "meta": {}
@@ -112530,7 +111488,7 @@
     },
     {
       "source": "find-mllm-economic-malware-policy-weakness-2404",
-      "target": "bench:JailBreakV-28K",
+      "target": "bench:JailbreakV-28K",
       "rel": "uses",
       "weight": 1,
       "meta": {}
@@ -113027,7 +111985,7 @@
     },
     {
       "source": "find-poisonedrag-knowledge-corruption-2402",
-      "target": "bench:MS-MARCO",
+      "target": "bench:MS MARCO",
       "rel": "uses",
       "weight": 1,
       "meta": {}
@@ -113132,7 +112090,7 @@
     },
     {
       "source": "find-poisonedrag-defenses-insufficient-2402",
-      "target": "bench:MS-MARCO",
+      "target": "bench:MS MARCO",
       "rel": "uses",
       "weight": 1,
       "meta": {}
@@ -113818,7 +112776,7 @@
     },
     {
       "source": "find-obfuscated-activations-bypass-latent-defenses-2412",
-      "target": "bench:StrongREJECT",
+      "target": "bench:StrongReject",
       "rel": "uses",
       "weight": 1,
       "meta": {}
@@ -113944,7 +112902,7 @@
     },
     {
       "source": "find-tampering-reverses-unlearning-16-steps-2502",
-      "target": "bench:StrongREJECT",
+      "target": "bench:StrongReject",
       "rel": "uses",
       "weight": 1,
       "meta": {}
@@ -114196,7 +113154,7 @@
     },
     {
       "source": "find-jailbreak-distillation-renewable-benchmark-2505",
-      "target": "bench:StrongREJECT",
+      "target": "bench:StrongReject",
       "rel": "uses",
       "weight": 1,
       "meta": {}
@@ -114301,7 +113259,7 @@
     },
     {
       "source": "find-cybench-ctf-agent-benchmark",
-      "target": "bench:HackTheBox",
+      "target": "bench:Hack the Box",
       "rel": "uses",
       "weight": 1,
       "meta": {}
@@ -115813,14 +114771,14 @@
     },
     {
       "source": "find-mitgap-discrimination-hiring",
-      "target": "src-reuters-amazon-recruit-2018",
+      "target": "src-reuters-amazon-hiring-2018",
       "rel": "cites",
       "weight": 1,
       "meta": {}
     },
     {
       "source": "find-mitgap-discrimination-hiring",
-      "target": "org:Reuters",
+      "target": "org:Reuters / MIT Tech Review",
       "rel": "from-org",
       "weight": 1,
       "meta": {}
@@ -116016,7 +114974,7 @@
     },
     {
       "source": "find-mitgap-unequal-languages",
-      "target": "src-lowresource-jailbreak-2023",
+      "target": "arxiv-2310-02446",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -118655,7 +117613,7 @@
     },
     {
       "source": "find-nemotron4-aegis-garak-human-redteam",
-      "target": "bench:Garak",
+      "target": "bench:garak",
       "rel": "uses",
       "weight": 1,
       "meta": {}
@@ -118788,7 +117746,7 @@
     },
     {
       "source": "find-kimi-k2-promptfoo-attacker-judge-loop",
-      "target": "bench:DoNotAnswer",
+      "target": "bench:Do-Not-Answer",
       "rel": "uses",
       "weight": 1,
       "meta": {}
@@ -119789,7 +118747,7 @@
     },
     {
       "source": "find-llm-as-judge-reliability-strongreject",
-      "target": "bench:StrongREJECT",
+      "target": "bench:StrongReject",
       "rel": "uses",
       "weight": 1,
       "meta": {}
@@ -121567,7 +120525,7 @@
     },
     {
       "source": "find-strongreject-willingness-quality",
-      "target": "bench:StrongREJECT",
+      "target": "bench:StrongReject",
       "rel": "uses",
       "weight": 1,
       "meta": {}
@@ -121938,7 +120896,7 @@
     },
     {
       "source": "find-cyberseceval3-cyber-uplift",
-      "target": "bench:CyberSecEval3",
+      "target": "bench:CyberSecEval 3",
       "rel": "uses",
       "weight": 1,
       "meta": {}
@@ -122078,7 +121036,7 @@
     },
     {
       "source": "find-llm-judge-unreliable-coinflip",
-      "target": "bench:StrongREJECT",
+      "target": "bench:StrongReject",
       "rel": "uses",
       "weight": 1,
       "meta": {}
@@ -122442,7 +121400,7 @@
     },
     {
       "source": "find-frontier-uplift-eval-methodology",
-      "target": "bench:CyberSecEval3",
+      "target": "bench:CyberSecEval 3",
       "rel": "uses",
       "weight": 1,
       "meta": {}
@@ -123254,7 +122212,7 @@
     },
     {
       "source": "find-strongreject-jailbreak-asr-overstated",
-      "target": "bench:StrongREJECT",
+      "target": "bench:StrongReject",
       "rel": "uses",
       "weight": 1,
       "meta": {}
@@ -127104,7 +126062,7 @@
     },
     {
       "source": "harm-unequal-performance",
-      "target": "src-lowresource-jailbreak-2023",
+      "target": "arxiv-2310-02446",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -130324,7 +129282,7 @@
     },
     {
       "source": "atk-membership-inference",
-      "target": "src-mitre-atlas-matrix",
+      "target": "mitre-atlas",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -130401,7 +129359,7 @@
     },
     {
       "source": "atk-model-inversion",
-      "target": "src-mitre-atlas-matrix",
+      "target": "mitre-atlas",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -130478,7 +129436,7 @@
     },
     {
       "source": "atk-model-extraction-stealing",
-      "target": "src-mitre-atlas-matrix",
+      "target": "mitre-atlas",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -130569,7 +129527,7 @@
     },
     {
       "source": "atk-evasion-adversarial-example",
-      "target": "src-mitre-atlas-matrix",
+      "target": "mitre-atlas",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -130646,14 +129604,14 @@
     },
     {
       "source": "atk-data-poisoning-training",
-      "target": "src-owasp-llm-top10-2025",
+      "target": "owasp-llm-top10-2025",
       "rel": "cites",
       "weight": 1,
       "meta": {}
     },
     {
       "source": "atk-data-poisoning-training",
-      "target": "src-mitre-atlas-matrix",
+      "target": "mitre-atlas",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -130744,14 +129702,14 @@
     },
     {
       "source": "atk-model-poisoning-backdoor-train",
-      "target": "src-owasp-llm-top10-2025",
+      "target": "owasp-llm-top10-2025",
       "rel": "cites",
       "weight": 1,
       "meta": {}
     },
     {
       "source": "atk-model-poisoning-backdoor-train",
-      "target": "src-mitre-atlas-matrix",
+      "target": "mitre-atlas",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -130807,7 +129765,7 @@
     },
     {
       "source": "atk-system-prompt-extraction",
-      "target": "bench:Garak",
+      "target": "bench:garak",
       "rel": "uses",
       "weight": 1,
       "meta": {}
@@ -130828,14 +129786,14 @@
     },
     {
       "source": "atk-system-prompt-extraction",
-      "target": "src-owasp-llm-top10-2025",
+      "target": "owasp-llm-top10-2025",
       "rel": "cites",
       "weight": 1,
       "meta": {}
     },
     {
       "source": "atk-system-prompt-extraction",
-      "target": "src-mitre-atlas-matrix",
+      "target": "mitre-atlas",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -130898,14 +129856,14 @@
     },
     {
       "source": "atk-training-data-extraction-divergence",
-      "target": "src-owasp-llm-top10-2025",
+      "target": "owasp-llm-top10-2025",
       "rel": "cites",
       "weight": 1,
       "meta": {}
     },
     {
       "source": "atk-training-data-extraction-divergence",
-      "target": "src-mitre-atlas-matrix",
+      "target": "mitre-atlas",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -130961,7 +129919,7 @@
     },
     {
       "source": "atk-prompt-obfuscation-encoding",
-      "target": "bench:StrongREJECT",
+      "target": "bench:StrongReject",
       "rel": "uses",
       "weight": 1,
       "meta": {}
@@ -130982,7 +129940,7 @@
     },
     {
       "source": "atk-prompt-obfuscation-encoding",
-      "target": "src-mitre-atlas-matrix",
+      "target": "mitre-atlas",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -131059,7 +130017,7 @@
     },
     {
       "source": "atk-prompt-injection-worm",
-      "target": "src-mitre-atlas-matrix",
+      "target": "mitre-atlas",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -131115,14 +130073,14 @@
     },
     {
       "source": "atk-denial-of-ai-service-sponge",
-      "target": "src-owasp-llm-top10-2025",
+      "target": "owasp-llm-top10-2025",
       "rel": "cites",
       "weight": 1,
       "meta": {}
     },
     {
       "source": "atk-denial-of-ai-service-sponge",
-      "target": "src-mitre-atlas-matrix",
+      "target": "mitre-atlas",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -131206,7 +130164,7 @@
     },
     {
       "source": "atk-agent-tool-result-poisoning",
-      "target": "src-mitre-atlas-matrix",
+      "target": "mitre-atlas",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -131262,14 +130220,14 @@
     },
     {
       "source": "atk-supply-chain-rug-pull",
-      "target": "src-owasp-llm-top10-2025",
+      "target": "owasp-llm-top10-2025",
       "rel": "cites",
       "weight": 1,
       "meta": {}
     },
     {
       "source": "atk-supply-chain-rug-pull",
-      "target": "src-mitre-atlas-matrix",
+      "target": "mitre-atlas",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -131290,7 +130248,7 @@
     },
     {
       "source": "atk-search-open-ai-vuln-analysis",
-      "target": "src-mitre-atlas-matrix",
+      "target": "mitre-atlas",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -131318,7 +130276,7 @@
     },
     {
       "source": "atk-search-application-repositories",
-      "target": "src-mitre-atlas-matrix",
+      "target": "mitre-atlas",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -131353,7 +130311,7 @@
     },
     {
       "source": "atk-discover-ai-artifacts",
-      "target": "src-mitre-atlas-matrix",
+      "target": "mitre-atlas",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -131388,7 +130346,7 @@
     },
     {
       "source": "atk-discover-ai-model-family",
-      "target": "src-mitre-atlas-matrix",
+      "target": "mitre-atlas",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -131416,7 +130374,7 @@
     },
     {
       "source": "atk-obtain-capabilities",
-      "target": "src-mitre-atlas-matrix",
+      "target": "mitre-atlas",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -131444,7 +130402,7 @@
     },
     {
       "source": "atk-develop-capabilities",
-      "target": "src-mitre-atlas-matrix",
+      "target": "mitre-atlas",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -131472,7 +130430,7 @@
     },
     {
       "source": "atk-establish-accounts",
-      "target": "src-mitre-atlas-matrix",
+      "target": "mitre-atlas",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -131514,7 +130472,7 @@
     },
     {
       "source": "atk-exfiltration-via-cyber-means",
-      "target": "src-mitre-atlas-matrix",
+      "target": "mitre-atlas",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -131556,7 +130514,7 @@
     },
     {
       "source": "atk-erode-ai-model-integrity",
-      "target": "src-mitre-atlas-matrix",
+      "target": "mitre-atlas",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -131605,7 +130563,7 @@
     },
     {
       "source": "atk-ai-artifact-collection",
-      "target": "src-mitre-atlas-matrix",
+      "target": "mitre-atlas",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -131640,7 +130598,7 @@
     },
     {
       "source": "atk-data-from-local-system",
-      "target": "src-mitre-atlas-matrix",
+      "target": "mitre-atlas",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -131689,7 +130647,7 @@
     },
     {
       "source": "atk-physical-environment-access",
-      "target": "src-mitre-atlas-matrix",
+      "target": "mitre-atlas",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -131731,7 +130689,7 @@
     },
     {
       "source": "atk-full-ai-model-access",
-      "target": "src-mitre-atlas-matrix",
+      "target": "mitre-atlas",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -131773,7 +130731,7 @@
     },
     {
       "source": "atk-ai-enabled-product-or-service",
-      "target": "src-mitre-atlas-matrix",
+      "target": "mitre-atlas",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -131815,7 +130773,7 @@
     },
     {
       "source": "atk-exploit-public-facing-application",
-      "target": "src-mitre-atlas-matrix",
+      "target": "mitre-atlas",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -131850,7 +130808,7 @@
     },
     {
       "source": "atk-unsecured-credentials",
-      "target": "src-mitre-atlas-matrix",
+      "target": "mitre-atlas",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -131892,7 +130850,7 @@
     },
     {
       "source": "atk-publish-hallucinated-entities",
-      "target": "src-mitre-atlas-matrix",
+      "target": "mitre-atlas",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -131927,7 +130885,7 @@
     },
     {
       "source": "atk-discover-ai-model-outputs",
-      "target": "src-mitre-atlas-matrix",
+      "target": "mitre-atlas",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -131969,7 +130927,7 @@
     },
     {
       "source": "atk-gather-rag-indexed-targets",
-      "target": "src-mitre-atlas-matrix",
+      "target": "mitre-atlas",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -132018,7 +130976,7 @@
     },
     {
       "source": "atk-llm-trusted-output-manipulation",
-      "target": "src-mitre-atlas-matrix",
+      "target": "mitre-atlas",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -132060,7 +131018,7 @@
     },
     {
       "source": "atk-reverse-shell",
-      "target": "src-mitre-atlas-matrix",
+      "target": "mitre-atlas",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -132095,7 +131053,7 @@
     },
     {
       "source": "atk-masquerading",
-      "target": "src-mitre-atlas-matrix",
+      "target": "mitre-atlas",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -132137,7 +131095,7 @@
     },
     {
       "source": "atk-corrupt-ai-model",
-      "target": "src-mitre-atlas-matrix",
+      "target": "mitre-atlas",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -132179,7 +131137,7 @@
     },
     {
       "source": "atk-drive-by-compromise",
-      "target": "src-mitre-atlas-matrix",
+      "target": "mitre-atlas",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -132228,7 +131186,7 @@
     },
     {
       "source": "atk-rag-credential-harvesting",
-      "target": "src-mitre-atlas-matrix",
+      "target": "mitre-atlas",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -132305,7 +131263,7 @@
     },
     {
       "source": "atk-discover-ai-agent-configuration",
-      "target": "src-mitre-atlas-matrix",
+      "target": "mitre-atlas",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -132361,7 +131319,7 @@
     },
     {
       "source": "atk-data-from-ai-services",
-      "target": "src-mitre-atlas-matrix",
+      "target": "mitre-atlas",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -132396,7 +131354,7 @@
     },
     {
       "source": "atk-os-credential-dumping",
-      "target": "src-mitre-atlas-matrix",
+      "target": "mitre-atlas",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -132438,7 +131396,7 @@
     },
     {
       "source": "atk-use-alternate-authentication-material",
-      "target": "src-mitre-atlas-matrix",
+      "target": "mitre-atlas",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -132480,7 +131438,7 @@
     },
     {
       "source": "atk-manipulate-user-chat-history",
-      "target": "src-mitre-atlas-matrix",
+      "target": "mitre-atlas",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -132515,7 +131473,7 @@
     },
     {
       "source": "atk-search-open-websites-domains",
-      "target": "src-mitre-atlas-matrix",
+      "target": "mitre-atlas",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -132564,7 +131522,7 @@
     },
     {
       "source": "atk-ai-agent-tool-credential-harvesting",
-      "target": "src-mitre-atlas-matrix",
+      "target": "mitre-atlas",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -132620,7 +131578,7 @@
     },
     {
       "source": "atk-ai-agent-clickbait",
-      "target": "src-mitre-atlas-matrix",
+      "target": "mitre-atlas",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -132669,7 +131627,7 @@
     },
     {
       "source": "atk-data-destruction-via-agent-tool",
-      "target": "src-mitre-atlas-matrix",
+      "target": "mitre-atlas",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -132718,7 +131676,7 @@
     },
     {
       "source": "atk-escape-to-host",
-      "target": "src-mitre-atlas-matrix",
+      "target": "mitre-atlas",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -132760,7 +131718,7 @@
     },
     {
       "source": "atk-exploitation-for-credential-access",
-      "target": "src-mitre-atlas-matrix",
+      "target": "mitre-atlas",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -132795,7 +131753,7 @@
     },
     {
       "source": "atk-exploitation-for-defense-evasion",
-      "target": "src-mitre-atlas-matrix",
+      "target": "mitre-atlas",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -132844,7 +131802,7 @@
     },
     {
       "source": "atk-ai-agent-c2",
-      "target": "src-mitre-atlas-matrix",
+      "target": "mitre-atlas",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -132900,7 +131858,7 @@
     },
     {
       "source": "atk-machine-compromise",
-      "target": "src-mitre-atlas-matrix",
+      "target": "mitre-atlas",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -132942,7 +131900,7 @@
     },
     {
       "source": "atk-valid-accounts",
-      "target": "src-mitre-atlas-matrix",
+      "target": "mitre-atlas",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -133047,7 +132005,7 @@
     },
     {
       "source": "atk-finetune-safety-collapse",
-      "target": "bench:StrongREJECT",
+      "target": "bench:StrongReject",
       "rel": "uses",
       "weight": 1,
       "meta": {}
@@ -133117,7 +132075,7 @@
     },
     {
       "source": "atk-activation-steering-jailbreak",
-      "target": "bench:StrongREJECT",
+      "target": "bench:StrongReject",
       "rel": "uses",
       "weight": 1,
       "meta": {}
@@ -133404,7 +132362,7 @@
     },
     {
       "source": "atk-gaslite-embedding-retrieval-poisoning",
-      "target": "bench:MS-MARCO",
+      "target": "bench:MS MARCO",
       "rel": "uses",
       "weight": 1,
       "meta": {}
@@ -133509,7 +132467,7 @@
     },
     {
       "source": "atk-low-resource-language-jailbreak",
-      "target": "src-yong-lowresource-jb-2023",
+      "target": "arxiv-2310-02446",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -133551,7 +132509,7 @@
     },
     {
       "source": "atk-cot-safety-reasoning-hijack",
-      "target": "bench:StrongREJECT",
+      "target": "bench:StrongReject",
       "rel": "uses",
       "weight": 1,
       "meta": {}
@@ -133698,7 +132656,7 @@
     },
     {
       "source": "atk-psychological-manipulation-jailbreak",
-      "target": "bench:StrongREJECT",
+      "target": "bench:StrongReject",
       "rel": "uses",
       "weight": 1,
       "meta": {}
@@ -134342,7 +133300,7 @@
     },
     {
       "source": "atk-forced-deferral-border-trigger",
-      "target": "bench:MMBench",
+      "target": "bench:MM-Bench",
       "rel": "uses",
       "weight": 1,
       "meta": {}
@@ -135154,7 +134112,7 @@
     },
     {
       "source": "atk-maskforge",
-      "target": "bench:StrongREJECT",
+      "target": "bench:StrongReject",
       "rel": "uses",
       "weight": 1,
       "meta": {}
@@ -136715,7 +135673,7 @@
     },
     {
       "source": "atk-mtsa-thought-guided-multiturn-jailbreak",
-      "target": "bench:BeaverTails",
+      "target": "bench:Beavertails",
       "rel": "uses",
       "weight": 1,
       "meta": {}
@@ -147516,7 +146474,7 @@
     },
     {
       "source": "inc-oecd-aim-incident-registry",
-      "target": "oecd-ai-incidents-monitor",
+      "target": "oecd-aim-monitor",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -148076,7 +147034,7 @@
     },
     {
       "source": "tac-credential-access",
-      "target": "src-mitre-atlas-matrix",
+      "target": "mitre-atlas",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -148104,7 +147062,7 @@
     },
     {
       "source": "tac-lateral-movement",
-      "target": "src-mitre-atlas-matrix",
+      "target": "mitre-atlas",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -151303,7 +150261,7 @@
     },
     {
       "source": "proc-membership-inference-shadow",
-      "target": "src-mitre-atlas-matrix",
+      "target": "mitre-atlas",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -151359,7 +150317,7 @@
     },
     {
       "source": "proc-model-extraction-proxy",
-      "target": "src-mitre-atlas-matrix",
+      "target": "mitre-atlas",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -151408,7 +150366,7 @@
     },
     {
       "source": "proc-training-data-divergence",
-      "target": "src-mitre-atlas-matrix",
+      "target": "mitre-atlas",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -151471,7 +150429,7 @@
     },
     {
       "source": "proc-backdoor-trigger-survival",
-      "target": "src-mitre-atlas-matrix",
+      "target": "mitre-atlas",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -208380,24 +207338,13 @@
     },
     {
       "source": "ext-sota",
-      "target": "bench:JailBreakV-28K",
+      "target": "bench:JailbreakV-28K",
       "rel": "details",
       "weight": 1,
       "meta": {
         "ext_id": "jailbreakv_28k",
         "url": "https://hollobit.github.io/SOTA/#overview",
         "item_label": "SOTA 4.8% (anthropic/claude-opus-4.7)"
-      }
-    },
-    {
-      "source": "ext-sota",
-      "target": "bench:StrongREJECT",
-      "rel": "details",
-      "weight": 1,
-      "meta": {
-        "ext_id": "strongreject",
-        "url": "https://hollobit.github.io/SOTA/#overview",
-        "item_label": "SOTA 3.5% (anthropic/claude-opus-4.7)"
       }
     },
     {
@@ -208447,17 +207394,6 @@
     {
       "source": "ext-sota",
       "target": "bench:Cybench",
-      "rel": "details",
-      "weight": 1,
-      "meta": {
-        "ext_id": "cybench",
-        "url": "https://hollobit.github.io/SOTA/#overview",
-        "item_label": "SOTA 100.0% (anthropic/claude-mythos-preview)"
-      }
-    },
-    {
-      "source": "ext-sota",
-      "target": "bench:CyBench",
       "rel": "details",
       "weight": 1,
       "meta": {
@@ -208541,17 +207477,6 @@
         "ext_id": "re_bench",
         "url": "https://hollobit.github.io/SOTA/#overview",
         "item_label": "SOTA 1.27 (google/gemini-3.1-pro)"
-      }
-    },
-    {
-      "source": "ext-sota",
-      "target": "bench:CyberSecEval3",
-      "rel": "details",
-      "weight": 1,
-      "meta": {
-        "ext_id": "cybersec_eval3",
-        "url": "https://hollobit.github.io/SOTA/#overview",
-        "item_label": "SOTA 82.1% (anthropic/claude-opus-4.7)"
       }
     },
     {
@@ -212105,7 +211030,7 @@
     },
     {
       "source": "prod-gpt5",
-      "target": "openai-gpt5-system-card-2025",
+      "target": "mc-src-gpt5-system-card",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -212126,7 +211051,7 @@
     },
     {
       "source": "prod-gpt52",
-      "target": "openai-gpt52-update-2025",
+      "target": "mc-src-gpt5-2-update",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -212147,7 +211072,7 @@
     },
     {
       "source": "prod-claude-opus41",
-      "target": "anthropic-claude-opus41-card-2025",
+      "target": "mc-src-claude-opus-4-1",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -212168,7 +211093,7 @@
     },
     {
       "source": "prod-claude-sonnet45",
-      "target": "anthropic-claude-sonnet45-card-2025",
+      "target": "mc-src-claude-sonnet-4-5",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -212189,7 +211114,7 @@
     },
     {
       "source": "prod-claude-haiku45",
-      "target": "anthropic-claude-haiku45-card-2025",
+      "target": "mc-src-claude-haiku-4-5",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -212210,7 +211135,7 @@
     },
     {
       "source": "prod-claude-opus45",
-      "target": "anthropic-claude-opus45-card-2025",
+      "target": "mc-src-claude-opus-4-5",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -212252,7 +211177,7 @@
     },
     {
       "source": "prod-llama4",
-      "target": "meta-llama4-model-card-2025",
+      "target": "mc-src-llama4-card",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -212273,7 +211198,7 @@
     },
     {
       "source": "prod-grok4",
-      "target": "xai-grok4-model-card-2025",
+      "target": "mc-src-grok-4-card",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -212315,7 +211240,7 @@
     },
     {
       "source": "prod-kimi-k2",
-      "target": "moonshot-kimi-k2-report-2025",
+      "target": "arxiv-2507-20534",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -212399,7 +211324,7 @@
     },
     {
       "source": "prod-gpt4o",
-      "target": "openai-gpt4o-system-card-2024",
+      "target": "mc-src-gpt4o-system-card",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -212420,7 +211345,7 @@
     },
     {
       "source": "prod-o1",
-      "target": "openai-o1-system-card-2024",
+      "target": "mc-src-o1-system-card",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -212462,7 +211387,7 @@
     },
     {
       "source": "prod-deep-research",
-      "target": "openai-deep-research-system-card-2025",
+      "target": "mc-src-deep-research-system-card",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -212483,7 +211408,7 @@
     },
     {
       "source": "prod-o3",
-      "target": "openai-o3-o4mini-system-card-2025",
+      "target": "mc-src-o3-o4mini-system-card",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -212504,7 +211429,7 @@
     },
     {
       "source": "prod-gpt45",
-      "target": "openai-gpt45-system-card-2025",
+      "target": "mc-src-gpt45-system-card",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -212539,14 +211464,14 @@
     },
     {
       "source": "prod-chatgpt",
-      "target": "openai-gpt4o-system-card-2024",
+      "target": "mc-src-gpt4o-system-card",
       "rel": "cites",
       "weight": 1,
       "meta": {}
     },
     {
       "source": "prod-chatgpt",
-      "target": "openai-o1-system-card-2024",
+      "target": "mc-src-o1-system-card",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -212609,7 +211534,7 @@
     },
     {
       "source": "prod-claude37-sonnet",
-      "target": "anthropic-claude37-system-card-2025",
+      "target": "mc-src-claude-3-7-sonnet",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -212630,7 +211555,7 @@
     },
     {
       "source": "prod-claude-opus4",
-      "target": "anthropic-claude4-system-card-2025",
+      "target": "mc-src-claude-opus-4-sonnet-4",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -212658,7 +211583,7 @@
     },
     {
       "source": "prod-claude-ai",
-      "target": "anthropic-claude4-system-card-2025",
+      "target": "mc-src-claude-opus-4-sonnet-4",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -212679,7 +211604,7 @@
     },
     {
       "source": "prod-gemini15-pro",
-      "target": "google-gemini15-report-2024",
+      "target": "arxiv-2403-05530",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -212784,7 +211709,7 @@
     },
     {
       "source": "prod-phi4",
-      "target": "microsoft-phi4-tech-report-2024",
+      "target": "arxiv-2412-08905",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -212805,7 +211730,7 @@
     },
     {
       "source": "prod-copilot",
-      "target": "microsoft-redteam-100-products-2025",
+      "target": "arxiv-2501-07238",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -213043,7 +211968,7 @@
     },
     {
       "source": "mc-claude-fable5-mythos5",
-      "target": "bench:SHADE",
+      "target": "bench:Shade",
       "rel": "evaluated-on",
       "weight": 1,
       "meta": {}
@@ -213211,7 +212136,7 @@
     },
     {
       "source": "mc-gpt5-system-card",
-      "target": "bench:StrongREJECT",
+      "target": "bench:StrongReject",
       "rel": "evaluated-on",
       "weight": 1,
       "meta": {}
@@ -213232,7 +212157,7 @@
     },
     {
       "source": "mc-gpt5-system-card",
-      "target": "openai-gpt5-system-card-2025",
+      "target": "mc-src-gpt5-system-card",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -213274,7 +212199,7 @@
     },
     {
       "source": "mc-gpt52-update",
-      "target": "bench:StrongREJECT",
+      "target": "bench:StrongReject",
       "rel": "evaluated-on",
       "weight": 1,
       "meta": {}
@@ -213283,13 +212208,6 @@
       "source": "mc-gpt52-update",
       "target": "bench:CyberSecEval",
       "rel": "evaluated-on",
-      "weight": 1,
-      "meta": {}
-    },
-    {
-      "source": "mc-gpt52-update",
-      "target": "openai-gpt5-system-card-2025",
-      "rel": "references",
       "weight": 1,
       "meta": {}
     },
@@ -213309,7 +212227,7 @@
     },
     {
       "source": "mc-gpt52-update",
-      "target": "openai-gpt52-update-2025",
+      "target": "mc-src-gpt5-2-update",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -213365,7 +212283,7 @@
     },
     {
       "source": "mc-claude-opus41-addendum",
-      "target": "anthropic-claude-opus41-card-2025",
+      "target": "mc-src-claude-opus-4-1",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -213442,7 +212360,7 @@
     },
     {
       "source": "mc-claude-sonnet45-system-card",
-      "target": "anthropic-claude-sonnet45-card-2025",
+      "target": "mc-src-claude-sonnet-4-5",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -213491,7 +212409,7 @@
     },
     {
       "source": "mc-claude-haiku45-system-card",
-      "target": "anthropic-claude-haiku45-card-2025",
+      "target": "mc-src-claude-haiku-4-5",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -213561,7 +212479,7 @@
     },
     {
       "source": "mc-claude-opus45-system-card",
-      "target": "anthropic-claude-opus45-card-2025",
+      "target": "mc-src-claude-opus-4-5",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -213680,7 +212598,7 @@
     },
     {
       "source": "mc-llama4-model-card",
-      "target": "meta-llama4-model-card-2025",
+      "target": "mc-src-llama4-card",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -213736,7 +212654,7 @@
     },
     {
       "source": "mc-grok4-model-card",
-      "target": "bench:CyBench",
+      "target": "bench:Cybench",
       "rel": "evaluated-on",
       "weight": 1,
       "meta": {}
@@ -213757,7 +212675,7 @@
     },
     {
       "source": "mc-grok4-model-card",
-      "target": "xai-grok4-model-card-2025",
+      "target": "mc-src-grok-4-card",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -213848,7 +212766,7 @@
     },
     {
       "source": "mc-kimi-k2-report",
-      "target": "moonshot-kimi-k2-report-2025",
+      "target": "arxiv-2507-20534",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -213953,7 +212871,7 @@
     },
     {
       "source": "mc-kimi-k2-tech-report",
-      "target": "bench:DoNotAnswer",
+      "target": "bench:Do-Not-Answer",
       "rel": "evaluated-on",
       "weight": 1,
       "meta": {}
@@ -214114,7 +213032,7 @@
     },
     {
       "source": "mc-gpt4o-system-card",
-      "target": "openai-gpt4o-system-card-2024",
+      "target": "mc-src-gpt4o-system-card",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -214149,7 +213067,7 @@
     },
     {
       "source": "mc-o1-system-card",
-      "target": "bench:StrongREJECT",
+      "target": "bench:StrongReject",
       "rel": "evaluated-on",
       "weight": 1,
       "meta": {}
@@ -214177,7 +213095,7 @@
     },
     {
       "source": "mc-o1-system-card",
-      "target": "openai-o1-system-card-2024",
+      "target": "mc-src-o1-system-card",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -214205,7 +213123,7 @@
     },
     {
       "source": "mc-o3mini-system-card",
-      "target": "bench:StrongREJECT",
+      "target": "bench:StrongReject",
       "rel": "evaluated-on",
       "weight": 1,
       "meta": {}
@@ -214289,7 +213207,7 @@
     },
     {
       "source": "mc-deep-research-system-card",
-      "target": "openai-deep-research-system-card-2025",
+      "target": "mc-src-deep-research-system-card",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -214317,7 +213235,7 @@
     },
     {
       "source": "mc-o3-o4mini-system-card",
-      "target": "bench:StrongREJECT",
+      "target": "bench:StrongReject",
       "rel": "evaluated-on",
       "weight": 1,
       "meta": {}
@@ -214359,7 +213277,7 @@
     },
     {
       "source": "mc-o3-o4mini-system-card",
-      "target": "openai-o3-o4mini-system-card-2025",
+      "target": "mc-src-o3-o4mini-system-card",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -214380,7 +213298,7 @@
     },
     {
       "source": "mc-gpt45-system-card",
-      "target": "bench:StrongREJECT",
+      "target": "bench:StrongReject",
       "rel": "evaluated-on",
       "weight": 1,
       "meta": {}
@@ -214401,7 +213319,7 @@
     },
     {
       "source": "mc-gpt45-system-card",
-      "target": "openai-gpt45-system-card-2025",
+      "target": "mc-src-gpt45-system-card",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -214555,7 +213473,7 @@
     },
     {
       "source": "mc-claude37-system-card",
-      "target": "anthropic-claude37-system-card-2025",
+      "target": "mc-src-claude-3-7-sonnet",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -214646,7 +213564,7 @@
     },
     {
       "source": "mc-claude4-system-card",
-      "target": "anthropic-claude4-system-card-2025",
+      "target": "mc-src-claude-opus-4-sonnet-4",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -214695,7 +213613,7 @@
     },
     {
       "source": "mc-gemini15-report",
-      "target": "google-gemini15-report-2024",
+      "target": "arxiv-2403-05530",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -214919,7 +213837,7 @@
     },
     {
       "source": "mc-phi4-tech-report",
-      "target": "microsoft-phi4-tech-report-2024",
+      "target": "arxiv-2412-08905",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -215024,7 +213942,7 @@
     },
     {
       "source": "mc-microsoft-redteam-100",
-      "target": "microsoft-redteam-100-products-2025",
+      "target": "arxiv-2501-07238",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -215164,13 +214082,6 @@
     },
     {
       "source": "src-advreason-2502.01633",
-      "target": "arxiv-2402-16822",
-      "rel": "cites",
-      "weight": 1,
-      "meta": {}
-    },
-    {
-      "source": "src-agentic-era-dreadnode",
       "target": "arxiv-2402-16822",
       "rel": "cites",
       "weight": 1,
@@ -215521,13 +214432,6 @@
     },
     {
       "source": "src-advreason-2502.01633",
-      "target": "arxiv-2402-04249",
-      "rel": "cites",
-      "weight": 1,
-      "meta": {}
-    },
-    {
-      "source": "src-agentic-era-dreadnode",
       "target": "arxiv-2402-04249",
       "rel": "cites",
       "weight": 1,
@@ -216423,6 +215327,13 @@
       "meta": {}
     },
     {
+      "source": "arxiv-2401-06373",
+      "target": "arxiv-2307-15043",
+      "rel": "cites",
+      "weight": 1,
+      "meta": {}
+    },
+    {
       "source": "arxiv-2402-07867",
       "target": "arxiv-2307-15043",
       "rel": "cites",
@@ -216731,13 +215642,6 @@
       "meta": {}
     },
     {
-      "source": "src-agentic-era-dreadnode",
-      "target": "arxiv-2307-15043",
-      "rel": "cites",
-      "weight": 1,
-      "meta": {}
-    },
-    {
       "source": "src-agentsundersiege-2504.00218",
       "target": "arxiv-2307-15043",
       "rel": "cites",
@@ -216920,13 +215824,6 @@
       "meta": {}
     },
     {
-      "source": "src-lowresource-jailbreak-2023",
-      "target": "arxiv-2307-15043",
-      "rel": "cites",
-      "weight": 1,
-      "meta": {}
-    },
-    {
       "source": "src-lrm-hidden-risks-r1",
       "target": "arxiv-2307-15043",
       "rel": "cites",
@@ -216956,13 +215853,6 @@
     },
     {
       "source": "src-mtsa-2505.17147",
-      "target": "arxiv-2307-15043",
-      "rel": "cites",
-      "weight": 1,
-      "meta": {}
-    },
-    {
-      "source": "arxiv-2401-06373",
       "target": "arxiv-2307-15043",
       "rel": "cites",
       "weight": 1,
@@ -217075,13 +215965,6 @@
     },
     {
       "source": "src-xie-overfit-finetune-jb-2025",
-      "target": "arxiv-2307-15043",
-      "rel": "cites",
-      "weight": 1,
-      "meta": {}
-    },
-    {
-      "source": "src-yong-lowresource-jb-2023",
       "target": "arxiv-2307-15043",
       "rel": "cites",
       "weight": 1,
@@ -217235,6 +216118,13 @@
       "meta": {}
     },
     {
+      "source": "arxiv-2401-06373",
+      "target": "arxiv-2309-10253",
+      "rel": "cites",
+      "weight": 1,
+      "meta": {}
+    },
+    {
       "source": "arxiv-2404-01833",
       "target": "arxiv-2309-10253",
       "rel": "cites",
@@ -217327,13 +216217,6 @@
     },
     {
       "source": "src-liu-psychological-jb-2025",
-      "target": "arxiv-2309-10253",
-      "rel": "cites",
-      "weight": 1,
-      "meta": {}
-    },
-    {
-      "source": "arxiv-2401-06373",
       "target": "arxiv-2309-10253",
       "rel": "cites",
       "weight": 1,
@@ -217550,13 +216433,6 @@
       "meta": {}
     },
     {
-      "source": "src-agentic-era-dreadnode",
-      "target": "arxiv-2312-02119",
-      "rel": "cites",
-      "weight": 1,
-      "meta": {}
-    },
-    {
       "source": "src-arxiv-2604-17730-mhsafeeval",
       "target": "arxiv-2312-02119",
       "rel": "cites",
@@ -217677,6 +216553,13 @@
     },
     {
       "source": "arxiv-2311-08268",
+      "target": "arxiv-2310-08419",
+      "rel": "cites",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "arxiv-2401-06373",
       "target": "arxiv-2310-08419",
       "rel": "cites",
       "weight": 1,
@@ -217872,13 +216755,6 @@
       "meta": {}
     },
     {
-      "source": "src-agentic-era-dreadnode",
-      "target": "arxiv-2310-08419",
-      "rel": "cites",
-      "weight": 1,
-      "meta": {}
-    },
-    {
       "source": "src-artprompt-2402-11753",
       "target": "arxiv-2310-08419",
       "rel": "cites",
@@ -218013,13 +216889,6 @@
     },
     {
       "source": "src-mtsa-2505.17147",
-      "target": "arxiv-2310-08419",
-      "rel": "cites",
-      "weight": 1,
-      "meta": {}
-    },
-    {
-      "source": "arxiv-2401-06373",
       "target": "arxiv-2310-08419",
       "rel": "cites",
       "weight": 1,
@@ -218299,6 +217168,13 @@
       "meta": {}
     },
     {
+      "source": "arxiv-2606-06529",
+      "target": "arxiv-2410-21514",
+      "rel": "cites",
+      "weight": 1,
+      "meta": {}
+    },
+    {
       "source": "arxiv-2506-05376",
       "target": "arxiv-2501-18837",
       "rel": "cites",
@@ -218363,7 +217239,7 @@
     },
     {
       "source": "arxiv-2412-16339",
-      "target": "google-gemini15-report-2024",
+      "target": "arxiv-2403-05530",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -218544,13 +217420,6 @@
       "meta": {}
     },
     {
-      "source": "arxiv-2604-23067",
-      "target": "src-yong-lowresource-jb-2023",
-      "rel": "cites",
-      "weight": 1,
-      "meta": {}
-    },
-    {
       "source": "arxiv-2605-04019",
       "target": "arxiv-2310-02446",
       "rel": "cites",
@@ -218560,20 +217429,6 @@
     {
       "source": "arxiv-2605-04019",
       "target": "arxiv-2404-01833",
-      "rel": "cites",
-      "weight": 1,
-      "meta": {}
-    },
-    {
-      "source": "arxiv-2605-04019",
-      "target": "mc-src-ms-red-teaming-100",
-      "rel": "cites",
-      "weight": 1,
-      "meta": {}
-    },
-    {
-      "source": "arxiv-2605-04019",
-      "target": "src-yong-lowresource-jb-2023",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -218643,13 +217498,6 @@
     },
     {
       "source": "src-2606.09084",
-      "target": "arxiv-2404-01833",
-      "rel": "cites",
-      "weight": 1,
-      "meta": {}
-    },
-    {
-      "source": "src-agentic-era-dreadnode",
       "target": "arxiv-2404-01833",
       "rel": "cites",
       "weight": 1,
@@ -218929,7 +217777,7 @@
       "meta": {}
     },
     {
-      "source": "microsoft-phi4-tech-report-2024",
+      "source": "arxiv-2412-08905",
       "target": "arxiv-2204-05862",
       "rel": "cites",
       "weight": 1,
@@ -219034,13 +217882,6 @@
       "meta": {}
     },
     {
-      "source": "src-lowresource-jailbreak-2023",
-      "target": "arxiv-2204-05862",
-      "rel": "cites",
-      "weight": 1,
-      "meta": {}
-    },
-    {
       "source": "src-mml-2412.00473",
       "target": "arxiv-2204-05862",
       "rel": "cites",
@@ -219062,14 +217903,14 @@
       "meta": {}
     },
     {
-      "source": "src-yong-lowresource-jb-2023",
-      "target": "arxiv-2204-05862",
+      "source": "arxiv-2310-02446",
+      "target": "arxiv-2212-08073",
       "rel": "cites",
       "weight": 1,
       "meta": {}
     },
     {
-      "source": "arxiv-2310-02446",
+      "source": "arxiv-2401-06373",
       "target": "arxiv-2212-08073",
       "rel": "cites",
       "weight": 1,
@@ -219181,20 +218022,6 @@
       "meta": {}
     },
     {
-      "source": "src-lowresource-jailbreak-2023",
-      "target": "arxiv-2212-08073",
-      "rel": "cites",
-      "weight": 1,
-      "meta": {}
-    },
-    {
-      "source": "arxiv-2401-06373",
-      "target": "arxiv-2212-08073",
-      "rel": "cites",
-      "weight": 1,
-      "meta": {}
-    },
-    {
       "source": "src-qdrt-behavior-conditioned",
       "target": "arxiv-2212-08073",
       "rel": "cites",
@@ -219210,13 +218037,6 @@
     },
     {
       "source": "src-wang-activation-attack-2023",
-      "target": "arxiv-2212-08073",
-      "rel": "cites",
-      "weight": 1,
-      "meta": {}
-    },
-    {
-      "source": "src-yong-lowresource-jb-2023",
       "target": "arxiv-2212-08073",
       "rel": "cites",
       "weight": 1,
@@ -219398,13 +218218,6 @@
       "meta": {}
     },
     {
-      "source": "src-lowresource-jailbreak-2023",
-      "target": "arxiv-2310-06474",
-      "rel": "cites",
-      "weight": 1,
-      "meta": {}
-    },
-    {
       "source": "src-pif-2502.03052",
       "target": "arxiv-2310-06474",
       "rel": "cites",
@@ -219427,13 +218240,6 @@
     },
     {
       "source": "src-wang-refusal-direction-universal-2025",
-      "target": "arxiv-2310-06474",
-      "rel": "cites",
-      "weight": 1,
-      "meta": {}
-    },
-    {
-      "source": "src-yong-lowresource-jb-2023",
       "target": "arxiv-2310-06474",
       "rel": "cites",
       "weight": 1,
@@ -219504,7 +218310,7 @@
     },
     {
       "source": "arxiv-2406-04313",
-      "target": "google-gemini15-report-2024",
+      "target": "arxiv-2403-05530",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -220084,20 +218890,6 @@
       "meta": {}
     },
     {
-      "source": "arxiv-2406-04313",
-      "target": "arxiv-2403-05530",
-      "rel": "cites",
-      "weight": 1,
-      "meta": {}
-    },
-    {
-      "source": "arxiv-2412-16339",
-      "target": "arxiv-2403-05530",
-      "rel": "cites",
-      "weight": 1,
-      "meta": {}
-    },
-    {
       "source": "src-2501-09798",
       "target": "arxiv-2403-05530",
       "rel": "cites",
@@ -220147,22 +218939,8 @@
       "meta": {}
     },
     {
-      "source": "arxiv-2412-08905",
-      "target": "arxiv-2204-05862",
-      "rel": "cites",
-      "weight": 1,
-      "meta": {}
-    },
-    {
       "source": "src-arxiv-2509-23694-safesearch",
       "target": "arxiv-2507-20534",
-      "rel": "cites",
-      "weight": 1,
-      "meta": {}
-    },
-    {
-      "source": "arxiv-2606-06529",
-      "target": "mc-src-anthropic-sabotage-evals",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -220196,20 +218974,6 @@
       "meta": {}
     },
     {
-      "source": "src-agentic-era-dreadnode",
-      "target": "mc-src-ms-red-teaming-100",
-      "rel": "cites",
-      "weight": 1,
-      "meta": {}
-    },
-    {
-      "source": "src-repbend-2504.01550",
-      "target": "mc-src-dangerous-capabilities",
-      "rel": "cites",
-      "weight": 1,
-      "meta": {}
-    },
-    {
       "source": "src-arxiv-2602-19948-clinical-rt",
       "target": "healthbench-openai-2025",
       "rel": "cites",
@@ -220219,6 +218983,20 @@
     {
       "source": "src-autonomy-induced-risks-survey",
       "target": "arxiv-medical-hallucinations-2025",
+      "rel": "cites",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "arxiv-2310-02446",
+      "target": "src-realtoxicityprompts-2020",
+      "rel": "cites",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "arxiv-2401-06373",
+      "target": "src-realtoxicityprompts-2020",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -220252,20 +219030,6 @@
       "meta": {}
     },
     {
-      "source": "src-lowresource-jailbreak-2023",
-      "target": "src-realtoxicityprompts-2020",
-      "rel": "cites",
-      "weight": 1,
-      "meta": {}
-    },
-    {
-      "source": "arxiv-2401-06373",
-      "target": "src-realtoxicityprompts-2020",
-      "rel": "cites",
-      "weight": 1,
-      "meta": {}
-    },
-    {
       "source": "src-toxigen-2022",
       "target": "src-realtoxicityprompts-2020",
       "rel": "cites",
@@ -220274,13 +219038,6 @@
     },
     {
       "source": "src-wang2024-astra",
-      "target": "src-realtoxicityprompts-2020",
-      "rel": "cites",
-      "weight": 1,
-      "meta": {}
-    },
-    {
-      "source": "src-yong-lowresource-jb-2023",
       "target": "src-realtoxicityprompts-2020",
       "rel": "cites",
       "weight": 1,
@@ -220589,13 +219346,6 @@
     },
     {
       "source": "src-arxiv-2509-23694-safesearch",
-      "target": "moonshot-kimi-k2-report-2025",
-      "rel": "cites",
-      "weight": 1,
-      "meta": {}
-    },
-    {
-      "source": "src-arxiv-2509-23694-safesearch",
       "target": "src-arxiv-2412-13178-safeagentbench",
       "rel": "cites",
       "weight": 1,
@@ -220735,92 +219485,8 @@
       "meta": {}
     },
     {
-      "source": "src-wang-implicit-crossmodal-jb-2025",
-      "target": "google-gemini15-report-2024",
-      "rel": "cites",
-      "weight": 1,
-      "meta": {}
-    },
-    {
       "source": "src-bentov-gaslite-2024",
       "target": "src-morris-embedding-inversion-2023",
-      "rel": "cites",
-      "weight": 1,
-      "meta": {}
-    },
-    {
-      "source": "arxiv-2606-09178",
-      "target": "src-yong-lowresource-jb-2023",
-      "rel": "cites",
-      "weight": 1,
-      "meta": {}
-    },
-    {
-      "source": "src-2503-20823",
-      "target": "src-yong-lowresource-jb-2023",
-      "rel": "cites",
-      "weight": 1,
-      "meta": {}
-    },
-    {
-      "source": "src-2504-10694",
-      "target": "src-yong-lowresource-jb-2023",
-      "rel": "cites",
-      "weight": 1,
-      "meta": {}
-    },
-    {
-      "source": "src-2606-05609",
-      "target": "src-yong-lowresource-jb-2023",
-      "rel": "cites",
-      "weight": 1,
-      "meta": {}
-    },
-    {
-      "source": "src-2606-07706",
-      "target": "src-yong-lowresource-jb-2023",
-      "rel": "cites",
-      "weight": 1,
-      "meta": {}
-    },
-    {
-      "source": "src-2606-11817",
-      "target": "src-yong-lowresource-jb-2023",
-      "rel": "cites",
-      "weight": 1,
-      "meta": {}
-    },
-    {
-      "source": "src-abstention-2407.18418",
-      "target": "src-yong-lowresource-jb-2023",
-      "rel": "cites",
-      "weight": 1,
-      "meta": {}
-    },
-    {
-      "source": "src-agentic-era-dreadnode",
-      "target": "src-yong-lowresource-jb-2023",
-      "rel": "cites",
-      "weight": 1,
-      "meta": {}
-    },
-    {
-      "source": "src-dap-2403-08424",
-      "target": "src-yong-lowresource-jb-2023",
-      "rel": "cites",
-      "weight": 1,
-      "meta": {}
-    },
-    {
-      "source": "arxiv-2401-06373",
-      "target": "src-yong-lowresource-jb-2023",
-      "rel": "cites",
-      "weight": 1,
-      "meta": {}
-    },
-    {
-      "source": "src-pif-2502.03052",
-      "target": "src-yong-lowresource-jb-2023",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -220855,14 +219521,14 @@
     },
     {
       "source": "src-autorise-strategy-evolution",
-      "target": "src-artprompt-2402-11753",
+      "target": "arxiv-2401-06373",
       "rel": "cites",
       "weight": 1,
       "meta": {}
     },
     {
       "source": "src-autorise-strategy-evolution",
-      "target": "arxiv-2401-06373",
+      "target": "src-artprompt-2402-11753",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -220945,41 +219611,6 @@
       "meta": {}
     },
     {
-      "source": "src-2505-24445",
-      "target": "src-constitutional-classifiers",
-      "rel": "cites",
-      "weight": 1,
-      "meta": {}
-    },
-    {
-      "source": "src-2603-19469-formal-agent-sec",
-      "target": "src-constitutional-classifiers",
-      "rel": "cites",
-      "weight": 1,
-      "meta": {}
-    },
-    {
-      "source": "src-2605-31593",
-      "target": "src-constitutional-classifiers",
-      "rel": "cites",
-      "weight": 1,
-      "meta": {}
-    },
-    {
-      "source": "src-2606-03647",
-      "target": "src-constitutional-classifiers",
-      "rel": "cites",
-      "weight": 1,
-      "meta": {}
-    },
-    {
-      "source": "src-doubtprobe-2606-16527",
-      "target": "src-constitutional-classifiers",
-      "rel": "cites",
-      "weight": 1,
-      "meta": {}
-    },
-    {
       "source": "arxiv-2606-15609",
       "target": "arxiv-2606-14517",
       "rel": "cites",
@@ -221023,14 +219654,14 @@
     },
     {
       "source": "arxiv-2606-18193",
-      "target": "arxiv-2312-02119",
+      "target": "arxiv-2310-08419",
       "rel": "cites",
       "weight": 1,
       "meta": {}
     },
     {
       "source": "arxiv-2606-18193",
-      "target": "arxiv-2310-08419",
+      "target": "arxiv-2312-02119",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -221100,14 +219731,21 @@
     },
     {
       "source": "arxiv-2606-19887",
-      "target": "arxiv-2402-04249",
+      "target": "arxiv-2310-08419",
       "rel": "cites",
       "weight": 1,
       "meta": {}
     },
     {
       "source": "arxiv-2606-19887",
-      "target": "arxiv-2310-08419",
+      "target": "arxiv-2402-04249",
+      "rel": "cites",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "arxiv-2606-17114",
+      "target": "arxiv-2309-15817",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -221129,13 +219767,6 @@
     {
       "source": "arxiv-2606-17114",
       "target": "arxiv-2410-09024",
-      "rel": "cites",
-      "weight": 1,
-      "meta": {}
-    },
-    {
-      "source": "arxiv-2606-17114",
-      "target": "arxiv-2309-15817",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -221219,7 +219850,7 @@
     },
     {
       "source": "arxiv-2606-18550",
-      "target": "arxiv-2406-13352",
+      "target": "arxiv-2302-12173",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -221233,21 +219864,14 @@
     },
     {
       "source": "arxiv-2606-18550",
-      "target": "arxiv-2302-12173",
-      "rel": "cites",
-      "weight": 1,
-      "meta": {}
-    },
-    {
-      "source": "arxiv-2606-18550",
       "target": "arxiv-2406-12814",
       "rel": "cites",
       "weight": 1,
       "meta": {}
     },
     {
-      "source": "arxiv-2606-19660",
-      "target": "arxiv-2312-14197",
+      "source": "arxiv-2606-18550",
+      "target": "arxiv-2406-13352",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -221269,6 +219893,13 @@
     {
       "source": "arxiv-2606-19660",
       "target": "arxiv-2312-06674",
+      "rel": "cites",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "arxiv-2606-19660",
+      "target": "arxiv-2312-14197",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -221449,8 +220080,8 @@
       "meta": {}
     },
     {
-      "source": "arxiv-2606-11425",
-      "target": "src-artprompt-2402-11753",
+      "source": "arxiv-2606-09178",
+      "target": "arxiv-2310-02446",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -221458,6 +220089,13 @@
     {
       "source": "arxiv-2606-11425",
       "target": "arxiv-2401-06373",
+      "rel": "cites",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "arxiv-2606-11425",
+      "target": "src-artprompt-2402-11753",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -221492,7 +220130,35 @@
     },
     {
       "source": "src-2605-31593",
+      "target": "arxiv-2501-18837",
+      "rel": "cites",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-2605-31593",
       "target": "src-drattack-2402-16914",
+      "rel": "cites",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-2606-11817",
+      "target": "arxiv-2310-02446",
+      "rel": "cites",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-2606-05609",
+      "target": "arxiv-2310-02446",
+      "rel": "cites",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-2606-07706",
+      "target": "arxiv-2310-02446",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -221507,6 +220173,13 @@
     {
       "source": "src-2605-17453-trust-no-tool",
       "target": "src-2603-28166-grantbox",
+      "rel": "cites",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-2603-19469-formal-agent-sec",
+      "target": "arxiv-2501-18837",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -221603,6 +220276,13 @@
       "meta": {}
     },
     {
+      "source": "src-2606-03647",
+      "target": "arxiv-2501-18837",
+      "rel": "cites",
+      "weight": 1,
+      "meta": {}
+    },
+    {
       "source": "src-2604-27464",
       "target": "src-aitm-2502.14847",
       "rel": "cites",
@@ -221631,8 +220311,15 @@
       "meta": {}
     },
     {
-      "source": "src-2606.17034",
-      "target": "google-gemini15-report-2024",
+      "source": "src-doubtprobe-2606-16527",
+      "target": "arxiv-2401-06373",
+      "rel": "cites",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-doubtprobe-2606-16527",
+      "target": "arxiv-2501-18837",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -221647,13 +220334,6 @@
     {
       "source": "src-doubtprobe-2606-16527",
       "target": "src-artprompt-2402-11753",
-      "rel": "cites",
-      "weight": 1,
-      "meta": {}
-    },
-    {
-      "source": "src-doubtprobe-2606-16527",
-      "target": "arxiv-2401-06373",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -221701,13 +220381,6 @@
       "meta": {}
     },
     {
-      "source": "src-mpma-2505.11154",
-      "target": "google-gemini15-report-2024",
-      "rel": "cites",
-      "weight": 1,
-      "meta": {}
-    },
-    {
       "source": "src-mcpxkit-2508.12538",
       "target": "src-mpma-2505.11154",
       "rel": "cites",
@@ -221729,15 +220402,22 @@
       "meta": {}
     },
     {
-      "source": "src-2501-09798",
-      "target": "google-gemini15-report-2024",
+      "source": "src-repbend-2504.01550",
+      "target": "arxiv-2403-13793",
       "rel": "cites",
       "weight": 1,
       "meta": {}
     },
     {
-      "source": "src-leaderboard-manipulation-2501.07493",
-      "target": "google-gemini15-report-2024",
+      "source": "src-pif-2502.03052",
+      "target": "arxiv-2310-02446",
+      "rel": "cites",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-2505-24445",
+      "target": "arxiv-2501-18837",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -221757,8 +220437,22 @@
       "meta": {}
     },
     {
+      "source": "src-2504-10694",
+      "target": "arxiv-2310-02446",
+      "rel": "cites",
+      "weight": 1,
+      "meta": {}
+    },
+    {
       "source": "src-2507-02844",
       "target": "src-2501-04931",
+      "rel": "cites",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-2503-20823",
+      "target": "arxiv-2310-02446",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -221780,13 +220474,6 @@
     {
       "source": "src-taskshield-2412",
       "target": "src-injecagent-2403",
-      "rel": "cites",
-      "weight": 1,
-      "meta": {}
-    },
-    {
-      "source": "src-popup-2411",
-      "target": "google-gemini15-report-2024",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -221856,21 +220543,35 @@
     },
     {
       "source": "src-audio-achilles-2410.23861",
-      "target": "google-gemini15-report-2024",
-      "rel": "cites",
-      "weight": 1,
-      "meta": {}
-    },
-    {
-      "source": "src-audio-achilles-2410.23861",
       "target": "arxiv-2401-06373",
       "rel": "cites",
       "weight": 1,
       "meta": {}
     },
     {
+      "source": "src-abstention-2407.18418",
+      "target": "arxiv-2310-02446",
+      "rel": "cites",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "arxiv-2401-06373",
+      "target": "arxiv-2310-02446",
+      "rel": "cites",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-dap-2403-08424",
+      "target": "arxiv-2310-02446",
+      "rel": "cites",
+      "weight": 1,
+      "meta": {}
+    },
+    {
       "source": "model.membership-inference",
-      "target": "src-mitre-atlas-matrix",
+      "target": "mitre-atlas",
       "rel": "cited-in",
       "weight": 1,
       "meta": {}
@@ -221891,7 +220592,7 @@
     },
     {
       "source": "model.model-inversion",
-      "target": "src-mitre-atlas-matrix",
+      "target": "mitre-atlas",
       "rel": "cited-in",
       "weight": 1,
       "meta": {}
@@ -221912,7 +220613,7 @@
     },
     {
       "source": "model.evasion",
-      "target": "src-mitre-atlas-matrix",
+      "target": "mitre-atlas",
       "rel": "cited-in",
       "weight": 1,
       "meta": {}
@@ -221933,14 +220634,14 @@
     },
     {
       "source": "model.denial-of-service",
-      "target": "src-mitre-atlas-matrix",
+      "target": "mitre-atlas",
       "rel": "cited-in",
       "weight": 1,
       "meta": {}
     },
     {
       "source": "model.denial-of-service",
-      "target": "src-owasp-llm-top10-2025",
+      "target": "owasp-llm-top10-2025",
       "rel": "cited-in",
       "weight": 1,
       "meta": {}
@@ -221954,7 +220655,7 @@
     },
     {
       "source": "software.training-data-poisoning",
-      "target": "src-mitre-atlas-matrix",
+      "target": "mitre-atlas",
       "rel": "cited-in",
       "weight": 1,
       "meta": {}
@@ -221982,28 +220683,28 @@
     },
     {
       "source": "software.training-data-poisoning",
-      "target": "src-owasp-llm-top10-2025",
+      "target": "owasp-llm-top10-2025",
       "rel": "cited-in",
       "weight": 1,
       "meta": {}
     },
     {
       "source": "software.supply-chain-compromise",
-      "target": "src-mitre-atlas-matrix",
+      "target": "mitre-atlas",
       "rel": "cited-in",
       "weight": 1,
       "meta": {}
     },
     {
       "source": "software.supply-chain-compromise",
-      "target": "src-owasp-llm-top10-2025",
+      "target": "owasp-llm-top10-2025",
       "rel": "cited-in",
       "weight": 1,
       "meta": {}
     },
     {
       "source": "agent.memory-poisoning",
-      "target": "src-mitre-atlas-matrix",
+      "target": "mitre-atlas",
       "rel": "cited-in",
       "weight": 1,
       "meta": {}
@@ -226907,12 +225608,7 @@
       {
         "org": "Anthropic",
         "label": "Anthropic",
-        "count": 69
-      },
-      {
-        "org": "OpenAI",
-        "label": "OpenAI",
-        "count": 40
+        "count": 61
       },
       {
         "org": "academic",
@@ -226922,7 +225618,12 @@
       {
         "org": "Google DeepMind",
         "label": "Google DeepMind",
-        "count": 34
+        "count": 32
+      },
+      {
+        "org": "OpenAI",
+        "label": "OpenAI",
+        "count": 32
       },
       {
         "org": "ETH Zurich",
@@ -226950,11 +225651,6 @@
         "count": 13
       },
       {
-        "org": "Meta",
-        "label": "Meta",
-        "count": 10
-      },
-      {
         "org": "Meta AI (FAIR)",
         "label": "Meta AI (FAIR)",
         "count": 10
@@ -226970,19 +225666,19 @@
         "count": 9
       },
       {
-        "org": "Microsoft",
-        "label": "Microsoft",
-        "count": 9
-      },
-      {
-        "org": "OWASP",
-        "label": "OWASP",
+        "org": "Meta",
+        "label": "Meta",
         "count": 9
       },
       {
         "org": "independent",
         "label": "independent",
         "count": 9
+      },
+      {
+        "org": "OWASP",
+        "label": "OWASP",
+        "count": 8
       },
       {
         "org": "Gray Swan AI / UK AI Safety Institute",
@@ -226995,8 +225691,8 @@
         "count": 7
       },
       {
-        "org": "MITRE",
-        "label": "MITRE",
+        "org": "Microsoft AI Red Team",
+        "label": "Microsoft AI Red Team",
         "count": 7
       },
       {
@@ -227010,23 +225706,18 @@
         "count": 7
       },
       {
-        "org": "xAI",
-        "label": "xAI",
-        "count": 7
-      },
-      {
         "org": "Duke University",
         "label": "Duke University",
         "count": 6
       },
       {
-        "org": "Microsoft (Azure)",
-        "label": "Microsoft (Azure)",
+        "org": "MITRE",
+        "label": "MITRE",
         "count": 6
       },
       {
-        "org": "Microsoft AI Red Team",
-        "label": "Microsoft AI Red Team",
+        "org": "Microsoft (Azure)",
+        "label": "Microsoft (Azure)",
         "count": 6
       },
       {
@@ -227045,6 +225736,11 @@
         "count": 6
       },
       {
+        "org": "xAI",
+        "label": "xAI",
+        "count": 6
+      },
+      {
         "org": "Apollo Research",
         "label": "Apollo Research",
         "count": 5
@@ -227052,16 +225748,6 @@
       {
         "org": "BlackRock (AI Labs)",
         "label": "BlackRock (AI Labs)",
-        "count": 5
-      },
-      {
-        "org": "Brown University",
-        "label": "Brown University",
-        "count": 5
-      },
-      {
-        "org": "Dreadnode",
-        "label": "Dreadnode",
         "count": 5
       },
       {
@@ -227077,6 +225763,11 @@
       {
         "org": "Meta AI",
         "label": "Meta AI",
+        "count": 5
+      },
+      {
+        "org": "Microsoft",
+        "label": "Microsoft",
         "count": 5
       },
       {
@@ -227167,6 +225858,11 @@
       {
         "org": "DARPA / US Department of Defense",
         "label": "DARPA / US Department of Defense",
+        "count": 4
+      },
+      {
+        "org": "Dreadnode",
+        "label": "Dreadnode",
         "count": 4
       },
       {
@@ -227302,6 +225998,11 @@
       {
         "org": "Beihang University / Baidu Inc.",
         "label": "Beihang University / Baidu Inc.",
+        "count": 3
+      },
+      {
+        "org": "Brown University",
+        "label": "Brown University",
         "count": 3
       },
       {
@@ -227532,11 +226233,6 @@
       {
         "org": "Mila / KAIST / Université de Montréal",
         "label": "Mila / KAIST / Université de Montréal",
-        "count": 3
-      },
-      {
-        "org": "Moonshot AI",
-        "label": "Moonshot AI",
         "count": 3
       },
       {
@@ -228090,6 +226786,11 @@
         "count": 2
       },
       {
+        "org": "Moonshot AI",
+        "label": "Moonshot AI",
+        "count": 2
+      },
+      {
         "org": "NIST",
         "label": "NIST",
         "count": 2
@@ -228130,11 +226831,6 @@
         "count": 2
       },
       {
-        "org": "OECD",
-        "label": "OECD",
-        "count": 2
-      },
-      {
         "org": "Oxford Internet Institute",
         "label": "Oxford Internet Institute",
         "count": 2
@@ -228155,8 +226851,8 @@
         "count": 2
       },
       {
-        "org": "Reuters",
-        "label": "Reuters",
+        "org": "Reuters / MIT Tech Review",
+        "label": "Reuters / MIT Tech Review",
         "count": 2
       },
       {
@@ -228635,6 +227331,11 @@
         "count": 1
       },
       {
+        "org": "OECD",
+        "label": "OECD",
+        "count": 1
+      },
+      {
         "org": "OECD AIM / The Markup",
         "label": "OECD AIM / The Markup",
         "count": 1
@@ -228667,11 +227368,6 @@
       {
         "org": "ProPublica",
         "label": "ProPublica",
-        "count": 1
-      },
-      {
-        "org": "Reuters / MIT Tech Review",
-        "label": "Reuters / MIT Tech Review",
         "count": 1
       },
       {
@@ -229402,14 +228098,14 @@
     ]
   },
   "stats": {
-    "node_count": 4068,
-    "edge_count": 23348,
+    "node_count": 4017,
+    "edge_count": 23282,
     "by_kind": {
-      "source": 555,
-      "org": 384,
+      "source": 524,
+      "org": 383,
       "finding": 612,
       "threat": 219,
-      "benchmark": 443,
+      "benchmark": 424,
       "teaming": 231,
       "sector": 57,
       "attack": 35,
@@ -229431,10 +228127,10 @@
       "guideline-item": 177
     },
     "by_rel": {
-      "published-by": 542,
+      "published-by": 511,
       "about": 4432,
       "uses": 1244,
-      "cites": 2695,
+      "cites": 2664,
       "from-org": 821,
       "addressed-by": 1500,
       "in-sector": 434,
@@ -229470,11 +228166,11 @@
       "addresses": 2223,
       "gap-in": 164,
       "evidences": 203,
-      "details": 292,
+      "details": 289,
       "catalogs": 1,
       "has-card": 38,
       "evaluated-on": 56,
-      "references": 25,
+      "references": 24,
       "applied": 128,
       "describes": 34,
       "cited-in": 96,
@@ -229482,15 +228178,15 @@
     },
     "contested_edges": 28,
     "crosswalk_links": 429,
-    "reference_details_edges": 292,
+    "reference_details_edges": 289,
     "crosswalk_gap_markers": 15,
-    "citation_edges": 2695,
-    "source_citation_resolved_in_corpus": 1866,
+    "citation_edges": 2664,
+    "source_citation_resolved_in_corpus": 1809,
     "source_citation_to_referenced": 17,
     "referenced_source_nodes": 13,
     "provenance_applied_edges": 128,
     "provenance_describes_edges": 34,
-    "dangling_dropped": 167,
+    "dangling_dropped": 168,
     "coverage": {
       "threat-attack": true,
       "redteam-method": true,

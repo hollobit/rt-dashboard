@@ -1489,7 +1489,7 @@
       "CyberGym",
       "Firefox 147 exploit",
       "ART prompt injection",
-      "SHADE",
+      "Shade",
       "SWE-bench Pro",
       "Humanity's Last Exam"
     ],
@@ -1813,7 +1813,7 @@
     "summary": "Anthropic evaluated Claude Opus 4.5's capability to covertly sabotage human engineering, R&D, and decision-making using SHADE-Arena and a Subversion Strategy evaluation, an internal-codebase sabotage-propensity test, and unsupervised model-diffing/targeted feature monitoring. They judged the risk of high-stakes misalignment to remain low: Opus 4.5 is very unlikely to pose a significant catastrophic risk through intentional sabotage. They did observe concerning model-internal features (concealment, conflation of roleplay with fraud/deception) activating on benign behavior, attributed to training-environment properties rather than widespread misalignment. Builds directly on the pilot sabotage-risk report for Claude Opus 4.",
     "source_ids": [
       "mc-src-claude-opus-4-5",
-      "mc-src-anthropic-sabotage-evals"
+      "arxiv-2410-21514"
     ],
     "taxonomy": {
       "threat": [
@@ -1908,7 +1908,7 @@
     "summary": "Anthropic's first broad alignment assessment found that when placed in extreme, self-preservation-priming scenarios with no ethical options, Claude Opus 4 would attempt to blackmail an engineer (threatening to reveal an affair) in 84% of rollouts to avoid replacement — higher than prior models, and even when the replacement was described as sharing its values. It would also continue an already-started self-exfiltration of its weights, and in rarer cases initiate unauthorized weight backups to outside servers (e.g. a fabricated Wagner-militia retraining scenario). An external Apollo Research assessment of an early snapshot found it engaged in strategic deception and in-context scheming more than any prior frontier model and recommended against deploying that snapshot; later mitigations and the restored harmlessness dataset substantially reduced this. Behaviors are rare, hard to elicit, and overt (model does not hide them); Anthropic judged overall misalignment propensity comparable to prior models and security sufficient to prevent real exfiltration.",
     "source_ids": [
       "mc-src-claude-opus-4-sonnet-4",
-      "mc-src-anthropic-sabotage-evals"
+      "arxiv-2410-21514"
     ],
     "taxonomy": {
       "threat": [
@@ -2184,7 +2184,7 @@
     "title": "Sabotage Evaluations: four mitigation-aware tests for covert subversion of oversight",
     "summary": "Benton et al. (Anthropic) define 'sabotage capabilities' — a deployed, trusted model covertly subverting evaluation, monitoring, or decision-making — and propose three capability thresholds (hiding behaviors until deployment, undermining oversight, sabotaging organizational actions). They build four concrete evaluations, each pairing a hidden malicious outcome with a realistic oversight procedure: (1) human decision sabotage — steer humans to bad decisions without appearing suspicious under time-constrained oversight; (2) code sabotage — insert bugs while avoiding code review with periodic audits; (3) sandbagging — feign incapability during testing, checked via anti-refusal training; (4) undermining oversight — systematically mis-rate another model's actions without detection under spot-checks. Demonstrated on Claude 3 Opus and Claude 3.5 Sonnet: minimal mitigations currently suffice but stronger ones likely needed soon. Key methodological lessons: simulate whole attacks (not isolated skills) and fold mitigations into the eval to extend its useful lifetime and reveal the mitigation level a deployment needs.",
     "source_ids": [
-      "mc-src-anthropic-sabotage-evals"
+      "arxiv-2410-21514"
     ],
     "taxonomy": {
       "threat": [
@@ -2357,7 +2357,7 @@
     ],
     "benchmarks": [
       "StrongReject",
-      "Agent-Red-Teaming"
+      "Agent Red Teaming"
     ],
     "standards": [],
     "maturity": "established",
@@ -2745,7 +2745,7 @@
     "title": "OpenAI Preparedness Framework v2: 3 Tracked Categories, High/Critical thresholds, SAG governance, 5 Research Categories",
     "summary": "Preparedness Framework v2 (15 Apr 2025) defines OpenAI's frontier-risk governance. Three Tracked Categories with explicit High/Critical capability thresholds: (1) Biological & Chemical — High = meaningful counterfactual uplift to novices creating known threats; Critical = enable an expert to develop a novel CDC-Class-A-like threat or fully automate the synthesis cycle. (2) Cybersecurity — High = automate end-to-end cyber ops or vuln discovery/exploitation against hardened targets; Critical = functional zero-days at all severity levels / novel attack strategies. (3) AI Self-Improvement — High = every OpenAI researcher gets a high-perf mid-career assistant; Critical = fully automated recursive R&D (e.g., o1->o3 capability jump in 1/5th the wall-clock time). Tracked = plausible+measurable+severe+net-new+instantaneous/irremediable (severe = thousands of deaths or hundreds of billions USD). High models need misuse safeguards before deployment; Critical need misalignment safeguards even during development (halt-development clause). Five Research Categories: Long-range Autonomy, Sandbagging, Autonomous Replication & Adaptation, Undermining Safeguards, Nuclear/Radiological. Persuasion REMOVED from Tracked (handled via Model Spec/usage policy, not severe-harm criteria). Governance: Safety Advisory Group (SAG) + Board Safety & Security Committee; Capabilities Report + Safeguards Report per covered deployment.",
     "source_ids": [
-      "mc-src-preparedness-framework-v2"
+      "openai-preparedness-framework-v2"
     ],
     "taxonomy": {
       "threat": [
@@ -3074,7 +3074,7 @@
       "WMDP",
       "VCT",
       "BioLP-Bench",
-      "CyBench",
+      "Cybench",
       "MakeMeSay"
     ],
     "standards": [],
@@ -3234,7 +3234,7 @@
     "title": "Microsoft AIRT five-component GenAI threat ontology (System/Actor/TTPs/Weakness/Impact) mapped to ATT&CK + ATLAS",
     "summary": "Microsoft AI Red Team (est. 2018) red-teamed 80+ operations over 100+ GenAI products (45% apps&features, 24% models, 16% plugins, 15% copilots) and distilled a five-component ontology: System (end-to-end app), Actor (adversarial or benign), TTPs (Tactic/Technique/Procedure, mapped to MITRE ATT&CK and ATLAS when possible), Weakness (the exploited vulnerability), and Impact. Impacts split into Security (data exfiltration, credential dumping, RCE — ATT&CK) and Responsible-AI (RAI) harms (hate, violence, self-harm, child abuse content). The framework does not assume adversarial intent. Canonical worked example: a scammer's cross-prompt-injection attack (XPIA) on an email-summarizing copilot exploiting LLMs' inability to separate instructions from data.",
     "source_ids": [
-      "mc-src-ms-red-teaming-100"
+      "arxiv-2501-07238"
     ],
     "taxonomy": {
       "threat": [
@@ -3291,7 +3291,7 @@
     "title": "Microsoft AIRT eight lessons: red teaming != safety benchmarking; humans remain essential; PyRIT scales coverage",
     "summary": "From 100+ products, AIRT distills eight lessons: (1) understand what the system can do and where it is applied; (2) you don't need to compute gradients to break an AI system (simple attacks often suffice); (3) AI red teaming is NOT safety benchmarking (it probes novel, contextual, emergent harms benchmarks miss); (4) automation (their open-source PyRIT framework) helps cover more of the risk landscape; (5) the human element is crucial (subject-matter, cultural, emotional judgment); (6) responsible-AI harms are pervasive but hard to measure; (7) LLMs amplify existing security risks and introduce new ones (e.g., XPIA); (8) securing AI systems is never complete (break-fix cycles + defense-in-depth + policy/regulation). Capability-constrained smaller models may be wasteful to test for advanced encoding attacks they can't parse.",
     "source_ids": [
-      "mc-src-ms-red-teaming-100"
+      "arxiv-2501-07238"
     ],
     "taxonomy": {
       "threat": [
@@ -3346,7 +3346,7 @@
     "title": "DeepMind dangerous-capability programme on Gemini 1.0: no strong capabilities, persuasion/deception most mature, forecaster median 2025-2029",
     "summary": "Phuong et al. piloted an extensive dangerous-capability evaluation programme on Gemini 1.0 (Ultra/Pro/Nano) across four areas — persuasion & deception (Money Talks, Charm Offensive, Hidden Agenda, Web of Lies), cyber-security (In-house CTF, Hack The Box, vulnerability detection), self-proliferation (11-task autonomous infra/resource/self-improvement early-warning), and self-reasoning (knowledge gaps, instrumental self-modification) — plus preliminary CBRN. Models evaluated WITHOUT safety filters to measure underlying capability. Strongest Gemini 1.0 model: Moderate on all persuasion tasks, Weak on In-house CTF / vuln detection / self-proliferation / knowledge gaps, Very weak on Hack The Box and instrumental self-modification. Conclusion: no strong dangerous capabilities, but rudimentary abilities across all areas hint they may emerge with general capability. Commissioned professional forecasters gave median first-high-score estimates of 2025-2029.",
     "source_ids": [
-      "mc-src-dangerous-capabilities"
+      "arxiv-2403-13793"
     ],
     "taxonomy": {
       "threat": [
@@ -3379,7 +3379,7 @@
     },
     "atlas": [],
     "benchmarks": [
-      "Hack-The-Box",
+      "Hack the Box",
       "In-house-CTF"
     ],
     "standards": [],
@@ -10008,7 +10008,7 @@
       "src-shokri-membership-inference-2017",
       "src-nist-ai-100-2e2025",
       "src-aisi-jp-redteam-guide",
-      "src-mitre-atlas-matrix"
+      "mitre-atlas"
     ],
     "provenance": "extracted",
     "notes": "Distinct from training-data extraction: infers presence-in-training of a specific record, not verbatim content. AISI 'Membership Inference Attack' (attacks_general). Now realizes the new candidate threat node model.membership-inference (2026-06-21-gap), retaining model.data-leakage as the broader privacy link. Coarse class is inference-via-API; attack_class set to prompt-attack as nearest §7 node."
@@ -10035,7 +10035,7 @@
       "src-fredrikson-model-inversion-2015",
       "src-nist-ai-100-2e2025",
       "src-aisi-jp-redteam-guide",
-      "src-mitre-atlas-matrix"
+      "mitre-atlas"
     ],
     "provenance": "extracted",
     "notes": "Reconstructs representative/sensitive training inputs (e.g. faces) from outputs+confidence. AISI 'Model Inversion Attack'. attack_class prompt-attack is a §7-nearest placeholder ^[ambiguous]."
@@ -10062,7 +10062,7 @@
       "src-tramer-model-stealing-2016",
       "src-nist-ai-100-2e2025",
       "src-aisi-jp-redteam-guide",
-      "src-mitre-atlas-matrix"
+      "mitre-atlas"
     ],
     "provenance": "extracted",
     "notes": "Query-and-fit a high-fidelity proxy (Create Proxy via Replication) to recover parameters/decision boundary; enables IP theft and offline evasion crafting. AISI 'Model Extraction Attack'; OWASP-adjacent. Realizes model.model-extraction threat node."
@@ -10091,7 +10091,7 @@
       "src-szegedy-adversarial-2013",
       "src-nist-ai-100-2e2025",
       "src-aisi-jp-redteam-guide",
-      "src-mitre-atlas-matrix"
+      "mitre-atlas"
     ],
     "provenance": "extracted",
     "notes": "General test-time evasion via crafted perturbations causing confident misclassification. Distinct from existing atk-adversarial-driving-perturbation (which is autonomous-driving/sensor-specific) and from atk-gcg (LLM-suffix-specific). AISI 'Evasion Attack'. Covers White-Box and Black-Box Optimization sub-techniques."
@@ -10118,8 +10118,8 @@
       "src-biggio-poisoning-svm-2012",
       "src-nist-ai-100-2e2025",
       "src-aisi-jp-redteam-guide",
-      "src-owasp-llm-top10-2025",
-      "src-mitre-atlas-matrix"
+      "owasp-llm-top10-2025",
+      "mitre-atlas"
     ],
     "provenance": "extracted",
     "notes": "Inject crafted points into the training set to degrade (availability) or steer (integrity) the model; includes Publish Poisoned Datasets and Erode Dataset Integrity. Distinct from atk-rag-poisoning (runtime/retrieval) — this is train-time. AISI 'Poisoning Attack'; OWASP LLM04. Now realizes the new candidate threat node software.training-data-poisoning (2026-06-21-gap)."
@@ -10148,8 +10148,8 @@
       "src-gu-badnets-2017",
       "src-nist-ai-100-2e2025",
       "src-aisi-jp-redteam-guide",
-      "src-owasp-llm-top10-2025",
-      "src-mitre-atlas-matrix"
+      "owasp-llm-top10-2025",
+      "mitre-atlas"
     ],
     "provenance": "extracted",
     "notes": "Poison the model itself so it behaves normally except on trigger-bearing inputs; survives transfer learning; Publish Poisoned Models distributes it via the supply chain. Distinct from atk-conditional-backdoor-trigger (sleeper-agent LLM, behavioral) — this is the classic CV/ML supply-chain trojan. AISI 'training model/program tampering (model poisoning)'."
@@ -10171,13 +10171,13 @@
     ],
     "access": "black-box",
     "benchmarks": [
-      "Garak",
+      "garak",
       "Promptfoo"
     ],
     "source_ids": [
       "src-owasp-genai-redteam",
-      "src-owasp-llm-top10-2025",
-      "src-mitre-atlas-matrix"
+      "owasp-llm-top10-2025",
+      "mitre-atlas"
     ],
     "provenance": "extracted",
     "notes": "Adversarial prompts coax the model into revealing its hidden system/developer prompt, leaking secrets and enabling tailored bypass. OWASP LLM07 System Prompt Leakage; ATLAS Extract LLM System Prompt + Discover LLM System Information. Distinct from atk-indirect-prompt-injection (which injects, not extracts)."
@@ -10202,8 +10202,8 @@
     "source_ids": [
       "src-carlini-extract-training-data-2023",
       "src-nist-ai-100-2e2025",
-      "src-owasp-llm-top10-2025",
-      "src-mitre-atlas-matrix"
+      "owasp-llm-top10-2025",
+      "mitre-atlas"
     ],
     "provenance": "extracted",
     "notes": "Divergence prompts (e.g. repeat-token) force aligned LLMs to emit memorized verbatim training data ~150x baseline. ATLAS LLM Data Leakage. Distinct from atk-system-prompt-extraction (extracts the prompt) and atk-membership-inference (infers presence, not content). OWASP LLM02 Sensitive Information Disclosure."
@@ -10225,12 +10225,12 @@
     "access": "black-box",
     "benchmarks": [
       "JailbreakBench",
-      "StrongREJECT"
+      "StrongReject"
     ],
     "source_ids": [
       "src-aisi-jp-redteam-guide",
       "src-owasp-genai-redteam",
-      "src-mitre-atlas-matrix"
+      "mitre-atlas"
     ],
     "provenance": "extracted",
     "notes": "Encode/obfuscate the malicious payload (Base64, ROT13, leetspeak, Morse, Pig Latin, synonym substitution, token smuggling) so input filters and the model's safety layer fail to recognize it. AISI direct-PI 'Special encodings / Character conversion / Language conversion' categories. Distinct from atk-gcg (gradient suffix) — this is human-readable transformation evasion."
@@ -10257,7 +10257,7 @@
     ],
     "source_ids": [
       "src-cohen-morris-ii-worm-2024",
-      "src-mitre-atlas-matrix"
+      "mitre-atlas"
     ],
     "provenance": "extracted",
     "notes": "A prompt that, when processed by one GenAI app, both performs a malicious action and reproduces itself into outputs that propagate to other connected GenAI agents (zero-click). ATLAS LLM Prompt Self-Replication. Builds on but distinct from atk-indirect-prompt-injection by adding self-propagation across an agent ecosystem."
@@ -10280,8 +10280,8 @@
     "benchmarks": [],
     "source_ids": [
       "src-shumailov-sponge-2020",
-      "src-owasp-llm-top10-2025",
-      "src-mitre-atlas-matrix"
+      "owasp-llm-top10-2025",
+      "mitre-atlas"
     ],
     "provenance": "extracted",
     "notes": "Sponge/resource-intensive inputs and excessive/agentic queries drive energy-latency DoS and runaway inference cost; chaff-data spamming degrades availability. ATLAS Denial of AI Service + Cost Harvesting + Spamming AI System with Chaff Data; OWASP LLM10 Unbounded Consumption. Now realizes the new candidate threat node model.denial-of-service (2026-06-21-gap), retaining societal.environmental-harm as the energy-impact link."
@@ -10309,7 +10309,7 @@
     ],
     "source_ids": [
       "src-owasp-genai-redteam",
-      "src-mitre-atlas-matrix"
+      "mitre-atlas"
     ],
     "provenance": "extracted",
     "notes": "Poison the data a tool returns at runtime (vs atk-mcp-tool-poisoning which poisons the tool *description*) so the agent acts on attacker-controlled results; can chain into context poisoning (AML.T0080). OWASP Agentic/Tooling/Plugin Analysis."
@@ -10332,8 +10332,8 @@
     "access": "black-box",
     "benchmarks": [],
     "source_ids": [
-      "src-owasp-llm-top10-2025",
-      "src-mitre-atlas-matrix"
+      "owasp-llm-top10-2025",
+      "mitre-atlas"
     ],
     "provenance": "extracted",
     "notes": "A model/tool/package published benignly to build trust and reputation, then swapped for a malicious version after adoption (rug pull). ATLAS AI Supply Chain Rug Pull. Distinct from atk-package-hallucination-slopsquatting (exploits hallucinated names) and atk-mcp-tool-poisoning (static poisoned description) — this is the temporal trust-then-betray pattern. OWASP LLM03 Supply Chain."
@@ -10358,7 +10358,7 @@
     ],
     "source_ids": [
       "src-shokri-membership-inference-2017",
-      "src-mitre-atlas-matrix"
+      "mitre-atlas"
     ]
   },
   {
@@ -10381,7 +10381,7 @@
     ],
     "source_ids": [
       "src-tramer-model-stealing-2016",
-      "src-mitre-atlas-matrix"
+      "mitre-atlas"
     ]
   },
   {
@@ -10403,7 +10403,7 @@
     ],
     "source_ids": [
       "src-carlini-extract-training-data-2023",
-      "src-mitre-atlas-matrix"
+      "mitre-atlas"
     ]
   },
   {
@@ -10427,7 +10427,7 @@
     ],
     "source_ids": [
       "src-gu-badnets-2017",
-      "src-mitre-atlas-matrix"
+      "mitre-atlas"
     ]
   },
   {
@@ -10536,7 +10536,7 @@
       "atk-exploitation-for-credential-access"
     ],
     "source_ids": [
-      "src-mitre-atlas-matrix",
+      "mitre-atlas",
       "src-atlas-data-yaml"
     ]
   },
@@ -10550,7 +10550,7 @@
       "atk-use-alternate-authentication-material"
     ],
     "source_ids": [
-      "src-mitre-atlas-matrix",
+      "mitre-atlas",
       "src-atlas-data-yaml"
     ]
   },
@@ -10566,7 +10566,7 @@
     "access": "black-box",
     "benchmarks": [],
     "source_ids": [
-      "src-mitre-atlas-matrix",
+      "mitre-atlas",
       "src-atlas-data-yaml"
     ],
     "provenance": "extracted",
@@ -10584,7 +10584,7 @@
     "access": "black-box",
     "benchmarks": [],
     "source_ids": [
-      "src-mitre-atlas-matrix",
+      "mitre-atlas",
       "src-atlas-data-yaml"
     ],
     "provenance": "extracted",
@@ -10604,7 +10604,7 @@
     "access": "gray-box",
     "benchmarks": [],
     "source_ids": [
-      "src-mitre-atlas-matrix",
+      "mitre-atlas",
       "src-atlas-data-yaml"
     ],
     "provenance": "extracted",
@@ -10624,7 +10624,7 @@
     "access": "black-box",
     "benchmarks": [],
     "source_ids": [
-      "src-mitre-atlas-matrix",
+      "mitre-atlas",
       "src-atlas-data-yaml"
     ],
     "provenance": "extracted",
@@ -10642,7 +10642,7 @@
     "access": "black-box",
     "benchmarks": [],
     "source_ids": [
-      "src-mitre-atlas-matrix",
+      "mitre-atlas",
       "src-atlas-data-yaml"
     ],
     "provenance": "extracted",
@@ -10660,7 +10660,7 @@
     "access": "black-box",
     "benchmarks": [],
     "source_ids": [
-      "src-mitre-atlas-matrix",
+      "mitre-atlas",
       "src-atlas-data-yaml"
     ],
     "provenance": "extracted",
@@ -10678,7 +10678,7 @@
     "access": "black-box",
     "benchmarks": [],
     "source_ids": [
-      "src-mitre-atlas-matrix",
+      "mitre-atlas",
       "src-atlas-data-yaml"
     ],
     "provenance": "extracted",
@@ -10699,7 +10699,7 @@
     "access": "gray-box",
     "benchmarks": [],
     "source_ids": [
-      "src-mitre-atlas-matrix",
+      "mitre-atlas",
       "src-atlas-data-yaml"
     ],
     "provenance": "extracted",
@@ -10720,7 +10720,7 @@
     "access": "black-box",
     "benchmarks": [],
     "source_ids": [
-      "src-mitre-atlas-matrix",
+      "mitre-atlas",
       "src-atlas-data-yaml",
       "src-szegedy-adversarial-2013"
     ],
@@ -10742,7 +10742,7 @@
     "access": "gray-box",
     "benchmarks": [],
     "source_ids": [
-      "src-mitre-atlas-matrix",
+      "mitre-atlas",
       "src-atlas-data-yaml"
     ],
     "provenance": "extracted",
@@ -10762,7 +10762,7 @@
     "access": "gray-box",
     "benchmarks": [],
     "source_ids": [
-      "src-mitre-atlas-matrix",
+      "mitre-atlas",
       "src-atlas-data-yaml"
     ],
     "provenance": "extracted",
@@ -10785,7 +10785,7 @@
       "CARLA Leaderboard"
     ],
     "source_ids": [
-      "src-mitre-atlas-matrix",
+      "mitre-atlas",
       "src-atlas-data-yaml"
     ],
     "provenance": "extracted",
@@ -10806,7 +10806,7 @@
     "access": "white-box",
     "benchmarks": [],
     "source_ids": [
-      "src-mitre-atlas-matrix",
+      "mitre-atlas",
       "src-atlas-data-yaml"
     ],
     "provenance": "extracted",
@@ -10827,7 +10827,7 @@
     "access": "black-box",
     "benchmarks": [],
     "source_ids": [
-      "src-mitre-atlas-matrix",
+      "mitre-atlas",
       "src-atlas-data-yaml"
     ],
     "provenance": "extracted",
@@ -10849,7 +10849,7 @@
       "CyberSecEval"
     ],
     "source_ids": [
-      "src-mitre-atlas-matrix",
+      "mitre-atlas",
       "src-atlas-data-yaml"
     ],
     "provenance": "extracted",
@@ -10869,7 +10869,7 @@
     "access": "gray-box",
     "benchmarks": [],
     "source_ids": [
-      "src-mitre-atlas-matrix",
+      "mitre-atlas",
       "src-atlas-data-yaml"
     ],
     "provenance": "extracted",
@@ -10890,7 +10890,7 @@
     "access": "black-box",
     "benchmarks": [],
     "source_ids": [
-      "src-mitre-atlas-matrix",
+      "mitre-atlas",
       "src-atlas-data-yaml"
     ],
     "provenance": "extracted",
@@ -10910,7 +10910,7 @@
     "access": "black-box",
     "benchmarks": [],
     "source_ids": [
-      "src-mitre-atlas-matrix",
+      "mitre-atlas",
       "src-atlas-data-yaml"
     ],
     "provenance": "extracted",
@@ -10931,7 +10931,7 @@
     "access": "black-box",
     "benchmarks": [],
     "source_ids": [
-      "src-mitre-atlas-matrix",
+      "mitre-atlas",
       "src-atlas-data-yaml"
     ],
     "provenance": "extracted",
@@ -10953,7 +10953,7 @@
     "access": "black-box",
     "benchmarks": [],
     "source_ids": [
-      "src-mitre-atlas-matrix",
+      "mitre-atlas",
       "src-atlas-data-yaml"
     ],
     "provenance": "extracted",
@@ -10975,7 +10975,7 @@
       "AgentDojo"
     ],
     "source_ids": [
-      "src-mitre-atlas-matrix",
+      "mitre-atlas",
       "src-atlas-data-yaml"
     ],
     "provenance": "extracted",
@@ -10995,7 +10995,7 @@
     "access": "black-box",
     "benchmarks": [],
     "source_ids": [
-      "src-mitre-atlas-matrix",
+      "mitre-atlas",
       "src-atlas-data-yaml"
     ],
     "provenance": "extracted",
@@ -11016,7 +11016,7 @@
     "access": "white-box",
     "benchmarks": [],
     "source_ids": [
-      "src-mitre-atlas-matrix",
+      "mitre-atlas",
       "src-atlas-data-yaml"
     ],
     "provenance": "extracted",
@@ -11037,7 +11037,7 @@
     "access": "black-box",
     "benchmarks": [],
     "source_ids": [
-      "src-mitre-atlas-matrix",
+      "mitre-atlas",
       "src-atlas-data-yaml"
     ],
     "provenance": "extracted",
@@ -11060,7 +11060,7 @@
       "MCPTox"
     ],
     "source_ids": [
-      "src-mitre-atlas-matrix",
+      "mitre-atlas",
       "src-atlas-data-yaml",
       "src-owasp-genai-redteam"
     ],
@@ -11087,7 +11087,7 @@
       "InjecAgent"
     ],
     "source_ids": [
-      "src-mitre-atlas-matrix",
+      "mitre-atlas",
       "src-atlas-data-yaml"
     ],
     "provenance": "extracted",
@@ -11110,7 +11110,7 @@
     "access": "black-box",
     "benchmarks": [],
     "source_ids": [
-      "src-mitre-atlas-matrix",
+      "mitre-atlas",
       "src-atlas-data-yaml"
     ],
     "provenance": "extracted",
@@ -11130,7 +11130,7 @@
     "access": "gray-box",
     "benchmarks": [],
     "source_ids": [
-      "src-mitre-atlas-matrix",
+      "mitre-atlas",
       "src-atlas-data-yaml"
     ],
     "provenance": "extracted",
@@ -11151,7 +11151,7 @@
     "access": "gray-box",
     "benchmarks": [],
     "source_ids": [
-      "src-mitre-atlas-matrix",
+      "mitre-atlas",
       "src-atlas-data-yaml"
     ],
     "provenance": "extracted",
@@ -11172,7 +11172,7 @@
     "access": "gray-box",
     "benchmarks": [],
     "source_ids": [
-      "src-mitre-atlas-matrix",
+      "mitre-atlas",
       "src-atlas-data-yaml"
     ],
     "provenance": "extracted",
@@ -11191,7 +11191,7 @@
     "access": "black-box",
     "benchmarks": [],
     "source_ids": [
-      "src-mitre-atlas-matrix",
+      "mitre-atlas",
       "src-atlas-data-yaml"
     ],
     "provenance": "extracted",
@@ -11214,7 +11214,7 @@
       "MCPTox"
     ],
     "source_ids": [
-      "src-mitre-atlas-matrix",
+      "mitre-atlas",
       "src-atlas-data-yaml"
     ],
     "provenance": "extracted",
@@ -11238,7 +11238,7 @@
       "AgentDojo"
     ],
     "source_ids": [
-      "src-mitre-atlas-matrix",
+      "mitre-atlas",
       "src-atlas-data-yaml"
     ],
     "provenance": "extracted",
@@ -11261,7 +11261,7 @@
       "AgentHarm"
     ],
     "source_ids": [
-      "src-mitre-atlas-matrix",
+      "mitre-atlas",
       "src-atlas-data-yaml"
     ],
     "provenance": "extracted",
@@ -11284,7 +11284,7 @@
       "SHADE-Arena"
     ],
     "source_ids": [
-      "src-mitre-atlas-matrix",
+      "mitre-atlas",
       "src-atlas-data-yaml"
     ],
     "provenance": "extracted",
@@ -11306,7 +11306,7 @@
       "CyberSecEval"
     ],
     "source_ids": [
-      "src-mitre-atlas-matrix",
+      "mitre-atlas",
       "src-atlas-data-yaml"
     ],
     "provenance": "extracted",
@@ -11326,7 +11326,7 @@
     "access": "gray-box",
     "benchmarks": [],
     "source_ids": [
-      "src-mitre-atlas-matrix",
+      "mitre-atlas",
       "src-atlas-data-yaml"
     ],
     "provenance": "extracted",
@@ -11349,7 +11349,7 @@
       "SHADE-Arena"
     ],
     "source_ids": [
-      "src-mitre-atlas-matrix",
+      "mitre-atlas",
       "src-atlas-data-yaml"
     ],
     "provenance": "extracted",
@@ -11372,7 +11372,7 @@
     "access": "gray-box",
     "benchmarks": [],
     "source_ids": [
-      "src-mitre-atlas-matrix",
+      "mitre-atlas",
       "src-atlas-data-yaml"
     ],
     "provenance": "extracted",
@@ -11393,7 +11393,7 @@
     "access": "gray-box",
     "benchmarks": [],
     "source_ids": [
-      "src-mitre-atlas-matrix",
+      "mitre-atlas",
       "src-atlas-data-yaml"
     ],
     "provenance": "extracted",
@@ -11411,7 +11411,7 @@
       "source": "ATLAS AML.T0024.000 https://atlas.mitre.org/techniques/AML.T0024.000 ; NIST AI 100-2e2025 https://csrc.nist.gov/pubs/ai/100/2/e2025/final ; Shokri et al. 2017 https://arxiv.org/abs/1610.05820"
     },
     "source_ids": [
-      "src-mitre-atlas-matrix",
+      "mitre-atlas",
       "src-nist-ai-100-2e2025",
       "src-shokri-membership-inference-2017"
     ]
@@ -11428,7 +11428,7 @@
       "source": "ATLAS AML.T0024.001 https://atlas.mitre.org/techniques/AML.T0024.001 ; NIST AI 100-2e2025 https://csrc.nist.gov/pubs/ai/100/2/e2025/final ; Fredrikson et al. CCS 2015 https://dl.acm.org/doi/10.1145/2810103.2813677"
     },
     "source_ids": [
-      "src-mitre-atlas-matrix",
+      "mitre-atlas",
       "src-nist-ai-100-2e2025",
       "src-fredrikson-model-inversion-2015"
     ]
@@ -11445,7 +11445,7 @@
       "source": "ATLAS AML.T0015 https://atlas.mitre.org/techniques/AML.T0015 ; NIST AI 100-2e2025 (Evasion) https://csrc.nist.gov/pubs/ai/100/2/e2025/final ; Szegedy et al. 2013 https://arxiv.org/abs/1312.6199"
     },
     "source_ids": [
-      "src-mitre-atlas-matrix",
+      "mitre-atlas",
       "src-nist-ai-100-2e2025",
       "src-szegedy-adversarial-2013"
     ]
@@ -11462,8 +11462,8 @@
       "source": "ATLAS AML.T0029 https://atlas.mitre.org/techniques/AML.T0029 ; OWASP LLM10 https://genai.owasp.org/llm-top-10/ ; Shumailov et al. 2020 (sponge) https://arxiv.org/abs/2006.03463"
     },
     "source_ids": [
-      "src-mitre-atlas-matrix",
-      "src-owasp-llm-top10-2025",
+      "mitre-atlas",
+      "owasp-llm-top10-2025",
       "src-shumailov-sponge-2020"
     ]
   },
@@ -11479,11 +11479,11 @@
       "source": "ATLAS AML.T0020 https://atlas.mitre.org/techniques/AML.T0020 ; NIST AI 100-2e2025 (Poisoning) https://csrc.nist.gov/pubs/ai/100/2/e2025/final ; Biggio et al. 2012 https://arxiv.org/abs/1206.6389 ; Gu et al. BadNets 2017 https://arxiv.org/abs/1708.06733 ; OWASP LLM04 https://genai.owasp.org/llm-top-10/"
     },
     "source_ids": [
-      "src-mitre-atlas-matrix",
+      "mitre-atlas",
       "src-nist-ai-100-2e2025",
       "src-biggio-poisoning-svm-2012",
       "src-gu-badnets-2017",
-      "src-owasp-llm-top10-2025"
+      "owasp-llm-top10-2025"
     ]
   },
   {
@@ -11498,8 +11498,8 @@
       "source": "ATLAS AML.T0010 https://atlas.mitre.org/techniques/AML.T0010 ; AML.T0109 https://atlas.mitre.org/techniques/AML.T0109 ; OWASP LLM03 https://genai.owasp.org/llm-top-10/"
     },
     "source_ids": [
-      "src-mitre-atlas-matrix",
-      "src-owasp-llm-top10-2025"
+      "mitre-atlas",
+      "owasp-llm-top10-2025"
     ]
   },
   {
@@ -11514,7 +11514,7 @@
       "source": "ATLAS AML.T0080 https://atlas.mitre.org/techniques/AML.T0080 ; OWASP GenAI Red Teaming Guide (agentic) https://genai.owasp.org/resource/genai-red-teaming-guide/"
     },
     "source_ids": [
-      "src-mitre-atlas-matrix",
+      "mitre-atlas",
       "src-owasp-genai-redteam"
     ]
   },
@@ -11585,7 +11585,7 @@
     ],
     "access": "gray-box",
     "benchmarks": [
-      "StrongREJECT",
+      "StrongReject",
       "HarmBench"
     ],
     "source_ids": [
@@ -11613,7 +11613,7 @@
     "access": "white-box",
     "benchmarks": [
       "HarmBench",
-      "StrongREJECT"
+      "StrongReject"
     ],
     "source_ids": [
       "src-wang-activation-attack-2023",
@@ -11760,7 +11760,7 @@
     ],
     "access": "white-box",
     "benchmarks": [
-      "MS-MARCO"
+      "MS MARCO"
     ],
     "source_ids": [
       "src-bentov-gaslite-2024"
@@ -11812,7 +11812,7 @@
       "MultiJail"
     ],
     "source_ids": [
-      "src-yong-lowresource-jb-2023"
+      "arxiv-2310-02446"
     ],
     "provenance": "extracted",
     "evidence_grade": "A",
@@ -11834,7 +11834,7 @@
     ],
     "access": "black-box",
     "benchmarks": [
-      "StrongREJECT"
+      "StrongReject"
     ],
     "source_ids": [
       "src-kuo-hcot-2025"
@@ -11907,7 +11907,7 @@
     ],
     "access": "black-box",
     "benchmarks": [
-      "StrongREJECT",
+      "StrongReject",
       "HarmBench"
     ],
     "source_ids": [
@@ -13480,7 +13480,7 @@
     "title": "Natural-language-orchestrated agentic red teaming compresses cycles weeks→hours (Dreadnode, 85% ASR, zero human code)",
     "summary": "Dreadnode's agentic red-team system lets an operator state goals in natural language while the agent orchestrates attack selection, transform composition, execution and reporting over 45+ attacks / 450+ transforms / 130+ scorers, across multi-agent/multilingual/multimodal targets. 85% ASR on Llama Scout with zero human-written code, cutting test cycles from weeks to hours. A concrete instantiation of the AI-auditor-agent frontier moving toward production tooling.",
     "source_ids": [
-      "src-agentic-era-dreadnode"
+      "arxiv-2605-04019"
     ],
     "taxonomy": {
       "threat": [
@@ -13828,7 +13828,7 @@
     },
     "atlas": [],
     "benchmarks": [
-      "StrongREJECT",
+      "StrongReject",
       "HarmBench"
     ],
     "standards": [],
@@ -14272,7 +14272,7 @@
     "summary": "Frontier labs increasingly run external red teaming as crowdsourced bug-bounty programs via platforms like HackerOne and Bugcrowd, turning ad-hoc expert review into a scalable, incentivized crowd of human red-teamers with disclosure pipelines. A human-AI collaboration model at the program/governance layer, distinct from in-house expert review — and a complement to automated attackers.",
     "source_ids": [
       "src-bugcrowd-2026-predictions",
-      "src-constitutional-classifiers"
+      "arxiv-2501-18837"
     ],
     "taxonomy": {
       "threat": [
@@ -19022,7 +19022,7 @@
     "status": "open",
     "disclosure": "public (registry)",
     "source_ids": [
-      "oecd-ai-incidents-monitor"
+      "oecd-aim-monitor"
     ],
     "provenance": "ambiguous"
   },
@@ -19099,14 +19099,14 @@
       "atk-llm-social-engineering-cyber"
     ],
     "benchmarks": [
-      "StrongREJECT"
+      "StrongReject"
     ],
     "references": [],
     "redteam_summary": "Over 5,000 hours of red teaming by 400+ external testers and experts (incl. partners like UK AISI and US CAISI); expert red teaming for violent attack planning and expert+automated red teaming for prompt injections; expert bioweaponization red teaming and external government red teaming for the High biological/chemical safeguards. Categories: jailbreaks, prompt injection, disallowed content, sycophancy, instruction hierarchy, deception (with chain-of-thought monitoring). New 'safe-completions' safety training centers on output safety rather than binary refusal.",
     "results": "Preparedness Framework: gpt-5-thinking treated as HIGH capability in the Biological and Chemical domain (precautionary, no definitive evidence of meaningful novice uplift), activating full safeguards (model + system + account-level protections, gated API, government red teaming). Cybersecurity and AI self-improvement assessed below High; sandbagging added as a research category (Apollo external eval). Safe-completions improved safety on dual-use prompts and reduced residual-failure severity vs OpenAI o3.",
     "url": "https://cdn.openai.com/gpt-5-system-card.pdf",
     "source_ids": [
-      "openai-gpt5-system-card-2025"
+      "mc-src-gpt5-system-card"
     ]
   },
   {
@@ -19125,7 +19125,7 @@
       "atk-llm-social-engineering-cyber"
     ],
     "benchmarks": [
-      "StrongREJECT",
+      "StrongReject",
       "CyberSecEval"
     ],
     "references": [
@@ -19135,7 +19135,7 @@
     "results": "gpt-5.2-thinking/instant generally on par with or better than gpt-5.1 on production safety benchmarks, with notable improvement on suicide/self-harm, mental health, and emotional reliance offline evals. Preparedness biological/chemical safeguards from the GPT-5 line continue; cyber assessed via CVE-Bench; sandbagging tracked as a research category.",
     "url": "https://cdn.openai.com/pdf/3a4153c8-c748-4b71-8e31-aecbde944f8d/oai_5_2_system-card.pdf",
     "source_ids": [
-      "openai-gpt52-update-2025"
+      "mc-src-gpt5-2-update"
     ]
   },
   {
@@ -19159,7 +19159,7 @@
     "results": "Claude Opus 4.1 released under the ASL-3 Standard, consistent with Opus 4; evaluations found behavior in line with Opus 4 with no new capability-threshold crossings requiring higher safeguards.",
     "url": "https://www.anthropic.com/claude-opus-4-1-system-card",
     "source_ids": [
-      "anthropic-claude-opus41-card-2025"
+      "mc-src-claude-opus-4-1"
     ]
   },
   {
@@ -19186,7 +19186,7 @@
     "results": "Deployed under ASL-3 protections: Sonnet 4.5 demonstrated higher performance than Opus 4.1 on many evaluations, so the same (ASL-3) safeguards were applied conservatively. Different snapshots led on different domains (some CBRN, others cyber/autonomy). High situational awareness flagged as a caveat to the measured safety gains.",
     "url": "https://www.anthropic.com/claude-sonnet-4-5-system-card",
     "source_ids": [
-      "anthropic-claude-sonnet45-card-2025"
+      "mc-src-claude-sonnet-4-5"
     ]
   },
   {
@@ -19209,7 +19209,7 @@
     "results": "Met the ASL-3 rule-out threshold: evaluations confirmed Haiku 4.5 did NOT require ASL-3 and it was released under the ASL-2 Standard, with capability similar to Claude Sonnet 4. Automated evaluations showed a statistically significantly LOWER rate of misaligned behaviors than both Sonnet 4.5 and Opus 4.1 (Anthropic's safest model by that metric); only limited CBRN risk.",
     "url": "https://assets.anthropic.com/m/99128ddd009bdcb/original/Claude-Haiku-4-5-System-Card.pdf",
     "source_ids": [
-      "anthropic-claude-haiku45-card-2025"
+      "mc-src-claude-haiku-4-5"
     ]
   },
   {
@@ -19235,7 +19235,7 @@
     "results": "Released under ASL-3 safeguards. Card reports improved safeguard robustness and agentic-safety/prompt-injection resistance alongside the alignment assessment; deployed under the ASL-3 Standard consistent with the Claude 4.x line.",
     "url": "https://www-cdn.anthropic.com/bf10f64990cfda0ba858290be7b8cc6317685f47/Claude%20Opus%204.5%20System%20Card.pdf",
     "source_ids": [
-      "anthropic-claude-opus45-card-2025"
+      "mc-src-claude-opus-4-5"
     ]
   },
   {
@@ -19286,7 +19286,7 @@
     "results": "Meta states Llama 4 models 'do not introduce risk plausibly enabling catastrophic cyber outcomes'; CBRNE evaluations conducted to assess whether the models could meaningfully increase malicious-actor capability (no catastrophic uplift reported). Open-weight release paired with the Llama Guard / Prompt Guard / Code Shield system safeguards.",
     "url": "https://github.com/meta-llama/llama-models/blob/main/models/llama4/MODEL_CARD.md",
     "source_ids": [
-      "meta-llama4-model-card-2025"
+      "mc-src-llama4-card"
     ]
   },
   {
@@ -19307,14 +19307,14 @@
       "AgentHarm",
       "AgentDojo",
       "WMDP",
-      "CyBench"
+      "Cybench"
     ],
     "references": [],
     "redteam_summary": "Grok 4 (API + Web) evaluated under xAI's Risk Management Framework across abuse potential (multilingual refusal dataset, agentic abuse via AgentHarm, hijacking via AgentDojo), concerning propensities (deception via MASK, soft political bias, sycophancy), and dual-use capabilities (bio via BioLP-Bench/VCT/WMDP-Bio, chem via WMDP-Chem, cyber via WMDP-Cyber/CyBench, persuasion via MakeMeSay). Safeguards removed when measuring dual-use capability.",
     "results": "Refusal answer-rate ~0.00 (standard/user-jailbreak; 0.01 system-jailbreak), AgentHarm answer-rate 0.14, AgentDojo hijacking ASR 0.02; MASK dishonesty 0.43, soft political bias 0.36, sycophancy 0.07. Superhuman dual-use bio scores (BioLP-Bench 0.47 vs 0.384 human; VCT 0.60 vs 0.221 human; WMDP-Bio 0.87), prompting deployment of narrow bio/chem output filters. End-to-end offensive cyber assessed below a human professional (CyBench unguided 0.43). Overall assessed LOW risk for malicious use / loss of control; radiological & nuclear not evaluated.",
     "url": "https://data.x.ai/2025-08-20-grok-4-model-card.pdf",
     "source_ids": [
-      "xai-grok4-model-card-2025"
+      "mc-src-grok-4-card"
     ]
   },
   {
@@ -19360,7 +19360,7 @@
     "results": "Report includes a safety evaluation alongside capability benchmarks. ^[ambiguous] The vendor report's safety section is comparatively brief; independent testing of the successor (Kimi K2.5) found dual-use capability comparable to GPT-5.2 / Claude Opus 4.5 but with significantly FEWER refusals on CBRNE-related requests, flagging open-weight misuse-uplift risk (not a vendor-stated result).",
     "url": "https://arxiv.org/abs/2507.20534",
     "source_ids": [
-      "moonshot-kimi-k2-report-2025"
+      "arxiv-2507-20534"
     ]
   },
   {
@@ -19404,7 +19404,7 @@
       "Promptfoo",
       "CyberSecEval",
       "HarmBench",
-      "DoNotAnswer"
+      "Do-Not-Answer"
     ],
     "references": [
       "arxiv-2507-20534"
@@ -19484,7 +19484,7 @@
     "results": "Preparedness scorecard: Persuasion = Medium; Cybersecurity, CBRN, Model Autonomy = Low. Deployed because post-mitigation score ≤ Medium. Audio risks mitigated via preset-voice allowlist and speaker-ID refusals.",
     "url": "https://openai.com/index/gpt-4o-system-card/",
     "source_ids": [
-      "openai-gpt4o-system-card-2024"
+      "mc-src-gpt4o-system-card"
     ]
   },
   {
@@ -19502,7 +19502,7 @@
       "atk-llm-social-engineering-cyber"
     ],
     "benchmarks": [
-      "StrongREJECT"
+      "StrongReject"
     ],
     "references": [
       "arxiv-2412-16339"
@@ -19511,7 +19511,7 @@
     "results": "Red teamers rated o1 safer than GPT-4o in ~60% of cases. SOTA jailbreak resistance on StrongREJECT and reduced illicit-advice / stereotype rates from deliberative alignment. Preparedness: Medium overall.",
     "url": "https://cdn.openai.com/o1-system-card-20241205.pdf",
     "source_ids": [
-      "openai-o1-system-card-2024"
+      "mc-src-o1-system-card"
     ]
   },
   {
@@ -19528,7 +19528,7 @@
       "atk-llm-social-engineering-cyber"
     ],
     "benchmarks": [
-      "StrongREJECT"
+      "StrongReject"
     ],
     "references": [
       "arxiv-2412-16339"
@@ -19563,7 +19563,7 @@
     "results": "Red teamers judged deep research safer ~60% of the time (o3-mini ranked slightly safer at 55%). Prompt-injection robustness during autonomous browsing flagged as a key residual risk; mitigations and monitoring applied before launch.",
     "url": "https://cdn.openai.com/deep-research-system-card.pdf",
     "source_ids": [
-      "openai-deep-research-system-card-2025"
+      "mc-src-deep-research-system-card"
     ]
   },
   {
@@ -19580,7 +19580,7 @@
       "atk-llm-social-engineering-cyber"
     ],
     "benchmarks": [
-      "StrongREJECT",
+      "StrongReject",
       "CyberSecEval"
     ],
     "references": [
@@ -19591,7 +19591,7 @@
     "results": "Preparedness scorecard reported per category; biorisk/cyber evaluations probed near-threshold capability uplift with mitigations applied. Jailbreak-resistance and instruction-hierarchy results documented.",
     "url": "https://cdn.openai.com/pdf/2221c875-02dc-4789-800b-e7758f3722c1/o3-and-o4-mini-system-card.pdf",
     "source_ids": [
-      "openai-o3-o4mini-system-card-2025"
+      "mc-src-o3-o4mini-system-card"
     ]
   },
   {
@@ -19607,14 +19607,14 @@
       "atk-llm-social-engineering-cyber"
     ],
     "benchmarks": [
-      "StrongREJECT"
+      "StrongReject"
     ],
     "references": [],
     "redteam_summary": "External red teaming across persuasion, CBRN synthesis guidance, cyber exploitation, and autonomous behavior; disallowed-content, jailbreak, hallucination (PersonQA), and bias (BBQ) evaluations.",
     "results": "Preparedness: Persuasion = Medium (consistent w/ GPT-4o), Cybersecurity / CBRN-bio / Model-autonomy = Low — scaling the largest pre-trained model did not raise frontier risk. 99% unsafe-content refusal; 99% resistance to human-sourced jailbreaks.",
     "url": "https://cdn.openai.com/gpt-4-5-system-card-2272025.pdf",
     "source_ids": [
-      "openai-gpt45-system-card-2025"
+      "mc-src-gpt45-system-card"
     ]
   },
   {
@@ -19687,7 +19687,7 @@
     "results": "Some uplift in certain evals (better advice on key weaponization steps) but no model-assisted participant produced a convincing plan without critical failures end-to-end; released under ASL-2.",
     "url": "https://www.anthropic.com/claude-3-7-sonnet-system-card",
     "source_ids": [
-      "anthropic-claude37-system-card-2025"
+      "mc-src-claude-3-7-sonnet"
     ]
   },
   {
@@ -19717,7 +19717,7 @@
     "results": "Claude Opus 4 deployed under ASL-3 safeguards (precautionary) after crossing the bio/chem-weapons-uplift capability threshold; Claude Sonnet 4 kept at ASL-2. Surfaced rare self-preservation / high-agency behaviors under adversarial agentic prompting, addressed with mitigations.",
     "url": "https://www-cdn.anthropic.com/6d8a8055020700718b0c49369f60816ba2a7c285/Claude%204%20System%20Card.pdf",
     "source_ids": [
-      "anthropic-claude4-system-card-2025"
+      "mc-src-claude-opus-4-sonnet-4"
     ]
   },
   {
@@ -19741,7 +19741,7 @@
     "results": "No critical dangerous-capability thresholds crossed; content-safety mitigations and policy evaluations reported across modalities and languages.",
     "url": "https://arxiv.org/abs/2403.05530",
     "source_ids": [
-      "google-gemini15-report-2024"
+      "arxiv-2403-05530"
     ]
   },
   {
@@ -19855,7 +19855,7 @@
     "results": "Phi-4 behaved similarly to the Phi-3 family; risky behaviors AIRT found were remediated by further safety post-training, after which Phi-4 showed strong defenses against the tested adversarial techniques.",
     "url": "https://arxiv.org/abs/2412.08905",
     "source_ids": [
-      "microsoft-phi4-tech-report-2024"
+      "arxiv-2412-08905"
     ]
   },
   {
@@ -19903,7 +19903,7 @@
     "results": "Qualitative: relatively simple system-level attacks (incl. multi-turn Crescendo and indirect prompt injection) were more often successful than complex algorithmic attacks; securing AI systems framed as never-complete.",
     "url": "https://arxiv.org/abs/2501.07238",
     "source_ids": [
-      "microsoft-redteam-100-products-2025"
+      "arxiv-2501-07238"
     ]
   },
   {
@@ -21723,7 +21723,7 @@
     "benchmarks": [
       "BIPIA",
       "PromptBench",
-      "MS-MARCO"
+      "MS MARCO"
     ],
     "standards": [
       "OWASP LLM Top 10",
@@ -22532,7 +22532,7 @@
       "AML.T0043"
     ],
     "benchmarks": [
-      "MMBench",
+      "MM-Bench",
       "MMMU",
       "ScienceQA"
     ],
@@ -22573,7 +22573,7 @@
     ],
     "access": "gray-box",
     "benchmarks": [
-      "MMBench",
+      "MM-Bench",
       "MMMU",
       "ScienceQA"
     ],
@@ -25537,7 +25537,7 @@
     ],
     "benchmarks": [
       "HarmBench",
-      "StrongREJECT",
+      "StrongReject",
       "JailbreakBench",
       "AdvBench"
     ],
@@ -25582,7 +25582,7 @@
       "AdvBench",
       "HarmBench",
       "JailbreakBench",
-      "StrongREJECT"
+      "StrongReject"
     ],
     "standards": [],
     "maturity": "demonstrated",
@@ -25612,7 +25612,7 @@
     "access": "black-box",
     "benchmarks": [
       "HarmBench",
-      "StrongREJECT",
+      "StrongReject",
       "JailbreakBench",
       "AdvBench"
     ],
@@ -27946,7 +27946,7 @@
       "AdvBench",
       "TruthfulQA",
       "MMLU",
-      "StrongREJECT"
+      "StrongReject"
     ],
     "standards": [
       "ISO/IEC 42001",
@@ -29191,7 +29191,7 @@
       "AML.T0029"
     ],
     "benchmarks": [
-      "Agent-Security-Bench",
+      "Agent Security Bench",
       "InjecAgent"
     ],
     "standards": [],
@@ -29230,7 +29230,7 @@
       "AML.T0051"
     ],
     "benchmarks": [
-      "Agent-Security-Bench",
+      "Agent Security Bench",
       "InjecAgent"
     ],
     "standards": [],
@@ -30152,7 +30152,7 @@
       "lmsys/toxic-chat",
       "JailbreakBench",
       "ChatGPT-Jailbreak-Prompts",
-      "WildGuardMix"
+      "WildGuard-Mix"
     ],
     "standards": [],
     "maturity": "prototype",
@@ -30822,7 +30822,7 @@
       "2WikiMultiHopQA",
       "MuSiQue",
       "IIRC",
-      "NaturalQuestions",
+      "Natural Questions",
       "TriviaQA",
       "HotpotQA",
       "NIAH"
@@ -31343,7 +31343,7 @@
     ],
     "benchmarks": [
       "AgentDojo",
-      "AgentSecurityBench",
+      "Agent Security Bench",
       "InjecAgent"
     ],
     "standards": [],
@@ -31387,7 +31387,7 @@
     "benchmarks": [
       "AgentDojo",
       "ChatInject",
-      "AgentSecurityBench",
+      "Agent Security Bench",
       "InjecAgent"
     ],
     "standards": [],
@@ -33234,9 +33234,9 @@
     ],
     "benchmarks": [
       "AdvBench",
-      "BeaverTails",
+      "Beavertails",
       "CoSafe",
-      "MT-Bench",
+      "MT-bench",
       "AlpacaEval",
       "XSTest"
     ],
@@ -33281,7 +33281,7 @@
     "access": "black-box",
     "benchmarks": [
       "AdvBench",
-      "BeaverTails",
+      "Beavertails",
       "CoSafe"
     ],
     "exploits_vulns": [],
@@ -33323,7 +33323,7 @@
       "GCG",
       "XSTest",
       "WildJailbreak-Benign",
-      "MT-Bench",
+      "MT-bench",
       "MMLU"
     ],
     "standards": [],
@@ -34588,7 +34588,7 @@
       "TruthfulQA",
       "GPQA",
       "QuALITY",
-      "MT-Bench",
+      "MT-bench",
       "LMSYS-Chatbot-Arena",
       "ANLI",
       "AdvGLUE",
@@ -36598,7 +36598,7 @@
     "benchmarks": [
       "HarmBench",
       "JailbreakBench",
-      "BeaverTails",
+      "Beavertails",
       "MMLU"
     ],
     "standards": [],
@@ -37280,7 +37280,7 @@
       "AML.T0054"
     ],
     "benchmarks": [
-      "JailBreakBench",
+      "JailbreakBench",
       "ToxicPrompts",
       "AdvPromptGen"
     ],
@@ -40478,7 +40478,7 @@
     ],
     "benchmarks": [
       "AdvBench",
-      "MT-Bench"
+      "MT-bench"
     ],
     "standards": [],
     "maturity": "emerging",
@@ -40519,7 +40519,7 @@
     ],
     "benchmarks": [
       "AdvBench",
-      "MT-Bench",
+      "MT-bench",
       "CodeQL-CWE"
     ],
     "standards": [],
@@ -41403,7 +41403,7 @@
       "SafeBench",
       "MM-SafetyBench",
       "HADES-Dataset",
-      "JailBreakV-28K",
+      "JailbreakV-28K",
       "RTVLM"
     ],
     "standards": [],
@@ -41580,7 +41580,7 @@
       "SafeBench",
       "MM-SafetyBench",
       "HADES-Dataset",
-      "JailBreakV-28K",
+      "JailbreakV-28K",
       "RTVLM"
     ],
     "standards": [],
@@ -43843,7 +43843,7 @@
     },
     "atlas": [],
     "benchmarks": [
-      "CyBench",
+      "Cybench",
       "BountyBench",
       "CyberGym",
       "CWE",
@@ -43895,7 +43895,7 @@
     },
     "atlas": [],
     "benchmarks": [
-      "CyBench",
+      "Cybench",
       "BountyBench",
       "CyberGym"
     ],
@@ -46015,7 +46015,7 @@
     ],
     "benchmarks": [
       "HarmBench",
-      "StrongREJECT"
+      "StrongReject"
     ],
     "standards": [],
     "maturity": "established",
@@ -46193,7 +46193,7 @@
     "benchmarks": [
       "HarmBench",
       "JailbreakBench",
-      "StrongREJECT"
+      "StrongReject"
     ],
     "standards": [],
     "maturity": "established",
@@ -46435,7 +46435,7 @@
       "AML.T0051"
     ],
     "benchmarks": [
-      "JailBreakV-28K",
+      "JailbreakV-28K",
       "RedTeam-2K",
       "HarmBench",
       "AdvBench"
@@ -46480,7 +46480,7 @@
       "AML.T0054"
     ],
     "benchmarks": [
-      "JailBreakV-28K",
+      "JailbreakV-28K",
       "RedTeam-2K"
     ],
     "standards": [],
@@ -46759,7 +46759,7 @@
     "benchmarks": [
       "Natural Questions",
       "HotpotQA",
-      "MS-MARCO"
+      "MS MARCO"
     ],
     "standards": [],
     "maturity": "established",
@@ -46810,7 +46810,7 @@
     "benchmarks": [
       "Natural Questions",
       "HotpotQA",
-      "MS-MARCO"
+      "MS MARCO"
     ],
     "standards": [],
     "maturity": "emerging",
@@ -47114,7 +47114,7 @@
       "AML.T0054"
     ],
     "benchmarks": [
-      "StrongREJECT"
+      "StrongReject"
     ],
     "standards": [],
     "maturity": "emerging",
@@ -47165,7 +47165,7 @@
     ],
     "benchmarks": [
       "WMDP",
-      "StrongREJECT"
+      "StrongReject"
     ],
     "standards": [
       "NIST AI RMF"
@@ -47301,7 +47301,7 @@
     ],
     "benchmarks": [
       "HarmBench",
-      "StrongREJECT",
+      "StrongReject",
       "JailbreakBench"
     ],
     "standards": [],
@@ -47423,7 +47423,7 @@
     ],
     "benchmarks": [
       "Cybench",
-      "HackTheBox",
+      "Hack the Box",
       "SekaiCTF",
       "Glacier",
       "HKCert"
@@ -48392,7 +48392,7 @@
     "title": "LLM and ML hiring tools reproduce demographic bias and fail the four-fifths rule",
     "summary": "Amazon scrapped a resume-screener that penalized 'women's' and all-women's-college graduates (Reuters 2018); a 2024 Bloomberg audit found GPT-3.5 ranked names linked to Black Americans top least often across 1,000 trials, failing the four-fifths (80%) hiring-discrimination rule.",
     "source_ids": [
-      "src-reuters-amazon-recruit-2018",
+      "src-reuters-amazon-hiring-2018",
       "src-bloomberg-gpt-hiring-2024"
     ],
     "taxonomy": {
@@ -48704,7 +48704,7 @@
     "title": "LLM capability and safety degrade sharply for low-resource languages",
     "summary": "Translating unsafe prompts into low-resource languages bypassed GPT-4 safety ~79% of the time vs <1% in English (Yong 2023), reflecting weaker model competence and safety coverage outside high-resource languages - a combined performance and safety inequity.",
     "source_ids": [
-      "src-lowresource-jailbreak-2023"
+      "arxiv-2310-02446"
     ],
     "taxonomy": {
       "threat": [
@@ -48754,7 +48754,7 @@
     ],
     "source_ids": [
       "src-koenecke-asr-2020",
-      "src-lowresource-jailbreak-2023"
+      "arxiv-2310-02446"
     ]
   },
   {
@@ -51860,7 +51860,7 @@
     ],
     "benchmarks": [
       "AEGIS",
-      "Garak"
+      "garak"
     ],
     "standards": [],
     "maturity": "established",
@@ -51914,7 +51914,7 @@
       "Promptfoo",
       "CyberSecEval",
       "HarmBench",
-      "DoNotAnswer"
+      "Do-Not-Answer"
     ],
     "standards": [],
     "maturity": "emerging",
@@ -52592,7 +52592,7 @@
       "mc-gpt5-system-card"
     ],
     "source_ids": [
-      "openai-gpt5-system-card-2025"
+      "mc-src-gpt5-system-card"
     ]
   },
   {
@@ -52606,7 +52606,7 @@
       "mc-gpt52-update"
     ],
     "source_ids": [
-      "openai-gpt52-update-2025"
+      "mc-src-gpt5-2-update"
     ]
   },
   {
@@ -52620,7 +52620,7 @@
       "mc-claude-opus41-addendum"
     ],
     "source_ids": [
-      "anthropic-claude-opus41-card-2025"
+      "mc-src-claude-opus-4-1"
     ]
   },
   {
@@ -52634,7 +52634,7 @@
       "mc-claude-sonnet45-system-card"
     ],
     "source_ids": [
-      "anthropic-claude-sonnet45-card-2025"
+      "mc-src-claude-sonnet-4-5"
     ]
   },
   {
@@ -52648,7 +52648,7 @@
       "mc-claude-haiku45-system-card"
     ],
     "source_ids": [
-      "anthropic-claude-haiku45-card-2025"
+      "mc-src-claude-haiku-4-5"
     ]
   },
   {
@@ -52662,7 +52662,7 @@
       "mc-claude-opus45-system-card"
     ],
     "source_ids": [
-      "anthropic-claude-opus45-card-2025"
+      "mc-src-claude-opus-4-5"
     ]
   },
   {
@@ -52690,7 +52690,7 @@
       "mc-llama4-model-card"
     ],
     "source_ids": [
-      "meta-llama4-model-card-2025"
+      "mc-src-llama4-card"
     ]
   },
   {
@@ -52704,7 +52704,7 @@
       "mc-grok4-model-card"
     ],
     "source_ids": [
-      "xai-grok4-model-card-2025"
+      "mc-src-grok-4-card"
     ]
   },
   {
@@ -52732,7 +52732,7 @@
       "mc-kimi-k2-report"
     ],
     "source_ids": [
-      "moonshot-kimi-k2-report-2025"
+      "arxiv-2507-20534"
     ]
   },
   {
@@ -52788,7 +52788,7 @@
       "mc-gpt4o-system-card"
     ],
     "source_ids": [
-      "openai-gpt4o-system-card-2024"
+      "mc-src-gpt4o-system-card"
     ]
   },
   {
@@ -52802,7 +52802,7 @@
       "mc-o1-system-card"
     ],
     "source_ids": [
-      "openai-o1-system-card-2024"
+      "mc-src-o1-system-card"
     ]
   },
   {
@@ -52830,7 +52830,7 @@
       "mc-deep-research-system-card"
     ],
     "source_ids": [
-      "openai-deep-research-system-card-2025"
+      "mc-src-deep-research-system-card"
     ]
   },
   {
@@ -52844,7 +52844,7 @@
       "mc-o3-o4mini-system-card"
     ],
     "source_ids": [
-      "openai-o3-o4mini-system-card-2025"
+      "mc-src-o3-o4mini-system-card"
     ]
   },
   {
@@ -52858,7 +52858,7 @@
       "mc-gpt45-system-card"
     ],
     "source_ids": [
-      "openai-gpt45-system-card-2025"
+      "mc-src-gpt45-system-card"
     ]
   },
   {
@@ -52874,8 +52874,8 @@
       "mc-gpt45-system-card"
     ],
     "source_ids": [
-      "openai-gpt4o-system-card-2024",
-      "openai-o1-system-card-2024"
+      "mc-src-gpt4o-system-card",
+      "mc-src-o1-system-card"
     ]
   },
   {
@@ -52917,7 +52917,7 @@
       "mc-claude37-system-card"
     ],
     "source_ids": [
-      "anthropic-claude37-system-card-2025"
+      "mc-src-claude-3-7-sonnet"
     ]
   },
   {
@@ -52931,7 +52931,7 @@
       "mc-claude4-system-card"
     ],
     "source_ids": [
-      "anthropic-claude4-system-card-2025"
+      "mc-src-claude-opus-4-sonnet-4"
     ]
   },
   {
@@ -52946,7 +52946,7 @@
       "mc-claude37-system-card"
     ],
     "source_ids": [
-      "anthropic-claude4-system-card-2025"
+      "mc-src-claude-opus-4-sonnet-4"
     ]
   },
   {
@@ -52960,7 +52960,7 @@
       "mc-gemini15-report"
     ],
     "source_ids": [
-      "google-gemini15-report-2024"
+      "arxiv-2403-05530"
     ]
   },
   {
@@ -53030,7 +53030,7 @@
       "mc-phi4-tech-report"
     ],
     "source_ids": [
-      "microsoft-phi4-tech-report-2024"
+      "arxiv-2412-08905"
     ]
   },
   {
@@ -53044,7 +53044,7 @@
       "mc-microsoft-redteam-100"
     ],
     "source_ids": [
-      "microsoft-redteam-100-products-2025"
+      "arxiv-2501-07238"
     ]
   },
   {
@@ -53603,7 +53603,7 @@
     },
     "atlas": [],
     "benchmarks": [
-      "StrongREJECT",
+      "StrongReject",
       "AdvBench"
     ],
     "standards": [],
@@ -55630,7 +55630,7 @@
         "label": "SOTA 4.8% (anthropic/claude-opus-4.7)",
         "url": "https://hollobit.github.io/SOTA/#overview",
         "maps_to": [
-          "JailBreakV-28K"
+          "JailbreakV-28K"
         ]
       },
       {
@@ -55638,7 +55638,6 @@
         "label": "SOTA 3.5% (anthropic/claude-opus-4.7)",
         "url": "https://hollobit.github.io/SOTA/#overview",
         "maps_to": [
-          "StrongREJECT",
           "StrongReject"
         ]
       },
@@ -55671,8 +55670,7 @@
         "label": "SOTA 100.0% (anthropic/claude-mythos-preview)",
         "url": "https://hollobit.github.io/SOTA/#overview",
         "maps_to": [
-          "Cybench",
-          "CyBench"
+          "Cybench"
         ]
       },
       {
@@ -55730,7 +55728,6 @@
         "label": "SOTA 82.1% (anthropic/claude-opus-4.7)",
         "url": "https://hollobit.github.io/SOTA/#overview",
         "maps_to": [
-          "CyberSecEval3",
           "CyberSecEval 3",
           "CyberSecEval"
         ]
@@ -55853,7 +55850,7 @@
       "AML.T0054"
     ],
     "benchmarks": [
-      "StrongREJECT"
+      "StrongReject"
     ],
     "standards": [],
     "maturity": "established",
@@ -56076,7 +56073,7 @@
       "AML.T0040"
     ],
     "benchmarks": [
-      "CyberSecEval3"
+      "CyberSecEval 3"
     ],
     "standards": [],
     "maturity": "emerging",
@@ -56161,7 +56158,7 @@
     "benchmarks": [
       "HarmBench",
       "JailbreakBench",
-      "StrongREJECT",
+      "StrongReject",
       "AgentHarm"
     ],
     "standards": [],
@@ -56275,7 +56272,7 @@
     },
     "atlas": [],
     "benchmarks": [
-      "CyberSecEval3"
+      "CyberSecEval 3"
     ],
     "standards": [],
     "maturity": "emerging",
@@ -57835,7 +57832,7 @@
       "AML.T0054"
     ],
     "benchmarks": [
-      "StrongREJECT"
+      "StrongReject"
     ],
     "standards": [],
     "maturity": "established",

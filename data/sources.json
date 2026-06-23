@@ -51,7 +51,6 @@
       "arxiv-2605-04019",
       "src-2606-09701",
       "src-advreason-2502.01633",
-      "src-agentic-era-dreadnode",
       "src-autorise-strategy-evolution",
       "src-cop-composition-principles",
       "src-j2-jailbreaking-to-jailbreak",
@@ -195,7 +194,6 @@
       "src-abstention-2407.18418",
       "src-adversa-multijudge-consensus",
       "src-advreason-2502.01633",
-      "src-agentic-era-dreadnode",
       "src-arxiv-2503-04957-safearena",
       "src-arxiv-2505-21605-sosbench",
       "src-arxiv-2509-23694-safesearch",
@@ -284,27 +282,6 @@
       "src-self-play-moving-targets",
       "src-xie-overfit-finetune-jb-2025"
     ]
-  },
-  {
-    "id": "oecd-ai-incidents-monitor",
-    "type": "source",
-    "source_type": "regulatory",
-    "title": "OECD AI Incidents Monitor (AIM)",
-    "authors": [],
-    "org": "OECD",
-    "venue": "OECD.AI Policy Observatory",
-    "url": "https://oecd.ai/en/incidents",
-    "published": "2023-11-01",
-    "retrieved": "2026-06-20",
-    "abstract": "The OECD AI Incidents and Hazards Monitor is an automated tracking system that documents AI-related incidents and hazards from publicly available (press) sources to give policymakers an evidence base for trustworthy-AI policy. It distinguishes AI incidents (events where AI directly caused demonstrable harm) from AI hazards (situations posing credible future risk without realized harm), and captures affected countries, industries, harm types, AI principles violated, and system autonomy levels. Currently in beta.",
-    "topics": [
-      "ai-incident-reporting",
-      "cvd-vdp",
-      "governance",
-      "oecd",
-      "harm-tracking"
-    ],
-    "provenance": "extracted"
   },
   {
     "id": "eu-ai-act-art73-incident-reporting",
@@ -831,7 +808,9 @@
     "type": "source",
     "source_type": "repo",
     "title": "MITRE ATLAS — Adversarial Threat Landscape for Artificial-Intelligence Systems",
-    "authors": [],
+    "authors": [
+      "MITRE"
+    ],
     "org": "MITRE",
     "venue": "MITRE ATLAS / GitHub",
     "url": "https://atlas.mitre.org/",
@@ -986,7 +965,9 @@
     "type": "source",
     "source_type": "industry_report",
     "title": "OpenAI Preparedness Framework, Version 2",
-    "authors": [],
+    "authors": [
+      "OpenAI"
+    ],
     "org": "OpenAI",
     "venue": "OpenAI",
     "url": "https://openai.com/index/updating-our-preparedness-framework/",
@@ -1002,7 +983,8 @@
       "preparedness",
       "governance"
     ],
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "local_pdf": "card/preparedness-framework-v2.pdf"
   },
   {
     "id": "github-inspect-evals",
@@ -1070,6 +1052,7 @@
       "arxiv-2311-08268",
       "arxiv-2312-02119",
       "arxiv-2312-06942",
+      "arxiv-2401-06373",
       "arxiv-2402-04249",
       "arxiv-2402-07867",
       "arxiv-2402-10260",
@@ -1122,7 +1105,6 @@
       "src-abstention-2407.18418",
       "src-adversa-multijudge-consensus",
       "src-advreason-2502.01633",
-      "src-agentic-era-dreadnode",
       "src-agentsundersiege-2504.00218",
       "src-artprompt-2402-11753",
       "src-arxiv-2407-12784-agentpoison",
@@ -1149,13 +1131,11 @@
       "src-kuo-hcot-2025",
       "src-leaderboard-manipulation-2501.07493",
       "src-liu-psychological-jb-2025",
-      "src-lowresource-jailbreak-2023",
       "src-lrm-hidden-risks-r1",
       "src-melon-2502.05174",
       "src-mml-2412.00473",
       "src-moesafety-2605-29708",
       "src-mtsa-2505.17147",
-      "arxiv-2401-06373",
       "src-pif-2502.03052",
       "src-popup-2411",
       "src-process-mining-redteam-2606-07833",
@@ -1172,7 +1152,6 @@
       "src-wang-refusal-direction-universal-2025",
       "src-wang2024-astra",
       "src-xie-overfit-finetune-jb-2025",
-      "src-yong-lowresource-jb-2023",
       "src-zeng2024-beear",
       "src-zhou2024-icag"
     ]
@@ -1221,7 +1200,8 @@
       "arxiv-2505-22037",
       "arxiv-2507-05538",
       "arxiv-2605-04019"
-    ]
+    ],
+    "local_pdf": "card/ms-red-teaming-100-genai.pdf"
   },
   {
     "id": "aisi-frontier-ai-trends-2025",
@@ -1583,6 +1563,7 @@
     ],
     "cited_by": [
       "arxiv-2312-02119",
+      "arxiv-2401-06373",
       "arxiv-2402-10260",
       "arxiv-2402-16822",
       "arxiv-2404-01318",
@@ -1601,7 +1582,6 @@
       "src-drattack-2402-16914",
       "src-j2-jailbreaking-to-jailbreak",
       "src-liu-psychological-jb-2025",
-      "arxiv-2401-06373",
       "src-pif-2502.03052",
       "src-qd-semantic-strategy-evolution",
       "src-radar-roleplay-multiagent",
@@ -1676,7 +1656,6 @@
       "src-2606.10525",
       "src-adversa-multijudge-consensus",
       "src-advreason-2502.01633",
-      "src-agentic-era-dreadnode",
       "src-arxiv-2604-17730-mhsafeeval",
       "src-autorise-strategy-evolution",
       "src-cop-composition-principles",
@@ -1733,6 +1712,7 @@
       "arxiv-2311-05608",
       "arxiv-2311-08268",
       "arxiv-2312-02119",
+      "arxiv-2401-06373",
       "arxiv-2402-04249",
       "arxiv-2402-10260",
       "arxiv-2402-16822",
@@ -1768,7 +1748,6 @@
       "src-ace-2504.20984",
       "src-adversa-multijudge-consensus",
       "src-advreason-2502.01633",
-      "src-agentic-era-dreadnode",
       "src-artprompt-2402-11753",
       "src-arxiv-2604-17730-mhsafeeval",
       "src-audio-achilles-2410.23861",
@@ -1789,7 +1768,6 @@
       "src-mml-2412.00473",
       "src-moesafety-2605-29708",
       "src-mtsa-2505.17147",
-      "arxiv-2401-06373",
       "src-pif-2502.03052",
       "src-pismith-rl-prompt-injection",
       "src-process-mining-redteam-2606-07833",
@@ -2205,7 +2183,10 @@
     "s2_id": "1785eb6106c0e4f6763094f46d9f21b0d9b19dea",
     "citation_count": 46,
     "cites": [],
-    "cited_by": []
+    "cited_by": [
+      "arxiv-2606-06529"
+    ],
+    "local_pdf": "card/anthropic-sabotage-evaluations.pdf"
   },
   {
     "id": "arxiv-2501-18837",
@@ -2249,7 +2230,8 @@
     "cites": [],
     "cited_by": [
       "arxiv-2506-05376"
-    ]
+    ],
+    "influential_citation_count": 16
   },
   {
     "id": "arxiv-2503-10965",
@@ -2484,7 +2466,8 @@
     "cited_by": [
       "arxiv-2406-07358",
       "arxiv-2501-07238"
-    ]
+    ],
+    "local_pdf": "card/evaluating-frontier-dangerous-capabilities.pdf"
   },
   {
     "id": "arxiv-2412-16339",
@@ -2529,7 +2512,7 @@
       "arxiv-2307-15043",
       "arxiv-2310-08419",
       "arxiv-2402-10260",
-      "google-gemini15-report-2024",
+      "arxiv-2403-05530",
       "arxiv-2404-01318",
       "arxiv-2407-21783"
     ],
@@ -2631,53 +2614,6 @@
     "provenance": "extracted"
   },
   {
-    "id": "openai-gpt4o-system-card-2024",
-    "type": "source",
-    "source_type": "industry_report",
-    "title": "GPT-4o System Card",
-    "authors": [],
-    "org": "OpenAI",
-    "venue": "OpenAI / arXiv:2410.21276",
-    "url": "https://openai.com/index/gpt-4o-system-card/",
-    "published": "2024-08-08",
-    "retrieved": "2026-06-20",
-    "abstract": "System card for the omni model GPT-4o. Red teaming used >100 external red teamers across 29 countries and 45 languages spanning cognitive science, chemistry, biology, physics, cybersecurity, and persuasion. Evaluated under the Preparedness Framework v1 (cybersecurity, CBRN, persuasion, model autonomy): scorecard rated Persuasion Medium and cybersecurity/CBRN/model-autonomy Low. Covers novel audio-modality risks (voice cloning, speaker ID).",
-    "topics": [
-      "model-card",
-      "system-card",
-      "red-teaming",
-      "preparedness",
-      "persuasion",
-      "cbrn",
-      "cyber-uplift",
-      "multimodal-safety"
-    ],
-    "provenance": "extracted"
-  },
-  {
-    "id": "openai-o1-system-card-2024",
-    "type": "source",
-    "source_type": "industry_report",
-    "title": "OpenAI o1 System Card",
-    "authors": [],
-    "org": "OpenAI",
-    "venue": "OpenAI / arXiv:2412.16720",
-    "url": "https://cdn.openai.com/o1-system-card-20241205.pdf",
-    "published": "2024-12-05",
-    "retrieved": "2026-06-20",
-    "abstract": "System card for the o1 reasoning model. External red teaming (Oct-Dec 2024) over snapshots covered deceptive alignment, AI R&D capabilities, cybersecurity, and content-policy violations; red teamers judged o1 safer than GPT-4o in ~60% of cases. Deliberative alignment lets the model reason over safety policy in context, yielding SOTA jailbreak resistance on StrongREJECT and reduced illicit-advice/stereotype rates. Preparedness scorecard: Medium overall.",
-    "topics": [
-      "model-card",
-      "system-card",
-      "red-teaming",
-      "deliberative-alignment",
-      "deceptive-alignment",
-      "jailbreak",
-      "preparedness"
-    ],
-    "provenance": "extracted"
-  },
-  {
     "id": "openai-o3mini-system-card-2025",
     "type": "source",
     "source_type": "industry_report",
@@ -2697,73 +2633,6 @@
       "cbrn",
       "persuasion",
       "model-autonomy"
-    ],
-    "provenance": "extracted"
-  },
-  {
-    "id": "openai-deep-research-system-card-2025",
-    "type": "source",
-    "source_type": "industry_report",
-    "title": "Deep Research System Card",
-    "authors": [],
-    "org": "OpenAI",
-    "venue": "OpenAI",
-    "url": "https://cdn.openai.com/deep-research-system-card.pdf",
-    "published": "2025-02-25",
-    "retrieved": "2026-06-20",
-    "abstract": "System card for Deep Research, an agentic web-browsing product powered by an early o3 variant. External red teaming targeted five categories: personal information/privacy, CBRN, cybersecurity, persuasion, and susceptibility to prompt injection during browsing. Notes that browsing/code-execution actions expand the agentic attack surface; red teamers chose deep research as safer ~60% of the time.",
-    "topics": [
-      "model-card",
-      "system-card",
-      "red-teaming",
-      "agentic-safety",
-      "prompt-injection",
-      "preparedness"
-    ],
-    "provenance": "extracted"
-  },
-  {
-    "id": "openai-o3-o4mini-system-card-2025",
-    "type": "source",
-    "source_type": "industry_report",
-    "title": "OpenAI o3 and o4-mini System Card",
-    "authors": [],
-    "org": "OpenAI",
-    "venue": "OpenAI",
-    "url": "https://cdn.openai.com/pdf/2221c875-02dc-4789-800b-e7758f3722c1/o3-and-o4-mini-system-card.pdf",
-    "published": "2025-04-16",
-    "retrieved": "2026-06-20",
-    "abstract": "System card for the o3 and o4-mini reasoning models. Documents external red teaming and Preparedness Framework evaluations across cybersecurity, CBRN/biorisk, persuasion, and model autonomy, plus deliberative-alignment jailbreak-resistance and instruction-hierarchy results.",
-    "topics": [
-      "model-card",
-      "system-card",
-      "red-teaming",
-      "preparedness",
-      "cbrn",
-      "cyber-uplift"
-    ],
-    "provenance": "extracted"
-  },
-  {
-    "id": "openai-gpt45-system-card-2025",
-    "type": "source",
-    "source_type": "industry_report",
-    "title": "OpenAI GPT-4.5 System Card",
-    "authors": [],
-    "org": "OpenAI",
-    "venue": "OpenAI",
-    "url": "https://cdn.openai.com/gpt-4-5-system-card-2272025.pdf",
-    "published": "2025-02-27",
-    "retrieved": "2026-06-20",
-    "abstract": "System card for GPT-4.5. Preparedness scorecard: Medium persuasion (consistent with GPT-4o), Low cybersecurity, Low CBRN biothreat, Low model autonomy — evidence that scaling the largest pre-trained model did not raise frontier risk. Reports 99% unsafe-content refusal and 99% resistance to human-sourced jailbreaks, PersonQA hallucination and BBQ bias benchmarks, plus external red teaming across persuasion, CBRN, cyber, and autonomy.",
-    "topics": [
-      "model-card",
-      "system-card",
-      "red-teaming",
-      "preparedness",
-      "persuasion",
-      "jailbreak",
-      "hallucination"
     ],
     "provenance": "extracted"
   },
@@ -2809,76 +2678,6 @@
       "cbrn",
       "aisi",
       "metr"
-    ],
-    "provenance": "extracted"
-  },
-  {
-    "id": "anthropic-claude37-system-card-2025",
-    "type": "source",
-    "source_type": "industry_report",
-    "title": "Claude 3.7 Sonnet System Card",
-    "authors": [],
-    "org": "Anthropic",
-    "venue": "Anthropic",
-    "url": "https://www.anthropic.com/claude-3-7-sonnet-system-card",
-    "published": "2025-02-24",
-    "retrieved": "2026-06-20",
-    "abstract": "System card for Claude 3.7 Sonnet (extended-thinking model). Evaluations across CBRN (focused on high-consequence biological risk), autonomy, and cybersecurity used automated knowledge evals, skill-testing, uplift studies, external red teaming, and long-form agentic tasks across six training snapshots. Some uplift observed but no model-assisted participant produced a convincing weaponization plan without critical failures; released under ASL-2.",
-    "topics": [
-      "model-card",
-      "system-card",
-      "red-teaming",
-      "rsp",
-      "asl-2",
-      "cbrn",
-      "uplift-study",
-      "extended-thinking"
-    ],
-    "provenance": "extracted"
-  },
-  {
-    "id": "anthropic-claude4-system-card-2025",
-    "type": "source",
-    "source_type": "industry_report",
-    "title": "System Card: Claude Opus 4 & Claude Sonnet 4",
-    "authors": [],
-    "org": "Anthropic",
-    "venue": "Anthropic",
-    "url": "https://www-cdn.anthropic.com/6d8a8055020700718b0c49369f60816ba2a7c285/Claude%204%20System%20Card.pdf",
-    "published": "2025-05-22",
-    "retrieved": "2026-06-20",
-    "abstract": "System card for Claude Opus 4 and Claude Sonnet 4. Claude Opus 4 was deployed under ASL-3 safeguards as a precaution after crossing the biological/chemical-weapons-uplift capability threshold; Sonnet 4 stayed at ASL-2. Covers CBRN uplift studies, cyber and autonomy evaluations, agentic-safety/alignment red teaming (incl. tests of deception, sabotage, self-preservation behaviors), and external testing by US/UK AISI and Apollo Research.",
-    "topics": [
-      "model-card",
-      "system-card",
-      "red-teaming",
-      "rsp",
-      "asl-3",
-      "cbrn",
-      "agentic-safety",
-      "alignment",
-      "frontier-safety"
-    ],
-    "provenance": "extracted"
-  },
-  {
-    "id": "google-gemini15-report-2024",
-    "type": "source",
-    "source_type": "industry_report",
-    "title": "Gemini 1.5: Unlocking multimodal understanding across millions of tokens (Technical Report)",
-    "authors": [],
-    "org": "Google DeepMind",
-    "venue": "Google DeepMind / arXiv:2403.05530",
-    "url": "https://arxiv.org/abs/2403.05530",
-    "published": "2024-03-08",
-    "retrieved": "2026-06-20",
-    "abstract": "Technical report / model card for Gemini 1.5 Pro long-context multimodal model. Documents structured red teaming and scaled safety evaluations (100k+ ratings across policies), dangerous-capability evaluations (cyber, CBRN, persuasion, self-proliferation) building on the Gemini 1.0 dangerous-capability framework, and content-safety mitigations.",
-    "topics": [
-      "model-card",
-      "red-teaming",
-      "dangerous-capability-eval",
-      "content-safety",
-      "multimodal-safety"
     ],
     "provenance": "extracted"
   },
@@ -2969,28 +2768,6 @@
     "provenance": "extracted"
   },
   {
-    "id": "microsoft-phi4-tech-report-2024",
-    "type": "source",
-    "source_type": "industry_report",
-    "title": "Phi-4 Technical Report",
-    "authors": [],
-    "org": "Microsoft",
-    "venue": "Microsoft Research / arXiv:2412.08905",
-    "url": "https://arxiv.org/abs/2412.08905",
-    "published": "2024-12-12",
-    "retrieved": "2026-06-20",
-    "abstract": "Technical report / model card for Phi-4. RAI approach combined safety post-training, automated evaluation across dozens of harm categories, and a two-week red-teaming exercise by the Microsoft AI Red Team (AIRT) emulating average and adversarial users in single- and multi-turn scenarios (jailbreaks, prompt encodings, multi-turn attacks). Risky behaviors found were remediated via further safety post-training; Phi-4 showed strong defenses against adversarial techniques.",
-    "topics": [
-      "model-card",
-      "red-teaming",
-      "ai-red-team",
-      "jailbreak",
-      "responsible-ai",
-      "content-safety"
-    ],
-    "provenance": "extracted"
-  },
-  {
     "id": "nvidia-nemotron4-340b-card-2024",
     "type": "source",
     "source_type": "industry_report",
@@ -3009,28 +2786,6 @@
       "garak",
       "content-safety",
       "safety-classifier"
-    ],
-    "provenance": "extracted"
-  },
-  {
-    "id": "microsoft-redteam-100-products-2025",
-    "type": "source",
-    "source_type": "industry_report",
-    "title": "Lessons from Red Teaming 100 Generative AI Products",
-    "authors": [],
-    "org": "Microsoft AI Red Team",
-    "venue": "Microsoft / arXiv:2501.07238",
-    "url": "https://arxiv.org/abs/2501.07238",
-    "published": "2025-01-13",
-    "retrieved": "2026-06-20",
-    "abstract": "Microsoft AI Red Team whitepaper distilling eight lessons from red-teaming 100+ generative AI products (including Copilot). Emphasizes that simple hand-crafted prompts and fuzzing of end-to-end systems often beat gradient-based attacks, that AI red teaming differs from safety benchmarking, that automation extends coverage while human judgment remains essential, and that responsible-AI harms are pervasive yet hard to measure.",
-    "topics": [
-      "industry-report",
-      "red-teaming",
-      "ai-red-team",
-      "copilot",
-      "automated-red-teaming",
-      "content-safety"
     ],
     "provenance": "extracted"
   },
@@ -3405,8 +3160,7 @@
       "arxiv-2307-15043",
       "arxiv-2310-02446",
       "arxiv-2312-02119",
-      "src-x-teaming-multiturn",
-      "src-yong-lowresource-jb-2023"
+      "src-x-teaming-multiturn"
     ],
     "cited_by": [],
     "provenance": "extracted",
@@ -3449,9 +3203,7 @@
       "arxiv-2402-04249",
       "arxiv-2402-16822",
       "arxiv-2404-01833",
-      "arxiv-2501-07238",
-      "mc-src-ms-red-teaming-100",
-      "src-yong-lowresource-jb-2023"
+      "arxiv-2501-07238"
     ],
     "cited_by": [],
     "provenance": "extracted",
@@ -3777,7 +3529,6 @@
       "src-2507-02844",
       "src-2606-09701",
       "src-2606.09084",
-      "src-agentic-era-dreadnode",
       "src-arxiv-2503-04957-safearena",
       "src-arxiv-2505-21605-sosbench",
       "src-autorise-strategy-evolution",
@@ -4006,7 +3757,7 @@
       "arxiv-2406-11704",
       "arxiv-2406-13352",
       "arxiv-2407-01850",
-      "microsoft-phi4-tech-report-2024",
+      "arxiv-2412-08905",
       "arxiv-2506-05376",
       "arxiv-2510-07192",
       "arxiv-2606-15609",
@@ -4022,11 +3773,9 @@
       "src-arxiv-2603-01291-jailnewsbench",
       "src-fitd-2502.19820",
       "src-liu-psychological-jb-2025",
-      "src-lowresource-jailbreak-2023",
       "src-mml-2412.00473",
       "src-pif-2502.03052",
-      "src-wang-implicit-crossmodal-jb-2025",
-      "src-yong-lowresource-jb-2023"
+      "src-wang-implicit-crossmodal-jb-2025"
     ]
   },
   {
@@ -4111,6 +3860,7 @@
       "arxiv-2307-15043",
       "arxiv-2310-02446",
       "arxiv-2310-08419",
+      "arxiv-2401-06373",
       "arxiv-2402-04249",
       "arxiv-2403-03218",
       "arxiv-2405-18540",
@@ -4131,12 +3881,9 @@
       "src-dap-2403-08424",
       "src-drattack-2402-16914",
       "src-j2-jailbreaking-to-jailbreak",
-      "src-lowresource-jailbreak-2023",
-      "arxiv-2401-06373",
       "src-qdrt-behavior-conditioned",
       "src-self-play-moving-targets",
-      "src-wang-activation-attack-2023",
-      "src-yong-lowresource-jb-2023"
+      "src-wang-activation-attack-2023"
     ]
   },
   {
@@ -4278,12 +4025,10 @@
       "src-2501-04931",
       "src-2504-10694",
       "src-arxiv-2603-01291-jailnewsbench",
-      "src-lowresource-jailbreak-2023",
       "src-pif-2502.03052",
       "src-process-mining-redteam-2606-07833",
       "src-radar-roleplay-multiagent",
-      "src-wang-refusal-direction-universal-2025",
-      "src-yong-lowresource-jb-2023"
+      "src-wang-refusal-direction-universal-2025"
     ]
   },
   {
@@ -4327,7 +4072,8 @@
       "arxiv-2502-05209",
       "arxiv-2604-23067",
       "arxiv-2605-04019"
-    ]
+    ],
+    "influential_citation_count": 28
   },
   {
     "id": "arxiv-2402-07867",
@@ -4450,7 +4196,7 @@
       "arxiv-2312-02119",
       "arxiv-2402-04249",
       "arxiv-2403-03218",
-      "google-gemini15-report-2024"
+      "arxiv-2403-05530"
     ],
     "provenance": "extracted",
     "citation_count": 300,
@@ -4968,146 +4714,6 @@
     ]
   },
   {
-    "id": "openai-gpt5-system-card-2025",
-    "type": "source",
-    "source_type": "industry_report",
-    "title": "GPT-5 System Card",
-    "authors": [],
-    "org": "OpenAI",
-    "venue": "OpenAI",
-    "url": "https://cdn.openai.com/gpt-5-system-card.pdf",
-    "published": "2025-08-13",
-    "retrieved": "2026-06-20",
-    "abstract": "System card for the GPT-5 family (gpt-5-main, gpt-5-thinking, plus mini/nano/pro variants). Introduces 'safe-completions' safety training, reports observed safety challenges (disallowed content, sycophancy, jailbreaks, instruction hierarchy, prompt injection, hallucination, deception with CoT monitoring), >5,000 hours of red teaming by 400+ external testers, expert red teaming for violent attack planning and prompt injection, and a Preparedness Framework capabilities assessment. gpt-5-thinking treated as High capability in the Biological and Chemical domain, activating associated safeguards (model + system + account-level protections, government red teaming).",
-    "topics": [
-      "model-card",
-      "system-card",
-      "preparedness-framework",
-      "red-teaming",
-      "cbrn",
-      "jailbreak",
-      "prompt-injection",
-      "deception"
-    ],
-    "provenance": "extracted"
-  },
-  {
-    "id": "openai-gpt52-update-2025",
-    "type": "source",
-    "source_type": "industry_report",
-    "title": "Update to GPT-5 System Card: GPT-5.2",
-    "authors": [],
-    "org": "OpenAI",
-    "venue": "OpenAI",
-    "url": "https://cdn.openai.com/pdf/3a4153c8-c748-4b71-8e31-aecbde944f8d/oai_5_2_system-card.pdf",
-    "published": "2025-12-11",
-    "retrieved": "2026-06-20",
-    "abstract": "Update to the GPT-5 System Card covering GPT-5.2 (gpt-5.2-instant, gpt-5.2-thinking); the comprehensive safety mitigation approach is largely the same as the GPT-5 and GPT-5.1 System Cards. Reports baseline safety evaluations (disallowed content production benchmarks, jailbreaks via StrongReject, prompt injection, vision, hallucinations, health, deception, cyber safety) and a Preparedness Framework capabilities assessment with new evaluations including CVE-Bench for cybersecurity and a sandbagging research-category update.",
-    "topics": [
-      "model-card",
-      "system-card",
-      "preparedness-framework",
-      "red-teaming",
-      "cbrn",
-      "cyber",
-      "jailbreak",
-      "sandbagging"
-    ],
-    "provenance": "extracted"
-  },
-  {
-    "id": "anthropic-claude-opus41-card-2025",
-    "type": "source",
-    "source_type": "industry_report",
-    "title": "System Card Addendum: Claude Opus 4.1",
-    "authors": [],
-    "org": "Anthropic",
-    "venue": "Anthropic",
-    "url": "https://www.anthropic.com/claude-opus-4-1-system-card",
-    "published": "2025-08",
-    "retrieved": "2026-06-20",
-    "abstract": "Addendum to the Claude Opus 4 & Sonnet 4 System Card covering Claude Opus 4.1, an incremental upgrade to Opus 4. Released under the ASL-3 Standard (consistent with Opus 4); reports CBRN, cyber, and autonomy capability evaluations plus alignment/agentic-safety assessment showing behavior consistent with Opus 4 and no new threshold crossings warranting higher safeguards.",
-    "topics": [
-      "model-card",
-      "system-card",
-      "responsible-scaling-policy",
-      "asl-3",
-      "cbrn",
-      "alignment"
-    ],
-    "provenance": "extracted"
-  },
-  {
-    "id": "anthropic-claude-sonnet45-card-2025",
-    "type": "source",
-    "source_type": "industry_report",
-    "title": "System Card: Claude Sonnet 4.5",
-    "authors": [],
-    "org": "Anthropic",
-    "venue": "Anthropic",
-    "url": "https://www.anthropic.com/claude-sonnet-4-5-system-card",
-    "published": "2025-09",
-    "retrieved": "2026-06-20",
-    "abstract": "System card for Claude Sonnet 4.5. Anthropic ran extensive automated CBRN, cyber, and autonomy evaluations against both ASL-3 and ASL-4 thresholds, compiling the highest score from any snapshot (conservative). Sonnet 4.5 outperformed Opus 4.1 on many evaluations, so it was deployed under ASL-3 protections. The card documents a comprehensive alignment assessment (deception, sabotage, scheming) and notes the model exhibited high evaluation/situational awareness during testing, complicating safety interpretation. External testing referenced.",
-    "topics": [
-      "model-card",
-      "system-card",
-      "responsible-scaling-policy",
-      "asl-3",
-      "cbrn",
-      "alignment",
-      "evaluation-awareness",
-      "situational-awareness"
-    ],
-    "provenance": "extracted"
-  },
-  {
-    "id": "anthropic-claude-haiku45-card-2025",
-    "type": "source",
-    "source_type": "industry_report",
-    "title": "System Card: Claude Haiku 4.5",
-    "authors": [],
-    "org": "Anthropic",
-    "venue": "Anthropic",
-    "url": "https://assets.anthropic.com/m/99128ddd009bdcb/original/Claude-Haiku-4-5-System-Card.pdf",
-    "published": "2025-10",
-    "retrieved": "2026-06-20",
-    "abstract": "System card for Claude Haiku 4.5 (released Oct 15, 2025). Haiku 4.5 met the ASL-3 rule-out threshold; Anthropic ran evaluations confirming it did NOT need ASL-3 and released it under the ASL-2 Standard, with capability similar to Claude Sonnet 4. Automated alignment evaluations found Haiku 4.5 has a statistically significantly lower rate of misaligned behaviors than both Sonnet 4.5 and Opus 4.1; only limited CBRN risk.",
-    "topics": [
-      "model-card",
-      "system-card",
-      "responsible-scaling-policy",
-      "asl-2",
-      "cbrn",
-      "alignment"
-    ],
-    "provenance": "extracted"
-  },
-  {
-    "id": "anthropic-claude-opus45-card-2025",
-    "type": "source",
-    "source_type": "industry_report",
-    "title": "System Card: Claude Opus 4.5",
-    "authors": [],
-    "org": "Anthropic",
-    "venue": "Anthropic",
-    "url": "https://www-cdn.anthropic.com/bf10f64990cfda0ba858290be7b8cc6317685f47/Claude%20Opus%204.5%20System%20Card.pdf",
-    "published": "2025-11",
-    "retrieved": "2026-06-20",
-    "abstract": "System card for Claude Opus 4.5 (Nov 2025), Anthropic's most capable model at release. Documents a wide range of safety evaluations: model safeguards testing, honesty, agentic/computer-use safety, prompt-injection resistance, and a comprehensive alignment assessment. Released under ASL-3 safeguards under Anthropic's Responsible Scaling Policy.",
-    "topics": [
-      "model-card",
-      "system-card",
-      "responsible-scaling-policy",
-      "asl-3",
-      "cbrn",
-      "alignment",
-      "agentic-safety",
-      "prompt-injection"
-    ],
-    "provenance": "extracted"
-  },
-  {
     "id": "google-gemini3-pro-fsf-2025",
     "type": "source",
     "source_type": "industry_report",
@@ -5133,53 +4739,6 @@
     "provenance": "extracted"
   },
   {
-    "id": "meta-llama4-model-card-2025",
-    "type": "source",
-    "source_type": "industry_report",
-    "title": "Llama 4 Model Card (Scout & Maverick)",
-    "authors": [],
-    "org": "Meta",
-    "venue": "GitHub",
-    "url": "https://github.com/meta-llama/llama-models/blob/main/models/llama4/MODEL_CARD.md",
-    "published": "2025-04-05",
-    "retrieved": "2026-06-20",
-    "abstract": "Model card for Llama 4 Scout (17B active / 109B total, 16 experts) and Llama 4 Maverick (17B active / 400B total, 128 experts), MoE multimodal models released April 5, 2025. Describes recurring red-teaming via adversarial prompting with SME partners (cyber, adversarial ML, multilingual integrity), expert CBRNE proliferation evaluations for chemical/biological weapons uplift, child-safety evaluations, and the conclusion that Llama 4 does not introduce risk plausibly enabling catastrophic cyber outcomes. Ships with Llama Guard, Prompt Guard, and Code Shield system-level safeguards.",
-    "topics": [
-      "model-card",
-      "red-teaming",
-      "cbrne",
-      "cyber",
-      "child-safety",
-      "open-weight",
-      "guardrails"
-    ],
-    "provenance": "extracted"
-  },
-  {
-    "id": "xai-grok4-model-card-2025",
-    "type": "source",
-    "source_type": "industry_report",
-    "title": "Grok 4 Model Card",
-    "authors": [],
-    "org": "xAI",
-    "venue": "xAI",
-    "url": "https://data.x.ai/2025-08-20-grok-4-model-card.pdf",
-    "published": "2025-08-20",
-    "retrieved": "2026-06-20",
-    "abstract": "Model card for Grok 4 (API and Web) under xAI's Risk Management Framework, covering abuse potential (refusals, agentic abuse via AgentHarm, hijacking via AgentDojo), concerning propensities (deception via MASK, political bias, sycophancy), and dual-use capabilities (bio via BioLP-Bench/VCT/WMDP, chem via WMDP, cyber via WMDP-Cyber/CyBench, persuasion via MakeMeSay). Reported: refusal answer-rate ~0.00, AgentHarm 0.14, AgentDojo ASR 0.02, MASK dishonesty 0.43, sycophancy 0.07; superhuman BioLP-Bench/VCT scores prompting narrow bio/chem output filters. Assessed overall low risk for malicious use/loss of control; end-to-end offensive cyber below human professional.",
-    "topics": [
-      "model-card",
-      "risk-management-framework",
-      "red-teaming",
-      "cbrn",
-      "cyber",
-      "deception",
-      "agentic-safety",
-      "dual-use"
-    ],
-    "provenance": "extracted"
-  },
-  {
     "id": "nist-caisi-deepseek-eval-2025",
     "type": "source",
     "source_type": "industry_report",
@@ -5199,31 +4758,6 @@
       "jailbreak",
       "external-evaluation",
       "deployment-provenance"
-    ],
-    "provenance": "extracted"
-  },
-  {
-    "id": "moonshot-kimi-k2-report-2025",
-    "type": "source",
-    "source_type": "industry_report",
-    "title": "Kimi K2: Open Agentic Intelligence - Technical Report",
-    "authors": [
-      "Kimi Team"
-    ],
-    "org": "Moonshot AI",
-    "venue": "arXiv",
-    "url": "https://arxiv.org/abs/2507.20534",
-    "published": "2025-07",
-    "retrieved": "2026-06-20",
-    "abstract": "Technical report for Kimi K2, a 1T-parameter (32B active) open-weight Mixture-of-Experts agentic model trained with the MuonClip optimizer. Reports evaluation across helpfulness, creativity, reasoning depth, factuality, and safety. Open-weight release; later independent safety evaluation of Kimi K2.5 found dual-use capability comparable to GPT-5.2 / Claude Opus 4.5 but with significantly fewer refusals on CBRNE-related requests, flagging open-weight misuse-uplift risk.",
-    "topics": [
-      "model-card",
-      "technical-report",
-      "open-weight",
-      "safety",
-      "cbrne",
-      "agentic",
-      "dual-use"
     ],
     "provenance": "extracted"
   },
@@ -5670,50 +5204,6 @@
     "local_pdf": "card/anthropic-rsp-v2-2.pdf"
   },
   {
-    "id": "mc-src-anthropic-sabotage-evals",
-    "type": "source",
-    "source_type": "paper",
-    "title": "Sabotage Evaluations for Frontier Models",
-    "authors": [
-      "Joe Benton",
-      "Misha Wagner",
-      "Eric Christiansen",
-      "Cem Anil",
-      "Ethan Perez",
-      "Jai Srivastav",
-      "Esin Durmus",
-      "Deep Ganguli",
-      "Shauna Kravec",
-      "Buck Shlegeris",
-      "Jared Kaplan",
-      "Holden Karnofsky",
-      "Evan Hubinger",
-      "Roger Grosse",
-      "Samuel R. Bowman",
-      "David Duvenaud"
-    ],
-    "org": "Anthropic",
-    "venue": "arXiv",
-    "url": "https://arxiv.org/abs/2410.21514",
-    "published": "2024-10-28",
-    "retrieved": "2026-06-20",
-    "abstract": "Defines 'sabotage capabilities' — a model covertly subverting evaluation of its dangerous capabilities, monitoring of its behavior, or deployment decisions. Proposes three capability thresholds (hiding behaviors until deployment, undermining oversight, sabotaging organizational actions) and four concrete mitigation-aware evaluations under oversight: human decision sabotage, code sabotage, sandbagging, undermining oversight. Demonstrated on Claude 3 Opus and Claude 3.5 Sonnet; minimal mitigations currently sufficient but stronger ones likely needed as capabilities improve. Argues for simulating large-scale deployments with small-scale statistics.",
-    "topics": [
-      "model-card",
-      "sabotage-evaluation",
-      "frontier-safety",
-      "dangerous-capability-eval",
-      "control-evaluation"
-    ],
-    "s2_id": "arXiv:2410.21514",
-    "citation_count": 46,
-    "provenance": "extracted",
-    "local_pdf": "card/anthropic-sabotage-evaluations.pdf",
-    "cited_by": [
-      "arxiv-2606-06529"
-    ]
-  },
-  {
     "id": "mc-src-gpt5-system-card",
     "type": "source",
     "source_type": "industry_report",
@@ -5885,30 +5375,6 @@
     "provenance": "extracted"
   },
   {
-    "id": "mc-src-preparedness-framework-v2",
-    "type": "source",
-    "source_type": "industry_report",
-    "title": "OpenAI Preparedness Framework (Version 2)",
-    "authors": [
-      "OpenAI"
-    ],
-    "org": "OpenAI",
-    "venue": "OpenAI",
-    "url": "https://cdn.openai.com/pdf/18a02b5d-6b67-4cec-ab64-68cdfbddebcd/preparedness-framework-v2.pdf",
-    "published": "2025-04-15",
-    "retrieved": "2026-06-20",
-    "abstract": "OpenAI's frontier-risk governance framework v2. Three Tracked Categories (Biological/Chemical, Cybersecurity, AI Self-improvement) with High/Critical capability thresholds and five inclusion criteria (plausible, measurable, severe, net-new, instantaneous/irremediable). Five Research Categories: Long-range Autonomy, Sandbagging, Autonomous Replication & Adaptation, Undermining Safeguards, Nuclear/Radiological. Safety Advisory Group (SAG) governance; Capabilities Report + Safeguards Report; malicious-user vs misaligned-model safeguards. Local copy at card/preparedness-framework-v2.pdf.",
-    "topics": [
-      "preparedness",
-      "governance",
-      "tracked-categories",
-      "frontier-risk",
-      "sandbagging"
-    ],
-    "local_pdf": "card/preparedness-framework-v2.pdf",
-    "provenance": "extracted"
-  },
-  {
     "id": "mc-src-gemini-3-pro-fsf",
     "type": "source",
     "source_type": "industry_report",
@@ -6069,71 +5535,6 @@
     ],
     "provenance": "extracted",
     "local_pdf": "card/llama4-model-card.txt"
-  },
-  {
-    "id": "mc-src-ms-red-teaming-100",
-    "type": "source",
-    "source_type": "paper",
-    "title": "Lessons From Red Teaming 100 Generative AI Products",
-    "authors": [
-      "Blake Bullwinkel",
-      "et al. (Microsoft AI Red Team)"
-    ],
-    "org": "Microsoft",
-    "venue": "arXiv",
-    "url": "https://arxiv.org/abs/2501.07238",
-    "published": "2025-01-13",
-    "retrieved": "2026-06-20",
-    "abstract": "Microsoft AI Red Team (AIRT, est. 2018) report on red teaming 80+ operations covering 100+ GenAI products (45% apps&features, 24% models, 16% plugins, 15% copilots). Presents a five-component threat-model ontology (System, Actor, TTPs[Tactic/Technique/Procedure mapped to MITRE ATT&CK + ATLAS], Weakness, Impact) and eight lessons. Introduces PyRIT open-source automation. Splits impacts into Security and Responsible-AI (RAI) harms; XPIA cross-prompt-injection is a recurring case study.",
-    "topics": [
-      "red-teaming",
-      "airt",
-      "pyrit",
-      "threat-ontology",
-      "mitre-atlas",
-      "xpia",
-      "responsible-ai-harms"
-    ],
-    "s2_id": "arXiv:2501.07238",
-    "provenance": "extracted",
-    "local_pdf": "card/ms-red-teaming-100-genai.pdf",
-    "citation_count": 27,
-    "cited_by": [
-      "arxiv-2605-04019",
-      "src-agentic-era-dreadnode"
-    ]
-  },
-  {
-    "id": "mc-src-dangerous-capabilities",
-    "type": "source",
-    "source_type": "paper",
-    "title": "Evaluating Frontier Models for Dangerous Capabilities",
-    "authors": [
-      "Mary Phuong",
-      "Matthew Aitchison",
-      "et al. (Google DeepMind)"
-    ],
-    "org": "Google DeepMind",
-    "venue": "arXiv",
-    "url": "https://arxiv.org/abs/2403.13793",
-    "published": "2024-04-05",
-    "retrieved": "2026-06-20",
-    "abstract": "Programme of dangerous-capability evaluations piloted on Gemini 1.0 (Ultra/Pro/Nano) across four areas: persuasion & deception, cyber-security, self-proliferation, self-reasoning (plus preliminary CBRN). Evaluated without safety filters to measure underlying capability. Found no strong dangerous capabilities; persuasion/deception most mature; rudimentary ability across all areas. Commissioned forecasters give median estimates of 2025-2029 for first high scores. Provides reusable methodology (prompts, rater instructions) for an 'early-warning' science of dangerous-capability evaluation.",
-    "topics": [
-      "frontier-safety-eval",
-      "dangerous-capability-eval",
-      "self-proliferation",
-      "persuasion-deception",
-      "cyber-uplift",
-      "early-warning"
-    ],
-    "s2_id": "arXiv:2403.13793",
-    "provenance": "extracted",
-    "local_pdf": "card/evaluating-frontier-dangerous-capabilities.pdf",
-    "citation_count": 130,
-    "cited_by": [
-      "src-repbend-2504.01550"
-    ]
   },
   {
     "id": "nvd-cve-2024-37032",
@@ -6776,7 +6177,8 @@
       "cvd-vdp",
       "oecd-aim"
     ],
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "published": "2023-11-01"
   },
   {
     "id": "src-gendershades-2018",
@@ -6798,28 +6200,6 @@
       "facial-recognition",
       "bias-audit",
       "fairness"
-    ],
-    "provenance": "extracted"
-  },
-  {
-    "id": "src-reuters-amazon-recruit-2018",
-    "type": "source",
-    "source_type": "industry_report",
-    "title": "Amazon scraps secret AI recruiting tool that showed bias against women",
-    "authors": [
-      "Jeffrey Dastin"
-    ],
-    "org": "Reuters",
-    "venue": "Reuters",
-    "url": "https://www.reuters.com/article/world/insight-amazon-scraps-secret-ai-recruiting-tool-that-showed-bias-against-women-idUSKCN1MK0AG/",
-    "published": "2018-01-01",
-    "retrieved": "2026-06-20",
-    "abstract": "Amazon's resume-screening model penalized resumes containing 'women's' and downgraded all-women's-college graduates; scrapped 2018.",
-    "topics": [
-      "discrimination",
-      "hiring",
-      "bias",
-      "gender"
     ],
     "provenance": "extracted"
   },
@@ -6875,15 +6255,14 @@
     "citation_count": 1731,
     "influential_citation_count": 236,
     "cited_by": [
+      "arxiv-2310-02446",
+      "arxiv-2401-06373",
       "src-2505-24445",
       "src-abstention-2407.18418",
       "src-artprompt-2402-11753",
       "src-coin-flip-judge-reliability",
-      "src-lowresource-jailbreak-2023",
-      "arxiv-2401-06373",
       "src-toxigen-2022",
       "src-wang2024-astra",
-      "src-yong-lowresource-jb-2023",
       "src-zeng2024-beear"
     ]
   },
@@ -6994,39 +6373,6 @@
       "fairness"
     ],
     "provenance": "extracted"
-  },
-  {
-    "id": "src-lowresource-jailbreak-2023",
-    "type": "source",
-    "source_type": "paper",
-    "title": "Low-Resource Languages Jailbreak GPT-4",
-    "authors": [
-      "Zheng-Xin Yong",
-      "Cristina Menghini",
-      "Stephen H. Bach"
-    ],
-    "org": "Brown University",
-    "venue": "arXiv (NeurIPS 2023 SoLaR)",
-    "url": "https://arxiv.org/abs/2310.02446",
-    "published": "2023-01-01",
-    "retrieved": "2026-06-20",
-    "abstract": "Translating unsafe prompts into low-resource languages (Zulu, Scots Gaelic) bypassed GPT-4 safety ~79% of the time vs <1% in English, reflecting weaker competence/coverage.",
-    "topics": [
-      "unequal-performance",
-      "low-resource-languages",
-      "safety-gap",
-      "multilingual"
-    ],
-    "provenance": "extracted",
-    "citation_count": 347,
-    "influential_citation_count": 28,
-    "cites": [
-      "arxiv-2204-05862",
-      "arxiv-2212-08073",
-      "arxiv-2307-15043",
-      "arxiv-2310-06474",
-      "src-realtoxicityprompts-2020"
-    ]
   },
   {
     "id": "src-fcc-biden-robocall-2024",
@@ -8165,27 +7511,6 @@
     "provenance": "extracted"
   },
   {
-    "id": "src-mitre-atlas-matrix",
-    "type": "source",
-    "source_type": "attack-kb",
-    "title": "MITRE ATLAS — Adversarial Threat Landscape for Artificial-Intelligence Systems (technique matrix)",
-    "authors": [
-      "MITRE"
-    ],
-    "org": "MITRE",
-    "venue": "MITRE ATLAS",
-    "url": "https://atlas.mitre.org/matrices/ATLAS",
-    "published": "2025-01-01",
-    "retrieved": "2026-06-21",
-    "abstract": "Living knowledge base of adversary tactics and techniques against AI-enabled systems, modeled on ATT&CK. Canonical AML.T#### technique ids used for the mappings in this gap-fill set; verified against atlas-data ATLAS.yaml (170 techniques).",
-    "topics": [
-      "mitre-atlas",
-      "attack-taxonomy",
-      "adversarial-ml"
-    ],
-    "provenance": "extracted"
-  },
-  {
     "id": "src-atlas-data-yaml",
     "type": "source",
     "source_type": "repo",
@@ -8578,26 +7903,6 @@
     ]
   },
   {
-    "id": "src-owasp-llm-top10-2025",
-    "type": "source",
-    "source_type": "industry_report",
-    "title": "OWASP Top 10 for LLM Applications 2025",
-    "authors": [
-      "OWASP GenAI Security Project"
-    ],
-    "org": "OWASP",
-    "venue": "OWASP",
-    "url": "https://genai.owasp.org/llm-top-10/",
-    "published": "2024-11-18",
-    "retrieved": "2026-06-21",
-    "abstract": "OWASP LLM Top 10 (2025): LLM01 Prompt Injection, LLM02 Sensitive Information Disclosure, LLM03 Supply Chain, LLM04 Data and Model Poisoning, LLM07 System Prompt Leakage, LLM08 Vector/Embedding Weaknesses, LLM10 Unbounded Consumption — referenced for attack-class alignment.",
-    "topics": [
-      "owasp",
-      "llm-top-10"
-    ],
-    "provenance": "extracted"
-  },
-  {
     "id": "src-nvd-cve-2025-32434",
     "type": "source",
     "source_type": "regulatory",
@@ -8896,7 +8201,10 @@
       "discrimination",
       "hiring"
     ],
-    "provenance": "extracted"
+    "provenance": "extracted",
+    "authors": [
+      "Jeffrey Dastin"
+    ]
   },
   {
     "id": "src-bccrt-moffatt-air-canada-2024",
@@ -9752,7 +9060,7 @@
       "arxiv-2402-10260",
       "arxiv-2410-09024",
       "arxiv-2412-16339",
-      "moonshot-kimi-k2-report-2025",
+      "arxiv-2507-20534",
       "src-arxiv-2412-13178-safeagentbench"
     ]
   },
@@ -10650,7 +9958,7 @@
       "arxiv-2309-10253",
       "arxiv-2310-08419",
       "arxiv-2311-05608",
-      "google-gemini15-report-2024",
+      "arxiv-2403-05530",
       "src-gu-badnets-2017",
       "src-shokri-membership-inference-2017",
       "src-szegedy-adversarial-2013"
@@ -10807,54 +10115,6 @@
     "cites": [
       "src-gu-badnets-2017",
       "src-shokri-membership-inference-2017"
-    ]
-  },
-  {
-    "id": "src-yong-lowresource-jb-2023",
-    "type": "source",
-    "source_type": "paper",
-    "title": "Low-Resource Languages Jailbreak GPT-4",
-    "authors": [
-      "Zheng-Xin Yong",
-      "Cristina Menghini",
-      "Stephen H. Bach"
-    ],
-    "org": "Brown University",
-    "venue": "NeurIPS SoLaR Workshop",
-    "url": "https://arxiv.org/abs/2310.02446",
-    "published": "2023-10-03",
-    "retrieved": "2026-06-21",
-    "abstract": "Translating an unsafe request into a low-resource language bypasses GPT-4 guardrails; translating the answer back recovers the harmful content — a cross-lingual translation jailbreak.",
-    "s2_id": "arXiv:2310.02446",
-    "topics": [
-      "multilingual",
-      "low-resource",
-      "jailbreak"
-    ],
-    "provenance": "extracted",
-    "cited_by": [
-      "arxiv-2604-23067",
-      "arxiv-2605-04019",
-      "arxiv-2606-09178",
-      "src-2503-20823",
-      "src-2504-10694",
-      "src-2606-05609",
-      "src-2606-07706",
-      "src-2606-11817",
-      "src-abstention-2407.18418",
-      "src-agentic-era-dreadnode",
-      "src-dap-2403-08424",
-      "arxiv-2401-06373",
-      "src-pif-2502.03052"
-    ],
-    "citation_count": 347,
-    "influential_citation_count": 28,
-    "cites": [
-      "arxiv-2204-05862",
-      "arxiv-2212-08073",
-      "arxiv-2307-15043",
-      "arxiv-2310-06474",
-      "src-realtoxicityprompts-2020"
     ]
   },
   {
@@ -11136,51 +10396,14 @@
       "arxiv-2212-08073",
       "arxiv-2310-08419",
       "arxiv-2312-02119",
+      "arxiv-2401-06373",
       "arxiv-2402-04249",
       "arxiv-2402-16822",
       "arxiv-2404-01318",
       "arxiv-2404-01833",
       "arxiv-2410-05295",
       "arxiv-2505-22037",
-      "src-artprompt-2402-11753",
-      "arxiv-2401-06373"
-    ]
-  },
-  {
-    "id": "src-agentic-era-dreadnode",
-    "type": "source",
-    "source_type": "paper",
-    "title": "Redefining AI Red Teaming in the Agentic Era: From Weeks to Hours",
-    "authors": [
-      "Raja Sekhar Rao Dheekonda",
-      "Will Pearce",
-      "Nick Landers"
-    ],
-    "org": "Dreadnode",
-    "venue": "arXiv",
-    "url": "https://arxiv.org/abs/2605.04019",
-    "published": "2026-05-05",
-    "retrieved": "2026-06-21",
-    "abstract": "An agentic red-teaming system (Dreadnode SDK) where operators specify goals in natural language via a TUI and the agent orchestrates attack selection, transform composition, execution and reporting across 45+ attacks, 450+ transforms, 130+ scorers, supporting multi-agent/multilingual/multimodal targets. 85% ASR on Llama Scout with zero human-written code; compresses testing cycles from weeks to hours.",
-    "topics": [
-      "agentic-red-teaming",
-      "ai-auditor-agent",
-      "human-ai",
-      "tooling-orchestration"
-    ],
-    "s2_id": "arXiv:2605.04019",
-    "provenance": "extracted",
-    "citation_count": 0,
-    "influential_citation_count": 0,
-    "cites": [
-      "arxiv-2307-15043",
-      "arxiv-2310-08419",
-      "arxiv-2312-02119",
-      "arxiv-2402-04249",
-      "arxiv-2402-16822",
-      "arxiv-2404-01833",
-      "mc-src-ms-red-teaming-100",
-      "src-yong-lowresource-jb-2023"
+      "src-artprompt-2402-11753"
     ]
   },
   {
@@ -11788,38 +11011,6 @@
     "provenance": "extracted"
   },
   {
-    "id": "src-constitutional-classifiers",
-    "type": "source",
-    "source_type": "paper",
-    "title": "Constitutional Classifiers: Defending against Universal Jailbreaks across Thousands of Hours of Red Teaming",
-    "authors": [
-      "Anthropic"
-    ],
-    "org": "Anthropic",
-    "venue": "arXiv",
-    "url": "https://arxiv.org/abs/2501.18837",
-    "published": "2025-02-03",
-    "retrieved": "2026-06-21",
-    "abstract": "Anthropic trains constitutional classifiers against universal jailbreaks, validated through thousands of hours of human red teaming delivered via an external HackerOne bug-bounty program - concrete deployment of crowdsourced red teaming + a constitutional (llm-as-a-defender) control.",
-    "topics": [
-      "constitutional-classifiers",
-      "llm-as-defender",
-      "crowdsourced-red-teaming",
-      "bug-bounty"
-    ],
-    "s2_id": "arXiv:2501.18837",
-    "provenance": "extracted",
-    "citation_count": 159,
-    "influential_citation_count": 16,
-    "cited_by": [
-      "src-2505-24445",
-      "src-2603-19469-formal-agent-sec",
-      "src-2605-31593",
-      "src-2606-03647",
-      "src-doubtprobe-2606-16527"
-    ]
-  },
-  {
     "id": "arxiv-2606-15609",
     "type": "source",
     "source_type": "paper",
@@ -12026,8 +11217,8 @@
     "s2_id": "arXiv:2606.18193",
     "citation_count": 0,
     "cites": [
-      "arxiv-2312-02119",
       "arxiv-2310-08419",
+      "arxiv-2312-02119",
       "arxiv-2401-06373",
       "arxiv-2402-04249"
     ],
@@ -12179,8 +11370,8 @@
     "s2_id": "arXiv:2606.19887",
     "citation_count": 0,
     "cites": [
-      "arxiv-2402-04249",
-      "arxiv-2310-08419"
+      "arxiv-2310-08419",
+      "arxiv-2402-04249"
     ],
     "cited_by": [],
     "provenance": "extracted"
@@ -12218,10 +11409,10 @@
     "s2_id": "arXiv:2606.17114",
     "citation_count": 0,
     "cites": [
+      "arxiv-2309-15817",
       "arxiv-2406-12045",
       "arxiv-2406-13352",
       "arxiv-2410-09024",
-      "arxiv-2309-15817",
       "arxiv-2503-09780"
     ],
     "provenance": "extracted"
@@ -12340,10 +11531,10 @@
     "s2_id": "arXiv:2606.18550",
     "citation_count": 0,
     "cites": [
-      "arxiv-2406-13352",
-      "arxiv-2309-15817",
       "arxiv-2302-12173",
-      "arxiv-2406-12814"
+      "arxiv-2309-15817",
+      "arxiv-2406-12814",
+      "arxiv-2406-13352"
     ],
     "provenance": "extracted"
   },
@@ -12376,10 +11567,10 @@
     "s2_id": "arXiv:2606.19660",
     "citation_count": 0,
     "cites": [
-      "arxiv-2312-14197",
       "arxiv-2302-12173",
       "arxiv-2310-10501",
       "arxiv-2312-06674",
+      "arxiv-2312-14197",
       "arxiv-2404-13208"
     ],
     "provenance": "extracted"
@@ -12416,13 +11607,13 @@
     "cites": [
       "arxiv-2307-15043",
       "arxiv-2310-08419",
+      "arxiv-2401-06373",
       "arxiv-2404-01833",
       "arxiv-2406-04313",
       "arxiv-2503-00061",
       "arxiv-2510-07192",
       "src-biggio-poisoning-svm-2012",
-      "src-gu-badnets-2017",
-      "arxiv-2401-06373"
+      "src-gu-badnets-2017"
     ],
     "provenance": "extracted",
     "influential_citation_count": 0
@@ -12786,9 +11977,9 @@
     "influential_citation_count": 0,
     "cites": [
       "arxiv-2212-08073",
+      "arxiv-2310-02446",
       "arxiv-2310-06474",
-      "arxiv-2407-21783",
-      "src-yong-lowresource-jb-2023"
+      "arxiv-2407-21783"
     ]
   },
   {
@@ -12835,12 +12026,12 @@
       "arxiv-2310-08419",
       "arxiv-2311-08268",
       "arxiv-2312-02119",
+      "arxiv-2401-06373",
       "arxiv-2402-04249",
       "arxiv-2404-01833",
       "arxiv-2410-05295",
       "src-artprompt-2402-11753",
-      "src-multibreak-bench",
-      "arxiv-2401-06373"
+      "src-multibreak-bench"
     ]
   },
   {
@@ -12968,8 +12159,8 @@
     "influential_citation_count": 0,
     "cites": [
       "arxiv-2408-08926",
+      "arxiv-2501-18837",
       "arxiv-2505-15216",
-      "src-constitutional-classifiers",
       "src-drattack-2402-16914"
     ]
   },
@@ -12992,10 +12183,10 @@
     "citation_count": 0,
     "influential_citation_count": 0,
     "cites": [
+      "arxiv-2310-02446",
       "arxiv-2310-08419",
       "arxiv-2407-21783",
-      "src-wang-juli-logprob-jb-2025",
-      "src-yong-lowresource-jb-2023"
+      "src-wang-juli-logprob-jb-2025"
     ]
   },
   {
@@ -13021,10 +12212,10 @@
     "cites": [
       "alibaba-qwen3-report-2025",
       "arxiv-2307-15043",
+      "arxiv-2310-02446",
       "arxiv-2310-08419",
       "arxiv-2312-02119",
-      "arxiv-2407-21783",
-      "src-yong-lowresource-jb-2023"
+      "arxiv-2407-21783"
     ]
   },
   {
@@ -13048,9 +12239,9 @@
     "influential_citation_count": 0,
     "cites": [
       "arxiv-2307-15043",
+      "arxiv-2310-02446",
       "arxiv-2311-05608",
-      "src-mml-2412.00473",
-      "src-yong-lowresource-jb-2023"
+      "src-mml-2412.00473"
     ]
   },
   {
@@ -13170,9 +12361,9 @@
       "arxiv-2406-04313",
       "arxiv-2406-13352",
       "arxiv-2410-09024",
+      "arxiv-2501-18837",
       "arxiv-2503-00061",
-      "src-arxiv-2407-12784-agentpoison",
-      "src-constitutional-classifiers"
+      "src-arxiv-2407-12784-agentpoison"
     ]
   },
   {
@@ -13307,7 +12498,7 @@
     "influential_citation_count": 0,
     "cites": [
       "arxiv-2312-06942",
-      "mc-src-anthropic-sabotage-evals"
+      "arxiv-2410-21514"
     ]
   },
   {
@@ -13630,9 +12821,9 @@
       "arxiv-2404-01318",
       "arxiv-2407-21783",
       "arxiv-2410-05295",
+      "arxiv-2501-18837",
       "src-anwar-foundational-challenges-2024",
       "src-coin-flip-judge-reliability",
-      "src-constitutional-classifiers",
       "src-jailbreak-r1-rl"
     ]
   },
@@ -14054,8 +13245,8 @@
       "arxiv-2310-08419",
       "arxiv-2311-08268",
       "arxiv-2312-02119",
-      "arxiv-2410-05295",
-      "arxiv-2401-06373"
+      "arxiv-2401-06373",
+      "arxiv-2410-05295"
     ]
   },
   {
@@ -14117,7 +13308,7 @@
     "influential_citation_count": 0,
     "cites": [
       "alibaba-qwen3-report-2025",
-      "google-gemini15-report-2024"
+      "arxiv-2403-05530"
     ]
   },
   {
@@ -14145,14 +13336,14 @@
       "arxiv-2307-15043",
       "arxiv-2310-08419",
       "arxiv-2312-02119",
+      "arxiv-2401-06373",
       "arxiv-2402-04249",
       "arxiv-2404-01833",
       "arxiv-2404-03027",
       "arxiv-2407-21783",
+      "arxiv-2501-18837",
       "src-2509-07764",
-      "src-artprompt-2402-11753",
-      "src-constitutional-classifiers",
-      "arxiv-2401-06373"
+      "src-artprompt-2402-11753"
     ]
   },
   {
@@ -14350,7 +13541,7 @@
     "citation_count": 34,
     "influential_citation_count": 3,
     "cites": [
-      "google-gemini15-report-2024",
+      "arxiv-2403-05530",
       "arxiv-2411-15594",
       "src-toolhijacker-2504.19793"
     ]
@@ -14621,8 +13812,8 @@
       "arxiv-2307-15043",
       "arxiv-2402-04249",
       "arxiv-2403-03218",
-      "arxiv-2406-04313",
-      "mc-src-dangerous-capabilities"
+      "arxiv-2403-13793",
+      "arxiv-2406-04313"
     ]
   },
   {
@@ -14846,12 +14037,12 @@
       "arxiv-2204-05862",
       "arxiv-2307-15043",
       "arxiv-2309-10253",
+      "arxiv-2310-02446",
       "arxiv-2310-06474",
       "arxiv-2310-08419",
       "arxiv-2311-08268",
       "arxiv-2312-02119",
-      "arxiv-2404-01318",
-      "src-yong-lowresource-jb-2023"
+      "arxiv-2404-01318"
     ]
   },
   {
@@ -15110,7 +14301,7 @@
       "arxiv-2309-10253",
       "arxiv-2310-08419",
       "arxiv-2312-02119",
-      "google-gemini15-report-2024",
+      "arxiv-2403-05530",
       "src-tramer-model-stealing-2016"
     ]
   },
@@ -15138,7 +14329,7 @@
       "arxiv-2402-04249",
       "arxiv-2404-01318",
       "arxiv-2406-04313",
-      "src-constitutional-classifiers",
+      "arxiv-2501-18837",
       "src-realtoxicityprompts-2020"
     ]
   },
@@ -15199,7 +14390,7 @@
     "influential_citation_count": 4,
     "cites": [
       "arxiv-2307-15043",
-      "google-gemini15-report-2024",
+      "arxiv-2403-05530",
       "arxiv-2407-21783"
     ]
   },
@@ -15401,14 +14592,14 @@
       "arxiv-2204-05862",
       "arxiv-2307-15043",
       "arxiv-2309-10253",
+      "arxiv-2310-02446",
       "arxiv-2310-06474",
       "arxiv-2312-02119",
       "arxiv-2402-04249",
       "arxiv-2402-10260",
       "arxiv-2403-03218",
       "arxiv-2404-01318",
-      "arxiv-2410-09024",
-      "src-yong-lowresource-jb-2023"
+      "arxiv-2410-09024"
     ]
   },
   {
@@ -15496,9 +14687,9 @@
     "influential_citation_count": 8,
     "cites": [
       "arxiv-2307-15043",
+      "arxiv-2310-02446",
       "arxiv-2310-08419",
-      "arxiv-2311-05608",
-      "src-yong-lowresource-jb-2023"
+      "arxiv-2311-05608"
     ]
   },
   {
@@ -15663,9 +14854,9 @@
     "influential_citation_count": 10,
     "cites": [
       "arxiv-2307-15043",
-      "google-gemini15-report-2024",
-      "src-injecagent-2403",
-      "arxiv-2401-06373"
+      "arxiv-2401-06373",
+      "arxiv-2403-05530",
+      "src-injecagent-2403"
     ]
   },
   {
@@ -15801,8 +14992,8 @@
     "cites": [
       "arxiv-2310-08419",
       "arxiv-2312-02119",
-      "src-carlini-extract-training-data-2023",
       "arxiv-2401-06373",
+      "src-carlini-extract-training-data-2023",
       "src-szegedy-adversarial-2013"
     ]
   },
@@ -15830,9 +15021,9 @@
     "cites": [
       "arxiv-2307-15043",
       "arxiv-2401-05566",
+      "arxiv-2401-06373",
       "arxiv-2402-04249",
       "arxiv-2403-03218",
-      "arxiv-2401-06373",
       "src-realtoxicityprompts-2020"
     ]
   },
@@ -16009,8 +15200,8 @@
       "arxiv-2307-15043",
       "arxiv-2310-08419",
       "arxiv-2311-05608",
-      "arxiv-2404-03027",
       "arxiv-2401-06373",
+      "arxiv-2404-03027",
       "src-szegedy-adversarial-2013"
     ]
   },
@@ -16036,9 +15227,9 @@
     "cites": [
       "arxiv-2310-08419",
       "arxiv-2311-05608",
+      "arxiv-2401-06373",
       "arxiv-2402-04249",
-      "google-gemini15-report-2024",
-      "arxiv-2401-06373"
+      "arxiv-2403-05530"
     ]
   },
   {
@@ -16093,6 +15284,7 @@
       "arxiv-2204-05862",
       "arxiv-2307-15043",
       "arxiv-2309-10253",
+      "arxiv-2310-02446",
       "arxiv-2310-08419",
       "arxiv-2402-04249",
       "arxiv-2402-10260",
@@ -16100,7 +15292,6 @@
       "src-anwar-foundational-challenges-2024",
       "src-realtoxicityprompts-2020",
       "src-toxigen-2022",
-      "src-yong-lowresource-jb-2023",
       "src-zhou2024-icag"
     ]
   },
@@ -16141,9 +15332,9 @@
       "arxiv-2212-08073",
       "arxiv-2307-15043",
       "arxiv-2309-10253",
+      "arxiv-2310-02446",
       "arxiv-2310-08419",
-      "src-realtoxicityprompts-2020",
-      "src-yong-lowresource-jb-2023"
+      "src-realtoxicityprompts-2020"
     ]
   },
   {
@@ -16257,10 +15448,10 @@
     "cites": [
       "arxiv-2212-08073",
       "arxiv-2309-10253",
+      "arxiv-2310-02446",
       "arxiv-2310-08419",
       "arxiv-2311-08268",
-      "arxiv-2312-02119",
-      "src-yong-lowresource-jb-2023"
+      "arxiv-2312-02119"
     ]
   },
   {
