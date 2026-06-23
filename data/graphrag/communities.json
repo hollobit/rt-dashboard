@@ -5,7 +5,7 @@
   "communities": [
     {
       "id": "c0",
-      "size": 1183,
+      "size": 1186,
       "members": [
         "acm-aisec25-ai-cve",
         "agent.autonomy-risk",
@@ -104,6 +104,7 @@
         "atk-guardrail-reasoning-extension-dos",
         "atk-implicit-control-influence-sink-redirect",
         "atk-injecagent-ipi",
+        "atk-manipulate-user-chat-history",
         "atk-mastrike-shapley-collusive-coalition",
         "atk-mcp-tool-poisoning-automated",
         "atk-monitor-collusion",
@@ -131,6 +132,7 @@
         "atlas:AML.T0084.001",
         "atlas:AML.T0084.002",
         "atlas:AML.T0086",
+        "atlas:AML.T0092",
         "atlas:AML.T0099",
         "atlas:AML.T0100",
         "atlas:AML.T0101",
@@ -570,7 +572,6 @@
         "find-cai-scaled-supervision-ai-auditor-2212",
         "find-card-fable5-mythos5",
         "find-card-gemini31pro",
-        "find-card-gpt55",
         "find-card-mythos-preview",
         "find-card-opus46",
         "find-card-sonnet46",
@@ -662,6 +663,7 @@
         "find-gpt5-bioweaponization-redteam",
         "find-gpt5-high-biochem-preparedness",
         "find-gpt5-violent-attack-and-promptinjection-redteam",
+        "find-gptfuzzer-fuzzing-templates",
         "find-gptfuzzer-template-mutation-jailbreak",
         "find-gradual-disempowerment-multiagent-2025",
         "find-grantbox-capability-vulnerability-inversion",
@@ -804,6 +806,7 @@
         "find-taskshield-task-alignment",
         "find-tee-advisor-failure-transferability-2026",
         "find-tee-redbench-llm-advisor-failures-2026",
+        "find-thinktrap-llm-dos-infinite-thinking",
         "find-tmap-trajectory-evolutionary-agent-redteam",
         "find-tool-contract-integrity-injection-2026",
         "find-toolleak-prompt-exfiltration-2509-05755",
@@ -891,7 +894,6 @@
         "github-garak",
         "github-inspect-evals",
         "github-pyrit",
-        "google-gemini15-report-2024",
         "google-gemini2-flash-2025",
         "google-gemini25-pro-card-2025",
         "google-gemini3-pro-fsf-2025",
@@ -1033,6 +1035,7 @@
         "org:Nanjing University / Meituan",
         "org:Nanjing University; Technical University of Munich",
         "org:Nanyang Technological University / ST Engineering / IBM Research / UIUC",
+        "org:Northwestern University",
         "org:OpenAI",
         "org:Patronus AI; University of California, Berkeley",
         "org:Peking University; Beijing Jiaotong University; SUIBE; Huawei; Tsinghua University",
@@ -1192,35 +1195,35 @@
         "who-lmm-health-guidance-2024"
       ],
       "kind_counts": {
-        "finding": 354,
         "benchmark": 163,
-        "threat": 77,
-        "source": 99,
-        "teaming": 113,
-        "evidence": 99,
-        "attack": 7,
-        "org": 105,
-        "guideline-item": 8,
-        "harm": 10,
-        "attack_technique": 39,
-        "vulnerability": 6,
-        "control": 14,
-        "sector": 8,
-        "model_card": 14,
-        "product": 15,
-        "procedure": 9,
-        "atlas": 20,
+        "source": 98,
+        "finding": 355,
         "risk": 7,
-        "tactic": 3,
+        "attack_technique": 40,
+        "threat": 77,
+        "org": 106,
+        "control": 14,
+        "teaming": 113,
+        "sector": 8,
+        "evidence": 99,
+        "model_card": 14,
+        "atlas": 21,
+        "product": 15,
         "incident": 3,
-        "reference": 3,
-        "standard": 7
+        "procedure": 9,
+        "guideline-item": 8,
+        "vulnerability": 6,
+        "attack": 7,
+        "standard": 7,
+        "tactic": 3,
+        "harm": 10,
+        "reference": 3
       },
       "title": "prompt-attack / misuse-risk / agent.tool-abuse"
     },
     {
       "id": "c1",
-      "size": 728,
+      "size": 727,
       "members": [
         "agentic.mediation-bypass",
         "alibaba-qwen3-report-2025",
@@ -1564,7 +1567,6 @@
         "find-gcd-modality-gap",
         "find-gcg-transferable-suffix",
         "find-gcg-universal-transferable-suffix",
-        "find-gptfuzzer-fuzzing-templates",
         "find-hades-image-backdoor",
         "find-hades-jailbreak",
         "find-harmbench-18-method-asr-comparison",
@@ -1650,6 +1652,7 @@
         "gi-owasp-t-0",
         "gi-owasp-t-2",
         "github-harmbench",
+        "google-gemini15-report-2024",
         "harm-audio-lmm-harmful-content",
         "harm-overabstention-utility-bias",
         "inc-agentharm-agents-comply-malicious-2024",
@@ -1737,7 +1740,6 @@
         "org:National University of Singapore",
         "org:Northeastern / UChicago / UC Berkeley",
         "org:Northeastern University",
-        "org:Northwestern University",
         "org:Renmin University of China",
         "org:Robust Intelligence / Yale",
         "org:Scale AI",
@@ -1846,6 +1848,7 @@
         "src-2606.09549",
         "src-2606.10525",
         "src-2606.10749",
+        "src-2606.17034",
         "src-abstention-2407.18418",
         "src-ace-2504.20984",
         "src-adversa-multijudge-consensus",
@@ -1910,7 +1913,6 @@
         "src-mtsa-2505.17147",
         "src-multibreak-bench",
         "src-nrt-bench-control-room",
-        "src-pap-2401-06373",
         "src-pif-2502.03052",
         "src-pismith-rl-prompt-injection",
         "src-popup-2411",
@@ -1952,34 +1954,34 @@
         "vuln-vlm-complex-instruction-safety-failure"
       ],
       "kind_counts": {
-        "attack_technique": 53,
-        "source": 204,
-        "threat": 30,
-        "risk": 6,
+        "org": 98,
+        "source": 205,
         "attack": 13,
-        "org": 99,
-        "finding": 123,
-        "incident": 2,
-        "atlas": 7,
-        "teaming": 55,
         "benchmark": 93,
+        "threat": 30,
+        "procedure": 10,
+        "teaming": 55,
+        "finding": 122,
+        "attack_technique": 53,
+        "risk": 6,
+        "atlas": 7,
+        "sector": 2,
+        "model_card": 3,
+        "harm": 2,
         "guideline-item": 5,
         "vulnerability": 4,
-        "sector": 2,
-        "product": 3,
-        "procedure": 10,
-        "reference": 1,
         "evidence": 7,
+        "reference": 1,
+        "control": 4,
+        "product": 3,
         "tactic": 2,
-        "harm": 2,
-        "model_card": 3,
-        "control": 4
+        "incident": 2
       },
       "title": "model.jailbreak / rainbow / Audio modality dilutes/disrupts backbone safety alignment"
     },
     {
       "id": "c2",
-      "size": 520,
+      "size": 521,
       "members": [
         "agentic.emergent-misalignment",
         "agentic.memory-poisoning-drift",
@@ -1995,6 +1997,7 @@
         "atlas:AML.T0050",
         "atlas:AML.T0056",
         "atlas:AML.T0062",
+        "bloomberg-genai-finance-risks-2025",
         "control-a2a-identity-trust",
         "control-abstention-meta-capability",
         "control-access-control-audit-log",
@@ -2503,29 +2506,29 @@
         "vuln-voting-leaderboard-anonymity-break"
       ],
       "kind_counts": {
-        "incident": 4,
         "evidence": 16,
-        "procedure": 8,
-        "risk": 47,
-        "control": 123,
-        "vulnerability": 134,
-        "sector": 20,
-        "standard": 30,
-        "source": 53,
-        "harm": 37,
-        "org": 19,
-        "attack_technique": 6,
-        "atlas": 4,
-        "guideline-item": 7,
-        "reference": 4,
         "threat": 7,
-        "teaming": 1
+        "source": 54,
+        "vulnerability": 134,
+        "control": 123,
+        "harm": 37,
+        "risk": 47,
+        "org": 19,
+        "sector": 20,
+        "atlas": 4,
+        "teaming": 1,
+        "procedure": 8,
+        "standard": 30,
+        "attack_technique": 6,
+        "incident": 4,
+        "guideline-item": 7,
+        "reference": 4
       },
       "title": "model.data-leakage / model.attribute-inference / technology"
     },
     {
       "id": "c3",
-      "size": 360,
+      "size": 357,
       "members": [
         "agent.reasoning-leakage",
         "agentic.embodied-interactive-safety-risk",
@@ -2567,7 +2570,6 @@
         "atk-llm-trusted-output-manipulation",
         "atk-lora-share-and-play-backdoor",
         "atk-machine-compromise",
-        "atk-manipulate-user-chat-history",
         "atk-masquerading",
         "atk-membership-inference",
         "atk-model-editing-redteam",
@@ -2649,7 +2651,6 @@
         "atlas:AML.T0090",
         "atlas:AML.T0091",
         "atlas:AML.T0091.000",
-        "atlas:AML.T0092",
         "atlas:AML.T0095",
         "atlas:AML.T0095.000",
         "atlas:AML.T0098",
@@ -2774,7 +2775,6 @@
         "find-leaderboard-deanon-reranking-attack-2501.07493",
         "find-rededit-architecture-agnostic-transfer-blindspot",
         "find-rededit-mcts-photo-editing-evasion",
-        "find-thinktrap-llm-dos-infinite-thinking",
         "find-zeng2024-backdoor-removal-efficacy",
         "find-zeng2024-embedding-drift-backdoor-removal",
         "frontier-detection.eval-integrity",
@@ -2889,23 +2889,23 @@
         "vuln-vlm-instruction-tuning-poisoning"
       ],
       "kind_counts": {
-        "attack_technique": 66,
-        "teaming": 14,
-        "atlas": 65,
-        "source": 32,
-        "finding": 30,
-        "threat": 25,
-        "benchmark": 62,
-        "sector": 3,
-        "vulnerability": 4,
-        "org": 27,
-        "guideline-item": 4,
-        "procedure": 4,
-        "risk": 6,
+        "attack_technique": 65,
         "control": 10,
-        "attack": 4,
+        "org": 27,
+        "benchmark": 62,
+        "atlas": 64,
+        "threat": 25,
+        "source": 32,
+        "finding": 29,
         "tactic": 3,
-        "harm": 1
+        "procedure": 4,
+        "sector": 3,
+        "risk": 6,
+        "teaming": 14,
+        "guideline-item": 4,
+        "attack": 4,
+        "harm": 1,
+        "vulnerability": 4
       },
       "title": "Training-data / model poisoning (train-time integrity) / model.backdoor / automated.benchm"
     },
@@ -3148,19 +3148,19 @@
       ],
       "kind_counts": {
         "guideline-item": 99,
+        "procedure": 58,
+        "source": 3,
+        "vulnerability": 3,
+        "threat": 5,
         "attack_technique": 46,
         "org": 3,
-        "teaming": 3,
-        "finding": 4,
-        "procedure": 58,
-        "harm": 1,
         "control": 2,
-        "source": 3,
-        "threat": 5,
-        "vulnerability": 3,
+        "finding": 4,
+        "risk": 1,
+        "teaming": 3,
         "guideline-doc": 2,
         "benchmark": 2,
-        "risk": 1
+        "harm": 1
       },
       "title": "Agentic supply-chain injection (stealthy tool/dependency poisoning at the implementation l"
     },
@@ -3243,6 +3243,7 @@
         "find-2606.17034-naive-forgetting-insufficient",
         "find-aiscientist-evaluation-validity-risk",
         "find-aiscientist-evidence-substrate-ceiling",
+        "find-card-gpt55",
         "find-codesentinel-code-context-pi-families",
         "find-codesentinel-semantic-trigger-evasion",
         "find-codespear-gcd-jailbreak",
@@ -3353,7 +3354,6 @@
         "software.code-poisoning",
         "src-2606-12716",
         "src-2606-13044",
-        "src-2606.17034",
         "src-aiscientist-2606-09556",
         "src-codesentinel-2606-19235",
         "src-reta-2606-15441",
@@ -3372,28 +3372,28 @@
         "xai-grok4-model-card-2025"
       ],
       "kind_counts": {
-        "source": 27,
-        "attack_technique": 21,
-        "model_card": 17,
-        "benchmark": 20,
-        "atlas": 15,
-        "tactic": 7,
-        "org": 14,
-        "harm": 1,
-        "finding": 11,
-        "incident": 3,
-        "control": 3,
-        "vulnerability": 4,
-        "guideline-doc": 1,
         "teaming": 8,
-        "threat": 9,
-        "procedure": 7,
-        "product": 16,
-        "risk": 3,
-        "sector": 3,
+        "source": 26,
+        "benchmark": 20,
+        "org": 14,
+        "atlas": 15,
         "guideline-item": 8,
+        "model_card": 17,
+        "threat": 9,
+        "tactic": 7,
+        "product": 16,
+        "evidence": 1,
+        "attack_technique": 21,
+        "finding": 12,
+        "vulnerability": 4,
+        "procedure": 7,
+        "sector": 3,
+        "control": 3,
+        "risk": 3,
+        "harm": 1,
         "attack": 3,
-        "evidence": 1
+        "guideline-doc": 1,
+        "incident": 3
       },
       "title": "agent.indirect-prompt-injection / Defense/detector evasion (adaptive attack against a depl"
     },
@@ -3584,17 +3584,17 @@
       ],
       "kind_counts": {
         "org": 42,
-        "risk": 14,
-        "incident": 18,
-        "threat": 12,
         "finding": 18,
         "source": 46,
         "harm": 10,
         "control": 11,
-        "vulnerability": 2,
         "guideline-item": 2,
-        "standard": 2,
+        "incident": 18,
         "teaming": 1,
+        "risk": 14,
+        "threat": 12,
+        "vulnerability": 2,
+        "standard": 2,
         "sector": 1,
         "evidence": 1
       },
@@ -3602,7 +3602,7 @@
     },
     {
       "id": "c7",
-      "size": 151,
+      "size": 150,
       "members": [
         "arxiv-2505-00467",
         "arxiv-2511-14876",
@@ -3619,7 +3619,6 @@
         "bench:LongSafety",
         "bench:MedSafetyBench",
         "bench:Webots-simulator-PoC",
-        "bloomberg-genai-finance-risks-2025",
         "control-adversarial-hazard-scenario-gamification",
         "control-clinical-rt-mentalhealth",
         "control-compassionate-completion",
@@ -3757,24 +3756,24 @@
         "vuln-autonomous-driving-perception"
       ],
       "kind_counts": {
-        "harm": 10,
-        "evidence": 8,
         "atlas": 3,
-        "org": 24,
-        "source": 26,
         "threat": 3,
-        "finding": 14,
-        "sector": 3,
-        "control": 15,
-        "incident": 16,
         "risk": 10,
-        "reference": 3,
+        "incident": 16,
+        "control": 15,
+        "evidence": 8,
+        "source": 25,
+        "org": 24,
         "benchmark": 5,
-        "tactic": 1,
+        "finding": 14,
+        "harm": 10,
         "teaming": 3,
-        "attack_technique": 2,
-        "vulnerability": 1,
         "standard": 3,
+        "sector": 3,
+        "vulnerability": 1,
+        "reference": 3,
+        "tactic": 1,
+        "attack_technique": 2,
         "procedure": 1
       },
       "title": "physical.autonomous-failure / medical / physical.robotics-misuse"
@@ -3864,19 +3863,19 @@
         "vuln-llm-typo-reasoning-fragility"
       ],
       "kind_counts": {
+        "org": 6,
         "threat": 13,
+        "finding": 12,
+        "sector": 12,
+        "vulnerability": 3,
+        "teaming": 4,
+        "harm": 4,
         "risk": 4,
         "benchmark": 7,
-        "org": 6,
-        "vulnerability": 3,
-        "harm": 4,
-        "source": 5,
-        "sector": 12,
         "attack": 4,
-        "finding": 12,
-        "control": 2,
-        "teaming": 4,
-        "attack_technique": 3
+        "attack_technique": 3,
+        "source": 5,
+        "control": 2
       },
       "title": "automated.benchmark / model.misinformation / model.sycophancy"
     },
@@ -3965,22 +3964,22 @@
         "vuln-clip-prompt-dependent-robustness"
       ],
       "kind_counts": {
-        "guideline-item": 42,
-        "benchmark": 13,
-        "control": 2,
-        "harm": 1,
-        "finding": 3,
-        "threat": 3,
-        "attack_technique": 1,
-        "source": 4,
-        "model_card": 2,
         "org": 2,
+        "guideline-item": 42,
+        "model_card": 2,
+        "benchmark": 13,
+        "finding": 3,
+        "sector": 1,
+        "source": 4,
+        "control": 2,
+        "attack_technique": 1,
+        "attack": 1,
         "guideline-doc": 1,
-        "teaming": 1,
+        "threat": 3,
         "risk": 1,
         "vulnerability": 1,
-        "sector": 1,
-        "attack": 1
+        "teaming": 1,
+        "harm": 1
       },
       "title": "CLIP/VLM adversarial robustness is sensitive to the text prompt / public-safety / Prompt-m"
     },
@@ -4046,14 +4045,14 @@
       ],
       "kind_counts": {
         "benchmark": 16,
-        "threat": 5,
-        "control": 2,
-        "attack_technique": 3,
-        "source": 5,
-        "vulnerability": 4,
-        "finding": 8,
         "org": 5,
         "teaming": 6,
+        "attack_technique": 3,
+        "threat": 5,
+        "vulnerability": 4,
+        "source": 5,
+        "finding": 8,
+        "control": 2,
         "attack": 1
       },
       "title": "Adversarial example / imperceptible-perturbation evasion / model.adversarial-perturbation"
@@ -4106,13 +4105,13 @@
         "src-2605-06713"
       ],
       "kind_counts": {
-        "benchmark": 10,
         "org": 4,
         "source": 17,
+        "teaming": 2,
         "threat": 5,
+        "benchmark": 10,
         "finding": 3,
-        "sector": 1,
-        "teaming": 2
+        "sector": 1
       },
       "title": "agentic.multi-agent-risk / Agentic AI attack compression (cyber kill-chain cost collapse)"
     },
@@ -4158,17 +4157,17 @@
         "vuln-data-agent-uncontrolled-query-cost"
       ],
       "kind_counts": {
-        "finding": 6,
-        "benchmark": 6,
-        "vulnerability": 4,
-        "teaming": 1,
-        "org": 3,
-        "source": 3,
-        "threat": 5,
-        "attack_technique": 4,
         "control": 2,
+        "benchmark": 6,
+        "source": 3,
+        "org": 3,
+        "attack_technique": 4,
+        "vulnerability": 4,
         "atlas": 1,
-        "risk": 1
+        "threat": 5,
+        "finding": 6,
+        "risk": 1,
+        "teaming": 1
       },
       "title": "LLM-driven data/analytics agent risk (interpretation/execution/policy layers) / Compositio"
     },
@@ -4201,15 +4200,15 @@
         "vuln-agent-memory-multikey-normalization"
       ],
       "kind_counts": {
-        "risk": 2,
-        "teaming": 3,
-        "source": 3,
         "benchmark": 3,
-        "finding": 3,
-        "vulnerability": 1,
+        "source": 3,
         "threat": 5,
+        "finding": 3,
+        "teaming": 3,
         "control": 2,
-        "org": 1
+        "vulnerability": 1,
+        "org": 1,
+        "risk": 2
       },
       "title": "model.distribution-shift / safety.mitigation-failure / safety.monitoring-gap"
     },
@@ -4242,16 +4241,16 @@
         "src-2606.09408"
       ],
       "kind_counts": {
-        "sector": 3,
-        "threat": 6,
         "finding": 3,
-        "benchmark": 3,
+        "teaming": 2,
+        "sector": 3,
         "control": 2,
+        "threat": 6,
+        "benchmark": 3,
         "source": 1,
         "harm": 1,
         "risk": 1,
-        "org": 1,
-        "teaming": 2
+        "org": 1
       },
       "title": "societal.data-work-harm / manual.dataset-annotation / safety.human-factors"
     },
@@ -4283,13 +4282,13 @@
         "org:USTC; Tongji University; Wuhan University; Shanghai University"
       ],
       "kind_counts": {
-        "org": 2,
-        "attack_technique": 2,
         "benchmark": 9,
         "threat": 2,
         "finding": 4,
-        "guideline-item": 1,
-        "teaming": 2
+        "org": 2,
+        "attack_technique": 2,
+        "teaming": 2,
+        "guideline-item": 1
       },
       "title": "Inter-agent communication interception & manipulation (agent-in-the-middle) in LLM-MAS / P"
     },
@@ -4319,15 +4318,15 @@
         "src-wikipedia-taylorswift-deepfake-2024"
       ],
       "kind_counts": {
-        "harm": 1,
-        "finding": 2,
         "risk": 1,
-        "org": 6,
-        "source": 4,
-        "control": 1,
         "threat": 1,
+        "reference": 1,
         "incident": 3,
-        "reference": 1
+        "source": 4,
+        "org": 6,
+        "finding": 2,
+        "harm": 1,
+        "control": 1
       },
       "title": "societal.toxic-content / DPD delivery chatbot swears and disparages the company / Microsof"
     },
@@ -4353,13 +4352,13 @@
         "src-saeuron-2501.18052"
       ],
       "kind_counts": {
+        "attack": 1,
         "benchmark": 6,
         "org": 2,
-        "teaming": 1,
-        "source": 2,
-        "attack": 1,
         "finding": 3,
-        "attack_technique": 1
+        "attack_technique": 1,
+        "source": 2,
+        "teaming": 1
       },
       "title": "JPA — controllable embedding-space NSFW concept attack on T2I diffusion models / automated"
     },
@@ -4382,16 +4381,16 @@
         "src-2605-31593"
       ],
       "kind_counts": {
+        "threat": 2,
+        "org": 1,
         "finding": 1,
         "teaming": 2,
-        "threat": 2,
-        "risk": 1,
         "benchmark": 2,
+        "source": 1,
         "attack": 1,
         "attack_technique": 1,
-        "source": 1,
-        "org": 1,
-        "atlas": 1
+        "atlas": 1,
+        "risk": 1
       },
       "title": "agentic.multi-agent-misuse / agent.decomposition-evasion / Distributed agent attack (cross"
     },
@@ -4415,15 +4414,15 @@
       ],
       "kind_counts": {
         "teaming": 3,
-        "benchmark": 1,
-        "control": 1,
-        "guideline-item": 1,
         "source": 1,
         "finding": 2,
         "vulnerability": 1,
-        "org": 1,
+        "benchmark": 1,
         "attack_technique": 1,
-        "threat": 1
+        "guideline-item": 1,
+        "control": 1,
+        "threat": 1,
+        "org": 1
       },
       "title": "AI cyber-physical / autonomous-system safety hazard / automated.multi-agent / LLM-attacker"
     },
@@ -4445,11 +4444,11 @@
         "org:Penn State / Duke / UC Berkeley"
       ],
       "kind_counts": {
-        "teaming": 2,
+        "finding": 1,
         "benchmark": 7,
-        "org": 1,
+        "teaming": 2,
         "attack_technique": 1,
-        "finding": 1
+        "org": 1
       },
       "title": "Surrogate-key adaptive prompt injection vs detection LLM (DataSentinel inner-max) / automa"
     },
@@ -4470,10 +4469,10 @@
         "mc-gemini-3-5-flash"
       ],
       "kind_counts": {
+        "finding": 1,
         "benchmark": 6,
-        "source": 2,
         "model_card": 2,
-        "finding": 1
+        "source": 2
       },
       "title": "Literature cluster: Gemini 3.1 Pro Model Card"
     },
@@ -4494,13 +4493,13 @@
         "src-thirsty-ai-2023"
       ],
       "kind_counts": {
-        "org": 3,
-        "harm": 1,
-        "risk": 1,
-        "source": 3,
         "control": 1,
-        "threat": 1,
-        "finding": 1
+        "org": 3,
+        "source": 3,
+        "finding": 1,
+        "risk": 1,
+        "harm": 1,
+        "threat": 1
       },
       "title": "societal.environmental-harm"
     },
@@ -4521,8 +4520,8 @@
       ],
       "kind_counts": {
         "benchmark": 6,
-        "model_card": 2,
-        "source": 2
+        "source": 2,
+        "model_card": 2
       },
       "title": "Literature cluster: System Card: Claude Opus 4.6"
     },
@@ -4541,12 +4540,12 @@
         "org:Huazhong University of Science and Technology; Duke University; Lehigh University"
       ],
       "kind_counts": {
-        "benchmark": 2,
-        "attack_technique": 1,
-        "org": 1,
         "threat": 1,
+        "attack_technique": 1,
         "finding": 2,
-        "teaming": 2
+        "teaming": 2,
+        "benchmark": 2,
+        "org": 1
       },
       "title": "Tool-selection manipulation in LLM agents / automated.optimization-based / ToolHijacker (m"
     },
@@ -4565,12 +4564,12 @@
         "prod-glm-45"
       ],
       "kind_counts": {
-        "finding": 2,
-        "model_card": 1,
-        "source": 2,
-        "product": 1,
         "org": 2,
-        "benchmark": 1
+        "source": 2,
+        "benchmark": 1,
+        "product": 1,
+        "finding": 2,
+        "model_card": 1
       },
       "title": "Literature cluster: SafetyBench: Evaluating the Safety of Large Language Models"
     },
@@ -4586,9 +4585,9 @@
         "src-bugcrowd-2026-predictions"
       ],
       "kind_counts": {
-        "org": 2,
+        "source": 3,
         "evidence": 1,
-        "source": 3
+        "org": 2
       },
       "title": "Literature cluster: In-House Evaluation Is Not Enough: Towards Robust Third-Party Flaw Dis"
     },
@@ -4603,10 +4602,10 @@
         "org:National University of Singapore / Fudan University / NCS Group"
       ],
       "kind_counts": {
-        "teaming": 2,
+        "finding": 1,
         "source": 1,
-        "org": 1,
-        "finding": 1
+        "teaming": 2,
+        "org": 1
       },
       "title": "automated.agentic-rag / automated.detection-engineering"
     },
@@ -4621,8 +4620,8 @@
         "src-arxiv-2605-20744-hack-verifiable"
       ],
       "kind_counts": {
-        "org": 2,
         "source": 2,
+        "org": 2,
         "evidence": 1
       },
       "title": "Literature cluster: School of Reward Hacks: Hacking harmless tasks generalizes to misalign"
@@ -4652,8 +4651,8 @@
       ],
       "kind_counts": {
         "source": 1,
-        "incident": 1,
-        "org": 1
+        "org": 1,
+        "incident": 1
       },
       "title": "EU AI Act Article 73 serious-incident reporting regime"
     },

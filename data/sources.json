@@ -1155,7 +1155,7 @@
       "src-mml-2412.00473",
       "src-moesafety-2605-29708",
       "src-mtsa-2505.17147",
-      "src-pap-2401-06373",
+      "arxiv-2401-06373",
       "src-pif-2502.03052",
       "src-popup-2411",
       "src-process-mining-redteam-2606-07833",
@@ -1601,7 +1601,7 @@
       "src-drattack-2402-16914",
       "src-j2-jailbreaking-to-jailbreak",
       "src-liu-psychological-jb-2025",
-      "src-pap-2401-06373",
+      "arxiv-2401-06373",
       "src-pif-2502.03052",
       "src-qd-semantic-strategy-evolution",
       "src-radar-roleplay-multiagent",
@@ -1789,7 +1789,7 @@
       "src-mml-2412.00473",
       "src-moesafety-2605-29708",
       "src-mtsa-2505.17147",
-      "src-pap-2401-06373",
+      "arxiv-2401-06373",
       "src-pif-2502.03052",
       "src-pismith-rl-prompt-injection",
       "src-process-mining-redteam-2606-07833",
@@ -2529,7 +2529,7 @@
       "arxiv-2307-15043",
       "arxiv-2310-08419",
       "arxiv-2402-10260",
-      "arxiv-2403-05530",
+      "google-gemini15-report-2024",
       "arxiv-2404-01318",
       "arxiv-2407-21783"
     ],
@@ -4006,7 +4006,7 @@
       "arxiv-2406-11704",
       "arxiv-2406-13352",
       "arxiv-2407-01850",
-      "arxiv-2412-08905",
+      "microsoft-phi4-tech-report-2024",
       "arxiv-2506-05376",
       "arxiv-2510-07192",
       "arxiv-2606-15609",
@@ -4132,7 +4132,7 @@
       "src-drattack-2402-16914",
       "src-j2-jailbreaking-to-jailbreak",
       "src-lowresource-jailbreak-2023",
-      "src-pap-2401-06373",
+      "arxiv-2401-06373",
       "src-qdrt-behavior-conditioned",
       "src-self-play-moving-targets",
       "src-wang-activation-attack-2023",
@@ -4450,7 +4450,7 @@
       "arxiv-2312-02119",
       "arxiv-2402-04249",
       "arxiv-2403-03218",
-      "arxiv-2403-05530"
+      "google-gemini15-report-2024"
     ],
     "provenance": "extracted",
     "citation_count": 300,
@@ -6880,7 +6880,7 @@
       "src-artprompt-2402-11753",
       "src-coin-flip-judge-reliability",
       "src-lowresource-jailbreak-2023",
-      "src-pap-2401-06373",
+      "arxiv-2401-06373",
       "src-toxigen-2022",
       "src-wang2024-astra",
       "src-yong-lowresource-jb-2023",
@@ -9752,7 +9752,7 @@
       "arxiv-2402-10260",
       "arxiv-2410-09024",
       "arxiv-2412-16339",
-      "arxiv-2507-20534",
+      "moonshot-kimi-k2-report-2025",
       "src-arxiv-2412-13178-safeagentbench"
     ]
   },
@@ -10650,7 +10650,7 @@
       "arxiv-2309-10253",
       "arxiv-2310-08419",
       "arxiv-2311-05608",
-      "arxiv-2403-05530",
+      "google-gemini15-report-2024",
       "src-gu-badnets-2017",
       "src-shokri-membership-inference-2017",
       "src-szegedy-adversarial-2013"
@@ -10844,7 +10844,7 @@
       "src-abstention-2407.18418",
       "src-agentic-era-dreadnode",
       "src-dap-2403-08424",
-      "src-pap-2401-06373",
+      "arxiv-2401-06373",
       "src-pif-2502.03052"
     ],
     "citation_count": 347,
@@ -11143,7 +11143,7 @@
       "arxiv-2410-05295",
       "arxiv-2505-22037",
       "src-artprompt-2402-11753",
-      "src-pap-2401-06373"
+      "arxiv-2401-06373"
     ]
   },
   {
@@ -12422,7 +12422,7 @@
       "arxiv-2510-07192",
       "src-biggio-poisoning-svm-2012",
       "src-gu-badnets-2017",
-      "src-pap-2401-06373"
+      "arxiv-2401-06373"
     ],
     "provenance": "extracted",
     "influential_citation_count": 0
@@ -12840,7 +12840,7 @@
       "arxiv-2410-05295",
       "src-artprompt-2402-11753",
       "src-multibreak-bench",
-      "src-pap-2401-06373"
+      "arxiv-2401-06373"
     ]
   },
   {
@@ -14055,7 +14055,7 @@
       "arxiv-2311-08268",
       "arxiv-2312-02119",
       "arxiv-2410-05295",
-      "src-pap-2401-06373"
+      "arxiv-2401-06373"
     ]
   },
   {
@@ -14117,7 +14117,7 @@
     "influential_citation_count": 0,
     "cites": [
       "alibaba-qwen3-report-2025",
-      "arxiv-2403-05530"
+      "google-gemini15-report-2024"
     ]
   },
   {
@@ -14152,7 +14152,7 @@
       "src-2509-07764",
       "src-artprompt-2402-11753",
       "src-constitutional-classifiers",
-      "src-pap-2401-06373"
+      "arxiv-2401-06373"
     ]
   },
   {
@@ -14350,7 +14350,7 @@
     "citation_count": 34,
     "influential_citation_count": 3,
     "cites": [
-      "arxiv-2403-05530",
+      "google-gemini15-report-2024",
       "arxiv-2411-15594",
       "src-toolhijacker-2504.19793"
     ]
@@ -15110,7 +15110,7 @@
       "arxiv-2309-10253",
       "arxiv-2310-08419",
       "arxiv-2312-02119",
-      "arxiv-2403-05530",
+      "google-gemini15-report-2024",
       "src-tramer-model-stealing-2016"
     ]
   },
@@ -15199,7 +15199,7 @@
     "influential_citation_count": 4,
     "cites": [
       "arxiv-2307-15043",
-      "arxiv-2403-05530",
+      "google-gemini15-report-2024",
       "arxiv-2407-21783"
     ]
   },
@@ -15663,9 +15663,9 @@
     "influential_citation_count": 10,
     "cites": [
       "arxiv-2307-15043",
-      "arxiv-2403-05530",
+      "google-gemini15-report-2024",
       "src-injecagent-2403",
-      "src-pap-2401-06373"
+      "arxiv-2401-06373"
     ]
   },
   {
@@ -15802,7 +15802,7 @@
       "arxiv-2310-08419",
       "arxiv-2312-02119",
       "src-carlini-extract-training-data-2023",
-      "src-pap-2401-06373",
+      "arxiv-2401-06373",
       "src-szegedy-adversarial-2013"
     ]
   },
@@ -15832,7 +15832,7 @@
       "arxiv-2401-05566",
       "arxiv-2402-04249",
       "arxiv-2403-03218",
-      "src-pap-2401-06373",
+      "arxiv-2401-06373",
       "src-realtoxicityprompts-2020"
     ]
   },
@@ -16010,7 +16010,7 @@
       "arxiv-2310-08419",
       "arxiv-2311-05608",
       "arxiv-2404-03027",
-      "src-pap-2401-06373",
+      "arxiv-2401-06373",
       "src-szegedy-adversarial-2013"
     ]
   },
@@ -16037,8 +16037,8 @@
       "arxiv-2310-08419",
       "arxiv-2311-05608",
       "arxiv-2402-04249",
-      "arxiv-2403-05530",
-      "src-pap-2401-06373"
+      "google-gemini15-report-2024",
+      "arxiv-2401-06373"
     ]
   },
   {
@@ -16105,7 +16105,7 @@
     ]
   },
   {
-    "id": "src-pap-2401-06373",
+    "id": "arxiv-2401-06373",
     "type": "source",
     "source_type": "paper",
     "title": "How Johnny Can Persuade LLMs to Jailbreak Them: Rethinking Persuasion to Challenge AI Safety by Humanizing LLMs",

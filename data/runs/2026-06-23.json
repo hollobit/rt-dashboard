@@ -1,9 +1,9 @@
 {
   "date": "2026-06-23",
-  "nodes": 4069,
-  "edges": 23337,
+  "nodes": 4068,
+  "edges": 23348,
   "by_kind": {
-    "source": 556,
+    "source": 555,
     "org": 384,
     "finding": 612,
     "threat": 219,

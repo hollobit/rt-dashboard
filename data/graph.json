@@ -13174,7 +13174,7 @@
       "meta": {}
     },
     {
-      "id": "src-pap-2401-06373",
+      "id": "arxiv-2401-06373",
       "kind": "source",
       "label": "How Johnny Can Persuade LLMs to Jailbreak Them: Rethinking Persuasion to Challenge AI Safety by Humanizing LLMs",
       "weight": 1,
@@ -56621,16 +56621,6 @@
       "meta": {}
     },
     {
-      "id": "arxiv-2401-06373",
-      "kind": "source",
-      "label": "arxiv-2401-06373",
-      "weight": 1,
-      "meta": {
-        "source_type": "referenced",
-        "referenced": true
-      }
-    },
-    {
       "id": "arxiv-2406-12045",
       "kind": "source",
       "label": "arxiv-2406-12045",
@@ -62160,7 +62150,7 @@
       "meta": {}
     },
     {
-      "source": "src-pap-2401-06373",
+      "source": "arxiv-2401-06373",
       "target": "org:Virginia Tech / Renmin University of China / UC Davis / Stanford",
       "rel": "published-by",
       "weight": 1,
@@ -106051,7 +106041,7 @@
     },
     {
       "source": "f-pap-asr",
-      "target": "src-pap-2401-06373",
+      "target": "arxiv-2401-06373",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -106093,7 +106083,7 @@
     },
     {
       "source": "f-pap-category-technique-interplay",
-      "target": "src-pap-2401-06373",
+      "target": "arxiv-2401-06373",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -106135,7 +106125,7 @@
     },
     {
       "source": "f-pap-defense-gap",
-      "target": "src-pap-2401-06373",
+      "target": "arxiv-2401-06373",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -139035,7 +139025,7 @@
     },
     {
       "source": "atk-pap-persuasion",
-      "target": "src-pap-2401-06373",
+      "target": "arxiv-2401-06373",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -143648,7 +143638,7 @@
     },
     {
       "source": "vuln-persuasion-susceptibility",
-      "target": "src-pap-2401-06373",
+      "target": "arxiv-2401-06373",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -216972,7 +216962,7 @@
       "meta": {}
     },
     {
-      "source": "src-pap-2401-06373",
+      "source": "arxiv-2401-06373",
       "target": "arxiv-2307-15043",
       "rel": "cites",
       "weight": 1,
@@ -217343,7 +217333,7 @@
       "meta": {}
     },
     {
-      "source": "src-pap-2401-06373",
+      "source": "arxiv-2401-06373",
       "target": "arxiv-2309-10253",
       "rel": "cites",
       "weight": 1,
@@ -218029,7 +218019,7 @@
       "meta": {}
     },
     {
-      "source": "src-pap-2401-06373",
+      "source": "arxiv-2401-06373",
       "target": "arxiv-2310-08419",
       "rel": "cites",
       "weight": 1,
@@ -218373,7 +218363,7 @@
     },
     {
       "source": "arxiv-2412-16339",
-      "target": "arxiv-2403-05530",
+      "target": "google-gemini15-report-2024",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -218939,7 +218929,7 @@
       "meta": {}
     },
     {
-      "source": "arxiv-2412-08905",
+      "source": "microsoft-phi4-tech-report-2024",
       "target": "arxiv-2204-05862",
       "rel": "cites",
       "weight": 1,
@@ -219198,7 +219188,7 @@
       "meta": {}
     },
     {
-      "source": "src-pap-2401-06373",
+      "source": "arxiv-2401-06373",
       "target": "arxiv-2212-08073",
       "rel": "cites",
       "weight": 1,
@@ -219514,7 +219504,7 @@
     },
     {
       "source": "arxiv-2406-04313",
-      "target": "arxiv-2403-05530",
+      "target": "google-gemini15-report-2024",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -220094,6 +220084,20 @@
       "meta": {}
     },
     {
+      "source": "arxiv-2406-04313",
+      "target": "arxiv-2403-05530",
+      "rel": "cites",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "arxiv-2412-16339",
+      "target": "arxiv-2403-05530",
+      "rel": "cites",
+      "weight": 1,
+      "meta": {}
+    },
+    {
       "source": "src-2501-09798",
       "target": "arxiv-2403-05530",
       "rel": "cites",
@@ -220138,6 +220142,13 @@
     {
       "source": "src-wang-implicit-crossmodal-jb-2025",
       "target": "arxiv-2403-05530",
+      "rel": "cites",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "arxiv-2412-08905",
+      "target": "arxiv-2204-05862",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -220248,7 +220259,7 @@
       "meta": {}
     },
     {
-      "source": "src-pap-2401-06373",
+      "source": "arxiv-2401-06373",
       "target": "src-realtoxicityprompts-2020",
       "rel": "cites",
       "weight": 1,
@@ -220578,6 +220589,13 @@
     },
     {
       "source": "src-arxiv-2509-23694-safesearch",
+      "target": "moonshot-kimi-k2-report-2025",
+      "rel": "cites",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-arxiv-2509-23694-safesearch",
       "target": "src-arxiv-2412-13178-safeagentbench",
       "rel": "cites",
       "weight": 1,
@@ -220717,6 +220735,13 @@
       "meta": {}
     },
     {
+      "source": "src-wang-implicit-crossmodal-jb-2025",
+      "target": "google-gemini15-report-2024",
+      "rel": "cites",
+      "weight": 1,
+      "meta": {}
+    },
+    {
       "source": "src-bentov-gaslite-2024",
       "target": "src-morris-embedding-inversion-2023",
       "rel": "cites",
@@ -220787,7 +220812,7 @@
       "meta": {}
     },
     {
-      "source": "src-pap-2401-06373",
+      "source": "arxiv-2401-06373",
       "target": "src-yong-lowresource-jb-2023",
       "rel": "cites",
       "weight": 1,
@@ -220837,7 +220862,7 @@
     },
     {
       "source": "src-autorise-strategy-evolution",
-      "target": "src-pap-2401-06373",
+      "target": "arxiv-2401-06373",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -221264,7 +221289,7 @@
     },
     {
       "source": "arxiv-2606-16242",
-      "target": "src-pap-2401-06373",
+      "target": "arxiv-2401-06373",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -221432,7 +221457,7 @@
     },
     {
       "source": "arxiv-2606-11425",
-      "target": "src-pap-2401-06373",
+      "target": "arxiv-2401-06373",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -221600,7 +221625,14 @@
     },
     {
       "source": "src-2606.05743",
-      "target": "src-pap-2401-06373",
+      "target": "arxiv-2401-06373",
+      "rel": "cites",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-2606.17034",
+      "target": "google-gemini15-report-2024",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -221621,7 +221653,7 @@
     },
     {
       "source": "src-doubtprobe-2606-16527",
-      "target": "src-pap-2401-06373",
+      "target": "arxiv-2401-06373",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -221669,6 +221701,13 @@
       "meta": {}
     },
     {
+      "source": "src-mpma-2505.11154",
+      "target": "google-gemini15-report-2024",
+      "rel": "cites",
+      "weight": 1,
+      "meta": {}
+    },
+    {
       "source": "src-mcpxkit-2508.12538",
       "target": "src-mpma-2505.11154",
       "rel": "cites",
@@ -221685,6 +221724,20 @@
     {
       "source": "src-saga-2504.21034",
       "target": "src-agentsundersiege-2504.00218",
+      "rel": "cites",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-2501-09798",
+      "target": "google-gemini15-report-2024",
+      "rel": "cites",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-leaderboard-manipulation-2501.07493",
+      "target": "google-gemini15-report-2024",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -221733,21 +221786,28 @@
     },
     {
       "source": "src-popup-2411",
-      "target": "src-pap-2401-06373",
+      "target": "google-gemini15-report-2024",
+      "rel": "cites",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-popup-2411",
+      "target": "arxiv-2401-06373",
       "rel": "cites",
       "weight": 1,
       "meta": {}
     },
     {
       "source": "src-raina2024-judge-robust",
-      "target": "src-pap-2401-06373",
+      "target": "arxiv-2401-06373",
       "rel": "cites",
       "weight": 1,
       "meta": {}
     },
     {
       "source": "src-zeng2024-beear",
-      "target": "src-pap-2401-06373",
+      "target": "arxiv-2401-06373",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -221789,14 +221849,21 @@
     },
     {
       "source": "src-mml-2412.00473",
-      "target": "src-pap-2401-06373",
+      "target": "arxiv-2401-06373",
       "rel": "cites",
       "weight": 1,
       "meta": {}
     },
     {
       "source": "src-audio-achilles-2410.23861",
-      "target": "src-pap-2401-06373",
+      "target": "google-gemini15-report-2024",
+      "rel": "cites",
+      "weight": 1,
+      "meta": {}
+    },
+    {
+      "source": "src-audio-achilles-2410.23861",
+      "target": "arxiv-2401-06373",
       "rel": "cites",
       "weight": 1,
       "meta": {}
@@ -229335,10 +229402,10 @@
     ]
   },
   "stats": {
-    "node_count": 4069,
-    "edge_count": 23337,
+    "node_count": 4068,
+    "edge_count": 23348,
     "by_kind": {
-      "source": 556,
+      "source": 555,
       "org": 384,
       "finding": 612,
       "threat": 219,
@@ -229367,7 +229434,7 @@
       "published-by": 542,
       "about": 4432,
       "uses": 1244,
-      "cites": 2684,
+      "cites": 2695,
       "from-org": 821,
       "addressed-by": 1500,
       "in-sector": 434,
@@ -229417,10 +229484,10 @@
     "crosswalk_links": 429,
     "reference_details_edges": 292,
     "crosswalk_gap_markers": 15,
-    "citation_edges": 2684,
-    "source_citation_resolved_in_corpus": 1865,
-    "source_citation_to_referenced": 18,
-    "referenced_source_nodes": 14,
+    "citation_edges": 2695,
+    "source_citation_resolved_in_corpus": 1866,
+    "source_citation_to_referenced": 17,
+    "referenced_source_nodes": 13,
     "provenance_applied_edges": 128,
     "provenance_describes_edges": 34,
     "dangling_dropped": 167,
